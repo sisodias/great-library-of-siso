@@ -15,14 +15,14 @@
       {
         "type": "source_repository",
         "url": "https://github.com/Lordsisodia/great-library-of-siso",
-        "revision": "main",
+        "revision": "main@b9702f03cceb0226d0e62c984bd93930f924aae3",
         "visibility": "public",
         "verified": true,
         "evidence": {
           "kind": "integration_check",
           "reference": "https://github.com/Lordsisodia/great-library-of-siso",
           "observed_at": "2026-07-30",
-          "summary": "Canonical public repository resolved on the Lordsisodia account."
+          "summary": "Canonical public repository is pinned after the generated Repository Estate, machine JSON feed, site verification, and MIT license were added."
         }
       },
       {
@@ -39,8 +39,11 @@
         }
       }
     ],
-    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "This registry identity is not a source payload release.", "evidence": [] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The public registry source now carries an MIT license.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/great-library-of-siso/blob/b9702f03cceb0226d0e62c984bd93930f924aae3/LICENSE", "observed_at": "2026-07-30", "summary": "MIT license is present at the pinned source commit." }] }
   },
   "relationships": [],
-  "evidence": [{ "kind": "registry_validation", "reference": "registry:seed:v1", "observed_at": "2026-07-29", "summary": "Seed Work accepted by the V1 registry validator." }]
+  "evidence": [
+    { "kind": "registry_validation", "reference": "registry:seed:v1", "observed_at": "2026-07-29", "summary": "Seed Work accepted by the V1 registry validator." },
+    { "kind": "release_receipt", "reference": "repo-check:great-library-of-siso:b9702f03cceb0226d0e62c984bd93930f924aae3", "observed_at": "2026-07-30", "summary": "Registry schemas, site generation, repository-estate projection, link and identity checks, and publication scan passed." }
+  ]
 }

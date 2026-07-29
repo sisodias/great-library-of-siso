@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0", "record_type": "release", "id": "gls:release:bae2bab9-e411-4684-b595-3bf86b2761f9", "work_id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+  "version": "0.4.0+lordsisodia.d6290c6", "title": "SISO Project OS canonical Lordsisodia mirror", "released_at": "2026-07-29T22:38:19+07:00", "observed_at": "2026-07-30", "immutable": true,
+  "artifacts": [{
+    "id": "gls:artifact:e136c825-5bfa-4eec-8320-b41c649e10c1", "kind": "source_archive", "locator": "https://github.com/Lordsisodia/siso-project-os/archive/d6290c609a6922e14b3faa27019aae31628686cb.tar.gz", "revision": "d6290c609a6922e14b3faa27019aae31628686cb", "availability": "public", "owner": "Lordsisodia", "ownership": "siso",
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The canonical mirror preserves the verified MIT source and history.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/Lordsisodia/siso-project-os/blob/d6290c609a6922e14b3faa27019aae31628686cb/LICENSE", "observed_at": "2026-07-30", "summary": "MIT license resolves at the pinned mirror commit." }] },
+    "integrity": { "state": "verified", "algorithm": "git_commit_sha1", "digest": "d6290c609a6922e14b3faa27019aae31628686cb" }
+  }],
+  "distribution": {
+    "addressable": { "state": "verified", "reason": "The canonical public mirror is pinned to the exact preserved commit.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/Lordsisodia/siso-project-os/commit/d6290c609a6922e14b3faa27019aae31628686cb", "observed_at": "2026-07-30", "summary": "Mirrored source commit resolves from the canonical public account." }] },
+    "archive_downloadable": { "state": "verified", "reason": "A public commit-scoped archive from the canonical account is recorded.", "evidence": [{ "kind": "public_locator", "reference": "https://github.com/Lordsisodia/siso-project-os/archive/d6290c609a6922e14b3faa27019aae31628686cb.tar.gz", "observed_at": "2026-07-30", "summary": "Archive locator is immutable by commit pin." }] },
+    "manifest_resolvable": { "state": "verified", "reason": "The release resolves to the stable Project OS Work and canonical mirror artifact.", "evidence": [{ "kind": "registry_validation", "reference": "registry:release:siso-project-os-lordsisodia-d6290c6", "observed_at": "2026-07-30", "summary": "Manifest cross-references and artifact identity validate." }] },
+    "installable": { "state": "verified", "reason": "The exact clean commit passed its complete install, adoption, lifecycle, collision, verification, upgrade, and rollback test suite.", "evidence": [{ "kind": "release_receipt", "reference": "repo-check:siso-project-os:d6290c609a6922e14b3faa27019aae31628686cb", "observed_at": "2026-07-30", "summary": "All 43 Node tests passed from the clean source commit without changing the checkout." }] },
+    "forkable": { "state": "verified", "reason": "The canonical repository is public, history-complete, tagged, and MIT licensed.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/Lordsisodia/siso-project-os", "observed_at": "2026-07-30", "summary": "Public mirror, exact source history, tags, and license are present." }] },
+    "portable": { "state": "verified", "reason": "The test suite exercises empty and existing projects, Codex and Claude routes, optional providers, bounded discovery, deterministic output, upgrade, and rollback.", "evidence": [{ "kind": "release_receipt", "reference": "repo-check:siso-project-os:d6290c609a6922e14b3faa27019aae31628686cb", "observed_at": "2026-07-30", "summary": "Forty-three portability and lifecycle tests passed at the exact mirrored commit." }] }
+  },
+  "evidence": [
+    { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-project-os:d6290c609a6922e14b3faa27019aae31628686cb", "observed_at": "2026-07-30", "summary": "Canonical Lordsisodia mirror preserves the accepted source commit and tags." },
+    { "kind": "release_receipt", "reference": "repo-check:siso-project-os:d6290c609a6922e14b3faa27019aae31628686cb", "observed_at": "2026-07-30", "summary": "All 43 project adoption, lifecycle, verification, upgrade, rollback, and portability tests passed." }
+  ]
+}
