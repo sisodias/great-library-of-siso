@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-07-29T16:50:55.907Z",
+  "base_path": "/great-library-of-siso/",
+  "works": [
+    {
+      "id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "slug": "agent-zero-coordination-playbook",
+      "name": "Agent Zero Coordination Playbook",
+      "library_url": "/great-library-of-siso/works/agent-zero-coordination-playbook/",
+      "type": "playbook",
+      "maturity": "Unknown"
+    },
+    {
+      "id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
+      "slug": "agents",
+      "name": "Agents",
+      "library_url": "/great-library-of-siso/works/agents/",
+      "type": "section",
+      "maturity": "Unknown"
+    },
+    {
+      "id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
+      "slug": "herdr",
+      "name": "Herdr",
+      "library_url": "/great-library-of-siso/works/herdr/",
+      "type": "tool",
+      "maturity": "Unknown"
+    },
+    {
+      "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "slug": "siso-agent-base",
+      "name": "SISO Agent Base",
+      "library_url": "/great-library-of-siso/works/siso-agent-base/",
+      "type": "agent_system",
+      "maturity": "Unknown"
+    },
+    {
+      "id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "slug": "siso-project-os",
+      "name": "SISO Project OS",
+      "library_url": "/great-library-of-siso/works/siso-project-os/",
+      "type": "project",
+      "maturity": "Unknown"
+    },
+    {
+      "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "slug": "great-library-of-siso",
+      "name": "The Great Library of SISO",
+      "library_url": "/great-library-of-siso/works/great-library-of-siso/",
+      "type": "library",
+      "maturity": "Unknown"
+    }
+  ]
+}
