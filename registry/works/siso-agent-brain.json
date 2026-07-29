@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
+  "slug": "siso-agent-brain",
+  "name": "SISO Agent Brain",
+  "summary": "A shared agent-state service for memory, tasks, fleet presence, timeline events, costs, notifications, questions, and delegated work.",
+  "work_type": "agent_system",
+  "lifecycle_status": "planned",
+  "updated_at": "2026-07-30",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [{
+      "type": "documentation",
+      "url": "https://github.com/Lordsisodia/siso-agent-brain",
+      "revision": "main@e4a079efe3d2aab6891408dcf8b329eac8da3c13",
+      "visibility": "public",
+      "verified": true,
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-brain:e4a079efe3d2aab6891408dcf8b329eac8da3c13", "observed_at": "2026-07-30", "summary": "Canonical public staging repository exists; service source remains in the Agent Base warehouse pending configuration and privacy extraction." }
+    }],
+    "license": { "status": "pending", "spdx": "NOASSERTION", "reason": "The extracted public source and license have not yet been published.", "evidence": [] }
+  },
+  "relationships": [],
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:brain-service:2026-07-30", "observed_at": "2026-07-30", "summary": "Daemon, client, outbox, auth tiers, shared state domains, health checks, and machine-specific boundaries were read directly." }]
+}

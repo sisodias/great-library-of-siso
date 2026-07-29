@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a",
+  "slug": "siso-agent-integrations",
+  "name": "SISO Agent Integrations",
+  "summary": "An experimental package family for bounded agent-runtime adapters with explicit safety, evidence, promotion, and rollback contracts.",
+  "work_type": "bundle",
+  "lifecycle_status": "experimental",
+  "updated_at": "2026-07-30",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [{
+      "type": "source_repository",
+      "url": "https://github.com/Lordsisodia/siso-agent-integrations",
+      "revision": "main@6a248c8c01838e3b981119a86be38fc6d21f60a8",
+      "visibility": "public",
+      "verified": true,
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-integrations:6a248c8c01838e3b981119a86be38fc6d21f60a8", "observed_at": "2026-07-30", "summary": "Canonical public source repository contains the extracted Context Core, Context Firewall, and Headroom adapter packages; its default smoke suite passed before publication." }
+    }],
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The extracted SISO-owned source carries the Agent Base repository-root MIT license; the externally owned Headroom dependency remains pinned rather than redistributed.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-integrations/blob/6a248c8c01838e3b981119a86be38fc6d21f60a8/LICENSE", "observed_at": "2026-07-30", "summary": "MIT license and dependency ownership boundary reviewed in the public extraction." }] }
+  },
+  "relationships": [{
+    "type": "integrates_with",
+    "target_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+    "context": "Integration packages are tested against the Agent Runtime but retain experimental promotion and rollback lifecycles.",
+    "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:context-integrations:2026-07-30", "observed_at": "2026-07-30", "summary": "Context Firewall and Headroom expose opt-in or shadow boundaries rather than core runtime dependencies." }]
+  }],
+  "evidence": [
+    { "kind": "source_review", "reference": "source-review:siso-agent-base-modules:context-integrations:2026-07-30", "observed_at": "2026-07-30", "summary": "Both adapters have explicit safety, canary, promotion, and rollback contracts and remain experimental." },
+    { "kind": "release_receipt", "reference": "repo-smoke:siso-agent-integrations:6a248c8c01838e3b981119a86be38fc6d21f60a8", "observed_at": "2026-07-30", "summary": "Context Firewall shadow smoke and Headroom syntax checks passed in the extracted repository." }
+  ]
+}

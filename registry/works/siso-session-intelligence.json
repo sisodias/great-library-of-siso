@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
+  "slug": "siso-session-intelligence",
+  "name": "SISO Session Intelligence",
+  "summary": "An evidence-backed learning pipeline that mines agent sessions for goals, failures, decisions, intentions, recurring patterns, lessons, and durable recall.",
+  "work_type": "tool",
+  "lifecycle_status": "planned",
+  "updated_at": "2026-07-30",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [{
+      "type": "documentation",
+      "url": "https://github.com/Lordsisodia/siso-session-intelligence",
+      "revision": "main@597bd2f56844de97db85e10d6ff6548a1da0c610",
+      "visibility": "public",
+      "verified": true,
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-session-intelligence:597bd2f56844de97db85e10d6ff6548a1da0c610", "observed_at": "2026-07-30", "summary": "Canonical public staging repository exists; privacy-sensitive source remains unpublished pending secret rotation and fixture extraction." }
+    }],
+    "license": { "status": "pending", "spdx": "NOASSERTION", "reason": "Privacy, credential, provider, and redistribution review must pass before source publication.", "evidence": [] }
+  },
+  "relationships": [],
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:session-intelligence:2026-07-30", "observed_at": "2026-07-30", "summary": "Transcript adapters, evidence extraction, clustering, importance scoring, scheduling, recall rendering, and unsafe embedded configuration were read directly." }]
+}

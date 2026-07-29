@@ -3,8 +3,8 @@
   "record_type": "work",
   "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
   "slug": "siso-agent-base",
-  "name": "SISO Agent Base",
-  "summary": "The current SISO coding-agent application and distribution: installer, CLI, Pi runtime extensions, profile projection, and terminal UI, presently housed in an oversized mixed-purpose repository awaiting decomposition.",
+  "name": "SISO Agent Runtime",
+  "summary": "The installed SISO coding-agent application: installer, CLI, Pi runtime packages, profile projection, and terminal UI, currently sourced from the oversized Agent Base warehouse during extraction.",
   "work_type": "application",
   "lifecycle_status": "active",
   "updated_at": "2026-07-30",
@@ -18,6 +18,13 @@
       "visibility": "public",
       "verified": true,
       "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-base:2e2edfe7a820617557fcff093a348dc0bb4fb040", "observed_at": "2026-07-29", "summary": "Public main branch and MIT license verified; commit HEAD pinned." }
+    }, {
+      "type": "documentation",
+      "url": "https://github.com/Lordsisodia/siso-agent-runtime",
+      "revision": "main@7cbb5c128fd47954a92cbe682754defd2017bbea",
+      "visibility": "public",
+      "verified": true,
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-runtime:7cbb5c128fd47954a92cbe682754defd2017bbea", "observed_at": "2026-07-30", "summary": "Canonical destination repository exists as a public extraction staging home; runtime source is not yet claimed to have moved." }
     }],
     "license": { "status": "verified", "spdx": "MIT", "reason": "GitHub repository metadata reports MIT.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/Lordsisodia/siso-agent-base", "observed_at": "2026-07-29", "summary": "Public repository license verified as MIT." }] }
   },

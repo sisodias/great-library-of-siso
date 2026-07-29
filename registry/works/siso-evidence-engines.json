@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+  "slug": "siso-evidence-engines",
+  "name": "SISO Evidence Engines",
+  "summary": "A package family for traceable knowledge distillation, evidence-gated coding principles, and ranked improvement ideas.",
+  "work_type": "bundle",
+  "lifecycle_status": "planned",
+  "updated_at": "2026-07-30",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [{
+      "type": "documentation",
+      "url": "https://github.com/Lordsisodia/siso-evidence-engines",
+      "revision": "main@92f95a0fedd9ec5bc6aa4ea85a8787873903f1ff",
+      "visibility": "public",
+      "verified": true,
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-evidence-engines:92f95a0fedd9ec5bc6aa4ea85a8787873903f1ff", "observed_at": "2026-07-30", "summary": "Canonical public staging repository exists; the three engine packages and shared primitives remain unpublished pending data separation." }
+    }],
+    "license": { "status": "pending", "spdx": "NOASSERTION", "reason": "Reusable engine code must be separated from private corpora, generated state, and machine configuration before licensing.", "evidence": [] }
+  },
+  "relationships": [],
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:evidence-engines:2026-07-30", "observed_at": "2026-07-30", "summary": "Knowledge, coding-principles, and idea pipelines were reviewed as separate Works sharing evidence, scoring, provenance, and promotion primitives." }]
+}

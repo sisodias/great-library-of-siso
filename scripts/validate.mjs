@@ -150,9 +150,13 @@ for (const { file, value: inventory } of records.source_inventory) {
 for (const { file, value: snapshot } of records.snapshot) {
   const label = path.relative(root, file);
   const pinnedWorks = new Set();
+  const pinnedReleases = new Set();
   for (const pin of snapshot.releases ?? []) {
+    if (pinnedReleases.has(pin.release_id)) fail(`${label}: release ${pin.release_id} is pinned more than once`);
+    pinnedReleases.add(pin.release_id);
     const entry = releases.get(pin.release_id);
     if (!entry) { fail(`${label}: release ${pin.release_id} does not resolve`); continue; }
+    if (pinnedWorks.has(entry.value.work_id)) fail(`${label}: Work ${entry.value.work_id} is pinned by more than one release`);
     pinnedWorks.add(entry.value.work_id);
     const digest = createHash("sha256").update(entry.raw).digest("hex");
     if (digest !== pin.manifest_sha256) fail(`${label}: hash mismatch for ${pin.release_id}; expected ${digest}`);
@@ -166,9 +170,9 @@ for (const { file, value: snapshot } of records.snapshot) {
     if (digest !== pin.manifest_sha256) fail(`${label}: hash mismatch for ${pin.assembly_id}; expected ${digest}`);
   }
   if (snapshot.metadata_completeness?.state === "complete") {
-    if (snapshot.metadata_completeness.work_count !== works.size || pinnedWorks.size !== works.size) fail(`${label}: complete snapshot must pin all ${works.size} Works exactly once`);
+    if (snapshot.metadata_completeness.work_count !== pinnedWorks.size) fail(`${label}: work_count does not match the ${pinnedWorks.size} Works pinned by this immutable snapshot`);
     if (snapshot.metadata_completeness.release_count !== snapshot.releases.length) fail(`${label}: release_count does not match pins`);
-    if (snapshot.metadata_completeness.assembly_count !== undefined && (snapshot.metadata_completeness.assembly_count !== assemblies.size || pinnedAssemblies.size !== assemblies.size)) fail(`${label}: complete snapshot must pin all ${assemblies.size} Assemblies exactly once`);
+    if (snapshot.metadata_completeness.assembly_count !== undefined && snapshot.metadata_completeness.assembly_count !== pinnedAssemblies.size) fail(`${label}: assembly_count does not match the ${pinnedAssemblies.size} Assemblies pinned by this immutable snapshot`);
   }
   for (const rootId of snapshot.projection?.root_work_ids ?? []) if (!pinnedWorks.has(rootId)) fail(`${label}: projection root ${rootId} is not pinned`);
   for (const edge of snapshot.projection?.edges ?? []) {

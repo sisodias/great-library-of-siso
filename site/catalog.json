@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T00:00:00.000Z",
+  "generated_at": "2026-07-29T21:45:00.000Z",
   "base_path": "/",
   "works": [
     {
@@ -8,7 +8,8 @@
       "name": "Agent Zero",
       "library_url": "/works/agent-zero-coordination-playbook/",
       "type": "skill",
-      "maturity": "Unknown"
+      "maturity": "experimental",
+      "section": "Agents"
     },
     {
       "id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
@@ -16,7 +17,8 @@
       "name": "Agents",
       "library_url": "/works/agents/",
       "type": "section",
-      "maturity": "Unknown"
+      "maturity": "active",
+      "section": "Agents"
     },
     {
       "id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
@@ -24,15 +26,71 @@
       "name": "Herdr",
       "library_url": "/works/herdr/",
       "type": "tool",
-      "maturity": "Unknown"
+      "maturity": "active",
+      "section": "Agents"
+    },
+    {
+      "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+      "slug": "research",
+      "name": "Research",
+      "library_url": "/works/research/",
+      "type": "section",
+      "maturity": "active",
+      "section": "Research"
+    },
+    {
+      "id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
+      "slug": "siso-agent-brain",
+      "name": "SISO Agent Brain",
+      "library_url": "/works/siso-agent-brain/",
+      "type": "agent_system",
+      "maturity": "planned",
+      "section": "Agents"
+    },
+    {
+      "id": "gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a",
+      "slug": "siso-agent-integrations",
+      "name": "SISO Agent Integrations",
+      "library_url": "/works/siso-agent-integrations/",
+      "type": "bundle",
+      "maturity": "experimental",
+      "section": "Agents"
+    },
+    {
+      "id": "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc",
+      "slug": "siso-agent-playbook",
+      "name": "SISO Agent Playbook",
+      "library_url": "/works/siso-agent-playbook/",
+      "type": "playbook",
+      "maturity": "active",
+      "section": "Agents"
     },
     {
       "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
       "slug": "siso-agent-base",
-      "name": "SISO Agent Base",
+      "name": "SISO Agent Runtime",
       "library_url": "/works/siso-agent-base/",
       "type": "application",
-      "maturity": "Unknown"
+      "maturity": "active",
+      "section": "Agents"
+    },
+    {
+      "id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "slug": "siso-evidence-engines",
+      "name": "SISO Evidence Engines",
+      "library_url": "/works/siso-evidence-engines/",
+      "type": "bundle",
+      "maturity": "planned",
+      "section": "Research"
+    },
+    {
+      "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "slug": "siso-foundry",
+      "name": "SISO Foundry",
+      "library_url": "/works/siso-foundry/",
+      "type": "application",
+      "maturity": "active",
+      "section": "Research"
     },
     {
       "id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
@@ -40,7 +98,26 @@
       "name": "SISO Project OS",
       "library_url": "/works/siso-project-os/",
       "type": "project",
-      "maturity": "Unknown"
+      "maturity": "active",
+      "section": "Agents"
+    },
+    {
+      "id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
+      "slug": "siso-session-intelligence",
+      "name": "SISO Session Intelligence",
+      "library_url": "/works/siso-session-intelligence/",
+      "type": "tool",
+      "maturity": "planned",
+      "section": "Agents"
+    },
+    {
+      "id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+      "slug": "siso-skills",
+      "name": "SISO Skills",
+      "library_url": "/works/siso-skills/",
+      "type": "capability_pack",
+      "maturity": "active",
+      "section": "Agents"
     },
     {
       "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
@@ -48,7 +125,8 @@
       "name": "The Great Library of SISO",
       "library_url": "/works/great-library-of-siso/",
       "type": "library",
-      "maturity": "Unknown"
+      "maturity": "active",
+      "section": "Library"
     }
   ],
   "assemblies": [

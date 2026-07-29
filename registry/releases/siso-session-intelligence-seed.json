@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0", "record_type": "release", "id": "gls:release:8078af85-d692-4275-b0b1-a3432f225acc", "work_id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
+  "version": "registry-seed-2026-07-30", "title": "SISO Session Intelligence metadata seed", "released_at": "2026-07-30T01:15:00Z", "observed_at": "2026-07-30", "immutable": true, "artifacts": [],
+  "distribution": {
+    "addressable": { "state": "verified", "reason": "The Work and public staging home are addressable.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/Lordsisodia/siso-session-intelligence", "observed_at": "2026-07-30", "summary": "Canonical staging repository and stable Library Work resolve." }] },
+    "archive_downloadable": { "state": "unavailable", "reason": "No privacy-reviewed source archive has been published.", "evidence": [] },
+    "manifest_resolvable": { "state": "verified", "reason": "The metadata manifest resolves inside the registry.", "evidence": [{ "kind": "registry_validation", "reference": "registry:release:siso-session-intelligence-seed", "observed_at": "2026-07-30", "summary": "Release-to-Work reference validated." }] },
+    "installable": { "state": "unavailable", "reason": "Credential, privacy, storage, and provider boundaries remain unresolved.", "evidence": [] },
+    "forkable": { "state": "unavailable", "reason": "The staging repository does not yet contain licensed source.", "evidence": [] },
+    "portable": { "state": "unavailable", "reason": "No fixture-based portability receipt exists.", "evidence": [] }
+  },
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:session-intelligence:2026-07-30", "observed_at": "2026-07-30", "summary": "Metadata release preserves the privacy and credential gate without publishing session payloads." }]
+}

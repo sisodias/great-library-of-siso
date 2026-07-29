@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0", "record_type": "release", "id": "gls:release:21de8cc5-bb0c-4e97-a682-f10a4124a47b", "work_id": "gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a",
+  "version": "registry-seed-2026-07-30", "title": "SISO Agent Integrations metadata seed", "released_at": "2026-07-30T01:15:00Z", "observed_at": "2026-07-30", "immutable": true, "artifacts": [],
+  "distribution": {
+    "addressable": { "state": "verified", "reason": "The experimental Work and public staging home are addressable.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/Lordsisodia/siso-agent-integrations", "observed_at": "2026-07-30", "summary": "Canonical staging repository and stable Library Work resolve." }] },
+    "archive_downloadable": { "state": "unavailable", "reason": "No reviewed adapter archive has been published.", "evidence": [] },
+    "manifest_resolvable": { "state": "verified", "reason": "The metadata manifest resolves inside the registry.", "evidence": [{ "kind": "registry_validation", "reference": "registry:release:siso-agent-integrations-seed", "observed_at": "2026-07-30", "summary": "Release-to-Work reference validated." }] },
+    "installable": { "state": "unavailable", "reason": "Adapters remain opt-in or shadow-stage warehouse experiments.", "evidence": [] },
+    "forkable": { "state": "unavailable", "reason": "The staging repository does not yet contain licensed source.", "evidence": [] },
+    "portable": { "state": "unavailable", "reason": "Promotion and rollback evidence has not yet been packaged publicly.", "evidence": [] }
+  },
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:context-integrations:2026-07-30", "observed_at": "2026-07-30", "summary": "Metadata release preserves experimental status and current non-promotion verdicts." }]
+}

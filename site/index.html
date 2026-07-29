@@ -21,15 +21,16 @@
     <nav id="site-nav" aria-label="Primary">
       <a aria-current="page" href="/">Library</a>
       <a  href="/agents/">Agents</a>
+      <a  href="/research/">Research</a>
       <a  href="/releases/">Releases</a>
       <a  href="/snapshots/">Snapshots</a>
     </nav>
   </header>
   <main id="content"><section class="hero shell">
-      <div class="hero-copy"><p class="eyebrow"><span aria-hidden="true"></span>Public registry · Agents first</p>
+      <div class="hero-copy"><p class="eyebrow"><span aria-hidden="true"></span>Public registry · Permanent source map</p>
         <h1>Source deserves a<br><em>permanent reading room.</em></h1>
         <p class="lede">The Great Library gives every cataloged Work a stable public detail page—even when its source repository has no site of its own.</p>
-        <div class="hero-actions"><a class="button" href="/agents/">Enter the Agents section <span>→</span></a><a class="text-link" href="#catalog">Browse the index</a></div>
+        <div class="hero-actions"><a class="button" href="/agents/">Enter the Agents section <span>→</span></a><a class="text-link" href="#sections">Browse sections</a></div>
       </div>
       <aside class="catalog-note" aria-label="Catalog model">
         <p>Catalog model</p>
@@ -38,41 +39,91 @@
       </aside>
     </section>
     <section class="model-strip"><div class="shell"><p><b>Works stay stable.</b> Repositories and upstream docs remain optional, replaceable locators.</p><p><b>Relationships carry structure.</b> Hierarchy is a versioned view, never hidden in identity.</p></div></section>
-    <section class="section shell agents-intro">
-      <div class="section-heading"><p class="eyebrow"><span aria-hidden="true"></span>Section 01</p><h2>Agents</h2><p>SISO Agent Stack is the first versioned assembly. Its components stay together here while retaining independent Work identities.</p></div>
-      <div class="focus-list"><a class="focus-row " href="/works/siso-project-os/"><span>01</span><b>SISO Project OS</b><small>project-local operating layer</small><i aria-hidden="true">→</i></a><a class="focus-row " href="/works/siso-agent-base/"><span>02</span><b>SISO Agent Base</b><small>local agent launcher and runtime surface</small><i aria-hidden="true">→</i></a><a class="focus-row " href="/works/herdr/"><span>03</span><b>Herdr</b><small>persistent terminal workspace and lane substrate</small><i aria-hidden="true">→</i></a><a class="focus-row " href="/works/agent-zero-coordination-playbook/"><span>04</span><b>Agent Zero</b><small>conversation and coordination layer</small><i aria-hidden="true">→</i></a></div>
+    <section id="sections" class="section shell agents-intro">
+      <div class="section-heading"><p class="eyebrow"><span aria-hidden="true"></span>Versioned projections</p><h2>Library sections</h2><p>Sections are browsable views over stable Works. Moving a Work between sections never changes its identity or source history.</p></div>
+      <div class="focus-list"><a class="focus-row" href="/agents/"><span>01</span><b>Agents</b><small>A curated Library section for complete agent stacks, their independently addressable components, and the evidence showing how they work together.</small><i aria-hidden="true">→</i></a><a class="focus-row" href="/research/"><span>02</span><b>Research</b><small>A curated Library section for source discovery, evidence pipelines, knowledge engines, datasets, and durable research artifacts.</small><i aria-hidden="true">→</i></a></div>
     </section>
     <section id="catalog" class="section catalog-section shell">
-      <div class="section-heading compact"><p class="eyebrow"><span aria-hidden="true"></span>Live index</p><h2>Browse the Works</h2><p><span data-result-count>6</span> accepted records in this build.</p></div>
+      <div class="section-heading compact"><p class="eyebrow"><span aria-hidden="true"></span>Live index</p><h2>Browse the Works</h2><p><span data-result-count>14</span> accepted records in this build.</p></div>
       <div class="catalog-controls" data-catalog-controls>
     <label class="search-field"><span>Search the catalog</span><input type="search" placeholder="Name, purpose, type…" autocomplete="off" data-catalog-search></label>
-    <label><span>Type</span><select data-catalog-type><option value="">All types</option><option value="application">application</option><option value="library">library</option><option value="project">project</option><option value="section">section</option><option value="skill">skill</option><option value="tool">tool</option></select></label>
-    <label><span>Maturity</span><select data-catalog-maturity><option value="">All states</option><option value="unknown">Unknown</option></select></label>
+    <label><span>Type</span><select data-catalog-type><option value="">All types</option><option value="agent-system">agent_system</option><option value="application">application</option><option value="bundle">bundle</option><option value="capability-pack">capability_pack</option><option value="library">library</option><option value="playbook">playbook</option><option value="project">project</option><option value="section">section</option><option value="skill">skill</option><option value="tool">tool</option></select></label>
+    <label><span>Maturity</span><select data-catalog-maturity><option value="">All states</option><option value="active">active</option><option value="experimental">experimental</option><option value="planned">planned</option></select></label>
   </div>
-      <div class="work-grid" data-catalog><article class="work-card" data-search="siso project os a project-local operating system and contract bundle for durable agent work, evidence, knowledge, and handoff state. project unknown" data-type="project" data-maturity="unknown">
-    <div class="card-topline"><span>project</span><span class="maturity">Unknown</span></div>
-    <h3><a href="/works/siso-project-os/">SISO Project OS</a></h3>
-    <p>A project-local operating system and contract bundle for durable agent work, evidence, knowledge, and handoff state.</p>
-    <div class="card-foot"><code>gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943</code><span aria-hidden="true">↗</span></div>
-  </article><article class="work-card" data-search="siso agent base the current siso coding-agent application and distribution: installer, cli, pi runtime extensions, profile projection, and terminal ui, presently housed in an oversized mixed-purpose repository awaiting decomposition. application unknown" data-type="application" data-maturity="unknown">
-    <div class="card-topline"><span>application</span><span class="maturity">Unknown</span></div>
-    <h3><a href="/works/siso-agent-base/">SISO Agent Base</a></h3>
-    <p>The current SISO coding-agent application and distribution: installer, CLI, Pi runtime extensions, profile projection, and terminal UI, presently housed in an oversized mixed-purpose repository awaiting decomposition.</p>
-    <div class="card-foot"><code>gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224</code><span aria-hidden="true">↗</span></div>
-  </article><article class="work-card" data-search="herdr an externally owned terminal-native multiplexer providing persistent workspaces, tabs, panes, and addressable agent sessions. tool unknown" data-type="tool" data-maturity="unknown">
-    <div class="card-topline"><span>tool</span><span class="maturity">Unknown</span></div>
-    <h3><a href="/works/herdr/">Herdr</a></h3>
-    <p>An externally owned terminal-native multiplexer providing persistent workspaces, tabs, panes, and addressable agent sessions.</p>
-    <div class="card-foot"><code>gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc</code><span aria-hidden="true">↗</span></div>
-  </article><article class="work-card" data-search="agent zero a siso coordination skill that holds human intent, lane boundaries, durable context, dispatch state, evidence, and final synthesis. skill unknown" data-type="skill" data-maturity="unknown">
-    <div class="card-topline"><span>skill</span><span class="maturity">Unknown</span></div>
+      <div class="work-grid" data-catalog><article class="work-card" data-search="agent zero a siso coordination skill that holds human intent, lane boundaries, durable context, dispatch state, evidence, and final synthesis. skill experimental" data-type="skill" data-maturity="experimental">
+    <div class="card-topline"><span>skill</span><span class="maturity">experimental</span></div>
     <h3><a href="/works/agent-zero-coordination-playbook/">Agent Zero</a></h3>
     <p>A SISO coordination skill that holds human intent, lane boundaries, durable context, dispatch state, evidence, and final synthesis.</p>
     <div class="card-foot"><code>gls:work:ea2f0de7-95ee-4e62-acde-85375b048719</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="agents a curated library section for complete agent stacks, their independently addressable components, and the evidence showing how they work together. section active" data-type="section" data-maturity="active">
+    <div class="card-topline"><span>section</span><span class="maturity">active</span></div>
+    <h3><a href="/works/agents/">Agents</a></h3>
+    <p>A curated Library section for complete agent stacks, their independently addressable components, and the evidence showing how they work together.</p>
+    <div class="card-foot"><code>gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="herdr an externally owned terminal-native multiplexer providing persistent workspaces, tabs, panes, and addressable agent sessions. tool active" data-type="tool" data-maturity="active">
+    <div class="card-topline"><span>tool</span><span class="maturity">active</span></div>
+    <h3><a href="/works/herdr/">Herdr</a></h3>
+    <p>An externally owned terminal-native multiplexer providing persistent workspaces, tabs, panes, and addressable agent sessions.</p>
+    <div class="card-foot"><code>gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="research a curated library section for source discovery, evidence pipelines, knowledge engines, datasets, and durable research artifacts. section active" data-type="section" data-maturity="active">
+    <div class="card-topline"><span>section</span><span class="maturity">active</span></div>
+    <h3><a href="/works/research/">Research</a></h3>
+    <p>A curated Library section for source discovery, evidence pipelines, knowledge engines, datasets, and durable research artifacts.</p>
+    <div class="card-foot"><code>gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="siso agent brain a shared agent-state service for memory, tasks, fleet presence, timeline events, costs, notifications, questions, and delegated work. agent_system planned" data-type="agent-system" data-maturity="planned">
+    <div class="card-topline"><span>agent_system</span><span class="maturity">planned</span></div>
+    <h3><a href="/works/siso-agent-brain/">SISO Agent Brain</a></h3>
+    <p>A shared agent-state service for memory, tasks, fleet presence, timeline events, costs, notifications, questions, and delegated work.</p>
+    <div class="card-foot"><code>gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="siso agent integrations an experimental package family for bounded agent-runtime adapters with explicit safety, evidence, promotion, and rollback contracts. bundle experimental" data-type="bundle" data-maturity="experimental">
+    <div class="card-topline"><span>bundle</span><span class="maturity">experimental</span></div>
+    <h3><a href="/works/siso-agent-integrations/">SISO Agent Integrations</a></h3>
+    <p>An experimental package family for bounded agent-runtime adapters with explicit safety, evidence, promotion, and rollback contracts.</p>
+    <div class="card-foot"><code>gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="siso agent playbook an installable operating package of scenario playbooks, prompts, skills, tools, telemetry, and evidence for running coordinated agent work. playbook active" data-type="playbook" data-maturity="active">
+    <div class="card-topline"><span>playbook</span><span class="maturity">active</span></div>
+    <h3><a href="/works/siso-agent-playbook/">SISO Agent Playbook</a></h3>
+    <p>An installable operating package of scenario playbooks, prompts, skills, tools, telemetry, and evidence for running coordinated agent work.</p>
+    <div class="card-foot"><code>gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="siso agent runtime the installed siso coding-agent application: installer, cli, pi runtime packages, profile projection, and terminal ui, currently sourced from the oversized agent base warehouse during extraction. application active" data-type="application" data-maturity="active">
+    <div class="card-topline"><span>application</span><span class="maturity">active</span></div>
+    <h3><a href="/works/siso-agent-base/">SISO Agent Runtime</a></h3>
+    <p>The installed SISO coding-agent application: installer, CLI, Pi runtime packages, profile projection, and terminal UI, currently sourced from the oversized Agent Base warehouse during extraction.</p>
+    <div class="card-foot"><code>gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="siso evidence engines a package family for traceable knowledge distillation, evidence-gated coding principles, and ranked improvement ideas. bundle planned" data-type="bundle" data-maturity="planned">
+    <div class="card-topline"><span>bundle</span><span class="maturity">planned</span></div>
+    <h3><a href="/works/siso-evidence-engines/">SISO Evidence Engines</a></h3>
+    <p>A package family for traceable knowledge distillation, evidence-gated coding principles, and ranked improvement ideas.</p>
+    <div class="card-foot"><code>gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="siso foundry a source-mining and reuse-knowledge platform for discovering, evaluating, preserving, and navigating valuable external and siso source. application active" data-type="application" data-maturity="active">
+    <div class="card-topline"><span>application</span><span class="maturity">active</span></div>
+    <h3><a href="/works/siso-foundry/">SISO Foundry</a></h3>
+    <p>A source-mining and reuse-knowledge platform for discovering, evaluating, preserving, and navigating valuable external and SISO source.</p>
+    <div class="card-foot"><code>gls:work:ec664d93-df93-48c5-be40-5d0165886c01</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="siso project os a project-local operating system and contract bundle for durable agent work, evidence, knowledge, and handoff state. project active" data-type="project" data-maturity="active">
+    <div class="card-topline"><span>project</span><span class="maturity">active</span></div>
+    <h3><a href="/works/siso-project-os/">SISO Project OS</a></h3>
+    <p>A project-local operating system and contract bundle for durable agent work, evidence, knowledge, and handoff state.</p>
+    <div class="card-foot"><code>gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="siso session intelligence an evidence-backed learning pipeline that mines agent sessions for goals, failures, decisions, intentions, recurring patterns, lessons, and durable recall. tool planned" data-type="tool" data-maturity="planned">
+    <div class="card-topline"><span>tool</span><span class="maturity">planned</span></div>
+    <h3><a href="/works/siso-session-intelligence/">SISO Session Intelligence</a></h3>
+    <p>An evidence-backed learning pipeline that mines agent sessions for goals, failures, decisions, intentions, recurring patterns, lessons, and durable recall.</p>
+    <div class="card-foot"><code>gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="siso skills the catalog and distribution boundary for atomic repeatable agent capabilities, with independent promotion paths for mature skills. capability_pack active" data-type="capability-pack" data-maturity="active">
+    <div class="card-topline"><span>capability_pack</span><span class="maturity">active</span></div>
+    <h3><a href="/works/siso-skills/">SISO Skills</a></h3>
+    <p>The catalog and distribution boundary for atomic repeatable agent capabilities, with independent promotion paths for mature skills.</p>
+    <div class="card-foot"><code>gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd</code><span aria-hidden="true">↗</span></div>
+  </article><article class="work-card" data-search="the great library of siso the public human-readable and agent-readable registry for siso source. library active" data-type="library" data-maturity="active">
+    <div class="card-topline"><span>library</span><span class="maturity">active</span></div>
+    <h3><a href="/works/great-library-of-siso/">The Great Library of SISO</a></h3>
+    <p>The public human-readable and agent-readable registry for SISO source.</p>
+    <div class="card-foot"><code>gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1</code><span aria-hidden="true">↗</span></div>
   </article></div>
       <p class="no-results" data-no-results hidden>No Works match those filters.</p>
     </section>
-    <section class="ledger shell" aria-label="Registry counts"><div><strong>06</strong><span>Works</span></div><div><strong>01</strong><span>Assemblies</span></div><div><strong>02</strong><span>Snapshots</span></div><p>Counts reflect accepted registry files in this build.</p></section></main>
+    <section class="ledger shell" aria-label="Registry counts"><div><strong>14</strong><span>Works</span></div><div><strong>01</strong><span>Assemblies</span></div><div><strong>05</strong><span>Snapshots</span></div><p>Counts reflect accepted registry files in this build.</p></section></main>
   <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
 </body>
 </html>

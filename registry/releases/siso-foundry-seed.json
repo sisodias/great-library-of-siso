@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0", "record_type": "release", "id": "gls:release:2f5cb7d0-c85e-49f9-8943-4238c76e7edc", "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+  "version": "registry-seed-2026-07-30", "title": "SISO Foundry metadata seed", "released_at": "2026-07-30T00:00:00Z", "observed_at": "2026-07-30", "immutable": true, "artifacts": [],
+  "distribution": {
+    "addressable": { "state": "verified", "reason": "Foundry is addressable by stable registry ID while source extraction is pending.", "evidence": [{ "kind": "registry_validation", "reference": "registry:release:siso-foundry-seed", "observed_at": "2026-07-30", "summary": "Metadata manifest and Work reference validated." }] },
+    "archive_downloadable": { "state": "unavailable", "reason": "No verified public source archive is recorded.", "evidence": [] },
+    "manifest_resolvable": { "state": "verified", "reason": "The conservative metadata manifest resolves inside the registry.", "evidence": [{ "kind": "registry_validation", "reference": "registry:release:siso-foundry-seed", "observed_at": "2026-07-30", "summary": "Metadata manifest resolves without treating datasets or imports as redistributable code." }] },
+    "installable": { "state": "unavailable", "reason": "Foundry has not yet been extracted into a clean public installation boundary.", "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:foundry:2026-07-30", "observed_at": "2026-07-30", "summary": "Code, databases, imported source, and generated research are still mixed in the warehouse." }] },
+    "forkable": { "state": "unavailable", "reason": "No public source artifact with verified redistribution evidence is recorded.", "evidence": [] },
+    "portable": { "state": "unavailable", "reason": "No clean portability receipt exists.", "evidence": [] }
+  },
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:foundry:2026-07-30", "observed_at": "2026-07-30", "summary": "Metadata-only release establishes Foundry under Research without publishing unreviewed payloads." }]
+}

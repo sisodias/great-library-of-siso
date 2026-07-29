@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+  "slug": "siso-foundry",
+  "name": "SISO Foundry",
+  "summary": "A source-mining and reuse-knowledge platform for discovering, evaluating, preserving, and navigating valuable external and SISO source.",
+  "work_type": "application",
+  "lifecycle_status": "active",
+  "updated_at": "2026-07-30",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [{
+      "type": "documentation",
+      "url": "https://github.com/Lordsisodia/siso-foundry",
+      "revision": "main@b9b811cbf76968eab3075cf6df30a9ecb823607b",
+      "visibility": "public",
+      "verified": true,
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-foundry:b9b811cbf76968eab3075cf6df30a9ecb823607b", "observed_at": "2026-07-30", "summary": "Canonical public destination exists as an extraction staging home; Foundry code and datasets are not yet claimed to have moved." }
+    }],
+    "license": { "status": "pending", "spdx": "NOASSERTION", "reason": "Foundry code, imported source, databases, and generated research require separate provenance and redistribution boundaries before public release.", "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:foundry:2026-07-30", "observed_at": "2026-07-30", "summary": "Foundry onboarding, source map, pipeline ownership, database boundary, and interface manifest were read directly." }] }
+  },
+  "relationships": [],
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:foundry:2026-07-30", "observed_at": "2026-07-30", "summary": "Foundry has an independent research outcome and belongs in the Research section rather than inside Agents." }]
+}

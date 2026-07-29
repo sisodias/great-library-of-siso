@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+  "slug": "research",
+  "name": "Research",
+  "summary": "A curated Library section for source discovery, evidence pipelines, knowledge engines, datasets, and durable research artifacts.",
+  "work_type": "section",
+  "lifecycle_status": "active",
+  "updated_at": "2026-07-30",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [],
+    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "A curated section is registry metadata rather than a source payload.", "evidence": [] }
+  },
+  "relationships": [],
+  "evidence": [{ "kind": "documentation", "reference": "decision:great-library:research-section:2026-07-30", "observed_at": "2026-07-30", "summary": "Foundry and research artifacts were separated from the Agents section because they form an independent research domain that may serve many systems." }]
+}

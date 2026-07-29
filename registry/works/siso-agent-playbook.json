@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc",
+  "slug": "siso-agent-playbook",
+  "name": "SISO Agent Playbook",
+  "summary": "An installable operating package of scenario playbooks, prompts, skills, tools, telemetry, and evidence for running coordinated agent work.",
+  "work_type": "playbook",
+  "lifecycle_status": "active",
+  "updated_at": "2026-07-30",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO", "role": "steward", "classification": "siso" }],
+    "locators": [{
+      "type": "documentation",
+      "url": "https://github.com/Lordsisodia/siso-agent-playbook",
+      "revision": "main@b530642c6fc4a0797cd9fad3b0500c74e772b8e3",
+      "visibility": "public",
+      "verified": true,
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-playbook:b530642c6fc4a0797cd9fad3b0500c74e772b8e3", "observed_at": "2026-07-30", "summary": "Canonical public destination exists; dirty private source and license are not yet published." }
+    }],
+    "license": { "status": "pending", "spdx": "NOASSERTION", "reason": "The current private repository has no verified license and contains four uncommitted changes that must be preserved before public extraction.", "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-playbook:2026-07-30", "observed_at": "2026-07-30", "summary": "Repository ownership, installer, capability content, missing license metadata, and current dirty state were verified directly." }] }
+  },
+  "relationships": [],
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:agent-playbook:2026-07-30", "observed_at": "2026-07-30", "summary": "The nested repository is an independent operating package rather than an internal Agent Runtime folder." }]
+}

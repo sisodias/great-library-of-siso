@@ -7,12 +7,11 @@ const OUT = join(ROOT, 'site');
 const ASSETS = join(ROOT, 'src/site/assets');
 const BASE = normalizeBase(process.env.SITE_BASE_PATH || '/');
 const DIST_KEYS = [
-  ['downloadable', 'Downloadable'],
-  ['resolvable', 'Resolvable'],
+  ['archive_downloadable', 'Downloadable'],
+  ['manifest_resolvable', 'Resolvable'],
   ['installable', 'Installable'],
   ['forkable', 'Forkable'],
   ['portable', 'Portable'],
-  ['redistributable', 'Redistributable'],
 ];
 function normalizeBase(value) {
   const clean = `/${String(value).replace(/^\/+|\/+$/g, '')}/`;
@@ -109,6 +108,13 @@ function linkEntries(raw) {
   add('demo', 'Upstream demo', raw.demo_url || raw.website_url || raw.homepage);
   const provenance = raw.provenance || {};
   add('source', 'Source repository', provenance.source_url || provenance.repository_url || provenance.repository);
+  for (const locator of provenance.locators || []) {
+    const label = locator.type === 'source_repository' ? 'Source repository'
+      : locator.type === 'homepage' ? 'Homepage'
+      : locator.type === 'documentation' ? 'Documentation'
+      : locator.type.replaceAll('_', ' ');
+    add(locator.type, label, locator);
+  }
   return links;
 }
 
@@ -122,6 +128,7 @@ function normalizeWork(raw) {
     target: text(item.target_work_id || item.target_id || item.target?.work_id || item.target?.id || item.target, 'Unresolved target'),
     label: text(item.target_name || item.target?.name || item.label, ''),
   }));
+  const license = raw.provenance?.license || raw.license || raw.redistribution?.license;
   return {
     raw,
     id,
@@ -129,12 +136,12 @@ function normalizeWork(raw) {
     name,
     summary: text(raw.summary || raw.description || raw.abstract),
     type: text(raw.work_type || raw.type || raw.kind, 'Unclassified'),
-    maturity: text(raw.maturity || raw.status || raw.lifecycle_state, 'Unknown'),
-    section: text(raw.section || raw.category || raw.domain, 'Agents'),
+    maturity: text(raw.maturity || raw.status || raw.lifecycle_status || raw.lifecycle_state, 'Unknown'),
+    section: text(raw.section || raw.category || raw.domain, 'Unassigned'),
     relationships,
     links: linkEntries(raw),
     provenance: raw.provenance || {},
-    license: text(raw.license?.state || raw.license?.spdx || raw.license || raw.redistribution?.license, 'Pending'),
+    license: license && typeof license === 'object' ? `${text(license.spdx, 'NOASSERTION')} (${text(license.status || license.state, 'pending')})` : text(license, 'Pending'),
     sourceFile: raw.__file,
   };
 }
@@ -182,6 +189,7 @@ function nav(active) {
     <nav id="site-nav" aria-label="Primary">
       <a ${active === 'library' ? 'aria-current="page"' : ''} href="${href('')}">Library</a>
       <a ${active === 'agents' ? 'aria-current="page"' : ''} href="${href('agents/')}">Agents</a>
+      <a ${active === 'research' ? 'aria-current="page"' : ''} href="${href('research/')}">Research</a>
       <a ${active === 'releases' ? 'aria-current="page"' : ''} href="${href('releases/')}">Releases</a>
       <a ${active === 'snapshots' ? 'aria-current="page"' : ''} href="${href('snapshots/')}">Snapshots</a>
     </nav>
@@ -240,18 +248,23 @@ function assemblyMembers(assembly, works) {
   return (assembly?.components || []).map((component) => ({ component, work: byId.get(component.work_id) }));
 }
 
-function homePage(works, releases, snapshots, assemblies) {
-  const stack = assemblies.find((assembly) => assembly.slug === 'siso-agent-stack');
-  const members = assemblyMembers(stack, works);
-  const visible = members.map(({ work }) => work).filter(Boolean);
+function projectionMembers(sectionId, snapshot, works) {
+  const byId = new Map(works.map((work) => [work.id, work]));
+  return (snapshot?.projection?.edges || [])
+    .filter((edge) => edge.from_work_id === sectionId)
+    .map((edge) => ({ edge, work: byId.get(edge.to_work_id) }))
+    .filter(({ work }) => work);
+}
+
+function homePage(works, releases, snapshots, assemblies, sections) {
   return page({
     title: 'A public index of SISO source',
     description: 'A human- and agent-readable registry of SISO works, releases, relationships, and named snapshots.',
     body: `<section class="hero shell">
-      <div class="hero-copy">${eyebrow('Public registry · Agents first')}
+      <div class="hero-copy">${eyebrow('Public registry · Permanent source map')}
         <h1>Source deserves a<br><em>permanent reading room.</em></h1>
         <p class="lede">The Great Library gives every cataloged Work a stable public detail page—even when its source repository has no site of its own.</p>
-        <div class="hero-actions"><a class="button" href="${href('agents/')}">Enter the Agents section <span>→</span></a><a class="text-link" href="#catalog">Browse the index</a></div>
+        <div class="hero-actions"><a class="button" href="${href('agents/')}">Enter the Agents section <span>→</span></a><a class="text-link" href="#sections">Browse sections</a></div>
       </div>
       <aside class="catalog-note" aria-label="Catalog model">
         <p>Catalog model</p>
@@ -260,26 +273,27 @@ function homePage(works, releases, snapshots, assemblies) {
       </aside>
     </section>
     <section class="model-strip"><div class="shell"><p><b>Works stay stable.</b> Repositories and upstream docs remain optional, replaceable locators.</p><p><b>Relationships carry structure.</b> Hierarchy is a versioned view, never hidden in identity.</p></div></section>
-    <section class="section shell agents-intro">
-      <div class="section-heading">${eyebrow('Section 01')}<h2>Agents</h2><p>${esc(stack?.name || 'Agent stack')} is the first versioned assembly. Its components stay together here while retaining independent Work identities.</p></div>
-      <div class="focus-list">${members.map(({ component, work }, index) => {
-        return `<a class="focus-row ${work ? '' : 'is-pending'}" href="${work ? href(`works/${work.slug}/`) : href('agents/')}"><span>0${index + 1}</span><b>${esc(work?.name || component.component_id)}</b><small>${esc(component.role)}</small><i aria-hidden="true">→</i></a>`;
+    <section id="sections" class="section shell agents-intro">
+      <div class="section-heading">${eyebrow('Versioned projections')}<h2>Library sections</h2><p>Sections are browsable views over stable Works. Moving a Work between sections never changes its identity or source history.</p></div>
+      <div class="focus-list">${sections.map((section, index) => {
+        return `<a class="focus-row" href="${href(`${section.slug}/`)}"><span>${String(index + 1).padStart(2, '0')}</span><b>${esc(section.name)}</b><small>${esc(section.summary)}</small><i aria-hidden="true">→</i></a>`;
       }).join('')}</div>
     </section>
     <section id="catalog" class="section catalog-section shell">
       <div class="section-heading compact">${eyebrow('Live index')}<h2>Browse the Works</h2><p><span data-result-count>${works.length}</span> accepted ${works.length === 1 ? 'record' : 'records'} in this build.</p></div>
       ${works.length ? catalogControls(works) : ''}
-      <div class="work-grid" data-catalog>${works.length ? visible.map(workCard).join('') : emptyCatalog('The public shell is ready; Work pages will appear as soon as accepted registry records land.')}</div>
+      <div class="work-grid" data-catalog>${works.length ? works.map(workCard).join('') : emptyCatalog('The public shell is ready; Work pages will appear as soon as accepted registry records land.')}</div>
       <p class="no-results" data-no-results hidden>No Works match those filters.</p>
     </section>
     <section class="ledger shell" aria-label="Registry counts"><div><strong>${String(works.length).padStart(2, '0')}</strong><span>Works</span></div><div><strong>${String(assemblies.length).padStart(2, '0')}</strong><span>Assemblies</span></div><div><strong>${String(snapshots.length).padStart(2, '0')}</strong><span>Snapshots</span></div><p>Counts reflect accepted registry files in this build.</p></section>`,
   });
 }
 
-function agentsPage(works, assemblies) {
+function agentsPage(works, assemblies, snapshot, sectionWork) {
   const stack = assemblies.find((assembly) => assembly.slug === 'siso-agent-stack');
   const members = assemblyMembers(stack, works);
-  const related = members.map(({ work }) => work).filter(Boolean);
+  const projected = projectionMembers(sectionWork?.id, snapshot, works).map(({ work }) => work);
+  const related = [...new Map([...members.map(({ work }) => work).filter(Boolean), ...projected].map((work) => [work.id, work])).values()];
   return page({
     title: 'Agents', active: 'agents', rootClass: 'agents-page',
     description: 'The Agents section of The Great Library of SISO.',
@@ -288,6 +302,17 @@ function agentsPage(works, assemblies) {
       return `<div class="map-node ${work ? '' : 'is-pending'}"><span>0${i + 1}</span><div><b>${esc(work?.name || component.component_id)}</b><small>${esc(component.required ? `required · ${component.role}` : component.role)}</small></div></div>`;
     }).join('')}<p class="map-key"><i></i>Skills are reusable capabilities. Playbooks compose skills, tools, lanes, and verification for a scenario.</p></div></section>
     <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Accepted records')}<h2>Works in Agents</h2><p><span data-result-count>${related.length}</span> Works available to read.</p></div>${related.length ? catalogControls(related) : ''}<div class="work-grid" data-catalog>${related.length ? related.map(workCard).join('') : emptyCatalog('This section will populate from accepted Work records; no provisional detail pages are published.')}</div><p class="no-results" data-no-results hidden>No Works match those filters.</p></section>`,
+  });
+}
+
+function researchPage(works, snapshot, sectionWork) {
+  const related = projectionMembers(sectionWork?.id, snapshot, works).map(({ work }) => work);
+  return page({
+    title: 'Research', active: 'research', rootClass: 'agents-page',
+    description: 'The Research section of The Great Library of SISO.',
+    body: `<section class="subhero shell">${eyebrow('Library / Sections / Research')}<div><h1>Research</h1><p>Source discovery, evidence pipelines, knowledge engines, and durable research artifacts live here. They may serve agents without being contained by the Agents section.</p></div><span class="folio">R—01</span></section>
+    <section class="relationship-map shell" aria-labelledby="research-map-title"><div class="map-copy">${eyebrow(`Projection / ${snapshot?.version || 'unversioned'}`)}<h2 id="research-map-title">Research is its own domain.</h2><p>Foundry begins this section as the source-mining and reuse-knowledge platform. Evidence engines and research datasets can join as independently verified Works without becoming Agent Runtime modules.</p><p><a href="${href('docs/agent-base-module-map.html')}">See how Agent Base research material is reallocated →</a></p></div><div class="map-stack">${related.map((work, i) => `<div class="map-node"><span>${String(i + 1).padStart(2, '0')}</span><div><b>${esc(work.name)}</b><small>${esc(work.type)} · ${esc(work.maturity)}</small></div></div>`).join('') || '<p class="map-key">Accepted Research Works are being indexed.</p>'}</div></section>
+    <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Accepted records')}<h2>Works in Research</h2><p><span data-result-count>${related.length}</span> Works available to read.</p></div>${related.length ? catalogControls(related) : ''}<div class="work-grid" data-catalog>${related.length ? related.map(workCard).join('') : emptyCatalog('This section will populate only from accepted snapshot relationships.')}</div><p class="no-results" data-no-results hidden>No Works match those filters.</p></section>`,
   });
 }
 
@@ -313,7 +338,7 @@ function workPage(work, releases, byId) {
   const libraryUrl = href(`works/${work.slug}/`);
   return page({
     title: work.name,
-    active: /agent/i.test(`${work.section} ${work.type}`) ? 'agents' : 'library',
+    active: work.section === 'Research' ? 'research' : /agent/i.test(`${work.section} ${work.type}`) ? 'agents' : 'library',
     description: work.summary,
     rootClass: 'work-page',
     body: `<article>
@@ -361,6 +386,15 @@ const generatedAt = /^\d{4}-\d{2}-\d{2}$/.test(latestSourceDate)
 const works = rawWorks.map(normalizeWork).sort((a, b) => a.name.localeCompare(b.name));
 const releases = rawReleases.map(normalizeRelease).sort((a, b) => `${a.date}${a.version}`.localeCompare(`${b.date}${b.version}`));
 const worksById = new Map(works.map((work) => [work.id, work]));
+const latestSnapshot = [...snapshots].sort((a, b) => Date.parse(a.created_at) - Date.parse(b.created_at)).at(-1);
+const libraryWork = works.find((work) => work.type === 'library');
+const sectionEdges = (latestSnapshot?.projection?.edges || []).filter((edge) => edge.from_work_id === libraryWork?.id && edge.contextual_role === 'section');
+const sections = sectionEdges.map((edge) => worksById.get(edge.to_work_id)).filter(Boolean);
+for (const work of works) work.section = work.type === 'library' ? 'Library' : 'Unassigned';
+for (const section of sections) {
+  section.section = section.name;
+  for (const { work } of projectionMembers(section.id, latestSnapshot, works)) work.section = section.name;
+}
 
 await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
@@ -368,11 +402,14 @@ await cp(ASSETS, join(OUT, 'assets'), { recursive: true });
 await emit('docs/agent-stack-model.html', await readFile(join(ROOT, 'docs', 'agent-stack-model.html'), 'utf8'));
 await emit('docs/agent-base-decomposition.html', await readFile(join(ROOT, 'docs', 'agent-base-decomposition.html'), 'utf8'));
 await emit('docs/agent-base-module-map.html', await readFile(join(ROOT, 'docs', 'agent-base-module-map.html'), 'utf8'));
-await emit('index.html', homePage(works, releases, snapshots, assemblies));
-await emit('agents/index.html', agentsPage(works, assemblies));
+await emit('index.html', homePage(works, releases, snapshots, assemblies, sections));
+const agentsSection = sections.find((section) => section.slug === 'agents');
+const researchSection = sections.find((section) => section.slug === 'research');
+await emit('agents/index.html', agentsPage(works, assemblies, latestSnapshot, agentsSection));
+if (researchSection) await emit('research/index.html', researchPage(works, latestSnapshot, researchSection));
 await emit('releases/index.html', releaseIndex(releases, worksById));
 await emit('snapshots/index.html', snapshotIndex(snapshots));
 for (const work of works) await emit(`works/${work.slug}/index.html`, workPage(work, releases, worksById));
-await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity })), assemblies: assemblies.map(({ __file, ...assembly }) => assembly), source_inventories: sourceInventories.map(({ __file, ...inventory }) => inventory) }, null, 2)}\n`);
+await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity, section: work.section })), assemblies: assemblies.map(({ __file, ...assembly }) => assembly), source_inventories: sourceInventories.map(({ __file, ...inventory }) => inventory) }, null, 2)}\n`);
 
 console.log(`Built ${works.length} Works, ${releases.length} Releases, ${assemblies.length} Assemblies, ${sourceInventories.length} Source Inventories, and ${snapshots.length} Snapshots at ${BASE}`);

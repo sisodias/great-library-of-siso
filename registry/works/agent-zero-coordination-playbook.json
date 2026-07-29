@@ -11,7 +11,14 @@
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "SISO", "role": "steward", "classification": "siso" }],
-    "locators": [],
+    "locators": [{
+      "type": "documentation",
+      "url": "https://github.com/Lordsisodia/siso-agent-zero",
+      "revision": "main@dc547ab38d7561e2712976863acc040cea78d7dd",
+      "visibility": "public",
+      "verified": true,
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-zero:dc547ab38d7561e2712976863acc040cea78d7dd", "observed_at": "2026-07-30", "summary": "Canonical public destination exists; the current commit is a staging README and not yet a portable Agent Zero release." }
+    }],
     "license": { "status": "pending", "spdx": "NOASSERTION", "reason": "No verified portable public release or redistribution grant is recorded.", "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Current playbook is operational SISO material, not a verified portable public artifact." }] }
   },
   "relationships": [{
