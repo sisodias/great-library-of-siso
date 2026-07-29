@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:8204e470-fa87-4268-8713-733330b537fe",
+  "work_id": "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae",
+  "version": "preservation+2e2edfe",
+  "title": "SISO Agent Base source warehouse preservation pin",
+  "released_at": "2026-07-18T20:13:04Z",
+  "observed_at": "2026-07-30",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:0fbae7aa-bf06-4f04-91be-f4fe18b0f047",
+      "kind": "source_archive",
+      "locator": "https://github.com/Lordsisodia/siso-agent-base/archive/2e2edfe7a820617557fcff093a348dc0bb4fb040.tar.gz",
+      "revision": "2e2edfe7a820617557fcff093a348dc0bb4fb040",
+      "availability": "public",
+      "owner": "Lordsisodia",
+      "ownership": "siso",
+      "license": {"status":"verified","spdx":"MIT","reason":"The pinned public source warehouse carries an MIT license.","evidence":[{"kind":"integration_check","reference":"https://github.com/Lordsisodia/siso-agent-base","observed_at":"2026-07-29","summary":"Public visibility and MIT license were verified during the source audit."}]},
+      "integrity": {"state":"verified","algorithm":"git_commit_sha1","digest":"2e2edfe7a820617557fcff093a348dc0bb4fb040"}
+    }
+  ],
+  "distribution": {
+    "addressable": {"state":"verified","reason":"The preserved warehouse is pinned to an exact public commit.","evidence":[{"kind":"integration_check","reference":"https://github.com/Lordsisodia/siso-agent-base/commit/2e2edfe7a820617557fcff093a348dc0bb4fb040","observed_at":"2026-07-29","summary":"The public commit resolved during the source audit."}]},
+    "archive_downloadable": {"state":"verified","reason":"A commit-scoped public preservation archive is recorded.","evidence":[{"kind":"public_locator","reference":"https://github.com/Lordsisodia/siso-agent-base/archive/2e2edfe7a820617557fcff093a348dc0bb4fb040.tar.gz","observed_at":"2026-07-30","summary":"The archive is addressable by immutable commit pin."}]},
+    "manifest_resolvable": {"state":"verified","reason":"The preservation release resolves to the dedicated source-warehouse Work.","evidence":[{"kind":"registry_validation","reference":"registry:release:siso-agent-base-warehouse-2e2edfe","observed_at":"2026-07-30","summary":"The old repository is no longer conflated with the active Runtime Work."}]},
+    "installable": {"state":"not_applicable","reason":"A retired mixed-source warehouse is preserved for provenance and extraction, not distributed as one installable product.","evidence":[{"kind":"source_review","reference":"source-review:siso-agent-base-decomposition:2026-07-30","observed_at":"2026-07-30","summary":"Whole-root installation was identified as accidental coupling rather than a supported warehouse contract."}]},
+    "forkable": {"state":"verified","reason":"The preserved source pin is public and MIT licensed, with its mixed status and limitations documented.","evidence":[{"kind":"integration_check","reference":"https://github.com/Lordsisodia/siso-agent-base","observed_at":"2026-07-29","summary":"Public repository visibility and license were verified."}]},
+    "portable": {"state":"not_applicable","reason":"Portability is assessed for the extracted Works; the retired warehouse is a preservation and provenance container.","evidence":[{"kind":"source_review","reference":"source-review:siso-agent-base-decomposition:2026-07-30","observed_at":"2026-07-30","summary":"The warehouse combines unrelated runtime, data, state, research, and nested-repository boundaries."}]}
+  },
+  "evidence": [{"kind":"registry_validation","reference":"registry:source-inventory:siso-agent-base-2026-07-30","observed_at":"2026-07-30","summary":"Preservation pin is paired with the read-only source reallocation inventory; no dirty local source was moved or claimed as published."}]
+}

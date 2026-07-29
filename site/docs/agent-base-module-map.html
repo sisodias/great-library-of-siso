@@ -10,10 +10,10 @@
 </head>
 <body>
   <header>
-    <p class="eyebrow">Agent Base module review / evidence pass 03 / Library V12 / 2026-07-30</p>
+    <p class="eyebrow">Agent Base module review / evidence pass 04 / Library V13 / 2026-07-30</p>
     <h1>The sauce inside Agent Base.</h1>
     <p class="lede">Direct source review found a real family of reusable modules—not one generic framework. The Great Library should give each coherent capability a stable identity, while GitHub repositories follow dependency and release boundaries. A Library Work and a GitHub repo are deliberately not the same thing.</p>
-    <p class="callout"><b>Current state:</b> Session Intelligence and Evidence Engines are now verified public releases. Twelve estate repositories are released, Agent Runtime has a linked destination, and no repository homes remain staging-only.</p>
+    <p class="callout"><b>Current state:</b> Agent Runtime is now a verified experimental public release. All thirteen estate repositories are released; none remains a linked placeholder or staging-only home.</p>
   </header>
 
   <section>
@@ -55,13 +55,16 @@
 │       ├── Context Firewall             shadow measurement and promotion rail
 │       └── Headroom Adapter             opt-in lossless context sidecar
 │
-└── Research
-    ├── Foundry                          source discovery, evaluation and preservation
-    │   └── Research Topic Registry      stable research buckets and artifact links
-    └── Evidence Engines
-        ├── Knowledge Engine             sources → grounded knowledge and taxonomy
-        ├── Principles Engine            evidence → canonical engineering guidance
-        └── Idea Engine                  evidence → ranked improvement backlog</pre>
+├── Research
+│   ├── Foundry                          source discovery, evaluation and preservation
+│   │   └── Research Topic Registry      stable research buckets and artifact links
+│   └── Evidence Engines
+│       ├── Knowledge Engine             sources → grounded knowledge and taxonomy
+│       ├── Principles Engine            evidence → canonical engineering guidance
+│       └── Idea Engine                  evidence → ranked improvement backlog
+│
+└── Source records
+    └── Agent Base Source Warehouse      retired extraction source, not architecture</pre>
     <p>This is an ownership and dependency map, not a permanent folder taxonomy. Relationships live in registry data, so a module can move between repositories or graduate from package to repo without breaking its Library address.</p>
   </section>
 
@@ -70,7 +73,7 @@
     <table>
       <thead><tr><th>Module</th><th>Outcome found in source</th><th>Library action</th><th>Repository verdict</th></tr></thead>
       <tbody>
-        <tr><td><b>SISO Agent Runtime</b><br><code>install.sh · bin · apps/siso-tui</code></td><td>The installed and launched coding-agent product shell.</td><td><span class="tag now">Work now</span></td><td>One runtime repo. Replace the whole-root installer copy with an explicit release manifest before moving source.</td></tr>
+        <tr><td><b>SISO Agent Runtime</b><br><code>install.sh · bin · apps/siso-tui</code></td><td>The installed and launched coding-agent product shell.</td><td><span class="tag now">Released Work</span></td><td>One clean Runtime repo now publishes the provider-neutral shell and six contracts. Full Pi routing and raw TUI parity remain explicit migration work.</td></tr>
         <tr><td><b>Agent Control Core</b><br><code>extensions/siso-agent-router</code></td><td>Routing, spawning, workflows, tasks, goals, registries, mailbox, supervision, scorecards, review, worktrees, and write-scope safety.</td><td><span class="tag package">Runtime Work</span></td><td>Package inside the runtime repo. First split its eighty files into internal domains with explicit contracts; do not create a repo per filename group.</td></tr>
         <tr><td><b>Session Lifecycle</b><br><code>extensions/siso-lifecycle</code></td><td>Correction capture, lesson draining, checkpoints, and session restore discovery.</td><td><span class="tag package">Runtime Work</span></td><td>Named runtime package. Graduate only if another host adopts its contract independently.</td></tr>
         <tr><td><b>Context Manager</b><br><code>extensions/siso-context-manager</code></td><td>Token budgets, deterministic distillation, retained goals and evidence, child/mailbox state, memory, and compact prompts.</td><td><span class="tag package">Runtime Work</span></td><td>Named runtime package with fixture-tested compact-packet contract.</td></tr>
@@ -167,21 +170,21 @@
   </section>
 
   <section>
-    <h2>Extraction status after V12</h2>
+    <h2>Extraction status after V13</h2>
     <ol>
       <li><b>Metadata first:</b> register the module identities and relationships from this map; no risky source moves are required.</li>
       <li><b>Stop the leak:</b> rotate the exposed credential and replace the Agent Base whole-root installer copy with an allowlisted runtime release payload.</li>
       <li><b>Connect what already exists:</b> register Project OS and Agent Playbook by source locator, preserving Playbook's local modifications.</li>
       <li><b>Separate incubation:</b> preserve Agent Labs, Web Chat, and unfinished spikes in a private <code>siso-agent-lab</code>; do not move them into <code>SISO_Internal_Lab</code>.</li>
       <li><b>Completed public boundaries:</b> Agent Zero, Skills, Foundry, Agent Brain, Session Intelligence, Evidence Engines, Agent Integrations, and Agent Playbook now have verified source releases.</li>
-      <li><b>Current extraction:</b> formalize lifecycle, context, status, control, TUI, and profile contracts inside Agent Runtime; split repositories only when independent adoption appears.</li>
+      <li><b>Runtime foundation complete:</b> lifecycle, context, status, control, TUI event, and profile contracts now ship inside Agent Runtime; split repositories only when independent adoption appears.</li>
     </ol>
   </section>
 
   <section>
     <h2>Evidence and limits</h2>
     <p>The verdicts above come from direct reads of module entrypoints, type contracts, READMEs, architecture documents, migrations, pipeline stages, safety gates, package manifests, and nested Git state. Semantic search through the registered project service was attempted but did not complete in a bounded time, so targeted source reads were used as the required fallback.</p>
-    <p>The source inventory remains <b>partial</b>: Agent Runtime still needs a standalone release, Atlas needs current-use verification, Agent Labs and Web Chat still need supersession comparisons, and individual Skills need promotion evidence. No files were moved or edited inside the dirty Agent Base warehouse.</p>
+    <p>The source inventory remains <b>partial</b>: Runtime parity beyond the clean foundation, Atlas current-use verification, Agent Labs and Web Chat supersession comparisons, and individual Skill promotion evidence still require direct follow-up. No files were moved or edited inside the dirty Agent Base warehouse.</p>
     <p><a href="agent-base-decomposition.html">Repository decomposition</a> · <a href="agent-stack-model.html">SISO Agent Stack model</a> · <a href="../agents/">Open Agents</a></p>
   </section>
 

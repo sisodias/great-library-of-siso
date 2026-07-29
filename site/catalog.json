@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T23:30:00.000Z",
+  "generated_at": "2026-07-29T23:52:18.000Z",
   "base_path": "/",
   "works": [
     {
@@ -28,6 +28,15 @@
       "type": "section",
       "maturity": "active",
       "section": "Research"
+    },
+    {
+      "id": "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae",
+      "slug": "siso-agent-base-warehouse",
+      "name": "SISO Agent Base Source Warehouse",
+      "library_url": "/works/siso-agent-base-warehouse/",
+      "type": "bundle",
+      "maturity": "retired",
+      "section": "Unassigned"
     },
     {
       "id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
@@ -132,24 +141,6 @@
   "repositories": [
     {
       "owner": "Lordsisodia",
-      "repository": "siso-agent-runtime",
-      "url": "https://github.com/Lordsisodia/siso-agent-runtime",
-      "work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
-      "work_name": "SISO Agent Runtime",
-      "work_slug": "siso-agent-base",
-      "work_type": "application",
-      "lifecycle_status": "active",
-      "library_url": "/works/siso-agent-base/",
-      "locator_type": "documentation",
-      "locator_revision": "main@7cbb5c128fd47954a92cbe682754defd2017bbea",
-      "visibility": "public",
-      "status": "linked",
-      "active_release_id": "gls:release:61f81c21-b467-4628-96e8-a20493cd0a04",
-      "active_release_version": "main+2e2edfe",
-      "artifact_revision": null
-    },
-    {
-      "owner": "Lordsisodia",
       "repository": "great-library-of-siso",
       "url": "https://github.com/Lordsisodia/great-library-of-siso",
       "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
@@ -170,18 +161,18 @@
       "owner": "Lordsisodia",
       "repository": "siso-agent-base",
       "url": "https://github.com/Lordsisodia/siso-agent-base",
-      "work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
-      "work_name": "SISO Agent Runtime",
-      "work_slug": "siso-agent-base",
-      "work_type": "application",
-      "lifecycle_status": "active",
-      "library_url": "/works/siso-agent-base/",
+      "work_id": "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae",
+      "work_name": "SISO Agent Base Source Warehouse",
+      "work_slug": "siso-agent-base-warehouse",
+      "work_type": "bundle",
+      "lifecycle_status": "retired",
+      "library_url": "/works/siso-agent-base-warehouse/",
       "locator_type": "source_repository",
       "locator_revision": "main@2e2edfe7a820617557fcff093a348dc0bb4fb040",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:61f81c21-b467-4628-96e8-a20493cd0a04",
-      "active_release_version": "main+2e2edfe",
+      "active_release_id": "gls:release:8204e470-fa87-4268-8713-733330b537fe",
+      "active_release_version": "preservation+2e2edfe",
       "artifact_revision": "2e2edfe7a820617557fcff093a348dc0bb4fb040"
     },
     {
@@ -237,6 +228,24 @@
       "active_release_id": "gls:release:ff8cc25f-7162-4713-9e38-66cbf3eca958",
       "active_release_version": "1.0.0+6ee572b",
       "artifact_revision": "6ee572b0f2230e3f83b11408fe30f7211d1f2b77"
+    },
+    {
+      "owner": "Lordsisodia",
+      "repository": "siso-agent-runtime",
+      "url": "https://github.com/Lordsisodia/siso-agent-runtime",
+      "work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "work_name": "SISO Agent Runtime",
+      "work_slug": "siso-agent-base",
+      "work_type": "application",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-agent-base/",
+      "locator_type": "source_repository",
+      "locator_revision": "main@a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:36ba0940-4235-4e6c-87e2-e27266f77d33",
+      "active_release_version": "0.1.0+a4aefc0",
+      "artifact_revision": "a4aefc0345f979d67b5b3fac2829364a1a9100b9"
     },
     {
       "owner": "Lordsisodia",
@@ -527,7 +536,7 @@
       "record_type": "source_inventory",
       "id": "gls:source-inventory:d3e37616-1005-4d67-b5c5-82684dceed70",
       "name": "SISO Agent Base source reallocation inventory",
-      "source_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "source_work_id": "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae",
       "observed_at": "2026-07-30",
       "inventory_state": "partial",
       "preservation": {
@@ -569,16 +578,16 @@
             "templates/profile",
             "apps/siso-tui"
           ],
-          "classification": "current_application",
-          "disposition": "keep",
-          "target": "siso-agent-runtime",
-          "rationale": "These paths form the installed and launched product shell. Its internal modules receive their own Library identities while remaining packages of one runtime repository until independent release value is proven.",
+          "classification": "accepted_work",
+          "disposition": "extract",
+          "target": "https://github.com/Lordsisodia/siso-agent-runtime",
+          "rationale": "A clean provider-neutral foundation now publishes the application boundary and six internal contracts. It is the canonical Runtime source while full Pi router and raw TUI parity remain audited migration work.",
           "evidence": [
             {
-              "kind": "source_review",
-              "reference": "source-review:siso-agent-base-decomposition:runtime:2026-07-30",
+              "kind": "release_receipt",
+              "reference": "repo-check:siso-agent-runtime:a4aefc0345f979d67b5b3fac2829364a1a9100b9",
               "observed_at": "2026-07-30",
-              "summary": "Installer, launcher, profile projection, loaded extensions, and active TUI sources were read directly."
+              "summary": "Runtime release, manifest, behavior tests, architecture, migration map, and publication safety gate passed."
             }
           ]
         },
@@ -591,7 +600,7 @@
           "classification": "shared_package",
           "disposition": "keep",
           "target": "siso-agent-runtime/packages/control-core",
-          "rationale": "This is the runtime backend for routing, child execution, tasks, goals, workflow, mailbox, registries, supervision, tools, worktrees, safety gates, and review. It should first be decomposed into explicit internal domains, not exploded into repositories from filenames.",
+          "rationale": "The public package now proves task state and ordered-event primitives. Pi-specific routing, fleet coordination, worktrees, reviews, and mailbox parity remain pending; the module should not be exploded into repositories from filenames.",
           "evidence": [
             {
               "kind": "source_review",
@@ -610,7 +619,7 @@
           "classification": "shared_package",
           "disposition": "keep",
           "target": "siso-agent-runtime/packages/session-lifecycle",
-          "rationale": "The extension has a bounded contract for correction capture, durable lessons, checkpoints, and restore summaries. It is a real module and Library Work candidate, but currently derives its value from the runtime host.",
+          "rationale": "The public package now proves explicit versioned checkpoint creation and restoration without transcript discovery or personal lesson state. It remains an internal Runtime package until independent adoption appears.",
           "evidence": [
             {
               "kind": "source_review",
@@ -629,7 +638,7 @@
           "classification": "shared_package",
           "disposition": "keep",
           "target": "siso-agent-runtime/packages/context-manager",
-          "rationale": "The extension owns deterministic distillation, context budgets, retained goals and evidence, child state, mailbox state, memory reads, and compact prompts. It should be a named runtime package with a public contract before any repo split.",
+          "rationale": "The public package now proves deterministic local context budgeting. Model distillation and private memory integrations remain outside the public core; a repo split still requires independent adoption.",
           "evidence": [
             {
               "kind": "source_review",
@@ -648,7 +657,7 @@
           "classification": "shared_package",
           "disposition": "keep",
           "target": "siso-agent-runtime/packages/status-surface",
-          "rationale": "The extension owns the runtime status, widget, notification, message-rendering, and operator command surface. It is separately understandable but remains part of the runtime product.",
+          "rationale": "The public package now proves a stable machine-readable status contract without machine telemetry or private notification plumbing. It remains part of the Runtime product.",
           "evidence": [
             {
               "kind": "source_review",
@@ -667,8 +676,8 @@
           ],
           "classification": "shared_package",
           "disposition": "keep",
-          "target": "siso-agent-runtime/packages/tui",
-          "rationale": "The renderer-neutral contracts, components, adapters, runtime behavior, theme, and OpenTUI application form a reusable presentation module. It should be visible as a Library Work while shipping from the runtime repository initially.",
+          "target": "siso-agent-runtime/packages/tui-contracts",
+          "rationale": "The release publishes normalized runtime/UI event contracts. The raw OpenTUI application, renderer adapters, and provider session host remain deferred until a later audited release.",
           "evidence": [
             {
               "kind": "source_review",
@@ -781,9 +790,9 @@
             "brain"
           ],
           "classification": "shared_package",
-          "disposition": "compare",
+          "disposition": "keep",
           "target": "siso-agent-runtime/packages/profile-composer",
-          "rationale": "The composer has a coherent cross-tool contract for projecting shared behavior into tool-specific profiles. It should be a named runtime package first and graduate only if several products consume it independently.",
+          "rationale": "The public package now composes only explicit profile files under a byte ceiling. It remains a named Runtime package and graduates only if several products consume it independently.",
           "evidence": [
             {
               "kind": "source_review",
@@ -913,7 +922,7 @@
           "paths": [
             "extensions/knowledge-engine"
           ],
-          "classification": "candidate_work",
+          "classification": "accepted_work",
           "disposition": "extract",
           "target": "https://github.com/Lordsisodia/siso-evidence-engines (knowledge engine)",
           "rationale": "The reusable value-item, source identity, quote-grounding, confidence, relation, and taxonomy contracts are released in the public Evidence Engines family. Generated knowledge, acquisition, provider execution, and private operating state remain outside the code repository.",
