@@ -12,15 +12,18 @@
     "origin": "siso",
     "owners": [{ "name": "SISO", "role": "steward", "classification": "siso" }],
     "locators": [{
-      "type": "documentation",
+      "type": "source_repository",
       "url": "https://github.com/Lordsisodia/siso-agent-playbook",
-      "revision": "main@b530642c6fc4a0797cd9fad3b0500c74e772b8e3",
+      "revision": "main@409e84d54bcaed43f8f61896966b9876123e1f87",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-playbook:b530642c6fc4a0797cd9fad3b0500c74e772b8e3", "observed_at": "2026-07-30", "summary": "Canonical public destination exists; dirty private source and license are not yet published." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-playbook:409e84d54bcaed43f8f61896966b9876123e1f87", "observed_at": "2026-07-30", "summary": "Canonical public source preserves original history and the four warehouse working changes, includes an MIT license, and passes reversible-install and publication checks." }
     }],
-    "license": { "status": "pending", "spdx": "NOASSERTION", "reason": "The current private repository has no verified license and contains four uncommitted changes that must be preserved before public extraction.", "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-playbook:2026-07-30", "observed_at": "2026-07-30", "summary": "Repository ownership, installer, capability content, missing license metadata, and current dirty state were verified directly." }] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The SISO-owned playbook source now carries the Agent Base repository-root MIT license in its independent public home.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-playbook/blob/409e84d54bcaed43f8f61896966b9876123e1f87/PROVENANCE.md", "observed_at": "2026-07-30", "summary": "History source, working-state preservation, publication cleanup, and license provenance are recorded." }] }
   },
   "relationships": [],
-  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:agent-playbook:2026-07-30", "observed_at": "2026-07-30", "summary": "The nested repository is an independent operating package rather than an internal Agent Runtime folder." }]
+  "evidence": [
+    { "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:agent-playbook:2026-07-30", "observed_at": "2026-07-30", "summary": "The nested repository is an independent operating package rather than an internal Agent Runtime folder." },
+    { "kind": "release_receipt", "reference": "repo-check:siso-agent-playbook:409e84d54bcaed43f8f61896966b9876123e1f87", "observed_at": "2026-07-30", "summary": "Five skill contracts and eight entrypoints validated; disposable install and uninstall completed; publication scan passed." }
+  ]
 }
