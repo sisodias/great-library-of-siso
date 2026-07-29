@@ -4,10 +4,10 @@
   "id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
   "slug": "herdr",
   "name": "Herdr",
-  "summary": "An externally owned terminal workspace and control plane for persistent, addressable agent sessions.",
+  "summary": "An externally owned terminal-native multiplexer providing persistent workspaces, tabs, panes, and addressable agent sessions.",
   "work_type": "tool",
   "lifecycle_status": "active",
-  "updated_at": "2026-07-29",
+  "updated_at": "2026-07-30",
   "provenance": {
     "origin": "external",
     "owners": [{ "name": "ogulcancelik", "role": "upstream_owner", "classification": "external" }],
@@ -22,5 +22,5 @@
     "license": { "status": "verified", "spdx": "Apache-2.0", "reason": "GitHub repository metadata reports Apache-2.0.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/ogulcancelik/herdr", "observed_at": "2026-07-29", "summary": "Public upstream license verified as Apache-2.0." }] }
   },
   "relationships": [],
-  "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Terminal control-plane boundary reviewed without assigning upstream ownership to SISO." }]
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-stack:herdr:2026-07-30", "observed_at": "2026-07-30", "summary": "Herdr mechanics and SISO usage were read directly without assigning upstream ownership to SISO or inventing a separate control-plane category." }]
 }

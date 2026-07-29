@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "assembly",
+  "id": "gls:assembly:2c86b098-32ec-47b1-a73d-aacdc1a405bf",
+  "slug": "siso-agent-stack",
+  "name": "SISO Agent Stack",
+  "summary": "The versioned composition that turns intent into coordinated, verifiable, and durable agent work across a project.",
+  "version": "1.0.0",
+  "created_at": "2026-07-30T00:00:00Z",
+  "immutable": true,
+  "section_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
+  "outcome": "A human can state an outcome, agents can execute it through persistent coordinated lanes, and a future agent can recover the verified project state without reconstructing chat.",
+  "components": [
+    {
+      "component_id": "project-os",
+      "work_id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "required": true,
+      "role": "project-local operating layer",
+      "responsibilities": [
+        "Expose project architecture, canonical work, claims, run packets, verification, delivery, and durable knowledge.",
+        "Persist the state that lets a cold agent resume work without relying on chat or terminal history."
+      ],
+      "depends_on": [],
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-stack:project-os:2026-07-30", "observed_at": "2026-07-30", "summary": "Project OS README, specification, capability guide, and work lifecycle were read before assigning this assembly role." }]
+    },
+    {
+      "component_id": "agent-base",
+      "work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "required": true,
+      "role": "local agent launcher and runtime surface",
+      "responsibilities": [
+        "Launch the coding-agent runtime used by the stack.",
+        "Supply the shared status, routing, context, lifecycle, and capability surfaces installed for agents."
+      ],
+      "depends_on": [],
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-stack:agent-base:2026-07-30", "observed_at": "2026-07-30", "summary": "Agent Base README was read directly; it describes a launcher and runtime surface rather than a generic agent framework." }]
+    },
+    {
+      "component_id": "herdr",
+      "work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
+      "required": true,
+      "role": "persistent terminal workspace and lane substrate",
+      "responsibilities": [
+        "Provide workspaces, tabs, panes, durable agent addressing, messaging, and observable persistent lanes.",
+        "Host the terminal processes through which the stack coordinates long-running agent work."
+      ],
+      "depends_on": [],
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-stack:herdr:2026-07-30", "observed_at": "2026-07-30", "summary": "The Herdr skill and its live operating laws were read directly; Herdr supplies mechanics, not a separate SISO control-plane category." }]
+    },
+    {
+      "component_id": "agent-zero",
+      "work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "required": true,
+      "role": "conversation and coordination layer",
+      "responsibilities": [
+        "Hold user intent, priorities, lane boundaries, durable context, and final synthesis.",
+        "Resolve and coordinate the real workers in Herdr while distinguishing dispatch, worker report, and independent verification."
+      ],
+      "depends_on": ["project-os", "herdr", "agent-base"],
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-stack:agent-zero:2026-07-30", "observed_at": "2026-07-30", "summary": "The current Agent Zero skill was read directly; it defines a coordination layer and Herdr protocol, not a standalone playbook shelf." }]
+    }
+  ],
+  "operating_loop": [
+    { "step": 1, "component_ids": ["agent-zero", "project-os"], "action": "Interpret the human outcome against the project's canonical state and constraints.", "output": "A bounded objective with current facts, ownership, and proof requirements." },
+    { "step": 2, "component_ids": ["agent-zero", "agent-base"], "action": "Choose and brief the appropriate agent capability and execution lane.", "output": "An explicit work packet and return contract." },
+    { "step": 3, "component_ids": ["herdr", "agent-base"], "action": "Run and observe the agent in an addressable terminal lane.", "output": "Worker artifacts, status, and a returned verdict." },
+    { "step": 4, "component_ids": ["project-os"], "action": "Record claims, attempts, independent verification, delivery evidence, and durable learning.", "output": "Recoverable project truth rather than terminal-only history." },
+    { "step": 5, "component_ids": ["agent-zero", "project-os"], "action": "Synthesize verified state for the human and select the next bounded action.", "output": "A closed loop from intent to evidence-backed result." }
+  ],
+  "capability_model": {
+    "skill": "A reusable agent capability with a trigger, bounded instructions, and an expected result contract.",
+    "playbook": "A scenario-specific composition that selects and sequences skills, tools, lanes, evidence, and verification; it may itself be delivered through a skill.",
+    "placement_rule": "Skills and playbooks stay with the component or package that owns their behavior and are indexed across the stack; they are not separate top-level stack layers."
+  },
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-stack:assembly:2026-07-30", "observed_at": "2026-07-30", "summary": "Assembly derived from direct reading of the current Project OS, Agent Base, Herdr, Agent Zero, orchestration-playbook, and SISO Agent Playbook sources." }]
+}

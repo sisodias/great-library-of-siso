@@ -14,8 +14,9 @@ The core model is deliberately small:
 
 ```text
 Library
-└── Sections
-    └── Works
+├── Sections                 browse projections
+├── Works                    stable identities
+└── Assemblies               versioned compositions of Works
 
 Distribution layers: Releases and Snapshots
 Structure: typed relationships stored as data
@@ -23,6 +24,7 @@ Structure: typed relationships stored as data
 
 - A **Section** is a browseable projection, not part of a Work's identity.
 - A **Work** has a stable ID and a stable, human-readable Library detail URL.
+- An **Assembly** keeps the components of a working stack together, records their contextual roles and dependencies, and can evolve by publishing a new immutable version.
 - A **Release** is an immutable manifest for a specific version and its evidenced distribution state.
 - A **Snapshot** pins a named recursive view. A whole-Library snapshot is metadata-complete; payload materialization is separate and requires per-artifact receipts.
 - A **relationship** is typed data. Directory nesting does not define global ownership, containment, or rank.
@@ -38,7 +40,11 @@ V1 begins with six carefully reviewed seed records/pages, centered on:
 - SISO Project OS
 - SISO Agent Base
 - Herdr
-- the Agent Zero coordination playbook
+- Agent Zero
+
+Those four Works are now connected through the source-backed **SISO Agent Stack 1.0.0** Assembly. Project OS, Agent Base, Herdr, and Agent Zero remain independently addressable Works; the Assembly records how they operate together. Skills are reusable capabilities, while playbooks compose skills, tools, lanes, and verification for a scenario. They are not separate top-level shelves.
+
+Read the [SISO Agent Stack model](docs/agent-stack-model.html) for the corrected hierarchy and placement rules.
 
 Inclusion means the Library describes the Work. It does not by itself promise a payload, installer, support relationship, or redistribution right. Herdr is an external upstream and must not be represented as SISO-owned. See the [verified V1 locator notes](docs/agents-v1.md).
 
@@ -61,6 +67,7 @@ Inclusion means the Library describes the Work. It does not by itself promise a 
 | `registry/works/` | Current Work records |
 | `registry/releases/` | Immutable Release Manifests |
 | `registry/snapshots/` | Named pinned views |
+| `registry/assemblies/` | Immutable versioned compositions of Works |
 | `schemas/` | Machine-readable contracts |
 | `docs/` | Authored model, operating, and learning documentation |
 | `site/` | Generated Pages artifact; do not hand-edit generated item pages |

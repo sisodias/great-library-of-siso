@@ -2,13 +2,14 @@
 
 ## Mission
 
-Build the public, human-readable and agent-readable registry for SISO source. The first vertical slice is the Agents section: Project OS, Agent Base, Herdr, and the Agent Zero coordination playbook.
+Build the public, human-readable and agent-readable registry for SISO source. The first vertical slice is the Agents section and its versioned SISO Agent Stack assembly: Project OS, Agent Base, Herdr, and Agent Zero.
 
 ## Source of truth
 
 - `registry/works/` owns current Work records.
 - `registry/releases/` owns immutable Release Manifests.
 - `registry/snapshots/` pins named recursive views.
+- `registry/assemblies/` owns immutable versioned compositions of Works.
 - `schemas/` defines the machine contracts.
 - `site/` is generated output. Do not hand-edit generated item pages.
 - `docs/` holds authored reasoning, decisions, research, contribution guidance, and operating documentation.

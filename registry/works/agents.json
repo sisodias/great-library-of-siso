@@ -4,10 +4,10 @@
   "id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
   "slug": "agents",
   "name": "Agents",
-  "summary": "A curated Library section for project operating systems, agent runtimes, control planes, and coordination playbooks.",
+  "summary": "A curated Library section for complete agent stacks, their independently addressable components, and the evidence showing how they work together.",
   "work_type": "section",
   "lifecycle_status": "active",
-  "updated_at": "2026-07-29",
+  "updated_at": "2026-07-30",
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],

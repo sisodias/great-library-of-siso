@@ -3,11 +3,11 @@
   "record_type": "work",
   "id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
   "slug": "agent-zero-coordination-playbook",
-  "name": "Agent Zero Coordination Playbook",
-  "summary": "A SISO coordination policy for intent, lane isolation, dispatch, durable context, evidence, and synthesis.",
-  "work_type": "playbook",
+  "name": "Agent Zero",
+  "summary": "A SISO coordination skill that holds human intent, lane boundaries, durable context, dispatch state, evidence, and final synthesis.",
+  "work_type": "skill",
   "lifecycle_status": "experimental",
-  "updated_at": "2026-07-29",
+  "updated_at": "2026-07-30",
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "SISO", "role": "steward", "classification": "siso" }],
@@ -17,8 +17,8 @@
   "relationships": [{
     "type": "coordinates_via",
     "target_work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
-    "context": "The current policy can coordinate lanes through Herdr while remaining a distinct playbook.",
-    "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Coordination-policy and terminal-control-plane responsibilities were separated." }]
+    "context": "Agent Zero uses Herdr's workspace and pane mechanics to coordinate the persistent lanes of the named SISO Agent Stack.",
+    "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-stack:agent-zero:2026-07-30", "observed_at": "2026-07-30", "summary": "Direct review confirmed that Agent Zero owns coordination behavior while Herdr supplies the terminal workspace and lane mechanics used by the stack." }]
   }],
-  "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "No public portable artifact was evidenced; the record is conservative." }]
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-stack:agent-zero:2026-07-30", "observed_at": "2026-07-30", "summary": "The current Agent Zero SKILL.md was read directly; the artifact is a coordination skill/layer, not a generic playbook category." }]
 }

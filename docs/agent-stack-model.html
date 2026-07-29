@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SISO Agent Stack — Registry Model</title>
+  <style>
+    :root{font:16px/1.6 system-ui,sans-serif;color:#182235;background:#f5f2eb}body{max-width:78rem;margin:auto;padding:2rem}header,section{background:#fff;border:1px solid #d9d4ca;border-radius:1rem;padding:1.4rem;margin:1rem 0}header{background:#132038;color:#f8fbff}h1,h2{line-height:1.12}h1{font-size:clamp(2.2rem,6vw,4.8rem);margin:.3rem 0}.eyebrow{font:700 .75rem ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#4fd8ce}.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}.card{border:1px solid #d9dfe8;border-radius:.8rem;padding:1rem}.card b{display:block;font-size:1.05rem}.card small{display:block;color:#526074;margin:.35rem 0}.required{font:700 .7rem ui-monospace,monospace;color:#087c70;text-transform:uppercase}.flow{display:flex;gap:.4rem;align-items:stretch;flex-wrap:wrap}.flow div{flex:1 1 11rem;background:#eef3f7;border-radius:.65rem;padding:.8rem}.flow span{color:#087c70;font-weight:800}table{border-collapse:collapse;width:100%}th,td{padding:.7rem;border-bottom:1px solid #dde2e8;text-align:left;vertical-align:top}code{overflow-wrap:anywhere}.rule{border-left:4px solid #087c70;padding-left:1rem}footer{padding:2rem 0;color:#5c6675}@media(max-width:55rem){body{padding:.6rem}.stack{grid-template-columns:1fr 1fr}}@media(max-width:34rem){.stack{grid-template-columns:1fr}table,tbody,tr,th,td{display:block}th,td{border:0;padding:.25rem 0}tr{border-bottom:1px solid #dde2e8;padding:.7rem 0}}
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Agents / Assembly 1.0.0 / 2026-07-30</p>
+    <h1>One SISO Agent Stack.</h1>
+    <p>Not four unrelated shelves. A versioned assembly that keeps the components of the working system together while preserving each component's independent identity, source, releases, and evidence.</p>
+  </header>
+
+  <section>
+    <h2>The canonical hierarchy</h2>
+    <pre>Great Library of SISO
+└── Agents                         section / browse view
+    └── SISO Agent Stack           versioned assembly
+        ├── SISO Project OS        required component
+        ├── SISO Agent Base        required component
+        ├── Herdr                  required component
+        └── Agent Zero             required component</pre>
+    <p class="rule">The component row is deliberately flat. Runtime, coordination, memory, model, tool, and playbook labels do not become artificial second-level categories. The assembly record carries each component's contextual role and connections.</p>
+  </section>
+
+  <section>
+    <h2>What each component owns in this assembly</h2>
+    <div class="stack">
+      <article class="card"><span class="required">Required</span><b>SISO Project OS</b><small>Project-local operating layer</small><p>Architecture, canonical work, claims, run packets, verification, delivery, durable knowledge, and cold-pickup state.</p></article>
+      <article class="card"><span class="required">Required</span><b>SISO Agent Base</b><small>Launcher and runtime surface</small><p>Starts the coding-agent runtime and supplies shared status, routing, context, lifecycle, and capability surfaces. It is not being classified as a generic agent framework.</p></article>
+      <article class="card"><span class="required">Required</span><b>Herdr</b><small>Persistent terminal and lane substrate</small><p>Workspaces, tabs, panes, agent addressing, messaging, and observable persistent lanes. It is part of the stack, not a separate “control plane” shelf.</p></article>
+      <article class="card"><span class="required">Required</span><b>Agent Zero</b><small>Conversation and coordination layer</small><p>Holds intent, priorities, lane boundaries, durable context, dispatch state, evidence distinctions, and final synthesis. The current artifact is a skill, not a generic playbook category.</p></article>
+    </div>
+  </section>
+
+  <section>
+    <h2>The operating loop</h2>
+    <div class="flow">
+      <div><span>1</span><br><b>Orient</b><br>Agent Zero reads the human outcome against Project OS state.</div>
+      <div><span>2</span><br><b>Brief</b><br>Agent Zero and Agent Base select a capability and explicit return contract.</div>
+      <div><span>3</span><br><b>Run</b><br>Agent Base agents execute through addressable Herdr lanes.</div>
+      <div><span>4</span><br><b>Prove</b><br>Project OS records claims, attempts, verification, delivery, and learning.</div>
+      <div><span>5</span><br><b>Synthesize</b><br>Agent Zero returns verified state and the next bounded action.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills and playbooks belong together</h2>
+    <table>
+      <thead><tr><th>Concept</th><th>Meaning</th><th>Placement</th></tr></thead>
+      <tbody>
+        <tr><td><b>Skill</b></td><td>A reusable agent capability with a trigger, bounded instructions, and an expected result contract.</td><td>With the component or package that owns the behavior; indexed across the stack.</td></tr>
+        <tr><td><b>Playbook</b></td><td>A scenario-specific composition selecting and sequencing skills, tools, lanes, model choices, evidence, and verification. It may itself be delivered through a skill.</td><td>With its owning capability package; not a separate top-level stack layer.</td></tr>
+        <tr><td><b>SISO Agent Playbook</b></td><td>An observed installable package containing skills, tools, prompts, telemetry, and evidence. Its product name does not mean every playbook is a peer category.</td><td>Candidate independent Work once its public locator, boundary, and release evidence are accepted.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Where the other concerns go</h2>
+    <table>
+      <thead><tr><th>Concern</th><th>Why it is not a section under Agents</th><th>How it is represented</th></tr></thead>
+      <tbody>
+        <tr><td>Models and CLIs</td><td>They are replaceable execution capacity, not durable product hierarchy.</td><td>Dependencies, providers, adapters, and evidence attached to the component that uses them.</td></tr>
+        <tr><td>Memory and context</td><td>They are responsibilities distributed across Project OS, Agent Base, and Agent Zero.</td><td>Owned records and capabilities, with explicit source-of-truth boundaries.</td></tr>
+        <tr><td>Research and evaluations</td><td>They explain or test decisions; they do not operate the stack by themselves.</td><td>Evidence attached to a Work, Release, Assembly, or decision.</td></tr>
+        <tr><td>A newly independent package</td><td>It becomes independently forkable, releasable, or referenceable.</td><td>A new stable Work linked into a later Assembly version.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>How the model evolves without pretending V1 is perfect</h2>
+    <ol>
+      <li>Works keep stable IDs even if repositories, names, and sections move.</li>
+      <li>An Assembly is immutable. A changed stack creates Assembly 1.1 or 2.0 instead of rewriting history.</li>
+      <li>Roles are contextual strings inside the Assembly, not universal object classes.</li>
+      <li>New browse trees, dependency graphs, onboarding views, CLI output, and MCP responses are generated from the same Assembly record.</li>
+      <li>A category is added only when it is stable over time, mutually useful, and changes what a person or agent can do.</li>
+    </ol>
+    <p>The machine-readable source is <code>registry/assemblies/siso-agent-stack-v1.json</code>, validated by <code>schemas/assembly.schema.json</code>. This HTML is an explanation of that record, not a second registry.</p>
+  </section>
+
+  <section>
+    <h2>Evidence read before classification</h2>
+    <p>The model was rebuilt from the current Agent Base README; Project OS README, specification, capability guide, and work lifecycle; the Herdr and Agent Zero skills; the orchestration-playbook skill; and the SISO Agent Playbook README and architecture. The earlier noun-first split was rejected because it contradicted those sources.</p>
+    <p><a href="../agents/">Return to Agents</a></p>
+  </section>
+
+  <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
+</body>
+</html>

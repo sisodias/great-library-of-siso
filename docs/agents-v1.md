@@ -9,9 +9,11 @@ The integration lane verified the following public repository metadata for V1 on
 | Work | Public source locator | Default branch | Repository license | Provenance note |
 | --- | --- | --- | --- | --- |
 | SISO Project OS | [`sisodias/siso-project-os`](https://github.com/sisodias/siso-project-os) | `main` | MIT | Repository owner is the `sisodias` GitHub account. `Lordsisodia/siso-project-os` is not a valid locator. |
-| SISO Agent Base | [`Lordsisodia/siso-agent-base`](https://github.com/Lordsisodia/siso-agent-base) | `main` | MIT | Repository owner is the `Lordsisodia` GitHub account; description observed as “Public installer and client framework for SISO Agent Base.” |
+| SISO Agent Base | [`Lordsisodia/siso-agent-base`](https://github.com/Lordsisodia/siso-agent-base) | `main` | MIT | Repository owner is the `Lordsisodia` GitHub account. Direct source review classifies the current product as a local launcher and runtime surface; repository marketing text is not used as the Library hierarchy. |
 | Herdr | [`ogulcancelik/herdr`](https://github.com/ogulcancelik/herdr) | `master` | Apache-2.0 | External upstream owned by `ogulcancelik`; do not imply SISO ownership. |
-| Agent Zero coordination playbook | Not yet evidenced | — | Pending | No public source locator was supplied by the verified integration note. Do not infer one. |
+| Agent Zero | Not yet evidenced | — | Pending | The current artifact was read as a coordination skill/layer. No public source locator was supplied; do not infer one. |
+
+These Works are components of the versioned SISO Agent Stack Assembly. Herdr is independently owned upstream source and still a required component of that named SISO assembly. This does not imply SISO ownership of Herdr or that every standalone Project OS installation requires Herdr.
 
 An upstream repository license applies according to that upstream's terms. It does not select a license for this Library repository or automatically prove that a particular Library Release is materialized and redistributable.
 

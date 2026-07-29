@@ -14,13 +14,6 @@ const DIST_KEYS = [
   ['portable', 'Portable'],
   ['redistributable', 'Redistributable'],
 ];
-const AGENT_FOCUS = [
-  'SISO Project OS',
-  'SISO Agent Base',
-  'Herdr',
-  'Agent Zero Coordination Playbook',
-];
-
 function normalizeBase(value) {
   const clean = `/${String(value).replace(/^\/+|\/+$/g, '')}/`;
   return clean === '//' ? '/' : clean;
@@ -242,9 +235,15 @@ function catalogControls(works) {
   </div>`;
 }
 
-function homePage(works, releases, snapshots) {
-  const agentWorks = works.filter((work) => /agent/i.test(`${work.section} ${work.type} ${work.name}`));
-  const visible = agentWorks.length ? agentWorks : works;
+function assemblyMembers(assembly, works) {
+  const byId = new Map(works.map((work) => [work.id, work]));
+  return (assembly?.components || []).map((component) => ({ component, work: byId.get(component.work_id) }));
+}
+
+function homePage(works, releases, snapshots, assemblies) {
+  const stack = assemblies.find((assembly) => assembly.slug === 'siso-agent-stack');
+  const members = assemblyMembers(stack, works);
+  const visible = members.map(({ work }) => work).filter(Boolean);
   return page({
     title: 'A public index of SISO source',
     description: 'A human- and agent-readable registry of SISO works, releases, relationships, and named snapshots.',
@@ -262,10 +261,9 @@ function homePage(works, releases, snapshots) {
     </section>
     <section class="model-strip"><div class="shell"><p><b>Works stay stable.</b> Repositories and upstream docs remain optional, replaceable locators.</p><p><b>Relationships carry structure.</b> Hierarchy is a versioned view, never hidden in identity.</p></div></section>
     <section class="section shell agents-intro">
-      <div class="section-heading">${eyebrow('Section 01')}<h2>Agents</h2><p>Systems and playbooks for building, operating, and coordinating agent work.</p></div>
-      <div class="focus-list">${AGENT_FOCUS.map((name, index) => {
-        const match = works.find((work) => work.name.toLowerCase() === name.toLowerCase());
-        return `<a class="focus-row ${match ? '' : 'is-pending'}" href="${match ? href(`works/${match.slug}/`) : href('agents/')}"><span>0${index + 1}</span><b>${esc(name)}</b><small>${match ? esc(match.type) : 'Awaiting accepted Work record'}</small><i aria-hidden="true">→</i></a>`;
+      <div class="section-heading">${eyebrow('Section 01')}<h2>Agents</h2><p>${esc(stack?.name || 'Agent stack')} is the first versioned assembly. Its components stay together here while retaining independent Work identities.</p></div>
+      <div class="focus-list">${members.map(({ component, work }, index) => {
+        return `<a class="focus-row ${work ? '' : 'is-pending'}" href="${work ? href(`works/${work.slug}/`) : href('agents/')}"><span>0${index + 1}</span><b>${esc(work?.name || component.component_id)}</b><small>${esc(component.role)}</small><i aria-hidden="true">→</i></a>`;
       }).join('')}</div>
     </section>
     <section id="catalog" class="section catalog-section shell">
@@ -274,21 +272,21 @@ function homePage(works, releases, snapshots) {
       <div class="work-grid" data-catalog>${works.length ? visible.map(workCard).join('') : emptyCatalog('The public shell is ready; Work pages will appear as soon as accepted registry records land.')}</div>
       <p class="no-results" data-no-results hidden>No Works match those filters.</p>
     </section>
-    <section class="ledger shell" aria-label="Registry counts"><div><strong>${String(works.length).padStart(2, '0')}</strong><span>Works</span></div><div><strong>${String(releases.length).padStart(2, '0')}</strong><span>Releases</span></div><div><strong>${String(snapshots.length).padStart(2, '0')}</strong><span>Snapshots</span></div><p>Counts reflect accepted registry files in this build.</p></section>`,
+    <section class="ledger shell" aria-label="Registry counts"><div><strong>${String(works.length).padStart(2, '0')}</strong><span>Works</span></div><div><strong>${String(assemblies.length).padStart(2, '0')}</strong><span>Assemblies</span></div><div><strong>${String(snapshots.length).padStart(2, '0')}</strong><span>Snapshots</span></div><p>Counts reflect accepted registry files in this build.</p></section>`,
   });
 }
 
-function agentsPage(works) {
-  const agentWorks = works.filter((work) => /agent/i.test(`${work.section} ${work.type} ${work.name}`));
-  const related = agentWorks.length ? agentWorks : works;
+function agentsPage(works, assemblies) {
+  const stack = assemblies.find((assembly) => assembly.slug === 'siso-agent-stack');
+  const members = assemblyMembers(stack, works);
+  const related = members.map(({ work }) => work).filter(Boolean);
   return page({
     title: 'Agents', active: 'agents', rootClass: 'agents-page',
     description: 'The Agents section of The Great Library of SISO.',
-    body: `<section class="subhero shell">${eyebrow('Library / Sections / Agents')}<div><h1>Agents</h1><p>Four focal Works. One public reading surface. Relationships describe how projects adopt agent systems and how coordination playbooks connect them.</p></div><span class="folio">A—01</span></section>
-    <section class="relationship-map shell" aria-labelledby="map-title"><div class="map-copy">${eyebrow('Relationship view')}<h2 id="map-title">Connected by use,<br>not contained by rank.</h2><p>The catalog keeps each Work independent. Typed relationships supply context without turning a current composition into a permanent hierarchy.</p></div><div class="map-stack">${AGENT_FOCUS.map((name, i) => {
-      const work = works.find((item) => item.name.toLowerCase() === name.toLowerCase());
-      return `<div class="map-node ${work ? '' : 'is-pending'}"><span>0${i + 1}</span><div><b>${esc(name)}</b><small>${work ? `${esc(work.type)} · ${esc(work.maturity)}` : 'Record pending'}</small></div></div>`;
-    }).join('')}<p class="map-key"><i></i>Registry status is explicit; missing records are never inferred.</p></div></section>
+    body: `<section class="subhero shell">${eyebrow('Library / Sections / Agents')}<div><h1>Agents</h1><p>${esc(stack?.name || 'SISO Agent Stack')} keeps the working stack together. Component roles describe responsibility inside this assembly; they are not global categories.</p></div><span class="folio">A—01</span></section>
+    <section class="relationship-map shell" aria-labelledby="map-title"><div class="map-copy">${eyebrow(`Assembly / ${stack?.version || 'unversioned'}`)}<h2 id="map-title">One stack.<br>Four required components.</h2><p>${esc(stack?.outcome || 'The assembly connects intent, execution, coordination, project state, and proof.')}</p><p><a href="${href('docs/agent-stack-model.html')}">Read the source-backed stack model →</a></p></div><div class="map-stack">${members.map(({ component, work }, i) => {
+      return `<div class="map-node ${work ? '' : 'is-pending'}"><span>0${i + 1}</span><div><b>${esc(work?.name || component.component_id)}</b><small>${esc(component.required ? `required · ${component.role}` : component.role)}</small></div></div>`;
+    }).join('')}<p class="map-key"><i></i>Skills are reusable capabilities. Playbooks compose skills, tools, lanes, and verification for a scenario.</p></div></section>
     <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Accepted records')}<h2>Works in Agents</h2><p><span data-result-count>${related.length}</span> Works available to read.</p></div>${related.length ? catalogControls(related) : ''}<div class="work-grid" data-catalog>${related.length ? related.map(workCard).join('') : emptyCatalog('This section will populate from accepted Work records; no provisional detail pages are published.')}</div><p class="no-results" data-no-results hidden>No Works match those filters.</p></section>`,
   });
 }
@@ -349,10 +347,10 @@ async function emit(path, contents) {
   await writeFile(target, contents);
 }
 
-const [rawWorks, rawReleases, snapshots] = await Promise.all([
-  loadRecords('works'), loadRecords('releases'), loadRecords('snapshots'),
+const [rawWorks, rawReleases, assemblies, snapshots] = await Promise.all([
+  loadRecords('works'), loadRecords('releases'), loadRecords('assemblies'), loadRecords('snapshots'),
 ]);
-const sourceDates = [...rawWorks, ...rawReleases, ...snapshots]
+const sourceDates = [...rawWorks, ...rawReleases, ...assemblies, ...snapshots]
   .flatMap((record) => [record.updated_at, record.released_at, record.created_at, record.observed_at])
   .filter(Boolean)
   .sort();
@@ -367,11 +365,12 @@ const worksById = new Map(works.map((work) => [work.id, work]));
 await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
 await cp(ASSETS, join(OUT, 'assets'), { recursive: true });
-await emit('index.html', homePage(works, releases, snapshots));
-await emit('agents/index.html', agentsPage(works));
+await emit('docs/agent-stack-model.html', await readFile(join(ROOT, 'docs', 'agent-stack-model.html'), 'utf8'));
+await emit('index.html', homePage(works, releases, snapshots, assemblies));
+await emit('agents/index.html', agentsPage(works, assemblies));
 await emit('releases/index.html', releaseIndex(releases, worksById));
 await emit('snapshots/index.html', snapshotIndex(snapshots));
 for (const work of works) await emit(`works/${work.slug}/index.html`, workPage(work, releases, worksById));
-await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity })) }, null, 2)}\n`);
+await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity })), assemblies: assemblies.map(({ __file, ...assembly }) => assembly) }, null, 2)}\n`);
 
-console.log(`Built ${works.length} Works, ${releases.length} Releases, and ${snapshots.length} Snapshots at ${BASE}`);
+console.log(`Built ${works.length} Works, ${releases.length} Releases, ${assemblies.length} Assemblies, and ${snapshots.length} Snapshots at ${BASE}`);

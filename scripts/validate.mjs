@@ -75,6 +75,7 @@ function validateValue(value, schema, location, schemaFile) {
 const recordGroups = {
   work: { directory: "registry/works", schema: path.join(root, "schemas/work.schema.json") },
   release: { directory: "registry/releases", schema: path.join(root, "schemas/release.schema.json") },
+  assembly: { directory: "registry/assemblies", schema: path.join(root, "schemas/assembly.schema.json") },
   snapshot: { directory: "registry/snapshots", schema: path.join(root, "schemas/snapshot.schema.json") }
 };
 const records = {};
@@ -98,6 +99,7 @@ function uniqueMap(entries, label) {
 }
 const works = uniqueMap(records.work, "works");
 const releases = uniqueMap(records.release, "releases");
+const assemblies = uniqueMap(records.assembly, "assemblies");
 uniqueMap(records.snapshot, "snapshots");
 const artifactIds = new Set();
 for (const { file, value: work } of records.work) {
@@ -115,6 +117,25 @@ for (const { file, value: release } of records.release) {
     if (artifact.ownership === "external" && artifact.owner.toLowerCase().includes("siso")) fail(`${label}: external artifact owner must be preserved`);
   }
 }
+for (const { file, value: assembly } of records.assembly) {
+  const label = path.relative(root, file);
+  if (!works.has(assembly.section_work_id)) fail(`${label}: section_work_id ${assembly.section_work_id} does not resolve`);
+  const componentIds = new Set();
+  for (const component of assembly.components ?? []) {
+    if (componentIds.has(component.component_id)) fail(`${label}: duplicate component_id ${component.component_id}`);
+    componentIds.add(component.component_id);
+    if (!works.has(component.work_id)) fail(`${label}: component Work ${component.work_id} does not resolve`);
+  }
+  for (const component of assembly.components ?? []) {
+    for (const dependency of component.depends_on ?? []) if (!componentIds.has(dependency)) fail(`${label}: component ${component.component_id} depends on unknown component ${dependency}`);
+  }
+  const steps = new Set();
+  for (const stage of assembly.operating_loop ?? []) {
+    if (steps.has(stage.step)) fail(`${label}: duplicate operating_loop step ${stage.step}`);
+    steps.add(stage.step);
+    for (const componentId of stage.component_ids ?? []) if (!componentIds.has(componentId)) fail(`${label}: operating_loop step ${stage.step} references unknown component ${componentId}`);
+  }
+}
 for (const { file, value: snapshot } of records.snapshot) {
   const label = path.relative(root, file);
   const pinnedWorks = new Set();
@@ -125,9 +146,18 @@ for (const { file, value: snapshot } of records.snapshot) {
     const digest = createHash("sha256").update(entry.raw).digest("hex");
     if (digest !== pin.manifest_sha256) fail(`${label}: hash mismatch for ${pin.release_id}; expected ${digest}`);
   }
+  const pinnedAssemblies = new Set();
+  for (const pin of snapshot.assemblies ?? []) {
+    const entry = assemblies.get(pin.assembly_id);
+    if (!entry) { fail(`${label}: assembly ${pin.assembly_id} does not resolve`); continue; }
+    pinnedAssemblies.add(pin.assembly_id);
+    const digest = createHash("sha256").update(entry.raw).digest("hex");
+    if (digest !== pin.manifest_sha256) fail(`${label}: hash mismatch for ${pin.assembly_id}; expected ${digest}`);
+  }
   if (snapshot.metadata_completeness?.state === "complete") {
     if (snapshot.metadata_completeness.work_count !== works.size || pinnedWorks.size !== works.size) fail(`${label}: complete snapshot must pin all ${works.size} Works exactly once`);
     if (snapshot.metadata_completeness.release_count !== snapshot.releases.length) fail(`${label}: release_count does not match pins`);
+    if (snapshot.metadata_completeness.assembly_count !== undefined && (snapshot.metadata_completeness.assembly_count !== assemblies.size || pinnedAssemblies.size !== assemblies.size)) fail(`${label}: complete snapshot must pin all ${assemblies.size} Assemblies exactly once`);
   }
   for (const rootId of snapshot.projection?.root_work_ids ?? []) if (!pinnedWorks.has(rootId)) fail(`${label}: projection root ${rootId} is not pinned`);
   for (const edge of snapshot.projection?.edges ?? []) {
@@ -137,7 +167,7 @@ for (const { file, value: snapshot } of records.snapshot) {
   if (snapshot.artifact_materialization?.state === "not_materialized" && snapshot.artifact_materialization.receipts.length) fail(`${label}: not_materialized snapshot cannot contain receipts`);
 }
 
-const publicationText = [...records.work, ...records.release, ...records.snapshot].map((entry) => entry.raw).join("\n");
+const publicationText = [...records.work, ...records.release, ...records.assembly, ...records.snapshot].map((entry) => entry.raw).join("\n");
 for (const pattern of [/\/Users\//, /\/home\//, /file:\/\//, /BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY/, /(?:ghp|github_pat|sk)-[A-Za-z0-9_-]{16,}/]) {
   if (pattern.test(publicationText)) fail(`publication-safe registry check matched ${pattern}`);
 }
@@ -147,4 +177,4 @@ if (errors.length) {
   errors.forEach((error) => console.error(`- ${error}`));
   process.exit(1);
 }
-console.log(`PASS registry validation: ${schemaEntries.length} schemas, ${works.size} Works, ${releases.size} Releases, ${records.snapshot.length} Snapshot`);
+console.log(`PASS registry validation: ${schemaEntries.length} schemas, ${works.size} Works, ${releases.size} Releases, ${assemblies.size} Assemblies, ${records.snapshot.length} Snapshots`);

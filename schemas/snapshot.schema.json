@@ -20,7 +20,8 @@
       "properties": {
         "state": { "const": "complete" },
         "work_count": { "type": "integer", "minimum": 1 },
-        "release_count": { "type": "integer", "minimum": 1 }
+        "release_count": { "type": "integer", "minimum": 1 },
+        "assembly_count": { "type": "integer", "minimum": 0 }
       }
     },
     "releases": {
@@ -32,6 +33,18 @@
         "required": ["release_id", "manifest_sha256"],
         "properties": {
           "release_id": { "$ref": "common.schema.json#/$defs/releaseId" },
+          "manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "assemblies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["assembly_id", "manifest_sha256"],
+        "properties": {
+          "assembly_id": { "$ref": "common.schema.json#/$defs/assemblyId" },
           "manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
         }
       }

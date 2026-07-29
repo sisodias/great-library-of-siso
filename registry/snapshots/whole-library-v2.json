@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "snapshot",
+  "id": "gls:snapshot:f27b9608-304e-4541-a6db-acf2d3648b0f",
+  "name": "Whole Library V2 — SISO Agent Stack",
+  "version": "2.0.0",
+  "created_at": "2026-07-30T00:00:00Z",
+  "immutable": true,
+  "scope": "whole_library",
+  "metadata_completeness": { "state": "complete", "work_count": 6, "release_count": 6, "assembly_count": 1 },
+  "releases": [
+    { "release_id": "gls:release:4ed5e119-3ee7-4dca-bdd2-9c344c608a01", "manifest_sha256": "ef6550ca061b5e7e6cad0c0eabfc91b2ba5ecb243d9baa8b05f79fb6658686aa" },
+    { "release_id": "gls:release:14c1d9de-0e77-44e9-9274-57e7cfb6ab02", "manifest_sha256": "96200b7e955e3d0ec21b954a1d329a7ec2428ad1aef86e2bfce6336c044564d2" },
+    { "release_id": "gls:release:3a99d120-a2dd-4e79-9a10-74b47aeefc03", "manifest_sha256": "695e0ffef7bc9ef5370a97b34f9db86658758e35d14ef72f3568b2580bb7e53e" },
+    { "release_id": "gls:release:61f81c21-b467-4628-96e8-a20493cd0a04", "manifest_sha256": "9f6a8e8ca90723d7775158ab20ffe638c8316dfba3a75583d3cc6f2097b1df2e" },
+    { "release_id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05", "manifest_sha256": "559a4cb66b2b887d967066487279a3480c8d20fcb04e00875bdb7f3e6d4e18f9" },
+    { "release_id": "gls:release:8c02a5a4-5386-4c63-a72f-c02665799106", "manifest_sha256": "4cf72788f59441947d7d5e6056f3cc618efbf1b93263f067be5b4f023cacd86b" }
+  ],
+  "assemblies": [
+    { "assembly_id": "gls:assembly:2c86b098-32ec-47b1-a73d-aacdc1a405bf", "manifest_sha256": "f2ce4d8802ce40e95f00d31b1afafd9c93adca7827c8ddf20113c50c5fa87379" }
+  ],
+  "projection": {
+    "root_work_ids": ["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"],
+    "edges": [
+      { "from_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1", "to_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "type": "curates", "contextual_role": "section", "context": "Agents is a browse section; its working structure is supplied by the pinned SISO Agent Stack Assembly rather than flat module categories." }
+    ]
+  },
+  "download_contract": { "manifest_role": "metadata_complete_named_snapshot", "artifact_policy": "payloads_are_separate_and_require_per_artifact_receipts" },
+  "artifact_materialization": { "state": "not_materialized", "receipts": [] },
+  "evidence": [{ "kind": "registry_validation", "reference": "registry:snapshot:whole-library-v2", "observed_at": "2026-07-30", "summary": "Snapshot pins the accepted Works and the first source-backed SISO Agent Stack Assembly without flattening its components into unrelated categories." }]
+}

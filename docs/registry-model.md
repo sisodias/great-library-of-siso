@@ -2,11 +2,15 @@
 
 The Great Library of SISO separates durable identity, browse structure, and distribution evidence. This allows the catalog to survive repository moves, category changes, reorganizations, and new publication methods.
 
-## Library → Sections → Works
+## Library, Sections, Works, and Assemblies
 
 The **Library** is the complete catalog. A **Section** is a named, versioned projection used for browsing. A **Work** is the stable identity for one cataloged subject.
 
 A Work ID never encodes a category, repository, owner, path, domain, or current parent. Those properties can change without changing the Work. Moving a Work between Sections changes a projection, not its identity.
+
+An **Assembly** is an immutable, versioned composition of Works that operate together for a named outcome. It records contextual component roles, dependencies, an operating loop, and composition semantics. A changed stack creates a new Assembly version; it does not rewrite a Work's identity or turn a current role into a universal category.
+
+The Agents section therefore presents the SISO Agent Stack as one Assembly containing Project OS, Agent Base, Herdr, and Agent Zero. “Optional to Project OS when Project OS runs alone” and “required by this named SISO Agent Stack” are compatible statements at different scopes.
 
 Each accepted Work is generated to one stable, human-readable detail URL on the hosted Library site. That Library page exists independently of whether the source repository operates a website or which static provider serves the Library. A Work can also declare an optional upstream docs or demo URL; upstream URLs remain replaceable locators and never replace the Library identity.
 
