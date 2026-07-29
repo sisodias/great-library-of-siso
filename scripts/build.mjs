@@ -352,6 +352,14 @@ async function emit(path, contents) {
 const [rawWorks, rawReleases, snapshots] = await Promise.all([
   loadRecords('works'), loadRecords('releases'), loadRecords('snapshots'),
 ]);
+const sourceDates = [...rawWorks, ...rawReleases, ...snapshots]
+  .flatMap((record) => [record.updated_at, record.released_at, record.created_at, record.observed_at])
+  .filter(Boolean)
+  .sort();
+const latestSourceDate = sourceDates.at(-1) || '1970-01-01';
+const generatedAt = /^\d{4}-\d{2}-\d{2}$/.test(latestSourceDate)
+  ? `${latestSourceDate}T00:00:00.000Z`
+  : new Date(latestSourceDate).toISOString();
 const works = rawWorks.map(normalizeWork).sort((a, b) => a.name.localeCompare(b.name));
 const releases = rawReleases.map(normalizeRelease).sort((a, b) => `${a.date}${a.version}`.localeCompare(`${b.date}${b.version}`));
 const worksById = new Map(works.map((work) => [work.id, work]));
@@ -364,6 +372,6 @@ await emit('agents/index.html', agentsPage(works));
 await emit('releases/index.html', releaseIndex(releases, worksById));
 await emit('snapshots/index.html', snapshotIndex(snapshots));
 for (const work of works) await emit(`works/${work.slug}/index.html`, workPage(work, releases, worksById));
-await emit('catalog.json', `${JSON.stringify({ generated_at: new Date().toISOString(), base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity })) }, null, 2)}\n`);
+await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity })) }, null, 2)}\n`);
 
 console.log(`Built ${works.length} Works, ${releases.length} Releases, and ${snapshots.length} Snapshots at ${BASE}`);
