@@ -14,12 +14,12 @@
     "locators": [{
       "type": "source_repository",
       "url": "https://github.com/Lordsisodia/siso-agent-integrations",
-      "revision": "main@6a248c8c01838e3b981119a86be38fc6d21f60a8",
+      "revision": "main@808eb51c079db40ae273e721527b245be09e9544",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-integrations:6a248c8c01838e3b981119a86be38fc6d21f60a8", "observed_at": "2026-07-30", "summary": "Canonical public source repository contains the extracted Context Core, Context Firewall, and Headroom adapter packages; its default smoke suite passed before publication." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-integrations:808eb51c079db40ae273e721527b245be09e9544", "observed_at": "2026-07-30", "summary": "Canonical public source repository contains the extracted Context Core, Context Firewall, and Headroom adapter packages; its default smoke suite passed before publication." }
     }],
-    "license": { "status": "verified", "spdx": "MIT", "reason": "The extracted SISO-owned source carries the Agent Base repository-root MIT license; the externally owned Headroom dependency remains pinned rather than redistributed.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-integrations/blob/6a248c8c01838e3b981119a86be38fc6d21f60a8/LICENSE", "observed_at": "2026-07-30", "summary": "MIT license and dependency ownership boundary reviewed in the public extraction." }] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The extracted SISO-owned source carries the Agent Base repository-root MIT license; the externally owned Headroom dependency remains pinned rather than redistributed.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-integrations/blob/808eb51c079db40ae273e721527b245be09e9544/LICENSE", "observed_at": "2026-07-30", "summary": "MIT license and dependency ownership boundary reviewed in the public extraction." }] }
   },
   "relationships": [{
     "type": "integrates_with",
@@ -29,6 +29,6 @@
   }],
   "evidence": [
     { "kind": "source_review", "reference": "source-review:siso-agent-base-modules:context-integrations:2026-07-30", "observed_at": "2026-07-30", "summary": "Both adapters have explicit safety, canary, promotion, and rollback contracts and remain experimental." },
-    { "kind": "release_receipt", "reference": "repo-smoke:siso-agent-integrations:6a248c8c01838e3b981119a86be38fc6d21f60a8", "observed_at": "2026-07-30", "summary": "Context Firewall shadow smoke and Headroom syntax checks passed in the extracted repository." }
+    { "kind": "release_receipt", "reference": "repo-smoke:siso-agent-integrations:808eb51c079db40ae273e721527b245be09e9544", "observed_at": "2026-07-30", "summary": "Context Firewall shadow smoke and Headroom syntax checks passed in the extracted repository." }
   ]
 }

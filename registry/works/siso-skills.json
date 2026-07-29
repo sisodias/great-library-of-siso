@@ -14,12 +14,12 @@
     "locators": [{
       "type": "source_repository",
       "url": "https://github.com/Lordsisodia/siso-skills-hub",
-      "revision": "main@e295047bf0742921373719ad51f288a13182e0df",
+      "revision": "main@05d978b40f85254446f5d2f684009ff821c0e94a",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-skills-hub:e295047bf0742921373719ad51f288a13182e0df", "observed_at": "2026-07-30", "summary": "Canonical public source contains 28 validated Skills across eight categories, a generated human index, a pinned remote-materialization contract, and a disposable install receipt." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-skills-hub:05d978b40f85254446f5d2f684009ff821c0e94a", "observed_at": "2026-07-30", "summary": "Canonical public source contains 28 validated Skills across eight categories, a generated human index, a pinned remote-materialization contract, and a disposable install receipt." }
     }],
-    "license": { "status": "verified", "spdx": "MIT", "reason": "The SISO-owned hub and bundled source carry MIT; promoted or external Skills retain their own independently declared rights.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-skills-hub/blob/e295047bf0742921373719ad51f288a13182e0df/PROVENANCE.md", "observed_at": "2026-07-30", "summary": "Repository provenance, bundled-source boundary, external-rights rule, and publication cleanup are recorded at the pinned release." }] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The SISO-owned hub and bundled source carry MIT; promoted or external Skills retain their own independently declared rights.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-skills-hub/blob/05d978b40f85254446f5d2f684009ff821c0e94a/PROVENANCE.md", "observed_at": "2026-07-30", "summary": "Repository provenance, bundled-source boundary, external-rights rule, and publication cleanup are recorded at the pinned release." }] }
   },
   "relationships": [{
     "type": "integrates_with",
@@ -29,7 +29,7 @@
   }],
   "evidence": [
     { "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:skills:2026-07-30", "observed_at": "2026-07-30", "summary": "Skills were classified as atomic capabilities consumed by the Agents operating stack; playbooks compose them for scenarios." },
-    { "kind": "release_receipt", "reference": "repo-check:siso-skills-hub:e295047bf0742921373719ad51f288a13182e0df", "observed_at": "2026-07-30", "summary": "All 28 registry entries validated, generated index freshness passed, and a Skill materialized into a disposable install root without nested Git state." },
-    { "kind": "source_review", "reference": "history-scan:siso-skills-hub:e295047bf0742921373719ad51f288a13182e0df", "observed_at": "2026-07-30", "summary": "Reachable Git history and the current tree passed the credential-pattern publication scan after history remediation." }
+    { "kind": "release_receipt", "reference": "repo-check:siso-skills-hub:05d978b40f85254446f5d2f684009ff821c0e94a", "observed_at": "2026-07-30", "summary": "All 28 registry entries validated, generated index freshness passed, and a Skill materialized into a disposable install root without nested Git state." },
+    { "kind": "source_review", "reference": "history-scan:siso-skills-hub:05d978b40f85254446f5d2f684009ff821c0e94a", "observed_at": "2026-07-30", "summary": "Reachable Git history and the current tree passed the credential-pattern publication scan after history remediation." }
   ]
 }

@@ -83,38 +83,38 @@
       "paths": ["siso-project-os"],
       "classification": "accepted_work",
       "disposition": "link_existing",
-      "target": "https://github.com/sisodias/siso-project-os",
-      "rationale": "Project OS is already a clean independent Git repository with its own package, CLI, schemas, tests, license, and accepted Library Work.",
+      "target": "https://github.com/Lordsisodia/siso-project-os",
+      "rationale": "Project OS is a clean independent Git repository with its own package, CLI, schemas, tests, license, accepted Library Work, and canonical Lordsisodia mirror.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:project-os:2026-07-30", "observed_at": "2026-07-30", "summary": "Nested repository remote, clean status, package manifest, README, specification, and lifecycle contracts were verified." }]
     },
     {
       "unit_id": "agent-playbook",
       "name": "SISO Agent Playbook",
       "paths": ["siso-agent-playbook"],
-      "classification": "candidate_work",
+      "classification": "accepted_work",
       "disposition": "link_existing",
-      "target": "https://github.com/sisodias/siso-agent-playbook",
-      "rationale": "The playbook is already an independently installable Git repository. Its four local modifications must be preserved before the warehouse stops carrying a nested checkout.",
+      "target": "https://github.com/Lordsisodia/siso-agent-playbook",
+      "rationale": "The independently installable playbook, including the four warehouse modifications, is preserved in a verified public Lordsisodia release. The nested warehouse checkout remains untouched until a bridge removes the physical dependency.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:agent-playbook:2026-07-30", "observed_at": "2026-07-30", "summary": "Nested remote, dirty status, installer, skills, tools, prompts, telemetry, and architecture were read directly." }]
     },
     {
       "unit_id": "foundry",
       "name": "SISO Foundry",
       "paths": ["foundry", "research/repo-catalog"],
-      "classification": "candidate_work",
+      "classification": "accepted_work",
       "disposition": "extract",
-      "target": "siso-foundry",
-      "rationale": "Foundry has an independent outcome, pipeline, databases, research method, and read-only web interface. Code and large datasets require separate storage boundaries.",
+      "target": "https://github.com/Lordsisodia/siso-foundry",
+      "rationale": "Foundry's portable code plane is now a verified public Research Work. Large datasets, databases, corpora, and upstream payloads remain external behind typed storage boundaries.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:foundry:2026-07-30", "observed_at": "2026-07-30", "summary": "Foundry onboarding, source map, pipeline ownership, database boundary, and interface manifest were read directly." }]
     },
     {
       "unit_id": "skills-catalog",
       "name": "SISO skills and capability catalog",
       "paths": ["templates/profile/skills"],
-      "classification": "candidate_work",
+      "classification": "accepted_work",
       "disposition": "extract",
-      "target": "siso-skills and promoted individual skill repositories",
-      "rationale": "The runtime currently installs a broad capability catalog by symlink projection. Capabilities need independent identity, evidence, versioning, and promotion without coupling their source to the application release.",
+      "target": "https://github.com/Lordsisodia/siso-skills-hub and promoted individual Skill repositories",
+      "rationale": "The verified public hub now gives 28 Skills independent identity, evidence, versioning, materialization, and a promotion contract without coupling their source lifecycle to the runtime application.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:skills:2026-07-30", "observed_at": "2026-07-30", "summary": "Skill roots, installer projection, capability gate, and representative skill/playbook contracts were read directly." }]
     },
     {
@@ -141,7 +141,7 @@
       "unit_id": "atlas",
       "name": "Atlas architectural auditor",
       "paths": ["atlas"],
-      "classification": "candidate_work",
+      "classification": "accepted_work",
       "disposition": "compare",
       "target": "siso-atlas if active",
       "rationale": "Atlas presents an independent read-only audit loop, but current operational use and dependencies have not yet been verified.",
@@ -203,48 +203,48 @@
       "paths": ["extensions/knowledge-engine"],
       "classification": "candidate_work",
       "disposition": "extract",
-      "target": "siso-evidence-engines/packages/knowledge-engine",
-      "rationale": "The engine turns long-form sources into traceable structured value items and an evolving taxonomy through a coherent distill-once, route-many pipeline. It should be a Library Work and package; source, generated knowledge, and private operating state must be separated before publication.",
+      "target": "https://github.com/Lordsisodia/siso-evidence-engines (knowledge engine)",
+      "rationale": "The reusable value-item, source identity, quote-grounding, confidence, relation, and taxonomy contracts are released in the public Evidence Engines family. Generated knowledge, acquisition, provider execution, and private operating state remain outside the code repository.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:knowledge-engine:2026-07-30", "observed_at": "2026-07-30", "summary": "The architecture, live stages, planned stages, data model, runner model, current corpus scale, and sibling-engine relationship were read directly." }]
     },
     {
       "unit_id": "coding-principles-engine",
       "name": "Coding principles evidence engine",
       "paths": ["extensions/codex-engine"],
-      "classification": "candidate_work",
+      "classification": "accepted_work",
       "disposition": "extract",
-      "target": "siso-evidence-engines/packages/coding-principles",
-      "rationale": "The engine harvests sources, gates claims by credibility and evidence, distills them, proposes principles, collects ratings, and promotes canonical guidance. The public name should describe that outcome rather than imply ownership of the Codex product name.",
+      "target": "https://github.com/Lordsisodia/siso-evidence-engines (principles engine)",
+      "rationale": "The public Principles Engine now retains source tiers, independent corroboration, adversarial gates, jury votes, deterministic scores, and canonical promotion without the product-name ambiguity or private corpus coupling.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:coding-principles:2026-07-30", "observed_at": "2026-07-30", "summary": "The harvest-to-render pipeline, credibility tiers, evidence gates, database migration, corpus boundary, and promotion logic were read directly." }]
     },
     {
       "unit_id": "idea-engine",
       "name": "Evidence-gated idea engine",
       "paths": ["extensions/idea-engine"],
-      "classification": "candidate_work",
+      "classification": "accepted_work",
       "disposition": "extract",
-      "target": "siso-evidence-engines/packages/idea-engine",
-      "rationale": "The engine maintains a traceable, score-ranked improvement backlog with groundedness, novelty, layer, and gameability gates plus an explicit lifecycle. It shares an evidence-engine family with the knowledge and coding-principles engines.",
+      "target": "https://github.com/Lordsisodia/siso-evidence-engines (idea engine)",
+      "rationale": "The public Idea Engine now maintains evidence gates, groundedness, novelty, layer and gameability review, deterministic ROI-effort-risk ranking, and queued state. Autonomous code mutation and machine scheduling were excluded as separate authority boundaries.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:idea-engine:2026-07-30", "observed_at": "2026-07-30", "summary": "The propose-rate-render pipeline, gates, lifecycle, database dependency, and planning-front-door composition were read directly." }]
     },
     {
       "unit_id": "session-intelligence",
       "name": "Agent session intelligence",
       "paths": ["extensions/session-mirror"],
-      "classification": "candidate_work",
+      "classification": "accepted_work",
       "disposition": "extract",
-      "target": "siso-session-intelligence",
-      "rationale": "This subsystem parses Claude and Codex transcripts, extracts evidence-bearing retrospectives, deduplicates and clusters recurring patterns, scores importance, renders recall, and proposes gated improvements. Public extraction requires generic paths and providers, a storage boundary, secret removal and rotation, privacy controls, and fixture-based tests.",
+      "target": "https://github.com/Lordsisodia/siso-session-intelligence",
+      "rationale": "A provider-neutral, privacy-reduced public release now parses explicit Claude and Codex inputs, redacts before persistence, aggregates typed insights, scores importance, and renders recall. Raw transcripts, machine paths, provider credentials, scheduling, and autonomous mutation remain excluded.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:session-intelligence:2026-07-30", "observed_at": "2026-07-30", "summary": "Transcript parsers, retrospective dimensions, evidence quotes, recurrence model, clustering, importance scoring, scheduler, render surface, and provider configuration were read directly." }]
     },
     {
       "unit_id": "agent-brain-service",
       "name": "Agent brain service",
       "paths": ["extensions/braind"],
-      "classification": "candidate_work",
+      "classification": "accepted_work",
       "disposition": "extract",
-      "target": "siso-agent-brain",
-      "rationale": "The daemon, client, outbox, health checks, tiered tokens, fleet state, tasks, memory, timeline, costs, notifications, and delegation form a coherent shared agent-state service. Machine names, personal project divisions, private network assumptions, and database migrations must become configuration before publication.",
+      "target": "https://github.com/Lordsisodia/siso-agent-brain",
+      "rationale": "The configurable shared-state service, client, migrations, auth, outbox, merge, installer, and state-preserving uninstall are now a verified public Work. Personal topology, live databases, runtime tokens, and machine deployment remain external configuration and state.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:brain-service:2026-07-30", "observed_at": "2026-07-30", "summary": "The daemon contract, HTTP service, SQLite ownership, auth tiers, CLI client, degraded outbox, doctor checks, and machine-specific configuration were read directly." }]
     },
     {
@@ -308,5 +308,8 @@
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:root-scripts:2026-07-30", "observed_at": "2026-07-30", "summary": "Root script keys, installer checks, file inventory, and representative cross-domain imports were inspected." }]
     }
   ],
-  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:2026-07-30", "observed_at": "2026-07-30", "summary": "First partial machine inventory of the Agent Base warehouse. Unverified units require direct follow-up reads before promotion, movement, or archival." }]
+  "evidence": [
+    { "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:2026-07-30", "observed_at": "2026-07-30", "summary": "First partial machine inventory of the Agent Base warehouse. Unverified units require direct follow-up reads before promotion, movement, or archival." },
+    { "kind": "release_receipt", "reference": "registry:snapshot:whole-library-v12", "observed_at": "2026-07-30", "summary": "Foundry, Skills Hub, Agent Playbook, Agent Brain, Session Intelligence, and the Evidence Engines family now have verified public releases; the warehouse remains preserved read-only and the broader inventory remains partial." }
+  ]
 }

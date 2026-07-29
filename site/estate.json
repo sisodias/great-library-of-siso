@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-29T22:44:00.000Z",
-  "snapshot_id": "gls:snapshot:af406d3e-14a5-4faf-8b88-b1fff948e01f",
-  "snapshot_version": "11.0.0",
+  "generated_at": "2026-07-29T23:30:00.000Z",
+  "snapshot_id": "gls:snapshot:2a7c57a8-3cb0-4269-ac1f-cf9f1a6bcdc1",
+  "snapshot_version": "12.0.0",
   "repositories": [
     {
       "owner": "Lordsisodia",
@@ -68,12 +68,12 @@
       "lifecycle_status": "experimental",
       "library_url": "/works/siso-agent-brain/",
       "locator_type": "source_repository",
-      "locator_revision": "main@4f720fa81ac1e9bd1f97a43e17e8c1d4755bb62e",
+      "locator_revision": "main@ae3d1c73e31b77d1b269c8e225f72e6e761970f9",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:97b15915-ac25-4866-93bb-d010724919bc",
-      "active_release_version": "0.1.0+4f720fa",
-      "artifact_revision": "4f720fa81ac1e9bd1f97a43e17e8c1d4755bb62e"
+      "active_release_id": "gls:release:36960afb-ef79-4dd7-a642-95a20150c319",
+      "active_release_version": "0.1.0+ae3d1c7",
+      "artifact_revision": "ae3d1c73e31b77d1b269c8e225f72e6e761970f9"
     },
     {
       "owner": "Lordsisodia",
@@ -86,12 +86,12 @@
       "lifecycle_status": "experimental",
       "library_url": "/works/siso-agent-integrations/",
       "locator_type": "source_repository",
-      "locator_revision": "main@6a248c8c01838e3b981119a86be38fc6d21f60a8",
+      "locator_revision": "main@808eb51c079db40ae273e721527b245be09e9544",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:d26a1823-6270-41d2-9e73-417daac4c5fe",
-      "active_release_version": "main+6a248c8",
-      "artifact_revision": "6a248c8c01838e3b981119a86be38fc6d21f60a8"
+      "active_release_id": "gls:release:69c70399-9344-4752-b6a7-8976ee857006",
+      "active_release_version": "main+808eb51",
+      "artifact_revision": "808eb51c079db40ae273e721527b245be09e9544"
     },
     {
       "owner": "Lordsisodia",
@@ -104,12 +104,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-agent-playbook/",
       "locator_type": "source_repository",
-      "locator_revision": "main@409e84d54bcaed43f8f61896966b9876123e1f87",
+      "locator_revision": "main@6ee572b0f2230e3f83b11408fe30f7211d1f2b77",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:e5895556-a3ed-4dd6-b339-e225a8ee88ec",
-      "active_release_version": "1.0.0+409e84d",
-      "artifact_revision": "409e84d54bcaed43f8f61896966b9876123e1f87"
+      "active_release_id": "gls:release:ff8cc25f-7162-4713-9e38-66cbf3eca958",
+      "active_release_version": "1.0.0+6ee572b",
+      "artifact_revision": "6ee572b0f2230e3f83b11408fe30f7211d1f2b77"
     },
     {
       "owner": "Lordsisodia",
@@ -122,12 +122,30 @@
       "lifecycle_status": "experimental",
       "library_url": "/works/siso-agent-zero/",
       "locator_type": "source_repository",
-      "locator_revision": "main@6fe462b6d496aa1d7106c45f71a9c013818e36de",
+      "locator_revision": "main@dacfc6c30b2f478c9d3382910674bd30289d3981",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:1712f299-6324-418c-8346-f1d05df2982c",
-      "active_release_version": "0.1.0+6fe462b",
-      "artifact_revision": "6fe462b6d496aa1d7106c45f71a9c013818e36de"
+      "active_release_id": "gls:release:c7cfb739-67d3-4c63-9146-5f47430f7970",
+      "active_release_version": "0.1.0+dacfc6c",
+      "artifact_revision": "dacfc6c30b2f478c9d3382910674bd30289d3981"
+    },
+    {
+      "owner": "Lordsisodia",
+      "repository": "siso-evidence-engines",
+      "url": "https://github.com/Lordsisodia/siso-evidence-engines",
+      "work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "work_name": "SISO Evidence Engines",
+      "work_slug": "siso-evidence-engines",
+      "work_type": "bundle",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-evidence-engines/",
+      "locator_type": "source_repository",
+      "locator_revision": "main@6ffba38d77409d6317733ec5fe96386d0481d2ea",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:789e157f-4eaf-45a5-b487-9b8f02ff407a",
+      "active_release_version": "0.1.0+6ffba38",
+      "artifact_revision": "6ffba38d77409d6317733ec5fe96386d0481d2ea"
     },
     {
       "owner": "Lordsisodia",
@@ -140,12 +158,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-foundry/",
       "locator_type": "source_repository",
-      "locator_revision": "main@1ec5890e4f1d5213a2898b009bd65f0df46b7eb5",
+      "locator_revision": "main@f6afca0db5bf333fd5535aaed6242c42d16c12b3",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:c4c9ae60-5495-4b5f-a8ad-e160fcdb6167",
-      "active_release_version": "main+1ec5890",
-      "artifact_revision": "1ec5890e4f1d5213a2898b009bd65f0df46b7eb5"
+      "active_release_id": "gls:release:9e2dedcd-dfea-4241-b85d-547cdaeacef9",
+      "active_release_version": "main+f6afca0",
+      "artifact_revision": "f6afca0db5bf333fd5535aaed6242c42d16c12b3"
     },
     {
       "owner": "Lordsisodia",
@@ -167,6 +185,24 @@
     },
     {
       "owner": "Lordsisodia",
+      "repository": "siso-session-intelligence",
+      "url": "https://github.com/Lordsisodia/siso-session-intelligence",
+      "work_id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
+      "work_name": "SISO Session Intelligence",
+      "work_slug": "siso-session-intelligence",
+      "work_type": "tool",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-session-intelligence/",
+      "locator_type": "source_repository",
+      "locator_revision": "main@7f2ace6b9ba4b11dd95700cd4050ae5970a06171",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:0b81c926-0433-42f6-b6a9-9993b2ce5a6b",
+      "active_release_version": "0.1.0+7f2ace6",
+      "artifact_revision": "7f2ace6b9ba4b11dd95700cd4050ae5970a06171"
+    },
+    {
+      "owner": "Lordsisodia",
       "repository": "siso-skills-hub",
       "url": "https://github.com/Lordsisodia/siso-skills-hub",
       "work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
@@ -176,12 +212,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-skills/",
       "locator_type": "source_repository",
-      "locator_revision": "main@e295047bf0742921373719ad51f288a13182e0df",
+      "locator_revision": "main@05d978b40f85254446f5d2f684009ff821c0e94a",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:85c8b4f1-e923-4d54-bb37-31483898a145",
-      "active_release_version": "main+e295047",
-      "artifact_revision": "e295047bf0742921373719ad51f288a13182e0df"
+      "active_release_id": "gls:release:da95107a-2089-4d6b-9171-7d0de7790d11",
+      "active_release_version": "main+05d978b",
+      "artifact_revision": "05d978b40f85254446f5d2f684009ff821c0e94a"
     },
     {
       "owner": "ogulcancelik",
@@ -200,42 +236,6 @@
       "active_release_id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05",
       "active_release_version": "master+514e446",
       "artifact_revision": "514e4465ee33d4d81682d06ee2934483982a54ed"
-    },
-    {
-      "owner": "Lordsisodia",
-      "repository": "siso-evidence-engines",
-      "url": "https://github.com/Lordsisodia/siso-evidence-engines",
-      "work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
-      "work_name": "SISO Evidence Engines",
-      "work_slug": "siso-evidence-engines",
-      "work_type": "bundle",
-      "lifecycle_status": "planned",
-      "library_url": "/works/siso-evidence-engines/",
-      "locator_type": "documentation",
-      "locator_revision": "main@92f95a0fedd9ec5bc6aa4ea85a8787873903f1ff",
-      "visibility": "public",
-      "status": "staging",
-      "active_release_id": "gls:release:993e1242-04c8-4d0b-870a-67d91fa89cbf",
-      "active_release_version": "registry-seed-2026-07-30",
-      "artifact_revision": null
-    },
-    {
-      "owner": "Lordsisodia",
-      "repository": "siso-session-intelligence",
-      "url": "https://github.com/Lordsisodia/siso-session-intelligence",
-      "work_id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
-      "work_name": "SISO Session Intelligence",
-      "work_slug": "siso-session-intelligence",
-      "work_type": "tool",
-      "lifecycle_status": "planned",
-      "library_url": "/works/siso-session-intelligence/",
-      "locator_type": "documentation",
-      "locator_revision": "main@597bd2f56844de97db85e10d6ff6548a1da0c610",
-      "visibility": "public",
-      "status": "staging",
-      "active_release_id": "gls:release:8078af85-d692-4275-b0b1-a3432f225acc",
-      "active_release_version": "registry-seed-2026-07-30",
-      "artifact_revision": null
     }
   ]
 }

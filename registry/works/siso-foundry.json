@@ -14,16 +14,16 @@
     "locators": [{
       "type": "source_repository",
       "url": "https://github.com/Lordsisodia/siso-foundry",
-      "revision": "main@1ec5890e4f1d5213a2898b009bd65f0df46b7eb5",
+      "revision": "main@f6afca0db5bf333fd5535aaed6242c42d16c12b3",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-foundry:1ec5890e4f1d5213a2898b009bd65f0df46b7eb5", "observed_at": "2026-07-30", "summary": "Canonical public source contains portable core contracts, domain pipelines, query and verification packages, and a machine-readable external dataset boundary; repository checks passed before publication." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-foundry:f6afca0db5bf333fd5535aaed6242c42d16c12b3", "observed_at": "2026-07-30", "summary": "Canonical public source contains portable core contracts, domain pipelines, query and verification packages, and a machine-readable external dataset boundary; repository checks passed before publication." }
     }],
-    "license": { "status": "verified", "spdx": "MIT", "reason": "The public repository contains reviewed SISO-owned software under MIT; dataset and upstream-source rights remain explicitly asset-specific and outside the source license claim.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-foundry/blob/1ec5890e4f1d5213a2898b009bd65f0df46b7eb5/PROVENANCE.md", "observed_at": "2026-07-30", "summary": "The public extraction records included software, excluded payloads, path normalization, and independent data/upstream ownership boundaries." }] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The public repository contains reviewed SISO-owned software under MIT; dataset and upstream-source rights remain explicitly asset-specific and outside the source license claim.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-foundry/blob/f6afca0db5bf333fd5535aaed6242c42d16c12b3/PROVENANCE.md", "observed_at": "2026-07-30", "summary": "The public extraction records included software, excluded payloads, path normalization, and independent data/upstream ownership boundaries." }] }
   },
   "relationships": [],
   "evidence": [
     { "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:foundry:2026-07-30", "observed_at": "2026-07-30", "summary": "Foundry has an independent research outcome and belongs in the Research section rather than inside Agents." },
-    { "kind": "release_receipt", "reference": "repo-check:siso-foundry:1ec5890e4f1d5213a2898b009bd65f0df46b7eb5", "observed_at": "2026-07-30", "summary": "Twenty-eight Python files compiled, JavaScript and shell entrypoints passed syntax checks, the topic-registry disposable-database smoke passed, and the publication scan passed." }
+    { "kind": "release_receipt", "reference": "repo-check:siso-foundry:f6afca0db5bf333fd5535aaed6242c42d16c12b3", "observed_at": "2026-07-30", "summary": "Twenty-eight Python files compiled, JavaScript and shell entrypoints passed syntax checks, the topic-registry disposable-database smoke passed, and the publication scan passed." }
   ]
 }

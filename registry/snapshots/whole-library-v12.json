@@ -1,0 +1,49 @@
+{
+  "schema_version":"1.0.0",
+  "record_type":"snapshot",
+  "id":"gls:snapshot:2a7c57a8-3cb0-4269-ac1f-cf9f1a6bcdc1",
+  "name":"Whole Library V12 — Public Extraction and Identity Remediation",
+  "version":"12.0.0",
+  "created_at":"2026-07-30T06:30:00+07:00",
+  "immutable":true,
+  "scope":"whole_library",
+  "metadata_completeness":{"state":"complete","work_count":14,"release_count":14,"assembly_count":1},
+  "releases":[
+    {"release_id":"gls:release:08b0e778-e4d5-4870-8ea0-13755ada51b2","manifest_sha256":"063f93b6b57b862706a4ff66b4388dcdd0b7abe3335fa8dfcb4e1e89c9f6e315"},
+    {"release_id":"gls:release:14c1d9de-0e77-44e9-9274-57e7cfb6ab02","manifest_sha256":"96200b7e955e3d0ec21b954a1d329a7ec2428ad1aef86e2bfce6336c044564d2"},
+    {"release_id":"gls:release:24c1ed1d-4437-4641-83e2-048d55116590","manifest_sha256":"1641d889f66bf10ce4de0dd3e126aa87c38cab3787fe20694b4f0c851751d40d"},
+    {"release_id":"gls:release:bae2bab9-e411-4684-b595-3bf86b2761f9","manifest_sha256":"acd404815c593f438b48d3be737d4366e2c6285a7595782f3a73b5e0ddfff7a7"},
+    {"release_id":"gls:release:61f81c21-b467-4628-96e8-a20493cd0a04","manifest_sha256":"9f6a8e8ca90723d7775158ab20ffe638c8316dfba3a75583d3cc6f2097b1df2e"},
+    {"release_id":"gls:release:79d7c186-7425-4815-8108-b03cbffdad05","manifest_sha256":"559a4cb66b2b887d967066487279a3480c8d20fcb04e00875bdb7f3e6d4e18f9"},
+    {"release_id":"gls:release:c7cfb739-67d3-4c63-9146-5f47430f7970","manifest_sha256":"093174600216152d0dad9c66853a32f4f206b466eef45d470353aefce8959466"},
+    {"release_id":"gls:release:ff8cc25f-7162-4713-9e38-66cbf3eca958","manifest_sha256":"673c11368ccd7b53288e3600b044ccbc401a2b3cbab054558f4428e295330976"},
+    {"release_id":"gls:release:da95107a-2089-4d6b-9171-7d0de7790d11","manifest_sha256":"a6b01012471508b92765865600105ffb213212457214ceef4aa686e95dca6e73"},
+    {"release_id":"gls:release:36960afb-ef79-4dd7-a642-95a20150c319","manifest_sha256":"fd254edd0f1d3e3430d68d1e7b4a074017a362dedc2828a446915307b774299d"},
+    {"release_id":"gls:release:0b81c926-0433-42f6-b6a9-9993b2ce5a6b","manifest_sha256":"ff8708e23dcb241b77fcc245c3f26cd0395b9f841d28326d51789a5573b69c6d"},
+    {"release_id":"gls:release:69c70399-9344-4752-b6a7-8976ee857006","manifest_sha256":"4e5a09b9a1ba2c3dfbbbca77f5aa48f1a32116c2590c8aba09fb96b180030ae1"},
+    {"release_id":"gls:release:9e2dedcd-dfea-4241-b85d-547cdaeacef9","manifest_sha256":"cd666e8a2a0773527ad6a8c480dc27e0b7ad70ff7ca1b1d710cd5b20563b3190"},
+    {"release_id":"gls:release:789e157f-4eaf-45a5-b487-9b8f02ff407a","manifest_sha256":"03432525239933675a17f6a16b7b50e5d75bf096828f1698862f63bee7d2276d"}
+  ],
+  "assemblies":[{"assembly_id":"gls:assembly:2c86b098-32ec-47b1-a73d-aacdc1a405bf","manifest_sha256":"f2ce4d8802ce40e95f00d31b1afafd9c93adca7827c8ddf20113c50c5fa87379"}],
+  "projection":{
+    "root_work_ids":["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"],
+    "edges":[
+      {"from_work_id":"gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1","to_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","type":"curates","contextual_role":"section","context":"Agents is the browse section for operating stacks, capabilities, shared agent services, and runtime integrations."},
+      {"from_work_id":"gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1","to_work_id":"gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25","type":"curates","contextual_role":"section","context":"Research is the browse section for discovery, evidence, knowledge, datasets, and durable research artifacts."},
+      {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943","type":"curates","contextual_role":"foundation","context":"Project OS supplies the project-local operating contract used by the SISO Agent Stack."},
+      {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224","type":"curates","contextual_role":"runtime","context":"SISO Agent Runtime is the installed application currently sourced from the Agent Base warehouse."},
+      {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc","type":"curates","contextual_role":"integration","context":"Herdr provides the externally owned persistent workspace and pane substrate used by the stack."},
+      {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:ea2f0de7-95ee-4e62-acde-85375b048719","type":"curates","contextual_role":"coordination_policy","context":"Agent Zero holds intent and coordinates work through the operating stack."},
+      {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc","type":"curates","contextual_role":"module","context":"Playbooks compose skills, tools, lanes, and verification for repeatable operating scenarios."},
+      {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd","type":"curates","contextual_role":"module","context":"Skills are atomic repeatable capabilities consumed by the Agents operating stack and its playbooks."},
+      {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b","type":"curates","contextual_role":"module","context":"Agent Brain supplies shared state and memory services without being embedded inside the runtime application."},
+      {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84","type":"curates","contextual_role":"module","context":"Session Intelligence learns from explicit agent sessions while retaining an independent privacy-sensitive lifecycle."},
+      {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a","type":"curates","contextual_role":"integration","context":"Agent Integrations contains experimental adapters with explicit promotion and rollback gates."},
+      {"from_work_id":"gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25","to_work_id":"gls:work:ec664d93-df93-48c5-be40-5d0165886c01","type":"curates","contextual_role":"module","context":"Foundry is the Research platform for source discovery, evaluation, preservation, and reuse knowledge."},
+      {"from_work_id":"gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25","to_work_id":"gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f","type":"curates","contextual_role":"module","context":"Evidence Engines turns explicit sources and findings into traceable knowledge, principles, and ranked ideas."}
+    ]
+  },
+  "download_contract":{"manifest_role":"metadata_complete_named_snapshot","artifact_policy":"payloads_are_separate_and_require_per_artifact_receipts"},
+  "artifact_materialization":{"state":"not_materialized","receipts":[]},
+  "evidence":[{"kind":"registry_validation","reference":"registry:snapshot:whole-library-v12","observed_at":"2026-07-30","summary":"Snapshot selects privacy-safe Session Intelligence and code-only Evidence Engines releases, repins six identity-sanitized source histories, and projects twelve released repositories, one linked runtime destination, and no staging homes."}]
+}

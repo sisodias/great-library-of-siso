@@ -1,26 +1,31 @@
 {
-  "schema_version": "1.0.0",
-  "record_type": "work",
-  "id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
-  "slug": "siso-evidence-engines",
-  "name": "SISO Evidence Engines",
-  "summary": "A package family for traceable knowledge distillation, evidence-gated coding principles, and ranked improvement ideas.",
-  "work_type": "bundle",
-  "lifecycle_status": "planned",
-  "updated_at": "2026-07-30",
-  "provenance": {
-    "origin": "siso",
-    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
-    "locators": [{
-      "type": "documentation",
-      "url": "https://github.com/Lordsisodia/siso-evidence-engines",
-      "revision": "main@92f95a0fedd9ec5bc6aa4ea85a8787873903f1ff",
-      "visibility": "public",
-      "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-evidence-engines:92f95a0fedd9ec5bc6aa4ea85a8787873903f1ff", "observed_at": "2026-07-30", "summary": "Canonical public staging repository exists; the three engine packages and shared primitives remain unpublished pending data separation." }
+  "schema_version":"1.0.0",
+  "record_type":"work",
+  "id":"gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+  "slug":"siso-evidence-engines",
+  "name":"SISO Evidence Engines",
+  "summary":"A Research package family for source-grounded knowledge items, credibility-ranked engineering principles, and evidence-gated improvement ideas.",
+  "work_type":"bundle",
+  "lifecycle_status":"active",
+  "updated_at":"2026-07-30",
+  "provenance":{
+    "origin":"siso",
+    "owners":[{"name":"SISO Open Source Foundation","role":"steward","classification":"siso"}],
+    "locators":[{
+      "type":"source_repository",
+      "url":"https://github.com/Lordsisodia/siso-evidence-engines",
+      "revision":"main@6ffba38d77409d6317733ec5fe96386d0481d2ea",
+      "visibility":"public",
+      "verified":true,
+      "evidence":{"kind":"integration_check","reference":"github-api:Lordsisodia/siso-evidence-engines:6ffba38d77409d6317733ec5fe96386d0481d2ea","observed_at":"2026-07-30","summary":"Canonical public source contains the Knowledge, Principles, and Idea engine contracts, shared grounding and scoring primitives, machine registry, CLI, synthetic fixtures, and corpus-exclusion checks."}
     }],
-    "license": { "status": "pending", "spdx": "NOASSERTION", "reason": "Reusable engine code must be separated from private corpora, generated state, and machine configuration before licensing.", "evidence": [] }
+    "license":{"status":"verified","spdx":"MIT","reason":"The clean SISO-owned engine implementation carries MIT; ingested sources and external corpora retain their own rights.","evidence":[{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-evidence-engines/blob/6ffba38d77409d6317733ec5fe96386d0481d2ea/PROVENANCE.md","observed_at":"2026-07-30","summary":"Reusable code, excluded corpora, machine configuration, provider adapters, and source-rights boundaries are recorded at the pinned release."}]}
   },
-  "relationships": [],
-  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:evidence-engines:2026-07-30", "observed_at": "2026-07-30", "summary": "Knowledge, coding-principles, and idea pipelines were reviewed as separate Works sharing evidence, scoring, provenance, and promotion primitives." }]
+  "relationships":[
+    {"type":"integrates_with","target_work_id":"gls:work:ec664d93-df93-48c5-be40-5d0165886c01","context":"Foundry discovers and prepares explicit sources; Evidence Engines turns those sources into grounded knowledge, principles, and ranked ideas without owning acquisition or corpora.","evidence":[{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-evidence-engines/blob/6ffba38d77409d6317733ec5fe96386d0481d2ea/docs/ARCHITECTURE.html","observed_at":"2026-07-30","summary":"The public architecture assigns acquisition, scraping, provider execution, schedulers, and corpora to Foundry or external adapters."}]}
+  ],
+  "evidence":[
+    {"kind":"source_review","reference":"source-review:siso-agent-base-modules:evidence-engines:2026-07-30","observed_at":"2026-07-30","summary":"Knowledge value-item schema, quote grounding, credibility tiers, principle and idea gates, jury aggregation, deterministic scores, generated corpora, provider code, and mutation loops were read before classification."},
+    {"kind":"release_receipt","reference":"repo-check:siso-evidence-engines:6ffba38d77409d6317733ec5fe96386d0481d2ea","observed_at":"2026-07-30","summary":"Grounded and rejected knowledge, backed and unbacked principles, canonical graduation, backed and unbacked ideas, queued graduation, corpus non-retention, full CLI flow, and publication checks passed; checkpoint rated 94/100."}
+  ]
 }
