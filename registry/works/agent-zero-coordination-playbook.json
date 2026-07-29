@@ -2,30 +2,47 @@
   "schema_version": "1.0.0",
   "record_type": "work",
   "id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
-  "slug": "agent-zero-coordination-playbook",
-  "name": "Agent Zero",
-  "summary": "A SISO coordination skill that holds human intent, lane boundaries, durable context, dispatch state, evidence, and final synthesis.",
-  "work_type": "skill",
+  "slug": "siso-agent-zero",
+  "name": "SISO Agent Zero",
+  "summary": "The intent-holding coordination and boot package that joins a durable identity to current Agent Brain state, then hands work to an explicitly selected agent host.",
+  "work_type": "agent_system",
   "lifecycle_status": "experimental",
   "updated_at": "2026-07-30",
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "SISO", "role": "steward", "classification": "siso" }],
     "locators": [{
-      "type": "documentation",
+      "type": "source_repository",
       "url": "https://github.com/Lordsisodia/siso-agent-zero",
-      "revision": "main@dc547ab38d7561e2712976863acc040cea78d7dd",
+      "revision": "main@6fe462b6d496aa1d7106c45f71a9c013818e36de",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-zero:dc547ab38d7561e2712976863acc040cea78d7dd", "observed_at": "2026-07-30", "summary": "Canonical public destination exists; the current commit is a staging README and not yet a portable Agent Zero release." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-zero:6fe462b6d496aa1d7106c45f71a9c013818e36de", "observed_at": "2026-07-30", "summary": "Canonical public source contains the provider-neutral boot package, identity contract, explicit Agent Brain and host boundaries, optional cmux adapter, reversible installer, migration map, and HTML architecture." }
     }],
-    "license": { "status": "pending", "spdx": "NOASSERTION", "reason": "No verified portable public release or redistribution grant is recorded.", "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Current playbook is operational SISO material, not a verified portable public artifact." }] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The clean SISO-owned extraction carries an MIT license.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-zero/blob/6fe462b6d496aa1d7106c45f71a9c013818e36de/LICENSE", "observed_at": "2026-07-30", "summary": "MIT license is present at the pinned public source commit." }] }
   },
-  "relationships": [{
-    "type": "coordinates_via",
-    "target_work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
-    "context": "Agent Zero uses Herdr's workspace and pane mechanics to coordinate the persistent lanes of the named SISO Agent Stack.",
-    "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-stack:agent-zero:2026-07-30", "observed_at": "2026-07-30", "summary": "Direct review confirmed that Agent Zero owns coordination behavior while Herdr supplies the terminal workspace and lane mechanics used by the stack." }]
-  }],
-  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-stack:agent-zero:2026-07-30", "observed_at": "2026-07-30", "summary": "The current Agent Zero SKILL.md was read directly; the artifact is a coordination skill/layer, not a generic playbook category." }]
+  "relationships": [
+    {
+      "type": "depends_on",
+      "target_work_id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
+      "context": "Agent Zero reads current coordination state through the Agent Brain command contract; it does not own the brain's storage, schema, or service lifecycle.",
+      "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-zero/blob/6fe462b6d496aa1d7106c45f71a9c013818e36de/docs/ARCHITECTURE.html", "observed_at": "2026-07-30", "summary": "The public architecture and implementation keep Agent Brain behind an external command contract." }]
+    },
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "context": "Agent Zero explicitly hands its boot packet to a selected Agent Runtime or host CLI instead of embedding model execution and session lifecycle.",
+      "evidence": [{ "kind": "release_receipt", "reference": "repo-check:siso-agent-zero:6fe462b6d496aa1d7106c45f71a9c013818e36de", "observed_at": "2026-07-30", "summary": "A disposable shell-free host handoff smoke passed." }]
+    },
+    {
+      "type": "coordinates_via",
+      "target_work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
+      "context": "Agent Zero may use Herdr for persistent workspaces and lanes through an optional adapter; Herdr remains an independently owned substrate.",
+      "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-zero/blob/6fe462b6d496aa1d7106c45f71a9c013818e36de/MIGRATION-MAP.json", "observed_at": "2026-07-30", "summary": "The extracted cmux adapter and deferred self-build coupling make workspace integration optional and replaceable." }]
+    }
+  ],
+  "evidence": [
+    { "kind": "source_review", "reference": "source-review:siso-agent-base:agent-zero-boundary:2026-07-30", "observed_at": "2026-07-30", "summary": "All six warehouse scripts were classified by behavior: core identity and rehydration were promoted, cmux isolated, voice and self-build deferred, and organization scaffolding reclassified." },
+    { "kind": "release_receipt", "reference": "repo-check:siso-agent-zero:6fe462b6d496aa1d7106c45f71a9c013818e36de", "observed_at": "2026-07-30", "summary": "Publication, syntax, read-only boot, explicit announcement, explicit host handoff, disposable install, installed execution, and marked uninstall checks passed." }
+  ]
 }

@@ -1,16 +1,7 @@
 {
-  "generated_at": "2026-07-29T22:12:00.000Z",
+  "generated_at": "2026-07-29T22:20:00.000Z",
   "base_path": "/",
   "works": [
-    {
-      "id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
-      "slug": "agent-zero-coordination-playbook",
-      "name": "Agent Zero",
-      "library_url": "/works/agent-zero-coordination-playbook/",
-      "type": "skill",
-      "maturity": "experimental",
-      "section": "Agents"
-    },
     {
       "id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
       "slug": "agents",
@@ -72,6 +63,15 @@
       "library_url": "/works/siso-agent-base/",
       "type": "application",
       "maturity": "active",
+      "section": "Agents"
+    },
+    {
+      "id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "slug": "siso-agent-zero",
+      "name": "SISO Agent Zero",
+      "library_url": "/works/siso-agent-zero/",
+      "type": "agent_system",
+      "maturity": "experimental",
       "section": "Agents"
     },
     {
