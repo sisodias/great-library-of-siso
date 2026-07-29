@@ -6,6 +6,7 @@ These authored documents explain the public model and its operating boundaries. 
 - [Using the Library](using-the-library.md) — browse, fetch, compose, research, cite, correct, and contribute.
 - [Agents V1](agents-v1.md) — initial scope and verified repository-locator provenance.
 - [SISO Agent Stack model](agent-stack-model.html) — source-backed assembly, component roles, capability semantics, and evolution rules.
+- [SISO Agent Base decomposition](agent-base-decomposition.html) — what the current repository actually contains, the real application boundary, and the evidence-gated repo extraction map.
 - [Roadmap](roadmap.md) — static Pages first, then near-read-only CLI and MCP access to the same contracts.
 - [Contributing](../CONTRIBUTING.md) — clean-room record and documentation changes.
 - [Security](../SECURITY.md) — private reporting and publication-safety boundary.

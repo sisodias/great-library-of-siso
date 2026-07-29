@@ -16,7 +16,8 @@ The core model is deliberately small:
 Library
 ├── Sections                 browse projections
 ├── Works                    stable identities
-└── Assemblies               versioned compositions of Works
+├── Assemblies               versioned compositions of Works
+└── Source Inventories       evidence-led staging before promotion to a Work
 
 Distribution layers: Releases and Snapshots
 Structure: typed relationships stored as data
@@ -25,6 +26,7 @@ Structure: typed relationships stored as data
 - A **Section** is a browseable projection, not part of a Work's identity.
 - A **Work** has a stable ID and a stable, human-readable Library detail URL.
 - An **Assembly** keeps the components of a working stack together, records their contextual roles and dependencies, and can evolve by publishing a new immutable version.
+- A **Source Inventory** maps valuable but mixed or unclassified material before it is safe to split, publish, archive, or promote into stable Works.
 - A **Release** is an immutable manifest for a specific version and its evidenced distribution state.
 - A **Snapshot** pins a named recursive view. A whole-Library snapshot is metadata-complete; payload materialization is separate and requires per-artifact receipts.
 - A **relationship** is typed data. Directory nesting does not define global ownership, containment, or rank.
@@ -68,6 +70,7 @@ Inclusion means the Library describes the Work. It does not by itself promise a 
 | `registry/releases/` | Immutable Release Manifests |
 | `registry/snapshots/` | Named pinned views |
 | `registry/assemblies/` | Immutable versioned compositions of Works |
+| `registry/source-inventories/` | Preservation-aware maps of mixed source awaiting promotion or reallocation |
 | `schemas/` | Machine-readable contracts |
 | `docs/` | Authored model, operating, and learning documentation |
 | `site/` | Generated Pages artifact; do not hand-edit generated item pages |

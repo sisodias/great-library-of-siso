@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SISO Agent Base — Repository Decomposition</title>
+  <style>
+    :root{font:16px/1.58 system-ui,sans-serif;color:#172033;background:#f3f1ec}body{max-width:82rem;margin:auto;padding:2rem}header,section{background:#fff;border:1px solid #d8d4cc;border-radius:1rem;padding:1.4rem;margin:1rem 0}header{background:#142039;color:#f7fbff}.eyebrow{font:700 .74rem ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#52d8cf}h1,h2{line-height:1.12}h1{font-size:clamp(2.2rem,6vw,4.6rem);margin:.4rem 0}.verdict{font-size:1.18rem;max-width:66rem}.numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem}.numbers div{background:#eef3f7;border-radius:.75rem;padding:1rem}.numbers b{display:block;font-size:1.55rem}.numbers span{color:#586578}.good{color:#087c70}.warn{color:#a14f05}.bad{color:#a12635}table{border-collapse:collapse;width:100%}th,td{padding:.7rem;border-bottom:1px solid #dce1e7;text-align:left;vertical-align:top}th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:#576579}.status{font:700 .72rem ui-monospace,monospace;text-transform:uppercase;white-space:nowrap}.tree,pre{white-space:pre-wrap;background:#eef2f6;border-radius:.7rem;padding:1rem;overflow-wrap:anywhere}.rule{border-left:4px solid #087c70;padding-left:1rem}code{overflow-wrap:anywhere}footer{padding:2rem 0;color:#5d6774}@media(max-width:58rem){body{padding:.6rem}.numbers{grid-template-columns:1fr 1fr}table,tbody,tr,th,td{display:block}th,td{border:0;padding:.28rem 0}tr{border-bottom:1px solid #dce1e7;padding:.7rem 0}}@media(max-width:34rem){.numbers{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Repository decomposition / evidence pass 01 / 2026-07-30</p>
+    <h1>Agent Base is an app inside a warehouse.</h1>
+    <p class="verdict">The honest current product is a SISO coding-agent application and distribution. The Git repository around it has accumulated independent products, nested repositories, experiments, data, private runtime state, upstream source, research, archives, and hundreds of cross-domain smoke scripts. The repository boundary is not the architecture.</p>
+  </header>
+
+  <section>
+    <h2>Measured reality</h2>
+    <div class="numbers">
+      <div><b>23 GiB</b><span>current checkout</span></div>
+      <div><b>9.9 GiB</b><span>Git database</span></div>
+      <div><b>≈12.47 GiB</b><span>eligible for the current whole-root installer copy</span></div>
+      <div><b>≈5.4 MiB</b><span>candidate coherent runtime source before dependencies and owned tests</span></div>
+    </div>
+    <p>The public installer clones the repository and <code>scripts/install-local.sh</code> uses a root-level <code>rsync</code> excluding only <code>.git</code>, <code>node_modules</code>, and <code>.DS_Store</code>. It therefore copies unrelated repository material into an application installation. The working tree also had 586 existing dirty status entries during this review, so no source movement was attempted.</p>
+  </section>
+
+  <section>
+    <h2>The actual application boundary</h2>
+    <table>
+      <thead><tr><th>Current path</th><th>Observed responsibility</th><th>Target ownership</th></tr></thead>
+      <tbody>
+        <tr><td><code>install.sh</code>, <code>scripts/install-local.sh</code></td><td>Clone, dependency setup, profile installation, Bifrost credential configuration, and launcher projection.</td><td><span class="status good">Runtime app</span></td></tr>
+        <tr><td><code>bin/siso*</code></td><td>Stable user-facing CLI: launch, doctor, update, inspect, and TUI entrypoints.</td><td><span class="status good">Runtime app</span></td></tr>
+        <tr><td><code>extensions/siso-lifecycle</code></td><td>Agent-session lifecycle capture.</td><td><span class="status good">Runtime app package</span></td></tr>
+        <tr><td><code>extensions/siso-context-manager</code></td><td>Context filtering, retrieval, memory, and librarian behavior.</td><td><span class="status good">Runtime app package</span></td></tr>
+        <tr><td><code>extensions/siso-status</code></td><td>Status and terminal HUD surfaces.</td><td><span class="status good">Runtime app package</span></td></tr>
+        <tr><td><code>extensions/siso-agent-router</code></td><td>Routing, child execution, tasks, goals, workflow, mailbox, tools, skills, worktrees, and scorecards across 80 files.</td><td><span class="status warn">Runtime app; internally decompose by domain</span></td></tr>
+        <tr><td><code>templates/profile</code></td><td>Installed Pi profile, model configuration, system instructions, and currently bundled skills.</td><td><span class="status warn">Runtime profile; skills become versioned dependency</span></td></tr>
+        <tr><td><code>apps/siso-tui</code> + <code>packages/siso-tui</code></td><td>The active SISO-owned OpenTUI application and renderer/runtime contracts.</td><td><span class="status good">Runtime app monorepo</span></td></tr>
+      </tbody>
+    </table>
+    <p class="rule">Working name: <b>SISO Agent Runtime</b> or <b>SISO Agent App</b>. “SISO Agent Base” may remain a compatibility/product name, but it must not imply that the current warehouse repository is one architectural component.</p>
+  </section>
+
+  <section>
+    <h2>Repository extraction ledger</h2>
+    <table>
+      <thead><tr><th>Current area</th><th>Content evidence</th><th>Disposition</th><th>Probable repository</th></tr></thead>
+      <tbody>
+        <tr><td><code>siso-project-os/</code></td><td>Clean nested Git repository with its own package, CLI, schemas, tests, MIT license, and public remote.</td><td><span class="status good">Already independent</span></td><td><code>sisodias/siso-project-os</code></td></tr>
+        <tr><td><code>siso-agent-playbook/</code></td><td>Nested Git repository with installer, skills, tools, prompts, telemetry, evidence, and public remote. Four local modifications exist.</td><td><span class="status good">Already independent; preserve dirt</span></td><td><code>sisodias/siso-agent-playbook</code></td></tr>
+        <tr><td><code>foundry/</code> + owned pipeline code</td><td>Independent source-mining and reuse-knowledge product with a database pipeline and read-only web interface.</td><td><span class="status good">Extract product; separate code from datasets</span></td><td><code>siso-foundry</code></td></tr>
+        <tr><td><code>apps/siso-os/</code></td><td>2.9 GiB nested upstream cmux repository on a SISO WIP branch, with four dirty entries; its own commit says superseded by Herdr.</td><td><span class="status warn">Preserve fork/WIP outside runtime</span></td><td>Dedicated fork or external-source ledger</td></tr>
+        <tr><td><code>templates/profile/skills/</code></td><td>Large cross-agent capability catalog installed by symlink projection.</td><td><span class="status good">Extract capability registry; promote independently useful skills</span></td><td><code>siso-skills</code> plus individual skill repos</td></tr>
+        <tr><td><code>brain/</code></td><td>Composes shared human/agent instructions into Claude- and Codex-specific generated profiles.</td><td><span class="status warn">Coherent package; decide app package vs own repo</span></td><td><code>siso-agent-profile</code> candidate</td></tr>
+        <tr><td><code>atlas/</code></td><td>Read-only persistent architecture auditor with its own scripts, rubric, tickets, and operating loop.</td><td><span class="status warn">Independent tool candidate</span></td><td><code>siso-atlas</code> candidate</td></tr>
+        <tr><td><code>siso-agentlabs/</code></td><td>Former Pi Harness Lab with its own workspaces, experiments, research, and verification commands; current duplication against runtime has not yet been reconciled.</td><td><span class="status warn">Compare before promote/archive</span></td><td><code>siso-agent-labs</code> or vault</td></tr>
+        <tr><td><code>apps/siso-web-chat/</code></td><td>Independent Vite application described as a read-only web chat command shell.</td><td><span class="status warn">Validate active product state</span></td><td>Own app repo if active; otherwise lab</td></tr>
+        <tr><td><code>packages/design-tokens/</code></td><td>Cross-product SISO design token package with non-agent consumers.</td><td><span class="status good">Move out of agent domain</span></td><td>SISO shared UI/design repository</td></tr>
+        <tr><td><code>integrations/headroom</code>, <code>integrations/context-firewall</code></td><td>Bounded, opt-in context optimization experiments with their own safety and promotion contracts.</td><td><span class="status warn">Adapter/lab repos after promotion decision</span></td><td><code>siso-agent-integrations</code> or individual adapters</td></tr>
+        <tr><td><code>extensions/knowledge-engine</code>, <code>codex-engine</code>, <code>idea-engine</code>, <code>session-mirror</code>, voice/Agent Zero extensions</td><td>Substantial capabilities outside the four runtime extensions loaded by <code>bin/siso</code>.</td><td><span class="status warn">Unverified candidate Works</span></td><td>Read each boundary before deciding</td></tr>
+        <tr><td><code>office/</code>, runtime databases, telemetry, generated eval output</td><td>Machine/private operating state, including database snapshots.</td><td><span class="status bad">Never public runtime source</span></td><td>Private state/data store</td></tr>
+        <tr><td><code>archive/</code>, <code>research/</code>, imports, upstream clones</td><td>Archives, evidence corpora, external source, or staged material with different lifecycles.</td><td><span class="status bad">Never application install payload</span></td><td>Vault, Foundry data store, or external-source manifests</td></tr>
+        <tr><td><code>scripts/</code></td><td>238 root commands, including 208 <code>smoke:</code> package scripts spanning many unrelated domains.</td><td><span class="status warn">Distribute tests to owning repos</span></td><td>Each extracted Work owns its checks</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Target repository topology</h2>
+    <pre class="tree">great-library-of-siso          registry, relationships, releases, evidence
+├── siso-agent-runtime        the installable SISO coding-agent app
+├── siso-project-os           project-local operating system (already separate)
+├── siso-agent-playbook       fleet operating package (already separate)
+├── siso-skills               capability index/distribution; mature skills may graduate
+├── siso-foundry              source-mining and reuse-knowledge product
+├── siso-atlas                architecture auditor, if active review confirms it
+├── siso-agent-labs           experiments only, if not superseded
+└── integration repos         only when an adapter passes its promotion contract
+
+Outside GitHub application source:
+├── datasets / large databases / telemetry  → data store
+├── external upstream clones                → clone manifest + upstream locator
+├── private office/runtime state            → private system store
+└── dead or superseded material             → reversible vault</pre>
+  </section>
+
+  <section>
+    <h2>How the sauce enters the Library</h2>
+    <pre>mixed source / warehouse
+        ↓ read and inventory
+Source Inventory unit
+        ↓ coherent outcome + contract + preservation proof
+stable Library Work
+        ↓ independent source locator and release evidence
+GitHub repository / package / dataset manifest
+        ↓ contextual composition
+Stack Assembly, playbook, or capability index</pre>
+    <p>The Great Library does not need to physically contain every byte. It provides the stable identity, inventory, relationships, provenance, release manifests, and human documentation. GitHub repositories hold independently evolvable source; large datasets live in appropriate data stores; private state remains private.</p>
+    <p>The machine-readable starting point for this audit is <code>registry/source-inventories/siso-agent-base-2026-07-30.json</code>. Candidate units remain provisional until their direct comparison is complete.</p>
+  </section>
+
+  <section>
+    <h2>When something earns its own repository</h2>
+    <ol>
+      <li>It has one coherent outcome and a clear public contract.</li>
+      <li>It can be installed, run, forked, released, or maintained independently.</li>
+      <li>Its dependency direction can be stated without reaching into another repository's internals.</li>
+      <li>It owns its tests, release evidence, documentation, and migration path.</li>
+      <li>Moving it does not strand sole-copy dirty work; a bridge or pinned dependency exists first.</li>
+    </ol>
+    <p>A folder does not earn a repo because it is large. A skill does not earn a repo merely because it is a skill. Independent adoption and evolution earn the boundary. Stable Great Library Work IDs remain independent of whatever GitHub repository currently locates the source.</p>
+  </section>
+
+  <section>
+    <h2>Safe migration order</h2>
+    <ol>
+      <li>Freeze an evidence inventory of current dirty and nested Git state. Do not move anything yet.</li>
+      <li>Define the minimal runtime file manifest and change installation from whole-root <code>rsync</code> to an allowlisted release payload.</li>
+      <li>Remove already-independent nested repositories from the runtime payload and replace them with Library links or pinned dependencies.</li>
+      <li>Extract one proven Work at a time using <code>describe → bridge → move</code>, preserving history and local changes.</li>
+      <li>Move each domain's checks with it; shrink the root's 238-script cross-domain test surface.</li>
+      <li>Only then rename or retire the warehouse repository.</li>
+    </ol>
+    <p class="rule">The first code change should be the installer allowlist, not a giant filesystem reorganization. That immediately stops distributing gigabytes of unrelated material while preserving every current path for later controlled extraction.</p>
+  </section>
+
+  <section>
+    <h2>Evidence and limitations</h2>
+    <p>Read directly: root README, manifest, package configuration, installer, launcher, runtime extension entrypoint, architecture documents, product/package READMEs, nested Git remotes and status, top-level file/size counts, and existing working-tree state. Semantic code search was attempted through the registered project service but did not return in a bounded time, so targeted source reads were used as the documented fallback.</p>
+    <p>No files were changed in SISO Agent Base. Candidate labels are intentionally <b>unverified</b> where a direct content comparison is still required. The working tree's 586 pre-existing dirty entries and dirty nested repositories are preservation constraints, not cleanup targets.</p>
+    <p><a href="agent-stack-model.html">Return to the SISO Agent Stack model</a> · <a href="../agents/">Open Agents</a></p>
+  </section>
+
+  <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
+</body>
+</html>

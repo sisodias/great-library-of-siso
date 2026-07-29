@@ -6,6 +6,7 @@
     "releaseId": { "type": "string", "pattern": "^gls:release:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
     "snapshotId": { "type": "string", "pattern": "^gls:snapshot:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
     "assemblyId": { "type": "string", "pattern": "^gls:assembly:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "sourceInventoryId": { "type": "string", "pattern": "^gls:source-inventory:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
     "artifactId": { "type": "string", "pattern": "^gls:artifact:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
     "evidence": {
       "type": "object",

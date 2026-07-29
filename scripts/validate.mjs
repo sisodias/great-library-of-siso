@@ -76,6 +76,7 @@ const recordGroups = {
   work: { directory: "registry/works", schema: path.join(root, "schemas/work.schema.json") },
   release: { directory: "registry/releases", schema: path.join(root, "schemas/release.schema.json") },
   assembly: { directory: "registry/assemblies", schema: path.join(root, "schemas/assembly.schema.json") },
+  source_inventory: { directory: "registry/source-inventories", schema: path.join(root, "schemas/source-inventory.schema.json") },
   snapshot: { directory: "registry/snapshots", schema: path.join(root, "schemas/snapshot.schema.json") }
 };
 const records = {};
@@ -100,6 +101,7 @@ function uniqueMap(entries, label) {
 const works = uniqueMap(records.work, "works");
 const releases = uniqueMap(records.release, "releases");
 const assemblies = uniqueMap(records.assembly, "assemblies");
+const sourceInventories = uniqueMap(records.source_inventory, "source inventories");
 uniqueMap(records.snapshot, "snapshots");
 const artifactIds = new Set();
 for (const { file, value: work } of records.work) {
@@ -136,6 +138,15 @@ for (const { file, value: assembly } of records.assembly) {
     for (const componentId of stage.component_ids ?? []) if (!componentIds.has(componentId)) fail(`${label}: operating_loop step ${stage.step} references unknown component ${componentId}`);
   }
 }
+for (const { file, value: inventory } of records.source_inventory) {
+  const label = path.relative(root, file);
+  if (!works.has(inventory.source_work_id)) fail(`${label}: source_work_id ${inventory.source_work_id} does not resolve`);
+  const unitIds = new Set();
+  for (const unit of inventory.units ?? []) {
+    if (unitIds.has(unit.unit_id)) fail(`${label}: duplicate unit_id ${unit.unit_id}`);
+    unitIds.add(unit.unit_id);
+  }
+}
 for (const { file, value: snapshot } of records.snapshot) {
   const label = path.relative(root, file);
   const pinnedWorks = new Set();
@@ -167,7 +178,7 @@ for (const { file, value: snapshot } of records.snapshot) {
   if (snapshot.artifact_materialization?.state === "not_materialized" && snapshot.artifact_materialization.receipts.length) fail(`${label}: not_materialized snapshot cannot contain receipts`);
 }
 
-const publicationText = [...records.work, ...records.release, ...records.assembly, ...records.snapshot].map((entry) => entry.raw).join("\n");
+const publicationText = [...records.work, ...records.release, ...records.assembly, ...records.source_inventory, ...records.snapshot].map((entry) => entry.raw).join("\n");
 for (const pattern of [/\/Users\//, /\/home\//, /file:\/\//, /BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY/, /(?:ghp|github_pat|sk)-[A-Za-z0-9_-]{16,}/]) {
   if (pattern.test(publicationText)) fail(`publication-safe registry check matched ${pattern}`);
 }
@@ -177,4 +188,4 @@ if (errors.length) {
   errors.forEach((error) => console.error(`- ${error}`));
   process.exit(1);
 }
-console.log(`PASS registry validation: ${schemaEntries.length} schemas, ${works.size} Works, ${releases.size} Releases, ${assemblies.size} Assemblies, ${records.snapshot.length} Snapshots`);
+console.log(`PASS registry validation: ${schemaEntries.length} schemas, ${works.size} Works, ${releases.size} Releases, ${assemblies.size} Assemblies, ${sourceInventories.size} Source Inventories, ${records.snapshot.length} Snapshots`);

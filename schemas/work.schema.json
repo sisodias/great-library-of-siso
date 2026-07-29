@@ -11,7 +11,7 @@
     "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
     "name": { "type": "string", "minLength": 1 },
     "summary": { "type": "string", "minLength": 10 },
-    "work_type": { "enum": ["library", "section", "project", "agent_system", "tool", "skill", "playbook", "capability_pack", "bundle"] },
+    "work_type": { "enum": ["library", "section", "application", "project", "agent_system", "tool", "skill", "playbook", "capability_pack", "bundle"] },
     "lifecycle_status": { "enum": ["planned", "experimental", "active", "retired", "unknown"] },
     "updated_at": { "type": "string", "format": "date" },
     "provenance": { "$ref": "common.schema.json#/$defs/provenance" },

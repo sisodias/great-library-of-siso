@@ -4,8 +4,8 @@
   "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
   "slug": "siso-agent-base",
   "name": "SISO Agent Base",
-  "summary": "A public local coding-agent launcher and runtime surface with shared status, routing, context, lifecycle, and capability tooling.",
-  "work_type": "agent_system",
+  "summary": "The current SISO coding-agent application and distribution: installer, CLI, Pi runtime extensions, profile projection, and terminal UI, presently housed in an oversized mixed-purpose repository awaiting decomposition.",
+  "work_type": "application",
   "lifecycle_status": "active",
   "updated_at": "2026-07-30",
   "provenance": {
@@ -27,5 +27,5 @@
     "context": "Agent Base supplies Herdr-facing skills and runtime behavior in the named SISO Agent Stack while Herdr remains an independently owned upstream tool.",
     "evidence": [{ "kind": "source_review", "reference": "source-review:agent-base-modules-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Fleet orchestration boundary reviewed." }]
   }],
-  "evidence": [{ "kind": "source_review", "reference": "source-review:agent-base-modules-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Runtime, capability-pack, and release-unit boundaries reviewed." }]
+  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:2026-07-30", "observed_at": "2026-07-30", "summary": "Installer, launchers, runtime extensions, application surfaces, nested repositories, package manifests, repository size, and dirty state were read directly. The shippable center is an application/distribution; the surrounding repository is not one coherent Work." }]
 }

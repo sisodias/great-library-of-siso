@@ -20,6 +20,12 @@ Typed relationships express how Works are understood or composed. Use only relat
 
 A project may adopt an agent system. That does not mean projects contain agents, or agents contain projects, everywhere. Likewise, “module” describes a role inside a particular composition rather than an eternal object rank.
 
+## Source Inventories are the intake layer
+
+A mixed repository, laptop folder, import, or research corpus does not become one Work merely because it has one path. A Source Inventory records the bounded units observed inside it, their preservation constraints, evidence, provisional classifications, and intended dispositions.
+
+Only a coherent, independently addressable unit is promoted to a Work. Source Inventories may contain unverified candidates and are never permission to move, delete, publish, or archive source without the required content and rights review.
+
 ## Releases
 
 A Release Manifest is the immutable evidence boundary for a particular version. It records what is known about location, provenance, license, redistribution, and materialization. Catalog presence alone must not be translated into claims such as downloadable, resolvable, installable, forkable, or portable.

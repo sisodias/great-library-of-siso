@@ -31,7 +31,7 @@
     <h2>What each component owns in this assembly</h2>
     <div class="stack">
       <article class="card"><span class="required">Required</span><b>SISO Project OS</b><small>Project-local operating layer</small><p>Architecture, canonical work, claims, run packets, verification, delivery, durable knowledge, and cold-pickup state.</p></article>
-      <article class="card"><span class="required">Required</span><b>SISO Agent Base</b><small>Launcher and runtime surface</small><p>Starts the coding-agent runtime and supplies shared status, routing, context, lifecycle, and capability surfaces. It is not being classified as a generic agent framework.</p></article>
+      <article class="card"><span class="required">Required</span><b>SISO Agent Base</b><small>Current coding-agent application boundary</small><p>Installs and starts the coding-agent runtime and supplies shared status, routing, context, lifecycle, and TUI surfaces. Direct decomposition review found that the surrounding repository is a mixed-purpose warehouse; the application boundary is provisional, not a generic agent framework.</p></article>
       <article class="card"><span class="required">Required</span><b>Herdr</b><small>Persistent terminal and lane substrate</small><p>Workspaces, tabs, panes, agent addressing, messaging, and observable persistent lanes. It is part of the stack, not a separate “control plane” shelf.</p></article>
       <article class="card"><span class="required">Required</span><b>Agent Zero</b><small>Conversation and coordination layer</small><p>Holds intent, priorities, lane boundaries, durable context, dispatch state, evidence distinctions, and final synthesis. The current artifact is a skill, not a generic playbook category.</p></article>
     </div>
@@ -83,6 +83,7 @@
       <li>A category is added only when it is stable over time, mutually useful, and changes what a person or agent can do.</li>
     </ol>
     <p>The machine-readable source is <code>registry/assemblies/siso-agent-stack-v1.json</code>, validated by <code>schemas/assembly.schema.json</code>. This HTML is an explanation of that record, not a second registry.</p>
+    <p><a href="agent-base-decomposition.html">Read the SISO Agent Base repository decomposition →</a></p>
   </section>
 
   <section>

@@ -31,7 +31,7 @@
       "slug": "siso-agent-base",
       "name": "SISO Agent Base",
       "library_url": "/works/siso-agent-base/",
-      "type": "agent_system",
+      "type": "application",
       "maturity": "Unknown"
     },
     {
@@ -203,6 +203,386 @@
           "reference": "source-review:siso-agent-stack:assembly:2026-07-30",
           "observed_at": "2026-07-30",
           "summary": "Assembly derived from direct reading of the current Project OS, Agent Base, Herdr, Agent Zero, orchestration-playbook, and SISO Agent Playbook sources."
+        }
+      ]
+    }
+  ],
+  "source_inventories": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "source_inventory",
+      "id": "gls:source-inventory:d3e37616-1005-4d67-b5c5-82684dceed70",
+      "name": "SISO Agent Base source reallocation inventory",
+      "source_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "observed_at": "2026-07-30",
+      "inventory_state": "partial",
+      "preservation": {
+        "mode": "read_only",
+        "dirty_entries": 586,
+        "reason": "The parent checkout and nested repositories contain substantial pre-existing work. Extraction requires a content read, a preserved commit or patch, and a bridge before any move.",
+        "nested_repositories": [
+          {
+            "path": "apps/siso-os",
+            "remote": "https://github.com/manaflow-ai/cmux.git",
+            "branch": "codex/tmux-persistence-spike",
+            "dirty_entries": 4,
+            "preservation": "Preserve the SISO WIP branch and dirty files outside the runtime application before changing its location."
+          },
+          {
+            "path": "siso-project-os",
+            "remote": "https://github.com/sisodias/siso-project-os.git",
+            "branch": "main",
+            "dirty_entries": 0,
+            "preservation": "Already independent and clean; replace physical nesting with a Library relationship or pinned dependency."
+          },
+          {
+            "path": "siso-agent-playbook",
+            "remote": "https://github.com/sisodias/siso-agent-playbook.git",
+            "branch": "main",
+            "dirty_entries": 4,
+            "preservation": "Already independent; preserve four local modifications before removing the nested checkout from the application warehouse."
+          }
+        ]
+      },
+      "units": [
+        {
+          "unit_id": "agent-runtime-app",
+          "name": "SISO coding-agent runtime application",
+          "paths": [
+            "install.sh",
+            "scripts/install-local.sh",
+            "bin",
+            "templates/profile",
+            "extensions/siso-lifecycle",
+            "extensions/siso-context-manager",
+            "extensions/siso-status",
+            "extensions/siso-agent-router",
+            "apps/siso-tui",
+            "packages/siso-tui"
+          ],
+          "classification": "current_application",
+          "disposition": "keep",
+          "target": "siso-agent-runtime",
+          "rationale": "These paths form the installed and launched product surface. The runtime router still needs internal domain decomposition, but the application outcome is coherent.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:runtime:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Installer, launcher, profile projection, loaded extensions, and active TUI sources were read directly."
+            }
+          ]
+        },
+        {
+          "unit_id": "project-os",
+          "name": "SISO Project OS",
+          "paths": [
+            "siso-project-os"
+          ],
+          "classification": "accepted_work",
+          "disposition": "link_existing",
+          "target": "https://github.com/sisodias/siso-project-os",
+          "rationale": "Project OS is already a clean independent Git repository with its own package, CLI, schemas, tests, license, and accepted Library Work.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:project-os:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Nested repository remote, clean status, package manifest, README, specification, and lifecycle contracts were verified."
+            }
+          ]
+        },
+        {
+          "unit_id": "agent-playbook",
+          "name": "SISO Agent Playbook",
+          "paths": [
+            "siso-agent-playbook"
+          ],
+          "classification": "candidate_work",
+          "disposition": "link_existing",
+          "target": "https://github.com/sisodias/siso-agent-playbook",
+          "rationale": "The playbook is already an independently installable Git repository. Its four local modifications must be preserved before the warehouse stops carrying a nested checkout.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:agent-playbook:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Nested remote, dirty status, installer, skills, tools, prompts, telemetry, and architecture were read directly."
+            }
+          ]
+        },
+        {
+          "unit_id": "foundry",
+          "name": "SISO Foundry",
+          "paths": [
+            "foundry",
+            "research/repo-catalog"
+          ],
+          "classification": "candidate_work",
+          "disposition": "extract",
+          "target": "siso-foundry",
+          "rationale": "Foundry has an independent outcome, pipeline, databases, research method, and read-only web interface. Code and large datasets require separate storage boundaries.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:foundry:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Foundry onboarding, source map, pipeline ownership, database boundary, and interface manifest were read directly."
+            }
+          ]
+        },
+        {
+          "unit_id": "skills-catalog",
+          "name": "SISO skills and capability catalog",
+          "paths": [
+            "templates/profile/skills"
+          ],
+          "classification": "candidate_work",
+          "disposition": "extract",
+          "target": "siso-skills and promoted individual skill repositories",
+          "rationale": "The runtime currently installs a broad capability catalog by symlink projection. Capabilities need independent identity, evidence, versioning, and promotion without coupling their source to the application release.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:skills:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Skill roots, installer projection, capability gate, and representative skill/playbook contracts were read directly."
+            }
+          ]
+        },
+        {
+          "unit_id": "cmux-fork",
+          "name": "SISO cmux fork and WIP",
+          "paths": [
+            "apps/siso-os"
+          ],
+          "classification": "external_upstream",
+          "disposition": "preserve_external",
+          "target": "dedicated fork or external-source ledger",
+          "rationale": "This is a 2.9 GiB upstream cmux repository with a SISO WIP branch and dirty changes. It is not runtime application source and must not be flattened or deleted.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:cmux:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Upstream remote, local branch, latest WIP commit, dirty state, README, and package manifest were inspected."
+            }
+          ]
+        },
+        {
+          "unit_id": "agent-brain",
+          "name": "Shared agent profile composer",
+          "paths": [
+            "brain"
+          ],
+          "classification": "shared_package",
+          "disposition": "compare",
+          "target": "runtime package or siso-agent-profile",
+          "rationale": "The composer has a coherent cross-tool contract, but its release and ownership relationship to the runtime application needs a direct dependency analysis before extraction.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:brain:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Brain README and generated-profile composition contract were read directly."
+            }
+          ]
+        },
+        {
+          "unit_id": "atlas",
+          "name": "Atlas architectural auditor",
+          "paths": [
+            "atlas"
+          ],
+          "classification": "candidate_work",
+          "disposition": "compare",
+          "target": "siso-atlas if active",
+          "rationale": "Atlas presents an independent read-only audit loop, but current operational use and dependencies have not yet been verified.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:atlas:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Atlas README, rubric, scripts, source map, and ticket surface were inspected."
+            }
+          ]
+        },
+        {
+          "unit_id": "agent-labs",
+          "name": "SISO Agent Labs",
+          "paths": [
+            "siso-agentlabs"
+          ],
+          "classification": "experiment",
+          "disposition": "compare",
+          "target": "siso-agent-labs or vault",
+          "rationale": "The former Pi Harness Lab is internally coherent but appears to overlap the promoted runtime. A feature-by-feature comparison is required before promoting or archiving it.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:agent-labs:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Lab mission, target architecture, workspaces, experiments, and verification package were read directly."
+            }
+          ]
+        },
+        {
+          "unit_id": "web-chat",
+          "name": "SISO web chat",
+          "paths": [
+            "apps/siso-web-chat"
+          ],
+          "classification": "unverified",
+          "disposition": "compare",
+          "target": "own application repository if active, otherwise lab",
+          "rationale": "The Vite application has an independent package identity, but its current product state and consumers were not established in this pass.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:web-chat:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Package manifest and current dirty scope were inspected; product state remains unverified."
+            }
+          ]
+        },
+        {
+          "unit_id": "design-tokens",
+          "name": "SISO design tokens",
+          "paths": [
+            "packages/design-tokens"
+          ],
+          "classification": "shared_package",
+          "disposition": "move_to_shared_library",
+          "target": "SISO shared UI or design-system repository",
+          "rationale": "The package explicitly serves non-agent applications and describes itself as a cross-product design source of truth, so it is filed in the wrong domain.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:design-tokens:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Package README, exports, consumers, and license state were inspected."
+            }
+          ]
+        },
+        {
+          "unit_id": "context-integrations",
+          "name": "Context optimization integrations",
+          "paths": [
+            "integrations/headroom",
+            "integrations/context-firewall"
+          ],
+          "classification": "experiment",
+          "disposition": "compare",
+          "target": "siso-agent-integrations or promoted individual adapter repositories",
+          "rationale": "Both integrations have bounded safety and promotion contracts but remain opt-in or shadow-stage experiments rather than core application dependencies.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:context-integrations:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Headroom and context-firewall READMEs, safety boundaries, smokes, and promotion verdicts were read directly."
+            }
+          ]
+        },
+        {
+          "unit_id": "extra-engines",
+          "name": "Additional engines and extension services",
+          "paths": [
+            "extensions/knowledge-engine",
+            "extensions/codex-engine",
+            "extensions/idea-engine",
+            "extensions/session-mirror",
+            "extensions/braind",
+            "extensions/agent-zero",
+            "extensions/agent-zero-voice",
+            "extensions/voice",
+            "extensions/research-topics"
+          ],
+          "classification": "unverified",
+          "disposition": "compare",
+          "target": "individual Works or runtime packages after direct boundary reviews",
+          "rationale": "These substantial capabilities are not among the four extensions loaded by the main launcher. Each requires a content and dependency review before a repo verdict.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:extension-census:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Extension file counts, sizes, entrypoints, README availability, and main-launcher extension list were inspected; individual classifications remain open."
+            }
+          ]
+        },
+        {
+          "unit_id": "private-runtime-state",
+          "name": "Private and machine runtime state",
+          "paths": [
+            "office",
+            "runtime",
+            "data",
+            "evals"
+          ],
+          "classification": "private_state",
+          "disposition": "move_to_private_store",
+          "target": "private system and evidence stores",
+          "rationale": "These areas contain database snapshots, runtime artifacts, telemetry, generated evaluation material, or machine-specific state and are not public application source.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:private-state:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Top-level contents and runtime database/artifact surfaces were inspected without opening private payloads."
+            }
+          ]
+        },
+        {
+          "unit_id": "archives-research-imports",
+          "name": "Archives, research corpora, imports, and upstream source",
+          "paths": [
+            "archive",
+            "research",
+            "imported-agent-workspace",
+            "imported-ai-hub",
+            "_legacy"
+          ],
+          "classification": "data_or_archive",
+          "disposition": "move_to_data_store",
+          "target": "reversible vault, Foundry data store, or external-source manifests",
+          "rationale": "These areas have archive, corpus, imported-workspace, legacy, or upstream-source lifecycles and must not be copied as part of an application installation.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:large-roots:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Top-level sizes, repository architecture notes, and lifecycle descriptions were inspected. Individual destructive dispositions require later content reads."
+            }
+          ]
+        },
+        {
+          "unit_id": "cross-domain-tests",
+          "name": "Cross-domain root scripts and smoke suite",
+          "paths": [
+            "scripts",
+            "package.json"
+          ],
+          "classification": "unverified",
+          "disposition": "distribute_to_owners",
+          "target": "each extracted Work owns its commands, tests, and release gates",
+          "rationale": "The root package declares 238 scripts, including 208 smoke commands spanning unrelated products. Tests must follow their owning domain during extraction.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:siso-agent-base-decomposition:root-scripts:2026-07-30",
+              "observed_at": "2026-07-30",
+              "summary": "Root script keys, installer checks, file inventory, and representative cross-domain imports were inspected."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:siso-agent-base-decomposition:2026-07-30",
+          "observed_at": "2026-07-30",
+          "summary": "First partial machine inventory of the Agent Base warehouse. Unverified units require direct follow-up reads before promotion, movement, or archival."
         }
       ]
     }

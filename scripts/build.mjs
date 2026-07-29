@@ -347,10 +347,10 @@ async function emit(path, contents) {
   await writeFile(target, contents);
 }
 
-const [rawWorks, rawReleases, assemblies, snapshots] = await Promise.all([
-  loadRecords('works'), loadRecords('releases'), loadRecords('assemblies'), loadRecords('snapshots'),
+const [rawWorks, rawReleases, assemblies, sourceInventories, snapshots] = await Promise.all([
+  loadRecords('works'), loadRecords('releases'), loadRecords('assemblies'), loadRecords('source-inventories'), loadRecords('snapshots'),
 ]);
-const sourceDates = [...rawWorks, ...rawReleases, ...assemblies, ...snapshots]
+const sourceDates = [...rawWorks, ...rawReleases, ...assemblies, ...sourceInventories, ...snapshots]
   .flatMap((record) => [record.updated_at, record.released_at, record.created_at, record.observed_at])
   .filter(Boolean)
   .sort();
@@ -366,11 +366,12 @@ await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
 await cp(ASSETS, join(OUT, 'assets'), { recursive: true });
 await emit('docs/agent-stack-model.html', await readFile(join(ROOT, 'docs', 'agent-stack-model.html'), 'utf8'));
+await emit('docs/agent-base-decomposition.html', await readFile(join(ROOT, 'docs', 'agent-base-decomposition.html'), 'utf8'));
 await emit('index.html', homePage(works, releases, snapshots, assemblies));
 await emit('agents/index.html', agentsPage(works, assemblies));
 await emit('releases/index.html', releaseIndex(releases, worksById));
 await emit('snapshots/index.html', snapshotIndex(snapshots));
 for (const work of works) await emit(`works/${work.slug}/index.html`, workPage(work, releases, worksById));
-await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity })), assemblies: assemblies.map(({ __file, ...assembly }) => assembly) }, null, 2)}\n`);
+await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity })), assemblies: assemblies.map(({ __file, ...assembly }) => assembly), source_inventories: sourceInventories.map(({ __file, ...inventory }) => inventory) }, null, 2)}\n`);
 
-console.log(`Built ${works.length} Works, ${releases.length} Releases, ${assemblies.length} Assemblies, and ${snapshots.length} Snapshots at ${BASE}`);
+console.log(`Built ${works.length} Works, ${releases.length} Releases, ${assemblies.length} Assemblies, ${sourceInventories.length} Source Inventories, and ${snapshots.length} Snapshots at ${BASE}`);
