@@ -11,7 +11,7 @@ The Library supports human browsing and deterministic agent reading without trea
 | Release | Immutable manifest and any explicitly evidenced artifact state | Fetch or reuse claims are valid only when the manifest and license evidence support them |
 | Whole Library | A named, metadata-complete Snapshot | Payloads require separate per-artifact materialization receipts |
 
-The generated GitHub Pages site is the common public reading surface. It avoids operating a separate site for every repository while ensuring every accepted Work has an always-on Library page.
+The generated hosted site is the common public reading surface. It avoids operating a separate site for every repository while ensuring every accepted Work has an always-on Library page. The current production surface is [great-library-of-siso.vercel.app](https://great-library-of-siso.vercel.app/).
 
 ## Compose and research
 

@@ -7,11 +7,38 @@
   "summary": "The public human-readable and agent-readable registry for SISO source.",
   "work_type": "library",
   "lifecycle_status": "active",
-  "updated_at": "2026-07-29",
+  "updated_at": "2026-07-30",
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
-    "locators": [],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/Lordsisodia/great-library-of-siso",
+        "revision": "main",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso",
+          "observed_at": "2026-07-30",
+          "summary": "Canonical public repository resolved on the Lordsisodia account."
+        }
+      },
+      {
+        "type": "homepage",
+        "url": "https://great-library-of-siso.vercel.app/",
+        "revision": "dpl_7hjLe8o39g5qKaoeVbv5pcafStb8",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "https://great-library-of-siso.vercel.app/",
+          "observed_at": "2026-07-30",
+          "summary": "Vercel production alias and representative Library routes returned HTTP 200."
+        }
+      }
+    ],
     "license": { "status": "not_applicable", "spdx": "NONE", "reason": "This registry identity is not a source payload release.", "evidence": [] }
   },
   "relationships": [],

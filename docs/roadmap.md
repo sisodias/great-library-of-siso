@@ -5,10 +5,10 @@ The roadmap stays deliberately narrow: a static, dependency-light public registr
 ## V1
 
 - Validate schemas, Work records, Release Manifests, Snapshots, and relationship references.
-- Generate one stable GitHub Pages detail URL for every accepted Work.
+- Generate one stable hosted detail URL for every accepted Work.
 - Generate human-readable pages and machine-readable catalog data from the same records.
 - Build, check links, and scan the public artifact for obvious secrets with one verification command.
-- Deploy `site/` to GitHub Pages using the public repository's free Pages hosting, with no paid backend.
+- Deploy `site/` to Vercel as the primary public surface, with GitHub Pages available as an optional mirror.
 - Publish the first six reviewed Agents seed records/pages rather than a broad speculative catalog.
 
 ## Near roadmap: CLI and MCP

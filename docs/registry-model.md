@@ -8,7 +8,7 @@ The **Library** is the complete catalog. A **Section** is a named, versioned pro
 
 A Work ID never encodes a category, repository, owner, path, domain, or current parent. Those properties can change without changing the Work. Moving a Work between Sections changes a projection, not its identity.
 
-Each accepted Work is generated to one stable, human-readable detail URL on the Library's GitHub Pages site. That Library page exists independently of whether the source repository operates a website. A Work can also declare an optional upstream docs or demo URL; upstream URLs remain replaceable locators and never replace the Library identity.
+Each accepted Work is generated to one stable, human-readable detail URL on the hosted Library site. That Library page exists independently of whether the source repository operates a website or which static provider serves the Library. A Work can also declare an optional upstream docs or demo URL; upstream URLs remain replaceable locators and never replace the Library identity.
 
 ## Relationships are data
 

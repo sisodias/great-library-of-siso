@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const OUT = join(ROOT, 'site');
 const ASSETS = join(ROOT, 'src/site/assets');
-const BASE = normalizeBase(process.env.SITE_BASE_PATH || '/great-library-of-siso/');
+const BASE = normalizeBase(process.env.SITE_BASE_PATH || '/');
 const DIST_KEYS = [
   ['downloadable', 'Downloadable'],
   ['resolvable', 'Resolvable'],

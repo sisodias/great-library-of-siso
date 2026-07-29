@@ -22,6 +22,7 @@ tmp/
 !.env.example
 !.env.template
 .envrc
+.vercel/
 .secrets/
 *.key
 *.pem

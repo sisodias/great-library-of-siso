@@ -2,6 +2,8 @@
 
 A public, human-readable and agent-readable registry and learning system for SISO source.
 
+**Live Library:** [great-library-of-siso.vercel.app](https://great-library-of-siso.vercel.app/)
+
 > **V1 status:** The Agents section is the first vertical slice. Catalog presence is not a claim that source is downloadable, installable, portable, or licensed for reuse. See [License pending](LICENSE-PENDING.md).
 
 ## What the Library is
@@ -25,7 +27,7 @@ Structure: typed relationships stored as data
 - A **Snapshot** pins a named recursive view. A whole-Library snapshot is metadata-complete; payload materialization is separate and requires per-artifact receipts.
 - A **relationship** is typed data. Directory nesting does not define global ownership, containment, or rank.
 
-Every cataloged Work gets an always-on detail page in the Library's GitHub Pages site, even when its source repository has no website. A Work may also declare an optional upstream documentation or demo URL. This provides one public reading surface without requiring a separate deployment for every repository.
+Every cataloged Work gets an always-on detail page in the hosted Library, even when its source repository has no website. A Work may also declare an optional upstream documentation or demo URL. This provides one public reading surface without requiring a separate deployment for every repository.
 
 Read the [registry model](docs/registry-model.md) for the identity and distribution boundaries.
 
@@ -75,7 +77,11 @@ npm ci
 npm run verify
 ```
 
-The Pages workflow runs the same gate and deploys only the generated `site/` directory. GitHub Pages gives the public repository an always-on site without a paid backend.
+Vercel is the primary static host and deploys only the generated `site/` directory. GitHub Pages remains an optional mirror. Neither host changes the registry identity or source-of-truth contracts.
+
+```bash
+npm run deploy:vercel
+```
 
 ## Contributing and safety
 

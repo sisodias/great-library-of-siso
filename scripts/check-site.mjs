@@ -2,11 +2,12 @@ import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 
 const root = path.resolve("site");
-const basePath = normalizeBase(process.env.LIBRARY_BASE_PATH || "/great-library-of-siso/");
+const basePath = normalizeBase(process.env.LIBRARY_BASE_PATH || "/");
 const errors = [];
 
 function normalizeBase(value) {
-  return `/${value.replace(/^\/+|\/+$/g, "")}/`;
+  const clean = `/${String(value).replace(/^\/+|\/+$/g, "")}/`;
+  return clean === "//" ? "/" : clean;
 }
 
 async function walk(directory) {
