@@ -20,12 +20,62 @@
     {
       "unit_id": "agent-runtime-app",
       "name": "SISO coding-agent runtime application",
-      "paths": ["install.sh", "scripts/install-local.sh", "bin", "templates/profile", "extensions/siso-lifecycle", "extensions/siso-context-manager", "extensions/siso-status", "extensions/siso-agent-router", "apps/siso-tui", "packages/siso-tui"],
+      "paths": ["install.sh", "scripts/install-local.sh", "bin", "templates/profile", "apps/siso-tui"],
       "classification": "current_application",
       "disposition": "keep",
       "target": "siso-agent-runtime",
-      "rationale": "These paths form the installed and launched product surface. The runtime router still needs internal domain decomposition, but the application outcome is coherent.",
+      "rationale": "These paths form the installed and launched product shell. Its internal modules receive their own Library identities while remaining packages of one runtime repository until independent release value is proven.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:runtime:2026-07-30", "observed_at": "2026-07-30", "summary": "Installer, launcher, profile projection, loaded extensions, and active TUI sources were read directly." }]
+    },
+    {
+      "unit_id": "agent-control-core",
+      "name": "Agent control core",
+      "paths": ["extensions/siso-agent-router"],
+      "classification": "shared_package",
+      "disposition": "keep",
+      "target": "siso-agent-runtime/packages/control-core",
+      "rationale": "This is the runtime backend for routing, child execution, tasks, goals, workflow, mailbox, registries, supervision, tools, worktrees, safety gates, and review. It should first be decomposed into explicit internal domains, not exploded into repositories from filenames.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:control-core:2026-07-30", "observed_at": "2026-07-30", "summary": "All eighty source files and the public extension surface were inventoried by responsibility." }]
+    },
+    {
+      "unit_id": "session-lifecycle",
+      "name": "Agent session lifecycle",
+      "paths": ["extensions/siso-lifecycle"],
+      "classification": "shared_package",
+      "disposition": "keep",
+      "target": "siso-agent-runtime/packages/session-lifecycle",
+      "rationale": "The extension has a bounded contract for correction capture, durable lessons, checkpoints, and restore summaries. It is a real module and Library Work candidate, but currently derives its value from the runtime host.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:session-lifecycle:2026-07-30", "observed_at": "2026-07-30", "summary": "The exported TypeScript contract and runtime event surface were read directly." }]
+    },
+    {
+      "unit_id": "context-manager",
+      "name": "Agent context manager",
+      "paths": ["extensions/siso-context-manager"],
+      "classification": "shared_package",
+      "disposition": "keep",
+      "target": "siso-agent-runtime/packages/context-manager",
+      "rationale": "The extension owns deterministic distillation, context budgets, retained goals and evidence, child state, mailbox state, memory reads, and compact prompts. It should be a named runtime package with a public contract before any repo split.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:context-manager:2026-07-30", "observed_at": "2026-07-30", "summary": "The exported compact-packet types, store surface, distillation export, and host hooks were read directly." }]
+    },
+    {
+      "unit_id": "status-surface",
+      "name": "Agent status and evidence surface",
+      "paths": ["extensions/siso-status"],
+      "classification": "shared_package",
+      "disposition": "keep",
+      "target": "siso-agent-runtime/packages/status-surface",
+      "rationale": "The extension owns the runtime status, widget, notification, message-rendering, and operator command surface. It is separately understandable but remains part of the runtime product.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:status-surface:2026-07-30", "observed_at": "2026-07-30", "summary": "The extension API, UI hooks, commands, tool contract, and custom message surface were read directly." }]
+    },
+    {
+      "unit_id": "agent-tui-kit",
+      "name": "SISO agent TUI kit",
+      "paths": ["packages/siso-tui", "apps/siso-tui/src"],
+      "classification": "shared_package",
+      "disposition": "keep",
+      "target": "siso-agent-runtime/packages/tui",
+      "rationale": "The renderer-neutral contracts, components, adapters, runtime behavior, theme, and OpenTUI application form a reusable presentation module. It should be visible as a Library Work while shipping from the runtime repository initially.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:tui:2026-07-30", "observed_at": "2026-07-30", "summary": "The package README, renderer boundary, adapters, runtime contract, application entrypoint, and package manifests were inspected." }]
     },
     {
       "unit_id": "project-os",
@@ -78,13 +128,13 @@
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:cmux:2026-07-30", "observed_at": "2026-07-30", "summary": "Upstream remote, local branch, latest WIP commit, dirty state, README, and package manifest were inspected." }]
     },
     {
-      "unit_id": "agent-brain",
-      "name": "Shared agent profile composer",
+      "unit_id": "agent-profile-composer",
+      "name": "Agent profile composer",
       "paths": ["brain"],
       "classification": "shared_package",
       "disposition": "compare",
-      "target": "runtime package or siso-agent-profile",
-      "rationale": "The composer has a coherent cross-tool contract, but its release and ownership relationship to the runtime application needs a direct dependency analysis before extraction.",
+      "target": "siso-agent-runtime/packages/profile-composer",
+      "rationale": "The composer has a coherent cross-tool contract for projecting shared behavior into tool-specific profiles. It should be a named runtime package first and graduate only if several products consume it independently.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:brain:2026-07-30", "observed_at": "2026-07-30", "summary": "Brain README and generated-profile composition contract were read directly." }]
     },
     {
@@ -128,24 +178,104 @@
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:design-tokens:2026-07-30", "observed_at": "2026-07-30", "summary": "Package README, exports, consumers, and license state were inspected." }]
     },
     {
-      "unit_id": "context-integrations",
-      "name": "Context optimization integrations",
-      "paths": ["integrations/headroom", "integrations/context-firewall"],
+      "unit_id": "context-firewall",
+      "name": "Context firewall",
+      "paths": ["integrations/context-firewall"],
       "classification": "experiment",
       "disposition": "compare",
-      "target": "siso-agent-integrations or promoted individual adapter repositories",
-      "rationale": "Both integrations have bounded safety and promotion contracts but remain opt-in or shadow-stage experiments rather than core application dependencies.",
-      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:context-integrations:2026-07-30", "observed_at": "2026-07-30", "summary": "Headroom and context-firewall READMEs, safety boundaries, smokes, and promotion verdicts were read directly." }]
+      "target": "siso-agent-integrations/packages/context-firewall",
+      "rationale": "This shadow-only, loopback-only measurement rail has an explicit transparency, privacy, smoke-test, and promotion contract. It is an experimental adapter Work, not a core runtime dependency or an independent repository yet.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:context-firewall:2026-07-30", "observed_at": "2026-07-30", "summary": "The shadow-mode contract, privacy boundary, protocol behavior, isolated smokes, promotion gate, and current verdict were read directly." }]
     },
     {
-      "unit_id": "extra-engines",
-      "name": "Additional engines and extension services",
-      "paths": ["extensions/knowledge-engine", "extensions/codex-engine", "extensions/idea-engine", "extensions/session-mirror", "extensions/braind", "extensions/agent-zero", "extensions/agent-zero-voice", "extensions/voice", "extensions/research-topics"],
-      "classification": "unverified",
+      "unit_id": "headroom-sidecar",
+      "name": "Headroom lossless sidecar adapter",
+      "paths": ["integrations/headroom"],
+      "classification": "experiment",
       "disposition": "compare",
-      "target": "individual Works or runtime packages after direct boundary reviews",
-      "rationale": "These substantial capabilities are not among the four extensions loaded by the main launcher. Each requires a content and dependency review before a repo verdict.",
-      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:extension-census:2026-07-30", "observed_at": "2026-07-30", "summary": "Extension file counts, sizes, entrypoints, README availability, and main-launcher extension list were inspected; individual classifications remain open." }]
+      "target": "siso-agent-integrations/packages/headroom",
+      "rationale": "This version-pinned opt-in adapter has a clear safety harness and substantial canary evidence, but global promotion is deliberately blocked on an unmeasurable cache-regression gate. It belongs in an integrations package family until independently adopted.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:headroom:2026-07-30", "observed_at": "2026-07-30", "summary": "The sidecar boundary, lossless rules, launch harness, Oracle contract, live canary, rollback, and non-promotion decision were read directly." }]
+    },
+    {
+      "unit_id": "knowledge-engine",
+      "name": "Knowledge distillation engine",
+      "paths": ["extensions/knowledge-engine"],
+      "classification": "candidate_work",
+      "disposition": "extract",
+      "target": "siso-evidence-engines/packages/knowledge-engine",
+      "rationale": "The engine turns long-form sources into traceable structured value items and an evolving taxonomy through a coherent distill-once, route-many pipeline. It should be a Library Work and package; source, generated knowledge, and private operating state must be separated before publication.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:knowledge-engine:2026-07-30", "observed_at": "2026-07-30", "summary": "The architecture, live stages, planned stages, data model, runner model, current corpus scale, and sibling-engine relationship were read directly." }]
+    },
+    {
+      "unit_id": "coding-principles-engine",
+      "name": "Coding principles evidence engine",
+      "paths": ["extensions/codex-engine"],
+      "classification": "candidate_work",
+      "disposition": "extract",
+      "target": "siso-evidence-engines/packages/coding-principles",
+      "rationale": "The engine harvests sources, gates claims by credibility and evidence, distills them, proposes principles, collects ratings, and promotes canonical guidance. The public name should describe that outcome rather than imply ownership of the Codex product name.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:coding-principles:2026-07-30", "observed_at": "2026-07-30", "summary": "The harvest-to-render pipeline, credibility tiers, evidence gates, database migration, corpus boundary, and promotion logic were read directly." }]
+    },
+    {
+      "unit_id": "idea-engine",
+      "name": "Evidence-gated idea engine",
+      "paths": ["extensions/idea-engine"],
+      "classification": "candidate_work",
+      "disposition": "extract",
+      "target": "siso-evidence-engines/packages/idea-engine",
+      "rationale": "The engine maintains a traceable, score-ranked improvement backlog with groundedness, novelty, layer, and gameability gates plus an explicit lifecycle. It shares an evidence-engine family with the knowledge and coding-principles engines.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:idea-engine:2026-07-30", "observed_at": "2026-07-30", "summary": "The propose-rate-render pipeline, gates, lifecycle, database dependency, and planning-front-door composition were read directly." }]
+    },
+    {
+      "unit_id": "session-intelligence",
+      "name": "Agent session intelligence",
+      "paths": ["extensions/session-mirror"],
+      "classification": "candidate_work",
+      "disposition": "extract",
+      "target": "siso-session-intelligence",
+      "rationale": "This subsystem parses Claude and Codex transcripts, extracts evidence-bearing retrospectives, deduplicates and clusters recurring patterns, scores importance, renders recall, and proposes gated improvements. Public extraction requires generic paths and providers, a storage boundary, secret removal and rotation, privacy controls, and fixture-based tests.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:session-intelligence:2026-07-30", "observed_at": "2026-07-30", "summary": "Transcript parsers, retrospective dimensions, evidence quotes, recurrence model, clustering, importance scoring, scheduler, render surface, and provider configuration were read directly." }]
+    },
+    {
+      "unit_id": "agent-brain-service",
+      "name": "Agent brain service",
+      "paths": ["extensions/braind"],
+      "classification": "candidate_work",
+      "disposition": "extract",
+      "target": "siso-agent-brain",
+      "rationale": "The daemon, client, outbox, health checks, tiered tokens, fleet state, tasks, memory, timeline, costs, notifications, and delegation form a coherent shared agent-state service. Machine names, personal project divisions, private network assumptions, and database migrations must become configuration before publication.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:brain-service:2026-07-30", "observed_at": "2026-07-30", "summary": "The daemon contract, HTTP service, SQLite ownership, auth tiers, CLI client, degraded outbox, doctor checks, and machine-specific configuration were read directly." }]
+    },
+    {
+      "unit_id": "agent-zero-boot",
+      "name": "Agent Zero boot and rehydration",
+      "paths": ["extensions/agent-zero"],
+      "classification": "shared_package",
+      "disposition": "compare",
+      "target": "Agent Zero Work and its source repository",
+      "rationale": "The boot sequence rehydrates a user-facing coordinating agent from fleet, task, memory, timeline, question, and division state. It belongs to the existing Agent Zero Work rather than becoming a competing standalone repository.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:agent-zero-boot:2026-07-30", "observed_at": "2026-07-30", "summary": "The boot data contract, degraded behavior, brain writes, briefing, delegation model, and autonomy tiers were read directly." }]
+    },
+    {
+      "unit_id": "voice-gateway",
+      "name": "Agent voice gateway and dispatch contracts",
+      "paths": ["extensions/agent-zero-voice", "extensions/voice"],
+      "classification": "experiment",
+      "disposition": "compare",
+      "target": "Agent Zero packages/voice initially; siso-voice-gateway only after generic adoption",
+      "rationale": "The safer typed-contract slice and the earlier browser-to-Herdr prototype represent one evolving voice interface capability. They should be reconciled under Agent Zero first, preserving plan-only, idempotency, risk-policy, replay, and approval boundaries before any live dispatch or standalone repo.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:voice:2026-07-30", "observed_at": "2026-07-30", "summary": "The typed request and receipt contract, risk policy, replay fixtures, staged integration gates, browser speech interface, Herdr dispatch prototype, and polling behavior were read directly." }]
+    },
+    {
+      "unit_id": "research-topic-registry",
+      "name": "Research topic registry",
+      "paths": ["extensions/research-topics"],
+      "classification": "shared_package",
+      "disposition": "compare",
+      "target": "siso-foundry/packages/research-topics",
+      "rationale": "The registry creates, fuzzy-matches, links, merges, and preserves research buckets with provenance. Its outcome belongs with Foundry's research catalog unless independent non-Foundry consumers establish a separate release boundary.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:research-topics:2026-07-30", "observed_at": "2026-07-30", "summary": "The CLI, schema migration, add-or-match rule, artifact links, merge-without-delete behavior, and current spine dependency were read directly." }]
     },
     {
       "unit_id": "private-runtime-state",

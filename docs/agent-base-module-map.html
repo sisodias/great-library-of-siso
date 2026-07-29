@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SISO Agent Base — Module Extraction Map</title>
+  <style>
+    :root{font:16px/1.58 system-ui,sans-serif;color:#172033;background:#f3f1ec}body{max-width:88rem;margin:auto;padding:2rem}header,section{background:#fff;border:1px solid #d8d4cc;border-radius:1rem;padding:1.45rem;margin:1rem 0}header{background:#142039;color:#f7fbff}.eyebrow{font:700 .74rem ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#52d8cf}h1,h2,h3{line-height:1.12}h1{font-size:clamp(2.25rem,6vw,4.8rem);margin:.4rem 0}.lede{font-size:1.18rem;max-width:70rem}.numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem}.numbers div{background:#eef3f7;border-radius:.75rem;padding:1rem}.numbers b{display:block;font-size:1.55rem}.numbers span{color:#586578}table{border-collapse:collapse;width:100%}th,td{padding:.7rem;border-bottom:1px solid #dce1e7;text-align:left;vertical-align:top}th{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:#576579}.tag{display:inline-block;font:700 .7rem ui-monospace,monospace;text-transform:uppercase;border-radius:999px;padding:.2rem .5rem;white-space:nowrap}.now{color:#06645c;background:#d9f7f1}.package{color:#3c528a;background:#e5ecff}.sanitize{color:#8b4b04;background:#fff0d7}.experiment{color:#764085;background:#f4e6f8}.exclude{color:#8f2734;background:#ffe6e9}.tree,pre{white-space:pre-wrap;background:#eef2f6;border-radius:.7rem;padding:1rem;overflow-wrap:anywhere}.callout{border-left:4px solid #087c70;padding:.15rem 0 .15rem 1rem}.danger{border-left-color:#a12635;background:#fff4f5;padding:1rem}.repo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}.repo-grid div{border:1px solid #dce1e7;border-radius:.7rem;padding:.85rem}.repo-grid b{display:block}code{overflow-wrap:anywhere}a{color:#086d72}footer{padding:2rem 0;color:#5d6774}@media(max-width:64rem){body{padding:.65rem}.numbers,.repo-grid{grid-template-columns:1fr 1fr}table,tbody,tr,th,td{display:block}th,td{border:0;padding:.27rem 0}tr{border-bottom:1px solid #dce1e7;padding:.75rem 0}}@media(max-width:38rem){.numbers,.repo-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Agent Base module review / evidence pass 02 / 2026-07-30</p>
+    <h1>The sauce inside Agent Base.</h1>
+    <p class="lede">Direct source review found a real family of reusable modules—not one generic framework. The Great Library should give each coherent capability a stable identity, while GitHub repositories follow dependency and release boundaries. A Library Work and a GitHub repo are deliberately not the same thing.</p>
+  </header>
+
+  <section>
+    <h2>The answer in one view</h2>
+    <div class="numbers">
+      <div><b>22</b><span>named public module candidates mapped below</span></div>
+      <div><b>7</b><span>runtime-family Works that should initially share one repo</span></div>
+      <div><b>6</b><span>strong independent repo or package-family candidates</span></div>
+      <div><b>3</b><span>experiments that must stay explicitly experimental</span></div>
+    </div>
+    <p class="callout"><b>Recommended starting shape:</b> approximately eight or nine intentional code repositories, not twenty-two repositories copied from twenty-two folders. The Library can still expose all twenty-two modules independently and later move any Work to its own repo without changing its identity.</p>
+  </section>
+
+  <section>
+    <h2>How the Agent section fits together</h2>
+    <pre class="tree">Agents
+├── Operating stack
+│   ├── SISO Project OS                  project-local agent operating contract
+│   ├── SISO Agent Runtime               installed coding-agent application
+│   │   ├── Agent Control Core           routing, execution, goals, tasks, safety
+│   │   ├── Session Lifecycle            corrections, lessons, checkpoints, restore
+│   │   ├── Context Manager              budgets, memory, retained evidence, compaction
+│   │   ├── Status & Evidence Surface    operator visibility and commands
+│   │   ├── Agent TUI Kit                terminal components, adapters, runtime UI
+│   │   └── Agent Profile Composer       shared instructions projected per tool
+│   ├── Herdr                            workspace in which the stack is operated
+│   └── Agent Zero                       user-facing coordinator
+│       ├── Boot & Rehydration           wakes from shared state
+│       └── Voice Gateway                staged voice-to-agent interface
+│
+├── Capabilities
+│   ├── Skills Catalog                   atomic repeatable capabilities
+│   └── Agent Playbook                   compositions of skills for scenarios
+│
+├── Shared intelligence
+│   ├── Agent Brain Service              shared state, memory, tasks, fleet, timeline
+│   ├── Session Intelligence             learns from agent transcripts with evidence
+│   └── Evidence Engines
+│       ├── Knowledge Engine             sources → structured knowledge and taxonomy
+│       ├── Coding Principles Engine     evidence → canonical engineering guidance
+│       └── Idea Engine                  evidence → ranked improvement backlog
+│
+└── Discovery, assurance & integrations
+    ├── Foundry                          source mining and reusable-source knowledge
+    │   └── Research Topic Registry      stable research buckets and artifact links
+    ├── Atlas                            read-only architecture auditor
+    ├── Context Firewall                 shadow measurement and promotion rail
+    └── Headroom Adapter                 opt-in lossless context sidecar</pre>
+    <p>This is an ownership and dependency map, not a permanent folder taxonomy. Relationships live in registry data, so a module can move between repositories or graduate from package to repo without breaking its Library address.</p>
+  </section>
+
+  <section>
+    <h2>Modules that should become Library Works</h2>
+    <table>
+      <thead><tr><th>Module</th><th>Outcome found in source</th><th>Library action</th><th>Repository verdict</th></tr></thead>
+      <tbody>
+        <tr><td><b>SISO Agent Runtime</b><br><code>install.sh · bin · apps/siso-tui</code></td><td>The installed and launched coding-agent product shell.</td><td><span class="tag now">Work now</span></td><td>One runtime repo. Replace the whole-root installer copy with an explicit release manifest before moving source.</td></tr>
+        <tr><td><b>Agent Control Core</b><br><code>extensions/siso-agent-router</code></td><td>Routing, spawning, workflows, tasks, goals, registries, mailbox, supervision, scorecards, review, worktrees, and write-scope safety.</td><td><span class="tag package">Runtime Work</span></td><td>Package inside the runtime repo. First split its eighty files into internal domains with explicit contracts; do not create a repo per filename group.</td></tr>
+        <tr><td><b>Session Lifecycle</b><br><code>extensions/siso-lifecycle</code></td><td>Correction capture, lesson draining, checkpoints, and session restore discovery.</td><td><span class="tag package">Runtime Work</span></td><td>Named runtime package. Graduate only if another host adopts its contract independently.</td></tr>
+        <tr><td><b>Context Manager</b><br><code>extensions/siso-context-manager</code></td><td>Token budgets, deterministic distillation, retained goals and evidence, child/mailbox state, memory, and compact prompts.</td><td><span class="tag package">Runtime Work</span></td><td>Named runtime package with fixture-tested compact-packet contract.</td></tr>
+        <tr><td><b>Status & Evidence Surface</b><br><code>extensions/siso-status</code></td><td>Status, widgets, notifications, commands, tools, and custom operator message rendering.</td><td><span class="tag package">Runtime Work</span></td><td>Package inside runtime; presentation depends on the host lifecycle.</td></tr>
+        <tr><td><b>Agent TUI Kit</b><br><code>packages/siso-tui</code></td><td>Renderer-neutral terminal contracts, components, adapters, theme, runtime behavior, and the OpenTUI shell.</td><td><span class="tag package">Runtime Work</span></td><td>Package in runtime monorepo initially. It can later become its own repo if non-runtime tools adopt it.</td></tr>
+        <tr><td><b>Agent Profile Composer</b><br><code>brain</code></td><td>One shared behavioral core composed into Claude- and Codex-specific generated instruction profiles.</td><td><span class="tag package">Runtime Work</span></td><td>Package in runtime first; a small independent repo is justified only when several products consume versioned profiles.</td></tr>
+
+        <tr><td><b>SISO Project OS</b><br><code>siso-project-os</code></td><td>Project-local schemas, CLI, agent operating rules, and lifecycle contracts.</td><td><span class="tag now">Already a Work</span></td><td>Already an independent clean repo. Link it; stop physically nesting it in Agent Base.</td></tr>
+        <tr><td><b>SISO Agent Playbook</b><br><code>siso-agent-playbook</code></td><td>Installable fleet operating package containing playbooks, prompts, skills, tools, telemetry, and evidence.</td><td><span class="tag now">Add Work</span></td><td>Already an independent repo. Preserve its four local modifications before changing the nested checkout.</td></tr>
+        <tr><td><b>Skills Catalog</b><br><code>templates/profile/skills</code></td><td>Atomic repeatable agent capabilities currently projected into user skill roots by the runtime installer.</td><td><span class="tag now">Add catalog</span></td><td>Start with a catalog/distribution repo. Give mature skills stable Work IDs; graduate a skill to its own repo when individual installation, forking, release, or ownership is real.</td></tr>
+        <tr><td><b>SISO Foundry</b><br><code>foundry · research/repo-catalog</code></td><td>Source-mining and reusable-source knowledge product with pipeline, databases, method, and read-only interface.</td><td><span class="tag now">Extract</span></td><td>Own repo. Keep code and manifests in Git; place large corpora and databases behind typed data locators.</td></tr>
+
+        <tr><td><b>Agent Brain Service</b><br><code>extensions/braind</code></td><td>Authoritative shared state service: memory, tasks, timeline, fleet, cost, notifications, questions, delegation, tiered auth, client outbox, and health checks.</td><td><span class="tag sanitize">Sanitize + extract</span></td><td>Strong own-repo candidate. First replace personal machines, divisions, paths, tailnet hosts, and DB assumptions with configuration.</td></tr>
+        <tr><td><b>Session Intelligence</b><br><code>extensions/session-mirror</code></td><td>Parses Claude/Codex sessions; mines evidence quotes, goals, failures, intentions and wins; clusters recurrence; scores importance; renders recall; proposes gated improvements.</td><td><span class="tag sanitize">Sanitize + extract</span></td><td>Strong own-repo candidate. Requires privacy controls, generic transcript/provider adapters, fixture corpus, storage interface, and credential rotation.</td></tr>
+        <tr><td><b>Knowledge Engine</b><br><code>extensions/knowledge-engine</code></td><td>Long-form source ingestion into traceable value items and an emergent taxonomy using a distill-once, route-many pipeline.</td><td><span class="tag sanitize">Extract package</span></td><td>Start in <code>siso-evidence-engines</code>; split generated knowledge and private corpus from reusable code.</td></tr>
+        <tr><td><b>Coding Principles Engine</b><br><code>extensions/codex-engine</code></td><td>Credibility-tiered harvesting, human approval, evidence gates, distillation, proposals, ratings, and canonical engineering principles.</td><td><span class="tag sanitize">Extract package</span></td><td>Start in <code>siso-evidence-engines</code>. Rename publicly to describe its outcome and avoid product-name confusion.</td></tr>
+        <tr><td><b>Idea Engine</b><br><code>extensions/idea-engine</code></td><td>Grounded, novel, right-layer, non-gameable improvement ideas moving through proposed, rated, queued, applied, or rejected states.</td><td><span class="tag sanitize">Extract package</span></td><td>Start in <code>siso-evidence-engines</code>; share evidence, scoring, provenance, and promotion primitives with its siblings.</td></tr>
+
+        <tr><td><b>Agent Zero Boot</b><br><code>extensions/agent-zero</code></td><td>Rehydrates Agent Zero from fleet, task, memory, timeline, question, and division state before interaction.</td><td><span class="tag package">Agent Zero Work</span></td><td>Move into the existing Agent Zero source boundary. It is a module of that product, not another repository.</td></tr>
+        <tr><td><b>Voice Gateway</b><br><code>extensions/agent-zero-voice · extensions/voice</code></td><td>A safe typed plan/receipt/replay contract plus an earlier browser-speech-to-Herdr prototype.</td><td><span class="tag experiment">Experimental</span></td><td>Reconcile under Agent Zero. Preserve idempotency, risk, replay, and approval gates; create a standalone repo only if the interface becomes host-agnostic.</td></tr>
+        <tr><td><b>Research Topic Registry</b><br><code>extensions/research-topics</code></td><td>Creates or matches stable research buckets, links artifacts with provenance, and merges without deleting history.</td><td><span class="tag package">Foundry Work</span></td><td>Package inside Foundry unless independent consumers prove a separate lifecycle.</td></tr>
+        <tr><td><b>Atlas</b><br><code>atlas</code></td><td>Read-only persistent architecture auditor that triangulates three critics and files tickets only on agreement.</td><td><span class="tag sanitize">Verify + extract</span></td><td>Own repo after one live-use and dependency verification pass. Its outcome and safety boundary are independently coherent.</td></tr>
+        <tr><td><b>Context Firewall</b><br><code>integrations/context-firewall</code></td><td>Shadow-only loopback measurement rail with numeric/private telemetry and an explicit transform promotion gate.</td><td><span class="tag experiment">Experimental Work</span></td><td>Package in <code>siso-agent-integrations</code>; no own repo or core-runtime status yet.</td></tr>
+        <tr><td><b>Headroom Adapter</b><br><code>integrations/headroom</code></td><td>Version-pinned, opt-in, lossless sidecar harness with Oracle contracts, canaries, and rollback.</td><td><span class="tag experiment">Experimental Work</span></td><td>Package beside Context Firewall. Keep the current non-promotion verdict visible until the cache gate is measurable.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>The repository plan</h2>
+    <div class="repo-grid">
+      <div><b><code>great-library-of-siso</code></b>Stable identities, relationships, evidence, releases, human pages, and source inventories. Already live.</div>
+      <div><b><code>siso-agent-runtime</code></b>Runtime app plus control core, lifecycle, context, status, TUI, and profile packages.</div>
+      <div><b><code>siso-project-os</code></b>Already independent. Link it rather than nest it.</div>
+      <div><b><code>siso-agent-playbook</code></b>Already independent. Preserve current local changes, then register it.</div>
+      <div><b><code>siso-skills</code></b>Capability catalog and distribution. Mature skills may graduate to their own repos.</div>
+      <div><b><code>siso-foundry</code></b>Foundry code plus research-topic registry; datasets remain external.</div>
+      <div><b><code>siso-agent-brain</code></b>Configurable shared state service, client, schema, migrations, auth, and doctor.</div>
+      <div><b><code>siso-session-intelligence</code></b>Transcript adapters, evidence extraction, clustering, scoring, review, and recall.</div>
+      <div><b><code>siso-evidence-engines</code></b>Knowledge, coding-principles, and idea packages sharing provenance and promotion primitives.</div>
+      <div><b><code>siso-agent-integrations</code></b>Experimental adapters only. Create after the first two packages are sanitized; keep their promotion verdicts explicit.</div>
+    </div>
+    <p><b>Later, only if proven:</b> <code>siso-atlas</code>, a standalone voice gateway, independently forkable skill repositories, and independently released evidence engines. Stable Library IDs mean those later splits do not break links.</p>
+  </section>
+
+  <section>
+    <h2>What must not become public module repos</h2>
+    <table>
+      <thead><tr><th>Current material</th><th>Correct treatment</th><th>Reason</th></tr></thead>
+      <tbody>
+        <tr><td><code>apps/siso-os</code> cmux fork/WIP</td><td><span class="tag exclude">External ledger</span></td><td>Preserve the upstream fork, SISO branch, and dirty patch separately; it is not Agent Runtime source and is marked superseded by Herdr.</td></tr>
+        <tr><td><code>packages/design-tokens</code></td><td><span class="tag exclude">Route to shared UI</span></td><td>It has cross-product design ownership, not agent-system ownership.</td></tr>
+        <tr><td><code>office · runtime · data · eval output</code></td><td><span class="tag exclude">Private/data stores</span></td><td>Databases, telemetry, generated evidence, and machine state are data products or private state, not code modules.</td></tr>
+        <tr><td><code>archive · imports · upstream clones · corpora</code></td><td><span class="tag exclude">Vault or manifest</span></td><td>The Library should index provenance and locators without putting terabytes or unreviewed third-party source into application repos.</td></tr>
+        <tr><td>Root <code>scripts</code> and 208 smoke commands</td><td><span class="tag exclude">Distribute to owners</span></td><td>A test belongs with the module whose public contract it proves.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Public extraction gates</h2>
+    <p class="callout danger"><b>Security gate:</b> direct review found an embedded provider credential in Session Intelligence configuration. Rotate it and scrub it from every commit intended for publication. Do not copy the current directory into a public repository.</p>
+    <ol>
+      <li><b>Preserve:</b> record dirty files, nested repository heads, uncommitted patches, and sole-copy material.</li>
+      <li><b>Describe:</b> give the module a stable Library Work ID, outcome, owner, public contract, dependency list, data boundary, and lifecycle status.</li>
+      <li><b>Sanitize:</b> remove credentials, personal paths, machine names, private hosts, private datasets, session content, and generated runtime state; rotate anything exposed.</li>
+      <li><b>Bridge:</b> make the current Agent Base import or install the new package before moving the source of truth.</li>
+      <li><b>Prove:</b> move the module's fixtures, tests, smoke checks, license, and release evidence with it.</li>
+      <li><b>Move:</b> publish one coherent module family at a time; update the Library source locator without changing the Work identity.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>First extraction wave</h2>
+    <ol>
+      <li><b>Metadata first:</b> register the module identities and relationships from this map; no risky source moves are required.</li>
+      <li><b>Stop the leak:</b> rotate the exposed credential and replace the Agent Base whole-root installer copy with an allowlisted runtime release payload.</li>
+      <li><b>Connect what already exists:</b> register Project OS and Agent Playbook by source locator, preserving Playbook's local modifications.</li>
+      <li><b>Extract the cleanest value boundaries:</b> Foundry, Agent Brain, Session Intelligence, then the Evidence Engines package family.</li>
+      <li><b>Package before splitting:</b> formalize lifecycle, context, status, control, TUI, and profile contracts inside the runtime repo; split repos only when independent adoption appears.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Evidence and limits</h2>
+    <p>The verdicts above come from direct reads of module entrypoints, type contracts, READMEs, architecture documents, migrations, pipeline stages, safety gates, package manifests, and nested Git state. Semantic search through the registered project service was attempted but did not complete in a bounded time, so targeted source reads were used as the required fallback.</p>
+    <p>The source inventory remains <b>partial</b>: router internals need contract extraction; Atlas needs current-use verification; Agent Labs and Web Chat still need supersession comparisons; and individual skills need promotion evidence. No files were moved or edited inside the dirty Agent Base warehouse.</p>
+    <p><a href="agent-base-decomposition.html">Repository decomposition</a> · <a href="agent-stack-model.html">SISO Agent Stack model</a> · <a href="../agents/">Open Agents</a></p>
+  </section>
+
+  <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
+</body>
+</html>
