@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "snapshot",
+  "id": "gls:snapshot:289d76b7-d921-4ff5-8731-40a413362b88",
+  "name": "Whole Library V8 — Skills Hub Release",
+  "version": "8.0.0",
+  "created_at": "2026-07-30T05:12:00+07:00",
+  "immutable": true,
+  "scope": "whole_library",
+  "metadata_completeness": { "state": "complete", "work_count": 14, "release_count": 14, "assembly_count": 1 },
+  "releases": [
+    { "release_id": "gls:release:4ed5e119-3ee7-4dca-bdd2-9c344c608a01", "manifest_sha256": "ef6550ca061b5e7e6cad0c0eabfc91b2ba5ecb243d9baa8b05f79fb6658686aa" },
+    { "release_id": "gls:release:14c1d9de-0e77-44e9-9274-57e7cfb6ab02", "manifest_sha256": "96200b7e955e3d0ec21b954a1d329a7ec2428ad1aef86e2bfce6336c044564d2" },
+    { "release_id": "gls:release:24c1ed1d-4437-4641-83e2-048d55116590", "manifest_sha256": "1641d889f66bf10ce4de0dd3e126aa87c38cab3787fe20694b4f0c851751d40d" },
+    { "release_id": "gls:release:3a99d120-a2dd-4e79-9a10-74b47aeefc03", "manifest_sha256": "695e0ffef7bc9ef5370a97b34f9db86658758e35d14ef72f3568b2580bb7e53e" },
+    { "release_id": "gls:release:61f81c21-b467-4628-96e8-a20493cd0a04", "manifest_sha256": "9f6a8e8ca90723d7775158ab20ffe638c8316dfba3a75583d3cc6f2097b1df2e" },
+    { "release_id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05", "manifest_sha256": "559a4cb66b2b887d967066487279a3480c8d20fcb04e00875bdb7f3e6d4e18f9" },
+    { "release_id": "gls:release:8c02a5a4-5386-4c63-a72f-c02665799106", "manifest_sha256": "4cf72788f59441947d7d5e6056f3cc618efbf1b93263f067be5b4f023cacd86b" },
+    { "release_id": "gls:release:e5895556-a3ed-4dd6-b339-e225a8ee88ec", "manifest_sha256": "4ed472542cf28d3ca5db3c8fb41cf8b54c0c015bc7b09182a1125229035c5526" },
+    { "release_id": "gls:release:85c8b4f1-e923-4d54-bb37-31483898a145", "manifest_sha256": "147d2967f7e7e82bad08c1a166a473b2919a1353584ec54ea9359ef28312bd16" },
+    { "release_id": "gls:release:c4c9ae60-5495-4b5f-a8ad-e160fcdb6167", "manifest_sha256": "108a1e91fdd156a384f264a3510b1b54bb9c6741abdd5e1503387d45f0135701" },
+    { "release_id": "gls:release:b81851e9-e4e1-468e-b3d3-1cd303bd7877", "manifest_sha256": "821ae6fa2711ab5c2935bb357346a82467703c2e94471607c649558a6dcc21da" },
+    { "release_id": "gls:release:8078af85-d692-4275-b0b1-a3432f225acc", "manifest_sha256": "57a33b386ccdf37cb528d1eb8ba01f82580e92293b34bd5ed9e7176460617e38" },
+    { "release_id": "gls:release:993e1242-04c8-4d0b-870a-67d91fa89cbf", "manifest_sha256": "899ab7d2657d4910d9650180ed921c35afbe1f384dca628495ea1bcba84d66ca" },
+    { "release_id": "gls:release:d26a1823-6270-41d2-9e73-417daac4c5fe", "manifest_sha256": "ba7c35b16e0e208440933aefe7bed0e688e270689152bd54242367145542229e" }
+  ],
+  "assemblies": [
+    { "assembly_id": "gls:assembly:2c86b098-32ec-47b1-a73d-aacdc1a405bf", "manifest_sha256": "f2ce4d8802ce40e95f00d31b1afafd9c93adca7827c8ddf20113c50c5fa87379" }
+  ],
+  "projection": {
+    "root_work_ids": ["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"],
+    "edges": [
+      { "from_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1", "to_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "type": "curates", "contextual_role": "section", "context": "Agents is the browse section for operating stacks, capabilities, shared agent services, and runtime integrations." },
+      { "from_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1", "to_work_id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25", "type": "curates", "contextual_role": "section", "context": "Research is the browse section for discovery, evidence, knowledge, datasets, and durable research artifacts." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943", "type": "curates", "contextual_role": "foundation", "context": "Project OS supplies the project-local operating contract used by the SISO Agent Stack." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224", "type": "curates", "contextual_role": "runtime", "context": "SISO Agent Runtime is the installed application currently sourced from the Agent Base warehouse." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc", "type": "curates", "contextual_role": "integration", "context": "Herdr provides the externally owned persistent workspace and pane substrate used by the stack." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719", "type": "curates", "contextual_role": "coordination_policy", "context": "Agent Zero holds intent and coordinates work through the operating stack." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc", "type": "curates", "contextual_role": "module", "context": "Playbooks compose skills, tools, lanes, and verification for repeatable operating scenarios." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd", "type": "curates", "contextual_role": "module", "context": "Skills are atomic repeatable capabilities consumed by the Agents operating stack and its playbooks." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b", "type": "curates", "contextual_role": "module", "context": "Agent Brain supplies shared state and memory services without being embedded inside the runtime application." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84", "type": "curates", "contextual_role": "module", "context": "Session Intelligence learns from agent sessions while retaining an independent privacy-sensitive lifecycle." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a", "type": "curates", "contextual_role": "integration", "context": "Agent Integrations contains experimental adapters with explicit promotion and rollback gates." },
+      { "from_work_id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25", "to_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "type": "curates", "contextual_role": "module", "context": "Foundry is the Research platform for source discovery, evaluation, preservation, and reuse knowledge." },
+      { "from_work_id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25", "to_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f", "type": "curates", "contextual_role": "module", "context": "Evidence Engines turns sources and observations into traceable knowledge, principles, and ranked ideas." }
+    ]
+  },
+  "download_contract": { "manifest_role": "metadata_complete_named_snapshot", "artifact_policy": "payloads_are_separate_and_require_per_artifact_receipts" },
+  "artifact_materialization": { "state": "not_materialized", "receipts": [] },
+  "evidence": [{ "kind": "registry_validation", "reference": "registry:snapshot:whole-library-v8", "observed_at": "2026-07-30", "summary": "Snapshot advances SISO Skills from a metadata seed to a licensed, validated, installable public catalog of 28 atomic capabilities while preserving all earlier snapshots." }]
+}

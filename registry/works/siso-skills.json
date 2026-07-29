@@ -14,12 +14,12 @@
     "locators": [{
       "type": "source_repository",
       "url": "https://github.com/Lordsisodia/siso-skills-hub",
-      "revision": "main@faf6772b16476be00a7ad0d0335c457a8c39b516",
+      "revision": "main@e295047bf0742921373719ad51f288a13182e0df",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "source_review", "reference": "github-readme:Lordsisodia/siso-skills-hub:faf6772b16476be00a7ad0d0335c457a8c39b516", "observed_at": "2026-07-30", "summary": "Existing public repository contains a coherent Skills registry, CLI, dependency graph, telemetry, pipelines, templates, and documented skill structure; modernization and license review remain open." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-skills-hub:e295047bf0742921373719ad51f288a13182e0df", "observed_at": "2026-07-30", "summary": "Canonical public source contains 28 validated Skills across eight categories, a generated human index, a pinned remote-materialization contract, and a disposable install receipt." }
     }],
-    "license": { "status": "pending", "spdx": "NOASSERTION", "reason": "The accumulated catalog has not yet completed per-skill provenance, privacy, and redistribution review.", "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:skills:2026-07-30", "observed_at": "2026-07-30", "summary": "The installed skill roots, symlink projection, capability contracts, and mixed maturity were read directly." }] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The SISO-owned hub and bundled source carry MIT; promoted or external Skills retain their own independently declared rights.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-skills-hub/blob/e295047bf0742921373719ad51f288a13182e0df/PROVENANCE.md", "observed_at": "2026-07-30", "summary": "Repository provenance, bundled-source boundary, external-rights rule, and publication cleanup are recorded at the pinned release." }] }
   },
   "relationships": [{
     "type": "integrates_with",
@@ -27,5 +27,9 @@
     "context": "The Agent Runtime discovers and invokes Skills, while the Skills catalog retains an independent source and release lifecycle.",
     "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:skills-runtime:2026-07-30", "observed_at": "2026-07-30", "summary": "The current installer projects skills into runtime roots, proving use without requiring shared repository ownership." }]
   }],
-  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:skills:2026-07-30", "observed_at": "2026-07-30", "summary": "Skills were classified as atomic capabilities consumed by the Agents operating stack; playbooks compose them for scenarios." }]
+  "evidence": [
+    { "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:skills:2026-07-30", "observed_at": "2026-07-30", "summary": "Skills were classified as atomic capabilities consumed by the Agents operating stack; playbooks compose them for scenarios." },
+    { "kind": "release_receipt", "reference": "repo-check:siso-skills-hub:e295047bf0742921373719ad51f288a13182e0df", "observed_at": "2026-07-30", "summary": "All 28 registry entries validated, generated index freshness passed, and a Skill materialized into a disposable install root without nested Git state." },
+    { "kind": "source_review", "reference": "history-scan:siso-skills-hub:e295047bf0742921373719ad51f288a13182e0df", "observed_at": "2026-07-30", "summary": "Reachable Git history and the current tree passed the credential-pattern publication scan after history remediation." }
+  ]
 }
