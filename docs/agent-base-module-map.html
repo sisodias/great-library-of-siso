@@ -20,10 +20,10 @@
     <div class="numbers">
       <div><b>22</b><span>named public module candidates mapped below</span></div>
       <div><b>7</b><span>runtime-family Works that should initially share one repo</span></div>
-      <div><b>6</b><span>strong independent repo or package-family candidates</span></div>
-      <div><b>3</b><span>experiments that must stay explicitly experimental</span></div>
+      <div><b>10</b><span>public agent repo homes, plus the Great Library front door</span></div>
+      <div><b>1</b><span>private agent R&amp;D incubator instead of another warehouse</span></div>
     </div>
-    <p class="callout"><b>Recommended starting shape:</b> approximately eight or nine intentional code repositories, not twenty-two repositories copied from twenty-two folders. The Library can still expose all twenty-two modules independently and later move any Work to its own repo without changing its identity.</p>
+    <p class="callout"><b>Recommended estate:</b> the Great Library plus ten intentional public agent repositories and one private agent-lab incubator—not twenty-two repositories copied from twenty-two folders. The Library can still expose all twenty-two modules independently and later move any Work to its own repo without changing its identity.</p>
   </section>
 
   <section>
@@ -104,6 +104,7 @@
       <div><b><code>great-library-of-siso</code></b>Stable identities, relationships, evidence, releases, human pages, and source inventories. Already live.</div>
       <div><b><code>siso-agent-runtime</code></b>Runtime app plus control core, lifecycle, context, status, TUI, and profile packages.</div>
       <div><b><code>siso-project-os</code></b>Already independent. Link it rather than nest it.</div>
+      <div><b><code>siso-agent-zero</code></b>Coordination capability plus boot/rehydration and staged voice-interface packages.</div>
       <div><b><code>siso-agent-playbook</code></b>Already independent. Preserve current local changes, then register it.</div>
       <div><b><code>siso-skills</code></b>Capability catalog and distribution. Mature skills may graduate to their own repos.</div>
       <div><b><code>siso-foundry</code></b>Foundry code plus research-topic registry; datasets remain external.</div>
@@ -113,6 +114,28 @@
       <div><b><code>siso-agent-integrations</code></b>Experimental adapters only. Create after the first two packages are sanitized; keep their promotion verdicts explicit.</div>
     </div>
     <p><b>Later, only if proven:</b> <code>siso-atlas</code>, a standalone voice gateway, independently forkable skill repositories, and independently released evidence engines. Stable Library IDs mean those later splits do not break links.</p>
+  </section>
+
+  <section>
+    <h2>Where the current Agent Base material goes</h2>
+    <table>
+      <thead><tr><th>Current material</th><th>Long-term owner</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Installer, CLI, loaded extensions, Pi/OpenTUI app</td><td><code>siso-agent-runtime</code></td><td>One installed application with one release lifecycle.</td></tr>
+        <tr><td><code>siso-project-os</code></td><td><code>siso-project-os</code></td><td>Already an independent project operating contract.</td></tr>
+        <tr><td><code>siso-agent-playbook</code></td><td><code>siso-agent-playbook</code></td><td>Already an independently installable fleet operating package.</td></tr>
+        <tr><td><code>templates/profile/skills</code></td><td><code>siso-skills</code></td><td>Capabilities need identity and releases independent of the runtime application.</td></tr>
+        <tr><td>Agent Zero boot and voice code</td><td><code>siso-agent-zero</code></td><td>They extend the user-facing coordinating agent rather than the generic runtime.</td></tr>
+        <tr><td>Foundry and research-topic registry</td><td><code>siso-foundry</code></td><td>One source-discovery and research-catalog outcome; large datasets stay external.</td></tr>
+        <tr><td><code>braind</code></td><td><code>siso-agent-brain</code></td><td>A persistent shared-state service with its own API, client, schema and operational lifecycle.</td></tr>
+        <tr><td><code>session-mirror</code></td><td><code>siso-session-intelligence</code></td><td>A distinct privacy-sensitive learning pipeline over agent transcripts.</td></tr>
+        <tr><td>Knowledge, coding-principles and idea engines</td><td><code>siso-evidence-engines</code></td><td>Three independent Works sharing evidence, scoring, provenance and promotion primitives.</td></tr>
+        <tr><td>Context Firewall and Headroom adapter</td><td><code>siso-agent-integrations</code></td><td>Reusable experiments with explicit safety and promotion contracts.</td></tr>
+        <tr><td><code>siso-agentlabs</code>, Web Chat and unfinished harness/interface spikes</td><td>private <code>siso-agent-lab</code></td><td>Incubation and comparison material; successful modules graduate outward, failed experiments remain traceable or enter the vault.</td></tr>
+        <tr><td>SISO Internal Lab / LifeLock and internal operations application</td><td><code>SISO_Internal_Lab</code>, unchanged</td><td>It owns internal products and operations, not reusable agent infrastructure or an agent R&amp;D attic.</td></tr>
+      </tbody>
+    </table>
+    <p class="callout"><b>Promotion flow:</b> private <code>siso-agent-lab</code> → proven public package or Work → its owning public repo → indexed by the Great Library. The private lab is temporary incubation, never the canonical home of a released capability.</p>
   </section>
 
   <section>
@@ -148,7 +171,8 @@
       <li><b>Metadata first:</b> register the module identities and relationships from this map; no risky source moves are required.</li>
       <li><b>Stop the leak:</b> rotate the exposed credential and replace the Agent Base whole-root installer copy with an allowlisted runtime release payload.</li>
       <li><b>Connect what already exists:</b> register Project OS and Agent Playbook by source locator, preserving Playbook's local modifications.</li>
-      <li><b>Extract the cleanest value boundaries:</b> Foundry, Agent Brain, Session Intelligence, then the Evidence Engines package family.</li>
+      <li><b>Separate incubation:</b> preserve Agent Labs, Web Chat, and unfinished spikes in a private <code>siso-agent-lab</code>; do not move them into <code>SISO_Internal_Lab</code>.</li>
+      <li><b>Extract the cleanest value boundaries:</b> Agent Zero, Skills, Foundry, Agent Brain, Session Intelligence, then the Evidence Engines package family.</li>
       <li><b>Package before splitting:</b> formalize lifecycle, context, status, control, TUI, and profile contracts inside the runtime repo; split repos only when independent adoption appears.</li>
     </ol>
   </section>

@@ -153,8 +153,8 @@
       "paths": ["siso-agentlabs"],
       "classification": "experiment",
       "disposition": "compare",
-      "target": "siso-agent-labs or vault",
-      "rationale": "The former Pi Harness Lab is internally coherent but appears to overlap the promoted runtime. A feature-by-feature comparison is required before promoting or archiving it.",
+      "target": "private siso-agent-lab incubator or vault after comparison",
+      "rationale": "The former Pi Harness Lab is an agent-harness research and build area whose successful runtime work appears partly promoted. Preserve it in a dedicated private agent incubator while comparing unique research and code; do not mix it into the unrelated SISO Internal Lab product repository.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:agent-labs:2026-07-30", "observed_at": "2026-07-30", "summary": "Lab mission, target architecture, workspaces, experiments, and verification package were read directly." }]
     },
     {
@@ -163,8 +163,8 @@
       "paths": ["apps/siso-web-chat"],
       "classification": "unverified",
       "disposition": "compare",
-      "target": "own application repository if active, otherwise lab",
-      "rationale": "The Vite application has an independent package identity, but its current product state and consumers were not established in this pass.",
+      "target": "private siso-agent-lab/prototypes/web-chat unless promoted",
+      "rationale": "The private Vite package is a read-only web chat command shell with mock-facing source and no established product consumers. Preserve it as an agent-interface prototype until a live product contract justifies promotion.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:web-chat:2026-07-30", "observed_at": "2026-07-30", "summary": "Package manifest and current dirty scope were inspected; product state remains unverified." }]
     },
     {
@@ -253,7 +253,7 @@
       "paths": ["extensions/agent-zero"],
       "classification": "shared_package",
       "disposition": "compare",
-      "target": "Agent Zero Work and its source repository",
+      "target": "siso-agent-zero/packages/boot",
       "rationale": "The boot sequence rehydrates a user-facing coordinating agent from fleet, task, memory, timeline, question, and division state. It belongs to the existing Agent Zero Work rather than becoming a competing standalone repository.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:agent-zero-boot:2026-07-30", "observed_at": "2026-07-30", "summary": "The boot data contract, degraded behavior, brain writes, briefing, delegation model, and autonomy tiers were read directly." }]
     },
@@ -263,7 +263,7 @@
       "paths": ["extensions/agent-zero-voice", "extensions/voice"],
       "classification": "experiment",
       "disposition": "compare",
-      "target": "Agent Zero packages/voice initially; siso-voice-gateway only after generic adoption",
+      "target": "siso-agent-zero/packages/voice initially; siso-voice-gateway only after generic adoption",
       "rationale": "The safer typed-contract slice and the earlier browser-to-Herdr prototype represent one evolving voice interface capability. They should be reconciled under Agent Zero first, preserving plan-only, idempotency, risk-policy, replay, and approval boundaries before any live dispatch or standalone repo.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:voice:2026-07-30", "observed_at": "2026-07-30", "summary": "The typed request and receipt contract, risk policy, replay fixtures, staged integration gates, browser speech interface, Herdr dispatch prototype, and polling behavior were read directly." }]
     },
