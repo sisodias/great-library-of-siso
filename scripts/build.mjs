@@ -190,6 +190,7 @@ function nav(active) {
       <a ${active === 'library' ? 'aria-current="page"' : ''} href="${href('')}">Library</a>
       <a ${active === 'agents' ? 'aria-current="page"' : ''} href="${href('agents/')}">Agents</a>
       <a ${active === 'research' ? 'aria-current="page"' : ''} href="${href('research/')}">Research</a>
+      <a ${active === 'estate' ? 'aria-current="page"' : ''} href="${href('estate/')}">Repo estate</a>
       <a ${active === 'releases' ? 'aria-current="page"' : ''} href="${href('releases/')}">Releases</a>
       <a ${active === 'snapshots' ? 'aria-current="page"' : ''} href="${href('snapshots/')}">Snapshots</a>
     </nav>
@@ -320,9 +321,9 @@ function detailList(title, items) {
   return `<section class="detail-block"><h2>${esc(title)}</h2>${items.length ? `<div class="detail-rows">${items.join('')}</div>` : '<p class="quiet">Nothing has been declared here yet.</p>'}</section>`;
 }
 
-function workPage(work, releases, byId) {
+function workPage(work, releases, byId, activeRelease) {
   const workReleases = releases.filter((release) => release.workId === work.id);
-  const latest = workReleases.at(-1);
+  const latest = activeRelease || workReleases.at(-1);
   const provenance = [
     ['Registry source', work.sourceFile],
     ['Steward', work.provenance.steward || work.provenance.owner || work.raw.steward],
@@ -366,6 +367,87 @@ function snapshotIndex(snapshots) {
   return page({ title: 'Snapshots', active: 'snapshots', description: 'Named recursive views of the Library.', body: `<section class="subhero shell">${eyebrow('Library / Snapshots')}<div><h1>Snapshots</h1><p>Named recursive views pin Library metadata. Payload materialization remains a separate, receipted operation.</p></div><span class="folio">S—01</span></section><section class="section shell release-index">${rows || emptyCatalog('No accepted named snapshots are present in this build.')}</section>` });
 }
 
+function githubRepository(locator) {
+  const value = safeExternalUrl(locator?.url);
+  if (!value) return null;
+  const url = new URL(value);
+  if (url.hostname.toLowerCase() !== 'github.com') return null;
+  const parts = url.pathname.replace(/^\/+|\/+$/g, '').split('/');
+  if (parts.length !== 2 || !parts[0] || !parts[1]) return null;
+  const repository = parts[1].replace(/\.git$/i, '');
+  return { owner: parts[0], repository, url: `https://github.com/${parts[0]}/${repository}` };
+}
+
+function buildRepositoryEstate(works, releases, snapshot) {
+  const releaseById = new Map(releases.map((release) => [release.id, release]));
+  const activeByWork = new Map();
+  for (const entry of snapshot?.releases || []) {
+    const release = releaseById.get(entry.release_id);
+    if (release) activeByWork.set(release.workId, release);
+  }
+  for (const work of works) {
+    if (!activeByWork.has(work.id)) {
+      const fallback = releases.filter((release) => release.workId === work.id).at(-1);
+      if (fallback) activeByWork.set(work.id, fallback);
+    }
+  }
+
+  const rows = [];
+  for (const work of works) {
+    const release = activeByWork.get(work.id);
+    const artifacts = release?.raw?.artifacts || [];
+    for (const locator of work.raw?.provenance?.locators || []) {
+      const repository = githubRepository(locator);
+      if (!repository) continue;
+      const artifact = artifacts.find((candidate) => {
+        const artifactUrl = safeExternalUrl(candidate.locator);
+        return artifactUrl === repository.url || artifactUrl?.startsWith(`${repository.url}/archive/`);
+      });
+      rows.push({
+        ...repository,
+        work_id: work.id,
+        work_name: work.name,
+        work_slug: work.slug,
+        work_type: work.type,
+        lifecycle_status: work.maturity,
+        library_url: href(`works/${work.slug}/`),
+        locator_type: locator.type,
+        locator_revision: locator.revision || null,
+        visibility: locator.visibility || 'unknown',
+        status: artifact ? 'released' : release?.raw?.artifacts?.length ? 'linked' : 'staging',
+        active_release_id: release?.id || null,
+        active_release_version: release?.version || null,
+        artifact_revision: artifact?.revision || null,
+      });
+    }
+  }
+  return rows.sort((a, b) => `${a.status}:${a.owner}/${a.repository}`.localeCompare(`${b.status}:${b.owner}/${b.repository}`));
+}
+
+function estatePage(repositories, snapshot) {
+  const released = repositories.filter((repository) => repository.status === 'released').length;
+  const linked = repositories.filter((repository) => repository.status === 'linked').length;
+  const staging = repositories.filter((repository) => repository.status === 'staging').length;
+  const rows = repositories.map((repository) => `<article>
+    <span>${esc(repository.status)}</span>
+    <div><h2><a href="${esc(repository.url)}" rel="noopener noreferrer">${esc(`${repository.owner}/${repository.repository}`)}</a></h2>
+      <p><a href="${esc(repository.library_url)}">${esc(repository.work_name)}</a> · ${esc(repository.work_type)} · ${esc(repository.visibility)}</p>
+      <p>${repository.status === 'released'
+        ? `Pinned source in ${esc(repository.active_release_version || repository.active_release_id)} at <code>${esc(repository.artifact_revision || repository.locator_revision || 'recorded revision')}</code>.`
+        : repository.status === 'linked'
+          ? 'Registered destination or companion repository; the active release is pinned to another source locator.'
+          : 'Public staging home with no source artifact in the active named snapshot yet.'}</p>
+    </div>
+  </article>`).join('');
+  return page({
+    title: 'Repository estate', active: 'estate',
+    description: 'Generated status of GitHub repositories registered by The Great Library of SISO.',
+    body: `<section class="subhero shell">${eyebrow(`Library / Repository estate / Snapshot ${snapshot?.version || 'unversioned'}`)}<div><h1>Repository estate</h1><p>A generated operational view of GitHub homes. Works are permanent identities; repositories are movable source locators.</p></div><span class="folio">E—01</span></section>
+    <section class="ledger shell" aria-label="Repository status counts"><div><strong>${String(released).padStart(2, '0')}</strong><span>Released source</span></div><div><strong>${String(linked).padStart(2, '0')}</strong><span>Linked homes</span></div><div><strong>${String(staging).padStart(2, '0')}</strong><span>Staging homes</span></div><p>Derived from the active Release selected by the latest immutable snapshot.</p></section>
+    <section class="section shell release-index">${rows || emptyCatalog('No GitHub repository locators are present in this snapshot.')}</section>`,
+  });
+}
+
 async function emit(path, contents) {
   const target = join(OUT, path);
   await mkdir(dirname(target), { recursive: true });
@@ -386,7 +468,12 @@ const generatedAt = /^\d{4}-\d{2}-\d{2}$/.test(latestSourceDate)
 const works = rawWorks.map(normalizeWork).sort((a, b) => a.name.localeCompare(b.name));
 const releases = rawReleases.map(normalizeRelease).sort((a, b) => `${a.date}${a.version}`.localeCompare(`${b.date}${b.version}`));
 const worksById = new Map(works.map((work) => [work.id, work]));
-const latestSnapshot = [...snapshots].sort((a, b) => Date.parse(a.created_at) - Date.parse(b.created_at)).at(-1);
+const latestSnapshot = [...snapshots].sort((a, b) => String(a.version || '').localeCompare(String(b.version || ''), undefined, { numeric: true })).at(-1);
+const releaseById = new Map(releases.map((release) => [release.id, release]));
+const activeReleasesByWork = new Map((latestSnapshot?.releases || []).map((entry) => {
+  const release = releaseById.get(entry.release_id);
+  return release ? [release.workId, release] : null;
+}).filter(Boolean));
 const libraryWork = works.find((work) => work.type === 'library');
 const sectionEdges = (latestSnapshot?.projection?.edges || []).filter((edge) => edge.from_work_id === libraryWork?.id && edge.contextual_role === 'section');
 const sections = sectionEdges.map((edge) => worksById.get(edge.to_work_id)).filter(Boolean);
@@ -395,6 +482,7 @@ for (const section of sections) {
   section.section = section.name;
   for (const { work } of projectionMembers(section.id, latestSnapshot, works)) work.section = section.name;
 }
+const repositoryEstate = buildRepositoryEstate(works, releases, latestSnapshot);
 
 await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
@@ -409,7 +497,9 @@ await emit('agents/index.html', agentsPage(works, assemblies, latestSnapshot, ag
 if (researchSection) await emit('research/index.html', researchPage(works, latestSnapshot, researchSection));
 await emit('releases/index.html', releaseIndex(releases, worksById));
 await emit('snapshots/index.html', snapshotIndex(snapshots));
-for (const work of works) await emit(`works/${work.slug}/index.html`, workPage(work, releases, worksById));
-await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity, section: work.section })), assemblies: assemblies.map(({ __file, ...assembly }) => assembly), source_inventories: sourceInventories.map(({ __file, ...inventory }) => inventory) }, null, 2)}\n`);
+await emit('estate/index.html', estatePage(repositoryEstate, latestSnapshot));
+await emit('estate.json', `${JSON.stringify({ generated_at: generatedAt, snapshot_id: latestSnapshot?.id || null, snapshot_version: latestSnapshot?.version || null, repositories: repositoryEstate }, null, 2)}\n`);
+for (const work of works) await emit(`works/${work.slug}/index.html`, workPage(work, releases, worksById, activeReleasesByWork.get(work.id)));
+await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity, section: work.section })), repositories: repositoryEstate, assemblies: assemblies.map(({ __file, ...assembly }) => assembly), source_inventories: sourceInventories.map(({ __file, ...inventory }) => inventory) }, null, 2)}\n`);
 
-console.log(`Built ${works.length} Works, ${releases.length} Releases, ${assemblies.length} Assemblies, ${sourceInventories.length} Source Inventories, and ${snapshots.length} Snapshots at ${BASE}`);
+console.log(`Built ${works.length} Works, ${releases.length} Releases, ${repositoryEstate.length} Repositories, ${assemblies.length} Assemblies, ${sourceInventories.length} Source Inventories, and ${snapshots.length} Snapshots at ${BASE}`);

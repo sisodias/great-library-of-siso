@@ -13,6 +13,8 @@ The Library supports human browsing and deterministic agent reading without trea
 
 The generated hosted site is the common public reading surface. It avoids operating a separate site for every repository while ensuring every accepted Work has an always-on Library page. The current production surface is [great-library-of-siso.vercel.app](https://great-library-of-siso.vercel.app/).
 
+The generated [Repository Estate](https://great-library-of-siso.vercel.app/estate/) and `/estate.json` are operational projections of the latest immutable snapshot. They distinguish repositories carrying a pinned source artifact from linked or staging homes. They never replace stable Work identities.
+
 ## Compose and research
 
 Build compositions by following typed relationships and interpreting roles in that context. Do not turn a current view into a permanent ownership or containment claim.
