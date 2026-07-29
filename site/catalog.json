@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T22:20:00.000Z",
+  "generated_at": "2026-07-29T22:36:00.000Z",
   "base_path": "/",
   "works": [
     {
@@ -35,7 +35,7 @@
       "name": "SISO Agent Brain",
       "library_url": "/works/siso-agent-brain/",
       "type": "agent_system",
-      "maturity": "planned",
+      "maturity": "experimental",
       "section": "Agents"
     },
     {

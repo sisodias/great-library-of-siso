@@ -4,23 +4,45 @@
   "id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
   "slug": "siso-agent-brain",
   "name": "SISO Agent Brain",
-  "summary": "A shared agent-state service for memory, tasks, fleet presence, timeline events, costs, notifications, questions, and delegated work.",
+  "summary": "The shared state service for tasks, memories, timeline, fleet presence, costs, human questions, divisions, delegation, control flags, and governed units.",
   "work_type": "agent_system",
-  "lifecycle_status": "planned",
+  "lifecycle_status": "experimental",
   "updated_at": "2026-07-30",
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
     "locators": [{
-      "type": "documentation",
+      "type": "source_repository",
       "url": "https://github.com/Lordsisodia/siso-agent-brain",
-      "revision": "main@e4a079efe3d2aab6891408dcf8b329eac8da3c13",
+      "revision": "main@4f720fa81ac1e9bd1f97a43e17e8c1d4755bb62e",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-brain:e4a079efe3d2aab6891408dcf8b329eac8da3c13", "observed_at": "2026-07-30", "summary": "Canonical public staging repository exists; service source remains in the Agent Base warehouse pending configuration and privacy extraction." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-brain:4f720fa81ac1e9bd1f97a43e17e8c1d4755bb62e", "observed_at": "2026-07-30", "summary": "Canonical public source contains the shared-state server and client, complete migrations, conservative merge tool, state-preserving installer, migration map, HTML architecture, and live disposable receipt." }
     }],
-    "license": { "status": "pending", "spdx": "NOASSERTION", "reason": "The extracted public source and license have not yet been published.", "evidence": [] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The clean SISO-owned extraction carries an MIT license.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-brain/blob/4f720fa81ac1e9bd1f97a43e17e8c1d4755bb62e/LICENSE", "observed_at": "2026-07-30", "summary": "MIT license is present at the pinned public source commit." }] }
   },
-  "relationships": [],
-  "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-modules:brain-service:2026-07-30", "observed_at": "2026-07-30", "summary": "Daemon, client, outbox, auth tiers, shared state domains, health checks, and machine-specific boundaries were read directly." }]
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "context": "Agent Zero consumes current tasks, memory, fleet, questions, divisions, and halt state through the Brain API while retaining its own intent and coordination policy.",
+      "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-brain/blob/4f720fa81ac1e9bd1f97a43e17e8c1d4755bb62e/docs/ARCHITECTURE.html", "observed_at": "2026-07-30", "summary": "The public architecture makes Agent Zero a consumer rather than embedded Brain source." }]
+    },
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "context": "Agent Runtime may publish lifecycle, fleet, task, and cost state through the API; model and session execution remain outside the Brain.",
+      "evidence": [{ "kind": "release_receipt", "reference": "repo-check:siso-agent-brain:4f720fa81ac1e9bd1f97a43e17e8c1d4755bb62e", "observed_at": "2026-07-30", "summary": "Heartbeat, timeline, task-read, and cost API paths passed in a disposable live service." }]
+    },
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
+      "context": "Session Intelligence may promote learned memory through the API, while session ingestion, extraction, ranking, and privacy-sensitive source processing stay outside the Brain.",
+      "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-brain/blob/4f720fa81ac1e9bd1f97a43e17e8c1d4755bb62e/MIGRATION-MAP.json", "observed_at": "2026-07-30", "summary": "Session intent routing and extract search were explicitly reclassified to Session Intelligence." }]
+    }
+  ],
+  "evidence": [
+    { "kind": "source_review", "reference": "source-review:siso-agent-base:brain-boundary:2026-07-30", "observed_at": "2026-07-30", "summary": "The warehouse brain folder was classified by behavior; scheduler, Foundry, Session Intelligence, voice, provider operations, diagnostics, and deployment sources were not conflated with shared state." },
+    { "kind": "release_receipt", "reference": "repo-check:siso-agent-brain:4f720fa81ac1e9bd1f97a43e17e8c1d4755bb62e", "observed_at": "2026-07-30", "summary": "Schema, live API, tiered auth, offline queue/replay, dry-run and idempotent merge, install, and state-preserving uninstall checks passed." }
+  ]
 }
