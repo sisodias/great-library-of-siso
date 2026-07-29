@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:siso:great-library:schema:common:1",
+  "$defs": {
+    "workId": { "type": "string", "pattern": "^gls:work:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "releaseId": { "type": "string", "pattern": "^gls:release:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "snapshotId": { "type": "string", "pattern": "^gls:snapshot:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "artifactId": { "type": "string", "pattern": "^gls:artifact:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "reference", "observed_at", "summary"],
+      "properties": {
+        "kind": { "enum": ["integration_check", "public_locator", "source_review", "registry_validation", "release_receipt", "documentation"] },
+        "reference": { "type": "string", "minLength": 3 },
+        "observed_at": { "type": "string", "format": "date" },
+        "summary": { "type": "string", "minLength": 3 }
+      }
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "spdx", "reason", "evidence"],
+      "properties": {
+        "status": { "enum": ["verified", "pending", "not_applicable"] },
+        "spdx": { "type": "string", "minLength": 2 },
+        "reason": { "type": "string", "minLength": 3 },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } }
+      }
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "role", "classification"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "role": { "enum": ["steward", "repository_owner", "upstream_owner", "maintainer"] },
+        "classification": { "enum": ["siso", "external", "unknown"] }
+      }
+    },
+    "locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "url", "revision", "visibility", "verified", "evidence"],
+      "properties": {
+        "type": { "enum": ["source_repository", "commit", "archive", "homepage", "documentation"] },
+        "url": { "type": "string", "format": "uri" },
+        "revision": { "type": "string", "minLength": 1 },
+        "visibility": { "enum": ["public", "private", "unknown"] },
+        "verified": { "type": "boolean" },
+        "evidence": { "$ref": "#/$defs/evidence" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "owners", "locators", "license"],
+      "properties": {
+        "origin": { "enum": ["siso", "external", "mixed", "unknown"] },
+        "owners": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/owner" } },
+        "locators": { "type": "array", "items": { "$ref": "#/$defs/locator" } },
+        "license": { "$ref": "#/$defs/license" }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "target_work_id", "context", "evidence"],
+      "properties": {
+        "type": { "enum": ["adopts", "integrates_with", "coordinates_via", "depends_on", "documents", "related_to"] },
+        "target_work_id": { "$ref": "#/$defs/workId" },
+        "context": { "type": "string", "minLength": 3 },
+        "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/evidence" } }
+      }
+    },
+    "distributionState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "reason", "evidence"],
+      "properties": {
+        "state": { "enum": ["planned", "experimental", "verified", "unavailable", "not_applicable"] },
+        "reason": { "type": "string", "minLength": 3 },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0", "record_type": "release", "id": "gls:release:14c1d9de-0e77-44e9-9274-57e7cfb6ab02", "work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
+  "version": "1.0.0", "title": "Agents section V1", "released_at": "2026-07-29T00:00:00Z", "observed_at": "2026-07-29", "immutable": true, "artifacts": [],
+  "distribution": {
+    "addressable": { "state": "verified", "reason": "The section is addressable by stable registry ID.", "evidence": [{ "kind": "registry_validation", "reference": "gls:release:14c1d9de-0e77-44e9-9274-57e7cfb6ab02", "observed_at": "2026-07-29", "summary": "Release-to-Work resolution validated." }] },
+    "archive_downloadable": { "state": "not_applicable", "reason": "This curated section has no independent payload archive.", "evidence": [] },
+    "manifest_resolvable": { "state": "verified", "reason": "The release manifest resolves inside the named snapshot.", "evidence": [{ "kind": "registry_validation", "reference": "registry:release:agents-v1", "observed_at": "2026-07-29", "summary": "Manifest parsed and cross-references resolved." }] },
+    "installable": { "state": "not_applicable", "reason": "A curated section is not software.", "evidence": [] },
+    "forkable": { "state": "not_applicable", "reason": "No source payload is attached to this section release.", "evidence": [] },
+    "portable": { "state": "not_applicable", "reason": "Portability is evaluated on the section's member releases.", "evidence": [] }
+  },
+  "evidence": [{ "kind": "source_review", "reference": "source-review:agents-foundation:2026-07-29", "observed_at": "2026-07-29", "summary": "V1 section membership is pinned only in the named snapshot projection." }]
+}

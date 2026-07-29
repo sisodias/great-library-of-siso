@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:siso:great-library:schema:snapshot:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "id", "name", "version", "created_at", "immutable", "scope", "metadata_completeness", "releases", "projection", "download_contract", "artifact_materialization", "evidence"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "snapshot" },
+    "id": { "$ref": "common.schema.json#/$defs/snapshotId" },
+    "name": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "immutable": { "const": true },
+    "scope": { "const": "whole_library" },
+    "metadata_completeness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "work_count", "release_count"],
+      "properties": {
+        "state": { "const": "complete" },
+        "work_count": { "type": "integer", "minimum": 1 },
+        "release_count": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "releases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["release_id", "manifest_sha256"],
+        "properties": {
+          "release_id": { "$ref": "common.schema.json#/$defs/releaseId" },
+          "manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["root_work_ids", "edges"],
+      "properties": {
+        "root_work_ids": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/workId" } },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["from_work_id", "to_work_id", "type", "contextual_role", "context"],
+            "properties": {
+              "from_work_id": { "$ref": "common.schema.json#/$defs/workId" },
+              "to_work_id": { "$ref": "common.schema.json#/$defs/workId" },
+              "type": { "enum": ["curates", "adopts", "integrates_with", "coordinates_via"] },
+              "contextual_role": { "enum": ["section", "module", "foundation", "runtime", "control_plane", "coordination_policy", "integration"] },
+              "context": { "type": "string", "minLength": 3 }
+            }
+          }
+        }
+      }
+    },
+    "download_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["manifest_role", "artifact_policy"],
+      "properties": {
+        "manifest_role": { "const": "metadata_complete_named_snapshot" },
+        "artifact_policy": { "const": "payloads_are_separate_and_require_per_artifact_receipts" }
+      }
+    },
+    "artifact_materialization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "receipts"],
+      "properties": {
+        "state": { "enum": ["not_materialized", "partial", "complete"] },
+        "receipts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["release_id", "artifact_id", "state", "sha256", "bytes", "recorded_at"],
+            "properties": {
+              "release_id": { "$ref": "common.schema.json#/$defs/releaseId" },
+              "artifact_id": { "$ref": "common.schema.json#/$defs/artifactId" },
+              "state": { "enum": ["materialized", "failed", "skipped"] },
+              "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+              "bytes": { "type": "integer", "minimum": 0 },
+              "recorded_at": { "type": "string", "format": "date-time" }
+            }
+          }
+        }
+      }
+    },
+    "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/evidence" } }
+  }
+}

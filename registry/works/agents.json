@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
+  "slug": "agents",
+  "name": "Agents",
+  "summary": "A curated Library section for project operating systems, agent runtimes, control planes, and coordination playbooks.",
+  "work_type": "section",
+  "lifecycle_status": "active",
+  "updated_at": "2026-07-29",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [],
+    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "A curated section is registry metadata rather than a source payload.", "evidence": [] }
+  },
+  "relationships": [],
+  "evidence": [{ "kind": "source_review", "reference": "source-review:agents-foundation:2026-07-29", "observed_at": "2026-07-29", "summary": "Reviewed Project OS, Agent Base, Herdr, and Agent Zero evidence before classification." }]
+}

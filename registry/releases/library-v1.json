@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0", "record_type": "release", "id": "gls:release:4ed5e119-3ee7-4dca-bdd2-9c344c608a01", "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+  "version": "1.0.0", "title": "The Great Library of SISO V1 registry identity", "released_at": "2026-07-29T00:00:00Z", "observed_at": "2026-07-29", "immutable": true, "artifacts": [],
+  "distribution": {
+    "addressable": { "state": "verified", "reason": "The Work is addressable by stable registry ID.", "evidence": [{ "kind": "registry_validation", "reference": "gls:release:4ed5e119-3ee7-4dca-bdd2-9c344c608a01", "observed_at": "2026-07-29", "summary": "Release-to-Work resolution validated." }] },
+    "archive_downloadable": { "state": "not_applicable", "reason": "This metadata-only identity has no payload archive.", "evidence": [] },
+    "manifest_resolvable": { "state": "verified", "reason": "The release manifest resolves inside the named snapshot.", "evidence": [{ "kind": "registry_validation", "reference": "registry:release:library-v1", "observed_at": "2026-07-29", "summary": "Manifest parsed and cross-references resolved." }] },
+    "installable": { "state": "not_applicable", "reason": "A registry identity is not software.", "evidence": [] },
+    "forkable": { "state": "not_applicable", "reason": "No source payload is attached to this metadata release.", "evidence": [] },
+    "portable": { "state": "not_applicable", "reason": "Portability does not apply to this metadata identity.", "evidence": [] }
+  },
+  "evidence": [{ "kind": "registry_validation", "reference": "registry:seed:v1", "observed_at": "2026-07-29", "summary": "Immutable metadata release created for snapshot pinning." }]
+}

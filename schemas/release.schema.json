@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:siso:great-library:schema:release:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "id", "work_id", "version", "title", "released_at", "observed_at", "immutable", "artifacts", "distribution", "evidence"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "release" },
+    "id": { "$ref": "common.schema.json#/$defs/releaseId" },
+    "work_id": { "$ref": "common.schema.json#/$defs/workId" },
+    "version": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "released_at": { "type": "string", "format": "date-time" },
+    "observed_at": { "type": "string", "format": "date" },
+    "immutable": { "const": true },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind", "locator", "revision", "availability", "owner", "ownership", "license", "integrity"],
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/artifactId" },
+          "kind": { "enum": ["source_repository", "source_archive", "registry_metadata", "documentation", "playbook"] },
+          "locator": { "type": "string", "format": "uri" },
+          "revision": { "type": "string", "minLength": 1 },
+          "availability": { "enum": ["public", "not_public", "unknown"] },
+          "owner": { "type": "string", "minLength": 1 },
+          "ownership": { "enum": ["siso", "external", "unknown"] },
+          "license": { "$ref": "common.schema.json#/$defs/license" },
+          "integrity": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["state", "algorithm", "digest"],
+            "properties": {
+              "state": { "enum": ["verified", "unverified", "not_applicable"] },
+              "algorithm": { "enum": ["git_commit_sha1", "sha256", "none"] },
+              "digest": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "distribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["addressable", "archive_downloadable", "manifest_resolvable", "installable", "forkable", "portable"],
+      "properties": {
+        "addressable": { "$ref": "common.schema.json#/$defs/distributionState" },
+        "archive_downloadable": { "$ref": "common.schema.json#/$defs/distributionState" },
+        "manifest_resolvable": { "$ref": "common.schema.json#/$defs/distributionState" },
+        "installable": { "$ref": "common.schema.json#/$defs/distributionState" },
+        "forkable": { "$ref": "common.schema.json#/$defs/distributionState" },
+        "portable": { "$ref": "common.schema.json#/$defs/distributionState" }
+      }
+    },
+    "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/evidence" } }
+  }
+}

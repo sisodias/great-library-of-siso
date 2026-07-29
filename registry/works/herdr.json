@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
+  "slug": "herdr",
+  "name": "Herdr",
+  "summary": "An externally owned terminal workspace and control plane for persistent, addressable agent sessions.",
+  "work_type": "tool",
+  "lifecycle_status": "active",
+  "updated_at": "2026-07-29",
+  "provenance": {
+    "origin": "external",
+    "owners": [{ "name": "ogulcancelik", "role": "upstream_owner", "classification": "external" }],
+    "locators": [{
+      "type": "source_repository",
+      "url": "https://github.com/ogulcancelik/herdr",
+      "revision": "master@514e4465ee33d4d81682d06ee2934483982a54ed",
+      "visibility": "public",
+      "verified": true,
+      "evidence": { "kind": "integration_check", "reference": "github-api:ogulcancelik/herdr:514e4465ee33d4d81682d06ee2934483982a54ed", "observed_at": "2026-07-29", "summary": "Public master branch, external ownership, and Apache-2.0 license verified; commit HEAD pinned." }
+    }],
+    "license": { "status": "verified", "spdx": "Apache-2.0", "reason": "GitHub repository metadata reports Apache-2.0.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/ogulcancelik/herdr", "observed_at": "2026-07-29", "summary": "Public upstream license verified as Apache-2.0." }] }
+  },
+  "relationships": [],
+  "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Terminal control-plane boundary reviewed without assigning upstream ownership to SISO." }]
+}

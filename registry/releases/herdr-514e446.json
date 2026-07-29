@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0", "record_type": "release", "id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05", "work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
+  "version": "master+514e446", "title": "Herdr upstream pinned seed", "released_at": "2026-07-29T13:47:22Z", "observed_at": "2026-07-29", "immutable": true,
+  "artifacts": [{
+    "id": "gls:artifact:36fc5f42-bccc-4f9b-b200-33a82ac4a303", "kind": "source_archive", "locator": "https://github.com/ogulcancelik/herdr/archive/514e4465ee33d4d81682d06ee2934483982a54ed.tar.gz", "revision": "514e4465ee33d4d81682d06ee2934483982a54ed", "availability": "public", "owner": "ogulcancelik", "ownership": "external",
+    "license": { "status": "verified", "spdx": "Apache-2.0", "reason": "Public upstream repository metadata reports Apache-2.0.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/ogulcancelik/herdr", "observed_at": "2026-07-29", "summary": "External ownership, public visibility, and license verified." }] },
+    "integrity": { "state": "verified", "algorithm": "git_commit_sha1", "digest": "514e4465ee33d4d81682d06ee2934483982a54ed" }
+  }],
+  "distribution": {
+    "addressable": { "state": "verified", "reason": "The externally owned public source is pinned to an exact commit.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/ogulcancelik/herdr/commit/514e4465ee33d4d81682d06ee2934483982a54ed", "observed_at": "2026-07-29", "summary": "Commit resolved as master HEAD." }] },
+    "archive_downloadable": { "state": "verified", "reason": "A public commit-scoped archive locator is recorded.", "evidence": [{ "kind": "public_locator", "reference": "https://github.com/ogulcancelik/herdr/archive/514e4465ee33d4d81682d06ee2934483982a54ed.tar.gz", "observed_at": "2026-07-29", "summary": "Archive locator is immutable by commit pin." }] },
+    "manifest_resolvable": { "state": "verified", "reason": "The registry release resolves to its Work and pinned artifact.", "evidence": [{ "kind": "registry_validation", "reference": "registry:release:herdr-514e446", "observed_at": "2026-07-29", "summary": "Manifest cross-references validated." }] },
+    "installable": { "state": "experimental", "reason": "Upstream installation is documented, but this exact pin has no Library install receipt.", "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Standalone upstream installation and control-plane boundary reviewed." }] },
+    "forkable": { "state": "verified", "reason": "The upstream repository is public and Apache-2.0 licensed.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/ogulcancelik/herdr", "observed_at": "2026-07-29", "summary": "Public visibility, external ownership, and Apache-2.0 license verified." }] },
+    "portable": { "state": "experimental", "reason": "Herdr is independently useful, but no Library portability receipt exists for this exact commit.", "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Upstream tool was separated from SISO overlays and policy." }] }
+  },
+  "evidence": [{ "kind": "integration_check", "reference": "github-api:ogulcancelik/herdr:514e4465ee33d4d81682d06ee2934483982a54ed", "observed_at": "2026-07-29", "summary": "Current public master HEAD pinned; external ownership preserved." }]
+}

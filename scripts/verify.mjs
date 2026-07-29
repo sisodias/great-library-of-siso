@@ -1,0 +1,21 @@
+import { spawnSync } from "node:child_process";
+
+const checks = [
+  ["registry validation", "scripts/validate.mjs"],
+  ["site build", "scripts/build.mjs"],
+  ["site links and identity", "scripts/check-site.mjs"],
+  ["publication safety scan", "scripts/scan-publication.mjs"]
+];
+
+for (const [label, script] of checks) {
+  console.log(`\n==> ${label}`);
+  const result = spawnSync(process.execPath, [script], {
+    cwd: process.cwd(),
+    env: process.env,
+    stdio: "inherit"
+  });
+  if (result.error) throw result.error;
+  if (result.status !== 0) process.exit(result.status || 1);
+}
+
+console.log("\nAll Great Library V1 checks passed.");

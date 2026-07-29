@@ -1,0 +1,31 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Node and verification output
+node_modules/
+coverage/
+.nyc_output/
+*.log
+npm-debug.log*
+.cache/
+tmp/
+.tmp/
+
+# Local configuration and sensitive material
+.env
+.env.*
+!.env.example
+!.env.template
+.envrc
+.secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+
+# `site/` is intentionally not ignored: it is the generated publication artifact.

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+  "slug": "great-library-of-siso",
+  "name": "The Great Library of SISO",
+  "summary": "The public human-readable and agent-readable registry for SISO source.",
+  "work_type": "library",
+  "lifecycle_status": "active",
+  "updated_at": "2026-07-29",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [],
+    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "This registry identity is not a source payload release.", "evidence": [] }
+  },
+  "relationships": [],
+  "evidence": [{ "kind": "registry_validation", "reference": "registry:seed:v1", "observed_at": "2026-07-29", "summary": "Seed Work accepted by the V1 registry validator." }]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:siso:great-library:schema:work:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "id", "slug", "name", "summary", "work_type", "lifecycle_status", "updated_at", "provenance", "relationships", "evidence"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "work" },
+    "id": { "$ref": "common.schema.json#/$defs/workId" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "name": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 10 },
+    "work_type": { "enum": ["library", "section", "project", "agent_system", "tool", "playbook", "capability_pack", "bundle"] },
+    "lifecycle_status": { "enum": ["planned", "experimental", "active", "retired", "unknown"] },
+    "updated_at": { "type": "string", "format": "date" },
+    "provenance": { "$ref": "common.schema.json#/$defs/provenance" },
+    "relationships": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/relationship" } },
+    "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/evidence" } }
+  }
+}

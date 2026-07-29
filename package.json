@@ -1,0 +1,17 @@
+{
+  "name": "great-library-of-siso",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The human- and agent-readable registry for The Great Library of SISO.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs",
+    "scan": "node scripts/scan-publication.mjs",
+    "check:site": "node scripts/check-site.mjs",
+    "verify": "node scripts/verify.mjs"
+  }
+}

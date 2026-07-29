@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+  "slug": "siso-project-os",
+  "name": "SISO Project OS",
+  "summary": "A project-local operating system and contract bundle for durable agent work, evidence, knowledge, and handoff state.",
+  "work_type": "project",
+  "lifecycle_status": "active",
+  "updated_at": "2026-07-29",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "sisodias", "role": "repository_owner", "classification": "siso" }],
+    "locators": [{
+      "type": "source_repository",
+      "url": "https://github.com/sisodias/siso-project-os",
+      "revision": "main@d6290c609a6922e14b3faa27019aae31628686cb",
+      "visibility": "public",
+      "verified": true,
+      "evidence": { "kind": "integration_check", "reference": "github-api:sisodias/siso-project-os:d6290c609a6922e14b3faa27019aae31628686cb", "observed_at": "2026-07-29", "summary": "Public main branch and MIT license verified; commit HEAD pinned." }
+    }],
+    "license": { "status": "verified", "spdx": "MIT", "reason": "GitHub repository metadata reports MIT.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/sisodias/siso-project-os", "observed_at": "2026-07-29", "summary": "Public repository license verified as MIT." }] }
+  },
+  "relationships": [{
+    "type": "integrates_with",
+    "target_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+    "context": "Project OS can reference optional Agent Base capabilities but does not contain Agent Base.",
+    "evidence": [{ "kind": "source_review", "reference": "source-review:project-os-agent-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Reviewed capability and provider boundaries." }]
+  }],
+  "evidence": [{ "kind": "source_review", "reference": "source-review:project-os-agent-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Product boundary and adoption contract reviewed from source-backed evidence." }]
+}

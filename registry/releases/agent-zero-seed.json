@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0", "record_type": "release", "id": "gls:release:8c02a5a4-5386-4c63-a72f-c02665799106", "work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+  "version": "registry-seed-2026-07-29", "title": "Agent Zero Coordination Playbook metadata seed", "released_at": "2026-07-29T00:00:00Z", "observed_at": "2026-07-29", "immutable": true, "artifacts": [],
+  "distribution": {
+    "addressable": { "state": "unavailable", "reason": "No verified public artifact locator is recorded.", "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Current operational material is not a public portable release." }] },
+    "archive_downloadable": { "state": "unavailable", "reason": "No public release archive is evidenced.", "evidence": [] },
+    "manifest_resolvable": { "state": "verified", "reason": "The conservative metadata manifest resolves inside the registry.", "evidence": [{ "kind": "registry_validation", "reference": "registry:release:agent-zero-seed", "observed_at": "2026-07-29", "summary": "Metadata manifest and Work reference validated." }] },
+    "installable": { "state": "unavailable", "reason": "The current SISO launcher is not a portable public installer.", "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Launcher depends on SISO-specific wiring and was not classified as a public install." }] },
+    "forkable": { "state": "unavailable", "reason": "No public source artifact with redistribution evidence is recorded.", "evidence": [] },
+    "portable": { "state": "unavailable", "reason": "Agent Zero is not a verified portable public artifact.", "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Portable packaging remains future work." }] }
+  },
+  "evidence": [{ "kind": "source_review", "reference": "source-review:herdr-agent-zero-story:2026-07-29", "observed_at": "2026-07-29", "summary": "Metadata-only release intentionally makes no public payload claim." }]
+}

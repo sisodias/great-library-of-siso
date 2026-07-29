@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "snapshot",
+  "id": "gls:snapshot:284e7e6a-d022-46cf-944f-8e2d42b0128f",
+  "name": "Whole Library V1 — Agents Foundation",
+  "version": "1.0.0",
+  "created_at": "2026-07-29T00:00:00Z",
+  "immutable": true,
+  "scope": "whole_library",
+  "metadata_completeness": { "state": "complete", "work_count": 6, "release_count": 6 },
+  "releases": [
+    { "release_id": "gls:release:4ed5e119-3ee7-4dca-bdd2-9c344c608a01", "manifest_sha256": "ef6550ca061b5e7e6cad0c0eabfc91b2ba5ecb243d9baa8b05f79fb6658686aa" },
+    { "release_id": "gls:release:14c1d9de-0e77-44e9-9274-57e7cfb6ab02", "manifest_sha256": "96200b7e955e3d0ec21b954a1d329a7ec2428ad1aef86e2bfce6336c044564d2" },
+    { "release_id": "gls:release:3a99d120-a2dd-4e79-9a10-74b47aeefc03", "manifest_sha256": "695e0ffef7bc9ef5370a97b34f9db86658758e35d14ef72f3568b2580bb7e53e" },
+    { "release_id": "gls:release:61f81c21-b467-4628-96e8-a20493cd0a04", "manifest_sha256": "9f6a8e8ca90723d7775158ab20ffe638c8316dfba3a75583d3cc6f2097b1df2e" },
+    { "release_id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05", "manifest_sha256": "559a4cb66b2b887d967066487279a3480c8d20fcb04e00875bdb7f3e6d4e18f9" },
+    { "release_id": "gls:release:8c02a5a4-5386-4c63-a72f-c02665799106", "manifest_sha256": "4cf72788f59441947d7d5e6056f3cc618efbf1b93263f067be5b4f023cacd86b" }
+  ],
+  "projection": {
+    "root_work_ids": ["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"],
+    "edges": [
+      { "from_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1", "to_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "type": "curates", "contextual_role": "section", "context": "Agents is a section only in this named Library projection." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943", "type": "curates", "contextual_role": "module", "context": "Project OS is presented as an Agents-section module without changing its project Work type." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224", "type": "curates", "contextual_role": "module", "context": "Agent Base is presented as an Agents-section module without changing its agent-system Work type." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc", "type": "curates", "contextual_role": "module", "context": "Herdr is presented as an externally owned module in this section projection." },
+      { "from_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0", "to_work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719", "type": "curates", "contextual_role": "module", "context": "Agent Zero is presented as a coordination module while remaining a playbook Work." }
+    ]
+  },
+  "download_contract": { "manifest_role": "metadata_complete_named_snapshot", "artifact_policy": "payloads_are_separate_and_require_per_artifact_receipts" },
+  "artifact_materialization": { "state": "not_materialized", "receipts": [] },
+  "evidence": [{ "kind": "registry_validation", "reference": "registry:snapshot:whole-library-v1", "observed_at": "2026-07-29", "summary": "Named snapshot pins every seed Work through an immutable Release Manifest; payloads remain separate." }]
+}
