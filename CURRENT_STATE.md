@@ -8,13 +8,15 @@
 ## What is live
 
 - The public registry, generated site, repository estate, and machine-readable catalog are deployed.
-- Fifteen stable Works span the Library, Agents, Research, and one preserved source inventory.
+- Sixteen stable Works span the Library, Agents, and Research, with two preservation-aware source inventories.
 - The Agents story separates Project OS, Runtime, coordination, integrations, Skills, Playbooks, Agent Brain, and Session Intelligence using typed relationships rather than directory hierarchy.
 - The machine-neutral local convention groups those eight independent checkouts flat at `$SISO_WORKSPACE/SISO_Agents`; this placement changes no Work, Release, Snapshot, locator, or public URL.
 - SISO Agent Brain `0.3.0` is pinned to `ed50bec86f5cfb86cc5c84ebfce97fad595598b4`.
 - SISO Skills Hub `0.2.0` is pinned to `d82cd4468fc5f6017a0d8d9d3827bae441fd11db`.
-- Whole Library V18 — Agents Workspace Layout (`gls:snapshot:536d2898-69bb-448e-8333-5f1a2fd50826`) is the wrap-up Snapshot.
-- The Library's selected self-release is `0.2.1+fd348bc`, pinned to `fd348bc40c010d1964eee98c5c6b0e6035edaa62`.
+- SISO Knowledge is an active Research Work pinned to the honest public architecture baseline `0a433ce385ae2a2be30a86343b5b494a52728d5e`; its dirty local corpus and nested products are preserved but are not falsely claimed as released.
+- Research now separates three independently addressable responsibilities: SISO Knowledge for durable corpus and retrieval, Foundry for source discovery and reuse intelligence, and Evidence Engines for source-grounded transformation.
+- Whole Library V20 — Published Knowledge Registry (`gls:snapshot:7dc2e506-52d8-4639-895c-98dfe46b12d8`) is the wrap-up Snapshot.
+- The Library's selected self-release is `0.3.0+2772212`, pinned to `2772212fdcf7efdd5789c05c241570e9ec43e2a1`.
 - The latest active state is always the highest-numbered immutable whole-Library Snapshot. Do not infer “current” from filename order alone; compare numeric `version` fields.
 
 ## Operating boundaries
@@ -25,7 +27,8 @@
 - Private client projects, credentials, personal notes, machine paths, raw operational databases, and private topology do not enter this repository.
 - Catalog presence does not imply download, install, fork, portability, ownership, or redistribution rights. Those claims require a Release Manifest and evidence.
 - Herdr remains an external upstream. The retired Agent Base warehouse remains an extraction source, not an active framework claim.
-- Foundry and Evidence Engines are filed as Research Works under the local Knowledge domain; the temporary `SISO_Library_Repos` holding folder is retired.
+- SISO Knowledge, Foundry, and Evidence Engines are independent Research Works. A local checkout may group them, but folder placement does not create containment or alter public identity.
+- The former `SISO_Library` compatibility name is retired. The public knowledge-production repository is `Lordsisodia/siso-knowledge`; the Great Library remains the separate registry and front door.
 
 ## Verification contract
 
@@ -40,7 +43,7 @@ The gate validates schemas and records, generates the public site and catalog, c
 
 1. Read `AGENTS.md`, then the latest whole-Library Snapshot.
 2. Use `site/estate.json` to see which public repositories have released source, linked homes, or staging homes.
-3. Continue only from evidenced source inventories or a named Work; do not bulk-import the old Agent Base.
+3. Continue only from evidenced source inventories or a named Work; do not bulk-import the old Agent Base or the dirty local Knowledge data plane.
 4. When adding a module, keep the Work independently addressable and put its contextual role in an Assembly or Snapshot relationship.
 
 ## Known external action
