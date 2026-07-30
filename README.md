@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/repository-header.png" width="100%" alt="A monumental living archive illuminated by emerald and cyan knowledge paths">
+</p>
+
 # The Great Library of SISO
 
 A public, human-readable and agent-readable registry and learning system for SISO source.
