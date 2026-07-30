@@ -114,7 +114,7 @@
       "classification": "accepted_work",
       "disposition": "extract",
       "target": "https://github.com/Lordsisodia/siso-skills-hub and promoted individual Skill repositories",
-      "rationale": "The verified public hub now gives 28 Skills independent identity, evidence, versioning, materialization, and a promotion contract without coupling their source lifecycle to the runtime application.",
+      "rationale": "The verified public hub gives 28 entries independent identity, materialization, and a promotion contract. Direct review now distinguishes atomic skills from playbooks, system adapters, and stale environment recipes; no folder is promoted to its own repository without lifecycle evidence.",
       "evidence": [{ "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:skills:2026-07-30", "observed_at": "2026-07-30", "summary": "Skill roots, installer projection, capability gate, and representative skill/playbook contracts were read directly." }]
     },
     {

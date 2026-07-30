@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-29T23:52:18.000Z",
-  "snapshot_id": "gls:snapshot:72d5567a-e36c-476e-b331-394ccc84b323",
-  "snapshot_version": "13.0.0",
+  "generated_at": "2026-07-30T00:09:06.000Z",
+  "snapshot_id": "gls:snapshot:27d42489-2120-459b-bea9-c7b1927442e9",
+  "snapshot_version": "14.0.0",
   "repositories": [
     {
       "owner": "Lordsisodia",
@@ -212,12 +212,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-skills/",
       "locator_type": "source_repository",
-      "locator_revision": "main@05d978b40f85254446f5d2f684009ff821c0e94a",
+      "locator_revision": "main@2195cbb66854475d5809d8bcb684d70b9ea07113",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:da95107a-2089-4d6b-9171-7d0de7790d11",
-      "active_release_version": "main+05d978b",
-      "artifact_revision": "05d978b40f85254446f5d2f684009ff821c0e94a"
+      "active_release_id": "gls:release:28d02fdb-439a-4d2a-a972-c02292642344",
+      "active_release_version": "0.1.0+2195cbb",
+      "artifact_revision": "2195cbb66854475d5809d8bcb684d70b9ea07113"
     },
     {
       "owner": "ogulcancelik",
