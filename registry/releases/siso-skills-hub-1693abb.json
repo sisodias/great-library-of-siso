@@ -1,0 +1,21 @@
+{
+  "schema_version":"1.0.0","record_type":"release","id":"gls:release:df2c77c5-1761-4ac2-bd19-40723f611080","work_id":"gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+  "version":"main+1693abb","title":"SISO Skills Agent Brain adapter release","released_at":"2026-07-30T12:07:36+07:00","observed_at":"2026-07-30","immutable":true,
+  "artifacts":[{
+    "id":"gls:artifact:c96396a5-36f4-4b6a-8398-74a40592ecf9","kind":"source_archive","locator":"https://github.com/Lordsisodia/siso-skills-hub/archive/1693abb4c1290d0930bb78f62f3daa5a32fb061f.tar.gz","revision":"1693abb4c1290d0930bb78f62f3daa5a32fb061f","availability":"public","owner":"Lordsisodia","ownership":"siso",
+    "license":{"status":"verified","spdx":"MIT","reason":"The SISO-owned Hub and bundled source carry MIT; external Skills retain their independently declared rights.","evidence":[{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-skills-hub/blob/1693abb4c1290d0930bb78f62f3daa5a32fb061f/LICENSE","observed_at":"2026-07-30","summary":"MIT license text is present at the exact release pin."}]},
+    "integrity":{"state":"verified","algorithm":"git_commit_sha1","digest":"1693abb4c1290d0930bb78f62f3daa5a32fb061f"}
+  }],
+  "distribution":{
+    "addressable":{"state":"verified","reason":"The public Skills Hub source is pinned to an exact commit.","evidence":[{"kind":"integration_check","reference":"https://github.com/Lordsisodia/siso-skills-hub/commit/1693abb4c1290d0930bb78f62f3daa5a32fb061f","observed_at":"2026-07-30","summary":"Canonical public main resolved at the adapter release."}]},
+    "archive_downloadable":{"state":"verified","reason":"A commit-scoped public source archive is recorded.","evidence":[{"kind":"public_locator","reference":"https://github.com/Lordsisodia/siso-skills-hub/archive/1693abb4c1290d0930bb78f62f3daa5a32fb061f.tar.gz","observed_at":"2026-07-30","summary":"The archive locator is immutable by commit pin."}]},
+    "manifest_resolvable":{"state":"verified","reason":"The release resolves to the permanent Skills Work and its exact artifact.","evidence":[{"kind":"release_receipt","reference":"repo-check:siso-skills-hub:1693abb4c1290d0930bb78f62f3daa5a32fb061f","observed_at":"2026-07-30","summary":"Registry assessments, adapter source, generated HTML, and exact Brain receipt agree."}]},
+    "installable":{"state":"verified","reason":"All 28 entries validate and a representative Skill materializes in a disposable root.","evidence":[{"kind":"release_receipt","reference":"repo-check:siso-skills-hub:1693abb4c1290d0930bb78f62f3daa5a32fb061f","observed_at":"2026-07-30","summary":"The Hub verifier also proves Task Manager and PM Tasks route stable commands and refuse raw SQL."}]},
+    "forkable":{"state":"verified","reason":"The Hub is public and forkable; standalone Skill repositories still require promotion evidence.","evidence":[{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-skills-hub/blob/1693abb4c1290d0930bb78f62f3daa5a32fb061f/docs/skill-repository-map.html","observed_at":"2026-07-30","summary":"The evolving map distinguishes accepted system decisions from provisional skill promotions."}]},
+    "portable":{"state":"experimental","reason":"The task adapters are now service-backed and portable, while other legacy environment recipes remain provisional.","evidence":[{"kind":"release_receipt","reference":"repo-check:siso-skills-hub:1693abb4c1290d0930bb78f62f3daa5a32fb061f","observed_at":"2026-07-30","summary":"Task adapters own no database, generate no count-based IDs, expose no SQL, and use configurable Agent Brain commands."}]}
+  },
+  "evidence":[
+    {"kind":"release_receipt","reference":"repo-check:siso-skills-hub:1693abb4c1290d0930bb78f62f3daa5a32fb061f","observed_at":"2026-07-30","summary":"All 28 entries validate; Task Manager is a thin Brain adapter, PM Tasks is a deprecated Brain alias, and OS Database is accepted for decomposition rather than repository promotion."},
+    {"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-skills-hub/blob/1693abb4c1290d0930bb78f62f3daa5a32fb061f/registry/promotion-assessments.json","observed_at":"2026-07-30","summary":"The three task/state decisions are pinned to the exact Agent Brain implementation receipt."}
+  ]
+}

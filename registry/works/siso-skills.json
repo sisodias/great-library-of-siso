@@ -15,17 +15,17 @@
       {
         "type": "source_repository",
         "url": "https://github.com/Lordsisodia/siso-skills-hub",
-        "revision": "main@2195cbb66854475d5809d8bcb684d70b9ea07113",
+        "revision": "main@1693abb4c1290d0930bb78f62f3daa5a32fb061f",
         "visibility": "public",
         "verified": true,
-        "evidence": {"kind":"integration_check","reference":"github-api:Lordsisodia/siso-skills-hub:2195cbb66854475d5809d8bcb684d70b9ea07113","observed_at":"2026-07-30","summary":"Canonical public source contains 28 validated entries, complete promotion assessments, generated HTML, disposable install and state checks, and exact remote revision evidence."}
+        "evidence": {"kind":"integration_check","reference":"github-api:Lordsisodia/siso-skills-hub:1693abb4c1290d0930bb78f62f3daa5a32fb061f","observed_at":"2026-07-30","summary":"Canonical public source contains 28 validated entries, evolving promotion assessments, Agent Brain task adapters, generated HTML, disposable routing checks, and exact remote revision evidence."}
       }
     ],
     "license": {
       "status": "verified",
       "spdx": "MIT",
       "reason": "The SISO-owned Hub and bundled source carry MIT; promoted or external Skills retain their independently declared rights.",
-      "evidence": [{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-skills-hub/blob/2195cbb66854475d5809d8bcb684d70b9ea07113/PROVENANCE.md","observed_at":"2026-07-30","summary":"Repository provenance, bundled-source boundary, external-rights rule, and publication cleanup are recorded at the pin."}]
+      "evidence": [{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-skills-hub/blob/1693abb4c1290d0930bb78f62f3daa5a32fb061f/PROVENANCE.md","observed_at":"2026-07-30","summary":"Repository provenance, bundled-source boundary, external-rights rule, and publication cleanup are recorded at the pin."}]
     }
   },
   "relationships": [
@@ -44,13 +44,13 @@
     {
       "type": "related_to",
       "target_work_id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
-      "context": "Three legacy task/database entries expose one stateful system outcome and must be reconciled with Agent Brain before the Hub keeps only thin adapters.",
-      "evidence": [{"kind":"source_review","reference":"registry:skills-promotion-assessments:2195cbb","observed_at":"2026-07-30","summary":"OS Database, Task Manager, and PM Tasks were compared across documentation, source, configuration, schema, and tests."}]
+      "context": "The legacy task/state family is reconciled: Task Manager is a thin Brain adapter, PM Tasks is a deprecated alias, and the mixed OS Database source is decomposed across owning Works.",
+      "evidence": [{"kind":"source_review","reference":"registry:skills-promotion-assessments:1693abb","observed_at":"2026-07-30","summary":"The accepted decisions pin Agent Brain's exact implementation receipt and preserve only adapter behavior in the Hub."}]
     }
   ],
   "evidence": [
     {"kind":"source_review","reference":"source-review:siso-agent-base-decomposition:skills:2026-07-30","observed_at":"2026-07-30","summary":"Skills were classified as atomic capabilities consumed by the Agents operating stack; playbooks compose them for scenarios."},
-    {"kind":"release_receipt","reference":"repo-check:siso-skills-hub:2195cbb66854475d5809d8bcb684d70b9ea07113","observed_at":"2026-07-30","summary":"All 28 registry entries and promotion assessments validated; generated index and HTML were current; disposable installation and local-state isolation passed."},
-    {"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-skills-hub/blob/2195cbb66854475d5809d8bcb684d70b9ea07113/docs/skill-repository-map.html","observed_at":"2026-07-30","summary":"Human promotion map records zero immediate repository promotions and the evidence blockers for every current entry."}
+    {"kind":"release_receipt","reference":"repo-check:siso-skills-hub:1693abb4c1290d0930bb78f62f3daa5a32fb061f","observed_at":"2026-07-30","summary":"All 28 registry entries validate; adapter routing, raw-SQL refusal, generated index and HTML, disposable installation, and local-state isolation passed."},
+    {"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-skills-hub/blob/1693abb4c1290d0930bb78f62f3daa5a32fb061f/docs/skill-repository-map.html","observed_at":"2026-07-30","summary":"Human promotion map records accepted task-system decisions separately from provisional repository candidates."}
   ]
 }
