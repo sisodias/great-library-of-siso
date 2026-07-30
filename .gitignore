@@ -24,6 +24,8 @@ tmp/
 .envrc
 .vercel/
 .secrets/
+.local/
+.claude/session-context/
 *.key
 *.pem
 *.p12

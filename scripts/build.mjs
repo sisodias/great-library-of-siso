@@ -274,6 +274,7 @@ function homePage(works, releases, snapshots, assemblies, sections) {
       </aside>
     </section>
     <section class="model-strip"><div class="shell"><p><b>Works stay stable.</b> Repositories and upstream docs remain optional, replaceable locators.</p><p><b>Relationships carry structure.</b> Hierarchy is a versioned view, never hidden in identity.</p></div></section>
+    <section class="section shell agents-intro"><div class="section-heading">${eyebrow('New here?')}<h2>Enter with the map.</h2><p>The onboarding page gives humans and agents one cold-start route through identity, evidence, releases, snapshots, contribution, and safety.</p><p><a class="button" href="${href('docs/onboarding.html')}">Open onboarding <span>→</span></a></p></div></section>
     <section id="sections" class="section shell agents-intro">
       <div class="section-heading">${eyebrow('Versioned projections')}<h2>Library sections</h2><p>Sections are browsable views over stable Works. Moving a Work between sections never changes its identity or source history.</p></div>
       <div class="focus-list">${sections.map((section, index) => {
@@ -492,6 +493,7 @@ await emit('docs/agent-base-decomposition.html', await readFile(join(ROOT, 'docs
 await emit('docs/agent-base-module-map.html', await readFile(join(ROOT, 'docs', 'agent-base-module-map.html'), 'utf8'));
 await emit('docs/skills-repository-map.html', await readFile(join(ROOT, 'docs', 'skills-repository-map.html'), 'utf8'));
 await emit('docs/task-state-system-map.html', await readFile(join(ROOT, 'docs', 'task-state-system-map.html'), 'utf8'));
+await emit('docs/onboarding.html', await readFile(join(ROOT, 'docs', 'onboarding.html'), 'utf8'));
 await emit('index.html', homePage(works, releases, snapshots, assemblies, sections));
 const agentsSection = sections.find((section) => section.slug === 'agents');
 const researchSection = sections.find((section) => section.slug === 'research');

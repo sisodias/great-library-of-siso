@@ -1,54 +1,51 @@
-# The Great Library of SISO
+# Agent guide — The Great Library of SISO
 
-## Mission
+This repository is the public registry, learning record, and generated reading surface for The Great Library of SISO. GitHub records public truth; a laptop checkout is replaceable infrastructure.
 
-Build the public, human-readable and agent-readable registry for SISO source. The first vertical slice is the Agents section and its versioned SISO Agent Stack assembly: Project OS, Agent Base, Herdr, and Agent Zero.
+## Cold start
 
-## Source of truth
+Read these in order:
 
-- `registry/works/` owns current Work records.
-- `registry/releases/` owns immutable Release Manifests.
-- `registry/snapshots/` pins named recursive views.
-- `registry/assemblies/` owns immutable versioned compositions of Works.
-- `schemas/` defines the machine contracts.
-- `site/` is generated output. Do not hand-edit generated item pages.
-- `docs/` holds authored reasoning, decisions, research, contribution guidance, and operating documentation.
+1. `README.md` — the identity and registry model.
+2. `CURRENT_STATE.md` — the latest verified operating state and resume points.
+3. The highest-numbered `registry/snapshots/whole-library-v*.json` — the active named view.
+4. `docs/onboarding.html` — the human and agent operating map.
+5. `CONTRIBUTING.md` and `SECURITY.md` before changing or importing source.
 
-## Non-negotiable boundaries
+Then run `npm ci && npm run verify`. A cold agent is oriented when it can name the latest Snapshot, explain Work versus Release versus Assembly, and locate the source record behind a generated page.
 
-- Stable Work IDs never encode category, repository, owner, path, domain, or current parent.
-- Repositories and URLs are replaceable locators, not identities.
-- Hierarchies are versioned projections over typed relationships.
-- A project adopts agent systems; projects and agents do not contain one another globally.
-- A module is a contextual role inside a composition, not an eternal object rank.
-- Do not claim an item is downloadable, resolvable, installable, forkable, or portable without an explicit per-release state and evidence.
-- “Whole Library” means a metadata-complete named snapshot. Payload materialization is a separate operation with per-artifact receipts.
+## Sources of truth
 
-## Public-safety gate
+| Question | Read or change |
+| --- | --- |
+| What is a thing? | `registry/works/` |
+| What exact version was evidenced? | `registry/releases/` |
+| What is selected now? | latest immutable record in `registry/snapshots/` |
+| How do Works operate together? | `registry/assemblies/` |
+| Where is mixed source awaiting a decision? | `registry/source-inventories/` |
+| Why was a boundary chosen? | `docs/` and evidence linked from records |
+| What does the public site show? | generated `site/`; never hand-edit generated Work pages |
 
-- Never copy secrets, credentials, private client source, personal notes, machine-specific paths, private topology, or raw operational databases.
-- Never import source from the legacy Great Library without reading and classifying it first.
-- External upstreams keep their original ownership and license. Record provenance; do not imply SISO ownership.
-- License and redistribution state must be explicit. `pending` is safer than guessing.
-- All publication surfaces derive from accepted manifests; do not maintain parallel hand-written registries.
+The registry data is authoritative. The website, future CLI, and future MCP server are projections over the same contracts—not parallel catalogs.
 
-## Implementation constraints
+## Local checkout contract
 
-- Keep V1 static and dependency-light: Node.js scripts plus generated HTML/CSS/JSON.
-- GitHub Pages is the first host. No paid backend is required.
-- CLI and MCP surfaces must read the same registry contracts as the website.
-- Preserve unrelated work. Multiple agents may edit distinct owned paths concurrently; do not revert another agent's changes.
+The preferred machine-neutral checkout is `$SISO_WORKSPACE/SISO_Library/Great_Library_of_SISO`. If `.local/LOCATION.md` exists, it records the exact checkout and compatibility paths for that machine. Never publish those machine-specific paths.
 
-## Staffing
+Related source repositories may be checked out anywhere. Their identity comes from stable Work IDs and exact public Release locators, not local directory nesting.
 
-- The default operating model is one active maintainer agent: the primary Library owner/integrator.
-- The existing bootstrap workers may complete their current bounded assignments once and are then retired.
-- Do not restart, reuse, replace, or spawn parallel workers for this project unless Shaan explicitly changes this rule.
+## Change sequence
 
-## Verification
+1. Read and classify source; stop on private, client, credential-bearing, or unclear material.
+2. Change the owning source repository and verify it there.
+3. Publish an exact source commit.
+4. Add a new immutable Release Manifest; never rewrite an accepted Release.
+5. Add a new immutable Snapshot that replaces the selected release while preserving the rest of the view.
+6. Run `npm run verify`, commit, push, and run `npm run deploy:vercel`.
+7. Record receipts in `CURRENT_STATE.md` when the operating state materially changes.
 
-Before handoff, run the closest available checks and report exact evidence. V1 should provide one command that validates schemas/records, builds the site, checks links, and scans the publication artifact for obvious secrets.
+Use one active maintainer for Library work unless Shaan explicitly changes the staffing model. Do not spawn subagents by default.
 
-## Public identity
+---
 
-Use **The Great Library of SISO** as the project name. The small footer line is: **Built by the SISO Open Source Foundation · Funded by SISO Agency.** Do not call it “SISO Open” or “a SISO Open project.”
+The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.

@@ -4,7 +4,7 @@ A public, human-readable and agent-readable registry and learning system for SIS
 
 **Live Library:** [great-library-of-siso.vercel.app](https://great-library-of-siso.vercel.app/)
 
-> **V1 status:** The Agents section is the first vertical slice. Catalog presence is not a claim that source is downloadable, installable, portable, or licensed for reuse. See [License pending](LICENSE-PENDING.md).
+> **Current scope:** The Agents section is the first deep vertical slice. Catalog presence is not a claim that source is downloadable, installable, portable, or licensed for reuse. See [License pending](LICENSE-PENDING.md).
 
 ## What the Library is
 
@@ -35,9 +35,11 @@ Every cataloged Work gets an always-on detail page in the hosted Library, even w
 
 Read the [registry model](docs/registry-model.md) for the identity and distribution boundaries.
 
-## First section: Agents
+New humans and agents should follow the [cold-start onboarding map](docs/onboarding.html) and the root [agent guide](AGENTS.md).
 
-V1 begins with six carefully reviewed seed records/pages, centered on:
+## First deep section: Agents
+
+The first slice began with carefully reviewed seed records centered on:
 
 - SISO Project OS
 - SISO Agent Base

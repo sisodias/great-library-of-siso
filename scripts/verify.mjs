@@ -18,4 +18,4 @@ for (const [label, script] of checks) {
   if (result.status !== 0) process.exit(result.status || 1);
 }
 
-console.log("\nAll Great Library V1 checks passed.");
+console.log("\nAll Great Library checks passed.");
