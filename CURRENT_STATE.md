@@ -10,6 +10,7 @@
 - The public registry, generated site, repository estate, and machine-readable catalog are deployed.
 - Fifteen stable Works span the Library, Agents, Research, and one preserved source inventory.
 - The Agents story separates Project OS, Runtime, coordination, integrations, Skills, Playbooks, Agent Brain, and Session Intelligence using typed relationships rather than directory hierarchy.
+- The machine-neutral local convention groups those eight independent checkouts flat at `$SISO_WORKSPACE/SISO_Agents`; this placement changes no Work, Release, Snapshot, locator, or public URL.
 - SISO Agent Brain `0.3.0` is pinned to `ed50bec86f5cfb86cc5c84ebfce97fad595598b4`.
 - SISO Skills Hub `0.2.0` is pinned to `d82cd4468fc5f6017a0d8d9d3827bae441fd11db`.
 - Whole Library V17 — Durable Onboarding (`gls:snapshot:0f6eb0cf-0828-4cbb-9eef-110fd189d0c0`) is the wrap-up Snapshot.
@@ -24,6 +25,7 @@
 - Private client projects, credentials, personal notes, machine paths, raw operational databases, and private topology do not enter this repository.
 - Catalog presence does not imply download, install, fork, portability, ownership, or redistribution rights. Those claims require a Release Manifest and evidence.
 - Herdr remains an external upstream. The retired Agent Base warehouse remains an extraction source, not an active framework claim.
+- Foundry and Evidence Engines are filed as Research Works under the local Knowledge domain; the temporary `SISO_Library_Repos` holding folder is retired.
 
 ## Verification contract
 
