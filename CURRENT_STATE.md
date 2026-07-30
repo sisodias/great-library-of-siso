@@ -19,6 +19,7 @@
 ## Operating boundaries
 
 - GitHub and immutable registry records define public identity; local folders do not.
+- The machine-neutral checkout convention is now `$SISO_WORKSPACE/Great_Library_of_SISO`; the former nested Knowledge/Library checkout is retired. This placement change does not alter any Work ID, Release, Snapshot, or public URL.
 - `site/` is generated. Edit registry records, authored docs, or the generator.
 - Private client projects, credentials, personal notes, machine paths, raw operational databases, and private topology do not enter this repository.
 - Catalog presence does not imply download, install, fork, portability, ownership, or redistribution rights. Those claims require a Release Manifest and evidence.

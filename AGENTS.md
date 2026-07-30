@@ -30,7 +30,7 @@ The registry data is authoritative. The website, future CLI, and future MCP serv
 
 ## Local checkout contract
 
-The preferred machine-neutral checkout is `$SISO_WORKSPACE/SISO_Library/Great_Library_of_SISO`. If `.local/LOCATION.md` exists, it records the exact checkout and compatibility paths for that machine. Never publish those machine-specific paths.
+The preferred machine-neutral checkout is `$SISO_WORKSPACE/Great_Library_of_SISO`. If `.local/LOCATION.md` exists, it records the exact checkout for that machine. Never publish machine-specific paths.
 
 Related source repositories may be checked out anywhere. Their identity comes from stable Work IDs and exact public Release locators, not local directory nesting.
 
