@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T05:26:31.000Z",
+  "generated_at": "2026-07-30T11:35:33.000Z",
   "base_path": "/",
   "works": [
     {
@@ -150,12 +150,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/great-library-of-siso/",
       "locator_type": "source_repository",
-      "locator_revision": "main@b9702f03cceb0226d0e62c984bd93930f924aae3",
+      "locator_revision": "main@468fb41a2f59504ff3335f810f8a63061455852b",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:08b0e778-e4d5-4870-8ea0-13755ada51b2",
-      "active_release_version": "0.1.0+b9702f0",
-      "artifact_revision": "b9702f03cceb0226d0e62c984bd93930f924aae3"
+      "active_release_id": "gls:release:682f4370-0798-40ea-8202-b2de98cdfdc7",
+      "active_release_version": "0.2.0+468fb41",
+      "artifact_revision": "468fb41a2f59504ff3335f810f8a63061455852b"
     },
     {
       "owner": "Lordsisodia",

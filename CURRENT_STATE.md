@@ -12,6 +12,8 @@
 - The Agents story separates Project OS, Runtime, coordination, integrations, Skills, Playbooks, Agent Brain, and Session Intelligence using typed relationships rather than directory hierarchy.
 - SISO Agent Brain `0.3.0` is pinned to `ed50bec86f5cfb86cc5c84ebfce97fad595598b4`.
 - SISO Skills Hub `0.2.0` is pinned to `d82cd4468fc5f6017a0d8d9d3827bae441fd11db`.
+- Whole Library V17 — Durable Onboarding (`gls:snapshot:0f6eb0cf-0828-4cbb-9eef-110fd189d0c0`) is the wrap-up Snapshot.
+- The Library's selected self-release is `0.2.0+468fb41`, pinned to `468fb41a2f59504ff3335f810f8a63061455852b`.
 - The latest active state is always the highest-numbered immutable whole-Library Snapshot. Do not infer “current” from filename order alone; compare numeric `version` fields.
 
 ## Operating boundaries
