@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-30T13:04:51.000Z",
-  "snapshot_id": "gls:snapshot:536d2898-69bb-448e-8333-5f1a2fd50826",
-  "snapshot_version": "18.0.0",
+  "generated_at": "2026-07-30T13:54:24.000Z",
+  "snapshot_id": "gls:snapshot:aac5b536-e907-4ddd-8c19-75caaf082ef4",
+  "snapshot_version": "19.0.0",
   "repositories": [
     {
       "owner": "Lordsisodia",
@@ -164,6 +164,24 @@
       "active_release_id": "gls:release:9e2dedcd-dfea-4241-b85d-547cdaeacef9",
       "active_release_version": "main+f6afca0",
       "artifact_revision": "f6afca0db5bf333fd5535aaed6242c42d16c12b3"
+    },
+    {
+      "owner": "Lordsisodia",
+      "repository": "siso-knowledge",
+      "url": "https://github.com/Lordsisodia/siso-knowledge",
+      "work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "work_name": "SISO Knowledge",
+      "work_slug": "siso-knowledge",
+      "work_type": "knowledge_system",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-knowledge/",
+      "locator_type": "source_repository",
+      "locator_revision": "main@0a433ce385ae2a2be30a86343b5b494a52728d5e",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:6be306e8-db62-4b11-ac60-e01aaa0b1f3a",
+      "active_release_version": "public-architecture+0a433ce",
+      "artifact_revision": "0a433ce385ae2a2be30a86343b5b494a52728d5e"
     },
     {
       "owner": "Lordsisodia",

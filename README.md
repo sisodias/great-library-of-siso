@@ -52,6 +52,12 @@ Read the [SISO Agent Stack model](docs/agent-stack-model.html) for the corrected
 
 Inclusion means the Library describes the Work. It does not by itself promise a payload, installer, support relationship, or redistribution right. Herdr is an external upstream and must not be represented as SISO-owned. See the [verified V1 locator notes](docs/agents-v1.md).
 
+## Research and Knowledge
+
+Research is a separate browse section with independently addressable responsibilities: **SISO Knowledge** owns durable corpus and retrieval; **SISO Foundry** owns source discovery and reuse intelligence; **SISO Evidence Engines** own source-grounded transformation. Their repositories may be checked out together locally, but physical nesting does not imply containment.
+
+Read the [SISO Knowledge model](docs/siso-knowledge-model.html) for the source-backed boundary, current migration state, data-plane rules, and repository split test.
+
 ## What you can do
 
 - **Browse** Sections and stable Work detail pages.

@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source_inventory",
+  "id": "gls:source-inventory:84c37466-905d-40d3-953d-ed09e1266ffa",
+  "name": "SISO Knowledge boundary and reallocation inventory",
+  "source_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+  "observed_at": "2026-07-30",
+  "inventory_state": "mapped",
+  "preservation": {
+    "mode": "bridge_before_move",
+    "dirty_entries": 164,
+    "reason": "The Knowledge checkout contains substantial pre-existing corpus, pipeline, index, operator, and nested-repository work. The public architecture commit is safe, but dirty source must be bridged or committed by its owner before further physical moves.",
+    "nested_repositories": [
+      { "path": "apps/library-web", "remote": "https://github.com/Lordsisodia/siso-library-public.git", "branch": "main", "dirty_entries": 28, "preservation": "Preserve the deployable web product and its local data coupling before filing it with the product estate." },
+      { "path": "design-system", "remote": "https://github.com/sisodias/siso-design-system.git", "branch": "main", "dirty_entries": 746, "preservation": "Preserve extensive UI work before assigning a shared product or design-system home." },
+      { "path": "research/siso-evidence-engines", "remote": "https://github.com/Lordsisodia/siso-evidence-engines.git", "branch": "main", "dirty_entries": 0, "preservation": "Independent clean Research Work; represent it through registry relationships rather than physical containment." },
+      { "path": "research/siso-foundry", "remote": "https://github.com/Lordsisodia/siso-foundry.git", "branch": "main", "dirty_entries": 1, "preservation": "Independent Research Work with one preserved local edit; do not move until bridged." },
+      { "path": "source-inventories/great-library-research-2025", "remote": "https://github.com/Lordsisodia/great-library-of-siso.git", "branch": "main", "dirty_entries": 0, "preservation": "Clean historical source checkout; preserve its history while replacing physical nesting with an evidence locator later." }
+    ]
+  },
+  "units": [
+    {
+      "unit_id": "canonical-knowledge-corpus",
+      "name": "Canonical knowledge corpus and schemas",
+      "paths": ["sections", "books", "module_templates"],
+      "classification": "accepted_work",
+      "disposition": "keep",
+      "target": "SISO Knowledge",
+      "rationale": "These paths hold atomic knowledge records, cross-page synthesis, and the canonical hierarchy contracts; they directly serve the Work outcome.",
+      "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-knowledge/blob/0a433ce385ae2a2be30a86343b5b494a52728d5e/DOMAIN-MANIFEST.json", "observed_at": "2026-07-30", "summary": "The published domain manifest assigns authored corpus and schema authority to these zones." }]
+    },
+    {
+      "unit_id": "knowledge-production-tools",
+      "name": "Acquisition, curation, query, and maintenance tools",
+      "paths": ["pipelines", "queries", "scripts"],
+      "classification": "shared_package",
+      "disposition": "keep",
+      "target": "SISO Knowledge until independent adoption justifies a split",
+      "rationale": "The tools implement the Knowledge lifecycle; size or file count alone is not evidence for separate repository identity.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-knowledge-boundary:tools:2026-07-30", "observed_at": "2026-07-30", "summary": "Pipeline, query, and maintenance entrypoints were classified by responsibility, with acquired payloads separated into the data plane." }]
+    },
+    {
+      "unit_id": "generated-retrieval-projections",
+      "name": "Generated indexes and graph projections",
+      "paths": ["_index", "graph"],
+      "classification": "data_or_archive",
+      "disposition": "keep",
+      "target": "Rebuildable projections inside SISO Knowledge",
+      "rationale": "Indexes and graphs provide retrieval views over canonical records; they are generated projections, not independent Works or hand-authored truth.",
+      "evidence": [{ "kind": "documentation", "reference": "https://github.com/Lordsisodia/siso-knowledge/blob/0a433ce385ae2a2be30a86343b5b494a52728d5e/DATA-MANIFEST.json", "observed_at": "2026-07-30", "summary": "The data contract names rebuild commands and generated authority." }]
+    },
+    {
+      "unit_id": "knowledge-operators",
+      "name": "Knowledge-specific feeder and curator operators",
+      "paths": ["agents", "memory"],
+      "classification": "experiment",
+      "disposition": "compare",
+      "target": "Keep Knowledge-specific definitions; move generic capabilities to Agents and runtime state to private storage",
+      "rationale": "Operator purpose belongs with Knowledge, but generic skills, live memory, heartbeat, inbox, outbox, and machine routes are not canonical knowledge source.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-knowledge-boundary:operators:2026-07-30", "observed_at": "2026-07-30", "summary": "Identities, hooks, skills, memory, heartbeat, and workspace files were separated conceptually and tracked as explicit compatibility debt." }]
+    },
+    {
+      "unit_id": "independent-research-works",
+      "name": "Foundry and Evidence Engines",
+      "paths": ["research/siso-foundry", "research/siso-evidence-engines"],
+      "classification": "accepted_work",
+      "disposition": "link_existing",
+      "target": "Independent Great Library Research Works",
+      "rationale": "Both systems have independent outcomes, Git histories, public repositories, releases, and consumers; local placement does not imply containment.",
+      "evidence": [{ "kind": "registry_validation", "reference": "registry:snapshot:whole-library-v19", "observed_at": "2026-07-30", "summary": "The whole-Library projection keeps all three Research Works independently pinned and related." }]
+    },
+    {
+      "unit_id": "legacy-library-web",
+      "name": "Legacy Knowledge web product",
+      "paths": ["apps/library-web"],
+      "classification": "current_application",
+      "disposition": "compare",
+      "target": "SISO Agency product estate after a preservation bridge",
+      "rationale": "This is a deployable Next.js product rather than durable knowledge source, but its dirty state and local data coupling block a safe move today.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-knowledge-boundary:library-web:2026-07-30", "observed_at": "2026-07-30", "summary": "Package, deployment role, remote, and dirty state identify an application boundary exception." }]
+    },
+    {
+      "unit_id": "shared-design-system",
+      "name": "Shared design system",
+      "paths": ["design-system"],
+      "classification": "shared_package",
+      "disposition": "move_to_shared_library",
+      "target": "Shared SISO product and UI ownership after a preservation bridge",
+      "rationale": "The component bank, viewer, CLI, and MCP package serve multiple products and do not implement knowledge production; extensive dirty work blocks an immediate move.",
+      "evidence": [{ "kind": "source_review", "reference": "source-review:siso-knowledge-boundary:design-system:2026-07-30", "observed_at": "2026-07-30", "summary": "The nested repository role, remote, and dirty state were directly verified." }]
+    },
+    {
+      "unit_id": "historical-source-inventories",
+      "name": "Historical source awaiting evidence-led promotion",
+      "paths": ["source-inventories"],
+      "classification": "data_or_archive",
+      "disposition": "preserve_external",
+      "target": "Provenance-preserving source inventories, not canonical corpus",
+      "rationale": "Historical source may contain valuable material but must retain origin, rights, and history until individual units pass promotion gates.",
+      "evidence": [{ "kind": "documentation", "reference": "https://github.com/Lordsisodia/siso-knowledge/blob/0a433ce385ae2a2be30a86343b5b494a52728d5e/source-inventories/AGENTS.md", "observed_at": "2026-07-30", "summary": "The published boundary guide forbids treating inventories as canonical knowledge by default." }]
+    }
+  ],
+  "evidence": [
+    { "kind": "release_receipt", "reference": "repo-check:siso-knowledge:0a433ce385ae2a2be30a86343b5b494a52728d5e", "observed_at": "2026-07-30", "summary": "The public boundary release preserves the mixed local checkout while publishing only reviewed structure, policies, and receipts." },
+    { "kind": "documentation", "reference": "https://github.com/Lordsisodia/siso-knowledge/blob/0a433ce385ae2a2be30a86343b5b494a52728d5e/MIGRATION-RECEIPT.html", "observed_at": "2026-07-30", "summary": "Moved legacy units, retired compatibility naming, preserved archive destinations, and deliberate boundary exceptions are recorded." }
+  ]
+}

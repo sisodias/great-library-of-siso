@@ -65,7 +65,7 @@
               "from_work_id": { "$ref": "common.schema.json#/$defs/workId" },
               "to_work_id": { "$ref": "common.schema.json#/$defs/workId" },
               "type": { "enum": ["curates", "adopts", "integrates_with", "coordinates_via"] },
-              "contextual_role": { "enum": ["section", "module", "foundation", "runtime", "control_plane", "coordination_policy", "integration", "source_record"] },
+              "contextual_role": { "enum": ["section", "module", "foundation", "runtime", "knowledge_system", "control_plane", "coordination_policy", "integration", "source_record"] },
               "context": { "type": "string", "minLength": 3 }
             }
           }

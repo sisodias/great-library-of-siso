@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+  "slug": "siso-knowledge",
+  "name": "SISO Knowledge",
+  "summary": "The durable knowledge-production system for acquiring, curating, storing, indexing, relating, and retrieving SISO knowledge while keeping large or rights-bearing data outside Git.",
+  "work_type": "knowledge_system",
+  "lifecycle_status": "active",
+  "updated_at": "2026-07-30",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [{
+      "type": "source_repository",
+      "url": "https://github.com/Lordsisodia/siso-knowledge",
+      "revision": "main@0a433ce385ae2a2be30a86343b5b494a52728d5e",
+      "visibility": "public",
+      "verified": true,
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-knowledge:0a433ce385ae2a2be30a86343b5b494a52728d5e", "observed_at": "2026-07-30", "summary": "The renamed public repository resolves at the exact architecture-baseline commit and exposes its domain, data, migration, and layout-verification contracts." }
+    }],
+    "license": {
+      "status": "pending",
+      "spdx": "NONE",
+      "reason": "The public source has no accepted repository license; public visibility is not a redistribution grant, and acquired sources retain independent rights.",
+      "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-knowledge/tree/0a433ce385ae2a2be30a86343b5b494a52728d5e", "observed_at": "2026-07-30", "summary": "The pinned repository has no license file or GitHub-detected license." }]
+    }
+  },
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "context": "Foundry is an independently released discovery and source-mining Work; SISO Knowledge may catalog or consume its outputs without owning its repository or data plane.",
+      "evidence": [{ "kind": "documentation", "reference": "https://github.com/Lordsisodia/siso-knowledge/blob/0a433ce385ae2a2be30a86343b5b494a52728d5e/DOMAIN.html", "observed_at": "2026-07-30", "summary": "The domain map classifies Foundry as an independent Research Work rather than a nested Knowledge module." }]
+    },
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "context": "Evidence Engines transform explicit sources into grounded knowledge, principles, and ideas; SISO Knowledge supplies durable corpus and retrieval boundaries without collapsing the engines into itself.",
+      "evidence": [{ "kind": "documentation", "reference": "https://github.com/Lordsisodia/siso-knowledge/blob/0a433ce385ae2a2be30a86343b5b494a52728d5e/DOMAIN-MANIFEST.json", "observed_at": "2026-07-30", "summary": "The domain manifest records Evidence Engines as an independent Research Work with its own Git identity." }]
+    }
+  ],
+  "evidence": [
+    { "kind": "source_review", "reference": "source-review:siso-knowledge-boundary:2026-07-30", "observed_at": "2026-07-30", "summary": "Every top-level zone was classified by responsibility; legacy UI products, shared design assets, generated indexes, runtime state, large data, and nested Research Works were separated from the canonical knowledge corpus." },
+    { "kind": "release_receipt", "reference": "repo-check:siso-knowledge:0a433ce385ae2a2be30a86343b5b494a52728d5e", "observed_at": "2026-07-30", "summary": "Twelve declared zones, two independent Research Works, retired compatibility names, debt ratchets, ignored data-plane paths, JSON manifests, HTML documents, and query entrypoint were verified before publication." }
+  ]
+}
