@@ -1,0 +1,42 @@
+{
+  "schema_version":"1.0.0","record_type":"snapshot","id":"gls:snapshot:1310cb7c-5a18-47f2-9afb-11aec993fa73",
+  "name":"Whole Library V16 — Legacy Task Portability","version":"16.0.0","created_at":"2026-07-30T12:26:31+07:00","immutable":true,"scope":"whole_library",
+  "metadata_completeness":{"state":"complete","work_count":15,"release_count":15,"assembly_count":1},
+  "releases":[
+    {"release_id":"gls:release:08b0e778-e4d5-4870-8ea0-13755ada51b2","manifest_sha256":"063f93b6b57b862706a4ff66b4388dcdd0b7abe3335fa8dfcb4e1e89c9f6e315"},
+    {"release_id":"gls:release:14c1d9de-0e77-44e9-9274-57e7cfb6ab02","manifest_sha256":"96200b7e955e3d0ec21b954a1d329a7ec2428ad1aef86e2bfce6336c044564d2"},
+    {"release_id":"gls:release:24c1ed1d-4437-4641-83e2-048d55116590","manifest_sha256":"1641d889f66bf10ce4de0dd3e126aa87c38cab3787fe20694b4f0c851751d40d"},
+    {"release_id":"gls:release:bae2bab9-e411-4684-b595-3bf86b2761f9","manifest_sha256":"acd404815c593f438b48d3be737d4366e2c6285a7595782f3a73b5e0ddfff7a7"},
+    {"release_id":"gls:release:36ba0940-4235-4e6c-87e2-e27266f77d33","manifest_sha256":"2fbab847443ad7e2a7fc87f9d66e1c443d4b2127a4e34a36f086c6ee1be6deb8"},
+    {"release_id":"gls:release:8204e470-fa87-4268-8713-733330b537fe","manifest_sha256":"ea5c3aa1fdcedeb46797cdd40a8ea5a8d5d5b139a84b9bed769c73e1d5094a0f"},
+    {"release_id":"gls:release:79d7c186-7425-4815-8108-b03cbffdad05","manifest_sha256":"559a4cb66b2b887d967066487279a3480c8d20fcb04e00875bdb7f3e6d4e18f9"},
+    {"release_id":"gls:release:c7cfb739-67d3-4c63-9146-5f47430f7970","manifest_sha256":"093174600216152d0dad9c66853a32f4f206b466eef45d470353aefce8959466"},
+    {"release_id":"gls:release:ff8cc25f-7162-4713-9e38-66cbf3eca958","manifest_sha256":"673c11368ccd7b53288e3600b044ccbc401a2b3cbab054558f4428e295330976"},
+    {"release_id":"gls:release:011d220b-0621-4ffb-bc18-fa6db3284678","manifest_sha256":"5e11645d89485ceac24f3295e4a50c35bf8a3e59534367d9ff001c3abdc9678f"},
+    {"release_id":"gls:release:941effe9-a115-41a9-bfde-d681ebc45812","manifest_sha256":"eb696d40d8b71a36812e5ad8282027a0b248b5d2903be041ca53d0da0ce60931"},
+    {"release_id":"gls:release:0b81c926-0433-42f6-b6a9-9993b2ce5a6b","manifest_sha256":"ff8708e23dcb241b77fcc245c3f26cd0395b9f841d28326d51789a5573b69c6d"},
+    {"release_id":"gls:release:69c70399-9344-4752-b6a7-8976ee857006","manifest_sha256":"4e5a09b9a1ba2c3dfbbbca77f5aa48f1a32116c2590c8aba09fb96b180030ae1"},
+    {"release_id":"gls:release:9e2dedcd-dfea-4241-b85d-547cdaeacef9","manifest_sha256":"cd666e8a2a0773527ad6a8c480dc27e0b7ad70ff7ca1b1d710cd5b20563b3190"},
+    {"release_id":"gls:release:789e157f-4eaf-45a5-b487-9b8f02ff407a","manifest_sha256":"03432525239933675a17f6a16b7b50e5d75bf096828f1698862f63bee7d2276d"}
+  ],
+  "assemblies":[{"assembly_id":"gls:assembly:2c86b098-32ec-47b1-a73d-aacdc1a405bf","manifest_sha256":"f2ce4d8802ce40e95f00d31b1afafd9c93adca7827c8ddf20113c50c5fa87379"}],
+  "projection":{"root_work_ids":["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"],"edges":[
+    {"from_work_id":"gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1","to_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","type":"curates","contextual_role":"section","context":"Agents is the browse section for operating stacks, capabilities, shared agent services, and runtime integrations."},
+    {"from_work_id":"gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1","to_work_id":"gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25","type":"curates","contextual_role":"section","context":"Research is the browse section for discovery, evidence, knowledge, datasets, and durable research artifacts."},
+    {"from_work_id":"gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1","to_work_id":"gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae","type":"curates","contextual_role":"source_record","context":"The retired Agent Base source warehouse is preserved as a read-only extraction record rather than presented as an active agent architecture component."},
+    {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943","type":"curates","contextual_role":"foundation","context":"Project OS supplies project-local intent, planning structure, repository rules, and the operating contract adopted by the stack."},
+    {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224","type":"curates","contextual_role":"runtime","context":"SISO Agent Runtime executes provider-neutral agent sessions and tools while reporting shared lifecycle facts through Agent Brain."},
+    {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc","type":"curates","contextual_role":"integration","context":"Herdr provides the externally owned persistent workspace and pane substrate used by the stack."},
+    {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:ea2f0de7-95ee-4e62-acde-85375b048719","type":"curates","contextual_role":"coordination_policy","context":"Agent Zero holds intent and coordinates work through the operating stack."},
+    {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc","type":"curates","contextual_role":"module","context":"Playbooks own reusable multi-step procedures and compose skills, tools, lanes, and verification for operating scenarios."},
+    {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd","type":"curates","contextual_role":"module","context":"Skills are atomic capabilities; task commands adapt to Agent Brain while skill-health telemetry retains a separate local data lifecycle."},
+    {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b","type":"curates","contextual_role":"module","context":"Agent Brain is canonical shared task and coordination state, with fixture-proven conservative import of the two reviewed legacy layouts."},
+    {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84","type":"curates","contextual_role":"module","context":"Session Intelligence learns from explicit agent sessions while retaining an independent privacy-sensitive lifecycle."},
+    {"from_work_id":"gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0","to_work_id":"gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a","type":"curates","contextual_role":"integration","context":"Agent Integrations contains experimental adapters with explicit promotion and rollback gates."},
+    {"from_work_id":"gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25","to_work_id":"gls:work:ec664d93-df93-48c5-be40-5d0165886c01","type":"curates","contextual_role":"module","context":"Foundry is the Research platform for source discovery, evaluation, preservation, and reuse knowledge."},
+    {"from_work_id":"gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25","to_work_id":"gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f","type":"curates","contextual_role":"module","context":"Evidence Engines turns explicit sources and findings into traceable knowledge, principles, and ranked ideas."}
+  ]},
+  "download_contract":{"manifest_role":"metadata_complete_named_snapshot","artifact_policy":"payloads_are_separate_and_require_per_artifact_receipts"},
+  "artifact_materialization":{"state":"not_materialized","receipts":[]},
+  "evidence":[{"kind":"registry_validation","reference":"registry:snapshot:whole-library-v16","observed_at":"2026-07-30","summary":"Snapshot advances the task-state boundary with fixture-proven conservative imports, an in-repository consumer inventory, separate Skills telemetry, and explicit stop conditions before legacy source retirement."}]
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T05:07:36.000Z",
+  "generated_at": "2026-07-30T05:26:31.000Z",
   "base_path": "/",
   "works": [
     {
@@ -186,12 +186,12 @@
       "lifecycle_status": "experimental",
       "library_url": "/works/siso-agent-brain/",
       "locator_type": "source_repository",
-      "locator_revision": "main@d7fc475cea99c0cec606a7a6c6ed92a483aa6095",
+      "locator_revision": "main@ed50bec86f5cfb86cc5c84ebfce97fad595598b4",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:fcf9ab64-7e2e-4827-8408-c80ea81e7771",
-      "active_release_version": "0.2.0+d7fc475",
-      "artifact_revision": "d7fc475cea99c0cec606a7a6c6ed92a483aa6095"
+      "active_release_id": "gls:release:941effe9-a115-41a9-bfde-d681ebc45812",
+      "active_release_version": "0.3.0+ed50bec",
+      "artifact_revision": "ed50bec86f5cfb86cc5c84ebfce97fad595598b4"
     },
     {
       "owner": "Lordsisodia",
@@ -348,12 +348,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-skills/",
       "locator_type": "source_repository",
-      "locator_revision": "main@1693abb4c1290d0930bb78f62f3daa5a32fb061f",
+      "locator_revision": "main@d82cd4468fc5f6017a0d8d9d3827bae441fd11db",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:df2c77c5-1761-4ac2-bd19-40723f611080",
-      "active_release_version": "main+1693abb",
-      "artifact_revision": "1693abb4c1290d0930bb78f62f3daa5a32fb061f"
+      "active_release_id": "gls:release:011d220b-0621-4ffb-bc18-fa6db3284678",
+      "active_release_version": "0.2.0+d82cd44",
+      "artifact_revision": "d82cd4468fc5f6017a0d8d9d3827bae441fd11db"
     },
     {
       "owner": "ogulcancelik",

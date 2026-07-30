@@ -4,7 +4,7 @@
   "id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
   "slug": "siso-skills",
   "name": "SISO Skills",
-  "summary": "The registry and distribution boundary for atomic repeatable capabilities, with evidence-backed classification, bundled installation, and independent repository promotion only when a skill earns its own lifecycle.",
+  "summary": "The registry and distribution boundary for atomic repeatable capabilities, with evidence-backed classification, bundled installation, isolated skill telemetry, and independent repository promotion only when a skill earns its own lifecycle.",
   "work_type": "capability_pack",
   "lifecycle_status": "active",
   "updated_at": "2026-07-30",
@@ -15,17 +15,17 @@
       {
         "type": "source_repository",
         "url": "https://github.com/Lordsisodia/siso-skills-hub",
-        "revision": "main@1693abb4c1290d0930bb78f62f3daa5a32fb061f",
+        "revision": "main@d82cd4468fc5f6017a0d8d9d3827bae441fd11db",
         "visibility": "public",
         "verified": true,
-        "evidence": {"kind":"integration_check","reference":"github-api:Lordsisodia/siso-skills-hub:1693abb4c1290d0930bb78f62f3daa5a32fb061f","observed_at":"2026-07-30","summary":"Canonical public source contains 28 validated entries, evolving promotion assessments, Agent Brain task adapters, generated HTML, disposable routing checks, and exact remote revision evidence."}
+        "evidence": {"kind":"integration_check","reference":"github-api:Lordsisodia/siso-skills-hub:d82cd4468fc5f6017a0d8d9d3827bae441fd11db","observed_at":"2026-07-30","summary":"Canonical source contains 28 validated entries, Agent Brain adapters, a complete in-repository consumer inventory, Skills-owned telemetry, generated HTML, and disposable checks."}
       }
     ],
     "license": {
       "status": "verified",
       "spdx": "MIT",
       "reason": "The SISO-owned Hub and bundled source carry MIT; promoted or external Skills retain their independently declared rights.",
-      "evidence": [{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-skills-hub/blob/1693abb4c1290d0930bb78f62f3daa5a32fb061f/PROVENANCE.md","observed_at":"2026-07-30","summary":"Repository provenance, bundled-source boundary, external-rights rule, and publication cleanup are recorded at the pin."}]
+      "evidence": [{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-skills-hub/blob/d82cd4468fc5f6017a0d8d9d3827bae441fd11db/PROVENANCE.md","observed_at":"2026-07-30","summary":"Repository provenance, bundled-source boundary, external-rights rule, task-state reconciliation, and publication cleanup are recorded at the pin."}]
     }
   },
   "relationships": [
@@ -45,12 +45,12 @@
       "type": "related_to",
       "target_work_id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
       "context": "The legacy task/state family is reconciled: Task Manager is a thin Brain adapter, PM Tasks is a deprecated alias, and the mixed OS Database source is decomposed across owning Works.",
-      "evidence": [{"kind":"source_review","reference":"registry:skills-promotion-assessments:1693abb","observed_at":"2026-07-30","summary":"The accepted decisions pin Agent Brain's exact implementation receipt and preserve only adapter behavior in the Hub."}]
+      "evidence": [{"kind":"source_review","reference":"registry:skills-promotion-assessments:d82cd44","observed_at":"2026-07-30","summary":"Accepted decisions pin Agent Brain's exact importer release; the Hub keeps adapters and separate capability telemetry only."}]
     }
   ],
   "evidence": [
     {"kind":"source_review","reference":"source-review:siso-agent-base-decomposition:skills:2026-07-30","observed_at":"2026-07-30","summary":"Skills were classified as atomic capabilities consumed by the Agents operating stack; playbooks compose them for scenarios."},
-    {"kind":"release_receipt","reference":"repo-check:siso-skills-hub:1693abb4c1290d0930bb78f62f3daa5a32fb061f","observed_at":"2026-07-30","summary":"All 28 registry entries validate; adapter routing, raw-SQL refusal, generated index and HTML, disposable installation, and local-state isolation passed."},
-    {"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-skills-hub/blob/1693abb4c1290d0930bb78f62f3daa5a32fb061f/docs/skill-repository-map.html","observed_at":"2026-07-30","summary":"Human promotion map records accepted task-system decisions separately from provisional repository candidates."}
+    {"kind":"release_receipt","reference":"repo-check:siso-skills-hub:d82cd4468fc5f6017a0d8d9d3827bae441fd11db","observed_at":"2026-07-30","summary":"All 28 entries validate; adapter routing, raw-SQL refusal, telemetry isolation/health reads, generated HTML, installation, and forbidden-coupling checks passed."},
+    {"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-skills-hub/blob/d82cd4468fc5f6017a0d8d9d3827bae441fd11db/registry/legacy-task-consumers.json","observed_at":"2026-07-30","summary":"Every in-repository legacy task consumer has an explicit migrated, transitional, preserved, or reclassified state."}
   ]
 }
