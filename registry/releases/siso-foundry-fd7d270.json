@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:6b40bfd7-259f-4d24-97e6-191dc8d2bd20",
+  "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+  "version": "main+fd7d270",
+  "title": "SISO Foundry repository header release",
+  "released_at": "2026-07-30T21:08:59+07:00",
+  "observed_at": "2026-07-30",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:0bcdf147-725f-434b-a623-93a589ccfa08",
+      "kind": "source_archive",
+      "locator": "https://github.com/Lordsisodia/siso-foundry/archive/fd7d270f98b0e0b34317fa1647997fcfdcac2094.tar.gz",
+      "revision": "fd7d270f98b0e0b34317fa1647997fcfdcac2094",
+      "availability": "public",
+      "owner": "Lordsisodia",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The SISO-owned Foundry code plane carries MIT; datasets remain external.",
+        "evidence": [
+          {
+            "kind": "release_receipt",
+            "reference": "identity-remediation:siso-foundry:fd7d270f98b0e0b34317fa1647997fcfdcac2094",
+            "observed_at": "2026-07-30",
+            "summary": "Pinned remediated source and the Foundry code-plane verifier passed."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "fd7d270f98b0e0b34317fa1647997fcfdcac2094"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The remediated public commit resolves.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "identity-remediation:siso-foundry:fd7d270f98b0e0b34317fa1647997fcfdcac2094",
+          "observed_at": "2026-07-30",
+          "summary": "Pinned remediated source and the Foundry code-plane verifier passed."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "A commit-scoped public archive is recorded.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "identity-remediation:siso-foundry:fd7d270f98b0e0b34317fa1647997fcfdcac2094",
+          "observed_at": "2026-07-30",
+          "summary": "Pinned remediated source and the Foundry code-plane verifier passed."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The release resolves to its stable Research Work and artifact.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "identity-remediation:siso-foundry:fd7d270f98b0e0b34317fa1647997fcfdcac2094",
+          "observed_at": "2026-07-30",
+          "summary": "Pinned remediated source and the Foundry code-plane verifier passed."
+        }
+      ]
+    },
+    "installable": {
+      "state": "experimental",
+      "reason": "The code-plane verification passes; external datasets require typed locators.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "identity-remediation:siso-foundry:fd7d270f98b0e0b34317fa1647997fcfdcac2094",
+          "observed_at": "2026-07-30",
+          "summary": "Pinned remediated source and the Foundry code-plane verifier passed."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The code plane is public, licensed, documented, and separated from large data.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "identity-remediation:siso-foundry:fd7d270f98b0e0b34317fa1647997fcfdcac2094",
+          "observed_at": "2026-07-30",
+          "summary": "Pinned remediated source and the Foundry code-plane verifier passed."
+        }
+      ]
+    },
+    "portable": {
+      "state": "experimental",
+      "reason": "Core checks pass without the external corpus; live acquisition remains adapter configuration.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "identity-remediation:siso-foundry:fd7d270f98b0e0b34317fa1647997fcfdcac2094",
+          "observed_at": "2026-07-30",
+          "summary": "Pinned remediated source and the Foundry code-plane verifier passed."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-foundry-fd7d270",
+      "observed_at": "2026-07-30",
+      "summary": "The verified Foundry code plane now includes its repository header; the 28-file code check passed and the external data boundary remains unchanged."
+    }
+  ]
+}

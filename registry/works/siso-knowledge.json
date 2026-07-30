@@ -14,10 +14,10 @@
     "locators": [{
       "type": "source_repository",
       "url": "https://github.com/Lordsisodia/siso-knowledge",
-      "revision": "main@0a433ce385ae2a2be30a86343b5b494a52728d5e",
+      "revision": "main@333447afc7672ff622a5f92f96533662585bdb1f",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-knowledge:0a433ce385ae2a2be30a86343b5b494a52728d5e", "observed_at": "2026-07-30", "summary": "The renamed public repository resolves at the exact architecture-baseline commit and exposes its domain, data, migration, and layout-verification contracts." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-knowledge:333447afc7672ff622a5f92f96533662585bdb1f", "observed_at": "2026-07-30", "summary": "The public repository resolves with its generated repository header and retains the verified domain, data, migration, and layout contracts." }
     }],
     "license": {
       "status": "pending",

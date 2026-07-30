@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T13:57:30.000Z",
+  "generated_at": "2026-07-30T14:11:00.000Z",
   "base_path": "/",
   "works": [
     {
@@ -159,12 +159,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/great-library-of-siso/",
       "locator_type": "source_repository",
-      "locator_revision": "main@468fb41a2f59504ff3335f810f8a63061455852b",
+      "locator_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:5b98d150-b81e-477a-848a-b22564b1e177",
-      "active_release_version": "0.3.0+2772212",
-      "artifact_revision": "2772212fdcf7efdd5789c05c241570e9ec43e2a1"
+      "active_release_id": "gls:release:3da753a0-ffd2-467c-a2ca-5dfd712ba86f",
+      "active_release_version": "0.3.1+2bd415d",
+      "artifact_revision": "2bd415dd3024c928fc8414b891e7f21069c3fcaa"
     },
     {
       "owner": "Lordsisodia",
@@ -285,12 +285,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-evidence-engines/",
       "locator_type": "source_repository",
-      "locator_revision": "main@6ffba38d77409d6317733ec5fe96386d0481d2ea",
+      "locator_revision": "main@71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:789e157f-4eaf-45a5-b487-9b8f02ff407a",
-      "active_release_version": "0.1.0+6ffba38",
-      "artifact_revision": "6ffba38d77409d6317733ec5fe96386d0481d2ea"
+      "active_release_id": "gls:release:f49dfb65-9cba-45d8-855a-9338f1cda30b",
+      "active_release_version": "0.1.1+71022ce",
+      "artifact_revision": "71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d"
     },
     {
       "owner": "Lordsisodia",
@@ -303,12 +303,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-foundry/",
       "locator_type": "source_repository",
-      "locator_revision": "main@f6afca0db5bf333fd5535aaed6242c42d16c12b3",
+      "locator_revision": "main@fd7d270f98b0e0b34317fa1647997fcfdcac2094",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:9e2dedcd-dfea-4241-b85d-547cdaeacef9",
-      "active_release_version": "main+f6afca0",
-      "artifact_revision": "f6afca0db5bf333fd5535aaed6242c42d16c12b3"
+      "active_release_id": "gls:release:6b40bfd7-259f-4d24-97e6-191dc8d2bd20",
+      "active_release_version": "main+fd7d270",
+      "artifact_revision": "fd7d270f98b0e0b34317fa1647997fcfdcac2094"
     },
     {
       "owner": "Lordsisodia",
@@ -321,12 +321,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-knowledge/",
       "locator_type": "source_repository",
-      "locator_revision": "main@0a433ce385ae2a2be30a86343b5b494a52728d5e",
+      "locator_revision": "main@333447afc7672ff622a5f92f96533662585bdb1f",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:6be306e8-db62-4b11-ac60-e01aaa0b1f3a",
-      "active_release_version": "public-architecture+0a433ce",
-      "artifact_revision": "0a433ce385ae2a2be30a86343b5b494a52728d5e"
+      "active_release_id": "gls:release:082afdff-c770-49de-a67c-a1ef9a6bb40d",
+      "active_release_version": "public-architecture+333447a",
+      "artifact_revision": "333447afc7672ff622a5f92f96533662585bdb1f"
     },
     {
       "owner": "Lordsisodia",

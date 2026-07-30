@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:082afdff-c770-49de-a67c-a1ef9a6bb40d",
+  "work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+  "version": "public-architecture+333447a",
+  "title": "SISO Knowledge repository header release",
+  "released_at": "2026-07-30T21:08:59+07:00",
+  "observed_at": "2026-07-30",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:d6c7b5d5-6260-45ac-8242-ee7137f19892",
+      "kind": "source_archive",
+      "locator": "https://github.com/Lordsisodia/siso-knowledge/archive/333447afc7672ff622a5f92f96533662585bdb1f.tar.gz",
+      "revision": "333447afc7672ff622a5f92f96533662585bdb1f",
+      "availability": "public",
+      "owner": "Lordsisodia",
+      "ownership": "siso",
+      "license": {
+        "status": "pending",
+        "spdx": "NONE",
+        "reason": "No repository license has been accepted; this artifact is publicly addressable but carries no general reuse claim.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/Lordsisodia/siso-knowledge/tree/333447afc7672ff622a5f92f96533662585bdb1f",
+            "observed_at": "2026-07-30",
+            "summary": "The pinned source tree has no accepted license file."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "333447afc7672ff622a5f92f96533662585bdb1f"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The public architecture baseline is pinned to an exact commit.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/siso-knowledge/commit/333447afc7672ff622a5f92f96533662585bdb1f",
+          "observed_at": "2026-07-30",
+          "summary": "The exact public commit resolves."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "A commit-scoped public source archive resolves; local corpus payloads and runtime state are not part of this claim.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/siso-knowledge/archive/333447afc7672ff622a5f92f96533662585bdb1f.tar.gz",
+          "observed_at": "2026-07-30",
+          "summary": "The immutable GitHub archive locator is public."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The release resolves to the stable SISO Knowledge Work and exact source artifact.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "registry:release:siso-knowledge-333447a",
+          "observed_at": "2026-07-30",
+          "summary": "Registry IDs, locator, and artifact integrity validate."
+        }
+      ]
+    },
+    "installable": {
+      "state": "unavailable",
+      "reason": "This is an architecture and source baseline, not a packaged application release; several live pipelines still contain legacy machine assumptions.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/Lordsisodia/siso-knowledge/blob/333447afc7672ff622a5f92f96533662585bdb1f/DOMAIN-MANIFEST.json",
+          "observed_at": "2026-07-30",
+          "summary": "The debt baseline explicitly records remaining absolute-path and runtime-state debt."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "unavailable",
+      "reason": "GitHub exposes the source, but no accepted license currently grants general copying, modification, or redistribution rights.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/Lordsisodia/siso-knowledge/tree/333447afc7672ff622a5f92f96533662585bdb1f",
+          "observed_at": "2026-07-30",
+          "summary": "No accepted license is present at the pinned revision."
+        }
+      ]
+    },
+    "portable": {
+      "state": "experimental",
+      "reason": "The domain and data contracts are machine-neutral, but legacy pipeline paths and operator state remain measured migration debt.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-knowledge:333447afc7672ff622a5f92f96533662585bdb1f",
+          "observed_at": "2026-07-30",
+          "summary": "The layout verifier passes with explicit non-increasing debt ratchets and a separate ignored data plane."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-knowledge-333447a",
+      "observed_at": "2026-07-30",
+      "summary": "The verified public architecture baseline now includes the SISO Knowledge repository header; no dirty local corpus, nested product, or acquired data is claimed as released."
+    }
+  ]
+}

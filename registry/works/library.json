@@ -15,14 +15,14 @@
       {
         "type": "source_repository",
         "url": "https://github.com/Lordsisodia/great-library-of-siso",
-        "revision": "main@468fb41a2f59504ff3335f810f8a63061455852b",
+        "revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
         "visibility": "public",
         "verified": true,
         "evidence": {
           "kind": "integration_check",
           "reference": "https://github.com/Lordsisodia/great-library-of-siso",
           "observed_at": "2026-07-30",
-          "summary": "Canonical public repository is pinned after durable agent onboarding, current-state documentation, the generated Repository Estate, and the verified public site were added."
+          "summary": "Canonical public repository is pinned after the generated flagship repository header was added to the verified registry source."
         }
       },
       {
@@ -44,6 +44,6 @@
   "relationships": [],
   "evidence": [
     { "kind": "registry_validation", "reference": "registry:seed:v1", "observed_at": "2026-07-29", "summary": "Seed Work accepted by the V1 registry validator." },
-    { "kind": "release_receipt", "reference": "repo-check:great-library-of-siso:468fb41a2f59504ff3335f810f8a63061455852b", "observed_at": "2026-07-30", "summary": "Registry schemas, durable onboarding, site generation, repository-estate projection, link and identity checks, and publication scan passed." }
+    { "kind": "release_receipt", "reference": "repo-check:great-library-of-siso:2bd415dd3024c928fc8414b891e7f21069c3fcaa", "observed_at": "2026-07-30", "summary": "Registry schemas, generated site, repository header, link and identity checks, and publication scan passed." }
   ]
 }
