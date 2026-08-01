@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T17:12:29.000Z",
+  "generated_at": "2026-08-01T17:17:02.000Z",
   "snapshot_id": "gls:snapshot:fb10d973-8a24-44c7-8fed-b22e7d227b5d",
   "snapshot_version": "30.0.0",
   "repositories": [
@@ -158,7 +158,7 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-foundry/",
       "locator_type": "source_repository",
-      "locator_revision": "main@fd7d270f98b0e0b34317fa1647997fcfdcac2094",
+      "locator_revision": "main@d29480a139edb48be14ee5f24d86349a7ae2a0ae",
       "visibility": "public",
       "status": "released",
       "active_release_id": "gls:release:6b40bfd7-259f-4d24-97e6-191dc8d2bd20",
@@ -284,7 +284,7 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-agent-stack-distribution/",
       "locator_type": "source_repository",
-      "locator_revision": "main@f4a9626c0a1771cd3ee449f25a1ab63c8b297845",
+      "locator_revision": "main@9d1786575cce55df61ce3cf8564969536c47d186",
       "visibility": "public",
       "status": "released",
       "active_release_id": "gls:release:a085911a-30f7-4075-b8e1-680a65a2a0cd",

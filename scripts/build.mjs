@@ -728,6 +728,7 @@ await emit('docs/onboarding.html', await readFile(join(ROOT, 'docs', 'onboarding
 await emit('docs/agent-capability-promotion.html', await readFile(join(ROOT, 'docs', 'agent-capability-promotion.html'), 'utf8'));
 await emit('docs/ecosystem-intelligence.html', await readFile(join(ROOT, 'docs', 'ecosystem-intelligence.html'), 'utf8'));
 await emit('docs/100-million-token-program.html', await readFile(join(ROOT, 'docs', '100-million-token-program.html'), 'utf8'));
+await emit('docs/100-million-token-operating-plan.html', await readFile(join(ROOT, 'docs', '100-million-token-operating-plan.html'), 'utf8'));
 await emit('docs/registry-model.md', await readFile(join(ROOT, 'docs', 'registry-model.md'), 'utf8'));
 await emit('docs/using-the-library.md', await readFile(join(ROOT, 'docs', 'using-the-library.md'), 'utf8'));
 await emit('index.html', homePage(works, releases, snapshots, assemblies, sections));

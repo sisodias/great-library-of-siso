@@ -7,17 +7,17 @@
   "summary": "The one-clone, version-pinned public distribution for the SISO Claude Code and Codex environment, composing independently released skills, hooks, playbooks, agent roles, operating profiles, commands, runtimes, and optional services without merging their repository identities.",
   "work_type": "bundle",
   "lifecycle_status": "active",
-  "updated_at": "2026-08-01",
+  "updated_at": "2026-08-02",
   "provenance": {
     "origin": "siso",
     "owners": [{"name":"SISO Open Source Foundation","role":"steward","classification":"siso"}],
     "locators": [{
       "type": "source_repository",
       "url": "https://github.com/sisodias/siso-agent-stack",
-      "revision": "main@f4a9626c0a1771cd3ee449f25a1ab63c8b297845",
+      "revision": "main@9d1786575cce55df61ce3cf8564969536c47d186",
       "visibility": "public",
       "verified": true,
-      "evidence": {"kind":"integration_check","reference":"github:sisodias/siso-agent-stack:f4a9626c0a1771cd3ee449f25a1ab63c8b297845","observed_at":"2026-08-01","summary":"Public main matches the exact release checkpoint commit after clean public-source and full non-external installation checks."}
+      "evidence": {"kind":"integration_check","reference":"github:sisodias/siso-agent-stack:9d1786575cce55df61ce3cf8564969536c47d186","observed_at":"2026-08-02","summary":"Public main matches the 0.2.0 community-adoption release after the clean-install suite and manifest verifier passed."}
     }],
     "license": {
       "status": "verified",
@@ -33,7 +33,8 @@
     {"type":"integrates_with","target_work_id":"gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc","context":"Herdr remains an optional external Apache-2.0 source component and independent upstream.","evidence":[{"kind":"source_review","reference":"stack-manifest:herdr:26a7bc860e4af516ef687d90b9f9dd2830f88d2a","observed_at":"2026-08-01","summary":"The manifest records Herdr as optional external source and does not claim SISO ownership."}]}
   ],
   "evidence": [
-    {"kind":"release_receipt","reference":"https://github.com/sisodias/siso-agent-stack/blob/f4a9626c0a1771cd3ee449f25a1ab63c8b297845/reports/implementation-checkpoint.html","observed_at":"2026-08-01","summary":"The checkpoint records plan, implementation, Hooks review, and Stack review scores of 94, 96, 97, and 98 out of 100."},
+    {"kind":"release_receipt","reference":"https://github.com/sisodias/siso-agent-stack/releases/tag/v0.2.0","observed_at":"2026-08-02","summary":"The public 0.2.0 release installs a managed siso-stack command, documents first-use, update, rollback, extension, and contribution routes, retains all ten pinned components, and passes eight tests plus manifest verification."},
+    {"kind":"release_receipt","reference":"https://github.com/sisodias/siso-agent-stack/blob/f4a9626c0a1771cd3ee449f25a1ab63c8b297845/reports/implementation-checkpoint.html","observed_at":"2026-08-01","summary":"The original checkpoint records plan, implementation, Hooks review, and Stack review scores of 94, 96, 97, and 98 out of 100."},
     {"kind":"integration_check","reference":"clean-install:siso-agent-stack:0.1.0:2026-08-01","observed_at":"2026-08-01","summary":"A public required-only install cloned six repositories; a full non-external install pinned nine repositories, linked 32 skills, installed five host-native agent roles and 14 command shims, loaded Codex hooks, and passed doctor."}
   ]
 }

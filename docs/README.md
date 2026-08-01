@@ -18,6 +18,7 @@ These authored documents explain the public model and its operating boundaries. 
 - [Frontier Question template](frontier-question-template.html) — a reusable question dossier with an assumption ledger, source queue, contradiction map, and worked composable-CRM example.
 - [Ecosystem Intelligence](ecosystem-intelligence.html) — append-only events, machine-readable ADRs, active agent reservations, automatic changelog, and the five-minute recovery contract.
 - [100 Million Token Program](100-million-token-program.html) — the proposed fifteen-part ecosystem portfolio, its dependency-aware parallelization model, the exact boundary between existing truth infrastructure and incomplete estate coverage, and its execution-approval gate.
+- [100 Million Token Operating Plan](100-million-token-operating-plan.html) — the accepted build-first sequence for stranger-ready Agent Stack distribution, resumable Foundry discovery, rights-aware Library lineage, and repeated capability promotion.
 - [Roadmap](roadmap.md) — static Pages first, then near-read-only CLI and MCP access to the same contracts.
 - [Contributing](../CONTRIBUTING.md) — clean-room record and documentation changes.
 - [Security](../SECURITY.md) — private reporting and publication-safety boundary.

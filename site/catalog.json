@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T17:12:29.000Z",
+  "generated_at": "2026-08-01T17:17:02.000Z",
   "base_path": "/",
   "works": [
     {
@@ -384,7 +384,7 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-foundry/",
       "locator_type": "source_repository",
-      "locator_revision": "main@fd7d270f98b0e0b34317fa1647997fcfdcac2094",
+      "locator_revision": "main@d29480a139edb48be14ee5f24d86349a7ae2a0ae",
       "visibility": "public",
       "status": "released",
       "active_release_id": "gls:release:6b40bfd7-259f-4d24-97e6-191dc8d2bd20",
@@ -510,7 +510,7 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-agent-stack-distribution/",
       "locator_type": "source_repository",
-      "locator_revision": "main@f4a9626c0a1771cd3ee449f25a1ab63c8b297845",
+      "locator_revision": "main@9d1786575cce55df61ce3cf8564969536c47d186",
       "visibility": "public",
       "status": "released",
       "active_release_id": "gls:release:a085911a-30f7-4075-b8e1-680a65a2a0cd",
@@ -3322,30 +3322,40 @@
   },
   "intelligence": {
     "counts": {
-      "events": 16,
+      "events": 18,
       "decisions": 4,
       "active_initiatives": 1,
-      "registry_changes": 90
+      "registry_changes": 92
     },
     "active_initiatives": [
       {
-        "event_id": "gls:event:466d4d2d-8a2a-4bdf-99e1-1d563c59dbc7",
-        "thread_id": "gls:thread:hundred-million-token-operating-plan",
-        "name": "100 Million Token Operating Plan",
+        "event_id": "gls:event:9a8cecd9-423f-4c1e-b81c-a69f305eb5c6",
+        "thread_id": "gls:thread:public-agent-ecosystem-expansion",
+        "name": "Public Agent Ecosystem Expansion",
         "status": "active",
-        "title": "Luna operating-plan design started",
-        "intent": "Define the smallest executable portfolio structure that connects ecosystem truth, question-driven research, Foundry, evaluation, the portable Agent Stack, security, maintenance, and constrained compute without duplicating the canonical mission or Frontier Question contracts.",
-        "occurred_at": "2026-08-01T23:25:28+07:00",
-        "owner": "Great Library Luna operating-plan designer",
-        "branch": "codex/100m-luna-operating-plan-20260801",
+        "title": "Public Agent Stack and Foundry expansion started",
+        "intent": "Increase the Great Library's operational advantage by connecting a genuinely adoptable public Agent Stack to a reproducible source-discovery loop and durable, rights-aware Library identity and release records.",
+        "occurred_at": "2026-08-02T00:17:02+07:00",
+        "owner": "Great Library public agent ecosystem maintainer",
+        "branch": "codex/public-agent-ecosystem-expansion-20260802",
         "reserved_paths": [
-          "docs/100-million-token-operating-plan.html",
-          "registry/events/2026-08-01-hundred-million-token-operating-plan-*.json"
+          "registry/works/siso-agent-stack-distribution.json",
+          "registry/works/siso-foundry.json",
+          "registry/releases/siso-agent-stack-9d17865.json",
+          "registry/releases/siso-foundry-d29480a.json",
+          "registry/releases/great-library-public-agent-ecosystem-*.json",
+          "registry/snapshots/whole-library-v31.json",
+          "registry/events/2026-08-02-public-agent-ecosystem-expansion-*.json",
+          "docs/README.md",
+          "scripts/build.mjs",
+          "scripts/check-site.mjs",
+          "site/",
+          "CURRENT_STATE.md"
         ],
         "next_actions": [
-          "Launch and visibly verify a GPT-5.6 Luna Codex pane in the GLOS workspace.",
-          "Produce and commit one public-safe operating-plan draft in the isolated worktree.",
-          "Return an evidence packet for later GPT-5.6 Sol review; do not merge, release, select, or deploy the draft yet."
+          "Pin Stack 0.2.0 and Foundry 0.2.0 as immutable Library Releases and refresh their current public source locators.",
+          "Integrate the build-first operating plan into deterministic documentation generation and checks.",
+          "Publish a Great Library self-release, Whole Library V31 Snapshot, completion Event, current-state update, and live deployment."
         ]
       }
     ]

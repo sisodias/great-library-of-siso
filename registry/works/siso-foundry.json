@@ -7,22 +7,23 @@
   "summary": "A source-mining and reuse-knowledge platform for discovering, evaluating, preserving, and navigating valuable external and SISO source.",
   "work_type": "application",
   "lifecycle_status": "active",
-  "updated_at": "2026-07-30",
+  "updated_at": "2026-08-02",
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
     "locators": [{
       "type": "source_repository",
       "url": "https://github.com/Lordsisodia/siso-foundry",
-      "revision": "main@fd7d270f98b0e0b34317fa1647997fcfdcac2094",
+      "revision": "main@d29480a139edb48be14ee5f24d86349a7ae2a0ae",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-foundry:fd7d270f98b0e0b34317fa1647997fcfdcac2094", "observed_at": "2026-07-30", "summary": "Canonical public source includes the generated repository header while preserving the portable core contracts, domain pipelines, query packages, and external dataset boundary; the 28-file code check passed." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-foundry:d29480a139edb48be14ee5f24d86349a7ae2a0ae", "observed_at": "2026-08-02", "summary": "Canonical public source includes the resumable agent-systems campaign contract and runner while preserving the external data-plane boundary; the 30-file code check and three campaign tests passed." }
     }],
     "license": { "status": "verified", "spdx": "MIT", "reason": "The public repository contains reviewed SISO-owned software under MIT; dataset and upstream-source rights remain explicitly asset-specific and outside the source license claim.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-foundry/blob/f6afca0db5bf333fd5535aaed6242c42d16c12b3/PROVENANCE.md", "observed_at": "2026-07-30", "summary": "The public extraction records included software, excluded payloads, path normalization, and independent data/upstream ownership boundaries." }] }
   },
   "relationships": [],
   "evidence": [
+    { "kind": "release_receipt", "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.2.0", "observed_at": "2026-08-02", "summary": "Foundry 0.2.0 publishes a ten-family agent-source campaign, query-hash checkpointing, append-only observation routing, deduplicated candidate lineage, rights-review defaults, and quota and anti-spam stop gates." },
     { "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:foundry:2026-07-30", "observed_at": "2026-07-30", "summary": "Foundry has an independent research outcome and belongs in the Research section rather than inside Agents." },
     { "kind": "release_receipt", "reference": "repo-check:siso-foundry:f6afca0db5bf333fd5535aaed6242c42d16c12b3", "observed_at": "2026-07-30", "summary": "Twenty-eight Python files compiled, JavaScript and shell entrypoints passed syntax checks, the topic-registry disposable-database smoke passed, and the publication scan passed." }
   ]

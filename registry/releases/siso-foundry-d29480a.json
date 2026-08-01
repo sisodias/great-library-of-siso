@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:69e37171-b72b-4c31-9e02-6c441a90e3a1",
+  "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+  "version": "0.2.0+d29480a",
+  "title": "SISO Foundry resumable public source campaigns",
+  "released_at": "2026-08-02T00:15:20+07:00",
+  "observed_at": "2026-08-02",
+  "immutable": true,
+  "artifacts": [{
+    "id": "gls:artifact:fb9759e7-1bdf-4bd0-8e5f-e25245971a62",
+    "kind": "source_archive",
+    "locator": "https://github.com/Lordsisodia/siso-foundry/archive/d29480a139edb48be14ee5f24d86349a7ae2a0ae.tar.gz",
+    "revision": "d29480a139edb48be14ee5f24d86349a7ae2a0ae",
+    "availability": "public",
+    "owner": "Lordsisodia",
+    "ownership": "siso",
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The Foundry software is MIT licensed; observed upstream metadata and data-plane assets retain separate rights.",
+      "evidence": [{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-foundry/blob/d29480a139edb48be14ee5f24d86349a7ae2a0ae/LICENSE","observed_at":"2026-08-02","summary":"The MIT source license resolves at the exact release commit."}]
+    },
+    "integrity": {"state":"verified","algorithm":"git_commit_sha1","digest":"d29480a139edb48be14ee5f24d86349a7ae2a0ae"}
+  }],
+  "distribution": {
+    "addressable": {"state":"verified","reason":"The campaign software and GitHub release are pinned to an exact public commit.","evidence":[{"kind":"public_locator","reference":"https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.2.0","observed_at":"2026-08-02","summary":"The public 0.2.0 release resolves."}]},
+    "archive_downloadable": {"state":"verified","reason":"The code and campaign contracts have a commit-scoped source archive; operational responses remain outside Git.","evidence":[{"kind":"public_locator","reference":"https://github.com/Lordsisodia/siso-foundry/archive/d29480a139edb48be14ee5f24d86349a7ae2a0ae.tar.gz","observed_at":"2026-08-02","summary":"The immutable code-plane archive resolves."}]},
+    "manifest_resolvable": {"state":"verified","reason":"The ten-family campaign is a public machine-readable query contract with explicit rights and stop policies.","evidence":[{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-foundry/blob/d29480a139edb48be14ee5f24d86349a7ae2a0ae/pipelines/github/campaigns/agent-systems-v1.json","observed_at":"2026-08-02","summary":"The campaign defines ten unique query families, capability tags, rights policy, promotion gate, result limit, and stop conditions."}]},
+    "installable": {"state":"experimental","reason":"The dependency-free runner and tests execute, but live campaigns depend on operator GitHub authentication, quota, and an external data plane.","evidence":[{"kind":"release_receipt","reference":"repo-check:siso-foundry:d29480a","observed_at":"2026-08-02","summary":"Thirty Python files compiled, three campaign tests passed, dry-run rendered all ten queries, and publication checks passed."}]},
+    "forkable": {"state":"verified","reason":"The campaign definition, runner, tests, and data boundary are public and MIT licensed.","evidence":[{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-foundry/blob/d29480a139edb48be14ee5f24d86349a7ae2a0ae/README.md","observed_at":"2026-08-02","summary":"The public README documents reproducible campaigns and the external run-state boundary."}]},
+    "portable": {"state":"experimental","reason":"Campaign definitions and runner are portable, but the existing multi-gigabyte data plane lacks a public snapshot receipt and live GitHub access can be externally throttled.","evidence":[{"kind":"release_receipt","reference":"campaign-stop:agent-systems-v1:github-anti-spam:2026-08-02","observed_at":"2026-08-02","summary":"The first live attempt stopped before accepting results when GitHub flagged search as spammy; the local checkpoint preserved a safe restart state."}]}
+  },
+  "evidence": [{"kind":"release_receipt","reference":"repo-check:siso-foundry:d29480a","observed_at":"2026-08-02","summary":"The release makes public source campaigns reproducible while keeping raw responses, checkpoints, candidates, databases, and corpora in the external Foundry data plane."}]
+}

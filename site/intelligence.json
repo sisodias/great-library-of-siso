@@ -1,31 +1,41 @@
 {
-  "generated_at": "2026-08-01T17:12:29.000Z",
+  "generated_at": "2026-08-01T17:17:02.000Z",
   "base_path": "/",
   "counts": {
-    "events": 16,
+    "events": 18,
     "decisions": 4,
     "active_initiatives": 1,
-    "registry_changes": 90
+    "registry_changes": 92
   },
   "active_initiatives": [
     {
-      "event_id": "gls:event:466d4d2d-8a2a-4bdf-99e1-1d563c59dbc7",
-      "thread_id": "gls:thread:hundred-million-token-operating-plan",
-      "name": "100 Million Token Operating Plan",
+      "event_id": "gls:event:9a8cecd9-423f-4c1e-b81c-a69f305eb5c6",
+      "thread_id": "gls:thread:public-agent-ecosystem-expansion",
+      "name": "Public Agent Ecosystem Expansion",
       "status": "active",
-      "title": "Luna operating-plan design started",
-      "intent": "Define the smallest executable portfolio structure that connects ecosystem truth, question-driven research, Foundry, evaluation, the portable Agent Stack, security, maintenance, and constrained compute without duplicating the canonical mission or Frontier Question contracts.",
-      "occurred_at": "2026-08-01T23:25:28+07:00",
-      "owner": "Great Library Luna operating-plan designer",
-      "branch": "codex/100m-luna-operating-plan-20260801",
+      "title": "Public Agent Stack and Foundry expansion started",
+      "intent": "Increase the Great Library's operational advantage by connecting a genuinely adoptable public Agent Stack to a reproducible source-discovery loop and durable, rights-aware Library identity and release records.",
+      "occurred_at": "2026-08-02T00:17:02+07:00",
+      "owner": "Great Library public agent ecosystem maintainer",
+      "branch": "codex/public-agent-ecosystem-expansion-20260802",
       "reserved_paths": [
-        "docs/100-million-token-operating-plan.html",
-        "registry/events/2026-08-01-hundred-million-token-operating-plan-*.json"
+        "registry/works/siso-agent-stack-distribution.json",
+        "registry/works/siso-foundry.json",
+        "registry/releases/siso-agent-stack-9d17865.json",
+        "registry/releases/siso-foundry-d29480a.json",
+        "registry/releases/great-library-public-agent-ecosystem-*.json",
+        "registry/snapshots/whole-library-v31.json",
+        "registry/events/2026-08-02-public-agent-ecosystem-expansion-*.json",
+        "docs/README.md",
+        "scripts/build.mjs",
+        "scripts/check-site.mjs",
+        "site/",
+        "CURRENT_STATE.md"
       ],
       "next_actions": [
-        "Launch and visibly verify a GPT-5.6 Luna Codex pane in the GLOS workspace.",
-        "Produce and commit one public-safe operating-plan draft in the isolated worktree.",
-        "Return an evidence packet for later GPT-5.6 Sol review; do not merge, release, select, or deploy the draft yet."
+        "Pin Stack 0.2.0 and Foundry 0.2.0 as immutable Library Releases and refresh their current public source locators.",
+        "Integrate the build-first operating plan into deterministic documentation generation and checks.",
+        "Publish a Great Library self-release, Whole Library V31 Snapshot, completion Event, current-state update, and live deployment."
       ]
     }
   ],
@@ -398,6 +408,122 @@
     {
       "schema_version": "1.0.0",
       "record_type": "event",
+      "id": "gls:event:9a8cecd9-423f-4c1e-b81c-a69f305eb5c6",
+      "occurred_at": "2026-08-02T00:17:02+07:00",
+      "recorded_at": "2026-08-02T00:17:02+07:00",
+      "immutable": true,
+      "entry_type": "initiative_started",
+      "thread": {
+        "id": "gls:thread:public-agent-ecosystem-expansion",
+        "name": "Public Agent Ecosystem Expansion",
+        "kind": "initiative"
+      },
+      "status": "active",
+      "title": "Public Agent Stack and Foundry expansion started",
+      "summary": "A bounded publication lane will register the stranger-ready Agent Stack 0.2.0 release, the resumable Foundry 0.2.0 campaign release, and the build-first operating plan without turning the Library into a source warehouse.",
+      "intent": "Increase the Great Library's operational advantage by connecting a genuinely adoptable public Agent Stack to a reproducible source-discovery loop and durable, rights-aware Library identity and release records.",
+      "reasoning": [
+        "The SISO Agent Stack already composes the complete public Claude Code and Codex setup; installing its own command, documenting update and rollback, and publishing a GitHub release makes that capability materially easier for outsiders to adopt.",
+        "Foundry already owns a large repository identity corpus and ranking contracts; a public resumable campaign runner makes new discovery campaigns forkable without committing databases, raw observations, or operational state.",
+        "The first live agent-systems campaign correctly stopped on GitHub anti-spam before accepting results and preserved a local checkpoint, so the public claim is campaign readiness rather than harvested-candidate completion.",
+        "The Great Library should pin exact public releases, current locators, authored operating direction, and selection lineage while Foundry retains raw responses and campaign state in its external data plane."
+      ],
+      "changes": [
+        {
+          "kind": "coordination",
+          "reference": "gls:thread:public-agent-ecosystem-expansion",
+          "summary": "Reserved the exact Work, Release, Snapshot, documentation, generator, generated-site, state, and Event surfaces needed to publish the two external releases and their Library integration."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso",
+          "https://github.com/sisodias/siso-agent-stack",
+          "https://github.com/Lordsisodia/siso-foundry"
+        ]
+      },
+      "coordination": {
+        "owner": "Great Library public agent ecosystem maintainer",
+        "branch": "codex/public-agent-ecosystem-expansion-20260802",
+        "reserved_paths": [
+          "registry/works/siso-agent-stack-distribution.json",
+          "registry/works/siso-foundry.json",
+          "registry/releases/siso-agent-stack-9d17865.json",
+          "registry/releases/siso-foundry-d29480a.json",
+          "registry/releases/great-library-public-agent-ecosystem-*.json",
+          "registry/snapshots/whole-library-v31.json",
+          "registry/events/2026-08-02-public-agent-ecosystem-expansion-*.json",
+          "docs/README.md",
+          "scripts/build.mjs",
+          "scripts/check-site.mjs",
+          "site/",
+          "CURRENT_STATE.md"
+        ]
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "https://github.com/sisodias/siso-agent-stack/releases/tag/v0.2.0",
+          "observed_at": "2026-08-02",
+          "summary": "The public Stack 0.2.0 release installs a managed distribution command, documents adoption and contribution routes, retains ten exact-pinned components, and passes eight tests plus its manifest verifier."
+        },
+        {
+          "kind": "release_receipt",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.2.0",
+          "observed_at": "2026-08-02",
+          "summary": "The public Foundry 0.2.0 release adds the ten-family agent-systems campaign contract, resumable runner, rights defaults, stop gates, and three new campaign tests; the repository gate passes."
+        },
+        {
+          "kind": "documentation",
+          "reference": "docs/100-million-token-operating-plan.html",
+          "observed_at": "2026-08-02",
+          "summary": "The completed operating plan prioritizes outsider-ready distribution, continuous public-source discovery, connected Library lineage, and repeated capability promotion."
+        }
+      ],
+      "next_actions": [
+        "Pin Stack 0.2.0 and Foundry 0.2.0 as immutable Library Releases and refresh their current public source locators.",
+        "Integrate the build-first operating plan into deterministic documentation generation and checks.",
+        "Publish a Great Library self-release, Whole Library V31 Snapshot, completion Event, current-state update, and live deployment."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso",
+          "https://github.com/sisodias/siso-agent-stack",
+          "https://github.com/Lordsisodia/siso-foundry"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+            "name": "SISO Agent Stack Distribution",
+            "library_url": "/works/siso-agent-stack-distribution/"
+          },
+          {
+            "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+            "name": "SISO Foundry",
+            "library_url": "/works/siso-foundry/"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
       "id": "gls:event:6d619fa0-d43b-44b1-b473-38a05b178b3a",
       "occurred_at": "2026-08-02T00:12:29+07:00",
       "recorded_at": "2026-08-02T00:12:29+07:00",
@@ -642,6 +768,128 @@
             "id": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
             "name": "GQ-009 · The God Questions Observatory",
             "library_url": "/works/frontier-question-god-questions-infrastructure/"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:d87f11de-8310-4749-8a2b-04d4ceba4ad3",
+      "occurred_at": "2026-08-02T00:05:12+07:00",
+      "recorded_at": "2026-08-02T00:05:12+07:00",
+      "immutable": true,
+      "entry_type": "initiative_completed",
+      "thread": {
+        "id": "gls:thread:hundred-million-token-operating-plan",
+        "name": "100 Million Token Operating Plan",
+        "kind": "initiative"
+      },
+      "status": "completed",
+      "title": "Build-first ecosystem operating plan completed",
+      "summary": "The Luna draft is complete and now records a build-first direction centered on stranger-ready Agent Stack distribution, resumable Foundry discovery, rights-aware Library lineage, and repeated promotion of reusable public capabilities.",
+      "intent": "Define the smallest executable portfolio structure that connects ecosystem truth, question-driven research, Foundry, evaluation, the portable Agent Stack, security, maintenance, and constrained compute without duplicating canonical ownership contracts.",
+      "reasoning": [
+        "The user explicitly rejected treating proof of the Library's overall utility as the next objective and directed the lane to maximize operational advantage by building the public source ecosystem.",
+        "The existing Agent Stack Distribution already pins skills, hooks, playbooks, agent definitions, profiles, runtime components, coordination, integrations, and Herdr source, so the highest-leverage sequence is adoption, discovery, connected lineage, and capability promotion.",
+        "Evaluation remains necessary for correctness, safety, portability, and promotion claims, but it is not a reason to delay obvious public-safe improvements.",
+        "The Library stays the durable identity, lineage, decision, release, snapshot, and reading surface; Foundry and Knowledge retain raw discovery and corpus payloads.",
+        "A concurrent God Questions infrastructure lane owns the generated site, generator, V29 Snapshot, and current-state surfaces, so this lane closes without overlapping or duplicating those changes."
+      ],
+      "changes": [
+        {
+          "kind": "commit",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/3d7104f0eb6d8fd1aa3086ec668aaf5112ede359",
+          "summary": "Added the complete fifteen-program Luna operating-plan draft."
+        },
+        {
+          "kind": "commit",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/d73409ea4637f2e6a1b4f3f9ae94eecb0ac568e5",
+          "summary": "Reoriented the plan around public ecosystem growth, outsider adoption, Foundry intake, connected source identity, and capability promotion."
+        },
+        {
+          "kind": "document",
+          "reference": "docs/100-million-token-operating-plan.html",
+          "summary": "Records system boundaries, program ownership, dependency waves, gates, stop rules, resource classes, the build-first orientation, and the immediate implementation sequence."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+          "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso",
+          "https://github.com/sisodias/siso-agent-stack",
+          "https://github.com/Lordsisodia/siso-foundry"
+        ]
+      },
+      "coordination": {
+        "owner": "Great Library ecosystem operating-architecture maintainer",
+        "branch": "codex/100m-luna-operating-plan-20260801",
+        "reserved_paths": []
+      },
+      "visibility": "public",
+      "predecessor_event_id": "gls:event:466d4d2d-8a2a-4bdf-99e1-1d563c59dbc7",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "repo-check:great-library-operating-plan:d73409e",
+          "observed_at": "2026-08-02",
+          "summary": "The full Great Library verification gate passed after the build-first correction: immutable history, promotion and intelligence contracts, registry validation, generation, link and identity checks, and publication safety."
+        },
+        {
+          "kind": "source_review",
+          "reference": "design-review:glos-100m-frontier-joint-lineage:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The separate Frontier Questions coordinator accepted the ownership map, typed bridge, stage boundaries, privacy constraints, and non-overlapping operating lineage with no material defects."
+        },
+        {
+          "kind": "documentation",
+          "reference": "user-direction:build-operational-advantage:2026-08-02",
+          "observed_at": "2026-08-02",
+          "summary": "The user approved continuing the operating-architecture lane and prioritized public agent-stack adoption, community usefulness, source aggregation, and repeated scraping and promotion of useful repositories."
+        }
+      ],
+      "next_actions": [
+        "Improve the public Agent Stack Distribution's outsider-facing release and community surface in its owning repository.",
+        "Open a separate Foundry-owned, resumable public-repository discovery campaign for agent-system source.",
+        "After the concurrent V29 lane closes, integrate this authored plan into the generated Library surface through a non-overlapping successor Event."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+          "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso",
+          "https://github.com/sisodias/siso-agent-stack",
+          "https://github.com/Lordsisodia/siso-foundry"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+            "name": "Research",
+            "library_url": "/works/research/"
+          },
+          {
+            "id": "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+            "name": "SISO Agent Stack Distribution",
+            "library_url": "/works/siso-agent-stack-distribution/"
+          },
+          {
+            "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+            "name": "SISO Foundry",
+            "library_url": "/works/siso-foundry/"
           }
         ]
       }
@@ -2040,6 +2288,15 @@
   "registry_changes": [
     {
       "kind": "release",
+      "occurred_at": "2026-08-02T00:15:20+07:00",
+      "id": "gls:release:69e37171-b72b-4c31-9e02-6c441a90e3a1",
+      "version": "0.2.0+d29480a",
+      "title": "SISO Foundry resumable public source campaigns",
+      "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "work_name": "SISO Foundry"
+    },
+    {
+      "kind": "release",
       "occurred_at": "2026-08-02T00:12:29+07:00",
       "id": "gls:release:07f984fa-af0a-422a-9103-6e34a2ac6dbd",
       "version": "0.8.0+d16ac75",
@@ -2055,6 +2312,15 @@
       "title": "Whole Library V30 — God Questions Observatory Release",
       "work_count": 25,
       "release_count": 25
+    },
+    {
+      "kind": "release",
+      "occurred_at": "2026-08-02T00:09:48+07:00",
+      "id": "gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34",
+      "version": "0.2.0+9d17865",
+      "title": "SISO Agent Stack community adoption baseline",
+      "work_id": "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+      "work_name": "SISO Agent Stack Distribution"
     },
     {
       "kind": "release",
