@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:8c8b83dd-6061-48a2-94f9-1af1b22f808e",
+  "occurred_at": "2026-08-01T23:01:50+07:00",
+  "recorded_at": "2026-08-01T23:01:50+07:00",
+  "immutable": true,
+  "entry_type": "initiative_completed",
+  "thread": {
+    "id": "gls:thread:mission-question-architecture",
+    "name": "SISO mission and question-driven research architecture",
+    "kind": "research"
+  },
+  "status": "completed",
+  "title": "Mission and question-driven research architecture published",
+  "summary": "The Library now publishes a public-safe SISO mission charter, a ten-pass question-driven research method, a revisable assumption dependency graph, a targeted books workflow, a reusable Frontier Question dossier, and a worked composable-CRM example.",
+  "intent": "Preserve SISO's durable mission and turn Frontier Questions into a question-first research practice that maps books, repositories, people, operational evidence, assumptions, decisions, and changing answers without making the Great Library itself the operating business system.",
+  "reasoning": [
+    "The mission is documented as SISO direction while the Great Library remains the identity, lineage, and reading surface.",
+    "The method reuses existing Work, Release, Snapshot, Foundry, Knowledge, Evidence Engines, ADR, and Event boundaries instead of introducing a second registry or speculative research platform.",
+    "Global, domain, question, and action assumptions are explicit dependency nodes so changed premises can trigger targeted impact scans.",
+    "Books and other large sources enter through question-specific relevance hypotheses, rights boundaries, atomic claims, counter-evidence, and measured belief updates rather than random ingestion.",
+    "The CRM example distinguishes public product behavior from reusable source code and requires appropriately licensed foundations or original implementation."
+  ],
+  "changes": [
+    {
+      "kind": "commit",
+      "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/100f07cda65efbced0f6792e37df1854ee509e63",
+      "summary": "Published the mission charter, research architecture, reusable dossier, CRM example, generator integration, and mechanical site contracts."
+    },
+    {
+      "kind": "document",
+      "reference": "docs/siso-mission.html",
+      "summary": "Recorded the durable public mission and the correct boundary between the company, research organs, operating systems, and Great Library."
+    },
+    {
+      "kind": "document",
+      "reference": "docs/question-driven-research.html",
+      "summary": "Recorded the research object graph, ten-pass loop, assumption propagation rule, book-reading workflow, and module split test."
+    },
+    {
+      "kind": "document",
+      "reference": "docs/frontier-question-template.html",
+      "summary": "Added the reusable question dossier and composable-CRM worked example."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "gls:release:7e775112-82ee-44d7-9d41-2a22bb471508",
+      "summary": "Pinned the implementation to exact public source commit 100f07c."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "gls:snapshot:64961639-513b-4f75-b57a-b4b07375a9be",
+      "summary": "Selected the mission and question-driven research release through Whole Library V26."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+    ],
+    "release_ids": [
+      "gls:release:7e775112-82ee-44d7-9d41-2a22bb471508"
+    ],
+    "snapshot_ids": [
+      "gls:snapshot:64961639-513b-4f75-b57a-b4b07375a9be"
+    ],
+    "decision_ids": [
+      "gls:decision:c1217342-d5cb-4015-bf1b-b04034d09f8a"
+    ]
+  },
+  "coordination": {
+    "owner": "Great Library research maintainer",
+    "branch": "codex/mission-question-architecture-20260801",
+    "reserved_paths": []
+  },
+  "visibility": "public",
+  "predecessor_event_id": "gls:event:76ac7218-afe7-4f2c-bb31-b2f27555f67f",
+  "evidence": [
+    {
+      "kind": "registry_validation",
+      "reference": "repo-check:great-library-mission-questions:100f07c",
+      "observed_at": "2026-08-01",
+      "summary": "All Great Library gates passed with twenty-four Works, fifty-five pre-selection Releases, twenty-five pre-selection Snapshots, eight Events, forty-six HTML pages, and fifty-four published files."
+    },
+    {
+      "kind": "public_locator",
+      "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/100f07cda65efbced0f6792e37df1854ee509e63",
+      "observed_at": "2026-08-01",
+      "summary": "The exact mission and research-architecture implementation resolves from the public repository."
+    }
+  ],
+  "next_actions": [
+    "Instantiate the next accepted Frontier Question from the reusable dossier only when its steward, scope, publication boundary, and evidence plan are ready.",
+    "Promote the operating method into a separate Work or service only after independent code, operators, cadence, or corpus lifecycle justify the split."
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T15:54:01.000Z",
+  "generated_at": "2026-08-01T16:01:50.000Z",
   "base_path": "/",
   "works": [
     {
@@ -234,9 +234,9 @@
       "locator_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:6b858048-2b40-4802-a33c-0c38289ac07a",
-      "active_release_version": "0.5.0+b30f3a9",
-      "artifact_revision": "b30f3a9976203620c9c3c9300855f39c33f45e44"
+      "active_release_id": "gls:release:7e775112-82ee-44d7-9d41-2a22bb471508",
+      "active_release_version": "0.6.0+100f07c",
+      "artifact_revision": "100f07cda65efbced0f6792e37df1854ee509e63"
     },
     {
       "owner": "Lordsisodia",
@@ -3313,44 +3313,11 @@
   },
   "intelligence": {
     "counts": {
-      "events": 8,
+      "events": 9,
       "decisions": 4,
-      "active_initiatives": 1,
-      "registry_changes": 80
+      "active_initiatives": 0,
+      "registry_changes": 82
     },
-    "active_initiatives": [
-      {
-        "event_id": "gls:event:76ac7218-afe7-4f2c-bb31-b2f27555f67f",
-        "thread_id": "gls:thread:mission-question-architecture",
-        "name": "SISO mission and question-driven research architecture",
-        "status": "active",
-        "title": "Mission and question-driven research architecture started",
-        "intent": "Preserve SISO's durable mission and turn Frontier Questions into a question-first research practice that maps books, repositories, people, operational evidence, assumptions, decisions, and changing answers without making the Great Library itself the operating business system.",
-        "occurred_at": "2026-08-01T22:54:01+07:00",
-        "owner": "Great Library research maintainer",
-        "branch": "codex/mission-question-architecture-20260801",
-        "reserved_paths": [
-          "docs/siso-mission.html",
-          "docs/question-driven-research.html",
-          "docs/frontier-question-template.html",
-          "docs/research-question-model.html",
-          "docs/README.md",
-          "README.md",
-          "CURRENT_STATE.md",
-          "scripts/build.mjs",
-          "scripts/check-site.mjs",
-          "tests/research-contract.test.mjs",
-          "registry/events/2026-08-01-mission-question-architecture-*.json",
-          "registry/releases/great-library-*.json",
-          "registry/snapshots/whole-library-v*.json",
-          "site/"
-        ],
-        "next_actions": [
-          "Publish the public-safe SISO mission charter.",
-          "Publish the question-driven research method, assumption graph, reusable template, and CRM worked example.",
-          "Integrate, verify, release, select, deploy, and close the Event thread with exact evidence."
-        ]
-      }
-    ]
+    "active_initiatives": []
   }
 }
