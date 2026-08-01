@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "decision",
+  "id": "gls:decision:aa7ff9e5-5956-424e-8bf1-c172d584403c",
+  "decision_key": "ADR-0002",
+  "title": "Promote capabilities through owning Works",
+  "status": "accepted",
+  "decided_at": "2026-08-01T22:18:50+07:00",
+  "immutable": true,
+  "context": "Useful hooks, skills, playbooks, runtime mechanisms, and agent patterns are distributed across local and public source, but raw discovery must not create public ownership or portability claims.",
+  "decision": "Foundry discovers; the Library records reviewed candidates in Source Inventories; the owning Work extracts, verifies, and releases; the Agent Stack pins only verified releases.",
+  "rationale": [
+    "Discovery evidence is weaker than a Release Manifest and must not be promoted automatically.",
+    "Independent owners preserve coherent boundaries for Hooks, Skills, Playbooks, Runtime, and integrations.",
+    "A staged lifecycle makes blockers and the next evidence gate queryable."
+  ],
+  "alternatives": [
+    { "option": "Copy every useful mechanism directly into the Agent Stack", "disposition": "rejected", "reason": "That erases ownership, provenance, tests, and independent release history." },
+    { "option": "Keep discoveries only in private notes", "disposition": "rejected", "reason": "Other agents would repeatedly rediscover the same mechanisms and boundaries." },
+    { "option": "Use evidence-gated Source Inventories and owner Releases", "disposition": "chosen", "reason": "It separates candidate knowledge from verified public distribution claims." }
+  ],
+  "consequences": {
+    "positive": ["Candidate mechanisms remain visible without being overclaimed.", "Every advanced stage binds evidence, ownership, Releases, Snapshots, and Stack receipts."],
+    "negative": ["Promotion takes more steps than copying files into a bundle."],
+    "follow_ups": ["Build a Foundry exporter that proposes candidates only into ignored local staging."]
+  },
+  "scope": {
+    "work_ids": ["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1", "gls:work:4198f323-9855-43f6-a99a-72143086818e", "gls:work:b9196c61-901f-4105-93d9-899876d17016"],
+    "source_inventory_ids": ["gls:source-inventory:ce88a0e3-ffa0-459a-836a-52824d253e34"]
+  },
+  "evidence": [{ "kind": "documentation", "reference": "docs/agent-capability-promotion.html", "observed_at": "2026-08-01", "summary": "The operating doctrine records the discovery, ownership, verification, Library, and Stack boundaries." }]
+}

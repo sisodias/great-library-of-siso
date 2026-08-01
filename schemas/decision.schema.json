@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:siso:great-library:schema:decision:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "id", "decision_key", "title", "status", "decided_at", "immutable", "context", "decision", "rationale", "alternatives", "consequences", "scope", "evidence"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "decision" },
+    "id": { "$ref": "common.schema.json#/$defs/decisionId" },
+    "decision_key": { "type": "string", "pattern": "^ADR-[0-9]{4}$" },
+    "title": { "type": "string", "minLength": 3 },
+    "status": { "enum": ["proposed", "accepted", "rejected"] },
+    "decided_at": { "type": "string", "format": "date-time" },
+    "immutable": { "const": true },
+    "context": { "type": "string", "minLength": 10 },
+    "decision": { "type": "string", "minLength": 10 },
+    "rationale": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 3 } },
+    "alternatives": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["option", "disposition", "reason"],
+        "properties": {
+          "option": { "type": "string", "minLength": 3 },
+          "disposition": { "enum": ["chosen", "rejected", "deferred"] },
+          "reason": { "type": "string", "minLength": 3 }
+        }
+      }
+    },
+    "consequences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["positive", "negative", "follow_ups"],
+      "properties": {
+        "positive": { "type": "array", "items": { "type": "string", "minLength": 3 } },
+        "negative": { "type": "array", "items": { "type": "string", "minLength": 3 } },
+        "follow_ups": { "type": "array", "items": { "type": "string", "minLength": 3 } }
+      }
+    },
+    "scope": { "$ref": "common.schema.json#/$defs/registryScope" },
+    "supersedes_decision_id": { "$ref": "common.schema.json#/$defs/decisionId" },
+    "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/evidence" } }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "decision",
+  "id": "gls:decision:7bb6b747-8edd-48b6-8769-2df50a1d42de",
+  "decision_key": "ADR-0001",
+  "title": "Keep public truth in registry records",
+  "status": "accepted",
+  "decided_at": "2026-07-30T05:38:24+07:00",
+  "immutable": true,
+  "context": "The Library needs stable identity and evidence that survive repository moves, folder reorganizations, generated-site changes, and local-machine replacement.",
+  "decision": "Schemas and accepted registry records are authoritative. HTML, JSON catalogs, future CLI surfaces, and future MCP surfaces are generated projections over those records.",
+  "rationale": [
+    "A Work can remain stable while its repository, owner, section, and delivery surface change.",
+    "Release Manifests preserve exact evidence and Snapshots name the selected recursive view.",
+    "One source of truth prevents documentation, websites, and agent tools from becoming competing catalogs."
+  ],
+  "alternatives": [
+    { "option": "Treat the generated website as canonical", "disposition": "rejected", "reason": "Presentation markup is a lossy projection and is unsafe for durable machine identity." },
+    { "option": "Infer identity from repository and folder layout", "disposition": "rejected", "reason": "Paths and repository boundaries change and must not rewrite Work identity." },
+    { "option": "Use typed registry records with generated projections", "disposition": "chosen", "reason": "It gives humans and agents one validated public contract." }
+  ],
+  "consequences": {
+    "positive": ["Agents can resolve identity, selected versions, evidence, and relationships without scraping prose.", "Presentation and access layers can evolve independently."],
+    "negative": ["Material changes require schema-valid records and an immutable publication sequence."],
+    "follow_ups": ["Keep generated files reproducible and mechanically checked against accepted records."]
+  },
+  "scope": { "work_ids": ["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"], "repository_urls": ["https://github.com/Lordsisodia/great-library-of-siso"] },
+  "evidence": [{ "kind": "documentation", "reference": "docs/registry-model.md", "observed_at": "2026-07-30", "summary": "The registry model defines schemas and accepted records as the source of all projections." }]
+}

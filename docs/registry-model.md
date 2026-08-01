@@ -53,6 +53,14 @@ schemas + accepted registry records
 
 All publication and access surfaces derive from the same contracts. Generated item pages must not be edited by hand.
 
+## Events and Decisions
+
+Works, Releases, Assemblies, Source Inventories, and Snapshots describe the Library estate. Immutable **Events** describe operational motion: intent, reasoning, changes, status, evidence, active ownership, reserved paths, and next actions. Event threads are append-only; current initiative state is derived from the one validated thread head.
+
+Immutable **Decisions** are machine-readable ADRs. They preserve context, the accepted boundary, alternatives, consequences, scope, and evidence. A successor Decision may supersede an earlier Decision by reference, but accepted history is never rewritten.
+
+The generated `intelligence.json` combines Events and Decisions with an automatic chronological projection of every Release and Snapshot. It is the cold-agent coordination interface, not a replacement registry. Every whole-Library Snapshot from V24 onward must be referenced by an Event.
+
 ---
 
 The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0", "record_type": "event", "id": "gls:event:a9bd3960-a506-43e2-a42e-834ba45d3d2b",
+  "occurred_at": "2026-08-01T20:28:14+07:00", "recorded_at": "2026-08-01T22:36:40+07:00", "immutable": true,
+  "entry_type": "change_published", "thread": { "id": "gls:thread:portable-agent-stack-v2", "name": "Portable Agent Stack V2", "kind": "release" }, "status": "completed",
+  "title": "Portable Agent Stack V2 cataloged",
+  "summary": "Hooks and the one-clone Agent Stack Distribution were released and selected with an immutable complete-stack Assembly while component Work identities remained independent.",
+  "intent": "Make the complete public Claude Code and Codex-oriented stack distributable without collapsing Skills, Hooks, Playbooks, Runtime, Brain, and integrations into one Work.",
+  "reasoning": ["Distribution is an Assembly and installer concern, not a reason to erase component ownership.", "Exact commits and clean-install receipts are required before portability claims."],
+  "changes": [{ "kind": "commit", "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/bc7093a", "summary": "Cataloged Portable Agent Stack V2." }, { "kind": "registry_record", "reference": "gls:assembly:ef7be4ec-da44-4c95-b43f-096e1e8bb85d", "summary": "Selected the complete portable stack composition." }],
+  "scope": { "work_ids": ["gls:work:4198f323-9855-43f6-a99a-72143086818e", "gls:work:b9196c61-901f-4105-93d9-899876d17016"], "release_ids": ["gls:release:98ba8230-3cdc-478b-b855-e9d808655c46", "gls:release:a085911a-30f7-4075-b8e1-680a65a2a0cd"], "snapshot_ids": ["gls:snapshot:95cec3fe-9c7a-4135-9eb6-02fdecc3696d"], "assembly_ids": ["gls:assembly:ef7be4ec-da44-4c95-b43f-096e1e8bb85d"] },
+  "coordination": { "owner": "Great Library maintainer", "branch": "main", "reserved_paths": [] }, "visibility": "public",
+  "evidence": [{ "kind": "release_receipt", "reference": "repo-check:siso-agent-stack:f4a9626", "observed_at": "2026-08-01", "summary": "Clean public-source and non-external installs plus adversarial review supported the selected Stack release." }], "next_actions": []
+}

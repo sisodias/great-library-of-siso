@@ -23,6 +23,12 @@ The Library now accepts publication-safe, multi-source agent capability campaign
 
 The next engineering milestone is a Foundry candidate exporter that writes only ignored local staging data. Reviewed metadata may then be proposed as a successor Source Inventory; discovery must never create Works, Releases, Assemblies, or Snapshots automatically.
 
+## Active program: ecosystem intelligence
+
+The Library now carries append-only Event threads, machine-readable ADRs, active agent scope reservations, and an automatic Release/Snapshot changelog. The generated `intelligence.json` is the cold-agent entry point; the generated HTML is a reading projection only.
+
+The next access milestone is to expose this same read model through the near-read-only Library CLI and MCP surface. Event authoring remains a reviewed repository change until agent-hook automation proves it can preserve privacy, exact evidence, linear thread history, and non-overlapping reservations.
+
 ## Explicitly out of scope
 
 - combining all cataloged source into a giant monorepo;

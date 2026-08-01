@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 
 const base = process.env.GLS_IMMUTABLE_BASE || "HEAD";
-const immutableDirectories = ["registry/releases", "registry/snapshots", "registry/assemblies"];
+const immutableDirectories = ["registry/releases", "registry/snapshots", "registry/assemblies", "registry/decisions", "registry/events"];
 const inventoryDirectory = "registry/source-inventories";
 
 function git(args, allowFailure = false) {

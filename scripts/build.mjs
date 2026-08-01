@@ -191,6 +191,7 @@ function nav(active) {
       <a ${active === 'library' ? 'aria-current="page"' : ''} href="${href('')}">Library</a>
       <a ${active === 'agents' ? 'aria-current="page"' : ''} href="${href('agents/')}">Agents</a>
       <a ${active === 'promotion' ? 'aria-current="page"' : ''} href="${href('promotion/')}">Promotion</a>
+      <a ${active === 'intelligence' ? 'aria-current="page"' : ''} href="${href('intelligence/')}">Intelligence</a>
       <a ${active === 'research' ? 'aria-current="page"' : ''} href="${href('research/')}">Research</a>
       <a ${active === 'estate' ? 'aria-current="page"' : ''} href="${href('estate/')}">Repo estate</a>
       <a ${active === 'releases' ? 'aria-current="page"' : ''} href="${href('releases/')}">Releases</a>
@@ -364,6 +365,83 @@ function promotionPage(projection) {
     <section class="section shell promotion-campaigns">${campaignSections || emptyCatalog('No accepted agent capability promotion inventories are present in this build.')}</section>
     <section class="section shell"><div class="section-heading compact">${eyebrow('Campaign totals')}<h2>${esc(projection.unit_count)} candidates</h2><p>Across ${esc(projection.inventory_count)} accepted ${projection.inventory_count === 1 ? 'inventory' : 'inventories'}.</p></div><div class="promotion-counts">${promotionCountGroup('Stage', projection.counts.stage)}${promotionCountGroup('Priority', projection.counts.priority)}${promotionCountGroup('Target', projection.counts.target)}</div></section>
     <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Promotion units')}<h2>Candidate gates</h2><p>Evidence-led status, not release status.</p></div><div class="promotion-units">${unitCards || emptyCatalog('Promotion candidates will appear only from accepted agent capability source inventories.')}</div></section>`,
+  });
+}
+
+function buildIntelligenceProjection(rawEvents, rawDecisions, releases, snapshots, worksById) {
+  const predecessorIds = new Set(rawEvents.map((event) => event.predecessor_event_id).filter(Boolean));
+  const supersededDecisionIds = new Set(rawDecisions.map((decision) => decision.supersedes_decision_id).filter(Boolean));
+  const eventHeads = rawEvents.filter((event) => !predecessorIds.has(event.id));
+  const liveStatuses = new Set(['planned', 'active', 'blocked']);
+  const resolveScope = (scope = {}) => ({
+    ...scope,
+    works: (scope.work_ids || []).map((id) => {
+      const work = worksById.get(id);
+      return { id, name: work?.name || id, library_url: work ? href(`works/${work.slug}/`) : null };
+    }),
+  });
+  const events = [...rawEvents].sort((a, b) => b.occurred_at.localeCompare(a.occurred_at)).map(({ __file, ...event }) => ({ ...event, resolved_scope: resolveScope(event.scope) }));
+  const decisions = [...rawDecisions].sort((a, b) => b.decided_at.localeCompare(a.decided_at)).map(({ __file, ...decision }) => ({ ...decision, active: decision.status === 'accepted' && !supersededDecisionIds.has(decision.id), resolved_scope: resolveScope(decision.scope) }));
+  const activeInitiatives = eventHeads.filter((event) => liveStatuses.has(event.status)).sort((a, b) => b.occurred_at.localeCompare(a.occurred_at)).map((event) => ({
+    event_id: event.id,
+    thread_id: event.thread.id,
+    name: event.thread.name,
+    status: event.status,
+    title: event.title,
+    intent: event.intent,
+    occurred_at: event.occurred_at,
+    owner: event.coordination.owner,
+    branch: event.coordination.branch,
+    reserved_paths: event.coordination.reserved_paths,
+    next_actions: event.next_actions,
+  }));
+  const registryChanges = [
+    ...releases.map((release) => ({
+      kind: 'release', occurred_at: release.date, id: release.id, version: release.version,
+      title: release.raw.title || `${worksById.get(release.workId)?.name || release.workId} ${release.version}`,
+      work_id: release.workId, work_name: worksById.get(release.workId)?.name || release.workId,
+    })),
+    ...snapshots.map((snapshot) => ({
+      kind: 'snapshot', occurred_at: snapshot.created_at, id: snapshot.id, version: snapshot.version,
+      title: snapshot.name, work_count: snapshot.metadata_completeness?.work_count,
+      release_count: snapshot.metadata_completeness?.release_count,
+    })),
+  ].sort((a, b) => String(b.occurred_at).localeCompare(String(a.occurred_at)));
+  return {
+    counts: {
+      events: events.length,
+      decisions: decisions.length,
+      active_initiatives: activeInitiatives.length,
+      registry_changes: registryChanges.length,
+    },
+    active_initiatives: activeInitiatives,
+    decisions,
+    events,
+    registry_changes: registryChanges,
+  };
+}
+
+function intelligencePage(projection) {
+  const active = projection.active_initiatives.map((initiative) => `<article>
+    <span>${esc(initiative.status)}</span><div><h2>${esc(initiative.name)}</h2><p>${esc(initiative.intent)}</p><p><code>${esc(initiative.branch)}</code> · ${esc(initiative.owner)}</p><p><b>Reserved:</b> ${initiative.reserved_paths.map((value) => `<code>${esc(value)}</code>`).join(' · ')}</p>${initiative.next_actions.length ? `<ul>${initiative.next_actions.map((action) => `<li>${esc(action)}</li>`).join('')}</ul>` : ''}</div>
+  </article>`).join('');
+  const decisions = projection.decisions.map((decision) => `<article id="${esc(decision.decision_key)}">
+    <span>${esc(decision.decision_key)} · ${decision.active ? 'active' : esc(decision.status)}</span><div><h2>${esc(decision.title)}</h2><p>${esc(decision.decision)}</p><details><summary>Context, reasoning, and consequences</summary><p><b>Context:</b> ${esc(decision.context)}</p><h3>Rationale</h3><ul>${decision.rationale.map((item) => `<li>${esc(item)}</li>`).join('')}</ul><h3>Alternatives</h3><ul>${decision.alternatives.map((item) => `<li><b>${esc(item.option)}</b> · ${esc(item.disposition)} — ${esc(item.reason)}</li>`).join('')}</ul><h3>Consequences</h3><ul>${[...decision.consequences.positive, ...decision.consequences.negative, ...decision.consequences.follow_ups].map((item) => `<li>${esc(item)}</li>`).join('')}</ul></details></div>
+  </article>`).join('');
+  const authoredEvents = projection.events.map((event) => {
+    const workLinks = event.resolved_scope.works.map((work) => work.library_url ? `<a href="${esc(work.library_url)}">${esc(work.name)}</a>` : `<code>${esc(work.id)}</code>`).join(' · ');
+    return `<article id="${esc(event.id)}"><span>${esc(event.occurred_at)} · ${esc(event.entry_type.replaceAll('_', ' '))} · ${esc(event.status)}</span><div><h2>${esc(event.title)}</h2><p>${esc(event.summary)}</p><p><b>Intent:</b> ${esc(event.intent)}</p><details><summary>Reasoning, changes, evidence, and handoff</summary><h3>Reasoning</h3><ul>${event.reasoning.map((item) => `<li>${esc(item)}</li>`).join('')}</ul><h3>Changes</h3><ul>${event.changes.map((item) => `<li><code>${esc(item.kind)}</code> · ${esc(item.reference)} — ${esc(item.summary)}</li>`).join('')}</ul>${workLinks ? `<p><b>Works:</b> ${workLinks}</p>` : ''}<p><b>Coordination:</b> ${esc(event.coordination.owner)} · <code>${esc(event.coordination.branch)}</code></p><h3>Evidence</h3><ul>${event.evidence.map((item) => `<li><code>${esc(item.reference)}</code> — ${esc(item.summary)}</li>`).join('')}</ul>${event.next_actions.length ? `<h3>Next actions</h3><ul>${event.next_actions.map((item) => `<li>${esc(item)}</li>`).join('')}</ul>` : ''}</details></div></article>`;
+  }).join('');
+  const registryChanges = projection.registry_changes.map((change) => `<article><span>${esc(change.occurred_at)} · ${esc(change.kind)}</span><div><h2>${esc(change.title)}</h2><p><code>${esc(change.id)}</code> · version ${esc(change.version)}</p>${change.kind === 'snapshot' ? `<p>${esc(change.work_count)} Works · ${esc(change.release_count)} Releases selected</p>` : `<p>${esc(change.work_name)}</p>`}</div></article>`).join('');
+  return page({
+    title: 'Ecosystem Intelligence', active: 'intelligence', rootClass: 'intelligence-page',
+    description: 'Append-only events, active initiatives, architectural decisions, releases, and snapshots across The Great Library of SISO.',
+    body: `<section class="subhero shell">${eyebrow('Library / Ecosystem Intelligence')}<div><h1>Ecosystem Intelligence</h1><p>What is moving, what changed, why it changed, who owns the lane, and where the authoritative evidence lives.</p></div><span class="folio">I—01</span></section>
+    <aside class="promotion-boundary shell"><b>Data first.</b><p><a href="${href('intelligence.json')}">intelligence.json</a> is the agent interface. This HTML is one generated chronological reading surface. Git remains the audit trail; registry records remain public truth.</p></aside>
+    <section class="section shell release-index"><div class="section-heading compact">${eyebrow('Live coordination')}<h2>${esc(projection.counts.active_initiatives)} active initiatives</h2><p>Thread-head state with explicit branch and path reservations.</p></div>${active || emptyCatalog('No active initiative is currently reserved.')}</section>
+    <section class="section shell release-index"><div class="section-heading compact">${eyebrow('Architecture decisions')}<h2>${esc(projection.counts.decisions)} ADRs</h2><p>Immutable decisions with context, alternatives, consequences, and evidence.</p></div>${decisions}</section>
+    <section class="section shell release-index"><div class="section-heading compact">${eyebrow('Authored event ledger')}<h2>${esc(projection.counts.events)} reasoned events</h2><p>Close-of-block intelligence, not transcript dumps.</p></div>${authoredEvents}</section>
+    <section class="section shell release-index"><div class="section-heading compact">${eyebrow('Automatic registry changelog')}<h2>${esc(projection.counts.registry_changes)} immutable changes</h2><p>Every accepted Release and Snapshot, derived directly from registry records.</p></div>${registryChanges}</section>`,
   });
 }
 
@@ -579,11 +657,11 @@ async function emit(path, contents) {
   await writeFile(target, contents);
 }
 
-const [rawWorks, rawReleases, assemblies, sourceInventories, snapshots] = await Promise.all([
-  loadRecords('works'), loadRecords('releases'), loadRecords('assemblies'), loadRecords('source-inventories'), loadRecords('snapshots'),
+const [rawWorks, rawReleases, assemblies, sourceInventories, snapshots, decisions, events] = await Promise.all([
+  loadRecords('works'), loadRecords('releases'), loadRecords('assemblies'), loadRecords('source-inventories'), loadRecords('snapshots'), loadRecords('decisions'), loadRecords('events'),
 ]);
-const sourceDates = [...rawWorks, ...rawReleases, ...assemblies, ...sourceInventories, ...snapshots]
-  .flatMap((record) => [record.updated_at, record.released_at, record.created_at, record.observed_at])
+const sourceDates = [...rawWorks, ...rawReleases, ...assemblies, ...sourceInventories, ...snapshots, ...decisions, ...events]
+  .flatMap((record) => [record.updated_at, record.released_at, record.created_at, record.observed_at, record.decided_at, record.occurred_at, record.recorded_at])
   .filter(Boolean)
   .sort();
 const latestSourceDate = sourceDates.at(-1) || '1970-01-01';
@@ -609,6 +687,7 @@ for (const section of sections) {
 }
 const repositoryEstate = buildRepositoryEstate(works, releases, latestSnapshot);
 const promotion = buildPromotionProjection(sourceInventories, works);
+const intelligence = buildIntelligenceProjection(events, decisions, releases, snapshots, worksById);
 
 await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
@@ -623,6 +702,7 @@ await emit('docs/siso-knowledge-model.html', await readFile(join(ROOT, 'docs', '
 await emit('docs/research-question-model.html', await readFile(join(ROOT, 'docs', 'research-question-model.html'), 'utf8'));
 await emit('docs/onboarding.html', await readFile(join(ROOT, 'docs', 'onboarding.html'), 'utf8'));
 await emit('docs/agent-capability-promotion.html', await readFile(join(ROOT, 'docs', 'agent-capability-promotion.html'), 'utf8'));
+await emit('docs/ecosystem-intelligence.html', await readFile(join(ROOT, 'docs', 'ecosystem-intelligence.html'), 'utf8'));
 await emit('docs/registry-model.md', await readFile(join(ROOT, 'docs', 'registry-model.md'), 'utf8'));
 await emit('docs/using-the-library.md', await readFile(join(ROOT, 'docs', 'using-the-library.md'), 'utf8'));
 await emit('index.html', homePage(works, releases, snapshots, assemblies, sections));
@@ -630,13 +710,15 @@ const agentsSection = sections.find((section) => section.slug === 'agents');
 const researchSection = sections.find((section) => section.slug === 'research');
 await emit('agents/index.html', agentsPage(works, assemblies, latestSnapshot, agentsSection));
 await emit('promotion/index.html', promotionPage(promotion));
+await emit('intelligence/index.html', intelligencePage(intelligence));
 if (researchSection) await emit('research/index.html', researchPage(works, latestSnapshot, researchSection));
 await emit('releases/index.html', releaseIndex(releases, worksById));
 await emit('snapshots/index.html', snapshotIndex(snapshots));
 await emit('estate/index.html', estatePage(repositoryEstate, latestSnapshot));
 await emit('estate.json', `${JSON.stringify({ generated_at: generatedAt, snapshot_id: latestSnapshot?.id || null, snapshot_version: latestSnapshot?.version || null, repositories: repositoryEstate }, null, 2)}\n`);
 await emit('promotion.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, ...promotion }, null, 2)}\n`);
+await emit('intelligence.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, ...intelligence }, null, 2)}\n`);
 for (const work of works) await emit(`works/${work.slug}/index.html`, workPage(work, releases, worksById, activeReleasesByWork.get(work.id)));
-await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity, section: work.section })), repositories: repositoryEstate, assemblies: assemblies.map(({ __file, ...assembly }) => assembly), source_inventories: sourceInventories.map(({ __file, ...inventory }) => inventory), promotion }, null, 2)}\n`);
+await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity, section: work.section })), repositories: repositoryEstate, assemblies: assemblies.map(({ __file, ...assembly }) => assembly), source_inventories: sourceInventories.map(({ __file, ...inventory }) => inventory), promotion, intelligence: { counts: intelligence.counts, active_initiatives: intelligence.active_initiatives } }, null, 2)}\n`);
 
-console.log(`Built ${works.length} Works, ${releases.length} Releases, ${repositoryEstate.length} Repositories, ${assemblies.length} Assemblies, ${sourceInventories.length} Source Inventories, and ${snapshots.length} Snapshots at ${BASE}`);
+console.log(`Built ${works.length} Works, ${releases.length} Releases, ${repositoryEstate.length} Repositories, ${assemblies.length} Assemblies, ${sourceInventories.length} Source Inventories, ${snapshots.length} Snapshots, ${decisions.length} Decisions, and ${events.length} Events at ${BASE}`);

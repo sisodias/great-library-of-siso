@@ -44,6 +44,12 @@ Discovery must not create a Work automatically. Promote only after direct review
 
 Read the [agent capability discovery and promotion program](docs/agent-capability-promotion.html) before advancing a candidate stage.
 
+## Ecosystem intelligence and parallel work
+
+Read `site/intelligence.json` and the [Ecosystem Intelligence contract](docs/ecosystem-intelligence.html) before opening a parallel lane. An active lane must first publish an immutable `initiative_started` Event on canonical `main` with its public branch, machine-neutral reserved paths, intent, owner, and next actions. Do not publish a local worktree path.
+
+Close the lane with a successor Event that references its predecessor and records completion, blockage, correction, or cancellation with exact evidence. Never edit an accepted Event or Decision. Validation rejects forked event history, unresolved scope, overlapping active reservations, invisible new Snapshots, and accepted ADRs that are absent from the Event graph.
+
 ## Clean-room publication checklist
 
 Before opening a pull request, confirm that:

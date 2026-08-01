@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0", "record_type": "event", "id": "gls:event:96f5f500-5dc8-4da1-9bac-2c22671398b6",
+  "occurred_at": "2026-08-01T22:24:43+07:00", "recorded_at": "2026-08-01T22:36:40+07:00", "immutable": true,
+  "entry_type": "initiative_completed", "thread": { "id": "gls:thread:agent-capability-promotion", "name": "Agent capability discovery and promotion", "kind": "initiative" }, "status": "completed",
+  "title": "Agent capability promotion pipeline released",
+  "summary": "The Library accepted an immutable 18-unit capability campaign and now enforces ownership, evidence, Release, Snapshot, and Stack gates across the complete promotion lifecycle.",
+  "intent": "Continuously find valuable agent mechanisms and route them into the correct owning repositories without publishing private state or overstating candidate maturity.",
+  "reasoning": ["Candidates need public visibility before they qualify as Releases.", "Foundry, Library, owning Works, and Stack Distribution have distinct responsibilities."],
+  "changes": [{ "kind": "commit", "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/2c09268dd383c112e36a823e95d34d20cb1fa2bd", "summary": "Added the promotion schema, inventory, validators, tests, and projections." }, { "kind": "commit", "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/8d27e751f25bb9f62b12d4937493f236e8fbeb25", "summary": "Selected the promotion release through Whole Library V23." }],
+  "scope": { "work_ids": ["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"], "release_ids": ["gls:release:6cbb7080-344c-44e9-a6d3-8e924496ec1f"], "snapshot_ids": ["gls:snapshot:f4263d64-eb8b-442d-a651-f045c011675e"], "source_inventory_ids": ["gls:source-inventory:ce88a0e3-ffa0-459a-836a-52824d253e34"], "decision_ids": ["gls:decision:aa7ff9e5-5956-424e-8bf1-c172d584403c"] },
+  "coordination": { "owner": "Great Library maintainer", "branch": "main", "reserved_paths": [] }, "visibility": "public",
+  "evidence": [{ "kind": "registry_validation", "reference": "repo-check:great-library-promotion:2c09268", "observed_at": "2026-08-01", "summary": "Ten promotion contracts, registry validation, build, links, identity, and publication checks passed." }], "next_actions": ["Build a Foundry candidate exporter into ignored local staging without direct public-registry writes."]
+}

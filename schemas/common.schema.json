@@ -8,6 +8,22 @@
     "assemblyId": { "type": "string", "pattern": "^gls:assembly:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
     "sourceInventoryId": { "type": "string", "pattern": "^gls:source-inventory:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
     "artifactId": { "type": "string", "pattern": "^gls:artifact:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "eventId": { "type": "string", "pattern": "^gls:event:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "decisionId": { "type": "string", "pattern": "^gls:decision:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "threadId": { "type": "string", "pattern": "^gls:thread:[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "registryScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "work_ids": { "type": "array", "items": { "$ref": "#/$defs/workId" } },
+        "release_ids": { "type": "array", "items": { "$ref": "#/$defs/releaseId" } },
+        "snapshot_ids": { "type": "array", "items": { "$ref": "#/$defs/snapshotId" } },
+        "assembly_ids": { "type": "array", "items": { "$ref": "#/$defs/assemblyId" } },
+        "source_inventory_ids": { "type": "array", "items": { "$ref": "#/$defs/sourceInventoryId" } },
+        "decision_ids": { "type": "array", "items": { "$ref": "#/$defs/decisionId" } },
+        "repository_urls": { "type": "array", "items": { "type": "string", "format": "uri" } }
+      }
+    },
     "evidence": {
       "type": "object",
       "additionalProperties": false,

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0", "record_type": "event", "id": "gls:event:4b139e42-7cdd-4d97-b715-a70e7d77d3de",
+  "occurred_at": "2026-07-30T05:38:24+07:00", "recorded_at": "2026-08-01T22:36:40+07:00", "immutable": true,
+  "entry_type": "change_published", "thread": { "id": "gls:thread:library-foundation", "name": "Great Library foundation", "kind": "release" }, "status": "completed",
+  "title": "Repository estate foundation published",
+  "summary": "The Library established stable Works, evidence-bearing Releases, whole-Library Snapshots, and generated public projections as its durable foundation.",
+  "intent": "Create a public registry that agents can query without treating a laptop folder, website, or repository layout as permanent identity.",
+  "reasoning": ["Stable identity and immutable evidence must survive reorganizations.", "Generated human and machine surfaces must share one source."],
+  "changes": [{ "kind": "commit", "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/e4a7118", "summary": "Published the repository estate foundation." }, { "kind": "document", "reference": "docs/registry-model.md", "summary": "Recorded the Work, Release, Snapshot, Assembly, and projection model." }],
+  "scope": { "work_ids": ["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"], "decision_ids": ["gls:decision:7bb6b747-8edd-48b6-8769-2df50a1d42de"], "repository_urls": ["https://github.com/Lordsisodia/great-library-of-siso"] },
+  "coordination": { "owner": "Great Library maintainer", "branch": "main", "reserved_paths": [] }, "visibility": "public",
+  "evidence": [{ "kind": "public_locator", "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/e4a7118", "observed_at": "2026-07-30", "summary": "The foundation commit is publicly resolvable." }], "next_actions": []
+}

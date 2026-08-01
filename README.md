@@ -66,6 +66,8 @@ Read the [SISO Knowledge model](docs/siso-knowledge-model.html) for the source-b
 
 The Research section now also hosts **Frontier Questions**—the public projection of the standing research portfolio historically called God Questions. Each question is a stable Work; each accepted answer is an immutable Release; Foundry buckets and other source scopes define the evidence universe without copying the warehouse into this repository. Read the [Frontier Questions model](docs/research-question-model.html).
 
+**Ecosystem Intelligence** adds the operational memory layer: immutable Events for intent, changes, ownership, evidence, and handoffs; machine-readable ADRs for architectural decisions; active branch/path reservations for concurrent agents; and an automatic Release/Snapshot changelog. Agents should read `site/intelligence.json`; humans can read the generated `/intelligence/` timeline. Read the [operating contract](docs/ecosystem-intelligence.html).
+
 ## What you can do
 
 - **Browse** Sections and stable Work detail pages.

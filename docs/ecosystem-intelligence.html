@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="The append-only ecosystem intelligence, ADR, changelog, and multi-agent coordination contract for The Great Library of SISO.">
+  <title>Ecosystem Intelligence — Great Library operating contract</title>
+  <style>body{max-width:960px;margin:0 auto;padding:40px 22px 80px;background:#081018;color:#edf4fa;font:16px/1.6 system-ui,sans-serif}a{color:#78baff}code{color:#76e4b4}h1{font-size:clamp(2.5rem,7vw,5rem);line-height:1}h2{margin-top:2.4em}table{border-collapse:collapse;width:100%}th,td{border:1px solid #2b394b;padding:10px;text-align:left;vertical-align:top}.rule{border-left:4px solid #76e4b4;padding-left:18px}</style>
+</head>
+<body>
+  <main>
+    <p>The Great Library of SISO · Operating contract</p>
+    <h1>Ecosystem Intelligence</h1>
+    <p>The registry explains what exists. Ecosystem Intelligence explains what is moving, what changed, why it changed, which lane owns it, how it was verified, and where the next agent should continue.</p>
+
+    <div class="rule"><p><strong>Canonical split:</strong> immutable records under <code>registry/events/</code> and <code>registry/decisions/</code> are authoritative. <code>/intelligence.json</code> is the machine projection. <code>/intelligence/</code> is one generated chronological reading surface. Git remains the audit trail.</p></div>
+
+    <h2>What each layer answers</h2>
+    <table>
+      <thead><tr><th>Question</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>What is this thing?</td><td>Work</td></tr>
+        <tr><td>What exact version has evidence?</td><td>Release</td></tr>
+        <tr><td>What is selected now?</td><td>Snapshot</td></tr>
+        <tr><td>How do components operate together?</td><td>Assembly</td></tr>
+        <tr><td>What is awaiting promotion?</td><td>Source Inventory</td></tr>
+        <tr><td>What is happening, why, and who owns the lane?</td><td>Event thread</td></tr>
+        <tr><td>Why was an architectural boundary chosen?</td><td>Decision / ADR</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Event threads</h2>
+    <p>An Event is an immutable close-of-block record, not a transcript. It carries intent, reasoning, changes, registry scope, evidence, coordination, and next actions. A successor references one predecessor. The latest Event in the thread derives current state; old Events are never edited.</p>
+    <p>Live states are <code>planned</code>, <code>active</code>, and <code>blocked</code>. A live Event must name its branch and reserve machine-neutral repository paths. Validation rejects forks and overlapping reservations across active thread heads.</p>
+
+    <h2>Agent lane protocol</h2>
+    <ol>
+      <li>Read <code>intelligence.json</code> before opening a lane.</li>
+      <li>Check active initiatives and reserved paths.</li>
+      <li>Publish an immutable <code>initiative_started</code> Event on canonical <code>main</code> before parallel implementation begins.</li>
+      <li>Work only inside the declared branch and scope. Never publish a local worktree path.</li>
+      <li>Close the thread with a successor <code>initiative_completed</code>, <code>initiative_blocked</code>, or <code>correction_recorded</code> Event carrying exact evidence and handoff actions.</li>
+      <li>Every new whole-Library Snapshot from V24 onward must appear in at least one Event.</li>
+    </ol>
+
+    <h2>Decisions are ADRs</h2>
+    <p>A Decision records context, the chosen boundary, rationale, alternatives, consequences, scope, and evidence. Accepted Decisions must enter the Event graph. A later Decision supersedes an earlier one by reference; accepted history is not rewritten.</p>
+
+    <h2>Automatic changelog</h2>
+    <p>The intelligence generator merges every accepted Release and Snapshot into a chronological registry stream. Authored Events add the intent and reasoning that manifests cannot express. This combination gives broad change coverage without asking agents to duplicate registry metadata in prose.</p>
+
+    <h2>Publication boundary</h2>
+    <p>Events may include public branch names, stable IDs, repository URLs, public commits, and verification receipts. They must not contain machine paths, credentials, private topology, client details, personal memory, raw transcripts, or unpublished operational evidence.</p>
+
+    <h2>Five-minute recovery test</h2>
+    <ol>
+      <li>Read the highest numeric Snapshot.</li>
+      <li>Read <code>intelligence.json</code>: active initiatives, latest Events, active Decisions, and recent registry changes.</li>
+      <li>Open the relevant Work, Release, Snapshot, or source record linked by the Event.</li>
+      <li>Resume only when the intended owner, reserved scope, last evidence, and next action are clear.</li>
+    </ol>
+  </main>
+  <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
+</body>
+</html>

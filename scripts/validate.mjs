@@ -77,7 +77,9 @@ const recordGroups = {
   release: { directory: "registry/releases", schema: path.join(root, "schemas/release.schema.json") },
   assembly: { directory: "registry/assemblies", schema: path.join(root, "schemas/assembly.schema.json") },
   source_inventory: { directory: "registry/source-inventories", schema: path.join(root, "schemas/source-inventory.schema.json") },
-  snapshot: { directory: "registry/snapshots", schema: path.join(root, "schemas/snapshot.schema.json") }
+  snapshot: { directory: "registry/snapshots", schema: path.join(root, "schemas/snapshot.schema.json") },
+  decision: { directory: "registry/decisions", schema: path.join(root, "schemas/decision.schema.json") },
+  event: { directory: "registry/events", schema: path.join(root, "schemas/event.schema.json") }
 };
 const records = {};
 for (const [kind, config] of Object.entries(recordGroups)) {
@@ -103,6 +105,8 @@ const releases = uniqueMap(records.release, "releases");
 const assemblies = uniqueMap(records.assembly, "assemblies");
 const sourceInventories = uniqueMap(records.source_inventory, "source inventories");
 const snapshots = uniqueMap(records.snapshot, "snapshots");
+const decisions = uniqueMap(records.decision, "decisions");
+const events = uniqueMap(records.event, "events");
 const promotionLifecycle = ["unverified", "read", "candidate", "owner_assigned", "extracted", "verified", "released", "library_indexed", "stack_pinned", "retired"];
 const stackDistributionWorkId = "gls:work:b9196c61-901f-4105-93d9-899876d17016";
 const artifactIds = new Set();
@@ -278,6 +282,119 @@ for (const [campaignId, inventories] of capabilityCampaigns) {
     }
   }
 }
+
+const decisionKeys = new Set();
+const decisionSuccessorCounts = new Map();
+for (const { file, value: decision } of records.decision) {
+  const label = path.relative(root, file);
+  validateScope(decision.scope, label);
+  if (decisionKeys.has(decision.decision_key)) fail(`${label}: duplicate decision_key ${decision.decision_key}`);
+  decisionKeys.add(decision.decision_key);
+  if (decision.supersedes_decision_id) {
+    const predecessor = decisions.get(decision.supersedes_decision_id)?.value;
+    if (!predecessor) fail(`${label}: supersedes_decision_id ${decision.supersedes_decision_id} does not resolve`);
+    else {
+      if (predecessor.id === decision.id) fail(`${label}: decision cannot supersede itself`);
+      if (predecessor.decided_at >= decision.decided_at) fail(`${label}: superseding decision must be later than its predecessor`);
+      decisionSuccessorCounts.set(predecessor.id, (decisionSuccessorCounts.get(predecessor.id) || 0) + 1);
+    }
+  }
+}
+for (const [predecessorId, count] of decisionSuccessorCounts) if (count > 1) fail(`decision ${predecessorId} has ${count} successors; ADR history must not fork`);
+
+function validateScope(scope, label) {
+  const groups = [
+    ["work_ids", works], ["release_ids", releases], ["snapshot_ids", snapshots],
+    ["assembly_ids", assemblies], ["source_inventory_ids", sourceInventories], ["decision_ids", decisions]
+  ];
+  for (const [field, registry] of groups) {
+    const seen = new Set();
+    for (const id of scope?.[field] ?? []) {
+      if (seen.has(id)) fail(`${label}: duplicate ${field} reference ${id}`);
+      seen.add(id);
+      if (!registry.has(id)) fail(`${label}: ${field} reference ${id} does not resolve`);
+    }
+  }
+}
+
+const eventStatusByType = {
+  initiative_started: new Set(["planned", "active"]),
+  initiative_updated: new Set(["active"]),
+  initiative_blocked: new Set(["blocked"]),
+  initiative_resumed: new Set(["active"]),
+  initiative_completed: new Set(["completed"]),
+  decision_recorded: new Set(["completed", "informational"]),
+  change_published: new Set(["completed"]),
+  verification_completed: new Set(["completed"]),
+  correction_recorded: new Set(["completed"])
+};
+const eventsByThread = new Map();
+const referencedDecisionIds = new Set();
+for (const { file, value: event } of records.event) {
+  const label = path.relative(root, file);
+  validateScope(event.scope, label);
+  for (const id of event.scope.decision_ids ?? []) referencedDecisionIds.add(id);
+  if (Date.parse(event.recorded_at) < Date.parse(event.occurred_at)) fail(`${label}: recorded_at cannot precede occurred_at`);
+  if (!eventStatusByType[event.entry_type]?.has(event.status)) fail(`${label}: entry_type ${event.entry_type} cannot use status ${event.status}`);
+  if (event.entry_type === "decision_recorded" && !(event.scope.decision_ids?.length)) fail(`${label}: decision_recorded Event requires at least one decision_id`);
+  for (const reservedPath of event.coordination.reserved_paths) {
+    if (reservedPath.startsWith("/") || reservedPath.includes("..") || reservedPath.includes("\\")) fail(`${label}: reserved path must be machine-neutral: ${reservedPath}`);
+  }
+  if (["planned", "active", "blocked"].includes(event.status) && event.coordination.reserved_paths.length === 0) fail(`${label}: live initiative requires at least one reserved path`);
+  if (!eventsByThread.has(event.thread.id)) eventsByThread.set(event.thread.id, []);
+  eventsByThread.get(event.thread.id).push(event);
+}
+for (const decision of records.decision.map((entry) => entry.value).filter((value) => value.status === "accepted")) {
+  if (!referencedDecisionIds.has(decision.id)) fail(`accepted decision ${decision.decision_key} must be referenced by at least one Event`);
+}
+
+const activeThreadHeads = [];
+for (const [threadId, threadEvents] of eventsByThread) {
+  const predecessorCounts = new Map();
+  const predecessorIds = new Set();
+  for (const event of threadEvents) {
+    if (!event.predecessor_event_id) continue;
+    const predecessor = events.get(event.predecessor_event_id)?.value;
+    if (!predecessor) {
+      fail(`event thread ${threadId}: predecessor ${event.predecessor_event_id} does not resolve`);
+      continue;
+    }
+    predecessorIds.add(predecessor.id);
+    predecessorCounts.set(predecessor.id, (predecessorCounts.get(predecessor.id) || 0) + 1);
+    if (predecessor.thread.id !== threadId) fail(`event thread ${threadId}: predecessor ${predecessor.id} belongs to ${predecessor.thread.id}`);
+    if (predecessor.thread.name !== event.thread.name || predecessor.thread.kind !== event.thread.kind) fail(`event thread ${threadId}: stable thread identity was repurposed`);
+    if (predecessor.occurred_at >= event.occurred_at) fail(`event thread ${threadId}: successor must occur after predecessor ${predecessor.id}`);
+    if (["completed", "cancelled"].includes(predecessor.status) && ["planned", "active", "blocked"].includes(event.status)) fail(`event thread ${threadId}: terminal status ${predecessor.status} cannot transition to ${event.status}`);
+  }
+  for (const [predecessorId, count] of predecessorCounts) if (count > 1) fail(`event thread ${threadId}: predecessor ${predecessorId} has ${count} successors`);
+  const roots = threadEvents.filter((event) => !event.predecessor_event_id);
+  const heads = threadEvents.filter((event) => !predecessorIds.has(event.id));
+  if (roots.length !== 1) fail(`event thread ${threadId}: expected exactly one root, found ${roots.length}`);
+  if (heads.length !== 1) fail(`event thread ${threadId}: expected exactly one head, found ${heads.length}`);
+  if (heads[0] && ["planned", "active", "blocked"].includes(heads[0].status)) activeThreadHeads.push(heads[0]);
+}
+
+function reservationsOverlap(left, right) {
+  const a = left.replace(/^\.\//, "");
+  const b = right.replace(/^\.\//, "");
+  return a === b || (a.endsWith("/") && b.startsWith(a)) || (b.endsWith("/") && a.startsWith(b));
+}
+for (let left = 0; left < activeThreadHeads.length; left += 1) {
+  for (let right = left + 1; right < activeThreadHeads.length; right += 1) {
+    for (const leftPath of activeThreadHeads[left].coordination.reserved_paths) {
+      for (const rightPath of activeThreadHeads[right].coordination.reserved_paths) {
+        if (reservationsOverlap(leftPath, rightPath)) fail(`active event threads ${activeThreadHeads[left].thread.id} and ${activeThreadHeads[right].thread.id} reserve overlapping paths ${leftPath} and ${rightPath}`);
+      }
+    }
+  }
+}
+
+const snapshotIdsWithEvents = new Set(records.event.flatMap((entry) => entry.value.scope.snapshot_ids ?? []));
+for (const snapshot of records.snapshot.map((entry) => entry.value)) {
+  const majorVersion = Number.parseInt(String(snapshot.version).split(".")[0], 10);
+  if (majorVersion >= 24 && !snapshotIdsWithEvents.has(snapshot.id)) fail(`Snapshot ${snapshot.version} must be referenced by an ecosystem Event`);
+}
+
 for (const { file, value: snapshot } of records.snapshot) {
   const label = path.relative(root, file);
   const pinnedWorks = new Set();
@@ -313,7 +430,7 @@ for (const { file, value: snapshot } of records.snapshot) {
   if (snapshot.artifact_materialization?.state === "not_materialized" && snapshot.artifact_materialization.receipts.length) fail(`${label}: not_materialized snapshot cannot contain receipts`);
 }
 
-const publicationText = [...records.work, ...records.release, ...records.assembly, ...records.source_inventory, ...records.snapshot].map((entry) => entry.raw).join("\n");
+const publicationText = Object.values(records).flat().map((entry) => entry.raw).join("\n");
 for (const pattern of [/\/Users\//, /\/home\//, /file:\/\//, /BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY/, /(?:ghp|github_pat|sk)-[A-Za-z0-9_-]{16,}/]) {
   if (pattern.test(publicationText)) fail(`publication-safe registry check matched ${pattern}`);
 }
@@ -323,4 +440,4 @@ if (errors.length) {
   errors.forEach((error) => console.error(`- ${error}`));
   process.exit(1);
 }
-console.log(`PASS registry validation: ${schemaEntries.length} schemas, ${works.size} Works, ${releases.size} Releases, ${assemblies.size} Assemblies, ${sourceInventories.size} Source Inventories, ${records.snapshot.length} Snapshots`);
+console.log(`PASS registry validation: ${schemaEntries.length} schemas, ${works.size} Works, ${releases.size} Releases, ${assemblies.size} Assemblies, ${sourceInventories.size} Source Inventories, ${records.snapshot.length} Snapshots, ${decisions.size} Decisions, ${events.size} Events`);

@@ -58,9 +58,16 @@ function localTarget(raw, sourceFile) {
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "research/index.html", "docs/research-question-model.html", "estate/index.html", "estate.json"]) {
+for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "docs/research-question-model.html", "docs/ecosystem-intelligence.html", "estate/index.html", "estate.json"]) {
   if (!await exists(path.join(root, required))) errors.push(`missing required page: ${required}`);
 }
+
+const intelligence = JSON.parse(await readFile(path.join(root, "intelligence.json"), "utf8"));
+if (intelligence.counts?.decisions < 4) errors.push("intelligence.json: expected the four foundational ADRs");
+if (intelligence.counts?.events < 5) errors.push("intelligence.json: expected the seeded ecosystem events");
+if (!intelligence.decisions?.some((decision) => decision.decision_key === "ADR-0004")) errors.push("intelligence.json: missing ADR-0004");
+if (!intelligence.events?.some((event) => event.scope?.snapshot_ids?.includes("gls:snapshot:73ee0c53-7e65-4c1c-9fe8-c990607ebf89"))) errors.push("intelligence.json: Whole Library V24 is not connected to an authored event");
+if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "24.0.0")) errors.push("intelligence.json: automatic registry changelog is missing V24");
 
 const frontierQuestions = [
   ["GQ-001", "frontier-question-agent-workspace"],

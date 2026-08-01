@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0", "record_type": "event", "id": "gls:event:659accbe-2370-4169-8fc0-c67bc320d983",
+  "occurred_at": "2026-08-01T22:36:40+07:00", "recorded_at": "2026-08-01T22:36:40+07:00", "immutable": true,
+  "entry_type": "initiative_started", "thread": { "id": "gls:thread:ecosystem-intelligence", "name": "Ecosystem intelligence ledger", "kind": "initiative" }, "status": "active",
+  "title": "Ecosystem intelligence ledger implementation started",
+  "summary": "A Library maintainer reserved the event, decision, validation, generation, test, onboarding, and publication surfaces needed for the operational intelligence layer.",
+  "intent": "Give every arriving agent one machine-readable place to learn active intent, completed changes, decisions, evidence, ownership, and authoritative destinations.",
+  "reasoning": ["The Frontier Questions lane completed without a prior in-repository activity signal.", "Git history alone cannot answer what is active, why it exists, or which paths another lane owns."],
+  "changes": [{ "kind": "coordination", "reference": "gls:thread:ecosystem-intelligence", "summary": "Reserved the intelligence-ledger implementation scope before publication." }],
+  "scope": { "work_ids": ["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"], "decision_ids": ["gls:decision:ce50d781-c1e3-43b3-83af-8f2506369b24"], "repository_urls": ["https://github.com/Lordsisodia/great-library-of-siso"] },
+  "coordination": { "owner": "Great Library maintainer", "branch": "main", "reserved_paths": ["schemas/event.schema.json", "schemas/decision.schema.json", "registry/events/", "registry/decisions/", "scripts/build.mjs", "scripts/validate.mjs", "scripts/check-immutable-history.mjs", "scripts/check-site.mjs", "tests/intelligence-contract.test.mjs", "docs/", "AGENTS.md", "CURRENT_STATE.md", "README.md", "CONTRIBUTING.md", "site/"] },
+  "visibility": "public",
+  "evidence": [{ "kind": "documentation", "reference": "user-intent:ecosystem-intelligence:2026-08-01", "observed_at": "2026-08-01", "summary": "The requested ledger must prevent agents from re-deriving system state and missing concurrent Library work." }],
+  "next_actions": ["Implement and verify Event and Decision contracts.", "Generate intelligence HTML and JSON.", "Close this thread with a successor event and publish an exact Release and Snapshot."]
+}

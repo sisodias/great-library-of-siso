@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "decision",
+  "id": "gls:decision:ce50d781-c1e3-43b3-83af-8f2506369b24",
+  "decision_key": "ADR-0004",
+  "title": "Use an append-only ecosystem intelligence ledger",
+  "status": "accepted",
+  "decided_at": "2026-08-01T22:36:40+07:00",
+  "immutable": true,
+  "context": "Git history proves that a change landed but does not reliably expose active intent, reserved scope, rationale, alternatives, consequences, handoff state, or relationships across repositories to newly arriving agents.",
+  "decision": "Add immutable Event and Decision records, derive current initiative state from each thread head, and generate one chronological HTML plus one machine-readable intelligence projection alongside automatic Release and Snapshot history.",
+  "rationale": [
+    "Append-only events preserve what was believed and intended at the time without rewriting history.",
+    "Machine-readable ADRs prevent architectural boundaries from being buried in prose or commit messages.",
+    "Active branch and path reservations make concurrent work visible before agents collide.",
+    "Automatic Release and Snapshot entries provide broad changelog coverage while authored events carry intent and reasoning."
+  ],
+  "alternatives": [
+    { "option": "Use Git log alone", "disposition": "rejected", "reason": "Commits do not carry a validated cross-repository scope, active-state protocol, or decision graph." },
+    { "option": "Maintain one mutable CHANGELOG document", "disposition": "rejected", "reason": "Concurrent edits would conflict and prior intent could be silently rewritten." },
+    { "option": "Create append-only events and decisions with generated projections", "disposition": "chosen", "reason": "It preserves history, supports agents, and keeps HTML subordinate to data." }
+  ],
+  "consequences": {
+    "positive": ["A cold agent can query current initiatives, decisions, changes, and registry lineage from one JSON file.", "Concurrent lanes can reserve scope and close work with evidence."],
+    "negative": ["Material work now requires a small start or completion event in addition to code and registry records."],
+    "follow_ups": ["Expose the same projection through the future read-only Library CLI and MCP server.", "Automate event creation from agent hooks after the manual contract stabilizes."]
+  },
+  "scope": { "work_ids": ["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"], "repository_urls": ["https://github.com/Lordsisodia/great-library-of-siso"] },
+  "evidence": [{ "kind": "documentation", "reference": "user-intent:ecosystem-intelligence:2026-08-01", "observed_at": "2026-08-01", "summary": "The requested system must let agents understand ongoing work, changes, intent, reasoning, placement, and where to find authoritative records." }]
+}

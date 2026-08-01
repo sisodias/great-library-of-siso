@@ -13,6 +13,7 @@ These authored documents explain the public model and its operating boundaries. 
 - [Skill repository map](skills-repository-map.html) — direct-source assessment of all 28 current Skills Hub entries and the evidence gates for bundled, Playbook, system, retirement, or repository outcomes.
 - [SISO Knowledge model](siso-knowledge-model.html) — the source-backed boundary between the Great Library registry, durable Knowledge system, Foundry, Evidence Engines, and external data plane.
 - [Frontier Questions model](research-question-model.html) — how standing God Questions become stable Works, versioned answers, Foundry evidence scopes, and privacy-safe public projections.
+- [Ecosystem Intelligence](ecosystem-intelligence.html) — append-only events, machine-readable ADRs, active agent reservations, automatic changelog, and the five-minute recovery contract.
 - [Roadmap](roadmap.md) — static Pages first, then near-read-only CLI and MCP access to the same contracts.
 - [Contributing](../CONTRIBUTING.md) — clean-room record and documentation changes.
 - [Security](../SECURITY.md) — private reporting and publication-safety boundary.

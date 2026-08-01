@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0", "record_type": "event", "id": "gls:event:3b65c2c2-7def-4656-87cc-6372e892befa",
+  "occurred_at": "2026-08-01T22:28:34+07:00", "recorded_at": "2026-08-01T22:36:40+07:00", "immutable": true,
+  "entry_type": "initiative_completed", "thread": { "id": "gls:thread:frontier-questions", "name": "Frontier Questions research portfolio", "kind": "research" }, "status": "completed",
+  "title": "Six Frontier Questions added to Research",
+  "summary": "Six publication-safe God Questions gained stable Work identities, explicit research contracts, metadata-seed Releases, and selection in Whole Library V24.",
+  "intent": "Keep high-leverage questions and their changing answer lineage addressable without importing private, operational, machine-specific, or rights-unclear evidence.",
+  "reasoning": ["Questions are durable while answers change.", "The existing Work, Release, and Snapshot model avoids a competing research registry.", "Metadata seeds are not represented as public answer artifacts."],
+  "changes": [{ "kind": "commit", "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/353c455bdc0616965b39b212c1b39ab2688709e4", "summary": "Added Frontier Question Works, research contracts, metadata seeds, generated pages, and V24." }, { "kind": "document", "reference": "docs/research-question-model.html", "summary": "Recorded the evidence ownership and answer lineage model." }],
+  "scope": { "work_ids": ["gls:work:2ac84615-3f9d-4040-95d6-9d9f39e4dc84", "gls:work:e38b054f-b926-4410-b84d-4fd3249fd4f4", "gls:work:85964f1c-2efe-48b0-8f71-dc32bb668c0c", "gls:work:7782f923-d44e-4a47-8ce6-134e31816673", "gls:work:2144e900-4886-461e-92f1-49571f2e9f74", "gls:work:3b4c4fa6-31f2-4cfc-9542-00f32e200621"], "release_ids": ["gls:release:bb6f759b-4c22-4dda-ac29-a4a9becefed9", "gls:release:c993c838-6d9e-484c-a53b-2e651cb48e63", "gls:release:037ad734-0cc3-4afb-9dc0-c2b55f1dcee7", "gls:release:1ee81aa0-42cc-4bcd-a87b-4f34baf9cc13", "gls:release:8225da3f-9a19-45d8-880e-0f2539756c0f", "gls:release:a5e56fcf-e19d-4ead-8c7d-9660d41ed47e"], "snapshot_ids": ["gls:snapshot:73ee0c53-7e65-4c1c-9fe8-c990607ebf89"], "decision_ids": ["gls:decision:c1217342-d5cb-4015-bf1b-b04034d09f8a"] },
+  "coordination": { "owner": "Great Library research maintainer", "branch": "codex/frontier-questions-20260801", "reserved_paths": [] }, "visibility": "public",
+  "evidence": [{ "kind": "registry_validation", "reference": "registry:snapshot:whole-library-v24", "observed_at": "2026-08-01", "summary": "V24 selects the six metadata releases and preserves every unaffected V23 selection." }], "next_actions": ["Publish an answer Release only after artifact-level evidence and rights review."]
+}
