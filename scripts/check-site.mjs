@@ -58,7 +58,7 @@ function localTarget(raw, sourceFile) {
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/ecosystem-intelligence.html", "estate/index.html", "estate.json"]) {
+for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "estate/index.html", "estate.json"]) {
   if (!await exists(path.join(root, required))) errors.push(`missing required page: ${required}`);
 }
 
@@ -87,6 +87,10 @@ for (const [document, marker] of [
   const documentHtml = await readFile(path.join(root, document), "utf8");
   if (!documentHtml.includes(marker)) errors.push(`${document}: missing contract marker: ${marker}`);
   if (!researchIndex.includes(`/${document}`)) errors.push(`research/index.html: missing ${document} link`);
+}
+const programHtml = await readFile(path.join(root, "docs/100-million-token-program.html"), "utf8");
+for (const marker of ["The 100 Million Token Program", "No. They should run as a dependency-aware portfolio.", "awaiting operator approval", "question-driven research architecture"]) {
+  if (!programHtml.includes(marker)) errors.push(`docs/100-million-token-program.html: missing contract marker: ${marker}`);
 }
 for (const [questionId, slug] of frontierQuestions) {
   const questionPath = path.join(root, "works", slug, "index.html");
