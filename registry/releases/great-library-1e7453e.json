@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:be7fc18d-7f58-490d-ba1b-86a9c90a3466",
+  "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+  "version": "0.7.0+1e7453e",
+  "title": "100 Million Token Program proposal",
+  "released_at": "2026-08-01T23:13:44+07:00",
+  "observed_at": "2026-08-01",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:ea729a6e-0fdf-42b6-999f-a36e29567515",
+      "kind": "source_archive",
+      "locator": "https://github.com/Lordsisodia/great-library-of-siso/archive/1e7453e76d339f4d9cae5a63ca6913467775a233.tar.gz",
+      "revision": "1e7453e76d339f4d9cae5a63ca6913467775a233",
+      "availability": "public",
+      "owner": "Lordsisodia",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The pinned public registry source carries an MIT license.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/Lordsisodia/great-library-of-siso/blob/1e7453e76d339f4d9cae5a63ca6913467775a233/LICENSE",
+            "observed_at": "2026-08-01",
+            "summary": "The MIT license is present in the pinned source release."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "1e7453e76d339f4d9cae5a63ca6913467775a233"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The public registry source is pinned to the exact program-documentation commit.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/1e7453e76d339f4d9cae5a63ca6913467775a233",
+          "observed_at": "2026-08-01",
+          "summary": "The published source commit resolves from the canonical repository."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "A public commit-scoped source archive is recorded.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/archive/1e7453e76d339f4d9cae5a63ca6913467775a233.tar.gz",
+          "observed_at": "2026-08-01",
+          "summary": "The archive locator is immutable by commit pin."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The Library builds and verifies the proposal, canonical-contract links, generated page, sequencing markers, and publication boundary from public source.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "repo-check:great-library-hundred-million-program:1e7453e",
+          "observed_at": "2026-08-01",
+          "summary": "All Great Library gates passed with an explicit dependency-aware portfolio, operator-approval boundary, and canonical question-architecture link contract."
+        }
+      ]
+    },
+    "installable": {
+      "state": "verified",
+      "reason": "A clean Node installation deterministically validates and builds the static program surface.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:great-library-hundred-million-program:1e7453e",
+          "observed_at": "2026-08-01",
+          "summary": "Immutable history, registry validation, contract tests, build, links, identity, and publication checks passed."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The registry repository is public, source-complete, machine-readable, and MIT licensed.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso",
+          "observed_at": "2026-08-01",
+          "summary": "Public source includes the authored proposal, generator integration, verification contract, registry records, and generated site."
+        }
+      ]
+    },
+    "portable": {
+      "state": "verified",
+      "reason": "The published proposal contains no private corpus, machine-local path, private topology, client detail, or dependency on a specific model or provider.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:great-library-hundred-million-program:1e7453e",
+          "observed_at": "2026-08-01",
+          "summary": "The publication scan passed across the complete repository and generated site."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:great-library-hundred-million-program:1e7453e",
+      "observed_at": "2026-08-01",
+      "summary": "The Library now preserves the fifteen-part program, its exact ecosystem-truth status, dependency-aware parallelization, constrained-compute gate, canonical mission and question contracts, and explicit approval boundary."
+    }
+  ]
+}
