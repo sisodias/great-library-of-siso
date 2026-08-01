@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T15:46:33.000Z",
+  "generated_at": "2026-08-01T15:50:06.000Z",
   "base_path": "/",
   "works": [
     {
@@ -234,9 +234,9 @@
       "locator_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:6cbb7080-344c-44e9-a6d3-8e924496ec1f",
-      "active_release_version": "0.4.0+2c09268",
-      "artifact_revision": "2c09268dd383c112e36a823e95d34d20cb1fa2bd"
+      "active_release_id": "gls:release:6b858048-2b40-4802-a33c-0c38289ac07a",
+      "active_release_version": "0.5.0+b30f3a9",
+      "artifact_revision": "b30f3a9976203620c9c3c9300855f39c33f45e44"
     },
     {
       "owner": "Lordsisodia",
@@ -3313,10 +3313,10 @@
   },
   "intelligence": {
     "counts": {
-      "events": 6,
+      "events": 7,
       "decisions": 4,
       "active_initiatives": 0,
-      "registry_changes": 78
+      "registry_changes": 80
     },
     "active_initiatives": []
   }

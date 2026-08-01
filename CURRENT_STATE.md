@@ -21,9 +21,10 @@
 - Immutable SISO Agent Stack Assembly 2.0.0 expands the composition to the complete portable public stack without rewriting V1.
 - The agent-capability promotion campaign is a first-class Library surface at `/promotion/` and `/promotion.json`: one active immutable campaign head tracks 18 publication-safe candidate units, with seven at `candidate`, eight at `owner_assigned`, three at `read`, and zero unresolved target Works.
 - The promotion lifecycle is mechanically enforced from `unverified` through `stack_pinned` and `retired`; advanced stages must bind real evidence, Releases, Snapshots, and verified Stack manifest receipts.
-- Whole Library V24 — Frontier Questions (`gls:snapshot:73ee0c53-7e65-4c1c-9fe8-c990607ebf89`) is the active Snapshot.
-- Frontier Questions reuses the core Library model: a question is a Work, an accepted answer is a Release, and the latest Snapshot selects the current portfolio. Foundry discovers relevant evidence, SISO Knowledge preserves it, and Evidence Engines transform it.
-- The Library's selected self-release is `0.4.0+2c09268`, pinned to `2c09268dd383c112e36a823e95d34d20cb1fa2bd`.
+- Ecosystem Intelligence is generated at `/intelligence/` and `/intelligence.json` from four immutable ADRs, seven append-only Events, and the automatic history of all 55 Releases and 25 Snapshots. The current projection has zero active initiatives; live lanes must publish branch and machine-neutral path reservations before parallel work begins.
+- Whole Library V25 — Ecosystem Intelligence (`gls:snapshot:da134571-56ed-48e9-abbc-834523b0d288`) is the active Snapshot.
+- Frontier Questions reuses the core Library model: a question is a Work, an accepted answer is a Release, and the latest Snapshot selects the current portfolio. Its current six Releases are explicitly publication-safe metadata seeds rather than public answer artifacts. Foundry discovers relevant evidence, SISO Knowledge preserves it, and Evidence Engines transform it.
+- The Library's selected self-release is `0.5.0+b30f3a9`, pinned to `b30f3a9976203620c9c3c9300855f39c33f45e44`.
 - The latest active state is always the highest-numbered immutable whole-Library Snapshot. Do not infer “current” from filename order alone; compare numeric `version` fields.
 
 ## Operating boundaries
@@ -44,15 +45,16 @@ npm ci
 npm run verify
 ```
 
-The gate validates schemas and immutable history, runs ten promotion-contract cases, generates the public site and catalog, checks local links and attribution, and scans the publication for obvious credentials and machine-local paths. The promotion surface and lifecycle model also passed independent 100/100 and 98/100 adversarial reviews.
+The gate validates schemas and immutable history, runs ten promotion-contract and ten intelligence-contract cases, generates the public site and catalog, checks local links and attribution, and scans the publication for obvious credentials and machine-local paths. The promotion surface and lifecycle model also passed independent 100/100 and 98/100 adversarial reviews.
 
 ## Resume here
 
 1. Read `AGENTS.md`, then the latest whole-Library Snapshot.
-2. Use `site/estate.json` to see which public repositories have released source, linked homes, or staging homes.
-3. Continue only from evidenced source inventories or a named Work; do not bulk-import the old Agent Base or the dirty local Knowledge data plane.
-4. Build the next Foundry-side discovery exporter into ignored local staging. It may propose source-inventory candidates, but it must never write directly into the immutable public registry.
-5. When adding a module, keep the Work independently addressable and put its contextual role in an Assembly or Snapshot relationship.
+2. Read `site/intelligence.json` for active initiatives, reserved paths, recent Events, ADRs, and registry history before opening a lane.
+3. Use `site/estate.json` to see which public repositories have released source, linked homes, or staging homes.
+4. Continue only from evidenced source inventories or a named Work; do not bulk-import the old Agent Base or the dirty local Knowledge data plane.
+5. Build the next Foundry-side discovery exporter into ignored local staging. It may propose source-inventory candidates, but it must never write directly into the immutable public registry.
+6. When adding a module, keep the Work independently addressable and put its contextual role in an Assembly or Snapshot relationship.
 
 ## Known external action
 

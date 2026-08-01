@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0", "record_type": "event", "id": "gls:event:f536c6fd-6c1c-47c6-a50d-6a6a3f10ac16",
+  "occurred_at": "2026-08-01T22:50:06+07:00", "recorded_at": "2026-08-01T22:50:06+07:00", "immutable": true,
+  "entry_type": "verification_completed", "thread": { "id": "gls:thread:ecosystem-intelligence", "name": "Ecosystem intelligence ledger", "kind": "initiative" }, "status": "completed",
+  "title": "Ecosystem intelligence release selected in V25",
+  "summary": "The exact completed ledger commit was recorded as Great Library release 0.5.0+b30f3a9 and selected by Whole Library V25 without changing any Frontier Question or Agent Stack selection.",
+  "intent": "Close the ecosystem-intelligence initiative with immutable public Release and Snapshot receipts that every agent can resolve.",
+  "reasoning": ["The implementation commit must exist publicly before its source archive can be pinned.", "The successor Snapshot replaces only the Great Library self-release and preserves every unaffected selection."],
+  "changes": [{ "kind": "registry_record", "reference": "gls:release:6b858048-2b40-4802-a33c-0c38289ac07a", "summary": "Pinned the completed ledger state to exact source commit b30f3a9." }, { "kind": "registry_record", "reference": "gls:snapshot:da134571-56ed-48e9-abbc-834523b0d288", "summary": "Selected the ledger release through Whole Library V25." }],
+  "scope": { "work_ids": ["gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"], "release_ids": ["gls:release:6b858048-2b40-4802-a33c-0c38289ac07a"], "snapshot_ids": ["gls:snapshot:da134571-56ed-48e9-abbc-834523b0d288"], "decision_ids": ["gls:decision:ce50d781-c1e3-43b3-83af-8f2506369b24"] },
+  "coordination": { "owner": "Great Library maintainer", "branch": "main", "reserved_paths": [] }, "visibility": "public", "predecessor_event_id": "gls:event:ae2505ef-bdca-4ce7-b5cc-ba24d7ab68ee",
+  "evidence": [{ "kind": "registry_validation", "reference": "repo-check:great-library-intelligence:b30f3a9", "observed_at": "2026-08-01", "summary": "The exact selected source passed all promotion, intelligence, registry, build, link, identity, immutable-history, and publication-safety checks." }],
+  "next_actions": ["Expose the same read model through the future Library CLI and MCP server.", "Use reservation Events before the next parallel Library worktree begins."]
+}
