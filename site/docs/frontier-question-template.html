@@ -12,7 +12,7 @@
 <body><main>
   <p class="eyebrow">Frontier Questions · Reusable dossier</p>
   <h1>One question.<br>One living evidence spine.</h1>
-  <p class="lede">Create one dossier per Frontier Question. The dossier is the operating map; the stable question remains a Library Work, and each accepted answer remains an immutable Release. Large, private, licensed, or operational payloads stay with their owning evidence systems.</p>
+  <p class="lede">Create one dossier per Frontier Question. The dossier is the operating map; the stable question remains a Library Work, and each accepted answer remains an immutable Release. Large, private, licensed, or operational payloads stay with their owning evidence systems. The registry scaffold below is the public-safe read model, not a second dossier or evidence store.</p>
 
   <div class="callout"><strong>Template rule:</strong> do not fill every field with ceremonial prose. A field exists to change retrieval, reasoning, a decision, or a refresh trigger. Mark unknowns honestly. Link evidence rather than copying entire corpora.</div>
 
@@ -108,6 +108,55 @@ Predictions:
 Decision / implementation implications:
 Successor and superseded answer IDs:
 Next watch date / event triggers:</pre>
+
+  <h2>Minimal registry scaffold</h2>
+  <p>The authored Work keeps the existing <code>research_contract</code> identity and adds one validated <code>program</code>. Copy only public-safe metadata. Every evidence connection names its owning Work and affirms that its projected summary is safe; every action link declares authority and its immediate predecessor. The generated Research page and <code>/research.json</code> consume this exact state.</p>
+  <pre class="template">"program": {
+  "freshness": {
+    "assessed_at": "YYYY-MM-DD",
+    "review_due_at": "YYYY-MM-DD"
+  },
+  "next_useful_work": "One ordered, decision-relevant next step.",
+  "assumptions": [{
+    "id": "QA-QUESTION-ASSUMPTION",
+    "level": "QA",
+    "scope": "bounded claim scope",
+    "statement": "A falsifiable load-bearing belief.",
+    "status": "active",
+    "confidence": "low",
+    "falsifier": "The observation that would overturn it.",
+    "depends_on": [],
+    "evidence_connection_ids": ["EC-QUESTION-SOURCE"],
+    "review_date": "YYYY-MM-DD"
+  }],
+  "evidence_connections": [{
+    "id": "EC-QUESTION-SOURCE",
+    "source_type": "documentation",
+    "owning_work_id": "gls:work:...",
+    "reference": "public-safe locator or opaque receipt",
+    "relevance_hypothesis": "Why this source could change the assumption.",
+    "rights_state": "public_metadata_only",
+    "publication_state": "public_safe_metadata",
+    "observed_at": "YYYY-MM-DD",
+    "provenance_receipt": "public-safe receipt",
+    "revision_or_digest": "stable revision or digest",
+    "summary": "Public-safe metadata only; never paste the private payload.",
+    "supports_assumption_ids": ["QA-QUESTION-ASSUMPTION"],
+    "challenges_assumption_ids": []
+  }],
+  "action_learning_links": [{
+    "id": "AL-QUESTION-DEMAND",
+    "object_type": "epistemic_demand",
+    "authority_state": "demand_only",
+    "owner_role": "question_steward",
+    "reference": "public-safe demand receipt",
+    "predecessor_ids": [],
+    "related_assumption_ids": ["QA-QUESTION-ASSUMPTION"],
+    "status": "proposed",
+    "summary": "Requests evidence and grants no approval or execution authority."
+  }]
+}</pre>
+  <div class="callout"><strong>Authoring gate:</strong> run <code>npm run verify</code>. Validation rejects broken assumption/supersession graphs, unsafe locators, duplicate edges, malformed freshness dates, and action chains that skip demand → candidate → mandate → observation → learning. A research state such as <code>answered</code> still does not create a public Answer Release.</div>
 
   <h2>Worked example · composable CRM</h2>
   <p class="muted">This is a framing example, not an accepted Work, product commitment, vendor ranking, or completed answer.</p>

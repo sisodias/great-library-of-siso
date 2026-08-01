@@ -3,10 +3,21 @@
   "$id": "urn:siso:great-library:schema:god-question-program:1",
   "type": "object",
   "additionalProperties": false,
-  "required": ["assumptions", "evidence_connections", "action_learning_links"],
+  "required": ["freshness", "next_useful_work", "assumptions", "evidence_connections", "action_learning_links"],
   "properties": {
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assessed_at", "review_due_at"],
+      "properties": {
+        "assessed_at": { "type": "string", "format": "date" },
+        "review_due_at": { "type": "string", "format": "date" }
+      }
+    },
+    "next_useful_work": { "type": "string", "minLength": 10 },
     "assumptions": {
       "type": "array",
+      "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -19,19 +30,20 @@
           "status": { "enum": ["active", "challenged", "refuted", "superseded"] },
           "confidence": { "enum": ["low", "medium", "high"] },
           "falsifier": { "type": "string", "minLength": 10 },
-          "depends_on": { "type": "array", "items": { "type": "string", "pattern": "^(GA|DA|QA|AA)-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
+          "depends_on": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^(GA|DA|QA|AA)-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
           "supersedes": { "type": "string", "pattern": "^(GA|DA|QA|AA)-[A-Z0-9]+(?:-[A-Z0-9]+)*$" },
-          "evidence_connection_ids": { "type": "array", "items": { "type": "string", "pattern": "^EC-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
+          "evidence_connection_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^EC-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
           "review_date": { "type": "string", "format": "date" }
         }
       }
     },
     "evidence_connections": {
       "type": "array",
+      "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "source_type", "owning_work_id", "reference", "relevance_hypothesis", "rights_state", "observed_at", "provenance_receipt", "revision_or_digest", "summary"],
+        "required": ["id", "source_type", "owning_work_id", "reference", "relevance_hypothesis", "rights_state", "publication_state", "observed_at", "provenance_receipt", "revision_or_digest", "summary"],
         "properties": {
           "id": { "type": "string", "pattern": "^EC-[A-Z0-9]+(?:-[A-Z0-9]+)*$" },
           "source_type": { "enum": ["documentation", "registry_record", "source_review", "release_receipt", "repository", "book", "experiment", "operational_receipt"] },
@@ -39,21 +51,23 @@
           "reference": { "type": "string", "minLength": 3 },
           "relevance_hypothesis": { "type": "string", "minLength": 10 },
           "rights_state": { "enum": ["public", "public_metadata_only", "owner_held", "rights_review"] },
+          "publication_state": { "const": "public_safe_metadata" },
           "observed_at": { "type": "string", "format": "date" },
           "provenance_receipt": { "type": "string", "minLength": 3 },
           "revision_or_digest": { "type": "string", "minLength": 3 },
           "summary": { "type": "string", "minLength": 10 },
-          "supports_assumption_ids": { "type": "array", "items": { "type": "string", "pattern": "^(GA|DA|QA|AA)-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
-          "challenges_assumption_ids": { "type": "array", "items": { "type": "string", "pattern": "^(GA|DA|QA|AA)-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } }
+          "supports_assumption_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^(GA|DA|QA|AA)-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
+          "challenges_assumption_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^(GA|DA|QA|AA)-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } }
         }
       }
     },
     "action_learning_links": {
       "type": "array",
+      "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "object_type", "authority_state", "owner_role", "reference", "status", "summary"],
+        "required": ["id", "object_type", "authority_state", "owner_role", "reference", "predecessor_ids", "related_assumption_ids", "status", "summary"],
         "properties": {
           "id": { "type": "string", "pattern": "^AL-[A-Z0-9]+(?:-[A-Z0-9]+)*$" },
           "object_type": { "enum": ["epistemic_demand", "action_candidate", "execution_mandate", "observation_receipt", "learning_return"] },
@@ -61,8 +75,8 @@
           "owner_role": { "enum": ["question_steward", "operating_architecture", "decision_owner", "runtime", "independent_verifier", "evidence_engine"] },
           "reference": { "type": "string", "minLength": 3 },
           "content_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
-          "predecessor_ids": { "type": "array", "items": { "type": "string", "pattern": "^AL-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
-          "related_assumption_ids": { "type": "array", "items": { "type": "string", "pattern": "^(GA|DA|QA|AA)-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
+          "predecessor_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^AL-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
+          "related_assumption_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^(GA|DA|QA|AA)-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
           "status": { "enum": ["proposed", "approved", "rejected", "executed", "verified", "expired", "no_change", "reopen_proposed"] },
           "expires_at": { "type": "string", "format": "date-time" },
           "summary": { "type": "string", "minLength": 10 }

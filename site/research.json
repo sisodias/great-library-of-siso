@@ -13,7 +13,7 @@
     "challenge_edges": 1,
     "action_learning_links": 4,
     "public_answers_released": 0,
-    "serialized_program_bytes": 11474
+    "serialized_program_bytes": 12517
   },
   "questions": [
     {
@@ -23,6 +23,15 @@
       "library_url": "/works/frontier-question-agent-workspace/",
       "question": "How should the complete agent workspace be designed across code layout, agent architecture, memory, enforcement, and agent-generated user interfaces?",
       "research_state": "partial",
+      "lifecycle_status": "active",
+      "steward": "SISO Open Source Foundation",
+      "freshness": {
+        "state": "current",
+        "assessed_at": "2026-08-02",
+        "review_due_at": "2026-09-01",
+        "as_of": "2026-08-02"
+      },
+      "next_useful_work": "Run one cold reconstruction task against the typed workspace boundary and compare errors, intervention, and elapsed time with the prior evidence path.",
       "evidence_mode": "hybrid",
       "decision_to_change": null,
       "success_criteria": [],
@@ -52,6 +61,11 @@
         "public_answer_note": "Not released — the selected Release has no public answer artifact."
       },
       "program": {
+        "freshness": {
+          "assessed_at": "2026-08-02",
+          "review_due_at": "2026-09-01"
+        },
+        "next_useful_work": "Run one cold reconstruction task against the typed workspace boundary and compare errors, intervention, and elapsed time with the prior evidence path.",
         "assumptions": [
           {
             "id": "QA-GQ001-BOUNDARIES",
@@ -92,6 +106,7 @@
             "reference": "docs/question-driven-research.html",
             "relevance_hypothesis": "The published organ and assumption boundaries provide a reusable frame for evaluating complete workspace architectures.",
             "rights_state": "public",
+            "publication_state": "public_safe_metadata",
             "observed_at": "2026-08-02",
             "provenance_receipt": "registry/works/frontier-question-gq-001.json#evidence",
             "revision_or_digest": "registry-record:2026-08-01",
@@ -108,6 +123,7 @@
             "reference": "registry/releases/frontier-question-gq-001-seed.json",
             "relevance_hypothesis": "The existing metadata seed tests whether a question can remain addressable while its partial answer stays unpublished.",
             "rights_state": "public_metadata_only",
+            "publication_state": "public_safe_metadata",
             "observed_at": "2026-08-02",
             "provenance_receipt": "source-review:frontier-question-intake:gq-001:2026-08-01",
             "revision_or_digest": "registry-seed-2026-08-01",
@@ -139,7 +155,7 @@
         "assumptions": 2,
         "evidence_connections": 2,
         "action_learning_links": 1,
-        "serialized_program_bytes": 3055
+        "serialized_program_bytes": 3383
       }
     },
     {
@@ -149,6 +165,15 @@
       "library_url": "/works/frontier-question-agent-layer-efficiency/",
       "question": "What changes would make the complete provider-neutral SISO agent layer ten times more effective per unit of time, attention, and compute?",
       "research_state": "answered",
+      "lifecycle_status": "active",
+      "steward": "SISO Open Source Foundation",
+      "freshness": {
+        "state": "current",
+        "assessed_at": "2026-08-02",
+        "review_due_at": "2026-09-01",
+        "as_of": "2026-08-02"
+      },
+      "next_useful_work": "Run one paired agent task with and without the evidence-aware context and receipt path, including retrieval and repair overhead in the comparison.",
       "evidence_mode": "hybrid",
       "decision_to_change": null,
       "success_criteria": [],
@@ -178,6 +203,11 @@
         "public_answer_note": "Not released — the selected Release has no public answer artifact."
       },
       "program": {
+        "freshness": {
+          "assessed_at": "2026-08-02",
+          "review_due_at": "2026-09-01"
+        },
+        "next_useful_work": "Run one paired agent task with and without the evidence-aware context and receipt path, including retrieval and repair overhead in the comparison.",
         "assumptions": [
           {
             "id": "QA-GQ002-CONTEXT-VALUE",
@@ -216,6 +246,7 @@
             "reference": "docs/100-million-token-operating-plan.html#operating-loop",
             "relevance_hypothesis": "The published operating loop supplies falsifiable context and lineage pilots for testing agent-layer efficiency.",
             "rights_state": "public",
+            "publication_state": "public_safe_metadata",
             "observed_at": "2026-08-02",
             "provenance_receipt": "docs/100-million-token-operating-plan.html#canonical-contracts",
             "revision_or_digest": "accepted-direction:2026-08-02",
@@ -232,6 +263,7 @@
             "reference": "source-review:frontier-question-intake:gq-002:2026-08-01",
             "relevance_hypothesis": "The intake review tests whether operational research can remain owner-held while a public question exposes only safe lineage.",
             "rights_state": "owner_held",
+            "publication_state": "public_safe_metadata",
             "observed_at": "2026-08-02",
             "provenance_receipt": "registry/works/frontier-question-gq-002.json#evidence",
             "revision_or_digest": "source-review:2026-08-01",
@@ -263,7 +295,7 @@
         "assumptions": 2,
         "evidence_connections": 2,
         "action_learning_links": 1,
-        "serialized_program_bytes": 3112
+        "serialized_program_bytes": 3436
       }
     },
     {
@@ -273,6 +305,15 @@
       "library_url": "/works/frontier-question-best-software-primitive/",
       "question": "For a named software primitive, which implementation is best for the stated context, and is it safe and valuable to reuse, vendor, or learn from?",
       "research_state": "scoped",
+      "lifecycle_status": "experimental",
+      "steward": "SISO Open Source Foundation",
+      "freshness": {
+        "state": "not_declared",
+        "assessed_at": null,
+        "review_due_at": null,
+        "as_of": "2026-08-02"
+      },
+      "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "corpus",
       "decision_to_change": null,
       "success_criteria": [],
@@ -316,6 +357,15 @@
       "library_url": "/works/frontier-question-field-momentum/",
       "question": "Which categories, techniques, and projects are gaining real momentum, what mechanisms explain the change, and what does the acceleration predict next?",
       "research_state": "scoped",
+      "lifecycle_status": "experimental",
+      "steward": "SISO Open Source Foundation",
+      "freshness": {
+        "state": "not_declared",
+        "assessed_at": null,
+        "review_due_at": null,
+        "as_of": "2026-08-02"
+      },
+      "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "corpus",
       "decision_to_change": null,
       "success_criteria": [],
@@ -359,6 +409,15 @@
       "library_url": "/works/frontier-question-information-organ/",
       "question": "How should the information organ continuously gather, preserve, query, and push valuable evidence into authorized agent workflows and self-improvement loops?",
       "research_state": "partial",
+      "lifecycle_status": "active",
+      "steward": "SISO Open Source Foundation",
+      "freshness": {
+        "state": "not_declared",
+        "assessed_at": null,
+        "review_due_at": null,
+        "as_of": "2026-08-02"
+      },
+      "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",
       "decision_to_change": null,
       "success_criteria": [],
@@ -402,6 +461,15 @@
       "library_url": "/works/frontier-question-model-routing/",
       "question": "Which available model should own each recurring work shape after quality, reliability, tool use, latency, quota, and cost are evaluated together?",
       "research_state": "answered",
+      "lifecycle_status": "active",
+      "steward": "SISO Open Source Foundation",
+      "freshness": {
+        "state": "not_declared",
+        "assessed_at": null,
+        "review_due_at": null,
+        "as_of": "2026-08-02"
+      },
+      "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",
       "decision_to_change": null,
       "success_criteria": [],
@@ -445,6 +513,15 @@
       "library_url": "/works/frontier-question-god-questions-infrastructure/",
       "question": "How should the Great Library make God Questions visible, composable, continuously updated, and connected to evidence, decisions, approved action, and capability learning without becoming the corpus warehouse or execution runtime?",
       "research_state": "researching",
+      "lifecycle_status": "active",
+      "steward": "SISO Open Source Foundation",
+      "freshness": {
+        "state": "current",
+        "assessed_at": "2026-08-02",
+        "review_due_at": "2026-08-16",
+        "as_of": "2026-08-02"
+      },
+      "next_useful_work": "Complete the bounded v1 operator flow, independently replay its privacy and authority gates, and return a no-change or reopen proposal without claiming an Answer Release.",
       "evidence_mode": "hybrid",
       "decision_to_change": "Which registry fields, Library projections, evidence interfaces, and action-return contracts should become the standard infrastructure for every SISO God Question?",
       "success_criteria": [
@@ -495,6 +572,11 @@
         "public_answer_note": "Not released — the selected Release has no public answer artifact."
       },
       "program": {
+        "freshness": {
+          "assessed_at": "2026-08-02",
+          "review_due_at": "2026-08-16"
+        },
+        "next_useful_work": "Complete the bounded v1 operator flow, independently replay its privacy and authority gates, and return a no-change or reopen proposal without claiming an Answer Release.",
         "assumptions": [
           {
             "id": "QA-GQ009-CANONICAL-EXTENSION",
@@ -552,6 +634,7 @@
             "reference": "docs/god-questions-infrastructure.html",
             "relevance_hypothesis": "The canonical constitution exposes the minimum identity, ownership, interface, dependency, and falsification rules the substrate must implement.",
             "rights_state": "public",
+            "publication_state": "public_safe_metadata",
             "observed_at": "2026-08-02",
             "provenance_receipt": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
             "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
@@ -569,6 +652,7 @@
             "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
             "relevance_hypothesis": "The verified document checkpoint tests whether the existing generator can expose a canonical question-infrastructure reader without a second registry.",
             "rights_state": "public",
+            "publication_state": "public_safe_metadata",
             "observed_at": "2026-08-02",
             "provenance_receipt": "repo-check:god-questions-infrastructure:270c37c",
             "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
@@ -587,6 +671,7 @@
             "reference": "registry/events/2026-08-02-god-questions-infrastructure-program-started.json#evidence",
             "relevance_hypothesis": "The start Event's public bridge evidence tests whether action and learning ownership can be referenced without copying its owner-held design payload.",
             "rights_state": "public_metadata_only",
+            "publication_state": "public_safe_metadata",
             "observed_at": "2026-08-02",
             "provenance_receipt": "workspace-handoff:glos-100m-frontier-joint-lineage-20260801",
             "revision_or_digest": "event-evidence:2026-08-02",
@@ -636,7 +721,7 @@
         "assumptions": 3,
         "evidence_connections": 3,
         "action_learning_links": 2,
-        "serialized_program_bytes": 5307
+        "serialized_program_bytes": 5698
       }
     }
   ]

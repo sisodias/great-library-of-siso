@@ -58,13 +58,18 @@ function validateValue(value, schema, location, schemaFile) {
   } else if (schema.type === "array") {
     if (!Array.isArray(value)) return fail(`${location}: expected array`);
     if (schema.minItems !== undefined && value.length < schema.minItems) fail(`${location}: expected at least ${schema.minItems} items`);
+    if (schema.uniqueItems && new Set(value.map((item) => JSON.stringify(item))).size !== value.length) fail(`${location}: expected unique items`);
     value.forEach((item, index) => validateValue(item, schema.items ?? {}, `${location}[${index}]`, schemaFile));
   } else if (schema.type === "string") {
     if (typeof value !== "string") return fail(`${location}: expected string`);
     if (schema.minLength !== undefined && value.length < schema.minLength) fail(`${location}: string is too short`);
     if (schema.pattern && !new RegExp(schema.pattern).test(value)) fail(`${location}: does not match ${schema.pattern}`);
-    if (schema.format === "date" && !/^\d{4}-\d{2}-\d{2}$/.test(value)) fail(`${location}: expected YYYY-MM-DD`);
-    if (schema.format === "date-time" && Number.isNaN(Date.parse(value))) fail(`${location}: expected date-time`);
+    if (schema.format === "date") {
+      const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+      const parsed = match ? new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]))) : null;
+      if (!match || parsed.getUTCFullYear() !== Number(match[1]) || parsed.getUTCMonth() !== Number(match[2]) - 1 || parsed.getUTCDate() !== Number(match[3])) fail(`${location}: expected real YYYY-MM-DD calendar date`);
+    }
+    if (schema.format === "date-time" && (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value) || Number.isNaN(Date.parse(value)))) fail(`${location}: expected RFC 3339 date-time`);
     if (schema.format === "uri") { try { new URL(value); } catch { fail(`${location}: expected URI`); } }
   } else if (schema.type === "integer") {
     if (!Number.isInteger(value)) return fail(`${location}: expected integer`);
@@ -103,8 +108,9 @@ function uniqueMap(entries, label) {
 
 function publicReferenceProblem(value) {
   const reference = String(value ?? "");
-  if (/^(?:\/|~\/|[A-Za-z]:[\\/])/.test(reference) || /(?:\/Users\/|\/home\/)/.test(reference)) return "machine-local path";
+  if (/^(?:\/|~\/|[A-Za-z]:[\\/]|\\\\)/.test(reference) || /(?:\/Users\/|\/home\/)/.test(reference) || /(?:^|[\\/])\.\.(?:[\\/]|$)/.test(reference) || /\\/.test(reference)) return "machine-local path or traversal";
   if (/^(?:file|unix|data|javascript):/i.test(reference)) return "unsafe URI scheme";
+  if (/(?:ghp_|github_pat_|sk-)[A-Za-z0-9_-]{12,}/.test(reference) || /(?:token|secret|password|credential)\s*[=:]\s*[^\s&]{8,}/i.test(reference)) return "credential-bearing reference";
   if (!/^https?:\/\//i.test(reference)) return null;
   let url;
   try { url = new URL(reference); } catch { return "invalid public URL"; }
@@ -125,7 +131,9 @@ function validateAcyclic(items, edgeField, label) {
     if (visiting.has(id)) { fail(`${label}: ${edgeField} cycle includes ${id}`); return; }
     if (visited.has(id)) return;
     visiting.add(id);
-    for (const dependency of byId.get(id)?.[edgeField] ?? []) if (byId.has(dependency)) visit(dependency);
+    const rawEdges = byId.get(id)?.[edgeField];
+    const edges = Array.isArray(rawEdges) ? rawEdges : rawEdges ? [rawEdges] : [];
+    for (const dependency of edges) if (byId.has(dependency)) visit(dependency);
     visiting.delete(id);
     visited.add(id);
   }
@@ -157,6 +165,7 @@ for (const { file, value: work } of records.work) {
   }
   const program = work.research_contract?.program;
   if (!program) continue;
+  if (program.freshness.assessed_at > program.freshness.review_due_at) fail(`${label}: freshness assessed_at must not be later than review_due_at`);
   const assumptionMap = new Map();
   for (const assumption of program.assumptions) {
     if (assumptionMap.has(assumption.id)) fail(`${label}: duplicate assumption id ${assumption.id}`);
@@ -182,6 +191,7 @@ for (const { file, value: work } of records.work) {
     for (const evidenceId of assumption.evidence_connection_ids ?? []) if (!evidenceMap.has(evidenceId)) fail(`${label}: assumption ${assumption.id} references unknown evidence connection ${evidenceId}`);
   }
   validateAcyclic(program.assumptions, "depends_on", `${label}: assumption graph`);
+  validateAcyclic(program.assumptions, "supersedes", `${label}: assumption supersession graph`);
   for (const connection of program.evidence_connections) {
     if (!works.has(connection.owning_work_id)) fail(`${label}: evidence connection ${connection.id} owner Work ${connection.owning_work_id} does not resolve`);
     const supports = connection.supports_assumption_ids ?? [];
@@ -194,6 +204,13 @@ for (const { file, value: work } of records.work) {
       if (problem) fail(`${label}: evidence connection ${connection.id} ${field} contains ${problem}`);
     }
   }
+  const supersededTargets = new Set(program.assumptions.map((assumption) => assumption.supersedes).filter(Boolean));
+  for (const assumption of program.assumptions) {
+    const challengeCount = program.evidence_connections.filter((connection) => connection.challenges_assumption_ids?.includes(assumption.id)).length;
+    if (["challenged", "refuted"].includes(assumption.status) && challengeCount === 0) fail(`${label}: ${assumption.status} assumption ${assumption.id} requires challenging evidence`);
+    if (assumption.status === "superseded" && !supersededTargets.has(assumption.id)) fail(`${label}: superseded assumption ${assumption.id} must be named by its successor`);
+    if (assumption.supersedes && assumptionMap.get(assumption.supersedes)?.status !== "superseded") fail(`${label}: assumption ${assumption.id} supersedes ${assumption.supersedes}, which is not marked superseded`);
+  }
   const actionRules = {
     epistemic_demand: { authority: "demand_only", owners: new Set(["question_steward"]), statuses: new Set(["proposed"]) },
     action_candidate: { authority: "proposal_only", owners: new Set(["operating_architecture"]), statuses: new Set(["proposed", "rejected"]) },
@@ -201,20 +218,23 @@ for (const { file, value: work } of records.work) {
     observation_receipt: { authority: "observation_only", owners: new Set(["runtime", "independent_verifier"]), statuses: new Set(["executed", "verified"]) },
     learning_return: { authority: "learning_proposal", owners: new Set(["evidence_engine", "question_steward"]), statuses: new Set(["proposed", "no_change", "reopen_proposed"]) }
   };
-  const actionOrder = { epistemic_demand: 0, action_candidate: 1, execution_mandate: 2, observation_receipt: 3, learning_return: 4 };
+  const expectedPredecessor = { action_candidate: "epistemic_demand", execution_mandate: "action_candidate", observation_receipt: "execution_mandate", learning_return: "observation_receipt" };
   for (const link of program.action_learning_links) {
     const rule = actionRules[link.object_type];
     if (link.authority_state !== rule.authority) fail(`${label}: ${link.object_type} ${link.id} must use authority_state ${rule.authority}`);
     if (!rule.owners.has(link.owner_role)) fail(`${label}: ${link.object_type} ${link.id} cannot be owned by ${link.owner_role}`);
     if (!rule.statuses.has(link.status)) fail(`${label}: ${link.object_type} ${link.id} cannot use status ${link.status}`);
     if (link.object_type === "execution_mandate" && (!link.expires_at || !link.content_sha256)) fail(`${label}: execution mandate ${link.id} requires expires_at and content_sha256`);
+    if (["observation_receipt", "learning_return"].includes(link.object_type) && !link.content_sha256) fail(`${label}: ${link.object_type} ${link.id} requires content_sha256`);
     if (link.object_type !== "execution_mandate" && link.expires_at) fail(`${label}: only an execution mandate may declare expires_at`);
+    if (link.object_type === "epistemic_demand" && link.predecessor_ids.length) fail(`${label}: epistemic demand ${link.id} cannot have predecessors`);
+    if (link.object_type !== "epistemic_demand" && link.predecessor_ids.length === 0) fail(`${label}: ${link.object_type} ${link.id} requires an immediate predecessor`);
     const problem = publicReferenceProblem(link.reference);
     if (problem) fail(`${label}: action/learning link ${link.id} reference contains ${problem}`);
     for (const predecessorId of link.predecessor_ids ?? []) {
       const predecessor = actionMap.get(predecessorId);
       if (!predecessor) fail(`${label}: action/learning link ${link.id} references unknown predecessor ${predecessorId}`);
-      else if (actionOrder[predecessor.object_type] >= actionOrder[link.object_type]) fail(`${label}: action/learning link ${link.id} predecessor ${predecessorId} does not precede ${link.object_type}`);
+      else if (predecessor.object_type !== expectedPredecessor[link.object_type]) fail(`${label}: ${link.object_type} ${link.id} predecessor ${predecessorId} must be ${expectedPredecessor[link.object_type]}`);
     }
     for (const assumptionId of link.related_assumption_ids ?? []) if (!assumptionMap.has(assumptionId)) fail(`${label}: action/learning link ${link.id} references unknown assumption ${assumptionId}`);
   }

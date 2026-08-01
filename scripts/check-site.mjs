@@ -102,8 +102,15 @@ for (const [questionId, state, assumptions, evidence, links] of [
   if (question.authoring_metrics?.assumptions !== assumptions || question.authoring_metrics?.evidence_connections !== evidence || question.authoring_metrics?.action_learning_links !== links) errors.push(`research.json: ${questionId} program fixture counts changed unexpectedly`);
 }
 for (const question of researchProjection.questions ?? []) {
+  if (!question.steward || question.steward === "Unassigned") errors.push(`research.json: ${question.question_id} has no named steward`);
+  if (!question.lifecycle_status) errors.push(`research.json: ${question.question_id} has no lifecycle status`);
+  if (!question.freshness?.state || !question.freshness?.as_of) errors.push(`research.json: ${question.question_id} has no explicit freshness read model`);
+  if (!question.next_useful_work || question.next_useful_work.length < 10) errors.push(`research.json: ${question.question_id} has no explicit next useful work`);
   const program = question.program;
   if (!program) continue;
+  if (question.freshness.state !== "current") errors.push(`research.json: ${question.question_id} expected current fixture freshness, found ${question.freshness.state}`);
+  if (program.next_useful_work !== question.next_useful_work) errors.push(`research.json: ${question.question_id} next-work projection diverges from registry program`);
+  for (const connection of program.evidence_connections) if (connection.publication_state !== "public_safe_metadata") errors.push(`research.json: ${question.question_id} projects evidence without a public-safe metadata assertion`);
   for (const reference of [
     ...program.evidence_connections.flatMap((entry) => [entry.reference, entry.provenance_receipt, entry.revision_or_digest]),
     ...program.action_learning_links.map((entry) => entry.reference),
@@ -146,7 +153,7 @@ for (const [questionId, slug] of frontierQuestions) {
   if (!questionPage.includes("Public answer release</span><p>Not released")) errors.push(`works/${slug}/index.html: metadata seed is not explicitly separated from a public answer`);
 }
 const infrastructureQuestion = await readFile(path.join(root, "works/frontier-question-god-questions-infrastructure/index.html"), "utf8");
-for (const marker of ["Decision to change", "Success criteria", "Falsifiers", "Evidence gaps", "Watch triggers", "Research state", "Assumptions · 3", "Evidence connections · 3", "Action and learning lineage · 2", "Read the God Questions infrastructure constitution"]) {
+for (const marker of ["Steward", "Lifecycle status", "Freshness", "Next useful work", "Decision to change", "Success criteria", "Falsifiers", "Evidence gaps", "Watch triggers", "Research state", "Assumptions · 3", "Evidence connections · 3", "Action and learning lineage · 2", "Read the God Questions infrastructure constitution"]) {
   if (!infrastructureQuestion.includes(marker)) errors.push(`GQ-009 page: missing program field ${marker}`);
 }
 if (infrastructureQuestion.includes("<b>Public answer:</b> released")) errors.push("GQ-009 page: researching metadata is inflated into a released answer");

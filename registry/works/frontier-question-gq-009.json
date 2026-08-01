@@ -125,6 +125,11 @@
     "refresh_policy": "Re-answer when a real question cannot use the contract, a source or action interface changes, three-question evaluation evidence lands, or measured operating overhead exceeds the value created.",
     "publication_boundary": "public_metadata_only",
     "program": {
+      "freshness": {
+        "assessed_at": "2026-08-02",
+        "review_due_at": "2026-08-16"
+      },
+      "next_useful_work": "Complete the bounded v1 operator flow, independently replay its privacy and authority gates, and return a no-change or reopen proposal without claiming an Answer Release.",
       "assumptions": [
         {
           "id": "QA-GQ009-CANONICAL-EXTENSION",
@@ -182,6 +187,7 @@
           "reference": "docs/god-questions-infrastructure.html",
           "relevance_hypothesis": "The canonical constitution exposes the minimum identity, ownership, interface, dependency, and falsification rules the substrate must implement.",
           "rights_state": "public",
+          "publication_state": "public_safe_metadata",
           "observed_at": "2026-08-02",
           "provenance_receipt": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
           "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
@@ -199,6 +205,7 @@
           "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
           "relevance_hypothesis": "The verified document checkpoint tests whether the existing generator can expose a canonical question-infrastructure reader without a second registry.",
           "rights_state": "public",
+          "publication_state": "public_safe_metadata",
           "observed_at": "2026-08-02",
           "provenance_receipt": "repo-check:god-questions-infrastructure:270c37c",
           "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
@@ -217,6 +224,7 @@
           "reference": "registry/events/2026-08-02-god-questions-infrastructure-program-started.json#evidence",
           "relevance_hypothesis": "The start Event's public bridge evidence tests whether action and learning ownership can be referenced without copying its owner-held design payload.",
           "rights_state": "public_metadata_only",
+          "publication_state": "public_safe_metadata",
           "observed_at": "2026-08-02",
           "provenance_receipt": "workspace-handoff:glos-100m-frontier-joint-lineage-20260801",
           "revision_or_digest": "event-evidence:2026-08-02",

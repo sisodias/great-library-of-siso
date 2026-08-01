@@ -30,6 +30,11 @@
     "refresh_policy": "Re-answer when a major agent platform, workspace architecture, or failed forward prediction changes a load-bearing conclusion.",
     "publication_boundary": "public_metadata_only",
     "program": {
+      "freshness": {
+        "assessed_at": "2026-08-02",
+        "review_due_at": "2026-09-01"
+      },
+      "next_useful_work": "Run one cold reconstruction task against the typed workspace boundary and compare errors, intervention, and elapsed time with the prior evidence path.",
       "assumptions": [
         {
           "id": "QA-GQ001-BOUNDARIES",
@@ -70,6 +75,7 @@
           "reference": "docs/question-driven-research.html",
           "relevance_hypothesis": "The published organ and assumption boundaries provide a reusable frame for evaluating complete workspace architectures.",
           "rights_state": "public",
+          "publication_state": "public_safe_metadata",
           "observed_at": "2026-08-02",
           "provenance_receipt": "registry/works/frontier-question-gq-001.json#evidence",
           "revision_or_digest": "registry-record:2026-08-01",
@@ -86,6 +92,7 @@
           "reference": "registry/releases/frontier-question-gq-001-seed.json",
           "relevance_hypothesis": "The existing metadata seed tests whether a question can remain addressable while its partial answer stays unpublished.",
           "rights_state": "public_metadata_only",
+          "publication_state": "public_safe_metadata",
           "observed_at": "2026-08-02",
           "provenance_receipt": "source-review:frontier-question-intake:gq-001:2026-08-01",
           "revision_or_digest": "registry-seed-2026-08-01",

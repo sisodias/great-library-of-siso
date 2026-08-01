@@ -46,6 +46,11 @@ async function test(name, mutate, expectedStatus, expectedText) {
 }
 
 const crmContractReplay = {
+  freshness: {
+    assessed_at: "2026-08-02",
+    review_due_at: "2026-08-16"
+  },
+  next_useful_work: "Replay the synthetic contract only; do not treat it as execution evidence.",
   assumptions: [{
     id: "QA-CRM-KERNEL",
     level: "QA",
@@ -65,6 +70,7 @@ const crmContractReplay = {
     reference: "docs/frontier-question-template.html#worked-example-composable-crm",
     relevance_hypothesis: "The existing CRM dossier is heterogeneous enough to test a domain assumption and action-learning lineage contract.",
     rights_state: "public_metadata_only",
+    publication_state: "public_safe_metadata",
     observed_at: "2026-08-02",
     provenance_receipt: "documentation-fixture:composable-crm:2026-08-02",
     revision_or_digest: "fixture-only:no-execution-evidence",
@@ -156,6 +162,20 @@ await test("assumption cycles fail", async ({ loadWork, saveWork }) => {
   work.research_contract.program.assumptions[0].depends_on = ["QA-GQ009-METADATA-VALUE"];
   await saveWork("gq009", work);
 }, 1, "depends_on cycle");
+await test("assumption supersession cycles fail", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  const [first, second] = work.research_contract.program.assumptions;
+  first.status = "superseded";
+  second.status = "superseded";
+  first.supersedes = second.id;
+  second.supersedes = first.id;
+  await saveWork("gq009", work);
+}, 1, "supersedes cycle");
+await test("duplicate assumption evidence edges fail", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program.assumptions[0].evidence_connection_ids.push(work.research_contract.program.assumptions[0].evidence_connection_ids[0]);
+  await saveWork("gq009", work);
+}, 1, "expected unique items");
 await test("unknown evidence owner fails", async ({ loadWork, saveWork }) => {
   const work = await loadWork("gq009");
   work.research_contract.program.evidence_connections[0].owning_work_id = "gls:work:00000000-0000-0000-0000-000000000000";
@@ -177,6 +197,21 @@ await test("private-host evidence references fail", async ({ loadWork, saveWork 
   work.research_contract.program.evidence_connections[0].reference = "http://127.0.0.1:3000/private";
   await saveWork("gq009", work);
 }, 1, "private or local host");
+await test("relative traversal evidence references fail", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program.evidence_connections[0].reference = ["..", "private", "evidence.json"].join("/");
+  await saveWork("gq009", work);
+}, 1, "path or traversal");
+await test("credential-bearing evidence references fail", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program.evidence_connections[0].reference = ["receipt", ["ghp", "abcdefghijklmnopqrstuvwx"].join("_")].join(":");
+  await saveWork("gq009", work);
+}, 1, "credential-bearing reference");
+await test("owner-held evidence requires public-safe metadata assertion", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq002");
+  delete work.research_contract.program.evidence_connections[1].publication_state;
+  await saveWork("gq002", work);
+}, 1, "missing required property publication_state");
 await test("authority laundering fails", async ({ loadWork, saveWork }) => {
   const work = await loadWork("gq009");
   work.research_contract.program.action_learning_links[1].authority_state = "approved_scope";
@@ -200,6 +235,34 @@ await test("mandates require expiry and digest", async ({ loadWork, saveWork }) 
   delete work.research_contract.program.action_learning_links[2].content_sha256;
   await saveWork("gq009", work);
 }, 1, "requires expires_at and content_sha256");
+await test("mandates cannot omit their candidate predecessor", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program = structuredClone(crmContractReplay);
+  work.research_contract.program.action_learning_links[2].predecessor_ids = [];
+  await saveWork("gq009", work);
+}, 1, "requires an immediate predecessor");
+await test("observations cannot skip their mandate predecessor", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program = structuredClone(crmContractReplay);
+  work.research_contract.program.action_learning_links[3].predecessor_ids = ["AL-CRM-CANDIDATE"];
+  await saveWork("gq009", work);
+}, 1, "must be execution_mandate");
+await test("learning returns cannot skip their observation predecessor", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program = structuredClone(crmContractReplay);
+  work.research_contract.program.action_learning_links[4].predecessor_ids = ["AL-CRM-MANDATE"];
+  await saveWork("gq009", work);
+}, 1, "must be observation_receipt");
+await test("freshness assessment cannot follow its review deadline", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program.freshness = { assessed_at: "2026-08-03", review_due_at: "2026-08-02" };
+  await saveWork("gq009", work);
+}, 1, "assessed_at must not be later than review_due_at");
+await test("impossible calendar dates fail", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program.assumptions[0].review_date = "2026-02-30";
+  await saveWork("gq009", work);
+}, 1, "real YYYY-MM-DD calendar date");
 await test("question IDs remain unique", async ({ loadWork, saveWork }) => {
   const gq001 = await loadWork("gq001");
   const gq009 = await loadWork("gq009");

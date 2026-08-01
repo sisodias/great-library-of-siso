@@ -30,6 +30,11 @@
     "refresh_policy": "Re-answer after material stack changes or when new measurements overturn the current bottleneck model.",
     "publication_boundary": "public_metadata_only",
     "program": {
+      "freshness": {
+        "assessed_at": "2026-08-02",
+        "review_due_at": "2026-09-01"
+      },
+      "next_useful_work": "Run one paired agent task with and without the evidence-aware context and receipt path, including retrieval and repair overhead in the comparison.",
       "assumptions": [
         {
           "id": "QA-GQ002-CONTEXT-VALUE",
@@ -68,6 +73,7 @@
           "reference": "docs/100-million-token-operating-plan.html#operating-loop",
           "relevance_hypothesis": "The published operating loop supplies falsifiable context and lineage pilots for testing agent-layer efficiency.",
           "rights_state": "public",
+          "publication_state": "public_safe_metadata",
           "observed_at": "2026-08-02",
           "provenance_receipt": "docs/100-million-token-operating-plan.html#canonical-contracts",
           "revision_or_digest": "accepted-direction:2026-08-02",
@@ -84,6 +90,7 @@
           "reference": "source-review:frontier-question-intake:gq-002:2026-08-01",
           "relevance_hypothesis": "The intake review tests whether operational research can remain owner-held while a public question exposes only safe lineage.",
           "rights_state": "owner_held",
+          "publication_state": "public_safe_metadata",
           "observed_at": "2026-08-02",
           "provenance_receipt": "registry/works/frontier-question-gq-002.json#evidence",
           "revision_or_digest": "source-review:2026-08-01",
