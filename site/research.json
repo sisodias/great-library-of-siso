@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-01T17:33:07.000Z",
+  "generated_at": "2026-08-01T19:12:50.000Z",
   "base_path": "/",
   "schema_version": "1.0.0",
-  "snapshot_id": "gls:snapshot:8b9f672b-61e2-4f68-b0ff-600cbfc042a2",
-  "snapshot_version": "31.0.0",
+  "snapshot_id": "gls:snapshot:a7a99ae1-a2e2-4e44-8fb3-c0235a35023b",
+  "snapshot_version": "32.0.0",
   "infrastructure_contract_url": "/docs/god-questions-infrastructure.html",
   "counts": {
     "questions": 7,
@@ -53,13 +53,13 @@
       "refresh_policy": "Re-answer when a major agent platform, workspace architecture, or failed forward prediction changes a load-bearing conclusion.",
       "publication_boundary": "public_metadata_only",
       "selected_release": {
-        "id": "gls:release:bb6f759b-4c22-4dda-ac29-a4a9becefed9",
-        "release_kind": null,
-        "version": "registry-seed-2026-08-01",
-        "released_at": "2026-08-01T22:30:00+07:00",
-        "artifact_count": 0,
+        "id": "gls:release:0212a6f4-1860-453b-bb27-2e9ed70a09c4",
+        "release_kind": "question_program_metadata",
+        "version": "program-metadata-1.0.0+ea7f0e4",
+        "released_at": "2026-08-02T02:08:28+07:00",
+        "artifact_count": 1,
         "public_answer_state": "not_released",
-        "public_answer_note": "Not released — the selected Release has no public answer artifact."
+        "public_answer_note": "Not released — the selected Release contains question-program metadata, not an answer artifact."
       },
       "program": {
         "freshness": {
@@ -197,13 +197,13 @@
       "refresh_policy": "Re-answer after material stack changes or when new measurements overturn the current bottleneck model.",
       "publication_boundary": "public_metadata_only",
       "selected_release": {
-        "id": "gls:release:c993c838-6d9e-484c-a53b-2e651cb48e63",
-        "release_kind": null,
-        "version": "registry-seed-2026-08-01",
-        "released_at": "2026-08-01T22:31:00+07:00",
-        "artifact_count": 0,
+        "id": "gls:release:b95eeca5-ed9d-48ac-858c-f6d62065cd29",
+        "release_kind": "question_program_metadata",
+        "version": "program-metadata-1.0.0+ea7f0e4",
+        "released_at": "2026-08-02T02:08:29+07:00",
+        "artifact_count": 1,
         "public_answer_state": "not_released",
-        "public_answer_note": "Not released — the selected Release has no public answer artifact."
+        "public_answer_note": "Not released — the selected Release contains question-program metadata, not an answer artifact."
       },
       "program": {
         "freshness": {
@@ -572,13 +572,13 @@
       "refresh_policy": "Re-answer when a real question cannot use the contract, a source or action interface changes, three-question evaluation evidence lands, or measured operating overhead exceeds the value created.",
       "publication_boundary": "public_metadata_only",
       "selected_release": {
-        "id": "gls:release:3aff8b95-f2b6-4ca6-b162-3543ba4eda39",
-        "release_kind": null,
-        "version": "registry-seed-2026-08-02",
-        "released_at": "2026-08-02T00:03:09+07:00",
-        "artifact_count": 0,
+        "id": "gls:release:0fea28b2-f6b3-4031-859c-27e89943f68c",
+        "release_kind": "question_program_metadata",
+        "version": "program-metadata-1.0.0+ea7f0e4",
+        "released_at": "2026-08-02T02:08:30+07:00",
+        "artifact_count": 1,
         "public_answer_state": "not_released",
-        "public_answer_note": "Not released — the selected Release has no public answer artifact."
+        "public_answer_note": "Not released — the selected Release contains question-program metadata, not an answer artifact."
       },
       "program": {
         "freshness": {

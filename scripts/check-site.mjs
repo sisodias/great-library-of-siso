@@ -94,6 +94,11 @@ if (intelligence.counts?.events < 5) errors.push("intelligence.json: expected th
 if (!intelligence.decisions?.some((decision) => decision.decision_key === "ADR-0004")) errors.push("intelligence.json: missing ADR-0004");
 if (!intelligence.events?.some((event) => event.scope?.snapshot_ids?.includes("gls:snapshot:73ee0c53-7e65-4c1c-9fe8-c990607ebf89"))) errors.push("intelligence.json: Whole Library V24 is not connected to an authored event");
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "24.0.0")) errors.push("intelligence.json: automatic registry changelog is missing V24");
+if (!intelligence.events?.some((event) => event.id === "gls:event:9c8e46f9-0a2a-4396-bda1-f2a3967c2cb9" && event.status === "completed" && event.scope?.snapshot_ids?.includes("gls:snapshot:a7a99ae1-a2e2-4e44-8fb3-c0235a35023b"))) errors.push("intelligence.json: God Questions infrastructure completion lineage is missing");
+if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "32.0.0" && change.id === "gls:snapshot:a7a99ae1-a2e2-4e44-8fb3-c0235a35023b")) errors.push("intelligence.json: automatic registry changelog is missing V32");
+if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 67) errors.push("intelligence.json: expected 67 immutable Releases at V32 closeout");
+if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 32) errors.push("intelligence.json: expected 32 immutable Snapshots at V32 closeout");
+if (intelligence.counts?.events !== 21 || intelligence.counts?.active_initiatives !== 0) errors.push("intelligence.json: expected 21 Events and zero active initiatives at V32 closeout");
 
 const frontierQuestions = [
   ["GQ-001", "frontier-question-agent-workspace"],
@@ -115,7 +120,7 @@ if (researchIndex.includes("explicit evidence scopes, and versioned answers.")) 
 for (const [field, expected] of Object.entries({ questions: 7, programmed_questions: 3, assumptions: 7, evidence_connections: 9, challenge_edges: 2, action_learning_links: 7, public_answers_released: 0 })) {
   if (researchProjection.counts?.[field] !== expected) errors.push(`research.json: expected ${field}=${expected}, found ${researchProjection.counts?.[field]}`);
 }
-if (researchProjection.snapshot_version !== "31.0.0") errors.push("research.json: must identify the selected V31 source snapshot before closeout");
+if (researchProjection.snapshot_version !== "32.0.0") errors.push("research.json: must identify the selected V32 source snapshot");
 for (const [questionId, state, assumptions, evidence, links] of [
   ["GQ-001", "partial", 2, 2, 1],
   ["GQ-002", "answered", 2, 2, 1],
@@ -124,7 +129,7 @@ for (const [questionId, state, assumptions, evidence, links] of [
   const question = researchProjection.questions?.find((entry) => entry.question_id === questionId);
   if (!question) { errors.push(`research.json: missing ${questionId}`); continue; }
   if (question.research_state !== state) errors.push(`research.json: ${questionId} research state changed from ${state}`);
-  if (question.selected_release?.public_answer_state !== "not_released" || question.selected_release?.artifact_count !== 0) errors.push(`research.json: ${questionId} metadata seed is inflated into a public answer`);
+  if (question.selected_release?.release_kind !== "question_program_metadata" || question.selected_release?.public_answer_state !== "not_released" || question.selected_release?.artifact_count !== 1) errors.push(`research.json: ${questionId} program metadata Release is missing or inflated into a public answer`);
   if (question.authoring_metrics?.assumptions !== assumptions || question.authoring_metrics?.evidence_connections !== evidence || question.authoring_metrics?.action_learning_links !== links) errors.push(`research.json: ${questionId} program fixture counts changed unexpectedly`);
 }
 for (const question of researchProjection.questions ?? []) {

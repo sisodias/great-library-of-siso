@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:0fea28b2-f6b3-4031-859c-27e89943f68c",
+  "work_id": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
+  "release_kind": "question_program_metadata",
+  "version": "program-metadata-1.0.0+ea7f0e4",
+  "title": "GQ-009 program and learning lineage — not an Answer Release",
+  "released_at": "2026-08-02T02:08:30+07:00",
+  "observed_at": "2026-08-02",
+  "immutable": true,
+  "artifacts": [{
+    "id": "gls:artifact:1c0ea0cc-b7e5-4d3d-97d0-4dceb98c0947",
+    "kind": "registry_metadata",
+    "locator": "https://github.com/Lordsisodia/great-library-of-siso/blob/ea7f0e4/registry/works/frontier-question-gq-009.json",
+    "revision": "ea7f0e4609517453c0ae72a07fcd1b256e0e3aed",
+    "availability": "public",
+    "owner": "SISO Open Source Foundation",
+    "ownership": "siso",
+    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "The artifact is publication-safe question, authority, observation, and learning metadata; owner-held receipts remain outside the Library.", "evidence": [] },
+    "integrity": { "state": "verified", "algorithm": "git_commit_sha1", "digest": "ea7f0e4609517453c0ae72a07fcd1b256e0e3aed" }
+  }],
+  "distribution": {
+    "addressable": { "state": "verified", "reason": "The complete GQ-009 program and learning-lineage metadata is pinned to an exact public commit.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/ea7f0e4609517453c0ae72a07fcd1b256e0e3aed", "observed_at": "2026-08-02", "summary": "The dogfood and privacy-repair checkpoint resolves from the canonical repository." }] },
+    "archive_downloadable": { "state": "not_applicable", "reason": "This Release identifies registry metadata rather than a standalone answer or corpus archive.", "evidence": [] },
+    "manifest_resolvable": { "state": "verified", "reason": "The manifest resolves to GQ-009, its typed graph, and deterministic human and agent projections.", "evidence": [{ "kind": "registry_validation", "reference": "repo-check:god-questions-infrastructure:ea7f0e4", "observed_at": "2026-08-02", "summary": "Thirty-two God Questions cases and the complete Library gate passed." }] },
+    "installable": { "state": "not_applicable", "reason": "Question metadata is read by the Library generator and is not independently installed.", "evidence": [] },
+    "forkable": { "state": "not_applicable", "reason": "This record does not claim a separately forkable software payload.", "evidence": [] },
+    "portable": { "state": "verified", "reason": "Only safe hashes, public commits, owner roles, rights states, and summaries are published; private authorization and receipt payloads remain outside the Library.", "evidence": [{ "kind": "release_receipt", "reference": "repo-check:god-questions-infrastructure:ea7f0e4", "observed_at": "2026-08-02", "summary": "Reference, free-text, fragment, credential, topology, truth-state, and publication scans passed." }] }
+  },
+  "evidence": [{ "kind": "release_receipt", "reference": "repo-check:god-questions-infrastructure:ea7f0e4", "observed_at": "2026-08-02", "summary": "GQ-009 remains researching after a real mandate-observation-learning loop returned a no-change proposal and challenged assumptions; no Answer Release or capability promotion is claimed." }]
+}

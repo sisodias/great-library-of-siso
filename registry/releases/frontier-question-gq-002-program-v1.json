@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:b95eeca5-ed9d-48ac-858c-f6d62065cd29",
+  "work_id": "gls:work:e38b054f-b926-4410-b84d-4fd3249fd4f4",
+  "release_kind": "question_program_metadata",
+  "version": "program-metadata-1.0.0+ea7f0e4",
+  "title": "GQ-002 program metadata — not an Answer Release",
+  "released_at": "2026-08-02T02:08:29+07:00",
+  "observed_at": "2026-08-02",
+  "immutable": true,
+  "artifacts": [{
+    "id": "gls:artifact:6ac590b9-47a3-4f45-917b-79c74de8f441",
+    "kind": "registry_metadata",
+    "locator": "https://github.com/Lordsisodia/great-library-of-siso/blob/ea7f0e4/registry/works/frontier-question-gq-002.json",
+    "revision": "ea7f0e4609517453c0ae72a07fcd1b256e0e3aed",
+    "availability": "public",
+    "owner": "SISO Open Source Foundation",
+    "ownership": "siso",
+    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "The artifact is publication-safe question-program metadata, not a distributable answer or private operational payload.", "evidence": [] },
+    "integrity": { "state": "verified", "algorithm": "git_commit_sha1", "digest": "ea7f0e4609517453c0ae72a07fcd1b256e0e3aed" }
+  }],
+  "distribution": {
+    "addressable": { "state": "verified", "reason": "The question-program metadata is pinned to an exact public commit.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/ea7f0e4609517453c0ae72a07fcd1b256e0e3aed", "observed_at": "2026-08-02", "summary": "The program checkpoint resolves from the canonical repository." }] },
+    "archive_downloadable": { "state": "not_applicable", "reason": "This Release identifies registry metadata rather than a standalone payload archive.", "evidence": [] },
+    "manifest_resolvable": { "state": "verified", "reason": "The manifest resolves to GQ-002 and a validated registry artifact.", "evidence": [{ "kind": "registry_validation", "reference": "repo-check:god-questions-infrastructure:ea7f0e4", "observed_at": "2026-08-02", "summary": "The complete Library gate validated the Work, Release kind, program graph, and generated projection." }] },
+    "installable": { "state": "not_applicable", "reason": "Question metadata is read by the Library generator and is not independently installed.", "evidence": [] },
+    "forkable": { "state": "not_applicable", "reason": "This record does not claim a separately forkable software payload.", "evidence": [] },
+    "portable": { "state": "verified", "reason": "Owner-held research remains outside the public record; only stable IDs, rights state, and safe summary metadata are selected.", "evidence": [{ "kind": "release_receipt", "reference": "repo-check:god-questions-infrastructure:ea7f0e4", "observed_at": "2026-08-02", "summary": "Publication scanning and owner-held metadata fixtures passed." }] }
+  },
+  "evidence": [{ "kind": "release_receipt", "reference": "repo-check:god-questions-infrastructure:ea7f0e4", "observed_at": "2026-08-02", "summary": "GQ-002 keeps its owner-held research state while mechanically declaring that no public Answer Release exists." }]
+}
