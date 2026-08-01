@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:466d4d2d-8a2a-4bdf-99e1-1d563c59dbc7",
+  "occurred_at": "2026-08-01T23:25:28+07:00",
+  "recorded_at": "2026-08-01T23:25:28+07:00",
+  "immutable": true,
+  "entry_type": "initiative_started",
+  "thread": {
+    "id": "gls:thread:hundred-million-token-operating-plan",
+    "name": "100 Million Token Operating Plan",
+    "kind": "initiative"
+  },
+  "status": "active",
+  "title": "Luna operating-plan design started",
+  "summary": "A dedicated GPT-5.6 Luna lane was authorized to turn the published fifteen-part portfolio and canonical God Questions architecture into one implementation-ready operating plan for later GPT-5.6 Sol review.",
+  "intent": "Define the smallest executable portfolio structure that connects ecosystem truth, question-driven research, Foundry, evaluation, the portable Agent Stack, security, maintenance, and constrained compute without duplicating the canonical mission or Frontier Question contracts.",
+  "reasoning": [
+    "The published 100 Million Token Program preserves intent and sequencing, but a later execution lane needs explicit work packages, entry and exit evidence, dependencies, owners, resource classes, and stop conditions.",
+    "The completed God Questions work already governs mission, question identity, assumptions, claims, ADRs, experiments, Answer Releases, and watch triggers; the operating plan must consume those contracts rather than redesign them.",
+    "A Luna draft followed by a separate Sol review separates inexpensive synthesis from higher-cost adversarial acceptance.",
+    "An isolated branch, worktree, and single authored path prevent interference with the live Library and the separate Luna/Bifrost infrastructure lane already running in GLOS."
+  ],
+  "changes": [
+    {
+      "kind": "coordination",
+      "reference": "gls:thread:hundred-million-token-operating-plan",
+      "summary": "Reserved one authored operating-plan path for a model-verified Luna worker and deferred integration, registry selection, and deployment to later review."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+    ],
+    "repository_urls": [
+      "https://github.com/Lordsisodia/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "Great Library Luna operating-plan designer",
+    "branch": "codex/100m-luna-operating-plan-20260801",
+    "reserved_paths": [
+      "docs/100-million-token-operating-plan.html",
+      "registry/events/2026-08-01-hundred-million-token-operating-plan-*.json"
+    ]
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "documentation",
+      "reference": "user-intent:luna-operating-plan:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The user explicitly requested a GPT-5.6 Luna agent in a new GLOS Herdr pane to produce the first operating draft, with GPT-5.6 Sol review deferred until later."
+    },
+    {
+      "kind": "source_review",
+      "reference": "source-review:hundred-million-program-and-god-questions:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The operating draft is anchored to the selected 100 Million Token Program, SISO mission, question-driven research method, Frontier Question dossier, Frontier Question identity model, Ecosystem Intelligence, and current Library Snapshot."
+    }
+  ],
+  "next_actions": [
+    "Launch and visibly verify a GPT-5.6 Luna Codex pane in the GLOS workspace.",
+    "Produce and commit one public-safe operating-plan draft in the isolated worktree.",
+    "Return an evidence packet for later GPT-5.6 Sol review; do not merge, release, select, or deploy the draft yet."
+  ]
+}

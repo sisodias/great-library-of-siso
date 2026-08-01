@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T16:17:08.000Z",
+  "generated_at": "2026-08-01T16:25:28.000Z",
   "base_path": "/",
   "works": [
     {
@@ -3313,11 +3313,32 @@
   },
   "intelligence": {
     "counts": {
-      "events": 12,
+      "events": 13,
       "decisions": 4,
-      "active_initiatives": 0,
+      "active_initiatives": 1,
       "registry_changes": 86
     },
-    "active_initiatives": []
+    "active_initiatives": [
+      {
+        "event_id": "gls:event:466d4d2d-8a2a-4bdf-99e1-1d563c59dbc7",
+        "thread_id": "gls:thread:hundred-million-token-operating-plan",
+        "name": "100 Million Token Operating Plan",
+        "status": "active",
+        "title": "Luna operating-plan design started",
+        "intent": "Define the smallest executable portfolio structure that connects ecosystem truth, question-driven research, Foundry, evaluation, the portable Agent Stack, security, maintenance, and constrained compute without duplicating the canonical mission or Frontier Question contracts.",
+        "occurred_at": "2026-08-01T23:25:28+07:00",
+        "owner": "Great Library Luna operating-plan designer",
+        "branch": "codex/100m-luna-operating-plan-20260801",
+        "reserved_paths": [
+          "docs/100-million-token-operating-plan.html",
+          "registry/events/2026-08-01-hundred-million-token-operating-plan-*.json"
+        ],
+        "next_actions": [
+          "Launch and visibly verify a GPT-5.6 Luna Codex pane in the GLOS workspace.",
+          "Produce and commit one public-safe operating-plan draft in the isolated worktree.",
+          "Return an evidence packet for later GPT-5.6 Sol review; do not merge, release, select, or deploy the draft yet."
+        ]
+      }
+    ]
   }
 }
