@@ -76,9 +76,11 @@ const frontierQuestions = [
   ["GQ-005", "frontier-question-field-momentum"],
   ["GQ-006", "frontier-question-information-organ"],
   ["GQ-008", "frontier-question-model-routing"],
+  ["GQ-009", "frontier-question-god-questions-infrastructure"],
 ];
 const researchIndex = await readFile(path.join(root, "research/index.html"), "utf8");
 if (!researchIndex.includes("Frontier Questions · God Questions")) errors.push("research/index.html: missing Frontier Questions section");
+if (!researchIndex.includes("God Questions Observatory")) errors.push("research/index.html: missing God Questions Observatory portfolio state");
 if (!researchIndex.includes("versioned-answer contracts. Metadata seed Releases are not accepted answers.")) errors.push("research/index.html: answer maturity boundary is missing");
 if (researchIndex.includes("explicit evidence scopes, and versioned answers.")) errors.push("research/index.html: metadata seeds are overstated as accepted versioned answers");
 for (const [document, marker] of [
@@ -103,6 +105,10 @@ for (const [questionId, slug] of frontierQuestions) {
   if (!researchIndex.includes(`/works/${slug}/`)) errors.push(`research/index.html: missing ${questionId} link`);
   const questionPage = await readFile(questionPath, "utf8");
   if (!questionPage.includes(`Research contract · ${questionId}`)) errors.push(`works/${slug}/index.html: missing ${questionId} research contract`);
+}
+const infrastructureQuestion = await readFile(path.join(root, "works/frontier-question-god-questions-infrastructure/index.html"), "utf8");
+for (const marker of ["Decision to change", "Success criteria", "Falsifiers", "Evidence gaps", "Watch triggers"]) {
+  if (!infrastructureQuestion.includes(marker)) errors.push(`GQ-009 page: missing program field ${marker}`);
 }
 
 for (const file of htmlFiles) {

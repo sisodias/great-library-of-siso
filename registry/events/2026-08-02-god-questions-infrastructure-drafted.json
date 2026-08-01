@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:60bd8d34-5531-4288-a4f9-49c15e0d3faa",
+  "occurred_at": "2026-08-02T00:09:23+07:00",
+  "recorded_at": "2026-08-02T00:09:23+07:00",
+  "immutable": true,
+  "entry_type": "initiative_updated",
+  "thread": {
+    "id": "gls:thread:god-questions-infrastructure",
+    "name": "God Questions Library infrastructure",
+    "kind": "research"
+  },
+  "status": "active",
+  "title": "GQ-009 and Observatory contracts drafted",
+  "summary": "The lane drafted the meta-question Work, metadata seed, V29 selection, reusable question-program fields, generated Observatory projection, and contract fixtures without touching the active 100 Million Token operating-plan path.",
+  "intent": "Make the existing God Questions portfolio operable and visible by dogfooding its own infrastructure question before adding autonomous research or execution machinery.",
+  "reasoning": [
+    "The registry remains the only question identity source; the Observatory is generated from the same Work contracts.",
+    "Decision targets, success criteria, falsifiers, evidence gaps, and watch triggers expose whether a question can change action instead of merely accumulating documents.",
+    "The metadata seed and public projection deliberately stop short of claiming an accepted answer or execution authority."
+  ],
+  "changes": [
+    {
+      "kind": "registry_record",
+      "reference": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
+      "summary": "Drafted GQ-009 as the stable meta-question for God Questions Library infrastructure."
+    },
+    {
+      "kind": "schema",
+      "reference": "schemas/work.schema.json",
+      "summary": "Added optional decision, success, falsifier, evidence-gap, and watch-trigger fields to the existing research contract."
+    },
+    {
+      "kind": "generator",
+      "reference": "scripts/build.mjs",
+      "summary": "Added a generated God Questions Observatory summary and question-specific portfolio cards."
+    },
+    {
+      "kind": "test",
+      "reference": "tests/research-contract.test.mjs",
+      "summary": "Added positive and negative fixtures for the richer question-program fields."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+      "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92"
+    ],
+    "release_ids": [
+      "gls:release:3aff8b95-f2b6-4ca6-b162-3543ba4eda39"
+    ],
+    "snapshot_ids": [
+      "gls:snapshot:1c0e97ef-1327-4c6c-bebc-0af7f56f2ed4"
+    ],
+    "repository_urls": [
+      "https://github.com/Lordsisodia/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "Great Library God Questions infrastructure maintainer",
+    "branch": "codex/god-questions-infrastructure-20260802",
+    "reserved_paths": [
+      "schemas/work.schema.json",
+      "registry/works/frontier-question-gq-009.json",
+      "registry/releases/frontier-question-gq-009-seed.json",
+      "registry/snapshots/whole-library-v29.json",
+      "registry/events/2026-08-02-god-questions-infrastructure-*.json",
+      "scripts/build.mjs",
+      "scripts/check-site.mjs",
+      "scripts/verify.mjs",
+      "tests/research-contract.test.mjs",
+      "README.md",
+      "CURRENT_STATE.md",
+      "site/"
+    ]
+  },
+  "visibility": "public",
+  "predecessor_event_id": "gls:event:89fb96df-a5a6-4dd5-bcd5-a53a3619a8e7",
+  "evidence": [
+    {
+      "kind": "registry_validation",
+      "reference": "repo-check:god-questions-infrastructure:draft:2026-08-02",
+      "observed_at": "2026-08-02",
+      "summary": "The 25-Work registry and four research-contract fixtures passed before the full generated-site verification."
+    }
+  ],
+  "next_actions": [
+    "Run the full immutable-history, contract, registry, build, link, identity, and publication-safety gate.",
+    "Inspect the generated Research index and GQ-009 detail page for the visible Observatory contract.",
+    "Close the Event thread only after exact verification evidence is available."
+  ]
+}

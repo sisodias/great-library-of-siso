@@ -234,6 +234,17 @@ function workCard(work) {
   </article>`;
 }
 
+function questionCard(work) {
+  const contract = work.researchContract;
+  const searchable = [work.name, work.summary, contract?.question, contract?.state, contract?.decision_to_change, ...(contract?.source_scopes || [])].filter(Boolean).join(' ').toLowerCase();
+  return `<article class="work-card question-card" data-search="${esc(searchable)}" data-type="${esc(slugify(work.type))}" data-maturity="${esc(slugify(work.maturity))}">
+    <div class="card-topline"><span>${esc(contract?.question_id || work.type)}</span><span class="maturity">${esc(contract?.state || work.maturity)}</span></div>
+    <h3><a href="${href(`works/${work.slug}/`)}">${esc(contract?.question || work.name)}</a></h3>
+    <p>${esc(contract?.decision_to_change || work.summary)}</p>
+    <div class="card-foot"><code>${esc(contract?.evidence_mode?.replaceAll('_', ' ') || work.id)}</code><span aria-hidden="true">↗</span></div>
+  </article>`;
+}
+
 function emptyCatalog(message) {
   return `<div class="empty-state"><span class="index-number">00</span><div><h3>Records in transit</h3><p>${esc(message)}</p></div></div>`;
 }
@@ -499,12 +510,17 @@ function researchPage(works, snapshot, sectionWork) {
   const related = projectionMembers(sectionWork?.id, snapshot, works).map(({ work }) => work);
   const questions = related.filter((work) => work.type === 'research_question');
   const systems = related.filter((work) => work.type !== 'research_question');
+  const questionStates = [...questions.reduce((counts, work) => counts.set(work.researchContract?.state || 'unscoped', (counts.get(work.researchContract?.state || 'unscoped') || 0) + 1), new Map())]
+    .sort(([left], [right]) => left.localeCompare(right))
+    .map(([state, count]) => `${count} ${state.replaceAll('_', ' ')}`)
+    .join(' · ');
   return page({
     title: 'Research', active: 'research', rootClass: 'agents-page',
     description: 'The Research section of The Great Library of SISO.',
     body: `<section class="subhero shell">${eyebrow('Library / Sections / Research')}<div><h1>Research</h1><p>Foundry discovers the evidence universe. SISO Knowledge preserves it. Evidence Engines turn it into traceable claims. Frontier Questions keep the highest-leverage questions and their answer lineage alive.</p></div><span class="folio">R—01</span></section>
     <section class="relationship-map shell" aria-labelledby="research-map-title"><div class="map-copy">${eyebrow(`Projection / ${snapshot?.version || 'unversioned'}`)}<h2 id="research-map-title">One evidence loop.<br>Clear ownership.</h2><p>The Library owns stable question and answer identities, not the corpus payload. Each Research system remains independently addressable and releasable.</p><p><a href="${href('docs/siso-mission.html')}">Read the SISO mission →</a><br><a href="${href('docs/question-driven-research.html')}">Open the question-driven research architecture →</a><br><a href="${href('docs/frontier-question-template.html')}">Use the Frontier Question template + CRM example →</a><br><a href="${href('docs/research-question-model.html')}">Read the Frontier Question identity model →</a><br><a href="${href('docs/siso-knowledge-model.html')}">Read the SISO Knowledge boundary →</a></p></div><div class="map-stack">${systems.map((work, i) => `<div class="map-node"><span>${String(i + 1).padStart(2, '0')}</span><div><b>${esc(work.name)}</b><small>${esc(work.type)} · ${esc(work.maturity)}</small></div></div>`).join('') || '<p class="map-key">Accepted Research systems are being indexed.</p>'}</div></section>
-    <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Frontier Questions · God Questions')}<h2>Questions worth answering again.</h2><p><span data-result-count>${questions.length}</span> standing questions with stable identities, explicit evidence scopes, and versioned-answer contracts. Metadata seed Releases are not accepted answers.</p></div>${questions.length ? catalogControls(questions) : ''}<div class="work-grid" data-catalog>${questions.length ? questions.map(workCard).join('') : emptyCatalog('Questions appear only after a publication-safe research contract is accepted.')}</div><p class="no-results" data-no-results hidden>No questions match those filters.</p></section>
+    <section class="model-strip"><div class="shell"><p><b>God Questions Observatory.</b> ${esc(questionStates || 'No question state recorded')} across ${questions.length} standing questions.</p><p><b>Questions drive the portfolio.</b> Decision, falsifier, evidence-gap, and watch-trigger fields are visible when a Question Work declares them; accepted answers still require immutable Releases.</p></div></section>
+    <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Frontier Questions · God Questions')}<h2>Questions worth answering again.</h2><p><span data-result-count>${questions.length}</span> standing questions with stable identities, explicit evidence scopes, and versioned-answer contracts. Metadata seed Releases are not accepted answers.</p></div>${questions.length ? catalogControls(questions) : ''}<div class="work-grid" data-catalog>${questions.length ? questions.map(questionCard).join('') : emptyCatalog('Questions appear only after a publication-safe research contract is accepted.')}</div><p class="no-results" data-no-results hidden>No questions match those filters.</p></section>
     <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Research systems')}<h2>The machinery behind the answers.</h2><p>${systems.length} independently owned Works.</p></div><div class="work-grid">${systems.map(workCard).join('')}</div></section>`,
   });
 }
@@ -534,11 +550,16 @@ function workPage(work, releases, byId, activeRelease) {
     ['Question', researchContract.question],
     ['State', researchContract.state],
     ['Evidence mode', researchContract.evidence_mode.replaceAll('_', ' ')],
+    ['Decision to change', researchContract.decision_to_change],
+    ['Success criteria', researchContract.success_criteria?.join(' · ')],
+    ['Falsifiers', researchContract.falsifiers?.join(' · ')],
+    ['Evidence gaps', researchContract.evidence_gaps?.join(' · ')],
+    ['Watch triggers', researchContract.watch_triggers?.join(' · ')],
     ['Source scopes', researchContract.source_scopes.join(' · ')],
     ['Answer shape', researchContract.answer_shape],
     ['Refresh policy', researchContract.refresh_policy],
     ['Publication boundary', researchContract.publication_boundary.replaceAll('_', ' ')],
-  ].map(([label, value]) => `<div><span>${esc(label)}</span><p>${esc(value)}</p></div>`) : [];
+  ].filter(([, value]) => value).map(([label, value]) => `<div><span>${esc(label)}</span><p>${esc(value)}</p></div>`) : [];
   return page({
     title: work.name,
     active: work.section === 'Research' ? 'research' : /agent/i.test(`${work.section} ${work.type}`) ? 'agents' : 'library',
