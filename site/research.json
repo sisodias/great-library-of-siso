@@ -9,11 +9,11 @@
     "questions": 7,
     "programmed_questions": 3,
     "assumptions": 7,
-    "evidence_connections": 9,
+    "evidence_connections": 10,
     "challenge_edges": 2,
-    "action_learning_links": 7,
+    "action_learning_links": 8,
     "public_answers_released": 0,
-    "serialized_program_bytes": 16989
+    "serialized_program_bytes": 19002
   },
   "questions": [
     {
@@ -529,7 +529,7 @@
         "review_due_at": "2026-08-16",
         "as_of": "2026-08-02"
       },
-      "next_useful_work": "Independently replay the repaired privacy and authority gates, then close the bounded v1 with immutable Library lineage while keeping GQ-009 researching.",
+      "next_useful_work": "Measure whether cold readers can reproduce the public estate dispositions without private context, then route one independently adjudicated runtime receipt before expanding the action bridge.",
       "evidence_mode": "hybrid",
       "decision_to_change": "Which registry fields, Library projections, evidence interfaces, and action-return contracts should become the standard infrastructure for every SISO God Question?",
       "success_criteria": [
@@ -585,7 +585,7 @@
           "assessed_at": "2026-08-02",
           "review_due_at": "2026-08-16"
         },
-        "next_useful_work": "Independently replay the repaired privacy and authority gates, then close the bounded v1 with immutable Library lineage while keeping GQ-009 researching.",
+        "next_useful_work": "Measure whether cold readers can reproduce the public estate dispositions without private context, then route one independently adjudicated runtime receipt before expanding the action bridge.",
         "assumptions": [
           {
             "id": "QA-GQ009-CANONICAL-EXTENSION",
@@ -599,7 +599,8 @@
             "evidence_connection_ids": [
               "EC-GQ009-CONSTITUTION",
               "EC-GQ009-CHECKPOINT",
-              "EC-GQ009-OPERATOR-PASS"
+              "EC-GQ009-OPERATOR-PASS",
+              "EC-GQ009-ESTATE-RECONCILIATION"
             ],
             "review_date": "2026-08-02"
           },
@@ -615,7 +616,8 @@
               "QA-GQ009-CANONICAL-EXTENSION"
             ],
             "evidence_connection_ids": [
-              "EC-GQ009-CHECKPOINT"
+              "EC-GQ009-CHECKPOINT",
+              "EC-GQ009-ESTATE-RECONCILIATION"
             ],
             "review_date": "2026-08-02"
           },
@@ -632,7 +634,8 @@
             ],
             "evidence_connection_ids": [
               "EC-GQ009-JOINT-BRIDGE",
-              "EC-GQ009-PRIVACY-FAIL"
+              "EC-GQ009-PRIVACY-FAIL",
+              "EC-GQ009-ESTATE-RECONCILIATION"
             ],
             "review_date": "2026-08-02"
           }
@@ -726,6 +729,25 @@
             "challenges_assumption_ids": [
               "QA-GQ009-OWNER-BOUNDARY"
             ]
+          },
+          {
+            "id": "EC-GQ009-ESTATE-RECONCILIATION",
+            "source_type": "source_review",
+            "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "reference": "docs/estate-reconciliation.html",
+            "relevance_hypothesis": "A reviewed public candidate cohort tests whether existing Library identities and explicit no-change or deferral outcomes can absorb estate learning without a second registry or automatic promotion.",
+            "rights_state": "public_metadata_only",
+            "publication_state": "public_safe_metadata",
+            "observed_at": "2026-08-02",
+            "provenance_receipt": "owner-review-receipt:sha256:9d69335c5a5d7f2ba85e8fdeb37102136af0fd5747f34c06b05cc4624c611e61",
+            "revision_or_digest": "9d69335c5a5d7f2ba85e8fdeb37102136af0fd5747f34c06b05cc4624c611e61",
+            "summary": "Four public repository observations resolved to two existing Work links, one historical no-change result, and one owner and license-review deferral; no source or registry identity was automatically promoted.",
+            "supports_assumption_ids": [
+              "QA-GQ009-CANONICAL-EXTENSION",
+              "QA-GQ009-METADATA-VALUE",
+              "QA-GQ009-OWNER-BOUNDARY"
+            ],
+            "challenges_assumption_ids": []
           }
         ],
         "action_learning_links": [
@@ -822,14 +844,34 @@
             "status": "no_change",
             "truth_state": "not_adjudicated",
             "summary": "The Learning Return proposes the privacy and temporal repairs now under verification while keeping GQ-009 researching, publishing no Answer Release, and promoting no capability."
+          },
+          {
+            "id": "AL-GQ009-ESTATE-LEARNING",
+            "object_type": "learning_return",
+            "authority_state": "learning_proposal",
+            "owner_role": "question_steward",
+            "reference": "learning-return-receipt:sha256:9d69335c5a5d7f2ba85e8fdeb37102136af0fd5747f34c06b05cc4624c611e61",
+            "recorded_at": "2026-08-02T05:07:20+07:00",
+            "content_sha256": "9d69335c5a5d7f2ba85e8fdeb37102136af0fd5747f34c06b05cc4624c611e61",
+            "predecessor_ids": [
+              "AL-GQ009-OBSERVATION"
+            ],
+            "related_assumption_ids": [
+              "QA-GQ009-CANONICAL-EXTENSION",
+              "QA-GQ009-METADATA-VALUE",
+              "QA-GQ009-OWNER-BOUNDARY"
+            ],
+            "status": "no_change",
+            "truth_state": "not_adjudicated",
+            "summary": "Owner-reviewed estate reconciliation supports the existing identity and authority boundaries, records no new Work or inventory, keeps the deferred candidate outside promotion, and proposes no Answer Release."
           }
         ]
       },
       "authoring_metrics": {
         "assumptions": 3,
-        "evidence_connections": 5,
-        "action_learning_links": 5,
-        "serialized_program_bytes": 10086
+        "evidence_connections": 6,
+        "action_learning_links": 6,
+        "serialized_program_bytes": 12099
       }
     }
   ]

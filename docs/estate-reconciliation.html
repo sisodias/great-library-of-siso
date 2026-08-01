@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="The public-safe reconciliation model that connects reviewed repository observations to existing Great Library identities, explicit no-change outcomes, or evidence-gated deferral.">
+  <title>Public estate reconciliation — The Great Library of SISO</title>
+  <style>
+    :root{color-scheme:dark;--bg:#071018;--panel:#101b27;--line:#2b3d50;--text:#edf5fa;--muted:#aab9c8;--green:#76e4b4;--blue:#78baff;--gold:#ebc873;--red:#f29a9a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 84% 0,#15304a 0,transparent 30%),var(--bg);color:var(--text);font:16px/1.62 system-ui,sans-serif}main{max-width:1180px;margin:auto;padding:50px 24px 92px}a{color:var(--blue)}h1{font-size:clamp(2.9rem,7vw,6rem);line-height:.94;letter-spacing:-.05em;max-width:1040px;margin:.12em 0 .3em}h2{font-size:clamp(1.55rem,3vw,2.25rem);margin:2.4em 0 .55em}h3{color:var(--green)}.eyebrow{color:var(--green);font-weight:750;text-transform:uppercase;letter-spacing:.14em}.lede{color:var(--muted);font-size:1.17rem;max-width:940px}.decision,.warning{border-radius:16px;padding:19px 21px;margin:26px 0}.decision{border:1px solid var(--green);background:rgba(118,228,180,.07)}.warning{border:1px solid var(--gold);background:rgba(235,200,115,.08)}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}.flow div{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:16px}.flow b{display:block;color:var(--green);margin-bottom:5px}.flow span,.small{color:var(--muted)}table{width:100%;border-collapse:collapse;background:var(--panel);font-size:.92rem}th,td{border:1px solid var(--line);padding:11px;text-align:left;vertical-align:top}th{color:var(--blue)}code{color:var(--green);overflow-wrap:anywhere}li{margin:.48rem 0}footer{border-top:1px solid var(--line);padding-top:24px;margin-top:66px;color:var(--muted)}@media(max-width:900px){.flow{grid-template-columns:1fr 1fr}}@media(max-width:620px){main{padding:34px 16px 70px}.flow{grid-template-columns:1fr}table{font-size:.82rem}th,td{padding:8px}}
+  </style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">The Great Library of SISO · Public estate reconciliation · 2026-08-02</p>
+  <h1>Observe widely.<br>Admit narrowly.</h1>
+  <p class="lede">This model connects a reviewed, public repository observation to the Great Library without turning repository existence into identity, visibility into reuse rights, or discovery into automatic registration.</p>
+
+  <div class="decision"><strong>Outcome rule:</strong> reconciliation may end in <code>link_existing</code>, <code>no_change</code>, or <code>deferred</code>. A useful review often changes no registry identity at all.</div>
+
+  <h2 id="flow">The reconciliation boundary</h2>
+  <div class="flow" aria-label="Estate reconciliation flow">
+    <div><b>1 · Observe</b><span>Record a public locator and exact revision without inferring ownership, value, or rights.</span></div>
+    <div><b>2 · Resolve identity</b><span>Compare the observation with stable Works, Releases, preservation records, and known source lineage.</span></div>
+    <div><b>3 · Review authority</b><span>A named owner or steward reviews rights, freshness, unique outcome, consumer, and release evidence.</span></div>
+    <div><b>4 · Dispose</b><span>Link an existing identity, record no change, or defer behind one explicit evidence gate.</span></div>
+  </div>
+  <p class="small">Foundry may discover candidate source. SISO Knowledge may preserve a corpus and its provenance. Evidence Engines may adjudicate claims. Repository owners control source. The Great Library records only approved public-safe identity and lineage. None absorbs the others.</p>
+
+  <h2 id="outcomes">Four reviewed outcomes</h2>
+  <table>
+    <thead><tr><th>Public observation</th><th>Identity resolution</th><th>Disposition</th><th>Why no new Work</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://github.com/sisodias/siso-project-os">sisodias/siso-project-os</a><br><code>d6290c609a6922e14b3faa27019aae31628686cb</code><br>MIT at the reviewed revision</td><td><code>gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943</code><br>Selected Release <code>gls:release:bae2bab9-e411-4684-b595-3bf86b2761f9</code></td><td><code>link_existing / no_change</code></td><td>The exact revision is already preserved by the selected Project OS Release.</td></tr>
+      <tr><td><a href="https://github.com/sisodias/siso-agent-stack">sisodias/siso-agent-stack</a><br><code>9d17865406419460335bdfbcdacfcc64dcb9cb5f</code><br>MIT at the reviewed revision</td><td><code>gls:work:b9196c61-901f-4105-93d9-899876d17016</code><br>Selected Release <code>gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34</code></td><td><code>link_existing / no_change</code></td><td>The observation resolves to the existing Stack Distribution identity. It does not supersede the separately evidenced selected Release revision.</td></tr>
+      <tr><td><a href="https://github.com/sisodias/siso-agent-base">sisodias/siso-agent-base</a><br><code>0293b671eefd20978f335b03347e30b38e891367</code><br>Older public source evidence</td><td>Runtime <code>gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224</code><br>Warehouse <code>gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae</code></td><td><code>no_change</code></td><td>The revision remains historical source evidence under existing Runtime and warehouse lineage; it does not replace the newer canonical source.</td></tr>
+      <tr><td><a href="https://github.com/sisodias/oracle-streaming-updates">sisodias/oracle-streaming-updates</a><br><code>54088f53c09b4f9764eef2555fdd27bcf9149c10</code><br>No license detected in the reviewed evidence</td><td>No accepted Work or Release</td><td><code>owner_active_deferred / evidence_review</code></td><td>Owner activity and unresolved license evidence block promotion, rights claims, and a no-change claim about unobserved owner-active scope.</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="why-not-inventory">Why this is not a Source Inventory</h2>
+  <p>A Source Inventory preserves mixed or unclassified material before promotion or reallocation. This cohort has already reached owner-reviewed dispositions: two links to existing Works, one historical no-change result, and one explicit deferral. Creating an inventory would duplicate known identities and would misrepresent a rights-review stop as a promotion campaign.</p>
+  <p>The existing <a href="agent-capability-promotion.html">capability-promotion lifecycle</a> still governs genuine candidate intake. Nothing here creates or advances a promotion stage.</p>
+
+  <h2 id="god-question-return">What returns to GQ-009</h2>
+  <p>The exercise supports a narrow infrastructure belief: a public candidate can be made visible and actionable through stable IDs, exact revisions, explicit rights state, and an owner decision without copying the private estate map into the Library. The GQ-009 successor records this as a <code>no_change</code>, <code>not_adjudicated</code> Learning Return. GQ-009 remains <code>researching</code>; metadata and a clean reconciliation do not constitute an Answer Release.</p>
+  <div class="warning"><strong>Not proven:</strong> whole-estate identity completeness, mutation-free deferred scopes, source reuse rights from visibility or administrative access, automatic registration, a reusable Oracle Streaming release, or a generally operational action compiler.</div>
+
+  <h2 id="publication-contract">Public evidence contract</h2>
+  <ul>
+    <li>Publish stable Library IDs, exact public repository revisions, public URLs, explicit license or rights-review state, safe receipt hashes, and bounded summaries.</li>
+    <li>Keep private repository names, machine paths, raw locator hashes, client identifiers, dirty-status payloads, host topology, credentials, and navigable private evidence outside the Library.</li>
+    <li>Do not claim that visibility, stars, administrative control, or a repository match proves reuse rights, Work independence, portability, or release quality.</li>
+    <li>Use immutable successors for Releases, Snapshots, Events, and accepted answers; never rewrite old evidence to make reconciliation appear cleaner.</li>
+  </ul>
+
+  <h2 id="next-gate">Next dependency gate</h2>
+  <p>Measure whether a cold reader can reproduce these four dispositions from the public surface without private context. Reopen identity or promotion only when a repository owner supplies new public rights, boundary, consumer, steward, verification, and release evidence. The deferred Oracle observation remains outside the Library registry until that gate is met.</p>
+
+  <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
+</main>
+</body>
+</html>
