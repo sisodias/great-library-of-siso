@@ -58,7 +58,7 @@ function localTarget(raw, sourceFile) {
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "docs/research-question-model.html", "docs/ecosystem-intelligence.html", "estate/index.html", "estate.json"]) {
+for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/ecosystem-intelligence.html", "estate/index.html", "estate.json"]) {
   if (!await exists(path.join(root, required))) errors.push(`missing required page: ${required}`);
 }
 
@@ -79,6 +79,15 @@ const frontierQuestions = [
 ];
 const researchIndex = await readFile(path.join(root, "research/index.html"), "utf8");
 if (!researchIndex.includes("Frontier Questions · God Questions")) errors.push("research/index.html: missing Frontier Questions section");
+for (const [document, marker] of [
+  ["docs/siso-mission.html", "The Great Library of SISO</td><td>Provides durable public identities"],
+  ["docs/question-driven-research.html", "The ten-pass first-principles loop"],
+  ["docs/frontier-question-template.html", "Worked example · composable CRM"],
+]) {
+  const documentHtml = await readFile(path.join(root, document), "utf8");
+  if (!documentHtml.includes(marker)) errors.push(`${document}: missing contract marker: ${marker}`);
+  if (!researchIndex.includes(`/${document}`)) errors.push(`research/index.html: missing ${document} link`);
+}
 for (const [questionId, slug] of frontierQuestions) {
   const questionPath = path.join(root, "works", slug, "index.html");
   if (!await exists(questionPath)) {

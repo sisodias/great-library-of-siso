@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A reusable Frontier Question dossier template with assumptions, source queues, claims, ADRs, experiments, answer Releases, and a worked CRM architecture example.">
+  <title>Frontier Question template — with CRM example</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080d13;--panel:#111a25;--line:#2b394b;--text:#edf4fa;--muted:#a7b4c5;--green:#76e4b4;--blue:#78baff;--gold:#e7c36a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0,#14283c 0,transparent 31%),var(--bg);color:var(--text);font:16px/1.59 system-ui,sans-serif}main{max-width:1140px;margin:auto;padding:52px 24px 90px}a{color:var(--blue)}h1{font-size:clamp(2.8rem,7vw,5.9rem);line-height:.94;letter-spacing:-.05em;max-width:980px;margin:.15em 0 .3em}h2{margin-top:2.55em}h3{color:var(--green);margin-top:1.8em}.eyebrow{color:var(--green);font-weight:750;text-transform:uppercase;letter-spacing:.14em}.lede,.muted{color:var(--muted)}.lede{font-size:1.17rem;max-width:900px}.template{background:#0b1119;border:1px solid var(--line);border-radius:18px;padding:22px;overflow:auto;white-space:pre-wrap;color:#dce8ef;font:14px/1.52 ui-monospace,SFMono-Regular,Menlo,monospace}.callout{border:1px solid var(--green);background:rgba(118,228,180,.07);padding:22px;border-radius:18px;margin:28px 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{border:1px solid var(--line);background:var(--panel);border-radius:15px;padding:18px}.card b{display:block;color:var(--green);margin-bottom:6px}.card p{color:var(--muted);margin:.25em 0}table{width:100%;border-collapse:collapse;background:var(--panel)}th,td{border:1px solid var(--line);padding:11px;text-align:left;vertical-align:top}th{color:var(--blue)}code{color:var(--green)}.boundary{border-left:4px solid var(--gold);padding:2px 0 2px 18px}footer{color:var(--muted);border-top:1px solid var(--line);padding-top:24px;margin-top:66px}@media(max-width:800px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body><main>
+  <p class="eyebrow">Frontier Questions · Reusable dossier</p>
+  <h1>One question.<br>One living evidence spine.</h1>
+  <p class="lede">Create one dossier per Frontier Question. The dossier is the operating map; the stable question remains a Library Work, and each accepted answer remains an immutable Release. Large, private, licensed, or operational payloads stay with their owning evidence systems.</p>
+
+  <div class="callout"><strong>Template rule:</strong> do not fill every field with ceremonial prose. A field exists to change retrieval, reasoning, a decision, or a refresh trigger. Mark unknowns honestly. Link evidence rather than copying entire corpora.</div>
+
+  <h2>Copyable question dossier</h2>
+  <pre class="template">FRONTIER QUESTION
+ID / public label:
+Title:
+Exact question:
+Why this matters / value path:
+Decision owner and steward:
+Status: proposed | scoped | active | synthesis | released | watching | challenged
+Time horizon:
+Public / private boundary:
+Expected answer shape:
+Refresh triggers:
+
+FRAME
+Definitions:
+In scope:
+Out of scope:
+Constraints:
+Subquestions:
+Success / decision threshold:
+Known disagreements:
+
+BASELINE
+Current best answer:
+Confidence and why:
+Candidate answers / hypotheses:
+What would reverse the leading view:
+Known unknowns:
+
+ASSUMPTION LEDGER
+- ID: GA-___ | DA-___ | QA-___ | AA-___
+  Statement:
+  Scope and status:
+  Confidence:
+  Evidence for / against:
+  Falsifier:
+  Depends on / dependents:
+  Last reviewed / supersedes:
+
+EVIDENCE UNIVERSE
+Foundry scopes and watchlists:
+Repositories / code:
+People / organizations:
+Books:
+Papers / official documentation:
+Web / community / videos:
+Datasets:
+SISO systems / experiments / user evidence:
+Missing viewpoints and rights constraints:
+
+SOURCE QUEUE
+- Source ID / locator / edition or revision:
+  Source type and creator:
+  Rights / publication boundary:
+  Relevance hypothesis:
+  Assumption or subquestion targeted:
+  Expected information gain:
+  Read state and extraction receipt:
+
+CLAIM + CONTRADICTION LEDGER
+- Claim ID / atomic statement / type / scope:
+  Supporting sources:
+  Refuting sources:
+  Witness independence:
+  Applicability and confidence:
+  Unresolved contradiction:
+
+FIRST-PRINCIPLES SYNTHESIS
+Irreducible constraints:
+Mechanisms and causal model:
+Incentives / information flows / feedback loops:
+Universal findings vs SISO preferences:
+Killed hypotheses and why:
+What the evidence cannot establish:
+
+IMPLICATIONS
+Assumptions changed:
+Capability or stack map changed:
+ADRs create / revisit / supersede:
+Experiments to run:
+No-regret actions:
+Actions explicitly not justified:
+
+ANSWER RELEASE
+Answer and grade:
+Evidence universe and cutoff:
+Load-bearing assumptions:
+Limitations and contradictions:
+Predictions:
+Decision / implementation implications:
+Successor and superseded answer IDs:
+Next watch date / event triggers:</pre>
+
+  <h2>Worked example · composable CRM</h2>
+  <p class="muted">This is a framing example, not an accepted Work, product commitment, vendor ranking, or completed answer.</p>
+
+  <h3>Exact question</h3>
+  <p><strong>What reusable, composable CRM and business-operating-system architecture should SISO adopt so client systems inherit high-value data, grid, document, form, workflow, permissions, integration, reporting, and agent capabilities without rebuilding the same foundations for every engagement?</strong></p>
+
+  <h3>Why it matters</h3>
+  <p>The decision affects delivery speed, reliability, upgrade cost, client fit, agent usability, licensing risk, and the amount of reusable capability that compounds across projects. The answer is not “find the biggest CRM repository.” It is a reference architecture, capability map, evidence-backed source strategy, and sequence of reversible decisions.</p>
+
+  <h3>Question-specific assumptions to test</h3>
+  <table>
+    <thead><tr><th>ID</th><th>Candidate assumption</th><th>Useful falsifier</th></tr></thead>
+    <tbody>
+      <tr><td>QA-CRM-01</td><td>A large share of client workflows reuse a stable set of data, relationship, permission, view, form, automation, and audit primitives.</td><td>Workflow sampling shows the supposedly shared core is small or forces costly exceptions.</td></tr>
+      <tr><td>QA-CRM-02</td><td>Adapting modular, appropriately licensed foundations creates more lifetime value than repeatedly generating bespoke foundations.</td><td>Integration, upgrade, or license cost persistently exceeds verified bespoke delivery and maintenance cost.</td></tr>
+      <tr><td>QA-CRM-03</td><td>A flexible data-and-workflow kernel can support vertical capability packs without becoming an unmaintainable universal platform.</td><td>Two or more representative verticals require incompatible invariants in the proposed kernel.</td></tr>
+      <tr><td>QA-CRM-04</td><td>Agents become materially more useful when the system exposes typed actions, permissions, provenance, and reversible audit trails rather than only a user-interface automation layer.</td><td>Controlled tasks show no meaningful quality, speed, or safety improvement over the simpler interface.</td></tr>
+      <tr><td>QA-CRM-05</td><td>Upstream health, interface stability, composability, and rights are stronger selection criteria than feature count or popularity alone.</td><td>Outcome data demonstrates that simpler popularity/feature signals predict adoption success better.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Evidence map</h3>
+  <div class="grid">
+    <article class="card"><b>Executable evidence</b><p>Appropriately licensed open-source CRM, database, grid, document, workflow, form, permission, integration, and agent-interface projects; architecture and extension seams; test and upgrade behavior.</p></article>
+    <article class="card"><b>Product and market evidence</b><p>Publicly observable Notion/Airtable-class workflows, customer jobs, switching costs, ecosystem patterns, and documented interfaces. Product behavior may inform requirements; proprietary source code is not assumed available for reuse.</p></article>
+    <article class="card"><b>Book and framework evidence</b><p>Question-mapped sources on organizational scaling, modularity, platform economics, operations, and adoption. The user-named <em>Exponential Organizations 2.0</em> enters as a queued source only after a relevance and rights check.</p></article>
+    <article class="card"><b>Reality evidence</b><p>Representative client workflow samples, delivery time, change frequency, permission failures, automation reliability, agent task completion, operator feedback, and lifetime maintenance cost.</p></article>
+  </div>
+
+  <h3>Subquestions</h3>
+  <ul>
+    <li>Which capabilities are truly invariant across target engagements, and which belong in vertical packs?</li>
+    <li>What is the smallest stable kernel: data model, relationships, permissions, event log, workflow runtime, views, or something else?</li>
+    <li>Which components must share a transaction/security boundary, and which should remain replaceable services?</li>
+    <li>What extension contracts let agents and humans operate the same system safely?</li>
+    <li>Which source candidates are lawful to reuse, healthy enough to depend on, modular enough to extract, and economical to maintain?</li>
+    <li>When should SISO integrate, extract a capability, contribute upstream, wrap a service, or build an original component?</li>
+  </ul>
+
+  <h3>Expected answer package</h3>
+  <ol>
+    <li>A capability graph separating kernel, optional modules, vertical packs, integrations, and agent interfaces.</li>
+    <li>A source landscape that distinguishes executable code, architectural information, product behavior, and market signal.</li>
+    <li>A weighted shortlist with license, provenance, extension seams, health, upgrade cost, and evidence receipts.</li>
+    <li>A reference architecture and ADR set for the smallest reversible composition.</li>
+    <li>Thin experiments against representative workflows with explicit success and abandonment thresholds.</li>
+    <li>An Answer Release stating what to reuse, integrate, build, defer, and watch—plus the assumptions that could reopen the decision.</li>
+  </ol>
+
+  <div class="boundary"><p><strong>First experiment:</strong> choose a small but representative workflow slice, implement it through the proposed kernel and one vertical pack, expose the same typed actions to a human UI and an agent, and measure delivery time, exception count, permission correctness, task success, and upgrade friction. This is more informative than committing to a universal CRM platform from a repository ranking alone.</p></div>
+
+  <p>Read the <a href="question-driven-research.html">full research architecture</a>, the <a href="research-question-model.html">Frontier Question identity model</a>, or the <a href="siso-mission.html">SISO mission</a>.</p>
+  <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
+</main></body>
+</html>

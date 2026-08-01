@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="The question-first research architecture for connecting Frontier Questions to books, repositories, people, evidence, assumptions, ADRs, experiments, and versioned answers.">
+  <title>Question-driven research — SISO architecture</title>
+  <style>
+    :root{color-scheme:dark;--bg:#070c12;--panel:#101923;--line:#2b3948;--text:#eef5fa;--muted:#a8b5c5;--green:#77e4b4;--blue:#78baff;--gold:#ebca75;--red:#f28f8f}*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#071018,#0a0e15 45%,#11101a);color:var(--text);font:16px/1.61 system-ui,sans-serif}main{max-width:1160px;margin:auto;padding:54px 24px 90px}a{color:var(--blue)}h1{font-size:clamp(2.9rem,7.5vw,6.2rem);line-height:.93;letter-spacing:-.05em;max-width:1030px;margin:.14em 0 .3em}h2{margin-top:2.65em}.eyebrow{color:var(--green);font-weight:750;text-transform:uppercase;letter-spacing:.14em}.lede{font-size:1.17rem;color:var(--muted);max-width:900px}.decision{border:1px solid var(--green);background:rgba(119,228,180,.07);padding:24px;border-radius:18px;margin:32px 0}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:28px 0}.flow div,.card{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:16px}.flow b,.card b{display:block;color:var(--green)}.flow span,.card p{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.loop{counter-reset:step;list-style:none;padding:0}.loop li{counter-increment:step;display:grid;grid-template-columns:52px 1fr;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}.loop li:before{content:counter(step,decimal-leading-zero);color:var(--green);font-weight:800;font-size:1.18rem}.loop strong{display:block}.loop p{margin:.25em 0;color:var(--muted)}table{width:100%;border-collapse:collapse;background:var(--panel)}th,td{border:1px solid var(--line);padding:11px;text-align:left;vertical-align:top}th{color:var(--blue)}code{color:var(--green)}.warning{border-left:4px solid var(--gold);padding:2px 0 2px 18px}.challenge{border-left:4px solid var(--red);padding:2px 0 2px 18px}footer{color:var(--muted);border-top:1px solid var(--line);padding-top:24px;margin-top:66px}@media(max-width:900px){.flow{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}}@media(max-width:540px){.flow{grid-template-columns:1fr}}
+  </style>
+</head>
+<body><main>
+  <p class="eyebrow">Frontier Questions · Operating architecture</p>
+  <h1>Do not read at random.<br>Read to change an answer.</h1>
+  <p class="lede">Question-driven research turns the world's code, books, papers, videos, people, discussions, datasets, and SISO's own outcomes into a disciplined learning loop. Collection is supply. A consequential question is demand. The system becomes intelligent only when evidence can change assumptions, decisions, and action.</p>
+
+  <div class="decision"><strong>First-principles boundary</strong><br>The Great Library records durable public identities, answer lineage, decisions, and safe reading surfaces. Foundry discovers and watches source universes. SISO Knowledge preserves and retrieves evidence. Evidence Engines extract claims and syntheses. Operating systems run experiments. No organ silently absorbs the others.</div>
+
+  <div class="flow" aria-label="Question-driven research flow">
+    <div><b>1 · Direction</b><span>Mission and valuable outcome</span></div>
+    <div><b>2 · Demand</b><span>Question and decision frame</span></div>
+    <div><b>3 · Evidence</b><span>Sources, claims, contradictions</span></div>
+    <div><b>4 · Change</b><span>Assumptions, ADRs, experiments</span></div>
+    <div><b>5 · Memory</b><span>Answer Release and watch trigger</span></div>
+  </div>
+
+  <h2>The research object graph</h2>
+  <table>
+    <thead><tr><th>Object</th><th>What it must carry</th><th>Why it exists</th></tr></thead>
+    <tbody>
+      <tr><td>Mission</td><td>Desired durable value, principles, non-negotiable boundaries.</td><td>Prevents locally impressive work from drifting away from the long-horizon objective.</td></tr>
+      <tr><td>Frontier Question</td><td>Stable identity, exact wording, scope, steward, expected answer shape, value path, refresh trigger.</td><td>Keeps inquiry addressable while answers change.</td></tr>
+      <tr><td>Source card</td><td>Locator, creator, edition/version/date, rights boundary, source type, relevance hypothesis, provenance.</td><td>Separates a source's existence from any claim derived from it.</td></tr>
+      <tr><td>Claim</td><td>Atomic statement, source span/receipt, type, scope, support/refutation, independence, confidence.</td><td>Makes reasoning inspectable instead of burying it in summaries.</td></tr>
+      <tr><td>Assumption</td><td>Stable ID, level, status, confidence, evidence for/against, falsifier, dependents, review date.</td><td>Exposes the load-bearing beliefs underneath questions and decisions.</td></tr>
+      <tr><td>ADR / decision</td><td>Context, choice, alternatives, assumptions relied on, evidence, consequences, reversal trigger.</td><td>Connects research to a deliberate system boundary or commitment.</td></tr>
+      <tr><td>Experiment</td><td>Prediction, intervention, metric, threshold, result, validity threats, linked assumptions.</td><td>Lets reality challenge what documents and models suggest.</td></tr>
+      <tr><td>Answer Release</td><td>Conclusion, grade, evidence universe, assumption state, contradictions, limitations, predictions, implications.</td><td>Creates an immutable citable answer rather than overwriting history.</td></tr>
+      <tr><td>Watch trigger</td><td>Source delta, failed prediction, assumption challenge, time horizon, or operating signal.</td><td>Reopens the question when the expected value of another pass becomes material.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The ten-pass first-principles loop</h2>
+  <ol class="loop">
+    <li><div><strong>Prove mission fit.</strong><p>Name the valuable outcome, affected people, decision owner, time horizon, and why this question deserves attention before another one.</p></div></li>
+    <li><div><strong>Make the question exact.</strong><p>Split compound questions. Define terms, exclusions, constraints, unit of analysis, and the answer form that would change a decision.</p></div></li>
+    <li><div><strong>Pre-register the epistemic baseline.</strong><p>Record current assumptions, candidate answers, confidence, disagreements, and what evidence would reverse the leading view before search changes the story.</p></div></li>
+    <li><div><strong>Map the evidence universe.</strong><p>Identify relevant source types, Foundry buckets, creators, repositories, books, datasets, communities, live systems, and missing viewpoints. Popularity is a retrieval prior, not proof.</p></div></li>
+    <li><div><strong>Choose by expected information gain.</strong><p>Read sources most likely to distinguish competing hypotheses first. Widen until new evidence no longer changes the answer enough to justify its cost.</p></div></li>
+    <li><div><strong>Extract claims, not vibes.</strong><p>Capture atomic claims, mechanisms, constraints, counterclaims, direct receipts, independence, and applicability. Keep executable value, information value, and market signal distinct.</p></div></li>
+    <li><div><strong>Reduce to fundamentals.</strong><p>Ask what must be true independent of current products: physical or economic constraints, information flows, incentives, coordination costs, feedback loops, interfaces, and irreducible human needs.</p></div></li>
+    <li><div><strong>Attack the load-bearing beliefs.</strong><p>Seek disconfirming cases, base rates, failed implementations, alternative causal stories, rights constraints, and evidence from different source families. Record killed hypotheses.</p></div></li>
+    <li><div><strong>Convert learning into change.</strong><p>Show which assumptions moved, which ADRs should be created or revisited, what capability map changes, and which experiment produces the cheapest decisive reality check.</p></div></li>
+    <li><div><strong>Release and watch.</strong><p>Publish a graded answer with limits and predictions. Keep the old Release immutable; create a successor when a trigger materially changes the conclusion.</p></div></li>
+  </ol>
+
+  <h2>Assumptions are a dependency graph</h2>
+  <p>Assumptions must never live only in prose. The minimum hierarchy is:</p>
+  <div class="grid">
+    <article class="card"><b>GA · Global/base</b><p>Beliefs reused across much of SISO—for example, how value is measured or when reuse is preferable. These should be few, slow-changing, and highly visible.</p></article>
+    <article class="card"><b>DA · Domain</b><p>Beliefs shared by a field such as agent systems, CRM, inference economics, or knowledge architecture.</p></article>
+    <article class="card"><b>QA · Question</b><p>Beliefs specific to one Frontier Question and its current frame.</p></article>
+    <article class="card"><b>AA · Action/ADR</b><p>Beliefs a concrete decision or experiment relies on.</p></article>
+  </div>
+  <p>Each assumption carries <code>id</code>, <code>statement</code>, <code>scope</code>, <code>status</code> (<code>active</code>, <code>challenged</code>, <code>refuted</code>, <code>superseded</code>), <code>confidence</code>, <code>evidence_for</code>, <code>evidence_against</code>, <code>falsifier</code>, <code>depends_on</code>, <code>dependents</code>, <code>last_reviewed</code>, and <code>supersedes</code>.</p>
+  <div class="challenge"><p><strong>Propagation rule:</strong> when a global or domain assumption changes, run an impact scan over dependent questions, claims, ADRs, experiments, and selected Answer Releases. A challenged premise does not automatically make every dependent conclusion false; it makes re-evaluation explicit and prioritized.</p></div>
+
+  <h2>Books become targeted evidence</h2>
+  <p>A book is neither a sacred authority nor an inert file in a folder. It is a versioned source that may contain mechanisms, cases, frameworks, predictions, or counterexamples relevant to particular questions.</p>
+  <ol>
+    <li>Create a source card with title, author, edition, publication date, lawful access and quotation boundary, and the questions it may inform.</li>
+    <li>Write a relevance hypothesis before reading: which assumption, subquestion, or decision might this source change?</li>
+    <li>Plan the high-information chapters or sections first; do not require cover-to-cover reading when only a narrow claim matters.</li>
+    <li>Extract concise claims and citations, not raw copyrighted text. Record context, limitations, and counter-evidence.</li>
+    <li>Map every useful claim to the assumptions, ADRs, experiments, and Answer Releases it supports or challenges.</li>
+    <li>Record the update: what changed, what did not, and why another source or reality test is still needed.</li>
+  </ol>
+  <div class="warning"><p><strong>Queued example, not yet evidence:</strong> <em>Exponential Organizations 2.0</em> was named as a candidate source. It should enter a question's source queue with an edition/rights check and relevance hypotheses before any content claim is attributed to it.</p></div>
+
+  <h2>Stopping, publishing, and reopening</h2>
+  <p>Research stops for the current pass when the next source has lower expected decision value than acting, the decisive uncertainties are named, load-bearing claims have survived appropriate challenge, and the answer contains a concrete implication or an honest finding that no action is justified. It reopens on a failed prediction, material source delta, challenged assumption, changed constraint, scheduled review, or operating result that would alter the recommendation.</p>
+
+  <h2>Where this module ends</h2>
+  <p>The authored module defines the method and public contract. It should become a separate Work or service only when it acquires independent source code, operators, a release cadence, or a corpus lifecycle that cannot be expressed through existing Research Works. Until then, creating another registry or warehouse would add coordination cost without adding knowledge.</p>
+
+  <p>Use the <a href="frontier-question-template.html">Frontier Question template and CRM worked example</a>, read the <a href="research-question-model.html">registry identity model</a>, or return to the <a href="siso-mission.html">SISO mission</a>.</p>
+  <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
+</main></body>
+</html>
