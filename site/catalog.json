@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T17:09:23.000Z",
+  "generated_at": "2026-08-01T17:12:29.000Z",
   "base_path": "/",
   "works": [
     {
@@ -243,9 +243,9 @@
       "locator_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:de6d0191-2b51-4af6-8369-11f8893ff036",
-      "active_release_version": "0.7.1+f44b4cf",
-      "artifact_revision": "f44b4cf3cf27d0fa66b0e5b726d67925b5fd8e08"
+      "active_release_id": "gls:release:07f984fa-af0a-422a-9103-6e34a2ac6dbd",
+      "active_release_version": "0.8.0+d16ac75",
+      "artifact_revision": "d16ac75d98849dfb62e2e684e3d02b65132a25c5"
     },
     {
       "owner": "Lordsisodia",
@@ -3322,42 +3322,12 @@
   },
   "intelligence": {
     "counts": {
-      "events": 15,
+      "events": 16,
       "decisions": 4,
-      "active_initiatives": 2,
-      "registry_changes": 88
+      "active_initiatives": 1,
+      "registry_changes": 90
     },
     "active_initiatives": [
-      {
-        "event_id": "gls:event:60bd8d34-5531-4288-a4f9-49c15e0d3faa",
-        "thread_id": "gls:thread:god-questions-infrastructure",
-        "name": "God Questions Library infrastructure",
-        "status": "active",
-        "title": "GQ-009 and Observatory contracts drafted",
-        "intent": "Make the existing God Questions portfolio operable and visible by dogfooding its own infrastructure question before adding autonomous research or execution machinery.",
-        "occurred_at": "2026-08-02T00:09:23+07:00",
-        "owner": "Great Library God Questions infrastructure maintainer",
-        "branch": "codex/god-questions-infrastructure-20260802",
-        "reserved_paths": [
-          "schemas/work.schema.json",
-          "registry/works/frontier-question-gq-009.json",
-          "registry/releases/frontier-question-gq-009-seed.json",
-          "registry/snapshots/whole-library-v29.json",
-          "registry/events/2026-08-02-god-questions-infrastructure-*.json",
-          "scripts/build.mjs",
-          "scripts/check-site.mjs",
-          "scripts/verify.mjs",
-          "tests/research-contract.test.mjs",
-          "README.md",
-          "CURRENT_STATE.md",
-          "site/"
-        ],
-        "next_actions": [
-          "Run the full immutable-history, contract, registry, build, link, identity, and publication-safety gate.",
-          "Inspect the generated Research index and GQ-009 detail page for the visible Observatory contract.",
-          "Close the Event thread only after exact verification evidence is available."
-        ]
-      },
       {
         "event_id": "gls:event:466d4d2d-8a2a-4bdf-99e1-1d563c59dbc7",
         "thread_id": "gls:thread:hundred-million-token-operating-plan",

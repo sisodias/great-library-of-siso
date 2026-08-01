@@ -8,7 +8,7 @@
 ## What is live
 
 - The public registry, generated site, repository estate, and machine-readable catalog are deployed.
-- Twenty-four stable Works span the Library, Agents, and Research, including six publication-safe Frontier Questions and three preservation-aware source inventories. The authored SISO mission and question-driven research module now explain what those questions serve and how they operate without adding a second registry.
+- Twenty-five stable Works span the Library, Agents, and Research, including seven publication-safe Frontier Questions and three preservation-aware source inventories. GQ-009 dogfoods the God Questions infrastructure itself, while the authored SISO mission and question-driven research module explain what those questions serve and how they operate without adding a second registry.
 - The Agents story separates Project OS, Runtime, coordination, integrations, Skills, Playbooks, Agent Brain, and Session Intelligence using typed relationships rather than directory hierarchy.
 - The machine-neutral local convention groups ten independent checkouts flat at `$SISO_WORKSPACE/SISO_Agents`; this placement changes no Work, Release, Snapshot, locator, or public URL.
 - SISO Agent Brain `0.3.0` is pinned to `ed50bec86f5cfb86cc5c84ebfce97fad595598b4`.
@@ -21,15 +21,15 @@
 - Immutable SISO Agent Stack Assembly 2.0.0 expands the composition to the complete portable public stack without rewriting V1.
 - The agent-capability promotion campaign is a first-class Library surface at `/promotion/` and `/promotion.json`: one active immutable campaign head tracks 18 publication-safe candidate units, with seven at `candidate`, eight at `owner_assigned`, three at `read`, and zero unresolved target Works.
 - The promotion lifecycle is mechanically enforced from `unverified` through `stack_pinned` and `retired`; advanced stages must bind real evidence, Releases, Snapshots, and verified Stack manifest receipts.
-- Ecosystem Intelligence is generated at `/intelligence/` and `/intelligence.json` from four immutable ADRs, twelve append-only Events, and the automatic history of all 58 Releases and 28 Snapshots. The current projection has zero active initiatives; live lanes must publish branch and machine-neutral path reservations before parallel work begins.
-- Whole Library V28 — Answer Maturity Correction (`gls:snapshot:80b529a7-aef3-4657-bbd0-f00061e7c1cf`) is the active Snapshot.
-- Frontier Questions reuses the core Library model: a question is a Work, an accepted answer is a Release, and the latest Snapshot selects the current portfolio. Its current six Releases are explicitly publication-safe metadata seeds rather than public answer artifacts. Foundry discovers relevant evidence, SISO Knowledge preserves it, and Evidence Engines transform it.
+- Ecosystem Intelligence is generated at `/intelligence/` and `/intelligence.json` from four immutable ADRs, sixteen append-only Events, and the automatic history of all 60 Releases and 30 Snapshots. The current projection retains the independently owned 100 Million Token operating-plan initiative; live lanes must publish branch and machine-neutral path reservations before parallel work begins.
+- Whole Library V30 — God Questions Observatory Release (`gls:snapshot:fb10d973-8a24-44c7-8fed-b22e7d227b5d`) is the active Snapshot.
+- Frontier Questions reuses the core Library model: a question is a Work, an accepted answer is a Release, and the latest Snapshot selects the current portfolio. Its current seven question Releases are explicitly publication-safe metadata seeds rather than public answer artifacts. The generated God Questions Observatory exposes portfolio state plus declared decision targets, success criteria, falsifiers, evidence gaps, and watch triggers. Foundry discovers relevant evidence, SISO Knowledge preserves it, and Evidence Engines transform it.
 - The SISO mission charter records the durable public direction while explicitly keeping the Great Library as the identity, lineage, and reading surface rather than the company or operating business engine.
 - The question-driven research architecture now defines a ten-pass first-principles loop, global/domain/question/action assumption dependencies, targeted book reading, claim and contradiction ledgers, ADR and experiment implications, Answer Releases, and watch triggers.
 - The reusable Frontier Question dossier includes a worked composable-CRM example and an explicit rights boundary between publicly observable product behavior and reusable source code.
 - The proposed 100 Million Token Program preserves fifteen ecosystem investments as a dependency-aware portfolio, distinguishes the evidenced truth foundation from incomplete estate coverage, adopts the canonical mission and question contracts, and requires explicit operator approval before execution lanes open.
 - The Research page explicitly distinguishes versioned-answer contracts and metadata seed Releases from accepted Answer Releases; a positive and negative generated-site assertion protect that boundary.
-- The Library's selected self-release is `0.7.1+f44b4cf`, pinned to `f44b4cf3cf27d0fa66b0e5b726d67925b5fd8e08`.
+- The Library's selected self-release is `0.8.0+d16ac75`, pinned to `d16ac75d98849dfb62e2e684e3d02b65132a25c5`.
 - The latest active state is always the highest-numbered immutable whole-Library Snapshot. Do not infer “current” from filename order alone; compare numeric `version` fields.
 
 ## Operating boundaries
