@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:d87f11de-8310-4749-8a2b-04d4ceba4ad3",
+  "occurred_at": "2026-08-02T00:05:12+07:00",
+  "recorded_at": "2026-08-02T00:05:12+07:00",
+  "immutable": true,
+  "entry_type": "initiative_completed",
+  "thread": {
+    "id": "gls:thread:hundred-million-token-operating-plan",
+    "name": "100 Million Token Operating Plan",
+    "kind": "initiative"
+  },
+  "status": "completed",
+  "title": "Build-first ecosystem operating plan completed",
+  "summary": "The Luna draft is complete and now records a build-first direction centered on stranger-ready Agent Stack distribution, resumable Foundry discovery, rights-aware Library lineage, and repeated promotion of reusable public capabilities.",
+  "intent": "Define the smallest executable portfolio structure that connects ecosystem truth, question-driven research, Foundry, evaluation, the portable Agent Stack, security, maintenance, and constrained compute without duplicating canonical ownership contracts.",
+  "reasoning": [
+    "The user explicitly rejected treating proof of the Library's overall utility as the next objective and directed the lane to maximize operational advantage by building the public source ecosystem.",
+    "The existing Agent Stack Distribution already pins skills, hooks, playbooks, agent definitions, profiles, runtime components, coordination, integrations, and Herdr source, so the highest-leverage sequence is adoption, discovery, connected lineage, and capability promotion.",
+    "Evaluation remains necessary for correctness, safety, portability, and promotion claims, but it is not a reason to delay obvious public-safe improvements.",
+    "The Library stays the durable identity, lineage, decision, release, snapshot, and reading surface; Foundry and Knowledge retain raw discovery and corpus payloads.",
+    "A concurrent God Questions infrastructure lane owns the generated site, generator, V29 Snapshot, and current-state surfaces, so this lane closes without overlapping or duplicating those changes."
+  ],
+  "changes": [
+    {
+      "kind": "commit",
+      "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/3d7104f0eb6d8fd1aa3086ec668aaf5112ede359",
+      "summary": "Added the complete fifteen-program Luna operating-plan draft."
+    },
+    {
+      "kind": "commit",
+      "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/d73409ea4637f2e6a1b4f3f9ae94eecb0ac568e5",
+      "summary": "Reoriented the plan around public ecosystem growth, outsider adoption, Foundry intake, connected source identity, and capability promotion."
+    },
+    {
+      "kind": "document",
+      "reference": "docs/100-million-token-operating-plan.html",
+      "summary": "Records system boundaries, program ownership, dependency waves, gates, stop rules, resource classes, the build-first orientation, and the immediate implementation sequence."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+      "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+    ],
+    "repository_urls": [
+      "https://github.com/Lordsisodia/great-library-of-siso",
+      "https://github.com/sisodias/siso-agent-stack",
+      "https://github.com/Lordsisodia/siso-foundry"
+    ]
+  },
+  "coordination": {
+    "owner": "Great Library ecosystem operating-architecture maintainer",
+    "branch": "codex/100m-luna-operating-plan-20260801",
+    "reserved_paths": []
+  },
+  "visibility": "public",
+  "predecessor_event_id": "gls:event:466d4d2d-8a2a-4bdf-99e1-1d563c59dbc7",
+  "evidence": [
+    {
+      "kind": "registry_validation",
+      "reference": "repo-check:great-library-operating-plan:d73409e",
+      "observed_at": "2026-08-02",
+      "summary": "The full Great Library verification gate passed after the build-first correction: immutable history, promotion and intelligence contracts, registry validation, generation, link and identity checks, and publication safety."
+    },
+    {
+      "kind": "source_review",
+      "reference": "design-review:glos-100m-frontier-joint-lineage:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The separate Frontier Questions coordinator accepted the ownership map, typed bridge, stage boundaries, privacy constraints, and non-overlapping operating lineage with no material defects."
+    },
+    {
+      "kind": "documentation",
+      "reference": "user-direction:build-operational-advantage:2026-08-02",
+      "observed_at": "2026-08-02",
+      "summary": "The user approved continuing the operating-architecture lane and prioritized public agent-stack adoption, community usefulness, source aggregation, and repeated scraping and promotion of useful repositories."
+    }
+  ],
+  "next_actions": [
+    "Improve the public Agent Stack Distribution's outsider-facing release and community surface in its owning repository.",
+    "Open a separate Foundry-owned, resumable public-repository discovery campaign for agent-system source.",
+    "After the concurrent V29 lane closes, integrate this authored plan into the generated Library surface through a non-overlapping successor Event."
+  ]
+}
