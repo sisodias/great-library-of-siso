@@ -98,7 +98,8 @@ if (!intelligence.events?.some((event) => event.id === "gls:event:9c8e46f9-0a2a-
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "32.0.0" && change.id === "gls:snapshot:a7a99ae1-a2e2-4e44-8fb3-c0235a35023b")) errors.push("intelligence.json: automatic registry changelog is missing V32");
 if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 67) errors.push("intelligence.json: expected 67 immutable Releases at V32 closeout");
 if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 32) errors.push("intelligence.json: expected 32 immutable Snapshots at V32 closeout");
-if (intelligence.counts?.events !== 21 || intelligence.counts?.active_initiatives !== 0) errors.push("intelligence.json: expected 21 Events and zero active initiatives at V32 closeout");
+if (intelligence.counts?.events !== 22 || intelligence.counts?.active_initiatives !== 1) errors.push("intelligence.json: expected the estate reconciliation reservation to be the sole active initiative");
+if (!intelligence.active_initiatives?.some((initiative) => initiative.event_id === "gls:event:9b09caed-89b4-4c1e-8829-b58cbddeb115" && initiative.thread_id === "gls:thread:c309e9d3-2d27-470c-b99f-c7a0ac469151")) errors.push("intelligence.json: estate reconciliation reservation is missing from active initiatives");
 
 const frontierQuestions = [
   ["GQ-001", "frontier-question-agent-workspace"],

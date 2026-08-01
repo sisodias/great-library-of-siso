@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T19:12:50.000Z",
+  "generated_at": "2026-08-01T22:02:31.000Z",
   "base_path": "/",
   "works": [
     {
@@ -3322,11 +3322,42 @@
   },
   "intelligence": {
     "counts": {
-      "events": 21,
+      "events": 22,
       "decisions": 4,
-      "active_initiatives": 0,
+      "active_initiatives": 1,
       "registry_changes": 99
     },
-    "active_initiatives": []
+    "active_initiatives": [
+      {
+        "event_id": "gls:event:9b09caed-89b4-4c1e-8829-b58cbddeb115",
+        "thread_id": "gls:thread:c309e9d3-2d27-470c-b99f-c7a0ac469151",
+        "name": "Public estate reconciliation",
+        "status": "active",
+        "title": "Public estate reconciliation started",
+        "intent": "Publish the smallest public-safe model and GQ-009 learning successor that make the observation-to-Library decision path reconstructable while preserving owner, rights, evidence, runtime, and registry authority boundaries.",
+        "occurred_at": "2026-08-02T05:02:31+07:00",
+        "owner": "Great Library estate reconciliation Sol maintainer",
+        "branch": "codex/estate-reconciliation-20260802",
+        "reserved_paths": [
+          "docs/estate-reconciliation.html",
+          "docs/README.md",
+          "CURRENT_STATE.md",
+          "registry/works/frontier-question-gq-009.json",
+          "registry/releases/frontier-question-gq-009-estate-reconciliation-v1.json",
+          "registry/releases/great-library-estate-reconciliation-*.json",
+          "registry/snapshots/whole-library-v33.json",
+          "registry/events/2026-08-02-estate-reconciliation-*.json",
+          "scripts/build.mjs",
+          "scripts/check-site.mjs",
+          "tests/god-questions-infrastructure.test.mjs",
+          "site/"
+        ],
+        "next_actions": [
+          "Publish this reservation on canonical main before substantive edits.",
+          "Author and verify the public reconciliation model and the GQ-009 no-change learning successor without creating a Work or Source Inventory.",
+          "Add immutable Release, Snapshot, and completion Event successors, deploy the generated site, and verify zero active initiatives."
+        ]
+      }
+    ]
   }
 }
