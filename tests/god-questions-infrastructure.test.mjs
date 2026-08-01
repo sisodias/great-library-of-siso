@@ -29,9 +29,12 @@ async function test(name, mutate, expectedStatus, expectedText) {
   const target = await fixture();
   try {
     const workPath = (key) => join(target, "registry", "works", questionFiles[key]);
+    const releasePath = join(target, "registry", "releases", "frontier-question-gq-009-seed.json");
     const loadWork = async (key) => JSON.parse(await readFile(workPath(key), "utf8"));
     const saveWork = async (key, work) => writeFile(workPath(key), `${JSON.stringify(work, null, 2)}\n`);
-    await mutate({ loadWork, saveWork });
+    const loadRelease = async () => JSON.parse(await readFile(releasePath, "utf8"));
+    const saveRelease = async (release) => writeFile(releasePath, `${JSON.stringify(release, null, 2)}\n`);
+    await mutate({ loadWork, saveWork, loadRelease, saveRelease });
     const result = validate(target);
     const output = `${result.stdout}\n${result.stderr}`;
     if ((result.status === 0) !== (expectedStatus === 0) || !output.includes(expectedText)) {
@@ -85,6 +88,7 @@ const crmContractReplay = {
       authority_state: "demand_only",
       owner_role: "question_steward",
       reference: "fixture-only:crm:demand",
+      recorded_at: "2026-08-02T00:00:00+07:00",
       predecessor_ids: [],
       related_assumption_ids: ["QA-CRM-KERNEL"],
       status: "proposed",
@@ -96,6 +100,7 @@ const crmContractReplay = {
       authority_state: "proposal_only",
       owner_role: "operating_architecture",
       reference: "fixture-only:crm:candidate",
+      recorded_at: "2026-08-02T00:01:00+07:00",
       predecessor_ids: ["AL-CRM-DEMAND"],
       related_assumption_ids: ["QA-CRM-KERNEL"],
       status: "proposed",
@@ -107,6 +112,7 @@ const crmContractReplay = {
       authority_state: "approved_scope",
       owner_role: "decision_owner",
       reference: "fixture-only:crm:mandate",
+      recorded_at: "2026-08-02T00:02:00+07:00",
       content_sha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       predecessor_ids: ["AL-CRM-CANDIDATE"],
       related_assumption_ids: ["QA-CRM-KERNEL"],
@@ -120,10 +126,12 @@ const crmContractReplay = {
       authority_state: "observation_only",
       owner_role: "independent_verifier",
       reference: "fixture-only:crm:observation",
+      recorded_at: "2026-08-02T00:03:00+07:00",
       content_sha256: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
       predecessor_ids: ["AL-CRM-MANDATE"],
       related_assumption_ids: ["QA-CRM-KERNEL"],
       status: "verified",
+      truth_state: "not_adjudicated",
       summary: "Synthetic schema replay only; no factual CRM outcome is asserted."
     },
     {
@@ -132,10 +140,12 @@ const crmContractReplay = {
       authority_state: "learning_proposal",
       owner_role: "evidence_engine",
       reference: "fixture-only:crm:learning-return",
+      recorded_at: "2026-08-02T00:04:00+07:00",
       content_sha256: "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
       predecessor_ids: ["AL-CRM-OBSERVATION"],
       related_assumption_ids: ["QA-CRM-KERNEL"],
       status: "no_change",
+      truth_state: "not_adjudicated",
       summary: "Synthetic schema replay only; the return demonstrates no-change without accepting an answer."
     }
   ]
@@ -197,6 +207,11 @@ await test("private-host evidence references fail", async ({ loadWork, saveWork 
   work.research_contract.program.evidence_connections[0].reference = "http://127.0.0.1:3000/private";
   await saveWork("gq009", work);
 }, 1, "private or local host");
+await test("IPv4-mapped IPv6 evidence references fail", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program.evidence_connections[0].reference = "http://[::ffff:127.0.0.1]/private";
+  await saveWork("gq009", work);
+}, 1, "private or local host");
 await test("relative traversal evidence references fail", async ({ loadWork, saveWork }) => {
   const work = await loadWork("gq009");
   work.research_contract.program.evidence_connections[0].reference = ["..", "private", "evidence.json"].join("/");
@@ -212,6 +227,11 @@ await test("owner-held evidence requires public-safe metadata assertion", async 
   delete work.research_contract.program.evidence_connections[1].publication_state;
   await saveWork("gq002", work);
 }, 1, "missing required property publication_state");
+await test("owner-held public summary cannot contain a local path", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq002");
+  work.research_contract.program.evidence_connections[1].summary = ["Private measurement at", ["", "Users", "example", "measurements.json"].join("/")].join(" ");
+  await saveWork("gq002", work);
+}, 1, "summary contains machine-local path");
 await test("authority laundering fails", async ({ loadWork, saveWork }) => {
   const work = await loadWork("gq009");
   work.research_contract.program.action_learning_links[1].authority_state = "approved_scope";
@@ -228,6 +248,11 @@ await test("learning returns cannot claim accepted state", async ({ loadWork, sa
   work.research_contract.program.action_learning_links.at(-1).status = "approved";
   await saveWork("gq009", work);
 }, 1, "learning_return");
+await test("artifact-free releases cannot claim Answer Release kind", async ({ loadRelease, saveRelease }) => {
+  const release = await loadRelease();
+  release.release_kind = "answer_release";
+  await saveRelease(release);
+}, 1, "answer_release requires at least one public answer artifact");
 await test("mandates require expiry and digest", async ({ loadWork, saveWork }) => {
   const work = await loadWork("gq009");
   work.research_contract.program = structuredClone(crmContractReplay);
@@ -253,6 +278,25 @@ await test("learning returns cannot skip their observation predecessor", async (
   work.research_contract.program.action_learning_links[4].predecessor_ids = ["AL-CRM-MANDATE"];
   await saveWork("gq009", work);
 }, 1, "must be observation_receipt");
+await test("verified observations remain explicitly unadjudicated", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program = structuredClone(crmContractReplay);
+  delete work.research_contract.program.action_learning_links[3].truth_state;
+  await saveWork("gq009", work);
+}, 1, "must declare truth_state not_adjudicated");
+await test("action lineage cannot precede its predecessor", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program = structuredClone(crmContractReplay);
+  work.research_contract.program.action_learning_links[1].recorded_at = "2026-08-01T23:59:00+07:00";
+  await saveWork("gq009", work);
+}, 1, "is recorded before predecessor");
+await test("observations cannot arrive after mandate expiry", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program = structuredClone(crmContractReplay);
+  work.research_contract.program.action_learning_links[3].recorded_at = "2026-08-04T00:00:00+07:00";
+  work.research_contract.program.action_learning_links[4].recorded_at = "2026-08-04T00:01:00+07:00";
+  await saveWork("gq009", work);
+}, 1, "recorded after mandate");
 await test("freshness assessment cannot follow its review deadline", async ({ loadWork, saveWork }) => {
   const work = await loadWork("gq009");
   work.research_contract.program.freshness = { assessed_at: "2026-08-03", review_due_at: "2026-08-02" };

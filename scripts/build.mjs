@@ -152,6 +152,7 @@ function normalizeRelease(raw) {
     raw,
     id: text(raw.release_id || raw.id, 'unassigned-release'),
     workId: text(raw.work_id || raw.work?.id || raw.for_work, ''),
+    releaseKind: raw.release_kind || null,
     version: text(raw.version || raw.tag || raw.name, 'Unversioned'),
     date: text(raw.released_at || raw.published_at || raw.date, 'Date pending'),
     artifactCount: (raw.artifacts || []).length,
@@ -160,9 +161,15 @@ function normalizeRelease(raw) {
 }
 
 function publicAnswerState(release) {
-  if (!release || release.artifactCount === 0) return {
+  if (release?.releaseKind === 'answer_release' && release.artifactCount > 0) return {
+    code: 'released',
+    label: 'Released — the selected Release explicitly declares an artifact-bearing Answer Release.',
+  };
+  if (!release || release.artifactCount === 0 || release.releaseKind === 'question_program_metadata') return {
     code: 'not_released',
-    label: 'Not released — the selected Release has no public answer artifact.',
+    label: release?.releaseKind === 'question_program_metadata'
+      ? 'Not released — the selected Release contains question-program metadata, not an answer artifact.'
+      : 'Not released — the selected Release has no public answer artifact.',
   };
   return {
     code: 'artifact_present_unclassified',
@@ -610,6 +617,7 @@ function buildResearchProjection(works, snapshot, sectionWork, activeReleasesByW
       publication_boundary: contract.publication_boundary,
       selected_release: selectedRelease ? {
         id: selectedRelease.id,
+        release_kind: selectedRelease.releaseKind,
         version: selectedRelease.version,
         released_at: selectedRelease.date,
         artifact_count: selectedRelease.artifactCount,
@@ -693,7 +701,7 @@ function workPage(work, releases, byId, activeRelease, asOfDate) {
     const owner = byId.get(connection.owning_work_id);
     return `<div><span>${esc(`${connection.id} · ${connection.source_type} · ${connection.rights_state}`)}</span><p>${esc(connection.summary)}<small> Owner: ${owner ? `<a href="${href(`works/${owner.slug}/`)}">${esc(owner.name)}</a>` : esc(connection.owning_work_id)} · Supports: ${esc((connection.supports_assumption_ids || []).join(', ') || 'none')} · Challenges: ${esc((connection.challenges_assumption_ids || []).join(', ') || 'none')} · Observed: ${esc(connection.observed_at)}</small></p></div>`;
   });
-  const actionRows = (researchProgram?.action_learning_links || []).map((link) => `<div><span>${esc(`${link.id} · ${link.object_type.replaceAll('_', ' ')} · ${link.authority_state.replaceAll('_', ' ')}`)}</span><p>${esc(link.summary)}<small> Owner role: ${esc(link.owner_role.replaceAll('_', ' '))} · Status: ${esc(link.status.replaceAll('_', ' '))} · Predecessors: ${esc((link.predecessor_ids || []).join(', ') || 'none')} · Assumptions: ${esc((link.related_assumption_ids || []).join(', ') || 'none')}</small></p></div>`);
+  const actionRows = (researchProgram?.action_learning_links || []).map((link) => `<div><span>${esc(`${link.id} · ${link.object_type.replaceAll('_', ' ')} · ${link.authority_state.replaceAll('_', ' ')}`)}</span><p>${esc(link.summary)}<small> Owner role: ${esc(link.owner_role.replaceAll('_', ' '))} · Status: ${esc(link.status.replaceAll('_', ' '))} · Recorded: ${esc(link.recorded_at)} · Truth: ${esc(link.truth_state?.replaceAll('_', ' ') || 'not applicable')} · Predecessors: ${esc((link.predecessor_ids || []).join(', ') || 'none')} · Assumptions: ${esc((link.related_assumption_ids || []).join(', ') || 'none')}</small></p></div>`);
   return page({
     title: work.name,
     active: work.section === 'Research' ? 'research' : /agent/i.test(`${work.section} ${work.type}`) ? 'agents' : 'library',

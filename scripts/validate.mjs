@@ -110,7 +110,7 @@ function publicReferenceProblem(value) {
   const reference = String(value ?? "");
   if (/^(?:\/|~\/|[A-Za-z]:[\\/]|\\\\)/.test(reference) || /(?:\/Users\/|\/home\/)/.test(reference) || /(?:^|[\\/])\.\.(?:[\\/]|$)/.test(reference) || /\\/.test(reference)) return "machine-local path or traversal";
   if (/^(?:file|unix|data|javascript):/i.test(reference)) return "unsafe URI scheme";
-  if (/(?:ghp_|github_pat_|sk-)[A-Za-z0-9_-]{12,}/.test(reference) || /(?:token|secret|password|credential)\s*[=:]\s*[^\s&]{8,}/i.test(reference)) return "credential-bearing reference";
+  if (/(?:ghp_|github_pat_|sk-)[A-Za-z0-9_-]{12,}/i.test(reference) || /(?:token|key|secret|password|credential|signature)\s*[=:]\s*[^\s&#]{8,}/i.test(reference)) return "credential-bearing reference";
   if (!/^https?:\/\//i.test(reference)) return null;
   let url;
   try { url = new URL(reference); } catch { return "invalid public URL"; }
@@ -118,8 +118,20 @@ function publicReferenceProblem(value) {
   const host = url.hostname.toLowerCase().replace(/^\[|\]$/g, "");
   if (host === "localhost" || host.endsWith(".localhost") || host.endsWith(".local") || host === "::1"
     || /^(?:0|10|127)\./.test(host) || /^169\.254\./.test(host) || /^192\.168\./.test(host)
-    || /^172\.(?:1[6-9]|2\d|3[01])\./.test(host) || /^(?:fc|fd|fe8|fe9|fea|feb)/i.test(host)) return "private or local host";
+    || /^172\.(?:1[6-9]|2\d|3[01])\./.test(host) || /^::ffff:/i.test(host)
+    || /^(?:fc|fd|fe8|fe9|fea|feb)/i.test(host)) return "private or local host";
   for (const [key, entry] of url.searchParams) if (/(?:token|key|secret|password|credential|signature)/i.test(key) || /(?:ghp|github_pat|sk)-[A-Za-z0-9_-]{12,}/.test(entry)) return "credential-bearing query";
+  return null;
+}
+
+function publicTextProblem(value) {
+  const text = String(value ?? "");
+  if (/(?:\/Users\/|\/home\/|file:\/\/|unix:\/\/|\\\\[^\s]+|(?:^|\s)\.\.[\\/])/i.test(text)) return "machine-local path or traversal";
+  if (/(?:ghp_|github_pat_|sk-)[A-Za-z0-9_-]{12,}/i.test(text) || /(?:token|key|secret|password|credential|signature)\s*[=:]\s*[^\s&#]{8,}/i.test(text)) return "credential-bearing text";
+  for (const match of text.matchAll(/https?:\/\/[^\s<>"')]+/gi)) {
+    const problem = publicReferenceProblem(match[0]);
+    if (problem) return problem;
+  }
   return null;
 }
 
@@ -166,13 +178,25 @@ for (const { file, value: work } of records.work) {
   const program = work.research_contract?.program;
   if (!program) continue;
   if (program.freshness.assessed_at > program.freshness.review_due_at) fail(`${label}: freshness assessed_at must not be later than review_due_at`);
+  for (const [field, value] of [["next_useful_work", program.next_useful_work]]) {
+    const problem = publicTextProblem(value);
+    if (problem) fail(`${label}: program ${field} contains ${problem}`);
+  }
   const assumptionMap = new Map();
   for (const assumption of program.assumptions) {
+    for (const [field, value] of [["scope", assumption.scope], ["statement", assumption.statement], ["falsifier", assumption.falsifier]]) {
+      const problem = publicTextProblem(value);
+      if (problem) fail(`${label}: assumption ${assumption.id} ${field} contains ${problem}`);
+    }
     if (assumptionMap.has(assumption.id)) fail(`${label}: duplicate assumption id ${assumption.id}`);
     assumptionMap.set(assumption.id, assumption);
   }
   const evidenceMap = new Map();
   for (const connection of program.evidence_connections) {
+    for (const [field, value] of [["relevance_hypothesis", connection.relevance_hypothesis], ["summary", connection.summary]]) {
+      const problem = publicTextProblem(value);
+      if (problem) fail(`${label}: evidence connection ${connection.id} ${field} contains ${problem}`);
+    }
     if (evidenceMap.has(connection.id)) fail(`${label}: duplicate evidence connection id ${connection.id}`);
     evidenceMap.set(connection.id, connection);
   }
@@ -226,15 +250,22 @@ for (const { file, value: work } of records.work) {
     if (!rule.statuses.has(link.status)) fail(`${label}: ${link.object_type} ${link.id} cannot use status ${link.status}`);
     if (link.object_type === "execution_mandate" && (!link.expires_at || !link.content_sha256)) fail(`${label}: execution mandate ${link.id} requires expires_at and content_sha256`);
     if (["observation_receipt", "learning_return"].includes(link.object_type) && !link.content_sha256) fail(`${label}: ${link.object_type} ${link.id} requires content_sha256`);
+    if (["observation_receipt", "learning_return"].includes(link.object_type) && link.truth_state !== "not_adjudicated") fail(`${label}: ${link.object_type} ${link.id} must declare truth_state not_adjudicated`);
+    if (!["observation_receipt", "learning_return"].includes(link.object_type) && link.truth_state) fail(`${label}: ${link.object_type} ${link.id} cannot declare truth_state`);
     if (link.object_type !== "execution_mandate" && link.expires_at) fail(`${label}: only an execution mandate may declare expires_at`);
+    if (link.object_type === "execution_mandate" && link.recorded_at >= link.expires_at) fail(`${label}: execution mandate ${link.id} must expire after it is recorded`);
     if (link.object_type === "epistemic_demand" && link.predecessor_ids.length) fail(`${label}: epistemic demand ${link.id} cannot have predecessors`);
     if (link.object_type !== "epistemic_demand" && link.predecessor_ids.length === 0) fail(`${label}: ${link.object_type} ${link.id} requires an immediate predecessor`);
     const problem = publicReferenceProblem(link.reference);
     if (problem) fail(`${label}: action/learning link ${link.id} reference contains ${problem}`);
+    const summaryProblem = publicTextProblem(link.summary);
+    if (summaryProblem) fail(`${label}: action/learning link ${link.id} summary contains ${summaryProblem}`);
     for (const predecessorId of link.predecessor_ids ?? []) {
       const predecessor = actionMap.get(predecessorId);
       if (!predecessor) fail(`${label}: action/learning link ${link.id} references unknown predecessor ${predecessorId}`);
       else if (predecessor.object_type !== expectedPredecessor[link.object_type]) fail(`${label}: ${link.object_type} ${link.id} predecessor ${predecessorId} must be ${expectedPredecessor[link.object_type]}`);
+      else if (predecessor.recorded_at > link.recorded_at) fail(`${label}: ${link.object_type} ${link.id} is recorded before predecessor ${predecessorId}`);
+      else if (link.object_type === "observation_receipt" && predecessor.expires_at < link.recorded_at) fail(`${label}: observation receipt ${link.id} is recorded after mandate ${predecessorId} expired`);
     }
     for (const assumptionId of link.related_assumption_ids ?? []) if (!assumptionMap.has(assumptionId)) fail(`${label}: action/learning link ${link.id} references unknown assumption ${assumptionId}`);
   }
@@ -242,7 +273,11 @@ for (const { file, value: work } of records.work) {
 }
 for (const { file, value: release } of records.release) {
   const label = path.relative(root, file);
-  if (!works.has(release.work_id)) fail(`${label}: work_id ${release.work_id} does not resolve`);
+  const releaseWork = works.get(release.work_id)?.value;
+  if (!releaseWork) fail(`${label}: work_id ${release.work_id} does not resolve`);
+  if (["question_program_metadata", "answer_release"].includes(release.release_kind) && releaseWork?.work_type !== "research_question") fail(`${label}: release_kind ${release.release_kind} is reserved for research_question Works`);
+  if (release.release_kind === "question_program_metadata" && (!release.artifacts.length || release.artifacts.some((artifact) => artifact.kind !== "registry_metadata"))) fail(`${label}: question_program_metadata requires at least one registry_metadata artifact and no answer artifact`);
+  if (release.release_kind === "answer_release" && release.artifacts.length === 0) fail(`${label}: answer_release requires at least one public answer artifact`);
   for (const state of Object.values(release.distribution ?? {})) if (state.state === "verified" && state.evidence.length === 0) fail(`${label}: verified distribution state requires evidence`);
   for (const artifact of release.artifacts ?? []) {
     if (artifactIds.has(artifact.id)) fail(`${label}: duplicate artifact id ${artifact.id}`);

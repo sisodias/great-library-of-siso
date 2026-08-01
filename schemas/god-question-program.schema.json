@@ -67,18 +67,20 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "object_type", "authority_state", "owner_role", "reference", "predecessor_ids", "related_assumption_ids", "status", "summary"],
+        "required": ["id", "object_type", "authority_state", "owner_role", "reference", "recorded_at", "predecessor_ids", "related_assumption_ids", "status", "summary"],
         "properties": {
           "id": { "type": "string", "pattern": "^AL-[A-Z0-9]+(?:-[A-Z0-9]+)*$" },
           "object_type": { "enum": ["epistemic_demand", "action_candidate", "execution_mandate", "observation_receipt", "learning_return"] },
           "authority_state": { "enum": ["demand_only", "proposal_only", "approved_scope", "observation_only", "learning_proposal"] },
           "owner_role": { "enum": ["question_steward", "operating_architecture", "decision_owner", "runtime", "independent_verifier", "evidence_engine"] },
           "reference": { "type": "string", "minLength": 3 },
+          "recorded_at": { "type": "string", "format": "date-time" },
           "content_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
           "predecessor_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^AL-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
           "related_assumption_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^(GA|DA|QA|AA)-[A-Z0-9]+(?:-[A-Z0-9]+)*$" } },
           "status": { "enum": ["proposed", "approved", "rejected", "executed", "verified", "expired", "no_change", "reopen_proposed"] },
           "expires_at": { "type": "string", "format": "date-time" },
+          "truth_state": { "const": "not_adjudicated" },
           "summary": { "type": "string", "minLength": 10 }
         }
       }

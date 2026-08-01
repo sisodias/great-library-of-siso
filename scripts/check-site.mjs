@@ -83,17 +83,17 @@ const researchProjection = JSON.parse(await readFile(path.join(root, "research.j
 if (!researchIndex.includes("Frontier Questions · God Questions")) errors.push("research/index.html: missing Frontier Questions section");
 if (!researchIndex.includes("God Questions Observatory")) errors.push("research/index.html: missing God Questions Observatory portfolio state");
 if (!researchIndex.includes("/research.json")) errors.push("research/index.html: missing agent-readable Observatory JSON link");
-if (!researchIndex.includes("Program substrate.</b> 3 questions · 7 assumptions · 7 evidence connections · 4 action/learning links.")) errors.push("research/index.html: missing program substrate coverage");
+if (!researchIndex.includes("Program substrate.</b> 3 questions · 7 assumptions · 9 evidence connections · 7 action/learning links.")) errors.push("research/index.html: missing program substrate coverage");
 if (!researchIndex.includes("versioned-answer contracts. Metadata seed Releases are not accepted answers.")) errors.push("research/index.html: answer maturity boundary is missing");
 if (researchIndex.includes("explicit evidence scopes, and versioned answers.")) errors.push("research/index.html: metadata seeds are overstated as accepted versioned answers");
-for (const [field, expected] of Object.entries({ questions: 7, programmed_questions: 3, assumptions: 7, evidence_connections: 7, challenge_edges: 1, action_learning_links: 4, public_answers_released: 0 })) {
+for (const [field, expected] of Object.entries({ questions: 7, programmed_questions: 3, assumptions: 7, evidence_connections: 9, challenge_edges: 2, action_learning_links: 7, public_answers_released: 0 })) {
   if (researchProjection.counts?.[field] !== expected) errors.push(`research.json: expected ${field}=${expected}, found ${researchProjection.counts?.[field]}`);
 }
 if (researchProjection.snapshot_version !== "31.0.0") errors.push("research.json: must identify the selected V31 source snapshot before closeout");
 for (const [questionId, state, assumptions, evidence, links] of [
   ["GQ-001", "partial", 2, 2, 1],
   ["GQ-002", "answered", 2, 2, 1],
-  ["GQ-009", "researching", 3, 3, 2],
+  ["GQ-009", "researching", 3, 5, 5],
 ]) {
   const question = researchProjection.questions?.find((entry) => entry.question_id === questionId);
   if (!question) { errors.push(`research.json: missing ${questionId}`); continue; }
@@ -153,7 +153,7 @@ for (const [questionId, slug] of frontierQuestions) {
   if (!questionPage.includes("Public answer release</span><p>Not released")) errors.push(`works/${slug}/index.html: metadata seed is not explicitly separated from a public answer`);
 }
 const infrastructureQuestion = await readFile(path.join(root, "works/frontier-question-god-questions-infrastructure/index.html"), "utf8");
-for (const marker of ["Steward", "Lifecycle status", "Freshness", "Next useful work", "Decision to change", "Success criteria", "Falsifiers", "Evidence gaps", "Watch triggers", "Research state", "Assumptions · 3", "Evidence connections · 3", "Action and learning lineage · 2", "Read the God Questions infrastructure constitution"]) {
+for (const marker of ["Steward", "Lifecycle status", "Freshness", "Next useful work", "Decision to change", "Success criteria", "Falsifiers", "Evidence gaps", "Watch triggers", "Research state", "Assumptions · 3", "Evidence connections · 5", "Action and learning lineage · 5", "QA-GQ009-METADATA-VALUE · QA · challenged", "QA-GQ009-OWNER-BOUNDARY · QA · challenged", "execution mandate · approved scope", "observation receipt · observation only", "learning return · learning proposal", "Truth: not adjudicated", "Read the God Questions infrastructure constitution"]) {
   if (!infrastructureQuestion.includes(marker)) errors.push(`GQ-009 page: missing program field ${marker}`);
 }
 if (infrastructureQuestion.includes("<b>Public answer:</b> released")) errors.push("GQ-009 page: researching metadata is inflated into a released answer");

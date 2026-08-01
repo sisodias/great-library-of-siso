@@ -9,6 +9,7 @@
     "record_type": { "const": "release" },
     "id": { "$ref": "common.schema.json#/$defs/releaseId" },
     "work_id": { "$ref": "common.schema.json#/$defs/workId" },
+    "release_kind": { "enum": ["general", "question_program_metadata", "answer_release"] },
     "version": { "type": "string", "minLength": 1 },
     "title": { "type": "string", "minLength": 1 },
     "released_at": { "type": "string", "format": "date-time" },

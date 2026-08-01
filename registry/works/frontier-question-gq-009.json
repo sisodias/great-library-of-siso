@@ -129,7 +129,7 @@
         "assessed_at": "2026-08-02",
         "review_due_at": "2026-08-16"
       },
-      "next_useful_work": "Complete the bounded v1 operator flow, independently replay its privacy and authority gates, and return a no-change or reopen proposal without claiming an Answer Release.",
+      "next_useful_work": "Independently replay the repaired privacy and authority gates, then close the bounded v1 with immutable Library lineage while keeping GQ-009 researching.",
       "assumptions": [
         {
           "id": "QA-GQ009-CANONICAL-EXTENSION",
@@ -142,7 +142,8 @@
           "depends_on": [],
           "evidence_connection_ids": [
             "EC-GQ009-CONSTITUTION",
-            "EC-GQ009-CHECKPOINT"
+            "EC-GQ009-CHECKPOINT",
+            "EC-GQ009-OPERATOR-PASS"
           ],
           "review_date": "2026-08-02"
         },
@@ -151,7 +152,7 @@
           "level": "QA",
           "scope": "question reconstruction economics",
           "statement": "A compact assumption, evidence, and action-learning projection improves cold-reader reconstruction enough to justify its authoring overhead.",
-          "status": "active",
+          "status": "challenged",
           "confidence": "low",
           "falsifier": "Cold readers or agents cannot reconstruct a decision path more accurately, or the repeated authoring cost exceeds the errors and rediscovery avoided.",
           "depends_on": [
@@ -167,14 +168,15 @@
           "level": "QA",
           "scope": "action and learning authority",
           "statement": "Typed public references can connect question demand to returned learning without granting approval, execution, or evidence-adjudication authority to the Library.",
-          "status": "active",
+          "status": "challenged",
           "confidence": "low",
           "falsifier": "A real action-to-learning chain cannot remain reconstructable unless the Library stores private payloads or represents a proposal as approval or observation as accepted truth.",
           "depends_on": [
             "QA-GQ009-CANONICAL-EXTENSION"
           ],
           "evidence_connection_ids": [
-            "EC-GQ009-JOINT-BRIDGE"
+            "EC-GQ009-JOINT-BRIDGE",
+            "EC-GQ009-PRIVACY-FAIL"
           ],
           "review_date": "2026-08-02"
         }
@@ -233,6 +235,41 @@
             "QA-GQ009-OWNER-BOUNDARY"
           ],
           "challenges_assumption_ids": []
+        },
+        {
+          "id": "EC-GQ009-OPERATOR-PASS",
+          "source_type": "operational_receipt",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "relevance_hypothesis": "Independent cold-reader and contract replay test whether the canonical projection improves reconstruction and remains backward compatible.",
+          "rights_state": "public_metadata_only",
+          "publication_state": "public_safe_metadata",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "verification-receipt:sha256:7befd52df946173b9754dd20b03fc5da1dde8b6327876768481e1a14ca86c2ae",
+          "revision_or_digest": "68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "summary": "Independent cold-reader and contract lanes reconstructed the operator path and verified canonical human and agent projections at the exact pushed checkpoint.",
+          "supports_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE"
+          ],
+          "challenges_assumption_ids": []
+        },
+        {
+          "id": "EC-GQ009-PRIVACY-FAIL",
+          "source_type": "operational_receipt",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "relevance_hypothesis": "The independent privacy adversary tests whether typed public metadata actually prevents owner-held text, topology, credential, timing, or truth-state leakage.",
+          "rights_state": "public_metadata_only",
+          "publication_state": "public_safe_metadata",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "verification-receipt:sha256:7befd52df946173b9754dd20b03fc5da1dde8b6327876768481e1a14ca86c2ae",
+          "revision_or_digest": "68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "summary": "The privacy lane found that free-text metadata and temporal or truth-state edges needed stronger validation; the mixed receipt is verified observation, not accepted truth.",
+          "supports_assumption_ids": [],
+          "challenges_assumption_ids": [
+            "QA-GQ009-OWNER-BOUNDARY"
+          ]
         }
       ],
       "action_learning_links": [
@@ -242,6 +279,7 @@
           "authority_state": "demand_only",
           "owner_role": "question_steward",
           "reference": "registry/works/frontier-question-gq-009.json#research_contract",
+          "recorded_at": "2026-08-02T00:33:07+07:00",
           "predecessor_ids": [],
           "related_assumption_ids": [
             "QA-GQ009-CANONICAL-EXTENSION",
@@ -257,6 +295,7 @@
           "authority_state": "proposal_only",
           "owner_role": "operating_architecture",
           "reference": "gls:event:43f26801-1225-4650-90eb-7a1362760f8d",
+          "recorded_at": "2026-08-02T00:33:08+07:00",
           "predecessor_ids": [
             "AL-GQ009-DEMAND"
           ],
@@ -267,6 +306,66 @@
           ],
           "status": "proposed",
           "summary": "The active initiative is represented as a bounded action candidate; approval and execution receipts remain separately owned."
+        },
+        {
+          "id": "AL-GQ009-MANDATE",
+          "object_type": "execution_mandate",
+          "authority_state": "approved_scope",
+          "owner_role": "decision_owner",
+          "reference": "authorization-receipt:sha256:dc93428fcc4624a54d3e341ce87a7c3a31a10288510a63726d2644789bfccdd3",
+          "recorded_at": "2026-08-02T01:31:58+07:00",
+          "content_sha256": "dc93428fcc4624a54d3e341ce87a7c3a31a10288510a63726d2644789bfccdd3",
+          "predecessor_ids": [
+            "AL-GQ009-CANDIDATE"
+          ],
+          "related_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "status": "approved",
+          "expires_at": "2026-08-02T07:31:58+07:00",
+          "summary": "Shaan approved a six-hour bounded infrastructure, verification, and closeout envelope; the private authorization payload remains owner-held and only its digest is public."
+        },
+        {
+          "id": "AL-GQ009-OBSERVATION",
+          "object_type": "observation_receipt",
+          "authority_state": "observation_only",
+          "owner_role": "independent_verifier",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "recorded_at": "2026-08-02T01:58:30+07:00",
+          "content_sha256": "7befd52df946173b9754dd20b03fc5da1dde8b6327876768481e1a14ca86c2ae",
+          "predecessor_ids": [
+            "AL-GQ009-MANDATE"
+          ],
+          "related_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "status": "verified",
+          "truth_state": "not_adjudicated",
+          "summary": "The mixed independent observation passed cold-reader and contract reconstruction but failed privacy hardening, producing a bounded repair requirement rather than an accepted answer."
+        },
+        {
+          "id": "AL-GQ009-LEARNING",
+          "object_type": "learning_return",
+          "authority_state": "learning_proposal",
+          "owner_role": "question_steward",
+          "reference": "learning-return-receipt:sha256:dd48a2a2b541175ea0a239131545a521c95caf6d268201fdf5b8a5fe7389de65",
+          "recorded_at": "2026-08-02T01:59:30+07:00",
+          "content_sha256": "dd48a2a2b541175ea0a239131545a521c95caf6d268201fdf5b8a5fe7389de65",
+          "predecessor_ids": [
+            "AL-GQ009-OBSERVATION"
+          ],
+          "related_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "status": "no_change",
+          "truth_state": "not_adjudicated",
+          "summary": "The Learning Return proposes the privacy and temporal repairs now under verification while keeping GQ-009 researching, publishing no Answer Release, and promoting no capability."
         }
       ]
     }

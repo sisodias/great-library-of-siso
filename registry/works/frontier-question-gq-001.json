@@ -110,6 +110,7 @@
           "authority_state": "demand_only",
           "owner_role": "question_steward",
           "reference": "registry/works/frontier-question-gq-001.json#research_contract",
+          "recorded_at": "2026-08-02T00:34:00+07:00",
           "predecessor_ids": [],
           "related_assumption_ids": [
             "QA-GQ001-BOUNDARIES",
