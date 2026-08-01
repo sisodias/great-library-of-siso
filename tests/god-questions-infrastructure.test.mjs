@@ -222,6 +222,17 @@ await test("credential-bearing evidence references fail", async ({ loadWork, sav
   work.research_contract.program.evidence_connections[0].reference = ["receipt", ["ghp", "abcdefghijklmnopqrstuvwx"].join("_")].join(":");
   await saveWork("gq009", work);
 }, 1, "credential-bearing reference");
+await test("nested private URL fragments fail", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  work.research_contract.program.evidence_connections[0].reference = "https://example.com/#http://127.0.0.1/private";
+  await saveWork("gq009", work);
+}, 1, "unsafe URL fragment: private or local host");
+await test("encoded nested private URL fragments fail", async ({ loadWork, saveWork }) => {
+  const work = await loadWork("gq009");
+  const nested = encodeURIComponent("http://127.0.0.1/private");
+  work.research_contract.program.evidence_connections[0].reference = `https://example.com/#${nested}`;
+  await saveWork("gq009", work);
+}, 1, "unsafe URL fragment: private or local host");
 await test("owner-held evidence requires public-safe metadata assertion", async ({ loadWork, saveWork }) => {
   const work = await loadWork("gq002");
   delete work.research_contract.program.evidence_connections[1].publication_state;

@@ -55,6 +55,32 @@ function localTarget(raw, sourceFile) {
   return resolved;
 }
 
+function publicProjectionReferenceProblem(value, depth = 0) {
+  const reference = String(value ?? "");
+  if (/(?:\/Users\/|\/home\/|file:\/\/|unix:\/\/|\\\\|(?:^|[\\/])\.\.(?:[\\/]|$))/i.test(reference)) return "machine-local path or traversal";
+  if (/(?:ghp_|github_pat_|sk-)[A-Za-z0-9_-]{12,}/i.test(reference) || /(?:token|key|secret|password|credential|signature)\s*[=:]\s*[^\s&#]{8,}/i.test(reference)) return "credential-bearing reference";
+  if (!/^https?:\/\//i.test(reference)) return null;
+  let url;
+  try { url = new URL(reference); } catch { return "invalid public URL"; }
+  const host = url.hostname.toLowerCase().replace(/^\[|\]$/g, "");
+  if (host === "localhost" || host.endsWith(".localhost") || host.endsWith(".local") || host === "::1" || /^::ffff:/i.test(host)
+    || /^(?:0|10|127)\./.test(host) || /^169\.254\./.test(host) || /^192\.168\./.test(host)
+    || /^172\.(?:1[6-9]|2\d|3[01])\./.test(host) || /^(?:fc|fd|fe8|fe9|fea|feb)/i.test(host)) return "private or local host";
+  let fragment = url.hash.slice(1);
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    try {
+      const decoded = decodeURIComponent(fragment);
+      if (decoded === fragment) break;
+      fragment = decoded;
+    } catch { break; }
+  }
+  if (depth < 2) for (const match of fragment.matchAll(/https?:\/\/[^\s<>"')]+/gi)) {
+    const nestedProblem = publicProjectionReferenceProblem(match[0], depth + 1);
+    if (nestedProblem) return `unsafe URL fragment: ${nestedProblem}`;
+  }
+  return null;
+}
+
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
@@ -115,7 +141,8 @@ for (const question of researchProjection.questions ?? []) {
     ...program.evidence_connections.flatMap((entry) => [entry.reference, entry.provenance_receipt, entry.revision_or_digest]),
     ...program.action_learning_links.map((entry) => entry.reference),
   ]) {
-    if (/(?:\/Users\/|\/home\/|file:\/\/|unix:\/\/|https?:\/\/(?:localhost|127\.|10\.|192\.168\.|172\.(?:1[6-9]|2\d|3[01])\.))/i.test(reference)) errors.push(`research.json: ${question.question_id} exposes a private or machine-local program reference`);
+    const problem = publicProjectionReferenceProblem(reference);
+    if (problem) errors.push(`research.json: ${question.question_id} exposes ${problem}`);
   }
 }
 for (const [document, marker] of [

@@ -106,7 +106,7 @@ function uniqueMap(entries, label) {
   return map;
 }
 
-function publicReferenceProblem(value) {
+function publicReferenceProblem(value, depth = 0) {
   const reference = String(value ?? "");
   if (/^(?:\/|~\/|[A-Za-z]:[\\/]|\\\\)/.test(reference) || /(?:\/Users\/|\/home\/)/.test(reference) || /(?:^|[\\/])\.\.(?:[\\/]|$)/.test(reference) || /\\/.test(reference)) return "machine-local path or traversal";
   if (/^(?:file|unix|data|javascript):/i.test(reference)) return "unsafe URI scheme";
@@ -121,6 +121,21 @@ function publicReferenceProblem(value) {
     || /^172\.(?:1[6-9]|2\d|3[01])\./.test(host) || /^::ffff:/i.test(host)
     || /^(?:fc|fd|fe8|fe9|fea|feb)/i.test(host)) return "private or local host";
   for (const [key, entry] of url.searchParams) if (/(?:token|key|secret|password|credential|signature)/i.test(key) || /(?:ghp|github_pat|sk)-[A-Za-z0-9_-]{12,}/.test(entry)) return "credential-bearing query";
+  let fragment = url.hash.slice(1);
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    try {
+      const decoded = decodeURIComponent(fragment);
+      if (decoded === fragment) break;
+      fragment = decoded;
+    } catch { break; }
+  }
+  if (depth < 2) {
+    for (const match of fragment.matchAll(/https?:\/\/[^\s<>"')]+/gi)) {
+      const nestedProblem = publicReferenceProblem(match[0], depth + 1);
+      if (nestedProblem) return `unsafe URL fragment: ${nestedProblem}`;
+    }
+  }
+  if (/(?:\/Users\/|\/home\/|file:\/\/|unix:\/\/|\\\\)/i.test(fragment)) return "unsafe URL fragment: machine-local path";
   return null;
 }
 
