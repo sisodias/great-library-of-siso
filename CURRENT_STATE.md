@@ -8,7 +8,7 @@
 ## What is live
 
 - The public registry, generated site, repository estate, and machine-readable catalog are deployed.
-- Eighteen stable Works span the Library, Agents, and Research, with two preservation-aware source inventories.
+- Eighteen stable Works span the Library, Agents, and Research, with three preservation-aware source inventories.
 - The Agents story separates Project OS, Runtime, coordination, integrations, Skills, Playbooks, Agent Brain, and Session Intelligence using typed relationships rather than directory hierarchy.
 - The machine-neutral local convention groups ten independent checkouts flat at `$SISO_WORKSPACE/SISO_Agents`; this placement changes no Work, Release, Snapshot, locator, or public URL.
 - SISO Agent Brain `0.3.0` is pinned to `ed50bec86f5cfb86cc5c84ebfce97fad595598b4`.
@@ -19,8 +19,10 @@
 - SISO Agent Hooks is released at `9125a972b4ba03661bf17ee135790282f246c15f` after 21 tests and a 97/100 adversarial review.
 - SISO Agent Stack Distribution is released at `f4a9626c0a1771cd3ee449f25a1ab63c8b297845` after public-source and full non-external clean installs plus a 98/100 adversarial review.
 - Immutable SISO Agent Stack Assembly 2.0.0 expands the composition to the complete portable public stack without rewriting V1.
-- Whole Library V22 — Portable Agent Stack (`gls:snapshot:95cec3fe-9c7a-4135-9eb6-02fdecc3696d`) is the wrap-up Snapshot.
-- The Library's selected self-release is `0.3.1+2bd415d`, pinned to `2bd415dd3024c928fc8414b891e7f21069c3fcaa`.
+- The agent-capability promotion campaign is a first-class Library surface at `/promotion/` and `/promotion.json`: one active immutable campaign head tracks 18 publication-safe candidate units, with seven at `candidate`, eight at `owner_assigned`, three at `read`, and zero unresolved target Works.
+- The promotion lifecycle is mechanically enforced from `unverified` through `stack_pinned` and `retired`; advanced stages must bind real evidence, Releases, Snapshots, and verified Stack manifest receipts.
+- Whole Library V23 — Agent Capability Promotion (`gls:snapshot:f4263d64-eb8b-442d-a651-f045c011675e`) is the wrap-up Snapshot.
+- The Library's selected self-release is `0.4.0+2c09268`, pinned to `2c09268dd383c112e36a823e95d34d20cb1fa2bd`.
 - The latest active state is always the highest-numbered immutable whole-Library Snapshot. Do not infer “current” from filename order alone; compare numeric `version` fields.
 
 ## Operating boundaries
@@ -41,14 +43,15 @@ npm ci
 npm run verify
 ```
 
-The gate validates schemas and records, generates the public site and catalog, checks local links and attribution, and scans the publication for obvious credentials and machine-local paths.
+The gate validates schemas and immutable history, runs ten promotion-contract cases, generates the public site and catalog, checks local links and attribution, and scans the publication for obvious credentials and machine-local paths. The promotion surface and lifecycle model also passed independent 100/100 and 98/100 adversarial reviews.
 
 ## Resume here
 
 1. Read `AGENTS.md`, then the latest whole-Library Snapshot.
 2. Use `site/estate.json` to see which public repositories have released source, linked homes, or staging homes.
 3. Continue only from evidenced source inventories or a named Work; do not bulk-import the old Agent Base or the dirty local Knowledge data plane.
-4. When adding a module, keep the Work independently addressable and put its contextual role in an Assembly or Snapshot relationship.
+4. Build the next Foundry-side discovery exporter into ignored local staging. It may propose source-inventory candidates, but it must never write directly into the immutable public registry.
+5. When adding a module, keep the Work independently addressable and put its contextual role in an Assembly or Snapshot relationship.
 
 ## Known external action
 

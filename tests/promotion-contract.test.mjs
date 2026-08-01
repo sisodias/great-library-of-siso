@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { cp, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { cp, mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
@@ -78,10 +78,17 @@ async function bindStackManifestArtifact(target) {
   });
   const rawRelease = `${JSON.stringify(release, null, 2)}\n`;
   await writeFile(releaseFile, rawRelease);
-  const snapshotFile = join(target, "registry", "snapshots", "whole-library-v22.json");
-  const snapshot = JSON.parse(await readFile(snapshotFile, "utf8"));
-  snapshot.releases.find((pin) => pin.release_id === stackReleaseId).manifest_sha256 = createHash("sha256").update(rawRelease).digest("hex");
-  await writeFile(snapshotFile, `${JSON.stringify(snapshot, null, 2)}\n`);
+  const snapshotDir = join(target, "registry", "snapshots");
+  const mutatedReleaseHash = createHash("sha256").update(rawRelease).digest("hex");
+  for (const snapshotName of await readdir(snapshotDir)) {
+    if (!snapshotName.endsWith(".json")) continue;
+    const snapshotFile = join(snapshotDir, snapshotName);
+    const snapshot = JSON.parse(await readFile(snapshotFile, "utf8"));
+    const pin = snapshot.releases.find((candidate) => candidate.release_id === stackReleaseId);
+    if (!pin) continue;
+    pin.manifest_sha256 = mutatedReleaseHash;
+    await writeFile(snapshotFile, `${JSON.stringify(snapshot, null, 2)}\n`);
+  }
 }
 
 function configureStackPinnedUnit(value, manifestDigest = manifestSha256) {

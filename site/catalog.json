@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T13:28:00.000Z",
+  "generated_at": "2026-08-01T15:19:04.000Z",
   "base_path": "/",
   "works": [
     {
@@ -180,9 +180,9 @@
       "locator_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:3da753a0-ffd2-467c-a2ca-5dfd712ba86f",
-      "active_release_version": "0.3.1+2bd415d",
-      "artifact_revision": "2bd415dd3024c928fc8414b891e7f21069c3fcaa"
+      "active_release_id": "gls:release:6cbb7080-344c-44e9-a6d3-8e924496ec1f",
+      "active_release_version": "0.4.0+2c09268",
+      "artifact_revision": "2c09268dd383c112e36a823e95d34d20cb1fa2bd"
     },
     {
       "owner": "Lordsisodia",
