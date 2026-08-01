@@ -58,7 +58,7 @@ function localTarget(raw, sourceFile) {
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "estate/index.html", "estate.json"]) {
+for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/god-questions-infrastructure.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "estate/index.html", "estate.json"]) {
   if (!await exists(path.join(root, required))) errors.push(`missing required page: ${required}`);
 }
 
@@ -87,11 +87,17 @@ for (const [document, marker] of [
   ["docs/siso-mission.html", "The Great Library of SISO</td><td>Provides durable public identities"],
   ["docs/question-driven-research.html", "The ten-pass first-principles loop"],
   ["docs/frontier-question-template.html", "Worked example · composable CRM"],
+  ["docs/god-questions-infrastructure.html", "The smallest stable first tranche"],
 ]) {
   const documentHtml = await readFile(path.join(root, document), "utf8");
   if (!documentHtml.includes(marker)) errors.push(`${document}: missing contract marker: ${marker}`);
   if (!researchIndex.includes(`/${document}`)) errors.push(`research/index.html: missing ${document} link`);
 }
+const infrastructureHtml = await readFile(path.join(root, "docs/god-questions-infrastructure.html"), "utf8");
+for (const marker of ["One canonical object graph", "Assumption graph and circuit breakers", "Cross-source contradiction radar", "research-swarm compiler", "evidence-aware context compiler", "Proof-carrying execution", "Causal agent lineage", "Capability genome and promotion", "Counterfactual portfolio twin", "Learning Capital Market", "Existing, first tranche, later, and rejected"]) {
+  if (!infrastructureHtml.includes(marker)) errors.push(`docs/god-questions-infrastructure.html: missing architecture marker: ${marker}`);
+}
+if (!infrastructureHtml.includes("GQ-009 remains <code>researching</code>")) errors.push("docs/god-questions-infrastructure.html: GQ-009 answer-maturity boundary is missing");
 const programHtml = await readFile(path.join(root, "docs/100-million-token-program.html"), "utf8");
 for (const marker of ["The 100 Million Token Program", "No. They should run as a dependency-aware portfolio.", "awaiting operator approval", "question-driven research architecture"]) {
   if (!programHtml.includes(marker)) errors.push(`docs/100-million-token-program.html: missing contract marker: ${marker}`);
