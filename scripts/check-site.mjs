@@ -79,6 +79,8 @@ const frontierQuestions = [
 ];
 const researchIndex = await readFile(path.join(root, "research/index.html"), "utf8");
 if (!researchIndex.includes("Frontier Questions · God Questions")) errors.push("research/index.html: missing Frontier Questions section");
+if (!researchIndex.includes("versioned-answer contracts. Metadata seed Releases are not accepted answers.")) errors.push("research/index.html: answer maturity boundary is missing");
+if (researchIndex.includes("explicit evidence scopes, and versioned answers.")) errors.push("research/index.html: metadata seeds are overstated as accepted versioned answers");
 for (const [document, marker] of [
   ["docs/siso-mission.html", "The Great Library of SISO</td><td>Provides durable public identities"],
   ["docs/question-driven-research.html", "The ten-pass first-principles loop"],
