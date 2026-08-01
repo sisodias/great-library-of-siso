@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:9a8cecd9-423f-4c1e-b81c-a69f305eb5c6",
+  "occurred_at": "2026-08-02T00:17:02+07:00",
+  "recorded_at": "2026-08-02T00:17:02+07:00",
+  "immutable": true,
+  "entry_type": "initiative_started",
+  "thread": {
+    "id": "gls:thread:public-agent-ecosystem-expansion",
+    "name": "Public Agent Ecosystem Expansion",
+    "kind": "initiative"
+  },
+  "status": "active",
+  "title": "Public Agent Stack and Foundry expansion started",
+  "summary": "A bounded publication lane will register the stranger-ready Agent Stack 0.2.0 release, the resumable Foundry 0.2.0 campaign release, and the build-first operating plan without turning the Library into a source warehouse.",
+  "intent": "Increase the Great Library's operational advantage by connecting a genuinely adoptable public Agent Stack to a reproducible source-discovery loop and durable, rights-aware Library identity and release records.",
+  "reasoning": [
+    "The SISO Agent Stack already composes the complete public Claude Code and Codex setup; installing its own command, documenting update and rollback, and publishing a GitHub release makes that capability materially easier for outsiders to adopt.",
+    "Foundry already owns a large repository identity corpus and ranking contracts; a public resumable campaign runner makes new discovery campaigns forkable without committing databases, raw observations, or operational state.",
+    "The first live agent-systems campaign correctly stopped on GitHub anti-spam before accepting results and preserved a local checkpoint, so the public claim is campaign readiness rather than harvested-candidate completion.",
+    "The Great Library should pin exact public releases, current locators, authored operating direction, and selection lineage while Foundry retains raw responses and campaign state in its external data plane."
+  ],
+  "changes": [
+    {
+      "kind": "coordination",
+      "reference": "gls:thread:public-agent-ecosystem-expansion",
+      "summary": "Reserved the exact Work, Release, Snapshot, documentation, generator, generated-site, state, and Event surfaces needed to publish the two external releases and their Library integration."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+    ],
+    "repository_urls": [
+      "https://github.com/Lordsisodia/great-library-of-siso",
+      "https://github.com/sisodias/siso-agent-stack",
+      "https://github.com/Lordsisodia/siso-foundry"
+    ]
+  },
+  "coordination": {
+    "owner": "Great Library public agent ecosystem maintainer",
+    "branch": "codex/public-agent-ecosystem-expansion-20260802",
+    "reserved_paths": [
+      "registry/works/siso-agent-stack-distribution.json",
+      "registry/works/siso-foundry.json",
+      "registry/releases/siso-agent-stack-9d17865.json",
+      "registry/releases/siso-foundry-d29480a.json",
+      "registry/releases/great-library-public-agent-ecosystem-*.json",
+      "registry/snapshots/whole-library-v31.json",
+      "registry/events/2026-08-02-public-agent-ecosystem-expansion-*.json",
+      "docs/README.md",
+      "scripts/build.mjs",
+      "scripts/check-site.mjs",
+      "site/",
+      "CURRENT_STATE.md"
+    ]
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/sisodias/siso-agent-stack/releases/tag/v0.2.0",
+      "observed_at": "2026-08-02",
+      "summary": "The public Stack 0.2.0 release installs a managed distribution command, documents adoption and contribution routes, retains ten exact-pinned components, and passes eight tests plus its manifest verifier."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.2.0",
+      "observed_at": "2026-08-02",
+      "summary": "The public Foundry 0.2.0 release adds the ten-family agent-systems campaign contract, resumable runner, rights defaults, stop gates, and three new campaign tests; the repository gate passes."
+    },
+    {
+      "kind": "documentation",
+      "reference": "docs/100-million-token-operating-plan.html",
+      "observed_at": "2026-08-02",
+      "summary": "The completed operating plan prioritizes outsider-ready distribution, continuous public-source discovery, connected Library lineage, and repeated capability promotion."
+    }
+  ],
+  "next_actions": [
+    "Pin Stack 0.2.0 and Foundry 0.2.0 as immutable Library Releases and refresh their current public source locators.",
+    "Integrate the build-first operating plan into deterministic documentation generation and checks.",
+    "Publish a Great Library self-release, Whole Library V31 Snapshot, completion Event, current-state update, and live deployment."
+  ]
+}
