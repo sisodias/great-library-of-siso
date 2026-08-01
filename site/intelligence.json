@@ -1,13 +1,41 @@
 {
-  "generated_at": "2026-08-01T16:01:50.000Z",
+  "generated_at": "2026-08-01T16:09:32.000Z",
   "base_path": "/",
   "counts": {
-    "events": 9,
+    "events": 10,
     "decisions": 4,
-    "active_initiatives": 0,
+    "active_initiatives": 1,
     "registry_changes": 82
   },
-  "active_initiatives": [],
+  "active_initiatives": [
+    {
+      "event_id": "gls:event:fb18eba2-968a-4a76-ad1c-42d7964c3d9c",
+      "thread_id": "gls:thread:hundred-million-token-program",
+      "name": "100 Million Token Program",
+      "status": "active",
+      "title": "100 Million Token Program documentation started",
+      "intent": "Preserve the proposed long-horizon SISO agent-ecosystem program, distinguish the existing ecosystem-intelligence foundation from exhaustive coverage, and publish a dependency-aware parallelization plan that agents can execute without re-deriving its rationale.",
+      "occurred_at": "2026-08-01T23:09:32+07:00",
+      "owner": "Great Library ecosystem maintainer",
+      "branch": "main",
+      "reserved_paths": [
+        "docs/100-million-token-program.html",
+        "docs/README.md",
+        "CURRENT_STATE.md",
+        "scripts/build.mjs",
+        "scripts/check-site.mjs",
+        "registry/events/2026-08-01-hundred-million-token-program-*.json",
+        "registry/releases/great-library-*.json",
+        "registry/snapshots/whole-library-v*.json",
+        "site/"
+      ],
+      "next_actions": [
+        "Apply the public-safety and canonical-contract edits to the preserved proposal.",
+        "Integrate the authored page into the documentation index, deterministic site generator, and site checks.",
+        "Verify, release, select, deploy, and close the initiative with exact evidence."
+      ]
+    }
+  ],
   "decisions": [
     {
       "schema_version": "1.0.0",
@@ -374,6 +402,95 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:fb18eba2-968a-4a76-ad1c-42d7964c3d9c",
+      "occurred_at": "2026-08-01T23:09:32+07:00",
+      "recorded_at": "2026-08-01T23:09:32+07:00",
+      "immutable": true,
+      "entry_type": "initiative_started",
+      "thread": {
+        "id": "gls:thread:hundred-million-token-program",
+        "name": "100 Million Token Program",
+        "kind": "initiative"
+      },
+      "status": "active",
+      "title": "100 Million Token Program documentation started",
+      "summary": "A Great Library maintainer reserved the proposal, documentation index, generator, verification, and publication records needed to preserve the fifteen-part ecosystem program without creating a rival mission or Frontier Question architecture.",
+      "intent": "Preserve the proposed long-horizon SISO agent-ecosystem program, distinguish the existing ecosystem-intelligence foundation from exhaustive coverage, and publish a dependency-aware parallelization plan that agents can execute without re-deriving its rationale.",
+      "reasoning": [
+        "The full proposal should be durable before further research or implementation causes its original context to be lost.",
+        "The newly published SISO mission and question-driven research documents remain canonical for mission, assumptions, evidence, ADRs, Answer Releases, and Frontier Question operations.",
+        "The program is a proposed portfolio and sequencing map rather than approval to execute every stream or a claim that ecosystem coverage is already complete.",
+        "The smallest publication change is one authored page, one index link, deterministic generator and check integration, and the normal immutable Event, Release, and Snapshot records."
+      ],
+      "changes": [
+        {
+          "kind": "coordination",
+          "reference": "gls:thread:hundred-million-token-program",
+          "summary": "Reserved the program documentation and publication surfaces after the mission and question-driven research initiative closed."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso"
+        ]
+      },
+      "coordination": {
+        "owner": "Great Library ecosystem maintainer",
+        "branch": "main",
+        "reserved_paths": [
+          "docs/100-million-token-program.html",
+          "docs/README.md",
+          "CURRENT_STATE.md",
+          "scripts/build.mjs",
+          "scripts/check-site.mjs",
+          "registry/events/2026-08-01-hundred-million-token-program-*.json",
+          "registry/releases/great-library-*.json",
+          "registry/snapshots/whole-library-v*.json",
+          "site/"
+        ]
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "user-intent:hundred-million-token-program:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The requested artifact must preserve the full fifteen-part proposal, explain what complete ecosystem truth does and does not mean, distinguish sequential gates from parallel lanes, account for a constrained compute host without taking ownership of its storage migration, and reconcile with the completed God Questions work."
+        },
+        {
+          "kind": "source_review",
+          "reference": "source-review:mission-question-architecture:2a1a939",
+          "observed_at": "2026-08-01",
+          "summary": "The completed mission and question-driven research release establishes the canonical organ boundaries, assumption graph, research loop, dossier template, CRM example, and public/private contract that this portfolio must adopt."
+        }
+      ],
+      "next_actions": [
+        "Apply the public-safety and canonical-contract edits to the preserved proposal.",
+        "Integrate the authored page into the documentation index, deterministic site generator, and site checks.",
+        "Verify, release, select, deploy, and close the initiative with exact evidence."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",

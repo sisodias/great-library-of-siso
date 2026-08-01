@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T16:01:50.000Z",
+  "generated_at": "2026-08-01T16:09:32.000Z",
   "base_path": "/",
   "works": [
     {
@@ -3313,11 +3313,39 @@
   },
   "intelligence": {
     "counts": {
-      "events": 9,
+      "events": 10,
       "decisions": 4,
-      "active_initiatives": 0,
+      "active_initiatives": 1,
       "registry_changes": 82
     },
-    "active_initiatives": []
+    "active_initiatives": [
+      {
+        "event_id": "gls:event:fb18eba2-968a-4a76-ad1c-42d7964c3d9c",
+        "thread_id": "gls:thread:hundred-million-token-program",
+        "name": "100 Million Token Program",
+        "status": "active",
+        "title": "100 Million Token Program documentation started",
+        "intent": "Preserve the proposed long-horizon SISO agent-ecosystem program, distinguish the existing ecosystem-intelligence foundation from exhaustive coverage, and publish a dependency-aware parallelization plan that agents can execute without re-deriving its rationale.",
+        "occurred_at": "2026-08-01T23:09:32+07:00",
+        "owner": "Great Library ecosystem maintainer",
+        "branch": "main",
+        "reserved_paths": [
+          "docs/100-million-token-program.html",
+          "docs/README.md",
+          "CURRENT_STATE.md",
+          "scripts/build.mjs",
+          "scripts/check-site.mjs",
+          "registry/events/2026-08-01-hundred-million-token-program-*.json",
+          "registry/releases/great-library-*.json",
+          "registry/snapshots/whole-library-v*.json",
+          "site/"
+        ],
+        "next_actions": [
+          "Apply the public-safety and canonical-contract edits to the preserved proposal.",
+          "Integrate the authored page into the documentation index, deterministic site generator, and site checks.",
+          "Verify, release, select, deploy, and close the initiative with exact evidence."
+        ]
+      }
+    ]
   }
 }
