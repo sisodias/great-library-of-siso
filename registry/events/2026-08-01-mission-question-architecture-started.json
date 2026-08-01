@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:76ac7218-afe7-4f2c-bb31-b2f27555f67f",
+  "occurred_at": "2026-08-01T22:54:01+07:00",
+  "recorded_at": "2026-08-01T22:54:01+07:00",
+  "immutable": true,
+  "entry_type": "initiative_started",
+  "thread": {
+    "id": "gls:thread:mission-question-architecture",
+    "name": "SISO mission and question-driven research architecture",
+    "kind": "research"
+  },
+  "status": "active",
+  "title": "Mission and question-driven research architecture started",
+  "summary": "A Library maintainer reserved the authored mission, Frontier Question method, reusable question template, CRM example, navigation, verification, and publication surfaces for a focused documentation module.",
+  "intent": "Preserve SISO's durable mission and turn Frontier Questions into a question-first research practice that maps books, repositories, people, operational evidence, assumptions, decisions, and changing answers without making the Great Library itself the operating business system.",
+  "reasoning": [
+    "The Great Library is the durable identity and reading surface, not the intelligence-to-capital machine or the evidence warehouse.",
+    "The existing Frontier Question Works need an explicit operating method for assumptions, first-principles reasoning, books, counter-evidence, ADRs, experiments, and answer refreshes.",
+    "The smallest correct boundary is an authored Library module that reuses the existing Work, Release, Snapshot, Foundry, Knowledge, and Evidence Engines contracts before any new schema or repository is justified."
+  ],
+  "changes": [
+    {
+      "kind": "coordination",
+      "reference": "gls:thread:mission-question-architecture",
+      "summary": "Reserved the mission and question-driven research documentation scope before implementation."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+    ],
+    "decision_ids": [
+      "gls:decision:c1217342-d5cb-4015-bf1b-b04034d09f8a"
+    ],
+    "repository_urls": [
+      "https://github.com/Lordsisodia/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "Great Library research maintainer",
+    "branch": "codex/mission-question-architecture-20260801",
+    "reserved_paths": [
+      "docs/siso-mission.html",
+      "docs/question-driven-research.html",
+      "docs/frontier-question-template.html",
+      "docs/research-question-model.html",
+      "docs/README.md",
+      "README.md",
+      "CURRENT_STATE.md",
+      "scripts/build.mjs",
+      "scripts/check-site.mjs",
+      "tests/research-contract.test.mjs",
+      "registry/events/2026-08-01-mission-question-architecture-*.json",
+      "registry/releases/great-library-*.json",
+      "registry/snapshots/whole-library-v*.json",
+      "site/"
+    ]
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "documentation",
+      "reference": "user-intent:mission-question-architecture:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The requested module must preserve the company mission, organize research around durable questions and revisable assumptions, connect books and other sources to explicit inquiry, and provide a reusable question template with a CRM example."
+    },
+    {
+      "kind": "source_review",
+      "reference": "source-review:siso-mission-foundry-north-stars:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "Direct mission and Foundry north-star notes established the durable public-safe thesis and the four-layer coverage, people, watch, and question-research pipeline without publishing private implementation details."
+    }
+  ],
+  "next_actions": [
+    "Publish the public-safe SISO mission charter.",
+    "Publish the question-driven research method, assumption graph, reusable template, and CRM worked example.",
+    "Integrate, verify, release, select, deploy, and close the Event thread with exact evidence."
+  ]
+}
