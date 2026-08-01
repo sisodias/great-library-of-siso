@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:0d7c0b3f-a523-4738-8d56-08ad85b54b20",
+  "occurred_at": "2026-08-02T00:28:12+07:00",
+  "recorded_at": "2026-08-02T00:28:12+07:00",
+  "immutable": true,
+  "entry_type": "initiative_completed",
+  "thread": {
+    "id": "gls:thread:public-agent-ecosystem-expansion",
+    "name": "Public Agent Ecosystem Expansion",
+    "kind": "initiative"
+  },
+  "status": "completed",
+  "title": "Public Agent Stack and Foundry growth loop released",
+  "summary": "The Library now selects the stranger-ready Agent Stack 0.2.0, the resumable Foundry 0.2.0 source-campaign release, and a build-first operating plan that connects distribution, discovery, rights-aware lineage, and capability promotion.",
+  "intent": "Increase the Great Library's operational advantage by connecting a genuinely adoptable public Agent Stack to a reproducible source-discovery loop and durable, rights-aware Library identity and release records.",
+  "reasoning": [
+    "The Agent Stack release improves the actual one-clone product: users receive a managed stack command, first-run verification, update and rollback instructions, extension routes, contribution ownership, GitHub discovery metadata, and a published release.",
+    "The Foundry release turns repository discovery into a public, resumable campaign contract while keeping raw responses, checkpoints, candidates, databases, and corpora outside the Library and outside Git.",
+    "The first live campaign stopped on GitHub's anti-spam response and preserved its checkpoint; the release truthfully claims campaign readiness, not a completed new candidate harvest.",
+    "Whole Library V31 changes only the selected Great Library, Agent Stack Distribution, and Foundry Releases and preserves the immutable Stack Assembly because its ten component pins did not change.",
+    "The build-first operating plan is now part of deterministic site generation and mechanically checked for the accepted Stack, outside-user, Foundry, and rights-aware intake sequence."
+  ],
+  "changes": [
+    {"kind":"commit","reference":"https://github.com/sisodias/siso-agent-stack/commit/9d1786575cce55df61ce3cf8564969536c47d186","summary":"Published the Agent Stack 0.2.0 community-adoption baseline and installed distribution command."},
+    {"kind":"commit","reference":"https://github.com/Lordsisodia/siso-foundry/commit/d29480a139edb48be14ee5f24d86349a7ae2a0ae","summary":"Published the Foundry 0.2.0 resumable agent-source campaign contract and runner."},
+    {"kind":"commit","reference":"https://github.com/Lordsisodia/great-library-of-siso/commit/dfe9733ca69d0beb74aa8f571bece4d8351d77f9","summary":"Integrated the two external releases, refreshed current locators, and generated the build-first operating-plan page."},
+    {"kind":"registry_record","reference":"gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34","summary":"Pinned the exact public Agent Stack 0.2.0 artifact and verified distribution states."},
+    {"kind":"registry_record","reference":"gls:release:69e37171-b72b-4c31-9e02-6c441a90e3a1","summary":"Pinned the exact public Foundry 0.2.0 artifact and campaign/data-plane boundaries."},
+    {"kind":"registry_record","reference":"gls:release:bfa87ed9-ddd3-4a7b-b563-1e4cd132b9a6","summary":"Pinned the Great Library public-agent growth-loop implementation."},
+    {"kind":"registry_record","reference":"gls:snapshot:8b9f672b-61e2-4f68-b0ff-600cbfc042a2","summary":"Selected all three new Releases through Whole Library V31 while preserving unaffected selections."}
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+    ],
+    "release_ids": [
+      "gls:release:bfa87ed9-ddd3-4a7b-b563-1e4cd132b9a6",
+      "gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34",
+      "gls:release:69e37171-b72b-4c31-9e02-6c441a90e3a1"
+    ],
+    "snapshot_ids": ["gls:snapshot:8b9f672b-61e2-4f68-b0ff-600cbfc042a2"],
+    "repository_urls": [
+      "https://github.com/Lordsisodia/great-library-of-siso",
+      "https://github.com/sisodias/siso-agent-stack",
+      "https://github.com/Lordsisodia/siso-foundry"
+    ]
+  },
+  "coordination": {
+    "owner": "Great Library public agent ecosystem maintainer",
+    "branch": "codex/public-agent-ecosystem-expansion-20260802",
+    "reserved_paths": []
+  },
+  "visibility": "public",
+  "predecessor_event_id": "gls:event:9a8cecd9-423f-4c1e-b81c-a69f305eb5c6",
+  "evidence": [
+    {"kind":"registry_validation","reference":"repo-check:public-agent-ecosystem:dfe9733","observed_at":"2026-08-02","summary":"Phase A passed the full Great Library gate with 25 Works, 62 Releases, 30 Snapshots, 18 Events, and the new generated operating-plan page."},
+    {"kind":"release_receipt","reference":"https://github.com/sisodias/siso-agent-stack/releases/tag/v0.2.0","observed_at":"2026-08-02","summary":"The exact Stack release is public with homepage, topics, changelog, contribution contract, and passing install/verification evidence."},
+    {"kind":"release_receipt","reference":"https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.2.0","observed_at":"2026-08-02","summary":"The exact Foundry release is public with the campaign definition, runner, tests, and anti-spam stop receipt."}
+  ],
+  "next_actions": [
+    "Resume the checkpointed agent-systems campaign only after GitHub's anti-spam gate clears; do not bypass or hammer the search endpoint.",
+    "Review the first resulting candidate cohort directly for provenance, license, capability boundary, and an owning SISO component before proposing a Library source inventory successor.",
+    "Keep improving the public Stack through component-owned changes, exact Releases, clean-install evidence, and successor Stack pins rather than copying component source into the distribution."
+  ]
+}

@@ -1,6 +1,6 @@
 # Current state — The Great Library of SISO
 
-**Verified:** 2026-08-01
+**Verified:** 2026-08-02
 **Public repository:** https://github.com/Lordsisodia/great-library-of-siso  
 **Live Library:** https://great-library-of-siso.vercel.app/  
 **Operating status:** stable wrap-up point; safe for a cold agent to resume.
@@ -17,19 +17,20 @@
 - Research now separates three independently addressable responsibilities: SISO Knowledge for durable corpus and retrieval, Foundry for source discovery and reuse intelligence, and Evidence Engines for source-grounded transformation.
 - The Great Library, SISO Knowledge, Foundry, and Evidence Engines now share one generated repository-header visual family while retaining distinct repository identities and responsibilities.
 - SISO Agent Hooks is released at `9125a972b4ba03661bf17ee135790282f246c15f` after 21 tests and a 97/100 adversarial review.
-- SISO Agent Stack Distribution is released at `f4a9626c0a1771cd3ee449f25a1ab63c8b297845` after public-source and full non-external clean installs plus a 98/100 adversarial review.
+- SISO Agent Stack Distribution 0.2.0 is released at `9d1786575cce55df61ce3cf8564969536c47d186`: it retains the complete ten-component pin set, installs a managed `siso-stack` command, documents first-use/update/rollback and contribution ownership, and passes eight tests plus manifest verification.
 - Immutable SISO Agent Stack Assembly 2.0.0 expands the composition to the complete portable public stack without rewriting V1.
+- SISO Foundry 0.2.0 is released at `d29480a139edb48be14ee5f24d86349a7ae2a0ae` with a public ten-family agent-systems campaign, dependency-free resumable runner, query-hash checkpoints, append-only observation routing, deduplicated candidate lineage, rights-review defaults, and quota/anti-spam stop gates. The first live query stopped on GitHub anti-spam before accepting results; its local restart checkpoint is preserved outside Git.
 - The agent-capability promotion campaign is a first-class Library surface at `/promotion/` and `/promotion.json`: one active immutable campaign head tracks 18 publication-safe candidate units, with seven at `candidate`, eight at `owner_assigned`, three at `read`, and zero unresolved target Works.
 - The promotion lifecycle is mechanically enforced from `unverified` through `stack_pinned` and `retired`; advanced stages must bind real evidence, Releases, Snapshots, and verified Stack manifest receipts.
-- Ecosystem Intelligence is generated at `/intelligence/` and `/intelligence.json` from four immutable ADRs, sixteen append-only Events, and the automatic history of all 60 Releases and 30 Snapshots. The current projection retains the independently owned 100 Million Token operating-plan initiative; live lanes must publish branch and machine-neutral path reservations before parallel work begins.
-- Whole Library V30 — God Questions Observatory Release (`gls:snapshot:fb10d973-8a24-44c7-8fed-b22e7d227b5d`) is the active Snapshot.
+- Ecosystem Intelligence is generated at `/intelligence/` and `/intelligence.json` from four immutable ADRs, nineteen append-only Events, and the automatic history of all 63 Releases and 31 Snapshots. The current projection has zero active initiatives; live lanes must publish branch and machine-neutral path reservations before parallel work begins.
+- Whole Library V31 — Public Agent Ecosystem Expansion (`gls:snapshot:8b9f672b-61e2-4f68-b0ff-600cbfc042a2`) is the active Snapshot.
 - Frontier Questions reuses the core Library model: a question is a Work, an accepted answer is a Release, and the latest Snapshot selects the current portfolio. Its current seven question Releases are explicitly publication-safe metadata seeds rather than public answer artifacts. The generated God Questions Observatory exposes portfolio state plus declared decision targets, success criteria, falsifiers, evidence gaps, and watch triggers. Foundry discovers relevant evidence, SISO Knowledge preserves it, and Evidence Engines transform it.
 - The SISO mission charter records the durable public direction while explicitly keeping the Great Library as the identity, lineage, and reading surface rather than the company or operating business engine.
 - The question-driven research architecture now defines a ten-pass first-principles loop, global/domain/question/action assumption dependencies, targeted book reading, claim and contradiction ledgers, ADR and experiment implications, Answer Releases, and watch triggers.
 - The reusable Frontier Question dossier includes a worked composable-CRM example and an explicit rights boundary between publicly observable product behavior and reusable source code.
-- The proposed 100 Million Token Program preserves fifteen ecosystem investments as a dependency-aware portfolio, distinguishes the evidenced truth foundation from incomplete estate coverage, adopts the canonical mission and question contracts, and requires explicit operator approval before execution lanes open.
+- The 100 Million Token Program preserves fifteen ecosystem investments as a dependency-aware portfolio, while its accepted build-first operating plan prioritizes outsider-ready Agent Stack distribution, resumable Foundry discovery, rights-aware Library lineage, and repeated capability promotion. Package-specific safety and authority boundaries still apply.
 - The Research page explicitly distinguishes versioned-answer contracts and metadata seed Releases from accepted Answer Releases; a positive and negative generated-site assertion protect that boundary.
-- The Library's selected self-release is `0.8.0+d16ac75`, pinned to `d16ac75d98849dfb62e2e684e3d02b65132a25c5`.
+- The Library's selected self-release is `0.9.0+dfe9733`, pinned to `dfe9733ca69d0beb74aa8f571bece4d8351d77f9`.
 - The latest active state is always the highest-numbered immutable whole-Library Snapshot. Do not infer “current” from filename order alone; compare numeric `version` fields.
 
 ## Operating boundaries
@@ -58,8 +59,9 @@ The gate validates schemas and immutable history, runs ten promotion-contract an
 2. Read `site/intelligence.json` for active initiatives, reserved paths, recent Events, ADRs, and registry history before opening a lane.
 3. Use `site/estate.json` to see which public repositories have released source, linked homes, or staging homes.
 4. Continue only from evidenced source inventories or a named Work; do not bulk-import the old Agent Base or the dirty local Knowledge data plane.
-5. Build the next Foundry-side discovery exporter into ignored local staging. It may propose source-inventory candidates, but it must never write directly into the immutable public registry.
-6. When adding a module, keep the Work independently addressable and put its contextual role in an Assembly or Snapshot relationship.
+5. Resume the Foundry `agent-systems-v1` campaign only after GitHub's anti-spam gate clears. Its raw responses, checkpoint, and candidate projection remain in the external data plane and it never writes directly into the immutable public registry.
+6. Directly review the first candidate cohort for provenance, license, capability boundary, and owning component before proposing a source-inventory successor or promotion.
+7. When adding a module, keep the Work independently addressable and put its contextual role in an Assembly or Snapshot relationship.
 
 ## Known external action
 

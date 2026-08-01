@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-01T17:17:02.000Z",
-  "snapshot_id": "gls:snapshot:fb10d973-8a24-44c7-8fed-b22e7d227b5d",
-  "snapshot_version": "30.0.0",
+  "generated_at": "2026-08-01T17:28:12.000Z",
+  "snapshot_id": "gls:snapshot:8b9f672b-61e2-4f68-b0ff-600cbfc042a2",
+  "snapshot_version": "31.0.0",
   "repositories": [
     {
       "owner": "Lordsisodia",
@@ -17,9 +17,9 @@
       "locator_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:07f984fa-af0a-422a-9103-6e34a2ac6dbd",
-      "active_release_version": "0.8.0+d16ac75",
-      "artifact_revision": "d16ac75d98849dfb62e2e684e3d02b65132a25c5"
+      "active_release_id": "gls:release:bfa87ed9-ddd3-4a7b-b563-1e4cd132b9a6",
+      "active_release_version": "0.9.0+dfe9733",
+      "artifact_revision": "dfe9733ca69d0beb74aa8f571bece4d8351d77f9"
     },
     {
       "owner": "Lordsisodia",
@@ -161,9 +161,9 @@
       "locator_revision": "main@d29480a139edb48be14ee5f24d86349a7ae2a0ae",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:6b40bfd7-259f-4d24-97e6-191dc8d2bd20",
-      "active_release_version": "main+fd7d270",
-      "artifact_revision": "fd7d270f98b0e0b34317fa1647997fcfdcac2094"
+      "active_release_id": "gls:release:69e37171-b72b-4c31-9e02-6c441a90e3a1",
+      "active_release_version": "0.2.0+d29480a",
+      "artifact_revision": "d29480a139edb48be14ee5f24d86349a7ae2a0ae"
     },
     {
       "owner": "Lordsisodia",
@@ -287,9 +287,9 @@
       "locator_revision": "main@9d1786575cce55df61ce3cf8564969536c47d186",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:a085911a-30f7-4075-b8e1-680a65a2a0cd",
-      "active_release_version": "0.1.0+f4a9626",
-      "artifact_revision": "f4a9626c0a1771cd3ee449f25a1ab63c8b297845"
+      "active_release_id": "gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34",
+      "active_release_version": "0.2.0+9d17865",
+      "artifact_revision": "9d1786575cce55df61ce3cf8564969536c47d186"
     }
   ]
 }
