@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T15:40:00.000Z",
+  "generated_at": "2026-08-01T15:46:33.000Z",
   "base_path": "/",
   "works": [
     {
@@ -3313,45 +3313,11 @@
   },
   "intelligence": {
     "counts": {
-      "events": 5,
+      "events": 6,
       "decisions": 4,
-      "active_initiatives": 1,
+      "active_initiatives": 0,
       "registry_changes": 78
     },
-    "active_initiatives": [
-      {
-        "event_id": "gls:event:659accbe-2370-4169-8fc0-c67bc320d983",
-        "thread_id": "gls:thread:ecosystem-intelligence",
-        "name": "Ecosystem intelligence ledger",
-        "status": "active",
-        "title": "Ecosystem intelligence ledger implementation started",
-        "intent": "Give every arriving agent one machine-readable place to learn active intent, completed changes, decisions, evidence, ownership, and authoritative destinations.",
-        "occurred_at": "2026-08-01T22:36:40+07:00",
-        "owner": "Great Library maintainer",
-        "branch": "main",
-        "reserved_paths": [
-          "schemas/event.schema.json",
-          "schemas/decision.schema.json",
-          "registry/events/",
-          "registry/decisions/",
-          "scripts/build.mjs",
-          "scripts/validate.mjs",
-          "scripts/check-immutable-history.mjs",
-          "scripts/check-site.mjs",
-          "tests/intelligence-contract.test.mjs",
-          "docs/",
-          "AGENTS.md",
-          "CURRENT_STATE.md",
-          "README.md",
-          "CONTRIBUTING.md",
-          "site/"
-        ],
-        "next_actions": [
-          "Implement and verify Event and Decision contracts.",
-          "Generate intelligence HTML and JSON.",
-          "Close this thread with a successor event and publish an exact Release and Snapshot."
-        ]
-      }
-    ]
+    "active_initiatives": []
   }
 }

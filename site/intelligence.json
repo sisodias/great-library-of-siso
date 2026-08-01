@@ -1,47 +1,13 @@
 {
-  "generated_at": "2026-08-01T15:40:00.000Z",
+  "generated_at": "2026-08-01T15:46:33.000Z",
   "base_path": "/",
   "counts": {
-    "events": 5,
+    "events": 6,
     "decisions": 4,
-    "active_initiatives": 1,
+    "active_initiatives": 0,
     "registry_changes": 78
   },
-  "active_initiatives": [
-    {
-      "event_id": "gls:event:659accbe-2370-4169-8fc0-c67bc320d983",
-      "thread_id": "gls:thread:ecosystem-intelligence",
-      "name": "Ecosystem intelligence ledger",
-      "status": "active",
-      "title": "Ecosystem intelligence ledger implementation started",
-      "intent": "Give every arriving agent one machine-readable place to learn active intent, completed changes, decisions, evidence, ownership, and authoritative destinations.",
-      "occurred_at": "2026-08-01T22:36:40+07:00",
-      "owner": "Great Library maintainer",
-      "branch": "main",
-      "reserved_paths": [
-        "schemas/event.schema.json",
-        "schemas/decision.schema.json",
-        "registry/events/",
-        "registry/decisions/",
-        "scripts/build.mjs",
-        "scripts/validate.mjs",
-        "scripts/check-immutable-history.mjs",
-        "scripts/check-site.mjs",
-        "tests/intelligence-contract.test.mjs",
-        "docs/",
-        "AGENTS.md",
-        "CURRENT_STATE.md",
-        "README.md",
-        "CONTRIBUTING.md",
-        "site/"
-      ],
-      "next_actions": [
-        "Implement and verify Event and Decision contracts.",
-        "Generate intelligence HTML and JSON.",
-        "Close this thread with a successor event and publish an exact Release and Snapshot."
-      ]
-    }
-  ],
+  "active_initiatives": [],
   "decisions": [
     {
       "schema_version": "1.0.0",
@@ -408,6 +374,111 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:ae2505ef-bdca-4ce7-b5cc-ba24d7ab68ee",
+      "occurred_at": "2026-08-01T22:46:33+07:00",
+      "recorded_at": "2026-08-01T22:46:33+07:00",
+      "immutable": true,
+      "entry_type": "initiative_completed",
+      "thread": {
+        "id": "gls:thread:ecosystem-intelligence",
+        "name": "Ecosystem intelligence ledger",
+        "kind": "initiative"
+      },
+      "status": "completed",
+      "title": "Ecosystem intelligence ledger implemented",
+      "summary": "The Library now publishes append-only operational Events, machine-readable ADRs, active agent reservations, automatic Release and Snapshot history, and generated HTML and JSON intelligence projections.",
+      "intent": "Give every arriving agent one machine-readable place to learn active intent, completed changes, decisions, evidence, ownership, and authoritative destinations.",
+      "reasoning": [
+        "Registry primitives remain authoritative for estate identity while Events explain motion and Decisions explain architectural boundaries.",
+        "Thread heads derive current status without rewriting earlier intent.",
+        "Automatic registry history supplies breadth while authored close-of-block Events supply reasoning and handoff context.",
+        "Validated reservations turn concurrent work from invisible worktree state into public coordination data."
+      ],
+      "changes": [
+        {
+          "kind": "commit",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/2e4f2ab",
+          "summary": "Published Event and Decision schemas, seed records, validators, generators, documentation, and tests."
+        },
+        {
+          "kind": "generator",
+          "reference": "site/intelligence.json",
+          "summary": "Added the machine-readable cold-agent intelligence projection."
+        },
+        {
+          "kind": "generator",
+          "reference": "site/intelligence/index.html",
+          "summary": "Added the complete generated chronological reading surface."
+        },
+        {
+          "kind": "test",
+          "reference": "tests/intelligence-contract.test.mjs",
+          "summary": "Added ten positive and negative ecosystem-intelligence contract cases."
+        },
+        {
+          "kind": "document",
+          "reference": "docs/ecosystem-intelligence.html",
+          "summary": "Recorded the event, ADR, concurrency, changelog, publication, and five-minute recovery contracts."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+        ],
+        "decision_ids": [
+          "gls:decision:ce50d781-c1e3-43b3-83af-8f2506369b24"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso"
+        ]
+      },
+      "coordination": {
+        "owner": "Great Library maintainer",
+        "branch": "main",
+        "reserved_paths": []
+      },
+      "visibility": "public",
+      "predecessor_event_id": "gls:event:659accbe-2370-4169-8fc0-c67bc320d983",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "repo-check:great-library-intelligence:2e4f2ab",
+          "observed_at": "2026-08-01",
+          "summary": "Ten intelligence contracts, ten promotion contracts, registry validation, build, link, identity, immutable-history, and publication-safety checks passed."
+        },
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/2e4f2ab",
+          "observed_at": "2026-08-01",
+          "summary": "The implementation commit resolves from canonical public main."
+        }
+      ],
+      "next_actions": [
+        "Expose the read model through the future Library CLI and MCP server.",
+        "Automate Event proposals through agent hooks only after privacy and concurrency behavior is proven."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+        ],
+        "decision_ids": [
+          "gls:decision:ce50d781-c1e3-43b3-83af-8f2506369b24"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",

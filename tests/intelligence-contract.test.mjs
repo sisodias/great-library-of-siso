@@ -60,15 +60,13 @@ await test("event scope rejects an unresolved Work", async (target) => {
 await test("event thread rejects forked successors", async (target) => {
   const file = join(target, "registry", "events", startName);
   const start = await readJson(file);
-  for (const [id, minute] of [["gls:event:ac2e0991-ec41-40ba-ac66-a6b8b5520d6d", "37"], ["gls:event:94aa91d7-afe8-4b36-9c1c-c1e50c446a44", "38"]]) {
-    const successor = structuredClone(start);
-    successor.id = id;
-    successor.occurred_at = `2026-08-01T22:${minute}:40+07:00`;
-    successor.recorded_at = successor.occurred_at;
-    successor.entry_type = "initiative_updated";
-    successor.predecessor_event_id = startId;
-    await writeJson(join(target, "registry", "events", `${id.slice(-12)}.json`), successor);
-  }
+  const successor = structuredClone(start);
+  successor.id = "gls:event:ac2e0991-ec41-40ba-ac66-a6b8b5520d6d";
+  successor.occurred_at = "2026-08-01T22:47:40+07:00";
+  successor.recorded_at = successor.occurred_at;
+  successor.entry_type = "initiative_updated";
+  successor.predecessor_event_id = startId;
+  await writeJson(join(target, "registry", "events", "fork-fixture.json"), successor);
 }, 1, "has 2 successors");
 
 await test("live initiative requires reserved paths", async (target) => {
@@ -80,11 +78,18 @@ await test("live initiative requires reserved paths", async (target) => {
 
 await test("active lanes reject overlapping reservations", async (target) => {
   const file = join(target, "registry", "events", startName);
-  const event = await readJson(file);
-  event.id = "gls:event:b31d760e-fa5f-4a2e-85f2-5f20a5ee3c2c";
-  event.thread = { id: "gls:thread:collision-fixture", name: "Collision fixture", kind: "initiative" };
-  event.coordination.reserved_paths = ["docs/"];
-  await writeJson(join(target, "registry", "events", "collision-fixture.json"), event);
+  const template = await readJson(file);
+  for (const [id, suffix, reservedPath] of [
+    ["gls:event:b31d760e-fa5f-4a2e-85f2-5f20a5ee3c2c", "one", "docs/"],
+    ["gls:event:94aa91d7-afe8-4b36-9c1c-c1e50c446a44", "two", "docs/onboarding.html"]
+  ]) {
+    const event = structuredClone(template);
+    event.id = id;
+    event.thread = { id: `gls:thread:collision-${suffix}`, name: `Collision fixture ${suffix}`, kind: "initiative" };
+    event.scope.decision_ids = [];
+    event.coordination.reserved_paths = [reservedPath];
+    await writeJson(join(target, "registry", "events", `collision-${suffix}.json`), event);
+  }
 }, 1, "reserve overlapping paths");
 
 await test("V24 requires an authored event", async (target) => {
@@ -102,11 +107,13 @@ await test("decision supersession must resolve", async (target) => {
 }, 1, "supersedes_decision_id gls:decision:00000000-0000-4000-8000-000000000000 does not resolve");
 
 await test("accepted ADR must enter the event graph", async (target) => {
-  const file = join(target, "registry", "events", startName);
-  const event = await readJson(file);
-  event.scope.decision_ids = [];
-  await writeJson(file, event);
-}, 1, "accepted decision ADR-0004 must be referenced by at least one Event");
+  const file = join(target, "registry", "decisions", "adr-0004-append-only-ecosystem-intelligence.json");
+  const decision = await readJson(file);
+  decision.id = "gls:decision:f8c19059-93d3-4c38-9275-a50023e4984f";
+  decision.decision_key = "ADR-9999";
+  decision.title = "Unreferenced fixture decision";
+  await writeJson(join(target, "registry", "decisions", "unreferenced-fixture.json"), decision);
+}, 1, "accepted decision ADR-9999 must be referenced by at least one Event");
 
 await test("decision scope rejects an unresolved Work", async (target) => {
   const file = join(target, "registry", "decisions", "adr-0004-append-only-ecosystem-intelligence.json");
