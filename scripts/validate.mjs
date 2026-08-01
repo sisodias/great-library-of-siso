@@ -100,6 +100,38 @@ function uniqueMap(entries, label) {
   }
   return map;
 }
+
+function publicReferenceProblem(value) {
+  const reference = String(value ?? "");
+  if (/^(?:\/|~\/|[A-Za-z]:[\\/])/.test(reference) || /(?:\/Users\/|\/home\/)/.test(reference)) return "machine-local path";
+  if (/^(?:file|unix|data|javascript):/i.test(reference)) return "unsafe URI scheme";
+  if (!/^https?:\/\//i.test(reference)) return null;
+  let url;
+  try { url = new URL(reference); } catch { return "invalid public URL"; }
+  if (url.username || url.password) return "URL userinfo";
+  const host = url.hostname.toLowerCase().replace(/^\[|\]$/g, "");
+  if (host === "localhost" || host.endsWith(".localhost") || host.endsWith(".local") || host === "::1"
+    || /^(?:0|10|127)\./.test(host) || /^169\.254\./.test(host) || /^192\.168\./.test(host)
+    || /^172\.(?:1[6-9]|2\d|3[01])\./.test(host) || /^(?:fc|fd|fe8|fe9|fea|feb)/i.test(host)) return "private or local host";
+  for (const [key, entry] of url.searchParams) if (/(?:token|key|secret|password|credential|signature)/i.test(key) || /(?:ghp|github_pat|sk)-[A-Za-z0-9_-]{12,}/.test(entry)) return "credential-bearing query";
+  return null;
+}
+
+function validateAcyclic(items, edgeField, label) {
+  const byId = new Map(items.map((item) => [item.id, item]));
+  const visiting = new Set();
+  const visited = new Set();
+  function visit(id) {
+    if (visiting.has(id)) { fail(`${label}: ${edgeField} cycle includes ${id}`); return; }
+    if (visited.has(id)) return;
+    visiting.add(id);
+    for (const dependency of byId.get(id)?.[edgeField] ?? []) if (byId.has(dependency)) visit(dependency);
+    visiting.delete(id);
+    visited.add(id);
+  }
+  for (const id of byId.keys()) visit(id);
+}
+
 const works = uniqueMap(records.work, "works");
 const releases = uniqueMap(records.release, "releases");
 const assemblies = uniqueMap(records.assembly, "assemblies");
@@ -110,12 +142,83 @@ const events = uniqueMap(records.event, "events");
 const promotionLifecycle = ["unverified", "read", "candidate", "owner_assigned", "extracted", "verified", "released", "library_indexed", "stack_pinned", "retired"];
 const stackDistributionWorkId = "gls:work:b9196c61-901f-4105-93d9-899876d17016";
 const artifactIds = new Set();
+const questionIds = new Set();
 for (const { file, value: work } of records.work) {
+  const label = path.relative(root, file);
   if (work.work_type === "module") fail(`${path.relative(root, file)}: module must be a contextual projection role, never a Work type`);
   for (const relation of work.relationships ?? []) if (!works.has(relation.target_work_id)) fail(`${path.relative(root, file)}: relationship target ${relation.target_work_id} does not resolve`);
   if (work.work_type === "research_question" && !work.research_contract) fail(`${path.relative(root, file)}: research_question Work requires research_contract`);
   if (work.research_contract && work.work_type !== "research_question") fail(`${path.relative(root, file)}: research_contract is reserved for research_question Works`);
   for (const sourceWorkId of work.research_contract?.source_work_ids ?? []) if (!works.has(sourceWorkId)) fail(`${path.relative(root, file)}: research source Work ${sourceWorkId} does not resolve`);
+  if (work.research_contract) {
+    const questionId = work.research_contract.question_id;
+    if (questionIds.has(questionId)) fail(`${label}: duplicate question_id ${questionId}`);
+    questionIds.add(questionId);
+  }
+  const program = work.research_contract?.program;
+  if (!program) continue;
+  const assumptionMap = new Map();
+  for (const assumption of program.assumptions) {
+    if (assumptionMap.has(assumption.id)) fail(`${label}: duplicate assumption id ${assumption.id}`);
+    assumptionMap.set(assumption.id, assumption);
+  }
+  const evidenceMap = new Map();
+  for (const connection of program.evidence_connections) {
+    if (evidenceMap.has(connection.id)) fail(`${label}: duplicate evidence connection id ${connection.id}`);
+    evidenceMap.set(connection.id, connection);
+  }
+  const actionMap = new Map();
+  for (const link of program.action_learning_links) {
+    if (actionMap.has(link.id)) fail(`${label}: duplicate action/learning link id ${link.id}`);
+    actionMap.set(link.id, link);
+  }
+  for (const assumption of program.assumptions) {
+    for (const dependency of assumption.depends_on ?? []) {
+      if (dependency === assumption.id) fail(`${label}: assumption ${assumption.id} cannot depend on itself`);
+      else if (!assumptionMap.has(dependency)) fail(`${label}: assumption ${assumption.id} depends on unknown assumption ${dependency}`);
+    }
+    if (assumption.supersedes === assumption.id) fail(`${label}: assumption ${assumption.id} cannot supersede itself`);
+    else if (assumption.supersedes && !assumptionMap.has(assumption.supersedes)) fail(`${label}: assumption ${assumption.id} supersedes unknown assumption ${assumption.supersedes}`);
+    for (const evidenceId of assumption.evidence_connection_ids ?? []) if (!evidenceMap.has(evidenceId)) fail(`${label}: assumption ${assumption.id} references unknown evidence connection ${evidenceId}`);
+  }
+  validateAcyclic(program.assumptions, "depends_on", `${label}: assumption graph`);
+  for (const connection of program.evidence_connections) {
+    if (!works.has(connection.owning_work_id)) fail(`${label}: evidence connection ${connection.id} owner Work ${connection.owning_work_id} does not resolve`);
+    const supports = connection.supports_assumption_ids ?? [];
+    const challenges = connection.challenges_assumption_ids ?? [];
+    if (!supports.length && !challenges.length) fail(`${label}: evidence connection ${connection.id} must support or challenge an assumption`);
+    for (const assumptionId of [...supports, ...challenges]) if (!assumptionMap.has(assumptionId)) fail(`${label}: evidence connection ${connection.id} references unknown assumption ${assumptionId}`);
+    for (const assumptionId of supports) if (challenges.includes(assumptionId)) fail(`${label}: evidence connection ${connection.id} cannot both support and challenge ${assumptionId}`);
+    for (const [field, reference] of [["reference", connection.reference], ["provenance_receipt", connection.provenance_receipt], ["revision_or_digest", connection.revision_or_digest]]) {
+      const problem = publicReferenceProblem(reference);
+      if (problem) fail(`${label}: evidence connection ${connection.id} ${field} contains ${problem}`);
+    }
+  }
+  const actionRules = {
+    epistemic_demand: { authority: "demand_only", owners: new Set(["question_steward"]), statuses: new Set(["proposed"]) },
+    action_candidate: { authority: "proposal_only", owners: new Set(["operating_architecture"]), statuses: new Set(["proposed", "rejected"]) },
+    execution_mandate: { authority: "approved_scope", owners: new Set(["decision_owner"]), statuses: new Set(["approved", "expired"]) },
+    observation_receipt: { authority: "observation_only", owners: new Set(["runtime", "independent_verifier"]), statuses: new Set(["executed", "verified"]) },
+    learning_return: { authority: "learning_proposal", owners: new Set(["evidence_engine", "question_steward"]), statuses: new Set(["proposed", "no_change", "reopen_proposed"]) }
+  };
+  const actionOrder = { epistemic_demand: 0, action_candidate: 1, execution_mandate: 2, observation_receipt: 3, learning_return: 4 };
+  for (const link of program.action_learning_links) {
+    const rule = actionRules[link.object_type];
+    if (link.authority_state !== rule.authority) fail(`${label}: ${link.object_type} ${link.id} must use authority_state ${rule.authority}`);
+    if (!rule.owners.has(link.owner_role)) fail(`${label}: ${link.object_type} ${link.id} cannot be owned by ${link.owner_role}`);
+    if (!rule.statuses.has(link.status)) fail(`${label}: ${link.object_type} ${link.id} cannot use status ${link.status}`);
+    if (link.object_type === "execution_mandate" && (!link.expires_at || !link.content_sha256)) fail(`${label}: execution mandate ${link.id} requires expires_at and content_sha256`);
+    if (link.object_type !== "execution_mandate" && link.expires_at) fail(`${label}: only an execution mandate may declare expires_at`);
+    const problem = publicReferenceProblem(link.reference);
+    if (problem) fail(`${label}: action/learning link ${link.id} reference contains ${problem}`);
+    for (const predecessorId of link.predecessor_ids ?? []) {
+      const predecessor = actionMap.get(predecessorId);
+      if (!predecessor) fail(`${label}: action/learning link ${link.id} references unknown predecessor ${predecessorId}`);
+      else if (actionOrder[predecessor.object_type] >= actionOrder[link.object_type]) fail(`${label}: action/learning link ${link.id} predecessor ${predecessorId} does not precede ${link.object_type}`);
+    }
+    for (const assumptionId of link.related_assumption_ids ?? []) if (!assumptionMap.has(assumptionId)) fail(`${label}: action/learning link ${link.id} references unknown assumption ${assumptionId}`);
+  }
+  validateAcyclic(program.action_learning_links, "predecessor_ids", `${label}: action/learning graph`);
 }
 for (const { file, value: release } of records.release) {
   const label = path.relative(root, file);

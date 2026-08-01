@@ -5,6 +5,7 @@ const checks = [
   ["promotion contract tests", "tests/promotion-contract.test.mjs"],
   ["intelligence contract tests", "tests/intelligence-contract.test.mjs"],
   ["research question contract tests", "tests/research-contract.test.mjs"],
+  ["God Questions infrastructure contract tests", "tests/god-questions-infrastructure.test.mjs"],
   ["registry validation", "scripts/validate.mjs"],
   ["site build", "scripts/build.mjs"],
   ["site links and identity", "scripts/check-site.mjs"],

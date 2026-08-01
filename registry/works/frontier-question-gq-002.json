@@ -28,7 +28,89 @@
     "source_scopes": ["public agent harnesses and orchestration systems", "released SISO Agent Stack components", "privacy-safe operational measurements", "memory, routing, budget, and handoff mechanisms"],
     "answer_shape": "A ranked leverage map whose recommendations each carry measurements, external analogues, an experiment, and a falsifiable success threshold.",
     "refresh_policy": "Re-answer after material stack changes or when new measurements overturn the current bottleneck model.",
-    "publication_boundary": "public_metadata_only"
+    "publication_boundary": "public_metadata_only",
+    "program": {
+      "assumptions": [
+        {
+          "id": "QA-GQ002-CONTEXT-VALUE",
+          "level": "QA",
+          "scope": "evidence-aware agent context",
+          "statement": "Evidence-aware context improves representative agent-task outcomes enough to justify its retrieval and authoring overhead.",
+          "status": "active",
+          "confidence": "low",
+          "falsifier": "Paired representative tasks show no material correctness, intervention, reconstruction, or cost improvement after repair overhead is included.",
+          "depends_on": [],
+          "evidence_connection_ids": [
+            "EC-GQ002-OPERATING-PLAN"
+          ],
+          "review_date": "2026-08-02"
+        },
+        {
+          "id": "QA-GQ002-LINEAGE-VALUE",
+          "level": "QA",
+          "scope": "agent outcome reconstruction",
+          "statement": "Privacy-safe causal lineage and observation receipts make routing and capability decisions more reconstructable than untyped session summaries.",
+          "status": "active",
+          "confidence": "low",
+          "falsifier": "Independent reviewers cannot reproduce a routing or promotion decision more reliably from typed receipts than from the existing evidence path.",
+          "depends_on": [],
+          "evidence_connection_ids": [
+            "EC-GQ002-SEED-REVIEW"
+          ],
+          "review_date": "2026-08-02"
+        }
+      ],
+      "evidence_connections": [
+        {
+          "id": "EC-GQ002-OPERATING-PLAN",
+          "source_type": "documentation",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "docs/100-million-token-operating-plan.html#operating-loop",
+          "relevance_hypothesis": "The published operating loop supplies falsifiable context and lineage pilots for testing agent-layer efficiency.",
+          "rights_state": "public",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "docs/100-million-token-operating-plan.html#canonical-contracts",
+          "revision_or_digest": "accepted-direction:2026-08-02",
+          "summary": "The operating plan connects question demand, evidence, reversible experiments, measured outcomes, and returned learning without assigning truth to runtimes.",
+          "supports_assumption_ids": [
+            "QA-GQ002-CONTEXT-VALUE"
+          ],
+          "challenges_assumption_ids": []
+        },
+        {
+          "id": "EC-GQ002-SEED-REVIEW",
+          "source_type": "source_review",
+          "owning_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "reference": "source-review:frontier-question-intake:gq-002:2026-08-01",
+          "relevance_hypothesis": "The intake review tests whether operational research can remain owner-held while a public question exposes only safe lineage.",
+          "rights_state": "owner_held",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "registry/works/frontier-question-gq-002.json#evidence",
+          "revision_or_digest": "source-review:2026-08-01",
+          "summary": "The public Work records that operational evidence and the existing answer remain unpublished rather than copying sensitive measurements.",
+          "supports_assumption_ids": [
+            "QA-GQ002-LINEAGE-VALUE"
+          ],
+          "challenges_assumption_ids": []
+        }
+      ],
+      "action_learning_links": [
+        {
+          "id": "AL-GQ002-DEMAND",
+          "object_type": "epistemic_demand",
+          "authority_state": "demand_only",
+          "owner_role": "question_steward",
+          "reference": "registry/works/frontier-question-gq-002.json#research_contract",
+          "predecessor_ids": [],
+          "related_assumption_ids": [
+            "QA-GQ002-CONTEXT-VALUE",
+            "QA-GQ002-LINEAGE-VALUE"
+          ],
+          "status": "proposed",
+          "summary": "The public frame requests evidence about agent-layer leverage while private measurements and execution authority remain owner-held."
+        }
+      ]
+    }
   },
   "evidence": [{ "kind": "source_review", "reference": "source-review:frontier-question-intake:gq-002:2026-08-01", "observed_at": "2026-08-01", "summary": "The existing campaign answer and receipts were read; operational and machine-specific evidence remains outside the public Library." }]
 }

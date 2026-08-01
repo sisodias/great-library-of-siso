@@ -58,7 +58,7 @@ function localTarget(raw, sourceFile) {
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/god-questions-infrastructure.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "estate/index.html", "estate.json"]) {
+for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "research.json", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/god-questions-infrastructure.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "estate/index.html", "estate.json"]) {
   if (!await exists(path.join(root, required))) errors.push(`missing required page: ${required}`);
 }
 
@@ -79,10 +79,38 @@ const frontierQuestions = [
   ["GQ-009", "frontier-question-god-questions-infrastructure"],
 ];
 const researchIndex = await readFile(path.join(root, "research/index.html"), "utf8");
+const researchProjection = JSON.parse(await readFile(path.join(root, "research.json"), "utf8"));
 if (!researchIndex.includes("Frontier Questions · God Questions")) errors.push("research/index.html: missing Frontier Questions section");
 if (!researchIndex.includes("God Questions Observatory")) errors.push("research/index.html: missing God Questions Observatory portfolio state");
+if (!researchIndex.includes("/research.json")) errors.push("research/index.html: missing agent-readable Observatory JSON link");
+if (!researchIndex.includes("Program substrate.</b> 3 questions · 7 assumptions · 7 evidence connections · 4 action/learning links.")) errors.push("research/index.html: missing program substrate coverage");
 if (!researchIndex.includes("versioned-answer contracts. Metadata seed Releases are not accepted answers.")) errors.push("research/index.html: answer maturity boundary is missing");
 if (researchIndex.includes("explicit evidence scopes, and versioned answers.")) errors.push("research/index.html: metadata seeds are overstated as accepted versioned answers");
+for (const [field, expected] of Object.entries({ questions: 7, programmed_questions: 3, assumptions: 7, evidence_connections: 7, challenge_edges: 1, action_learning_links: 4, public_answers_released: 0 })) {
+  if (researchProjection.counts?.[field] !== expected) errors.push(`research.json: expected ${field}=${expected}, found ${researchProjection.counts?.[field]}`);
+}
+if (researchProjection.snapshot_version !== "31.0.0") errors.push("research.json: must identify the selected V31 source snapshot before closeout");
+for (const [questionId, state, assumptions, evidence, links] of [
+  ["GQ-001", "partial", 2, 2, 1],
+  ["GQ-002", "answered", 2, 2, 1],
+  ["GQ-009", "researching", 3, 3, 2],
+]) {
+  const question = researchProjection.questions?.find((entry) => entry.question_id === questionId);
+  if (!question) { errors.push(`research.json: missing ${questionId}`); continue; }
+  if (question.research_state !== state) errors.push(`research.json: ${questionId} research state changed from ${state}`);
+  if (question.selected_release?.public_answer_state !== "not_released" || question.selected_release?.artifact_count !== 0) errors.push(`research.json: ${questionId} metadata seed is inflated into a public answer`);
+  if (question.authoring_metrics?.assumptions !== assumptions || question.authoring_metrics?.evidence_connections !== evidence || question.authoring_metrics?.action_learning_links !== links) errors.push(`research.json: ${questionId} program fixture counts changed unexpectedly`);
+}
+for (const question of researchProjection.questions ?? []) {
+  const program = question.program;
+  if (!program) continue;
+  for (const reference of [
+    ...program.evidence_connections.flatMap((entry) => [entry.reference, entry.provenance_receipt, entry.revision_or_digest]),
+    ...program.action_learning_links.map((entry) => entry.reference),
+  ]) {
+    if (/(?:\/Users\/|\/home\/|file:\/\/|unix:\/\/|https?:\/\/(?:localhost|127\.|10\.|192\.168\.|172\.(?:1[6-9]|2\d|3[01])\.))/i.test(reference)) errors.push(`research.json: ${question.question_id} exposes a private or machine-local program reference`);
+  }
+}
 for (const [document, marker] of [
   ["docs/siso-mission.html", "The Great Library of SISO</td><td>Provides durable public identities"],
   ["docs/question-driven-research.html", "The ten-pass first-principles loop"],
@@ -115,11 +143,13 @@ for (const [questionId, slug] of frontierQuestions) {
   if (!researchIndex.includes(`/works/${slug}/`)) errors.push(`research/index.html: missing ${questionId} link`);
   const questionPage = await readFile(questionPath, "utf8");
   if (!questionPage.includes(`Research contract · ${questionId}`)) errors.push(`works/${slug}/index.html: missing ${questionId} research contract`);
+  if (!questionPage.includes("Public answer release</span><p>Not released")) errors.push(`works/${slug}/index.html: metadata seed is not explicitly separated from a public answer`);
 }
 const infrastructureQuestion = await readFile(path.join(root, "works/frontier-question-god-questions-infrastructure/index.html"), "utf8");
-for (const marker of ["Decision to change", "Success criteria", "Falsifiers", "Evidence gaps", "Watch triggers"]) {
+for (const marker of ["Decision to change", "Success criteria", "Falsifiers", "Evidence gaps", "Watch triggers", "Research state", "Assumptions · 3", "Evidence connections · 3", "Action and learning lineage · 2", "Read the God Questions infrastructure constitution"]) {
   if (!infrastructureQuestion.includes(marker)) errors.push(`GQ-009 page: missing program field ${marker}`);
 }
+if (infrastructureQuestion.includes("<b>Public answer:</b> released")) errors.push("GQ-009 page: researching metadata is inflated into a released answer");
 
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");

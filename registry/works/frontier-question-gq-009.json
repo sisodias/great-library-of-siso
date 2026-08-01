@@ -123,7 +123,145 @@
     ],
     "answer_shape": "A versioned God Questions operating architecture with a generated Observatory, machine-readable question-program contract, evidence and action-return interfaces, ownership boundaries, acceptance fixtures, and explicit promotion and kill gates.",
     "refresh_policy": "Re-answer when a real question cannot use the contract, a source or action interface changes, three-question evaluation evidence lands, or measured operating overhead exceeds the value created.",
-    "publication_boundary": "public_metadata_only"
+    "publication_boundary": "public_metadata_only",
+    "program": {
+      "assumptions": [
+        {
+          "id": "QA-GQ009-CANONICAL-EXTENSION",
+          "level": "QA",
+          "scope": "Library identity and projection",
+          "statement": "The existing Work, Release, Snapshot, and Event spine can support question-program visibility without a second registry.",
+          "status": "active",
+          "confidence": "medium",
+          "falsifier": "A heterogeneous question cannot express and validate its current program or answer lineage without a separate source of identity truth.",
+          "depends_on": [],
+          "evidence_connection_ids": [
+            "EC-GQ009-CONSTITUTION",
+            "EC-GQ009-CHECKPOINT"
+          ],
+          "review_date": "2026-08-02"
+        },
+        {
+          "id": "QA-GQ009-METADATA-VALUE",
+          "level": "QA",
+          "scope": "question reconstruction economics",
+          "statement": "A compact assumption, evidence, and action-learning projection improves cold-reader reconstruction enough to justify its authoring overhead.",
+          "status": "active",
+          "confidence": "low",
+          "falsifier": "Cold readers or agents cannot reconstruct a decision path more accurately, or the repeated authoring cost exceeds the errors and rediscovery avoided.",
+          "depends_on": [
+            "QA-GQ009-CANONICAL-EXTENSION"
+          ],
+          "evidence_connection_ids": [
+            "EC-GQ009-CHECKPOINT"
+          ],
+          "review_date": "2026-08-02"
+        },
+        {
+          "id": "QA-GQ009-OWNER-BOUNDARY",
+          "level": "QA",
+          "scope": "action and learning authority",
+          "statement": "Typed public references can connect question demand to returned learning without granting approval, execution, or evidence-adjudication authority to the Library.",
+          "status": "active",
+          "confidence": "low",
+          "falsifier": "A real action-to-learning chain cannot remain reconstructable unless the Library stores private payloads or represents a proposal as approval or observation as accepted truth.",
+          "depends_on": [
+            "QA-GQ009-CANONICAL-EXTENSION"
+          ],
+          "evidence_connection_ids": [
+            "EC-GQ009-JOINT-BRIDGE"
+          ],
+          "review_date": "2026-08-02"
+        }
+      ],
+      "evidence_connections": [
+        {
+          "id": "EC-GQ009-CONSTITUTION",
+          "source_type": "documentation",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "docs/god-questions-infrastructure.html",
+          "relevance_hypothesis": "The canonical constitution exposes the minimum identity, ownership, interface, dependency, and falsification rules the substrate must implement.",
+          "rights_state": "public",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+          "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+          "summary": "The pushed constitution preserves question identity, organ boundaries, action authority, learning proposals, and explicit later or rejected scope.",
+          "supports_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "challenges_assumption_ids": []
+        },
+        {
+          "id": "EC-GQ009-CHECKPOINT",
+          "source_type": "repository",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+          "relevance_hypothesis": "The verified document checkpoint tests whether the existing generator can expose a canonical question-infrastructure reader without a second registry.",
+          "rights_state": "public",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "repo-check:god-questions-infrastructure:270c37c",
+          "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+          "summary": "The exact branch checkpoint passed the complete Library gate and published the authored and generated constitution plus Research navigation.",
+          "supports_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION"
+          ],
+          "challenges_assumption_ids": [
+            "QA-GQ009-METADATA-VALUE"
+          ]
+        },
+        {
+          "id": "EC-GQ009-JOINT-BRIDGE",
+          "source_type": "registry_record",
+          "owning_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "reference": "registry/events/2026-08-02-god-questions-infrastructure-program-started.json#evidence",
+          "relevance_hypothesis": "The start Event's public bridge evidence tests whether action and learning ownership can be referenced without copying its owner-held design payload.",
+          "rights_state": "public_metadata_only",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "workspace-handoff:glos-100m-frontier-joint-lineage-20260801",
+          "revision_or_digest": "event-evidence:2026-08-02",
+          "summary": "The public Event records the typed, approval-gated bridge while the Library remains limited to safe identity and lineage.",
+          "supports_assumption_ids": [
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "challenges_assumption_ids": []
+        }
+      ],
+      "action_learning_links": [
+        {
+          "id": "AL-GQ009-DEMAND",
+          "object_type": "epistemic_demand",
+          "authority_state": "demand_only",
+          "owner_role": "question_steward",
+          "reference": "registry/works/frontier-question-gq-009.json#research_contract",
+          "predecessor_ids": [],
+          "related_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "status": "proposed",
+          "summary": "GQ-009 defines the decision, falsifiers, evidence gaps, and expected answer without authorizing implementation."
+        },
+        {
+          "id": "AL-GQ009-CANDIDATE",
+          "object_type": "action_candidate",
+          "authority_state": "proposal_only",
+          "owner_role": "operating_architecture",
+          "reference": "gls:event:43f26801-1225-4650-90eb-7a1362760f8d",
+          "predecessor_ids": [
+            "AL-GQ009-DEMAND"
+          ],
+          "related_assumption_ids": [
+            "QA-GQ009-CANONICAL-EXTENSION",
+            "QA-GQ009-METADATA-VALUE",
+            "QA-GQ009-OWNER-BOUNDARY"
+          ],
+          "status": "proposed",
+          "summary": "The active initiative is represented as a bounded action candidate; approval and execution receipts remain separately owned."
+        }
+      ]
+    }
   },
   "evidence": [
     {

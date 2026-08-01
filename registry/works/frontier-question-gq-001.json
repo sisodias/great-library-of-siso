@@ -28,7 +28,91 @@
     "source_scopes": ["public agent-workspace repositories", "code-layout and architectural enforcement", "memory and context systems", "agent-facing interface patterns"],
     "answer_shape": "Evidence-graded principles, reference architectures, rejected patterns, and tests that distinguish universal findings from SISO preferences.",
     "refresh_policy": "Re-answer when a major agent platform, workspace architecture, or failed forward prediction changes a load-bearing conclusion.",
-    "publication_boundary": "public_metadata_only"
+    "publication_boundary": "public_metadata_only",
+    "program": {
+      "assumptions": [
+        {
+          "id": "QA-GQ001-BOUNDARIES",
+          "level": "QA",
+          "scope": "agent-workspace architecture",
+          "statement": "A complete agent workspace can integrate its organs through typed interfaces without collapsing their independent ownership boundaries.",
+          "status": "active",
+          "confidence": "medium",
+          "falsifier": "Representative workspace tasks require one organ to own another organ's durable state, evidence adjudication, and runtime authority to remain coherent.",
+          "depends_on": [],
+          "evidence_connection_ids": [
+            "EC-GQ001-RESEARCH-METHOD"
+          ],
+          "review_date": "2026-08-02"
+        },
+        {
+          "id": "QA-GQ001-ADDRESSABILITY",
+          "level": "QA",
+          "scope": "workspace reconstruction",
+          "statement": "Stable identities, typed relationships, and explicit receipts reduce the context a cold agent must reconstruct before useful work.",
+          "status": "active",
+          "confidence": "medium",
+          "falsifier": "Cold-task comparisons show no meaningful reduction in reconstruction time, errors, or human intervention after adding the addressable contract.",
+          "depends_on": [
+            "QA-GQ001-BOUNDARIES"
+          ],
+          "evidence_connection_ids": [
+            "EC-GQ001-LIBRARY-SEED"
+          ],
+          "review_date": "2026-08-02"
+        }
+      ],
+      "evidence_connections": [
+        {
+          "id": "EC-GQ001-RESEARCH-METHOD",
+          "source_type": "documentation",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "docs/question-driven-research.html",
+          "relevance_hypothesis": "The published organ and assumption boundaries provide a reusable frame for evaluating complete workspace architectures.",
+          "rights_state": "public",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "registry/works/frontier-question-gq-001.json#evidence",
+          "revision_or_digest": "registry-record:2026-08-01",
+          "summary": "The question-driven research architecture separates identity, discovery, corpus, evidence transformation, and execution responsibilities.",
+          "supports_assumption_ids": [
+            "QA-GQ001-BOUNDARIES"
+          ],
+          "challenges_assumption_ids": []
+        },
+        {
+          "id": "EC-GQ001-LIBRARY-SEED",
+          "source_type": "release_receipt",
+          "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "reference": "registry/releases/frontier-question-gq-001-seed.json",
+          "relevance_hypothesis": "The existing metadata seed tests whether a question can remain addressable while its partial answer stays unpublished.",
+          "rights_state": "public_metadata_only",
+          "observed_at": "2026-08-02",
+          "provenance_receipt": "source-review:frontier-question-intake:gq-001:2026-08-01",
+          "revision_or_digest": "registry-seed-2026-08-01",
+          "summary": "The immutable seed exposes publication-safe identity and scope without presenting the partial answer as a public artifact.",
+          "supports_assumption_ids": [
+            "QA-GQ001-ADDRESSABILITY"
+          ],
+          "challenges_assumption_ids": []
+        }
+      ],
+      "action_learning_links": [
+        {
+          "id": "AL-GQ001-DEMAND",
+          "object_type": "epistemic_demand",
+          "authority_state": "demand_only",
+          "owner_role": "question_steward",
+          "reference": "registry/works/frontier-question-gq-001.json#research_contract",
+          "predecessor_ids": [],
+          "related_assumption_ids": [
+            "QA-GQ001-BOUNDARIES",
+            "QA-GQ001-ADDRESSABILITY"
+          ],
+          "status": "proposed",
+          "summary": "The current question frame defines learning demand but grants no implementation or budget authority."
+        }
+      ]
+    }
   },
   "evidence": [{ "kind": "source_review", "reference": "source-review:frontier-question-intake:gq-001:2026-08-01", "observed_at": "2026-08-01", "summary": "The existing question registry and partial answer were read; only publication-safe metadata was promoted." }]
 }

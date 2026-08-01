@@ -154,7 +154,19 @@ function normalizeRelease(raw) {
     workId: text(raw.work_id || raw.work?.id || raw.for_work, ''),
     version: text(raw.version || raw.tag || raw.name, 'Unversioned'),
     date: text(raw.released_at || raw.published_at || raw.date, 'Date pending'),
+    artifactCount: (raw.artifacts || []).length,
     distribution: raw.distribution || raw.distribution_states || raw.states || {},
+  };
+}
+
+function publicAnswerState(release) {
+  if (!release || release.artifactCount === 0) return {
+    code: 'not_released',
+    label: 'Not released — the selected Release has no public answer artifact.',
+  };
+  return {
+    code: 'artifact_present_unclassified',
+    label: 'Artifact present — answer acceptance still requires explicit Release evidence.',
   };
 }
 
@@ -234,13 +246,15 @@ function workCard(work) {
   </article>`;
 }
 
-function questionCard(work) {
+function questionCard(work, activeRelease) {
   const contract = work.researchContract;
-  const searchable = [work.name, work.summary, contract?.question, contract?.state, contract?.decision_to_change, ...(contract?.source_scopes || [])].filter(Boolean).join(' ').toLowerCase();
+  const answerState = publicAnswerState(activeRelease);
+  const searchable = [work.name, work.summary, contract?.question, contract?.state, contract?.decision_to_change, answerState.code, ...(contract?.source_scopes || [])].filter(Boolean).join(' ').toLowerCase();
   return `<article class="work-card question-card" data-search="${esc(searchable)}" data-type="${esc(slugify(work.type))}" data-maturity="${esc(slugify(work.maturity))}">
     <div class="card-topline"><span>${esc(contract?.question_id || work.type)}</span><span class="maturity">${esc(contract?.state || work.maturity)}</span></div>
     <h3><a href="${href(`works/${work.slug}/`)}">${esc(contract?.question || work.name)}</a></h3>
     <p>${esc(contract?.decision_to_change || work.summary)}</p>
+    <p class="quiet"><b>Public answer:</b> ${esc(answerState.code.replaceAll('_', ' '))}</p>
     <div class="card-foot"><code>${esc(contract?.evidence_mode?.replaceAll('_', ' ') || work.id)}</code><span aria-hidden="true">↗</span></div>
   </article>`;
 }
@@ -506,10 +520,18 @@ function agentsPage(works, assemblies, snapshot, sectionWork) {
   });
 }
 
-function researchPage(works, snapshot, sectionWork) {
+function researchPage(works, snapshot, sectionWork, activeReleasesByWork) {
   const related = projectionMembers(sectionWork?.id, snapshot, works).map(({ work }) => work);
   const questions = related.filter((work) => work.type === 'research_question');
   const systems = related.filter((work) => work.type !== 'research_question');
+  const programCounts = questions.reduce((counts, work) => {
+    const program = work.researchContract?.program;
+    if (program) counts.programmed += 1;
+    counts.assumptions += program?.assumptions?.length || 0;
+    counts.evidence += program?.evidence_connections?.length || 0;
+    counts.links += program?.action_learning_links?.length || 0;
+    return counts;
+  }, { programmed: 0, assumptions: 0, evidence: 0, links: 0 });
   const questionStates = [...questions.reduce((counts, work) => counts.set(work.researchContract?.state || 'unscoped', (counts.get(work.researchContract?.state || 'unscoped') || 0) + 1), new Map())]
     .sort(([left], [right]) => left.localeCompare(right))
     .map(([state, count]) => `${count} ${state.replaceAll('_', ' ')}`)
@@ -518,11 +540,72 @@ function researchPage(works, snapshot, sectionWork) {
     title: 'Research', active: 'research', rootClass: 'agents-page',
     description: 'The Research section of The Great Library of SISO.',
     body: `<section class="subhero shell">${eyebrow('Library / Sections / Research')}<div><h1>Research</h1><p>Foundry discovers the evidence universe. SISO Knowledge preserves it. Evidence Engines turn it into traceable claims. Frontier Questions keep the highest-leverage questions and their answer lineage alive.</p></div><span class="folio">R—01</span></section>
-    <section class="relationship-map shell" aria-labelledby="research-map-title"><div class="map-copy">${eyebrow(`Projection / ${snapshot?.version || 'unversioned'}`)}<h2 id="research-map-title">One evidence loop.<br>Clear ownership.</h2><p>The Library owns stable question and answer identities, not the corpus payload. Each Research system remains independently addressable and releasable.</p><p><a href="${href('docs/siso-mission.html')}">Read the SISO mission →</a><br><a href="${href('docs/question-driven-research.html')}">Open the question-driven research architecture →</a><br><a href="${href('docs/frontier-question-template.html')}">Use the Frontier Question template + CRM example →</a><br><a href="${href('docs/god-questions-infrastructure.html')}">Read the God Questions infrastructure constitution →</a><br><a href="${href('docs/research-question-model.html')}">Read the Frontier Question identity model →</a><br><a href="${href('docs/siso-knowledge-model.html')}">Read the SISO Knowledge boundary →</a></p></div><div class="map-stack">${systems.map((work, i) => `<div class="map-node"><span>${String(i + 1).padStart(2, '0')}</span><div><b>${esc(work.name)}</b><small>${esc(work.type)} · ${esc(work.maturity)}</small></div></div>`).join('') || '<p class="map-key">Accepted Research systems are being indexed.</p>'}</div></section>
-    <section class="model-strip"><div class="shell"><p><b>God Questions Observatory.</b> ${esc(questionStates || 'No question state recorded')} across ${questions.length} standing questions.</p><p><b>Questions drive the portfolio.</b> Decision, falsifier, evidence-gap, and watch-trigger fields are visible when a Question Work declares them; accepted answers still require immutable Releases.</p></div></section>
-    <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Frontier Questions · God Questions')}<h2>Questions worth answering again.</h2><p><span data-result-count>${questions.length}</span> standing questions with stable identities, explicit evidence scopes, and versioned-answer contracts. Metadata seed Releases are not accepted answers.</p></div>${questions.length ? catalogControls(questions) : ''}<div class="work-grid" data-catalog>${questions.length ? questions.map(questionCard).join('') : emptyCatalog('Questions appear only after a publication-safe research contract is accepted.')}</div><p class="no-results" data-no-results hidden>No questions match those filters.</p></section>
+    <section class="relationship-map shell" aria-labelledby="research-map-title"><div class="map-copy">${eyebrow(`Projection / ${snapshot?.version || 'unversioned'}`)}<h2 id="research-map-title">One evidence loop.<br>Clear ownership.</h2><p>The Library owns stable question and answer identities, not the corpus payload. Each Research system remains independently addressable and releasable.</p><p><a href="${href('docs/siso-mission.html')}">Read the SISO mission →</a><br><a href="${href('docs/question-driven-research.html')}">Open the question-driven research architecture →</a><br><a href="${href('docs/frontier-question-template.html')}">Use the Frontier Question template + CRM example →</a><br><a href="${href('docs/god-questions-infrastructure.html')}">Read the God Questions infrastructure constitution →</a><br><a href="${href('research.json')}">Open the agent-readable Observatory JSON →</a><br><a href="${href('docs/research-question-model.html')}">Read the Frontier Question identity model →</a><br><a href="${href('docs/siso-knowledge-model.html')}">Read the SISO Knowledge boundary →</a></p></div><div class="map-stack">${systems.map((work, i) => `<div class="map-node"><span>${String(i + 1).padStart(2, '0')}</span><div><b>${esc(work.name)}</b><small>${esc(work.type)} · ${esc(work.maturity)}</small></div></div>`).join('') || '<p class="map-key">Accepted Research systems are being indexed.</p>'}</div></section>
+    <section class="model-strip"><div class="shell"><p><b>God Questions Observatory.</b> ${esc(questionStates || 'No question state recorded')} across ${questions.length} standing questions.</p><p><b>Program substrate.</b> ${programCounts.programmed} questions · ${programCounts.assumptions} assumptions · ${programCounts.evidence} evidence connections · ${programCounts.links} action/learning links.</p><p><b>Questions drive the portfolio.</b> Research state is distinct from public answer maturity; artifact-free metadata seed Releases are not accepted answers.</p></div></section>
+    <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Frontier Questions · God Questions')}<h2>Questions worth answering again.</h2><p><span data-result-count>${questions.length}</span> standing questions with stable identities, explicit evidence scopes, and versioned-answer contracts. Metadata seed Releases are not accepted answers.</p></div>${questions.length ? catalogControls(questions) : ''}<div class="work-grid" data-catalog>${questions.length ? questions.map((work) => questionCard(work, activeReleasesByWork.get(work.id))).join('') : emptyCatalog('Questions appear only after a publication-safe research contract is accepted.')}</div><p class="no-results" data-no-results hidden>No questions match those filters.</p></section>
     <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Research systems')}<h2>The machinery behind the answers.</h2><p>${systems.length} independently owned Works.</p></div><div class="work-grid">${systems.map(workCard).join('')}</div></section>`,
   });
+}
+
+function buildResearchProjection(works, snapshot, sectionWork, activeReleasesByWork) {
+  const questions = projectionMembers(sectionWork?.id, snapshot, works).map(({ work }) => work).filter((work) => work.type === 'research_question');
+  const projectedQuestions = questions.map((work) => {
+    const contract = work.researchContract;
+    const program = contract.program || null;
+    const selectedRelease = activeReleasesByWork.get(work.id);
+    const answerState = publicAnswerState(selectedRelease);
+    return {
+      work_id: work.id,
+      question_id: contract.question_id,
+      slug: work.slug,
+      library_url: href(`works/${work.slug}/`),
+      question: contract.question,
+      research_state: contract.state,
+      evidence_mode: contract.evidence_mode,
+      decision_to_change: contract.decision_to_change || null,
+      success_criteria: contract.success_criteria || [],
+      falsifiers: contract.falsifiers || [],
+      evidence_gaps: contract.evidence_gaps || [],
+      watch_triggers: contract.watch_triggers || [],
+      source_work_ids: contract.source_work_ids,
+      source_scopes: contract.source_scopes,
+      answer_shape: contract.answer_shape,
+      refresh_policy: contract.refresh_policy,
+      publication_boundary: contract.publication_boundary,
+      selected_release: selectedRelease ? {
+        id: selectedRelease.id,
+        version: selectedRelease.version,
+        released_at: selectedRelease.date,
+        artifact_count: selectedRelease.artifactCount,
+        public_answer_state: answerState.code,
+        public_answer_note: answerState.label,
+      } : null,
+      program,
+      authoring_metrics: {
+        assumptions: program?.assumptions.length || 0,
+        evidence_connections: program?.evidence_connections.length || 0,
+        action_learning_links: program?.action_learning_links.length || 0,
+        serialized_program_bytes: program ? Buffer.byteLength(JSON.stringify(program)) : 0,
+      },
+    };
+  });
+  return {
+    schema_version: '1.0.0',
+    snapshot_id: snapshot?.id || null,
+    snapshot_version: snapshot?.version || null,
+    infrastructure_contract_url: href('docs/god-questions-infrastructure.html'),
+    counts: {
+      questions: projectedQuestions.length,
+      programmed_questions: projectedQuestions.filter((question) => question.authoring_metrics.assumptions || question.authoring_metrics.evidence_connections || question.authoring_metrics.action_learning_links).length,
+      assumptions: projectedQuestions.reduce((sum, question) => sum + question.authoring_metrics.assumptions, 0),
+      evidence_connections: projectedQuestions.reduce((sum, question) => sum + question.authoring_metrics.evidence_connections, 0),
+      challenge_edges: projectedQuestions.reduce((sum, question) => sum + (question.program?.evidence_connections || []).reduce((edges, connection) => edges + (connection.challenges_assumption_ids?.length || 0), 0), 0),
+      action_learning_links: projectedQuestions.reduce((sum, question) => sum + question.authoring_metrics.action_learning_links, 0),
+      public_answers_released: projectedQuestions.filter((question) => question.selected_release?.public_answer_state === 'released').length,
+      serialized_program_bytes: projectedQuestions.reduce((sum, question) => sum + question.authoring_metrics.serialized_program_bytes, 0),
+    },
+    questions: projectedQuestions,
+  };
 }
 
 function detailList(title, items) {
@@ -546,9 +629,13 @@ function workPage(work, releases, byId, activeRelease) {
   const linkRows = work.links.map((link) => `<a href="${esc(link.url)}" rel="noopener noreferrer"><span>${esc(link.kind)}</span><b>${esc(link.label)}</b><i aria-hidden="true">↗</i></a>`);
   const libraryUrl = href(`works/${work.slug}/`);
   const researchContract = work.researchContract;
+  const researchProgram = researchContract?.program;
+  const answerState = publicAnswerState(latest);
   const researchRows = researchContract ? [
     ['Question', researchContract.question],
-    ['State', researchContract.state],
+    ['Research state', researchContract.state],
+    ['Selected release', latest ? `${latest.id} · ${latest.version}` : 'No selected release'],
+    ['Public answer release', answerState.label],
     ['Evidence mode', researchContract.evidence_mode.replaceAll('_', ' ')],
     ['Decision to change', researchContract.decision_to_change],
     ['Success criteria', researchContract.success_criteria?.join(' · ')],
@@ -560,6 +647,12 @@ function workPage(work, releases, byId, activeRelease) {
     ['Refresh policy', researchContract.refresh_policy],
     ['Publication boundary', researchContract.publication_boundary.replaceAll('_', ' ')],
   ].filter(([, value]) => value).map(([label, value]) => `<div><span>${esc(label)}</span><p>${esc(value)}</p></div>`) : [];
+  const assumptionRows = (researchProgram?.assumptions || []).map((assumption) => `<div><span>${esc(`${assumption.id} · ${assumption.level} · ${assumption.status} · ${assumption.confidence}`)}</span><p>${esc(assumption.statement)}<small> Scope: ${esc(assumption.scope)} · Falsifier: ${esc(assumption.falsifier)} · Depends on: ${esc((assumption.depends_on || []).join(', ') || 'none')} · Evidence: ${esc((assumption.evidence_connection_ids || []).join(', ') || 'none')} · Review: ${esc(assumption.review_date)}</small></p></div>`);
+  const evidenceRows = (researchProgram?.evidence_connections || []).map((connection) => {
+    const owner = byId.get(connection.owning_work_id);
+    return `<div><span>${esc(`${connection.id} · ${connection.source_type} · ${connection.rights_state}`)}</span><p>${esc(connection.summary)}<small> Owner: ${owner ? `<a href="${href(`works/${owner.slug}/`)}">${esc(owner.name)}</a>` : esc(connection.owning_work_id)} · Supports: ${esc((connection.supports_assumption_ids || []).join(', ') || 'none')} · Challenges: ${esc((connection.challenges_assumption_ids || []).join(', ') || 'none')} · Observed: ${esc(connection.observed_at)}</small></p></div>`;
+  });
+  const actionRows = (researchProgram?.action_learning_links || []).map((link) => `<div><span>${esc(`${link.id} · ${link.object_type.replaceAll('_', ' ')} · ${link.authority_state.replaceAll('_', ' ')}`)}</span><p>${esc(link.summary)}<small> Owner role: ${esc(link.owner_role.replaceAll('_', ' '))} · Status: ${esc(link.status.replaceAll('_', ' '))} · Predecessors: ${esc((link.predecessor_ids || []).join(', ') || 'none')} · Assumptions: ${esc((link.related_assumption_ids || []).join(', ') || 'none')}</small></p></div>`);
   return page({
     title: work.name,
     active: work.section === 'Research' ? 'research' : /agent/i.test(`${work.section} ${work.type}`) ? 'agents' : 'library',
@@ -568,12 +661,12 @@ function workPage(work, releases, byId, activeRelease) {
     body: `<article>
       <header class="work-hero shell">${eyebrow(`Work / ${work.id}`)}<div class="work-title"><h1>${esc(work.name)}</h1><p>${esc(work.summary)}</p></div><dl class="work-meta"><div><dt>Type</dt><dd>${esc(work.type)}</dd></div><div><dt>Maturity</dt><dd>${esc(work.maturity)}</dd></div><div><dt>Section</dt><dd>${esc(work.section)}</dd></div></dl></header>
       <div class="permalink-bar"><div class="shell"><span>Permanent Library detail URL</span><code>${esc(libraryUrl)}</code></div></div>${researchRows.length ? `
-      <div class="shell">${detailList(`Research contract · ${researchContract.question_id}`, researchRows)}</div>` : ''}
+      <div class="shell">${detailList(`Research contract · ${researchContract.question_id}`, researchRows)}<p><a href="${href('docs/god-questions-infrastructure.html')}">Read the God Questions infrastructure constitution →</a></p>${researchProgram ? `${detailList(`Assumptions · ${assumptionRows.length}`, assumptionRows)}${detailList(`Evidence connections · ${evidenceRows.length}`, evidenceRows)}${detailList(`Action and learning lineage · ${actionRows.length}`, actionRows)}` : ''}</div>` : ''}
       <div class="detail-layout shell"><div>
         ${detailList('Relationships', relationshipRows)}
         ${detailList('Provenance', provenance.length ? [`<dl class="provenance-list">${provenance.join('')}</dl>`] : [])}
         ${detailList('Source & upstream links', linkRows)}
-      </div><aside class="release-panel"><div class="release-heading"><div>${eyebrow('Latest release')}<h2>${esc(latest?.version || 'No accepted release')}</h2></div><span>${esc(latest?.date || 'Manifest pending')}</span></div><div class="state-list">${DIST_KEYS.map(([key, label]) => {
+      </div><aside class="release-panel"><div class="release-heading"><div>${eyebrow(researchContract ? 'Selected release' : 'Latest release')}<h2>${esc(latest?.version || 'No accepted release')}</h2></div><span>${esc(latest?.date || 'Manifest pending')}</span></div>${researchContract ? `<p class="uncertainty-note"><b>Public answer:</b> ${esc(answerState.code.replaceAll('_', ' '))}. Research state does not substitute for an accepted answer artifact.</p>` : ''}<div class="state-list">${DIST_KEYS.map(([key, label]) => {
           const state = stateFor(latest, key);
           return `<div><span class="state-dot ${state.tone}" aria-hidden="true"></span><p><b>${esc(label)}</b><small>${esc(state.note)}</small></p><strong>${esc(state.label)}</strong></div>`;
         }).join('')}</div><p class="uncertainty-note">Availability is never inferred. Positive states require an explicit release declaration and evidence.</p></aside></div>
@@ -738,7 +831,10 @@ const researchSection = sections.find((section) => section.slug === 'research');
 await emit('agents/index.html', agentsPage(works, assemblies, latestSnapshot, agentsSection));
 await emit('promotion/index.html', promotionPage(promotion));
 await emit('intelligence/index.html', intelligencePage(intelligence));
-if (researchSection) await emit('research/index.html', researchPage(works, latestSnapshot, researchSection));
+if (researchSection) {
+  await emit('research/index.html', researchPage(works, latestSnapshot, researchSection, activeReleasesByWork));
+  await emit('research.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, ...buildResearchProjection(works, latestSnapshot, researchSection, activeReleasesByWork) }, null, 2)}\n`);
+}
 await emit('releases/index.html', releaseIndex(releases, worksById));
 await emit('snapshots/index.html', snapshotIndex(snapshots));
 await emit('estate/index.html', estatePage(repositoryEstate, latestSnapshot));

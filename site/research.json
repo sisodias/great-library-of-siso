@@ -1,0 +1,643 @@
+{
+  "generated_at": "2026-08-01T17:33:07.000Z",
+  "base_path": "/",
+  "schema_version": "1.0.0",
+  "snapshot_id": "gls:snapshot:8b9f672b-61e2-4f68-b0ff-600cbfc042a2",
+  "snapshot_version": "31.0.0",
+  "infrastructure_contract_url": "/docs/god-questions-infrastructure.html",
+  "counts": {
+    "questions": 7,
+    "programmed_questions": 3,
+    "assumptions": 7,
+    "evidence_connections": 7,
+    "challenge_edges": 1,
+    "action_learning_links": 4,
+    "public_answers_released": 0,
+    "serialized_program_bytes": 11474
+  },
+  "questions": [
+    {
+      "work_id": "gls:work:2ac84615-3f9d-4040-95d6-9d9f39e4dc84",
+      "question_id": "GQ-001",
+      "slug": "frontier-question-agent-workspace",
+      "library_url": "/works/frontier-question-agent-workspace/",
+      "question": "How should the complete agent workspace be designed across code layout, agent architecture, memory, enforcement, and agent-generated user interfaces?",
+      "research_state": "partial",
+      "evidence_mode": "hybrid",
+      "decision_to_change": null,
+      "success_criteria": [],
+      "falsifiers": [],
+      "evidence_gaps": [],
+      "watch_triggers": [],
+      "source_work_ids": [
+        "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+        "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+        "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_scopes": [
+        "public agent-workspace repositories",
+        "code-layout and architectural enforcement",
+        "memory and context systems",
+        "agent-facing interface patterns"
+      ],
+      "answer_shape": "Evidence-graded principles, reference architectures, rejected patterns, and tests that distinguish universal findings from SISO preferences.",
+      "refresh_policy": "Re-answer when a major agent platform, workspace architecture, or failed forward prediction changes a load-bearing conclusion.",
+      "publication_boundary": "public_metadata_only",
+      "selected_release": {
+        "id": "gls:release:bb6f759b-4c22-4dda-ac29-a4a9becefed9",
+        "version": "registry-seed-2026-08-01",
+        "released_at": "2026-08-01T22:30:00+07:00",
+        "artifact_count": 0,
+        "public_answer_state": "not_released",
+        "public_answer_note": "Not released — the selected Release has no public answer artifact."
+      },
+      "program": {
+        "assumptions": [
+          {
+            "id": "QA-GQ001-BOUNDARIES",
+            "level": "QA",
+            "scope": "agent-workspace architecture",
+            "statement": "A complete agent workspace can integrate its organs through typed interfaces without collapsing their independent ownership boundaries.",
+            "status": "active",
+            "confidence": "medium",
+            "falsifier": "Representative workspace tasks require one organ to own another organ's durable state, evidence adjudication, and runtime authority to remain coherent.",
+            "depends_on": [],
+            "evidence_connection_ids": [
+              "EC-GQ001-RESEARCH-METHOD"
+            ],
+            "review_date": "2026-08-02"
+          },
+          {
+            "id": "QA-GQ001-ADDRESSABILITY",
+            "level": "QA",
+            "scope": "workspace reconstruction",
+            "statement": "Stable identities, typed relationships, and explicit receipts reduce the context a cold agent must reconstruct before useful work.",
+            "status": "active",
+            "confidence": "medium",
+            "falsifier": "Cold-task comparisons show no meaningful reduction in reconstruction time, errors, or human intervention after adding the addressable contract.",
+            "depends_on": [
+              "QA-GQ001-BOUNDARIES"
+            ],
+            "evidence_connection_ids": [
+              "EC-GQ001-LIBRARY-SEED"
+            ],
+            "review_date": "2026-08-02"
+          }
+        ],
+        "evidence_connections": [
+          {
+            "id": "EC-GQ001-RESEARCH-METHOD",
+            "source_type": "documentation",
+            "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "reference": "docs/question-driven-research.html",
+            "relevance_hypothesis": "The published organ and assumption boundaries provide a reusable frame for evaluating complete workspace architectures.",
+            "rights_state": "public",
+            "observed_at": "2026-08-02",
+            "provenance_receipt": "registry/works/frontier-question-gq-001.json#evidence",
+            "revision_or_digest": "registry-record:2026-08-01",
+            "summary": "The question-driven research architecture separates identity, discovery, corpus, evidence transformation, and execution responsibilities.",
+            "supports_assumption_ids": [
+              "QA-GQ001-BOUNDARIES"
+            ],
+            "challenges_assumption_ids": []
+          },
+          {
+            "id": "EC-GQ001-LIBRARY-SEED",
+            "source_type": "release_receipt",
+            "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "reference": "registry/releases/frontier-question-gq-001-seed.json",
+            "relevance_hypothesis": "The existing metadata seed tests whether a question can remain addressable while its partial answer stays unpublished.",
+            "rights_state": "public_metadata_only",
+            "observed_at": "2026-08-02",
+            "provenance_receipt": "source-review:frontier-question-intake:gq-001:2026-08-01",
+            "revision_or_digest": "registry-seed-2026-08-01",
+            "summary": "The immutable seed exposes publication-safe identity and scope without presenting the partial answer as a public artifact.",
+            "supports_assumption_ids": [
+              "QA-GQ001-ADDRESSABILITY"
+            ],
+            "challenges_assumption_ids": []
+          }
+        ],
+        "action_learning_links": [
+          {
+            "id": "AL-GQ001-DEMAND",
+            "object_type": "epistemic_demand",
+            "authority_state": "demand_only",
+            "owner_role": "question_steward",
+            "reference": "registry/works/frontier-question-gq-001.json#research_contract",
+            "predecessor_ids": [],
+            "related_assumption_ids": [
+              "QA-GQ001-BOUNDARIES",
+              "QA-GQ001-ADDRESSABILITY"
+            ],
+            "status": "proposed",
+            "summary": "The current question frame defines learning demand but grants no implementation or budget authority."
+          }
+        ]
+      },
+      "authoring_metrics": {
+        "assumptions": 2,
+        "evidence_connections": 2,
+        "action_learning_links": 1,
+        "serialized_program_bytes": 3055
+      }
+    },
+    {
+      "work_id": "gls:work:e38b054f-b926-4410-b84d-4fd3249fd4f4",
+      "question_id": "GQ-002",
+      "slug": "frontier-question-agent-layer-efficiency",
+      "library_url": "/works/frontier-question-agent-layer-efficiency/",
+      "question": "What changes would make the complete provider-neutral SISO agent layer ten times more effective per unit of time, attention, and compute?",
+      "research_state": "answered",
+      "evidence_mode": "hybrid",
+      "decision_to_change": null,
+      "success_criteria": [],
+      "falsifiers": [],
+      "evidence_gaps": [],
+      "watch_triggers": [],
+      "source_work_ids": [
+        "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+        "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+        "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_scopes": [
+        "public agent harnesses and orchestration systems",
+        "released SISO Agent Stack components",
+        "privacy-safe operational measurements",
+        "memory, routing, budget, and handoff mechanisms"
+      ],
+      "answer_shape": "A ranked leverage map whose recommendations each carry measurements, external analogues, an experiment, and a falsifiable success threshold.",
+      "refresh_policy": "Re-answer after material stack changes or when new measurements overturn the current bottleneck model.",
+      "publication_boundary": "public_metadata_only",
+      "selected_release": {
+        "id": "gls:release:c993c838-6d9e-484c-a53b-2e651cb48e63",
+        "version": "registry-seed-2026-08-01",
+        "released_at": "2026-08-01T22:31:00+07:00",
+        "artifact_count": 0,
+        "public_answer_state": "not_released",
+        "public_answer_note": "Not released — the selected Release has no public answer artifact."
+      },
+      "program": {
+        "assumptions": [
+          {
+            "id": "QA-GQ002-CONTEXT-VALUE",
+            "level": "QA",
+            "scope": "evidence-aware agent context",
+            "statement": "Evidence-aware context improves representative agent-task outcomes enough to justify its retrieval and authoring overhead.",
+            "status": "active",
+            "confidence": "low",
+            "falsifier": "Paired representative tasks show no material correctness, intervention, reconstruction, or cost improvement after repair overhead is included.",
+            "depends_on": [],
+            "evidence_connection_ids": [
+              "EC-GQ002-OPERATING-PLAN"
+            ],
+            "review_date": "2026-08-02"
+          },
+          {
+            "id": "QA-GQ002-LINEAGE-VALUE",
+            "level": "QA",
+            "scope": "agent outcome reconstruction",
+            "statement": "Privacy-safe causal lineage and observation receipts make routing and capability decisions more reconstructable than untyped session summaries.",
+            "status": "active",
+            "confidence": "low",
+            "falsifier": "Independent reviewers cannot reproduce a routing or promotion decision more reliably from typed receipts than from the existing evidence path.",
+            "depends_on": [],
+            "evidence_connection_ids": [
+              "EC-GQ002-SEED-REVIEW"
+            ],
+            "review_date": "2026-08-02"
+          }
+        ],
+        "evidence_connections": [
+          {
+            "id": "EC-GQ002-OPERATING-PLAN",
+            "source_type": "documentation",
+            "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "reference": "docs/100-million-token-operating-plan.html#operating-loop",
+            "relevance_hypothesis": "The published operating loop supplies falsifiable context and lineage pilots for testing agent-layer efficiency.",
+            "rights_state": "public",
+            "observed_at": "2026-08-02",
+            "provenance_receipt": "docs/100-million-token-operating-plan.html#canonical-contracts",
+            "revision_or_digest": "accepted-direction:2026-08-02",
+            "summary": "The operating plan connects question demand, evidence, reversible experiments, measured outcomes, and returned learning without assigning truth to runtimes.",
+            "supports_assumption_ids": [
+              "QA-GQ002-CONTEXT-VALUE"
+            ],
+            "challenges_assumption_ids": []
+          },
+          {
+            "id": "EC-GQ002-SEED-REVIEW",
+            "source_type": "source_review",
+            "owning_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+            "reference": "source-review:frontier-question-intake:gq-002:2026-08-01",
+            "relevance_hypothesis": "The intake review tests whether operational research can remain owner-held while a public question exposes only safe lineage.",
+            "rights_state": "owner_held",
+            "observed_at": "2026-08-02",
+            "provenance_receipt": "registry/works/frontier-question-gq-002.json#evidence",
+            "revision_or_digest": "source-review:2026-08-01",
+            "summary": "The public Work records that operational evidence and the existing answer remain unpublished rather than copying sensitive measurements.",
+            "supports_assumption_ids": [
+              "QA-GQ002-LINEAGE-VALUE"
+            ],
+            "challenges_assumption_ids": []
+          }
+        ],
+        "action_learning_links": [
+          {
+            "id": "AL-GQ002-DEMAND",
+            "object_type": "epistemic_demand",
+            "authority_state": "demand_only",
+            "owner_role": "question_steward",
+            "reference": "registry/works/frontier-question-gq-002.json#research_contract",
+            "predecessor_ids": [],
+            "related_assumption_ids": [
+              "QA-GQ002-CONTEXT-VALUE",
+              "QA-GQ002-LINEAGE-VALUE"
+            ],
+            "status": "proposed",
+            "summary": "The public frame requests evidence about agent-layer leverage while private measurements and execution authority remain owner-held."
+          }
+        ]
+      },
+      "authoring_metrics": {
+        "assumptions": 2,
+        "evidence_connections": 2,
+        "action_learning_links": 1,
+        "serialized_program_bytes": 3112
+      }
+    },
+    {
+      "work_id": "gls:work:85964f1c-2efe-48b0-8f71-dc32bb668c0c",
+      "question_id": "GQ-004",
+      "slug": "frontier-question-best-software-primitive",
+      "library_url": "/works/frontier-question-best-software-primitive/",
+      "question": "For a named software primitive, which implementation is best for the stated context, and is it safe and valuable to reuse, vendor, or learn from?",
+      "research_state": "scoped",
+      "evidence_mode": "corpus",
+      "decision_to_change": null,
+      "success_criteria": [],
+      "falsifiers": [],
+      "evidence_gaps": [],
+      "watch_triggers": [],
+      "source_work_ids": [
+        "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+        "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+        "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_scopes": [
+        "Foundry capability category selected by the requested primitive",
+        "implementation and interface evidence",
+        "maintenance, adoption, security, and license evidence",
+        "counter-examples across language and scale"
+      ],
+      "answer_shape": "A context-specific ranked shortlist with interface fit, evidence grade, rights gate, adoption cost, and explicit reasons not to choose each candidate.",
+      "refresh_policy": "Re-answer when the category gains a high-signal implementation, a selected project materially changes, or security and rights evidence changes.",
+      "publication_boundary": "public_metadata_only",
+      "selected_release": {
+        "id": "gls:release:037ad734-0cc3-4afb-9dc0-c2b55f1dcee7",
+        "version": "registry-seed-2026-08-01",
+        "released_at": "2026-08-01T22:32:00+07:00",
+        "artifact_count": 0,
+        "public_answer_state": "not_released",
+        "public_answer_note": "Not released — the selected Release has no public answer artifact."
+      },
+      "program": null,
+      "authoring_metrics": {
+        "assumptions": 0,
+        "evidence_connections": 0,
+        "action_learning_links": 0,
+        "serialized_program_bytes": 0
+      }
+    },
+    {
+      "work_id": "gls:work:7782f923-d44e-4a47-8ce6-134e31816673",
+      "question_id": "GQ-005",
+      "slug": "frontier-question-field-momentum",
+      "library_url": "/works/frontier-question-field-momentum/",
+      "question": "Which categories, techniques, and projects are gaining real momentum, what mechanisms explain the change, and what does the acceleration predict next?",
+      "research_state": "scoped",
+      "evidence_mode": "corpus",
+      "decision_to_change": null,
+      "success_criteria": [],
+      "falsifiers": [],
+      "evidence_gaps": [],
+      "watch_triggers": [],
+      "source_work_ids": [
+        "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+        "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+        "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_scopes": [
+        "frozen Foundry momentum snapshots",
+        "category and capability movement",
+        "release and adoption signals",
+        "counter-signals that separate durable emergence from short-lived attention"
+      ],
+      "answer_shape": "A ranked movement map with observed deltas, causal hypotheses, confidence, leading indicators, and dated predictions that can later be scored.",
+      "refresh_policy": "Re-answer on a fixed cadence and whenever a leading indicator crosses a pre-registered materiality threshold.",
+      "publication_boundary": "public_metadata_only",
+      "selected_release": {
+        "id": "gls:release:1ee81aa0-42cc-4bcd-a87b-4f34baf9cc13",
+        "version": "registry-seed-2026-08-01",
+        "released_at": "2026-08-01T22:33:00+07:00",
+        "artifact_count": 0,
+        "public_answer_state": "not_released",
+        "public_answer_note": "Not released — the selected Release has no public answer artifact."
+      },
+      "program": null,
+      "authoring_metrics": {
+        "assumptions": 0,
+        "evidence_connections": 0,
+        "action_learning_links": 0,
+        "serialized_program_bytes": 0
+      }
+    },
+    {
+      "work_id": "gls:work:2144e900-4886-461e-92f1-49571f2e9f74",
+      "question_id": "GQ-006",
+      "slug": "frontier-question-information-organ",
+      "library_url": "/works/frontier-question-information-organ/",
+      "question": "How should the information organ continuously gather, preserve, query, and push valuable evidence into authorized agent workflows and self-improvement loops?",
+      "research_state": "partial",
+      "evidence_mode": "hybrid",
+      "decision_to_change": null,
+      "success_criteria": [],
+      "falsifiers": [],
+      "evidence_gaps": [],
+      "watch_triggers": [],
+      "source_work_ids": [
+        "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+        "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+        "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_scopes": [
+        "public source-acquisition and retrieval systems",
+        "Library Research Works and their public contracts",
+        "privacy-safe health and freshness evidence",
+        "feedback-to-learning mechanisms"
+      ],
+      "answer_shape": "A verified operating architecture with explicit ownership, freshness contracts, query primitives, feedback loops, failure modes, and observed end-to-end receipts.",
+      "refresh_policy": "Re-answer when a source lane, retrieval contract, or learning loop materially changes or fails its freshness guarantee.",
+      "publication_boundary": "public_metadata_only",
+      "selected_release": {
+        "id": "gls:release:8225da3f-9a19-45d8-880e-0f2539756c0f",
+        "version": "registry-seed-2026-08-01",
+        "released_at": "2026-08-01T22:34:00+07:00",
+        "artifact_count": 0,
+        "public_answer_state": "not_released",
+        "public_answer_note": "Not released — the selected Release has no public answer artifact."
+      },
+      "program": null,
+      "authoring_metrics": {
+        "assumptions": 0,
+        "evidence_connections": 0,
+        "action_learning_links": 0,
+        "serialized_program_bytes": 0
+      }
+    },
+    {
+      "work_id": "gls:work:3b4c4fa6-31f2-4cfc-9542-00f32e200621",
+      "question_id": "GQ-008",
+      "slug": "frontier-question-model-routing",
+      "library_url": "/works/frontier-question-model-routing/",
+      "question": "Which available model should own each recurring work shape after quality, reliability, tool use, latency, quota, and cost are evaluated together?",
+      "research_state": "answered",
+      "evidence_mode": "hybrid",
+      "decision_to_change": null,
+      "success_criteria": [],
+      "falsifiers": [],
+      "evidence_gaps": [],
+      "watch_triggers": [],
+      "source_work_ids": [
+        "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+        "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+        "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_scopes": [
+        "current public benchmark suites",
+        "first-party provider documentation",
+        "privacy-safe real-task outcomes",
+        "quota, latency, and cost constraints"
+      ],
+      "answer_shape": "A versioned scenario-by-model routing matrix plus a machine-readable table, evidence grade per cell, and explicit re-evaluation triggers.",
+      "refresh_policy": "Re-answer when a tracked model, benchmark, price, quota, or material real-world task result changes.",
+      "publication_boundary": "public_metadata_only",
+      "selected_release": {
+        "id": "gls:release:a5e56fcf-e19d-4ead-8c7d-9660d41ed47e",
+        "version": "registry-seed-2026-08-01",
+        "released_at": "2026-08-01T22:35:00+07:00",
+        "artifact_count": 0,
+        "public_answer_state": "not_released",
+        "public_answer_note": "Not released — the selected Release has no public answer artifact."
+      },
+      "program": null,
+      "authoring_metrics": {
+        "assumptions": 0,
+        "evidence_connections": 0,
+        "action_learning_links": 0,
+        "serialized_program_bytes": 0
+      }
+    },
+    {
+      "work_id": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
+      "question_id": "GQ-009",
+      "slug": "frontier-question-god-questions-infrastructure",
+      "library_url": "/works/frontier-question-god-questions-infrastructure/",
+      "question": "How should the Great Library make God Questions visible, composable, continuously updated, and connected to evidence, decisions, approved action, and capability learning without becoming the corpus warehouse or execution runtime?",
+      "research_state": "researching",
+      "evidence_mode": "hybrid",
+      "decision_to_change": "Which registry fields, Library projections, evidence interfaces, and action-return contracts should become the standard infrastructure for every SISO God Question?",
+      "success_criteria": [
+        "A cold human or agent can find every standing question, its state, decision target, evidence gaps, falsifiers, watch triggers, and current answer lineage from one generated Library surface.",
+        "Existing repositories, books, videos, research, and operational receipts can attach to a question through owned evidence systems without being copied into the public registry.",
+        "A question can justify a bounded action candidate and later receive a verified learning return without the Library authorizing or executing the action.",
+        "At least one repeated mechanism discovered through a question can be evaluated and promoted into its independently owned capability Work."
+      ],
+      "falsifiers": [
+        "The design requires a second question registry or central operational database to remain coherent.",
+        "The visible dossier accumulates metadata but cannot improve a real research, routing, or investment decision.",
+        "Useful evidence cannot be connected without leaking private corpora, machine paths, client data, or operational topology into the public Library.",
+        "Maintaining the question contract costs more attention than the repeated research and decision errors it prevents."
+      ],
+      "evidence_gaps": [
+        "No evaluated end-to-end user flow yet proves that the portfolio view helps a cold operator choose the next valuable investigation.",
+        "Claim, contradiction, assumption, experiment, mandate, observation, and learning-return objects do not yet share one proven cross-system receipt contract.",
+        "No three-question cohort yet measures authoring overhead, evidence reuse, decision impact, or capability promotion rate."
+      ],
+      "watch_triggers": [
+        "A new God Question cannot express a decision target, falsifier, evidence gap, or refresh condition in the current contract.",
+        "Foundry or Knowledge ships a question-addressable export that can replace a manual evidence link.",
+        "The first approved experiment returns an Observation Receipt and exposes a missing Library lineage field.",
+        "Three heterogeneous questions complete a full research-to-decision loop and justify stabilizing or deleting provisional fields."
+      ],
+      "source_work_ids": [
+        "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+        "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+        "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+        "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+        "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_scopes": [
+        "the existing Frontier Question Works, metadata seeds, answer-lineage model, and question-driven research architecture",
+        "the generated Research index and individual Question Work reading surfaces",
+        "publication-safe Foundry, Knowledge, Evidence Engine, Event, ADR, Release, and Snapshot interfaces",
+        "privacy-safe receipts from real research, routing, repository, book, and implementation work"
+      ],
+      "answer_shape": "A versioned God Questions operating architecture with a generated Observatory, machine-readable question-program contract, evidence and action-return interfaces, ownership boundaries, acceptance fixtures, and explicit promotion and kill gates.",
+      "refresh_policy": "Re-answer when a real question cannot use the contract, a source or action interface changes, three-question evaluation evidence lands, or measured operating overhead exceeds the value created.",
+      "publication_boundary": "public_metadata_only",
+      "selected_release": {
+        "id": "gls:release:3aff8b95-f2b6-4ca6-b162-3543ba4eda39",
+        "version": "registry-seed-2026-08-02",
+        "released_at": "2026-08-02T00:03:09+07:00",
+        "artifact_count": 0,
+        "public_answer_state": "not_released",
+        "public_answer_note": "Not released — the selected Release has no public answer artifact."
+      },
+      "program": {
+        "assumptions": [
+          {
+            "id": "QA-GQ009-CANONICAL-EXTENSION",
+            "level": "QA",
+            "scope": "Library identity and projection",
+            "statement": "The existing Work, Release, Snapshot, and Event spine can support question-program visibility without a second registry.",
+            "status": "active",
+            "confidence": "medium",
+            "falsifier": "A heterogeneous question cannot express and validate its current program or answer lineage without a separate source of identity truth.",
+            "depends_on": [],
+            "evidence_connection_ids": [
+              "EC-GQ009-CONSTITUTION",
+              "EC-GQ009-CHECKPOINT"
+            ],
+            "review_date": "2026-08-02"
+          },
+          {
+            "id": "QA-GQ009-METADATA-VALUE",
+            "level": "QA",
+            "scope": "question reconstruction economics",
+            "statement": "A compact assumption, evidence, and action-learning projection improves cold-reader reconstruction enough to justify its authoring overhead.",
+            "status": "active",
+            "confidence": "low",
+            "falsifier": "Cold readers or agents cannot reconstruct a decision path more accurately, or the repeated authoring cost exceeds the errors and rediscovery avoided.",
+            "depends_on": [
+              "QA-GQ009-CANONICAL-EXTENSION"
+            ],
+            "evidence_connection_ids": [
+              "EC-GQ009-CHECKPOINT"
+            ],
+            "review_date": "2026-08-02"
+          },
+          {
+            "id": "QA-GQ009-OWNER-BOUNDARY",
+            "level": "QA",
+            "scope": "action and learning authority",
+            "statement": "Typed public references can connect question demand to returned learning without granting approval, execution, or evidence-adjudication authority to the Library.",
+            "status": "active",
+            "confidence": "low",
+            "falsifier": "A real action-to-learning chain cannot remain reconstructable unless the Library stores private payloads or represents a proposal as approval or observation as accepted truth.",
+            "depends_on": [
+              "QA-GQ009-CANONICAL-EXTENSION"
+            ],
+            "evidence_connection_ids": [
+              "EC-GQ009-JOINT-BRIDGE"
+            ],
+            "review_date": "2026-08-02"
+          }
+        ],
+        "evidence_connections": [
+          {
+            "id": "EC-GQ009-CONSTITUTION",
+            "source_type": "documentation",
+            "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "reference": "docs/god-questions-infrastructure.html",
+            "relevance_hypothesis": "The canonical constitution exposes the minimum identity, ownership, interface, dependency, and falsification rules the substrate must implement.",
+            "rights_state": "public",
+            "observed_at": "2026-08-02",
+            "provenance_receipt": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+            "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+            "summary": "The pushed constitution preserves question identity, organ boundaries, action authority, learning proposals, and explicit later or rejected scope.",
+            "supports_assumption_ids": [
+              "QA-GQ009-CANONICAL-EXTENSION",
+              "QA-GQ009-OWNER-BOUNDARY"
+            ],
+            "challenges_assumption_ids": []
+          },
+          {
+            "id": "EC-GQ009-CHECKPOINT",
+            "source_type": "repository",
+            "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+            "relevance_hypothesis": "The verified document checkpoint tests whether the existing generator can expose a canonical question-infrastructure reader without a second registry.",
+            "rights_state": "public",
+            "observed_at": "2026-08-02",
+            "provenance_receipt": "repo-check:god-questions-infrastructure:270c37c",
+            "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+            "summary": "The exact branch checkpoint passed the complete Library gate and published the authored and generated constitution plus Research navigation.",
+            "supports_assumption_ids": [
+              "QA-GQ009-CANONICAL-EXTENSION"
+            ],
+            "challenges_assumption_ids": [
+              "QA-GQ009-METADATA-VALUE"
+            ]
+          },
+          {
+            "id": "EC-GQ009-JOINT-BRIDGE",
+            "source_type": "registry_record",
+            "owning_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+            "reference": "registry/events/2026-08-02-god-questions-infrastructure-program-started.json#evidence",
+            "relevance_hypothesis": "The start Event's public bridge evidence tests whether action and learning ownership can be referenced without copying its owner-held design payload.",
+            "rights_state": "public_metadata_only",
+            "observed_at": "2026-08-02",
+            "provenance_receipt": "workspace-handoff:glos-100m-frontier-joint-lineage-20260801",
+            "revision_or_digest": "event-evidence:2026-08-02",
+            "summary": "The public Event records the typed, approval-gated bridge while the Library remains limited to safe identity and lineage.",
+            "supports_assumption_ids": [
+              "QA-GQ009-OWNER-BOUNDARY"
+            ],
+            "challenges_assumption_ids": []
+          }
+        ],
+        "action_learning_links": [
+          {
+            "id": "AL-GQ009-DEMAND",
+            "object_type": "epistemic_demand",
+            "authority_state": "demand_only",
+            "owner_role": "question_steward",
+            "reference": "registry/works/frontier-question-gq-009.json#research_contract",
+            "predecessor_ids": [],
+            "related_assumption_ids": [
+              "QA-GQ009-CANONICAL-EXTENSION",
+              "QA-GQ009-METADATA-VALUE",
+              "QA-GQ009-OWNER-BOUNDARY"
+            ],
+            "status": "proposed",
+            "summary": "GQ-009 defines the decision, falsifiers, evidence gaps, and expected answer without authorizing implementation."
+          },
+          {
+            "id": "AL-GQ009-CANDIDATE",
+            "object_type": "action_candidate",
+            "authority_state": "proposal_only",
+            "owner_role": "operating_architecture",
+            "reference": "gls:event:43f26801-1225-4650-90eb-7a1362760f8d",
+            "predecessor_ids": [
+              "AL-GQ009-DEMAND"
+            ],
+            "related_assumption_ids": [
+              "QA-GQ009-CANONICAL-EXTENSION",
+              "QA-GQ009-METADATA-VALUE",
+              "QA-GQ009-OWNER-BOUNDARY"
+            ],
+            "status": "proposed",
+            "summary": "The active initiative is represented as a bounded action candidate; approval and execution receipts remain separately owned."
+          }
+        ]
+      },
+      "authoring_metrics": {
+        "assumptions": 3,
+        "evidence_connections": 3,
+        "action_learning_links": 2,
+        "serialized_program_bytes": 5307
+      }
+    }
+  ]
+}
