@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-01T16:13:44.000Z",
+  "generated_at": "2026-08-01T16:17:08.000Z",
   "base_path": "/",
   "counts": {
-    "events": 11,
+    "events": 12,
     "decisions": 4,
     "active_initiatives": 0,
-    "registry_changes": 84
+    "registry_changes": 86
   },
   "active_initiatives": [],
   "decisions": [
@@ -374,6 +374,113 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:02c80031-893c-432f-94dc-6f7b31e54964",
+      "occurred_at": "2026-08-01T23:17:08+07:00",
+      "recorded_at": "2026-08-01T23:17:08+07:00",
+      "immutable": true,
+      "entry_type": "correction_recorded",
+      "thread": {
+        "id": "gls:thread:mission-question-architecture",
+        "name": "SISO mission and question-driven research architecture",
+        "kind": "research"
+      },
+      "status": "completed",
+      "title": "Frontier Question answer maturity wording corrected",
+      "summary": "An independent read-only audit found and corrected Research navigation that overstated metadata seed Releases as versioned answers; the page now names versioned-answer contracts and says seeds are not accepted answers.",
+      "intent": "Keep the public Frontier Question surface exact about the difference between a durable question contract, a metadata seed Release, and an accepted Answer Release.",
+      "reasoning": [
+        "The six selected question Releases are publication-safe metadata seeds, not completed research answers.",
+        "The Research summary must not make a stronger maturity claim than the individual Work contracts and Releases support.",
+        "A positive required phrase and a negative retired phrase now make the answer-maturity boundary machine-verifiable.",
+        "Whole Library V28 preserves the independently completed 100 Million Token Program selection from V27."
+      ],
+      "changes": [
+        {
+          "kind": "commit",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/f44b4cf3cf27d0fa66b0e5b726d67925b5fd8e08",
+          "summary": "Corrected the generated Research copy and added positive and negative site assertions."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "gls:release:de6d0191-2b51-4af6-8369-11f8893ff036",
+          "summary": "Pinned the exact answer-maturity correction on top of the 100 Million Token Program."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "gls:snapshot:80b529a7-aef3-4657-bbd0-f00061e7c1cf",
+          "summary": "Selected the correction through Whole Library V28 while preserving every unaffected V27 selection."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+        ],
+        "release_ids": [
+          "gls:release:de6d0191-2b51-4af6-8369-11f8893ff036"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:80b529a7-aef3-4657-bbd0-f00061e7c1cf"
+        ],
+        "decision_ids": [
+          "gls:decision:c1217342-d5cb-4015-bf1b-b04034d09f8a"
+        ]
+      },
+      "coordination": {
+        "owner": "Great Library research maintainer",
+        "branch": "codex/answer-maturity-correction-20260801",
+        "reserved_paths": []
+      },
+      "visibility": "public",
+      "predecessor_event_id": "gls:event:8c8b83dd-6061-48a2-94f9-1af1b22f808e",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "independent-audit:frontier-question-answer-maturity:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The audit compared the Research summary against individual scoped and partial contracts and their registry-seed Releases."
+        },
+        {
+          "kind": "registry_validation",
+          "reference": "repo-check:great-library-answer-maturity:f44b4cf",
+          "observed_at": "2026-08-01",
+          "summary": "All Great Library gates passed after the wording correction and regression assertions, with the completed 100 Million Token Program retained."
+        }
+      ],
+      "next_actions": [
+        "Retain the distinction between question identity, metadata seeds, candidate synthesis, and accepted Answer Releases in future Research copy."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+        ],
+        "release_ids": [
+          "gls:release:de6d0191-2b51-4af6-8369-11f8893ff036"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:80b529a7-aef3-4657-bbd0-f00061e7c1cf"
+        ],
+        "decision_ids": [
+          "gls:decision:c1217342-d5cb-4015-bf1b-b04034d09f8a"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+            "name": "Research",
+            "library_url": "/works/research/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",
@@ -1478,6 +1585,24 @@
     }
   ],
   "registry_changes": [
+    {
+      "kind": "release",
+      "occurred_at": "2026-08-01T23:17:08+07:00",
+      "id": "gls:release:de6d0191-2b51-4af6-8369-11f8893ff036",
+      "version": "0.7.1+f44b4cf",
+      "title": "Frontier Question answer-maturity wording correction",
+      "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "work_name": "The Great Library of SISO"
+    },
+    {
+      "kind": "snapshot",
+      "occurred_at": "2026-08-01T23:17:08+07:00",
+      "id": "gls:snapshot:80b529a7-aef3-4657-bbd0-f00061e7c1cf",
+      "version": "28.0.0",
+      "title": "Whole Library V28 — Answer Maturity Correction",
+      "work_count": 24,
+      "release_count": 24
+    },
     {
       "kind": "release",
       "occurred_at": "2026-08-01T23:13:44+07:00",

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:de6d0191-2b51-4af6-8369-11f8893ff036",
+  "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+  "version": "0.7.1+f44b4cf",
+  "title": "Frontier Question answer-maturity wording correction",
+  "released_at": "2026-08-01T23:17:08+07:00",
+  "observed_at": "2026-08-01",
+  "immutable": true,
+  "artifacts": [{
+    "id": "gls:artifact:17ef6460-2407-4a99-b2f7-beab01c2b181",
+    "kind": "source_archive",
+    "locator": "https://github.com/Lordsisodia/great-library-of-siso/archive/f44b4cf3cf27d0fa66b0e5b726d67925b5fd8e08.tar.gz",
+    "revision": "f44b4cf3cf27d0fa66b0e5b726d67925b5fd8e08",
+    "availability": "public",
+    "owner": "Lordsisodia",
+    "ownership": "siso",
+    "license": {"status":"verified","spdx":"MIT","reason":"The pinned public registry source carries an MIT license.","evidence":[{"kind":"source_review","reference":"https://github.com/Lordsisodia/great-library-of-siso/blob/f44b4cf3cf27d0fa66b0e5b726d67925b5fd8e08/LICENSE","observed_at":"2026-08-01","summary":"The MIT license is present in the pinned source release."}]},
+    "integrity": {"state":"verified","algorithm":"git_commit_sha1","digest":"f44b4cf3cf27d0fa66b0e5b726d67925b5fd8e08"}
+  }],
+  "distribution": {
+    "addressable": {"state":"verified","reason":"The public correction is pinned to an exact commit.","evidence":[{"kind":"integration_check","reference":"https://github.com/Lordsisodia/great-library-of-siso/commit/f44b4cf3cf27d0fa66b0e5b726d67925b5fd8e08","observed_at":"2026-08-01","summary":"The published correction commit resolves from the canonical repository."}]},
+    "archive_downloadable": {"state":"verified","reason":"A public commit-scoped source archive is recorded.","evidence":[{"kind":"public_locator","reference":"https://github.com/Lordsisodia/great-library-of-siso/archive/f44b4cf3cf27d0fa66b0e5b726d67925b5fd8e08.tar.gz","observed_at":"2026-08-01","summary":"The archive locator is immutable by commit pin."}]},
+    "manifest_resolvable": {"state":"verified","reason":"The generated Research surface mechanically distinguishes metadata seed Releases from accepted Answer Releases.","evidence":[{"kind":"registry_validation","reference":"repo-check:great-library-answer-maturity:f44b4cf","observed_at":"2026-08-01","summary":"The full gate passed with positive and negative wording assertions on the Research page."}]},
+    "installable": {"state":"verified","reason":"A clean Node installation deterministically validates and builds the corrected static surface.","evidence":[{"kind":"release_receipt","reference":"repo-check:great-library-answer-maturity:f44b4cf","observed_at":"2026-08-01","summary":"All Great Library checks passed."}]},
+    "forkable": {"state":"verified","reason":"The repository is public, source-complete, machine-readable, and MIT licensed.","evidence":[{"kind":"integration_check","reference":"https://github.com/Lordsisodia/great-library-of-siso","observed_at":"2026-08-01","summary":"The correction, generator, guard, and generated page are public."}]},
+    "portable": {"state":"verified","reason":"The correction depends only on public registry state and generated static content.","evidence":[{"kind":"release_receipt","reference":"repo-check:great-library-answer-maturity:f44b4cf","observed_at":"2026-08-01","summary":"Publication and machine-path safety checks passed."}]}
+  },
+  "evidence": [{"kind":"release_receipt","reference":"repo-check:great-library-answer-maturity:f44b4cf","observed_at":"2026-08-01","summary":"An independent read-only audit found the maturity overclaim; the Research page now says versioned-answer contracts and explicitly states that metadata seed Releases are not accepted answers."}]
+}
