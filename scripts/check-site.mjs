@@ -58,7 +58,7 @@ function localTarget(raw, sourceFile) {
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-for (const required of ["index.html", "agents/index.html", "estate/index.html", "estate.json"]) {
+for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "estate/index.html", "estate.json"]) {
   if (!await exists(path.join(root, required))) errors.push(`missing required page: ${required}`);
 }
 

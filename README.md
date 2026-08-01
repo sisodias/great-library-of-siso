@@ -37,6 +37,8 @@ Structure: typed relationships stored as data
 
 Every cataloged Work gets an always-on detail page in the hosted Library, even when its source repository has no website. A Work may also declare an optional upstream documentation or demo URL. This provides one public reading surface without requiring a separate deployment for every repository.
 
+The generated **Promotion queue** exposes evidence-backed candidates from Source Inventories without presenting them as accepted Works. Its human page and machine JSON record ownership targets, portability, blockers, and exact next gates while raw laptop scans remain private.
+
 Read the [registry model](docs/registry-model.md) for the identity and distribution boundaries.
 
 New humans and agents should follow the [cold-start onboarding map](docs/onboarding.html) and the root [agent guide](AGENTS.md).
@@ -68,6 +70,7 @@ Read the [SISO Knowledge model](docs/siso-knowledge-model.html) for the source-b
 - **Add** a Work through a schema-valid, provenance-aware contribution.
 - **Compose** a contextual view from typed relationships without redefining identity.
 - **Research** decisions, evidence, releases, and related Works.
+- **Review promotion candidates** without confusing discovery with release or distribution state.
 - **Cite** a stable Work ID and, when relevant, a Release or Snapshot.
 - **Correct** the source record instead of patching generated pages.
 - **Contribute** clean public metadata, evidence, documentation, and tooling.
@@ -87,6 +90,8 @@ Read the [SISO Knowledge model](docs/siso-knowledge-model.html) for the source-b
 | `docs/` | Authored model, operating, and learning documentation |
 | `site/` | Generated Pages artifact; do not hand-edit generated item pages |
 | `scripts/` | Dependency-light validation and generation tooling |
+
+The public `/promotion/` and `/promotion.json` surfaces are generated from accepted Source Inventories. See the [agent capability discovery and promotion program](docs/agent-capability-promotion.html).
 
 The website, future CLI, and future MCP server must read these same contracts. There is no parallel hand-written registry.
 

@@ -102,7 +102,9 @@ const works = uniqueMap(records.work, "works");
 const releases = uniqueMap(records.release, "releases");
 const assemblies = uniqueMap(records.assembly, "assemblies");
 const sourceInventories = uniqueMap(records.source_inventory, "source inventories");
-uniqueMap(records.snapshot, "snapshots");
+const snapshots = uniqueMap(records.snapshot, "snapshots");
+const promotionLifecycle = ["unverified", "read", "candidate", "owner_assigned", "extracted", "verified", "released", "library_indexed", "stack_pinned", "retired"];
+const stackDistributionWorkId = "gls:work:b9196c61-901f-4105-93d9-899876d17016";
 const artifactIds = new Set();
 for (const { file, value: work } of records.work) {
   if (work.work_type === "module") fail(`${path.relative(root, file)}: module must be a contextual projection role, never a Work type`);
@@ -140,11 +142,137 @@ for (const { file, value: assembly } of records.assembly) {
 }
 for (const { file, value: inventory } of records.source_inventory) {
   const label = path.relative(root, file);
-  if (!works.has(inventory.source_work_id)) fail(`${label}: source_work_id ${inventory.source_work_id} does not resolve`);
+  const hasSingleSource = Boolean(inventory.source_work_id);
+  const hasSourceScopes = Boolean(inventory.source_scopes?.length);
+  if (hasSingleSource === hasSourceScopes) fail(`${label}: declare exactly one of source_work_id or source_scopes`);
+  if ((!inventory.preservation.dirty_state || inventory.preservation.dirty_state === "known") && !Number.isInteger(inventory.preservation.dirty_entries)) {
+    fail(`${label}: known preservation state requires dirty_entries`);
+  }
+  if (hasSingleSource && !works.has(inventory.source_work_id)) fail(`${label}: source_work_id ${inventory.source_work_id} does not resolve`);
+  const scopeIds = new Set();
+  for (const scope of inventory.source_scopes ?? []) {
+    if (scopeIds.has(scope.scope_id)) fail(`${label}: duplicate source scope ${scope.scope_id}`);
+    scopeIds.add(scope.scope_id);
+    if (scope.source_type === "work" && !scope.work_id) fail(`${label}: Work source scope ${scope.scope_id} requires work_id`);
+    if (scope.work_id && !works.has(scope.work_id)) fail(`${label}: source scope ${scope.scope_id} Work ${scope.work_id} does not resolve`);
+  }
+  if (inventory.campaign) {
+    if (!works.has(inventory.campaign.owner_work_id)) fail(`${label}: campaign owner Work ${inventory.campaign.owner_work_id} does not resolve`);
+    if (JSON.stringify(inventory.campaign.lifecycle) !== JSON.stringify(promotionLifecycle)) fail(`${label}: campaign lifecycle must use the canonical ordered stages`);
+  }
+  if (inventory.inventory_kind === "agent_capabilities") {
+    if (inventory.immutable !== true) fail(`${label}: agent capability inventories must be immutable`);
+    if (!inventory.campaign) fail(`${label}: agent capability inventories require campaign metadata`);
+    if (!hasSourceScopes) fail(`${label}: agent capability inventories require source_scopes`);
+  }
+  if (inventory.supersedes_inventory_id) {
+    const predecessor = sourceInventories.get(inventory.supersedes_inventory_id)?.value;
+    if (!predecessor) fail(`${label}: supersedes_inventory_id ${inventory.supersedes_inventory_id} does not resolve`);
+    else {
+      if (predecessor.id === inventory.id) fail(`${label}: inventory cannot supersede itself`);
+      if (predecessor.inventory_kind !== inventory.inventory_kind) fail(`${label}: successor inventory_kind must match its predecessor`);
+      if (predecessor.campaign?.campaign_id !== inventory.campaign?.campaign_id) fail(`${label}: successor campaign_id must match its predecessor`);
+      if (predecessor.observed_at >= inventory.observed_at) fail(`${label}: successor observed_at must be later than its predecessor`);
+    }
+  }
   const unitIds = new Set();
   for (const unit of inventory.units ?? []) {
     if (unitIds.has(unit.unit_id)) fail(`${label}: duplicate unit_id ${unit.unit_id}`);
     unitIds.add(unit.unit_id);
+    if (hasSourceScopes && !scopeIds.has(unit.source_scope_id)) fail(`${label}: unit ${unit.unit_id} references unknown source scope ${unit.source_scope_id}`);
+    for (const logicalPath of unit.paths ?? []) {
+      if (logicalPath.startsWith("/") || logicalPath.includes("..") || logicalPath.includes("\\")) fail(`${label}: unit ${unit.unit_id} path must be a machine-neutral logical path`);
+    }
+    if (inventory.inventory_kind === "agent_capabilities" && !unit.promotion) fail(`${label}: agent capability unit ${unit.unit_id} requires promotion metadata`);
+    if (unit.promotion) {
+      for (const targetWorkId of unit.promotion.target_work_ids ?? []) {
+        if (!works.has(targetWorkId)) fail(`${label}: unit ${unit.unit_id} promotion target Work ${targetWorkId} does not resolve`);
+      }
+      const stage = unit.promotion.stage;
+      const stageRank = promotionLifecycle.indexOf(stage);
+      const isRetired = stage === "retired";
+      const evidenceByReference = new Map(unit.evidence.map((entry) => [entry.reference, entry]));
+      if (!isRetired && stageRank >= promotionLifecycle.indexOf("verified")) {
+        if (!unit.promotion.verification_evidence_refs?.length) fail(`${label}: verified-or-later unit ${unit.unit_id} requires bound verification_evidence_refs`);
+        for (const reference of unit.promotion.verification_evidence_refs ?? []) {
+          const evidence = evidenceByReference.get(reference);
+          if (!evidence || !["integration_check", "registry_validation", "release_receipt"].includes(evidence.kind)) fail(`${label}: unit ${unit.unit_id} verification reference ${reference} must resolve to executable or receipt evidence`);
+        }
+      }
+      let owningRelease;
+      if (!isRetired && stageRank >= promotionLifecycle.indexOf("released")) {
+        owningRelease = releases.get(unit.promotion.release_id)?.value;
+        if (!owningRelease) fail(`${label}: released-or-later unit ${unit.unit_id} requires a resolving release_id`);
+        else if (!unit.promotion.target_work_ids.includes(owningRelease.work_id)) fail(`${label}: unit ${unit.unit_id} release Work must be one of its target Works`);
+      }
+      let selectedSnapshot;
+      if (!isRetired && stageRank >= promotionLifecycle.indexOf("library_indexed")) {
+        selectedSnapshot = snapshots.get(unit.promotion.snapshot_id)?.value;
+        if (!selectedSnapshot) fail(`${label}: library-indexed-or-later unit ${unit.unit_id} requires a resolving snapshot_id`);
+        else if (!selectedSnapshot.releases.some((pin) => pin.release_id === unit.promotion.release_id)) fail(`${label}: unit ${unit.unit_id} snapshot must select its release_id`);
+      }
+      if (stage === "stack_pinned") {
+        const stackPin = unit.promotion.stack_pin;
+        if (!stackPin) {
+          fail(`${label}: stack-pinned unit ${unit.unit_id} requires a structured stack_pin receipt`);
+          continue;
+        }
+        const stackRelease = releases.get(stackPin.stack_release_id)?.value;
+        if (!stackRelease || stackRelease.work_id !== stackDistributionWorkId) fail(`${label}: stack-pinned unit ${unit.unit_id} requires a SISO Agent Stack Distribution release_id`);
+        else if (!selectedSnapshot?.releases.some((pin) => pin.release_id === stackRelease.id)) fail(`${label}: unit ${unit.unit_id} snapshot must select its Stack Distribution release`);
+        if (stackPin.component_release_id !== unit.promotion.release_id || stackPin.component_work_id !== owningRelease?.work_id) fail(`${label}: unit ${unit.unit_id} stack pin must bind the selected component Work and Release`);
+        if (!owningRelease?.artifacts.some((artifact) => artifact.revision === stackPin.component_revision)) fail(`${label}: unit ${unit.unit_id} stack pin component_revision must match its Release artifact`);
+        const stackRevision = stackRelease?.artifacts.find((artifact) => artifact.revision)?.revision;
+        if (!stackRevision || !stackPin.manifest_locator.includes(stackRevision)) fail(`${label}: unit ${unit.unit_id} stack manifest locator must be pinned to the Stack Release revision`);
+        const manifestArtifact = stackRelease?.artifacts.find((artifact) => artifact.locator === stackPin.manifest_locator
+          && artifact.revision === stackRevision
+          && artifact.integrity.state === "verified"
+          && artifact.integrity.algorithm === "sha256"
+          && artifact.integrity.digest === stackPin.manifest_sha256);
+        if (!manifestArtifact) fail(`${label}: unit ${unit.unit_id} stack manifest locator and digest must match a verified Stack Release artifact`);
+        const stackEvidence = evidenceByReference.get(stackPin.evidence_reference);
+        if (!stackEvidence || stackEvidence.kind !== "release_receipt" || stackPin.evidence_reference !== stackPin.manifest_locator) fail(`${label}: stack-pinned unit ${unit.unit_id} requires a release_receipt bound to its manifest locator`);
+        if (stackEvidence && (!stackEvidence.summary.includes(stackPin.component_revision) || !stackEvidence.summary.includes(stackRevision))) fail(`${label}: unit ${unit.unit_id} stack receipt summary must bind component and Stack revisions`);
+      }
+    }
+  }
+}
+const capabilityCampaigns = new Map();
+for (const { value: inventory } of records.source_inventory.filter((entry) => entry.value.inventory_kind === "agent_capabilities")) {
+  const campaignId = inventory.campaign.campaign_id;
+  if (!capabilityCampaigns.has(campaignId)) capabilityCampaigns.set(campaignId, []);
+  capabilityCampaigns.get(campaignId).push(inventory);
+}
+for (const [campaignId, inventories] of capabilityCampaigns) {
+  const supersededIds = new Set(inventories.map((inventory) => inventory.supersedes_inventory_id).filter(Boolean));
+  const heads = inventories.filter((inventory) => !supersededIds.has(inventory.id));
+  if (heads.length !== 1) fail(`agent capability campaign ${campaignId}: expected exactly one active inventory head, found ${heads.length}`);
+  const successorCounts = new Map();
+  for (const inventory of inventories) {
+    if (!inventory.supersedes_inventory_id) continue;
+    successorCounts.set(inventory.supersedes_inventory_id, (successorCounts.get(inventory.supersedes_inventory_id) || 0) + 1);
+  }
+  for (const [predecessorId, count] of successorCounts) if (count > 1) fail(`agent capability campaign ${campaignId}: inventory ${predecessorId} has ${count} successors`);
+  for (const inventory of inventories) {
+    if (!inventory.supersedes_inventory_id) continue;
+    const predecessor = sourceInventories.get(inventory.supersedes_inventory_id).value;
+    const currentById = new Map(inventory.units.map((unit) => [unit.unit_id, unit]));
+    for (const previousUnit of predecessor.units) {
+      const currentUnit = currentById.get(previousUnit.unit_id);
+      if (!currentUnit) {
+        fail(`agent capability campaign ${campaignId}: successor ${inventory.id} drops unit ${previousUnit.unit_id}; retain it and mark it retired instead`);
+        continue;
+      }
+      if (currentUnit.name !== previousUnit.name || currentUnit.source_scope_id !== previousUnit.source_scope_id) {
+        fail(`agent capability campaign ${campaignId}: successor ${inventory.id} repurposes stable unit ${previousUnit.unit_id}`);
+      }
+      const previousStage = previousUnit.promotion.stage;
+      const currentStage = currentUnit.promotion.stage;
+      if (previousStage === "retired" && currentStage !== "retired") fail(`agent capability campaign ${campaignId}: retired unit ${previousUnit.unit_id} cannot be reopened under the same identity`);
+      if (currentStage !== "retired" && promotionLifecycle.indexOf(currentStage) < promotionLifecycle.indexOf(previousStage)) {
+        fail(`agent capability campaign ${campaignId}: unit ${previousUnit.unit_id} regresses from ${previousStage} to ${currentStage}`);
+      }
+    }
   }
 }
 for (const { file, value: snapshot } of records.snapshot) {

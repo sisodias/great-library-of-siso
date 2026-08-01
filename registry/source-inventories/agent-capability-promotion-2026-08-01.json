@@ -1,0 +1,436 @@
+{
+  "schema_version": "1.1.0",
+  "record_type": "source_inventory",
+  "id": "gls:source-inventory:ce88a0e3-ffa0-459a-836a-52824d253e34",
+  "name": "SISO agent capability promotion campaign",
+  "inventory_kind": "agent_capabilities",
+  "immutable": true,
+  "observed_at": "2026-08-01",
+  "inventory_state": "partial",
+  "source_scopes": [
+    {
+      "scope_id": "agent-base-warehouse",
+      "name": "SISO Agent Base Source Warehouse",
+      "source_type": "work",
+      "work_id": "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae",
+      "publication_boundary": "public_metadata_only"
+    },
+    {
+      "scope_id": "agent-os-workspace",
+      "name": "Legacy Agent OS workspace",
+      "source_type": "workspace",
+      "publication_boundary": "internal_source_review"
+    },
+    {
+      "scope_id": "agent-host-configuration",
+      "name": "Local agent host configuration",
+      "source_type": "user_configuration",
+      "publication_boundary": "public_metadata_only"
+    },
+    {
+      "scope_id": "workspace-standards",
+      "name": "SISO workspace standards and operating maps",
+      "source_type": "workspace",
+      "publication_boundary": "public_metadata_only"
+    }
+  ],
+  "campaign": {
+    "campaign_id": "agent-capability-promotion",
+    "owner_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+    "objective": "Continuously turn evidenced local agent mechanisms into owned, sanitized, verified, released, Library-indexed, and stack-pinned capabilities without importing private state.",
+    "lifecycle": [
+      "unverified",
+      "read",
+      "candidate",
+      "owner_assigned",
+      "extracted",
+      "verified",
+      "released",
+      "library_indexed",
+      "stack_pinned",
+      "retired"
+    ]
+  },
+  "preservation": {
+    "mode": "read_only",
+    "dirty_state": "withheld",
+    "reason": "The campaign records publication-safe findings only. It does not publish machine dirty state, mutate source roots, copy private configuration, or authorize cleanup.",
+    "nested_repositories": []
+  },
+  "units": [
+    {
+      "unit_id": "hooks-registry-and-promotion",
+      "name": "Hooks registry and promotion governance",
+      "paths": ["agent-os/hooks/registry", "agent-os/hooks/audit", "agent-os/hooks/templates"],
+      "source_scope_id": "agent-os-workspace",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "SISO Agent Hooks",
+      "promotion": {
+        "stage": "owner_assigned",
+        "priority": "critical",
+        "confidence": "high",
+        "portability": "requires_sanitization",
+        "target_work_ids": ["gls:work:4198f323-9855-43f6-a99a-72143086818e"],
+        "next_gate": "Reconcile the legacy registry with the public manifest and add machine-verifiable maturity, portability, test, and latency fields.",
+        "blockers": ["The historical staging lifecycle was documented but never implemented.", "Several registry entries describe specifications or machine-bound implementations rather than verified portable hooks."]
+      },
+      "rationale": "The public Hooks Work distributes a curated baseline, while the older hub contains useful registry, audit, template, health, and promotion concepts that remain unproductized.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:hooks-governance:2026-08-01","observed_at":"2026-08-01","summary":"The hub design, README, audit contract, registry, and public Hooks manifest were read and compared."}]
+    },
+    {
+      "unit_id": "deterministic-policy-guards",
+      "name": "Manifest-driven deterministic policy guards",
+      "paths": ["agent-host/hooks/deterministic-guards"],
+      "source_scope_id": "agent-host-configuration",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "SISO Agent Hooks optional policy pack",
+      "promotion": {
+        "stage": "candidate",
+        "priority": "critical",
+        "confidence": "high",
+        "portability": "requires_sanitization",
+        "target_work_ids": ["gls:work:4198f323-9855-43f6-a99a-72143086818e"],
+        "next_gate": "Separate generic destructive-action, authority, and repository-safety rules from personal routing policy and add false-positive fixtures.",
+        "blockers": ["The source combines portable safeguards with operator-specific model and path policy."]
+      },
+      "rationale": "The local guard enforces a broader collection of prevention rules than the released safety hook, but its policy and host adapter are not yet separated.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:deterministic-guards:2026-08-01","observed_at":"2026-08-01","summary":"The hook implementation and the released safety-guard behavior were read and compared by policy responsibility."}]
+    },
+    {
+      "unit_id": "dispatch-evidence-contract",
+      "name": "Dispatch evidence contract hook",
+      "paths": ["agent-host/hooks/evidence-contract"],
+      "source_scope_id": "agent-host-configuration",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "SISO Agent Hooks evidence profile",
+      "promotion": {
+        "stage": "candidate",
+        "priority": "critical",
+        "confidence": "high",
+        "portability": "requires_sanitization",
+        "target_work_ids": ["gls:work:4198f323-9855-43f6-a99a-72143086818e", "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc"],
+        "next_gate": "Define a provider-neutral worker result schema and test numeric, existence, directional, and classification claims against required evidence.",
+        "blockers": ["The current parser is coupled to one host transcript format."]
+      },
+      "rationale": "The Playbook describes evidence-backed worker returns, but stack recipients do not receive the local mechanism that checks those claims.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:evidence-contract:2026-08-01","observed_at":"2026-08-01","summary":"The evidence hook and related Playbook dispatch contract were read and their distribution gap confirmed."}]
+    },
+    {
+      "unit_id": "closeout-and-attention-gates",
+      "name": "Closeout, earned-ask, and salvage gates",
+      "paths": ["agent-host/hooks/closeout-gate", "agent-host/hooks/earn-the-ask", "agent-host/hooks/salvage-gate"],
+      "source_scope_id": "agent-host-configuration",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "SISO Agent Hooks completion profile and Project OS reconciliation probe",
+      "promotion": {
+        "stage": "candidate",
+        "priority": "critical",
+        "confidence": "high",
+        "portability": "requires_sanitization",
+        "target_work_ids": ["gls:work:4198f323-9855-43f6-a99a-72143086818e", "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943"],
+        "next_gate": "Extract a conservative policy core, define host adapters, and build precision and recall fixtures for completion and operator-attention decisions.",
+        "blockers": ["Transcript parsing and worktree discovery contain host and fleet assumptions.", "Aggressive stop gates require false-positive measurement before default installation."]
+      },
+      "rationale": "The local completion system covers unfinished work, unsupported done claims, unnecessary hand-backs, and stranded peer work beyond the released mutation-verification hook.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:closeout-attention:2026-08-01","observed_at":"2026-08-01","summary":"Three local gate implementations and the portable verify-stop hook were read and compared."}]
+    },
+    {
+      "unit_id": "orchestration-efficiency-hooks",
+      "name": "Batching and delegation efficiency hooks",
+      "paths": ["agent-host/hooks/batch-reflex", "agent-host/hooks/delegation-nudge", "agent-host/hooks/structured-search-nudge"],
+      "source_scope_id": "agent-host-configuration",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "Optional SISO Agent Hooks efficiency profile",
+      "promotion": {
+        "stage": "candidate",
+        "priority": "high",
+        "confidence": "high",
+        "portability": "requires_sanitization",
+        "target_work_ids": ["gls:work:4198f323-9855-43f6-a99a-72143086818e", "gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a"],
+        "next_gate": "Make thresholds configurable, reduce counters to publication-safe aggregates, and discover structured-search capability dynamically.",
+        "blockers": ["Current thresholds and indexed-project knowledge reflect one operator environment."]
+      },
+      "rationale": "These hooks mechanically reinforce batching, bounded delegation, and structured code navigation that currently exist mostly as written operating guidance.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:efficiency-hooks:2026-08-01","observed_at":"2026-08-01","summary":"The local hook behavior and overlapping fan-out and Playbook guidance were compared."}]
+    },
+    {
+      "unit_id": "skills-catalog-reconciliation",
+      "name": "Warehouse-to-Hub skill reconciliation",
+      "paths": ["agent-base/templates/profile/skills"],
+      "source_scope_id": "agent-base-warehouse",
+      "classification": "shared_package",
+      "disposition": "compare",
+      "target": "SISO Skills",
+      "promotion": {
+        "stage": "owner_assigned",
+        "priority": "critical",
+        "confidence": "high",
+        "portability": "unknown",
+        "target_work_ids": ["gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd", "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc"],
+        "next_gate": "Read and classify every catalog delta, promote only current portable mechanisms, repair metadata, and record explicit retirement or Playbook ownership for the rest.",
+        "blockers": ["Name-level comparison is only a nomination signal.", "Sampled entries include retired, malformed, nested, private, and scenario-sized material."]
+      },
+      "rationale": "The warehouse contains substantially more skill documents than the released catalog, and a filtered audit found many names absent from both Skills and Playbook without proving that every delta should ship.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:skills-delta:2026-08-01","observed_at":"2026-08-01","summary":"Skill manifests were enumerated across the warehouse, Agent OS, released Skills registry, and released Playbook, followed by direct reads of priority candidates."}]
+    },
+    {
+      "unit_id": "priority-portable-skill-batch",
+      "name": "Priority portable skill batch",
+      "paths": ["agent-base/skills/prove-before-claim", "agent-base/skills/ponytail", "agent-base/skills/falsifiable-investigation", "agent-base/skills/runtime-reminders", "agent-host/skills/video-analysis"],
+      "source_scope_id": "agent-base-warehouse",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "SISO Skills next reviewed release",
+      "promotion": {
+        "stage": "candidate",
+        "priority": "high",
+        "confidence": "high",
+        "portability": "requires_sanitization",
+        "target_work_ids": ["gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd"],
+        "next_gate": "Repair discovery metadata, preserve attribution, add trigger and negative tests, and verify bundled scripts with content-neutral fixtures.",
+        "blockers": ["Two candidates have incomplete or malformed discovery metadata.", "The video skill requires fixture-based script verification before publication."]
+      },
+      "rationale": "Direct review found a small high-value batch spanning fact verification, scope control, falsifiable investigation, volatile-state reminders, and video analysis.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:priority-skills:2026-08-01","observed_at":"2026-08-01","summary":"The selected skill bodies and their released-catalog absence were reviewed; portability gates remain open."}]
+    },
+    {
+      "unit_id": "pi-harness-lab",
+      "name": "Pi Harness Lab",
+      "paths": ["agent-base/siso-agentlabs"],
+      "source_scope_id": "agent-base-warehouse",
+      "classification": "experiment",
+      "disposition": "compare",
+      "target": "SISO Agent Runtime incubation or an independently evidenced Harness Lab Work",
+      "promotion": {
+        "stage": "read",
+        "priority": "high",
+        "confidence": "high",
+        "portability": "host_specific",
+        "target_work_ids": ["gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224"],
+        "next_gate": "Run parity analysis against released Runtime packages and identify code, tests, and research that remain uniquely useful.",
+        "blockers": ["The lab combines provider-specific experiments, generated patches, live verification, and functionality partly promoted elsewhere.", "Independent adoption has not been established."]
+      },
+      "rationale": "The lab has real packages and extensive local and live smoke surfaces for routing, lazy skills, child agents, councils, workflows, dashboards, lifecycle restore, and token budgets.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:pi-harness-lab:2026-08-01","observed_at":"2026-08-01","summary":"The lab mission, package manifest, workspaces, agent profiles, experiments, and verification commands were read."}]
+    },
+    {
+      "unit_id": "child-task-lifecycle",
+      "name": "Provider-neutral child-task lifecycle",
+      "paths": ["agent-base/docs/child-task-lifecycle-spec"],
+      "source_scope_id": "agent-base-warehouse",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "SISO Agent Runtime control core",
+      "promotion": {
+        "stage": "owner_assigned",
+        "priority": "critical",
+        "confidence": "high",
+        "portability": "ready",
+        "target_work_ids": ["gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224"],
+        "next_gate": "Implement the typed state machine and an exactly-once notification regression fixture in Runtime control core.",
+        "blockers": ["The mechanism currently exists as a specification rather than released Runtime code."]
+      },
+      "rationale": "The specification separates liveness, terminal result, output, and usage while requiring terminal-before-embellishment ordering and exactly-once parent notification.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:child-task-lifecycle:2026-08-01","observed_at":"2026-08-01","summary":"The lifecycle specification was read and exact contract names were checked against the released Runtime surface."}]
+    },
+    {
+      "unit_id": "agent-tui-parity",
+      "name": "SISO TUI application and adapter parity",
+      "paths": ["agent-base/packages/siso-tui", "agent-base/apps/siso-tui"],
+      "source_scope_id": "agent-base-warehouse",
+      "classification": "shared_package",
+      "disposition": "compare",
+      "target": "SISO Agent Runtime TUI packages and optional host adapters",
+      "promotion": {
+        "stage": "candidate",
+        "priority": "high",
+        "confidence": "high",
+        "portability": "host_specific",
+        "target_work_ids": ["gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224"],
+        "next_gate": "Extract renderer-neutral components and status adapters, then measure the remaining provider-specific application boundary.",
+        "blockers": ["The released Runtime intentionally contains contracts rather than raw application and renderer parity.", "Pi-native patches require an optional adapter boundary."]
+      },
+      "rationale": "The active terminal application contains renderer contracts, layouts, runtime and status adapters, and interaction code beyond the currently released TUI contracts package.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:tui-parity:2026-08-01","observed_at":"2026-08-01","summary":"The TUI README, package surfaces, application boundary, and existing Runtime extraction record were reconciled."}]
+    },
+    {
+      "unit_id": "agent-legibility-standards",
+      "name": "Agent-legible repository standards",
+      "paths": ["workspace-standards/filesystem-conventions", "workspace-standards/standards", "agent-base/skills/agent-architecture", "agent-base/templates/module-spec-handoff"],
+      "source_scope_id": "workspace-standards",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "SISO Project OS standards and verifier package",
+      "promotion": {
+        "stage": "owner_assigned",
+        "priority": "critical",
+        "confidence": "high",
+        "portability": "requires_sanitization",
+        "target_work_ids": ["gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943", "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd"],
+        "next_gate": "Reconcile overlapping rules, separate portable templates from workspace examples, and add cold-agent orientation and structure conformance checks.",
+        "blockers": ["The source combines general standards with historical workspace-specific examples and personal paths."]
+      },
+      "rationale": "The sources define a useful cold-agent orientation test, boot placement, depth and naming rules, universal agent primitives, ADR governance, structural ratchets, and handoff contracts.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:agent-legibility:2026-08-01","observed_at":"2026-08-01","summary":"The conventions, standards index, architecture skill, enforcement templates, and module handoff format were read."}]
+    },
+    {
+      "unit_id": "manager-worker-validator-playbook",
+      "name": "Manager–Worker–Validator artifact improvement playbook",
+      "paths": ["agent-base/docs/manager-worker-validator-triad", "agent-base/prompting/principles"],
+      "source_scope_id": "agent-base-warehouse",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "SISO Agent Playbook",
+      "promotion": {
+        "stage": "owner_assigned",
+        "priority": "high",
+        "confidence": "high",
+        "portability": "ready",
+        "target_work_ids": ["gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc"],
+        "next_gate": "Package role prompts, file-handoff schemas, exactly-one-change enforcement, retry bounds, and an unintended-change fixture.",
+        "blockers": ["The current mechanism is warehouse documentation rather than an installable verified scenario."]
+      },
+      "rationale": "The triad offers a disciplined reusable loop: analysis-only manager, exactly-one-change worker, and binary validator with unintended-change auto-failure.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:manager-worker-validator:2026-08-01","observed_at":"2026-08-01","summary":"The three role contracts and the evidence-backed prompting principles were read and compared with released Playbook scenarios."}]
+    },
+    {
+      "unit_id": "agent-stack-benchmark-harness",
+      "name": "Agent Stack benchmark and proof harness",
+      "paths": ["agent-base/benchmarks/harness", "agent-base/evaluation-protocol"],
+      "source_scope_id": "agent-base-warehouse",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "Runtime evaluation packages and Agent Stack release proof",
+      "promotion": {
+        "stage": "owner_assigned",
+        "priority": "critical",
+        "confidence": "high",
+        "portability": "requires_sanitization",
+        "target_work_ids": ["gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224", "gls:work:b9196c61-901f-4105-93d9-899876d17016"],
+        "next_gate": "Sanitize cases, define a stable scorecard schema, and make clean-install, routing, lifecycle, fault, privacy, and recovery checks release evidence for the whole stack.",
+        "blockers": ["Some existing cases and reports encode retired hosts, private routing, or historical environment facts."]
+      },
+      "rationale": "The harness already models task success, efficiency, code navigation, delegation, durability, verification, coordination, skills, safety, memory, fault injection, and soak tiers.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:benchmark-harness:2026-08-01","observed_at":"2026-08-01","summary":"The benchmark plan, task families, scorecard, representative results, and mechanism-level evaluation brief were read."}]
+    },
+    {
+      "unit_id": "agent-zero-voice-replay",
+      "name": "Agent Zero replay-only voice contracts",
+      "paths": ["agent-base/extensions/agent-zero-voice"],
+      "source_scope_id": "agent-base-warehouse",
+      "classification": "experiment",
+      "disposition": "extract",
+      "target": "SISO Agent Zero optional voice adapter",
+      "promotion": {
+        "stage": "owner_assigned",
+        "priority": "high",
+        "confidence": "high",
+        "portability": "requires_sanitization",
+        "target_work_ids": ["gls:work:ea2f0de7-95ee-4e62-acde-85375b048719"],
+        "next_gate": "Promote typed intent, binding, receipt, handoff, risk, idempotency, and replay fixtures while retaining dry-run-only transport.",
+        "blockers": ["Live dispatch remains intentionally gated.", "Current target discovery and lane admission include operator environment assumptions."]
+      },
+      "rationale": "The extension contains a safer typed and fail-closed interface that the released Agent Zero Work currently records only as deferred capability.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:agent-zero-voice:2026-08-01","observed_at":"2026-08-01","summary":"Typed contracts, risk tiers, idempotency, replay fixtures, and the released Agent Zero boundary were read and compared."}]
+    },
+    {
+      "unit_id": "atlas-architectural-auditor",
+      "name": "Atlas read-only architectural auditor",
+      "paths": ["agent-base/atlas"],
+      "source_scope_id": "agent-base-warehouse",
+      "classification": "experiment",
+      "disposition": "compare",
+      "target": "SISO Agent Integrations initially; independent Atlas Work only after activity proof",
+      "promotion": {
+        "stage": "read",
+        "priority": "medium",
+        "confidence": "medium",
+        "portability": "requires_sanitization",
+        "target_work_ids": ["gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a"],
+        "next_gate": "Prove a live consumer and activity history, then sanitize the rubric and dependency surface before incubation.",
+        "blockers": ["Operational usage remains unverified.", "The rubric includes personal and business-specific criteria."]
+      },
+      "rationale": "Atlas defines a distinct graph-assisted, read-only investigation loop with three-critic triangulation, deduplication, and ticket emission only after agreement.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:atlas:2026-08-01","observed_at":"2026-08-01","summary":"The README, rubric, scripts, source map, and ticket-only boundary were read; activity was not inferred."}]
+    },
+    {
+      "unit_id": "operator-status-hud",
+      "name": "Cross-host agent operator HUD",
+      "paths": ["agent-host/status-hud"],
+      "source_scope_id": "agent-host-configuration",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "SISO Agent Runtime operator surfaces",
+      "promotion": {
+        "stage": "candidate",
+        "priority": "high",
+        "confidence": "high",
+        "portability": "host_specific",
+        "target_work_ids": ["gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224"],
+        "next_gate": "Define a provider-neutral status input contract and capability-detected Claude and Codex render adapters.",
+        "blockers": ["The existing statusline consumes one host's transcript and rate-limit surfaces."]
+      },
+      "rationale": "The dependency-free statusline provides model, context pressure, token flow, reset, rate-limit, and session-cost feedback missing from the portable stack.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:operator-hud:2026-08-01","observed_at":"2026-08-01","summary":"The statusline implementation and existing portable agent-state hook were read and compared."}]
+    },
+    {
+      "unit_id": "memory-lifecycle-adapter",
+      "name": "Memory lifecycle hook adapter",
+      "paths": ["agent-os/memory/hooks"],
+      "source_scope_id": "agent-os-workspace",
+      "classification": "experiment",
+      "disposition": "compare",
+      "target": "SISO Agent Brain or Session Intelligence optional lifecycle integration",
+      "promotion": {
+        "stage": "read",
+        "priority": "medium",
+        "confidence": "medium",
+        "portability": "private_overlay",
+        "target_work_ids": ["gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b", "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84"],
+        "next_gate": "Model lifecycle events without personal memory payloads and run a privacy threat review before any extraction.",
+        "blockers": ["The current capability is coupled to plugin-local memory and host lifecycle events.", "No personal memory content may enter the public source or fixtures."]
+      },
+      "rationale": "The lifecycle configuration suggests reusable SessionStart, PostToolUse, and Stop integration, but only the event contract is eligible for public review.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:memory-lifecycle:2026-08-01","observed_at":"2026-08-01","summary":"Only the hook lifecycle contract was reviewed; private memory payloads, databases, logs, and personal state were excluded."}]
+    },
+    {
+      "unit_id": "generated-workspace-canon",
+      "name": "Generated workspace ownership and domain canon",
+      "paths": ["workspace-standards/agents-guide", "workspace-standards/readme", "workspace-standards/ownership-map", "workspace-standards/domain-manifest"],
+      "source_scope_id": "workspace-standards",
+      "classification": "shared_package",
+      "disposition": "extract",
+      "target": "SISO Project OS drift checks and Great Library operating docs",
+      "promotion": {
+        "stage": "owner_assigned",
+        "priority": "high",
+        "confidence": "high",
+        "portability": "ready",
+        "target_work_ids": ["gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943", "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"],
+        "next_gate": "Generate human summaries from the domain manifest and fail verification when declared repository counts or ownership boundaries drift.",
+        "blockers": ["Current root documents are hand-maintained and disagree with the expanded ten-repository Agents domain."]
+      },
+      "rationale": "The live domain manifest records the current estate, while root orientation and ownership documents still contain older repository counts and incomplete boundaries.",
+      "evidence": [{"kind":"source_review","reference":"source-review:agent-capability-promotion:workspace-canon:2026-08-01","observed_at":"2026-08-01","summary":"The root orientation documents, ownership map, and current Agents domain manifest were read and compared."}]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:agent-capability-promotion:first-pass:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "Three bounded read-only discovery lanes reviewed publication-safe mechanisms across agent host configuration, the Agent Base warehouse, Agent OS, and workspace standards; every recorded unit has content-based evidence and a named next gate."
+    },
+    {
+      "kind": "registry_validation",
+      "reference": "registry:source-inventory:agent-capability-promotion:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The campaign is a promotion queue, not a release claim. Private state, credentials, client source, sessions, logs, databases, telemetry, and personal memory payloads are excluded."
+    }
+  ]
+}

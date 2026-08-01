@@ -1,0 +1,34 @@
+name: Verify Great Library
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Protect immutable history in pull requests
+        if: github.event_name == 'pull_request'
+        env:
+          GLS_IMMUTABLE_BASE: origin/${{ github.base_ref }}
+        run: npm run check:immutable
+      - name: Protect immutable history on direct pushes
+        if: github.event_name == 'push'
+        env:
+          GLS_IMMUTABLE_BASE: ${{ github.event.before }}
+        run: npm run check:immutable
+      - name: Verify registry and publication
+        run: npm run verify

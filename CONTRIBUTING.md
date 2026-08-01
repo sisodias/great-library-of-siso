@@ -16,6 +16,7 @@ Contributions should make the registry more accurate, useful, and safely publish
 - Record a Release Manifest only when its state and evidence are explicit.
 - Add typed relationships supported by the schema and evidence.
 - Improve authored research or operating documentation while separating facts, inference, and decisions.
+- Add a publication-safe capability candidate to a dated Source Inventory without granting it Work or Release status.
 - Improve validation, accessibility, link checking, or publication-safety checks.
 
 ## Add or correct a Work
@@ -34,6 +35,14 @@ Contributions should make the registry more accurate, useful, and safely publish
 - A named whole-Library Snapshot promises complete metadata for its pinned recursive view, not automatic payload availability.
 - Payload materialization requires per-artifact state, licensing, provenance, and receipts.
 - Never guess a license or redistribution state. `pending` is a valid and safer answer.
+
+## Capability discovery and promotion
+
+Use Source Inventories for reviewed candidate intake. A public campaign records logical source scopes, content-based evidence, classification, ownership targets, portability blockers, and one exact next gate. Raw scans, absolute paths, personal configuration, private receipts, and operational state stay outside the repository.
+
+Discovery must not create a Work automatically. Promote only after direct review establishes a coherent independent boundary, ownership, provenance, rights, and a verification plan. Change the owning repository first; then publish an exact commit, add an immutable Release Manifest, select it in a successor Snapshot, and update the Agent Stack only when installation is appropriate.
+
+Read the [agent capability discovery and promotion program](docs/agent-capability-promotion.html) before advancing a candidate stage.
 
 ## Clean-room publication checklist
 

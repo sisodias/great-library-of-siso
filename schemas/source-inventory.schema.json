@@ -3,21 +3,56 @@
   "$id": "urn:siso:great-library:schema:source-inventory:1",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "record_type", "id", "name", "source_work_id", "observed_at", "inventory_state", "preservation", "units", "evidence"],
+  "required": ["schema_version", "record_type", "id", "name", "observed_at", "inventory_state", "preservation", "units", "evidence"],
   "properties": {
-    "schema_version": { "const": "1.0.0" },
+    "schema_version": { "enum": ["1.0.0", "1.1.0"] },
     "record_type": { "const": "source_inventory" },
     "id": { "$ref": "common.schema.json#/$defs/sourceInventoryId" },
     "name": { "type": "string", "minLength": 1 },
+    "inventory_kind": { "enum": ["source_reallocation", "agent_capabilities"] },
+    "immutable": { "type": "boolean" },
+    "supersedes_inventory_id": { "$ref": "common.schema.json#/$defs/sourceInventoryId" },
     "source_work_id": { "$ref": "common.schema.json#/$defs/workId" },
+    "source_scopes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["scope_id", "name", "source_type", "publication_boundary"],
+        "properties": {
+          "scope_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "name": { "type": "string", "minLength": 1 },
+          "source_type": { "enum": ["work", "workspace", "user_configuration", "external_upstream"] },
+          "work_id": { "$ref": "common.schema.json#/$defs/workId" },
+          "publication_boundary": { "enum": ["public_source", "public_metadata_only", "internal_source_review", "external_public_source"] }
+        }
+      }
+    },
+    "campaign": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["campaign_id", "owner_work_id", "objective", "lifecycle"],
+      "properties": {
+        "campaign_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "owner_work_id": { "$ref": "common.schema.json#/$defs/workId" },
+        "objective": { "type": "string", "minLength": 10 },
+        "lifecycle": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "enum": ["unverified", "read", "candidate", "owner_assigned", "extracted", "verified", "released", "library_indexed", "stack_pinned", "retired"] }
+        }
+      }
+    },
     "observed_at": { "type": "string", "format": "date" },
     "inventory_state": { "enum": ["partial", "mapped", "reconciled", "retired"] },
     "preservation": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["mode", "dirty_entries", "reason", "nested_repositories"],
+      "required": ["mode", "reason", "nested_repositories"],
       "properties": {
         "mode": { "enum": ["read_only", "bridge_before_move", "clean"] },
+        "dirty_state": { "enum": ["known", "unknown", "withheld"] },
         "dirty_entries": { "type": "integer", "minimum": 0 },
         "reason": { "type": "string", "minLength": 3 },
         "nested_repositories": {
@@ -48,9 +83,41 @@
           "unit_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
           "name": { "type": "string", "minLength": 1 },
           "paths": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "source_scope_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
           "classification": { "enum": ["current_application", "accepted_work", "candidate_work", "shared_package", "experiment", "external_upstream", "private_state", "data_or_archive", "unverified"] },
           "disposition": { "enum": ["keep", "link_existing", "extract", "compare", "preserve_external", "move_to_shared_library", "move_to_private_store", "move_to_data_store", "vault", "distribute_to_owners"] },
           "target": { "type": "string", "minLength": 1 },
+          "promotion": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["stage", "priority", "confidence", "portability", "target_work_ids", "next_gate", "blockers"],
+            "properties": {
+              "stage": { "enum": ["unverified", "read", "candidate", "owner_assigned", "extracted", "verified", "released", "library_indexed", "stack_pinned", "retired"] },
+              "priority": { "enum": ["critical", "high", "medium", "low"] },
+              "confidence": { "enum": ["high", "medium", "low"] },
+              "portability": { "enum": ["ready", "requires_sanitization", "host_specific", "private_overlay", "unknown"] },
+              "target_work_ids": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/workId" } },
+              "verification_evidence_refs": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 3 } },
+              "release_id": { "$ref": "common.schema.json#/$defs/releaseId" },
+              "snapshot_id": { "$ref": "common.schema.json#/$defs/snapshotId" },
+              "stack_pin": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["stack_release_id", "component_work_id", "component_release_id", "component_revision", "manifest_locator", "manifest_sha256", "evidence_reference"],
+                "properties": {
+                  "stack_release_id": { "$ref": "common.schema.json#/$defs/releaseId" },
+                  "component_work_id": { "$ref": "common.schema.json#/$defs/workId" },
+                  "component_release_id": { "$ref": "common.schema.json#/$defs/releaseId" },
+                  "component_revision": { "type": "string", "minLength": 7 },
+                  "manifest_locator": { "type": "string", "format": "uri" },
+                  "manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+                  "evidence_reference": { "type": "string", "minLength": 3 }
+                }
+              },
+              "next_gate": { "type": "string", "minLength": 3 },
+              "blockers": { "type": "array", "items": { "type": "string", "minLength": 3 } }
+            }
+          },
           "rationale": { "type": "string", "minLength": 10 },
           "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/evidence" } }
         }

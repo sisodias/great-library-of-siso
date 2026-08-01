@@ -9,6 +9,8 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs",
+    "check:immutable": "node scripts/check-immutable-history.mjs",
+    "test:promotion": "node tests/promotion-contract.test.mjs",
     "validate": "node scripts/validate.mjs",
     "scan": "node scripts/scan-publication.mjs",
     "check:site": "node scripts/check-site.mjs",

@@ -189,6 +189,7 @@ function nav(active) {
     <nav id="site-nav" aria-label="Primary">
       <a ${active === 'library' ? 'aria-current="page"' : ''} href="${href('')}">Library</a>
       <a ${active === 'agents' ? 'aria-current="page"' : ''} href="${href('agents/')}">Agents</a>
+      <a ${active === 'promotion' ? 'aria-current="page"' : ''} href="${href('promotion/')}">Promotion</a>
       <a ${active === 'research' ? 'aria-current="page"' : ''} href="${href('research/')}">Research</a>
       <a ${active === 'estate' ? 'aria-current="page"' : ''} href="${href('estate/')}">Repo estate</a>
       <a ${active === 'releases' ? 'aria-current="page"' : ''} href="${href('releases/')}">Releases</a>
@@ -257,6 +258,114 @@ function projectionMembers(sectionId, snapshot, works) {
     .filter(({ work }) => work);
 }
 
+function promotionCounts(units, field) {
+  const counts = new Map();
+  for (const unit of units) {
+    const value = text(unit[field], 'Not recorded');
+    counts.set(value, (counts.get(value) || 0) + 1);
+  }
+  return [...counts].map(([value, count]) => ({ value, count })).sort((a, b) => a.value.localeCompare(b.value));
+}
+
+function buildPromotionProjection(sourceInventories, works) {
+  const worksById = new Map(works.map((work) => [work.id, work]));
+  const candidates = sourceInventories.filter((inventory) => inventory.inventory_kind === 'agent_capabilities');
+  const supersededInventoryIds = new Set(candidates.map((inventory) => inventory.supersedes_inventory_id).filter(Boolean));
+  const campaigns = candidates
+    .filter((inventory) => !supersededInventoryIds.has(inventory.id))
+    .map((inventory) => {
+      const campaign = inventory.campaign || {};
+      const units = (inventory.units || []).map((unit) => {
+        const promotion = unit.promotion || {};
+        const evidence = (Array.isArray(unit.evidence) ? unit.evidence : []).map((entry) => ({
+          kind: text(entry.kind),
+          reference: text(entry.reference),
+          observed_at: text(entry.observed_at),
+          summary: text(entry.summary),
+        }));
+        const targetWorkIds = Array.isArray(promotion.target_work_ids) ? promotion.target_work_ids : [];
+        return {
+          id: text(unit.unit_id || unit.id, 'unassigned-unit'),
+          name: text(unit.name, unit.unit_id || 'Unnamed candidate'),
+          source_scope_id: text(unit.source_scope_id),
+          classification: text(unit.classification),
+          disposition: text(unit.disposition),
+          stage: text(promotion.stage),
+          priority: text(promotion.priority),
+          confidence: text(promotion.confidence),
+          portability: text(promotion.portability),
+          target: text(unit.target),
+          next_gate: text(promotion.next_gate),
+          blockers: Array.isArray(promotion.blockers) ? promotion.blockers.map((blocker) => text(blocker)).filter(Boolean) : [],
+          rationale: text(unit.rationale),
+          evidence_count: evidence.length,
+          evidence,
+          target_works: targetWorkIds.map((id) => {
+            const work = worksById.get(id);
+            return {
+              id,
+              name: work?.name || null,
+              library_url: work ? href(`works/${work.slug}/`) : null,
+              resolved: Boolean(work),
+            };
+          }),
+        };
+      });
+      return {
+        inventory_id: text(inventory.id, 'unassigned-inventory'),
+        inventory_name: text(inventory.name, 'Agent capability promotion campaign'),
+        inventory_state: text(inventory.inventory_state),
+        observed_at: text(inventory.observed_at),
+        campaign_id: text(campaign.campaign_id, inventory.id),
+        objective: text(campaign.objective),
+        lifecycle: Array.isArray(campaign.lifecycle) ? campaign.lifecycle.map((stage) => text(stage)).filter(Boolean) : [],
+        units,
+      };
+    });
+  const units = campaigns.flatMap((campaign) => campaign.units);
+  return {
+    inventory_count: campaigns.length,
+    unit_count: units.length,
+    counts: {
+      stage: promotionCounts(units, 'stage'),
+      priority: promotionCounts(units, 'priority'),
+      target: promotionCounts(units, 'target'),
+    },
+    campaigns,
+  };
+}
+
+function promotionCountGroup(title, rows) {
+  return `<section><h3>${esc(title)}</h3><div>${rows.map((row) => `<p><span>${esc(row.value.replaceAll('_', ' '))}</span><strong>${esc(row.count)}</strong></p>`).join('') || '<p><span>None recorded</span><strong>0</strong></p>'}</div></section>`;
+}
+
+function promotionPage(projection) {
+  const campaignSections = projection.campaigns.map((campaign) => `<article class="promotion-campaign">
+    <div>${eyebrow(`Campaign / ${campaign.campaign_id}`)}<h2>${esc(campaign.inventory_name)}</h2><p>${esc(campaign.objective)}</p><small>${esc(campaign.inventory_state)} · observed ${esc(campaign.observed_at)}</small></div>
+    <ol aria-label="Promotion lifecycle">${campaign.lifecycle.map((stage, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span>${esc(stage.replaceAll('_', ' '))}</li>`).join('')}</ol>
+  </article>`).join('');
+  const unitCards = projection.campaigns.flatMap((campaign) => campaign.units).map((unit) => {
+    const blockers = unit.blockers.length ? `<ul>${unit.blockers.map((blocker) => `<li>${esc(blocker)}</li>`).join('')}</ul>` : '<p>None recorded.</p>';
+    const evidence = unit.evidence.length ? `<ul>${unit.evidence.map((entry) => `<li><code>${esc(entry.reference)}</code><br><small>${esc(entry.kind)} · ${esc(entry.observed_at)}</small></li>`).join('')}</ul>` : '<p>None recorded.</p>';
+    const targetWorks = unit.target_works.length ? unit.target_works.map((target) => target.resolved
+      ? `<a href="${esc(target.library_url)}"><span>${esc(target.name)}</span><code>${esc(target.id)}</code></a>`
+      : `<span><span>${esc(target.id)}</span><small>Unresolved in this build</small></span>`).join('') : '<span><span>No target Work ID recorded</span></span>';
+    return `<article class="promotion-unit">
+      <header><div><span>${esc(unit.stage.replaceAll('_', ' '))}</span><span>${esc(unit.priority)} priority</span><span>${esc(unit.confidence)} confidence</span><span>${esc(unit.portability.replaceAll('_', ' '))}</span></div><h3>${esc(unit.name)}</h3></header>
+      <dl><div><dt>Classification</dt><dd>${esc(unit.classification.replaceAll('_', ' '))}</dd></div><div><dt>Disposition</dt><dd>${esc(unit.disposition.replaceAll('_', ' '))}</dd></div><div><dt>Source scope</dt><dd>${esc(unit.source_scope_id)}</dd></div><div><dt>Target</dt><dd>${esc(unit.target)}</dd></div><div><dt>Target Works</dt><dd class="promotion-targets">${targetWorks}</dd></div><div><dt>Next gate</dt><dd>${esc(unit.next_gate)}</dd></div><div><dt>Blockers</dt><dd>${blockers}</dd></div><div><dt>Rationale</dt><dd>${esc(unit.rationale)}</dd></div><div><dt>Evidence · ${esc(unit.evidence_count)} ${unit.evidence_count === 1 ? 'record' : 'records'}</dt><dd>${evidence}</dd></div></dl>
+    </article>`;
+  }).join('');
+  return page({
+    title: 'Promotion', active: 'promotion', rootClass: 'promotion-page',
+    description: 'Public campaign view of evidenced agent capability candidates and their next promotion gates.',
+    body: `<section class="subhero shell">${eyebrow('Library / Agents / Promotion')}<div><h1>Promotion</h1><p>Evidenced agent mechanisms moving through explicit ownership, portability, verification, release, and Library gates.</p></div><span class="folio">P—01</span></section>
+    <aside class="promotion-boundary shell"><b>Candidates are not catalog claims.</b><p>These units are source-inventory candidates. They are not accepted Works, Releases, downloadable artifacts, portability claims, or distribution promises. Those states require their own accepted registry records and evidence.</p><a href="${esc(href('docs/agent-capability-promotion.html'))}">Read the source-backed promotion brief →</a></aside>
+    <section class="section shell promotion-campaigns">${campaignSections || emptyCatalog('No accepted agent capability promotion inventories are present in this build.')}</section>
+    <section class="section shell"><div class="section-heading compact">${eyebrow('Campaign totals')}<h2>${esc(projection.unit_count)} candidates</h2><p>Across ${esc(projection.inventory_count)} accepted ${projection.inventory_count === 1 ? 'inventory' : 'inventories'}.</p></div><div class="promotion-counts">${promotionCountGroup('Stage', projection.counts.stage)}${promotionCountGroup('Priority', projection.counts.priority)}${promotionCountGroup('Target', projection.counts.target)}</div></section>
+    <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Promotion units')}<h2>Candidate gates</h2><p>Evidence-led status, not release status.</p></div><div class="promotion-units">${unitCards || emptyCatalog('Promotion candidates will appear only from accepted agent capability source inventories.')}</div></section>`,
+  });
+}
+
 function homePage(works, releases, snapshots, assemblies, sections) {
   return page({
     title: 'A public index of SISO source',
@@ -300,7 +409,7 @@ function agentsPage(works, assemblies, snapshot, sectionWork) {
     title: 'Agents', active: 'agents', rootClass: 'agents-page',
     description: 'The Agents section of The Great Library of SISO.',
     body: `<section class="subhero shell">${eyebrow('Library / Sections / Agents')}<div><h1>Agents</h1><p>${esc(stack?.name || 'SISO Agent Stack')} keeps the working stack together. Component roles describe responsibility inside this assembly; they are not global categories.</p></div><span class="folio">A—01</span></section>
-    <section class="relationship-map shell" aria-labelledby="map-title"><div class="map-copy">${eyebrow(`Assembly / ${stack?.version || 'unversioned'}`)}<h2 id="map-title">One stack.<br>Four required components.</h2><p>${esc(stack?.outcome || 'The assembly connects intent, execution, coordination, project state, and proof.')}</p><p><a href="${href('docs/agent-stack-model.html')}">Read the source-backed stack model →</a><br><a href="${href('docs/agents-workspace-layout.html')}">See the executed workspace layout →</a><br><a href="${href('docs/agent-base-module-map.html')}">See the Agent Base module extraction map →</a><br><a href="${href('docs/skills-repository-map.html')}">Open the Skill repository map →</a><br><a href="${href('docs/task-state-system-map.html')}">See where task and state source belongs →</a></p></div><div class="map-stack">${members.map(({ component, work }, i) => {
+    <section class="relationship-map shell" aria-labelledby="map-title"><div class="map-copy">${eyebrow(`Assembly / ${stack?.version || 'unversioned'}`)}<h2 id="map-title">One stack.<br>Four required components.</h2><p>${esc(stack?.outcome || 'The assembly connects intent, execution, coordination, project state, and proof.')}</p><p><a href="${href('promotion/')}">Explore promotion candidates →</a><br><a href="${href('docs/agent-stack-model.html')}">Read the source-backed stack model →</a><br><a href="${href('docs/agents-workspace-layout.html')}">See the executed workspace layout →</a><br><a href="${href('docs/agent-base-module-map.html')}">See the Agent Base module extraction map →</a><br><a href="${href('docs/skills-repository-map.html')}">Open the Skill repository map →</a><br><a href="${href('docs/task-state-system-map.html')}">See where task and state source belongs →</a></p></div><div class="map-stack">${members.map(({ component, work }, i) => {
       return `<div class="map-node ${work ? '' : 'is-pending'}"><span>0${i + 1}</span><div><b>${esc(work?.name || component.component_id)}</b><small>${esc(component.required ? `required · ${component.role}` : component.role)}</small></div></div>`;
     }).join('')}<p class="map-key"><i></i>Skills are reusable capabilities. Playbooks compose skills, tools, lanes, and verification for a scenario.</p></div></section>
     <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Accepted records')}<h2>Works in Agents</h2><p><span data-result-count>${related.length}</span> Works available to read.</p></div>${related.length ? catalogControls(related) : ''}<div class="work-grid" data-catalog>${related.length ? related.map(workCard).join('') : emptyCatalog('This section will populate from accepted Work records; no provisional detail pages are published.')}</div><p class="no-results" data-no-results hidden>No Works match those filters.</p></section>`,
@@ -484,6 +593,7 @@ for (const section of sections) {
   for (const { work } of projectionMembers(section.id, latestSnapshot, works)) work.section = section.name;
 }
 const repositoryEstate = buildRepositoryEstate(works, releases, latestSnapshot);
+const promotion = buildPromotionProjection(sourceInventories, works);
 
 await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
@@ -496,16 +606,21 @@ await emit('docs/skills-repository-map.html', await readFile(join(ROOT, 'docs', 
 await emit('docs/task-state-system-map.html', await readFile(join(ROOT, 'docs', 'task-state-system-map.html'), 'utf8'));
 await emit('docs/siso-knowledge-model.html', await readFile(join(ROOT, 'docs', 'siso-knowledge-model.html'), 'utf8'));
 await emit('docs/onboarding.html', await readFile(join(ROOT, 'docs', 'onboarding.html'), 'utf8'));
+await emit('docs/agent-capability-promotion.html', await readFile(join(ROOT, 'docs', 'agent-capability-promotion.html'), 'utf8'));
+await emit('docs/registry-model.md', await readFile(join(ROOT, 'docs', 'registry-model.md'), 'utf8'));
+await emit('docs/using-the-library.md', await readFile(join(ROOT, 'docs', 'using-the-library.md'), 'utf8'));
 await emit('index.html', homePage(works, releases, snapshots, assemblies, sections));
 const agentsSection = sections.find((section) => section.slug === 'agents');
 const researchSection = sections.find((section) => section.slug === 'research');
 await emit('agents/index.html', agentsPage(works, assemblies, latestSnapshot, agentsSection));
+await emit('promotion/index.html', promotionPage(promotion));
 if (researchSection) await emit('research/index.html', researchPage(works, latestSnapshot, researchSection));
 await emit('releases/index.html', releaseIndex(releases, worksById));
 await emit('snapshots/index.html', snapshotIndex(snapshots));
 await emit('estate/index.html', estatePage(repositoryEstate, latestSnapshot));
 await emit('estate.json', `${JSON.stringify({ generated_at: generatedAt, snapshot_id: latestSnapshot?.id || null, snapshot_version: latestSnapshot?.version || null, repositories: repositoryEstate }, null, 2)}\n`);
+await emit('promotion.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, ...promotion }, null, 2)}\n`);
 for (const work of works) await emit(`works/${work.slug}/index.html`, workPage(work, releases, worksById, activeReleasesByWork.get(work.id)));
-await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity, section: work.section })), repositories: repositoryEstate, assemblies: assemblies.map(({ __file, ...assembly }) => assembly), source_inventories: sourceInventories.map(({ __file, ...inventory }) => inventory) }, null, 2)}\n`);
+await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity, section: work.section })), repositories: repositoryEstate, assemblies: assemblies.map(({ __file, ...assembly }) => assembly), source_inventories: sourceInventories.map(({ __file, ...inventory }) => inventory), promotion }, null, 2)}\n`);
 
 console.log(`Built ${works.length} Works, ${releases.length} Releases, ${repositoryEstate.length} Repositories, ${assemblies.length} Assemblies, ${sourceInventories.length} Source Inventories, and ${snapshots.length} Snapshots at ${BASE}`);

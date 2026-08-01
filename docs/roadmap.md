@@ -17,6 +17,12 @@ The initial CLI and MCP surfaces should be close to read-only. They will list an
 
 Writes remain reviewable repository changes guarded by schema validation and publication checks. The first MCP surface is not a remote registry administration API, installer, or package manager.
 
+## Active program: agent capability discovery and promotion
+
+The Library now accepts publication-safe, multi-source agent capability campaigns through Source Inventories and generates a human and machine-readable promotion queue. [The operating program](agent-capability-promotion.html) defines the ten-loop discovery process, ownership boundary, lifecycle, privacy rules, verification gates, and Stack handoff.
+
+The next engineering milestone is a Foundry candidate exporter that writes only ignored local staging data. Reviewed metadata may then be proposed as a successor Source Inventory; discovery must never create Works, Releases, Assemblies, or Snapshots automatically.
+
 ## Explicitly out of scope
 
 - combining all cataloged source into a giant monorepo;
