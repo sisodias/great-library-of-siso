@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:e38b054f-b926-4410-b84d-4fd3249fd4f4",
+  "slug": "frontier-question-agent-layer-efficiency",
+  "name": "GQ-002 · 10× the Agent Layer",
+  "summary": "A standing research question about making a provider-neutral multi-agent operating layer materially more effective, efficient, observable, and self-improving.",
+  "work_type": "research_question",
+  "lifecycle_status": "active",
+  "updated_at": "2026-08-01",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [],
+    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.", "evidence": [] }
+  },
+  "relationships": [
+    { "type": "integrates_with", "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "context": "Foundry supplies the outside-in harness, coordination, memory, and execution-pattern landscape.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns discovery and evidence-universe selection to Foundry." }] },
+    { "type": "depends_on", "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "context": "SISO Knowledge preserves public source and privacy-safe longitudinal evidence.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge." }] },
+    { "type": "coordinates_via", "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f", "context": "Evidence Engines separate measured facts, hypotheses, counter-evidence, and improvement proposals.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns source-grounded transformation to Evidence Engines." }] }
+  ],
+  "research_contract": {
+    "question_id": "GQ-002",
+    "question": "What changes would make the complete provider-neutral SISO agent layer ten times more effective per unit of time, attention, and compute?",
+    "state": "answered",
+    "evidence_mode": "hybrid",
+    "source_work_ids": ["gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"],
+    "source_scopes": ["public agent harnesses and orchestration systems", "released SISO Agent Stack components", "privacy-safe operational measurements", "memory, routing, budget, and handoff mechanisms"],
+    "answer_shape": "A ranked leverage map whose recommendations each carry measurements, external analogues, an experiment, and a falsifiable success threshold.",
+    "refresh_policy": "Re-answer after material stack changes or when new measurements overturn the current bottleneck model.",
+    "publication_boundary": "public_metadata_only"
+  },
+  "evidence": [{ "kind": "source_review", "reference": "source-review:frontier-question-intake:gq-002:2026-08-01", "observed_at": "2026-08-01", "summary": "The existing campaign answer and receipts were read; operational and machine-specific evidence remains outside the public Library." }]
+}

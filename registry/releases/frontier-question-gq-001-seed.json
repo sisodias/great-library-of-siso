@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0.0","record_type":"release","id":"gls:release:bb6f759b-4c22-4dda-ac29-a4a9becefed9","work_id":"gls:work:2ac84615-3f9d-4040-95d6-9d9f39e4dc84",
+  "version":"registry-seed-2026-08-01","title":"GQ-001 publication-safe metadata seed","released_at":"2026-08-01T22:30:00+07:00","observed_at":"2026-08-01","immutable":true,"artifacts":[],
+  "distribution":{
+    "addressable":{"state":"verified","reason":"The question is addressable by stable Work ID and Library URL.","evidence":[{"kind":"registry_validation","reference":"registry:release:frontier-question-gq-001-seed","observed_at":"2026-08-01","summary":"The metadata manifest and question Work reference validated."}]},
+    "archive_downloadable":{"state":"unavailable","reason":"No publication-safe answer archive is attached to this metadata seed.","evidence":[]},
+    "manifest_resolvable":{"state":"verified","reason":"The metadata manifest resolves inside the registry.","evidence":[{"kind":"registry_validation","reference":"registry:release:frontier-question-gq-001-seed","observed_at":"2026-08-01","summary":"The release-to-Work reference and research contract validated."}]},
+    "installable":{"state":"not_applicable","reason":"A research question is not software.","evidence":[]},
+    "forkable":{"state":"not_applicable","reason":"No source payload is attached to this metadata seed.","evidence":[]},
+    "portable":{"state":"not_applicable","reason":"Question identity is portable through registry metadata; answer artifacts are evaluated separately.","evidence":[]}
+  },
+  "evidence":[{"kind":"source_review","reference":"source-review:frontier-question-intake:gq-001:2026-08-01","observed_at":"2026-08-01","summary":"Only publication-safe question metadata was accepted; the existing partial answer remains unpublished."}]
+}

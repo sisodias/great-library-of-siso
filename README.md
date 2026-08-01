@@ -64,6 +64,8 @@ Research is a separate browse section with independently addressable responsibil
 
 Read the [SISO Knowledge model](docs/siso-knowledge-model.html) for the source-backed boundary, current migration state, data-plane rules, and repository split test.
 
+The Research section now also hosts **Frontier Questions**—the public projection of the standing research portfolio historically called God Questions. Each question is a stable Work; each accepted answer is an immutable Release; Foundry buckets and other source scopes define the evidence universe without copying the warehouse into this repository. Read the [Frontier Questions model](docs/research-question-model.html).
+
 ## What you can do
 
 - **Browse** Sections and stable Work detail pages.

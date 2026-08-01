@@ -8,7 +8,7 @@
 ## What is live
 
 - The public registry, generated site, repository estate, and machine-readable catalog are deployed.
-- Eighteen stable Works span the Library, Agents, and Research, with three preservation-aware source inventories.
+- Twenty-four stable Works span the Library, Agents, and Research, including six publication-safe Frontier Questions and three preservation-aware source inventories.
 - The Agents story separates Project OS, Runtime, coordination, integrations, Skills, Playbooks, Agent Brain, and Session Intelligence using typed relationships rather than directory hierarchy.
 - The machine-neutral local convention groups ten independent checkouts flat at `$SISO_WORKSPACE/SISO_Agents`; this placement changes no Work, Release, Snapshot, locator, or public URL.
 - SISO Agent Brain `0.3.0` is pinned to `ed50bec86f5cfb86cc5c84ebfce97fad595598b4`.
@@ -21,7 +21,8 @@
 - Immutable SISO Agent Stack Assembly 2.0.0 expands the composition to the complete portable public stack without rewriting V1.
 - The agent-capability promotion campaign is a first-class Library surface at `/promotion/` and `/promotion.json`: one active immutable campaign head tracks 18 publication-safe candidate units, with seven at `candidate`, eight at `owner_assigned`, three at `read`, and zero unresolved target Works.
 - The promotion lifecycle is mechanically enforced from `unverified` through `stack_pinned` and `retired`; advanced stages must bind real evidence, Releases, Snapshots, and verified Stack manifest receipts.
-- Whole Library V23 — Agent Capability Promotion (`gls:snapshot:f4263d64-eb8b-442d-a651-f045c011675e`) is the wrap-up Snapshot.
+- Whole Library V24 — Frontier Questions (`gls:snapshot:73ee0c53-7e65-4c1c-9fe8-c990607ebf89`) is the active Snapshot.
+- Frontier Questions reuses the core Library model: a question is a Work, an accepted answer is a Release, and the latest Snapshot selects the current portfolio. Foundry discovers relevant evidence, SISO Knowledge preserves it, and Evidence Engines transform it.
 - The Library's selected self-release is `0.4.0+2c09268`, pinned to `2c09268dd383c112e36a823e95d34d20cb1fa2bd`.
 - The latest active state is always the highest-numbered immutable whole-Library Snapshot. Do not infer “current” from filename order alone; compare numeric `version` fields.
 

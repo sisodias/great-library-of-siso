@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:7782f923-d44e-4a47-8ce6-134e31816673",
+  "slug": "frontier-question-field-momentum",
+  "name": "GQ-005 · Where the Field Is Moving",
+  "summary": "A standing research question about which technologies, categories, techniques, and projects are accelerating and what those changes predict.",
+  "work_type": "research_question",
+  "lifecycle_status": "experimental",
+  "updated_at": "2026-08-01",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [],
+    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.", "evidence": [] }
+  },
+  "relationships": [
+    { "type": "integrates_with", "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "context": "Foundry supplies frozen momentum snapshots, category movements, and emergent-source discovery.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns discovery and longitudinal source signals to Foundry." }] },
+    { "type": "depends_on", "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "context": "SISO Knowledge preserves comparable time-indexed evidence and retrieval history.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge." }] },
+    { "type": "coordinates_via", "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f", "context": "Evidence Engines distinguish observed momentum, causal hypotheses, and predictions.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns source-grounded transformation to Evidence Engines." }] }
+  ],
+  "research_contract": {
+    "question_id": "GQ-005",
+    "question": "Which categories, techniques, and projects are gaining real momentum, what mechanisms explain the change, and what does the acceleration predict next?",
+    "state": "scoped",
+    "evidence_mode": "corpus",
+    "source_work_ids": ["gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"],
+    "source_scopes": ["frozen Foundry momentum snapshots", "category and capability movement", "release and adoption signals", "counter-signals that separate durable emergence from short-lived attention"],
+    "answer_shape": "A ranked movement map with observed deltas, causal hypotheses, confidence, leading indicators, and dated predictions that can later be scored.",
+    "refresh_policy": "Re-answer on a fixed cadence and whenever a leading indicator crosses a pre-registered materiality threshold.",
+    "publication_boundary": "public_metadata_only"
+  },
+  "evidence": [{ "kind": "source_review", "reference": "source-review:frontier-question-intake:gq-005:2026-08-01", "observed_at": "2026-08-01", "summary": "The standing momentum question and its dependence on non-backfillable longitudinal evidence were read before intake." }]
+}

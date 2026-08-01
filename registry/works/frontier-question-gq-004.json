@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:85964f1c-2efe-48b0-8f71-dc32bb668c0c",
+  "slug": "frontier-question-best-software-primitive",
+  "name": "GQ-004 · Best Software Primitive",
+  "summary": "A parametric standing question for identifying the best implementation of a reusable software primitive across the corpus with quality, rights, and composability evidence.",
+  "work_type": "research_question",
+  "lifecycle_status": "experimental",
+  "updated_at": "2026-08-01",
+  "provenance": {
+    "origin": "siso",
+    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "locators": [],
+    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.", "evidence": [] }
+  },
+  "relationships": [
+    { "type": "integrates_with", "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "context": "Foundry supplies capability categories, candidate repositories, quality signals, and reuse intelligence.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model treats Foundry buckets as retrieval scopes and demand signals rather than conclusions." }] },
+    { "type": "depends_on", "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "context": "SISO Knowledge preserves source, provenance, and retrieval records needed to reproduce a ranking.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge." }] },
+    { "type": "coordinates_via", "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f", "context": "Evidence Engines produce typed comparisons, refutations, and ranked answer candidates.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns source-grounded transformation to Evidence Engines." }] }
+  ],
+  "research_contract": {
+    "question_id": "GQ-004",
+    "question": "For a named software primitive, which implementation is best for the stated context, and is it safe and valuable to reuse, vendor, or learn from?",
+    "state": "scoped",
+    "evidence_mode": "corpus",
+    "source_work_ids": ["gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"],
+    "source_scopes": ["Foundry capability category selected by the requested primitive", "implementation and interface evidence", "maintenance, adoption, security, and license evidence", "counter-examples across language and scale"],
+    "answer_shape": "A context-specific ranked shortlist with interface fit, evidence grade, rights gate, adoption cost, and explicit reasons not to choose each candidate.",
+    "refresh_policy": "Re-answer when the category gains a high-signal implementation, a selected project materially changes, or security and rights evidence changes.",
+    "publication_boundary": "public_metadata_only"
+  },
+  "evidence": [{ "kind": "source_review", "reference": "source-review:frontier-question-intake:gq-004:2026-08-01", "observed_at": "2026-08-01", "summary": "The parametric Foundry question and current capability-bucket model were read before the public research contract was written." }]
+}

@@ -58,8 +58,29 @@ function localTarget(raw, sourceFile) {
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "estate/index.html", "estate.json"]) {
+for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "research/index.html", "docs/research-question-model.html", "estate/index.html", "estate.json"]) {
   if (!await exists(path.join(root, required))) errors.push(`missing required page: ${required}`);
+}
+
+const frontierQuestions = [
+  ["GQ-001", "frontier-question-agent-workspace"],
+  ["GQ-002", "frontier-question-agent-layer-efficiency"],
+  ["GQ-004", "frontier-question-best-software-primitive"],
+  ["GQ-005", "frontier-question-field-momentum"],
+  ["GQ-006", "frontier-question-information-organ"],
+  ["GQ-008", "frontier-question-model-routing"],
+];
+const researchIndex = await readFile(path.join(root, "research/index.html"), "utf8");
+if (!researchIndex.includes("Frontier Questions · God Questions")) errors.push("research/index.html: missing Frontier Questions section");
+for (const [questionId, slug] of frontierQuestions) {
+  const questionPath = path.join(root, "works", slug, "index.html");
+  if (!await exists(questionPath)) {
+    errors.push(`missing Frontier Question page: works/${slug}/index.html`);
+    continue;
+  }
+  if (!researchIndex.includes(`/works/${slug}/`)) errors.push(`research/index.html: missing ${questionId} link`);
+  const questionPage = await readFile(questionPath, "utf8");
+  if (!questionPage.includes(`Research contract · ${questionId}`)) errors.push(`works/${slug}/index.html: missing ${questionId} research contract`);
 }
 
 for (const file of htmlFiles) {

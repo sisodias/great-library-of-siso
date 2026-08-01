@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0.0","record_type":"release","id":"gls:release:1ee81aa0-42cc-4bcd-a87b-4f34baf9cc13","work_id":"gls:work:7782f923-d44e-4a47-8ce6-134e31816673",
+  "version":"registry-seed-2026-08-01","title":"GQ-005 publication-safe metadata seed","released_at":"2026-08-01T22:33:00+07:00","observed_at":"2026-08-01","immutable":true,"artifacts":[],
+  "distribution":{
+    "addressable":{"state":"verified","reason":"The question is addressable by stable Work ID and Library URL.","evidence":[{"kind":"registry_validation","reference":"registry:release:frontier-question-gq-005-seed","observed_at":"2026-08-01","summary":"The metadata manifest and question Work reference validated."}]},
+    "archive_downloadable":{"state":"unavailable","reason":"No answer archive has been accepted for this scoped question.","evidence":[]},
+    "manifest_resolvable":{"state":"verified","reason":"The metadata manifest resolves inside the registry.","evidence":[{"kind":"registry_validation","reference":"registry:release:frontier-question-gq-005-seed","observed_at":"2026-08-01","summary":"The release-to-Work reference and research contract validated."}]},
+    "installable":{"state":"not_applicable","reason":"A research question is not software.","evidence":[]},
+    "forkable":{"state":"not_applicable","reason":"No source payload is attached to this metadata seed.","evidence":[]},
+    "portable":{"state":"not_applicable","reason":"Question identity is portable through registry metadata; answer artifacts are evaluated separately.","evidence":[]}
+  },
+  "evidence":[{"kind":"source_review","reference":"source-review:frontier-question-intake:gq-005:2026-08-01","observed_at":"2026-08-01","summary":"The momentum question was accepted with an explicit time-series evidence dependency and refresh rule."}]
+}

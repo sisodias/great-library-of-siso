@@ -109,6 +109,9 @@ const artifactIds = new Set();
 for (const { file, value: work } of records.work) {
   if (work.work_type === "module") fail(`${path.relative(root, file)}: module must be a contextual projection role, never a Work type`);
   for (const relation of work.relationships ?? []) if (!works.has(relation.target_work_id)) fail(`${path.relative(root, file)}: relationship target ${relation.target_work_id} does not resolve`);
+  if (work.work_type === "research_question" && !work.research_contract) fail(`${path.relative(root, file)}: research_question Work requires research_contract`);
+  if (work.research_contract && work.work_type !== "research_question") fail(`${path.relative(root, file)}: research_contract is reserved for research_question Works`);
+  for (const sourceWorkId of work.research_contract?.source_work_ids ?? []) if (!works.has(sourceWorkId)) fail(`${path.relative(root, file)}: research source Work ${sourceWorkId} does not resolve`);
 }
 for (const { file, value: release } of records.release) {
   const label = path.relative(root, file);

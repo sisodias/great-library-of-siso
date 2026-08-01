@@ -139,6 +139,7 @@ function normalizeWork(raw) {
     maturity: text(raw.maturity || raw.status || raw.lifecycle_status || raw.lifecycle_state, 'Unknown'),
     section: text(raw.section || raw.category || raw.domain, 'Unassigned'),
     relationships,
+    researchContract: raw.research_contract || null,
     links: linkEntries(raw),
     provenance: raw.provenance || {},
     license: license && typeof license === 'object' ? `${text(license.spdx, 'NOASSERTION')} (${text(license.status || license.state, 'pending')})` : text(license, 'Pending'),
@@ -418,12 +419,15 @@ function agentsPage(works, assemblies, snapshot, sectionWork) {
 
 function researchPage(works, snapshot, sectionWork) {
   const related = projectionMembers(sectionWork?.id, snapshot, works).map(({ work }) => work);
+  const questions = related.filter((work) => work.type === 'research_question');
+  const systems = related.filter((work) => work.type !== 'research_question');
   return page({
     title: 'Research', active: 'research', rootClass: 'agents-page',
     description: 'The Research section of The Great Library of SISO.',
-    body: `<section class="subhero shell">${eyebrow('Library / Sections / Research')}<div><h1>Research</h1><p>Source discovery, evidence transformation, durable knowledge, and research artifacts live here. They may serve agents without being contained by the Agents section.</p></div><span class="folio">R—01</span></section>
-    <section class="relationship-map shell" aria-labelledby="research-map-title"><div class="map-copy">${eyebrow(`Projection / ${snapshot?.version || 'unversioned'}`)}<h2 id="research-map-title">Three Works.<br>Three clear jobs.</h2><p>SISO Knowledge owns durable corpus and retrieval. Foundry owns source discovery and reuse intelligence. Evidence Engines own source-grounded transformation. Each remains independently addressable and releasable.</p><p><a href="${href('docs/siso-knowledge-model.html')}">Read the SISO Knowledge boundary →</a><br><a href="${href('docs/agent-base-module-map.html')}">See how Agent Base research material is reallocated →</a></p></div><div class="map-stack">${related.map((work, i) => `<div class="map-node"><span>${String(i + 1).padStart(2, '0')}</span><div><b>${esc(work.name)}</b><small>${esc(work.type)} · ${esc(work.maturity)}</small></div></div>`).join('') || '<p class="map-key">Accepted Research Works are being indexed.</p>'}</div></section>
-    <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Accepted records')}<h2>Works in Research</h2><p><span data-result-count>${related.length}</span> Works available to read.</p></div>${related.length ? catalogControls(related) : ''}<div class="work-grid" data-catalog>${related.length ? related.map(workCard).join('') : emptyCatalog('This section will populate only from accepted snapshot relationships.')}</div><p class="no-results" data-no-results hidden>No Works match those filters.</p></section>`,
+    body: `<section class="subhero shell">${eyebrow('Library / Sections / Research')}<div><h1>Research</h1><p>Foundry discovers the evidence universe. SISO Knowledge preserves it. Evidence Engines turn it into traceable claims. Frontier Questions keep the highest-leverage questions and their answer lineage alive.</p></div><span class="folio">R—01</span></section>
+    <section class="relationship-map shell" aria-labelledby="research-map-title"><div class="map-copy">${eyebrow(`Projection / ${snapshot?.version || 'unversioned'}`)}<h2 id="research-map-title">One evidence loop.<br>Clear ownership.</h2><p>The Library owns stable question and answer identities, not the corpus payload. Each Research system remains independently addressable and releasable.</p><p><a href="${href('docs/research-question-model.html')}">Read the Frontier Question model →</a><br><a href="${href('docs/siso-knowledge-model.html')}">Read the SISO Knowledge boundary →</a></p></div><div class="map-stack">${systems.map((work, i) => `<div class="map-node"><span>${String(i + 1).padStart(2, '0')}</span><div><b>${esc(work.name)}</b><small>${esc(work.type)} · ${esc(work.maturity)}</small></div></div>`).join('') || '<p class="map-key">Accepted Research systems are being indexed.</p>'}</div></section>
+    <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Frontier Questions · God Questions')}<h2>Questions worth answering again.</h2><p><span data-result-count>${questions.length}</span> standing questions with stable identities, explicit evidence scopes, and versioned answers.</p></div>${questions.length ? catalogControls(questions) : ''}<div class="work-grid" data-catalog>${questions.length ? questions.map(workCard).join('') : emptyCatalog('Questions appear only after a publication-safe research contract is accepted.')}</div><p class="no-results" data-no-results hidden>No questions match those filters.</p></section>
+    <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Research systems')}<h2>The machinery behind the answers.</h2><p>${systems.length} independently owned Works.</p></div><div class="work-grid">${systems.map(workCard).join('')}</div></section>`,
   });
 }
 
@@ -447,6 +451,16 @@ function workPage(work, releases, byId, activeRelease) {
   });
   const linkRows = work.links.map((link) => `<a href="${esc(link.url)}" rel="noopener noreferrer"><span>${esc(link.kind)}</span><b>${esc(link.label)}</b><i aria-hidden="true">↗</i></a>`);
   const libraryUrl = href(`works/${work.slug}/`);
+  const researchContract = work.researchContract;
+  const researchRows = researchContract ? [
+    ['Question', researchContract.question],
+    ['State', researchContract.state],
+    ['Evidence mode', researchContract.evidence_mode.replaceAll('_', ' ')],
+    ['Source scopes', researchContract.source_scopes.join(' · ')],
+    ['Answer shape', researchContract.answer_shape],
+    ['Refresh policy', researchContract.refresh_policy],
+    ['Publication boundary', researchContract.publication_boundary.replaceAll('_', ' ')],
+  ].map(([label, value]) => `<div><span>${esc(label)}</span><p>${esc(value)}</p></div>`) : [];
   return page({
     title: work.name,
     active: work.section === 'Research' ? 'research' : /agent/i.test(`${work.section} ${work.type}`) ? 'agents' : 'library',
@@ -454,7 +468,8 @@ function workPage(work, releases, byId, activeRelease) {
     rootClass: 'work-page',
     body: `<article>
       <header class="work-hero shell">${eyebrow(`Work / ${work.id}`)}<div class="work-title"><h1>${esc(work.name)}</h1><p>${esc(work.summary)}</p></div><dl class="work-meta"><div><dt>Type</dt><dd>${esc(work.type)}</dd></div><div><dt>Maturity</dt><dd>${esc(work.maturity)}</dd></div><div><dt>Section</dt><dd>${esc(work.section)}</dd></div></dl></header>
-      <div class="permalink-bar"><div class="shell"><span>Permanent Library detail URL</span><code>${esc(libraryUrl)}</code></div></div>
+      <div class="permalink-bar"><div class="shell"><span>Permanent Library detail URL</span><code>${esc(libraryUrl)}</code></div></div>${researchRows.length ? `
+      <div class="shell">${detailList(`Research contract · ${researchContract.question_id}`, researchRows)}</div>` : ''}
       <div class="detail-layout shell"><div>
         ${detailList('Relationships', relationshipRows)}
         ${detailList('Provenance', provenance.length ? [`<dl class="provenance-list">${provenance.join('')}</dl>`] : [])}
@@ -605,6 +620,7 @@ await emit('docs/agents-workspace-layout.html', await readFile(join(ROOT, 'docs'
 await emit('docs/skills-repository-map.html', await readFile(join(ROOT, 'docs', 'skills-repository-map.html'), 'utf8'));
 await emit('docs/task-state-system-map.html', await readFile(join(ROOT, 'docs', 'task-state-system-map.html'), 'utf8'));
 await emit('docs/siso-knowledge-model.html', await readFile(join(ROOT, 'docs', 'siso-knowledge-model.html'), 'utf8'));
+await emit('docs/research-question-model.html', await readFile(join(ROOT, 'docs', 'research-question-model.html'), 'utf8'));
 await emit('docs/onboarding.html', await readFile(join(ROOT, 'docs', 'onboarding.html'), 'utf8'));
 await emit('docs/agent-capability-promotion.html', await readFile(join(ROOT, 'docs', 'agent-capability-promotion.html'), 'utf8'));
 await emit('docs/registry-model.md', await readFile(join(ROOT, 'docs', 'registry-model.md'), 'utf8'));

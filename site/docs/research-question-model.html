@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="The source-backed model for Frontier Questions, also called God Questions, in The Great Library of SISO.">
+  <title>Frontier Questions — Great Library model</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080d13;--panel:#111a25;--line:#2b394b;--text:#edf4fa;--muted:#a7b4c5;--green:#76e4b4;--blue:#78baff;--gold:#e7c36a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#12253a 0,transparent 32%),var(--bg);color:var(--text);font:16px/1.58 system-ui,sans-serif}main{max-width:1140px;margin:auto;padding:52px 24px 88px}h1{font-size:clamp(2.7rem,7vw,5.6rem);line-height:.96;letter-spacing:-.045em;max-width:960px;margin:.15em 0 .3em}h2{margin-top:2.5em}.eyebrow{color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.13em}.lede,.muted{color:var(--muted)}.lede{font-size:1.16rem;max-width:840px}.decision{background:rgba(118,228,180,.07);border:1px solid var(--green);border-radius:18px;padding:22px;margin:30px 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{border:1px solid var(--line);border-radius:15px;background:var(--panel);padding:18px}.card b{display:block;color:var(--green);margin-bottom:6px}.card span{color:var(--muted)}table{width:100%;border-collapse:collapse;background:var(--panel)}th,td{border:1px solid var(--line);padding:11px;text-align:left;vertical-align:top}th{color:var(--blue)}code{color:var(--green)}ol li,ul li{margin:.65rem 0}.boundary{border-left:4px solid var(--gold);padding:2px 0 2px 18px}footer{margin-top:64px;border-top:1px solid var(--line);padding-top:24px;color:var(--muted)}@media(max-width:850px){.grid{grid-template-columns:1fr}}@media(max-width:560px){table{font-size:.82rem}th,td{padding:8px}}
+  </style>
+</head>
+<body><main>
+  <p class="eyebrow">The Great Library of SISO · Research model</p>
+  <h1>Questions are durable.<br>Answers keep moving.</h1>
+  <p class="lede"><strong>Frontier Questions</strong> is the public name for the standing research portfolio historically called God Questions: high-leverage questions that deserve the widest relevant evidence, explicit reasoning, adversarial testing, and repeated answers as the world changes.</p>
+
+  <div class="decision"><strong>Core decision</strong><br>A Frontier Question is a <strong>Work</strong>, not a document folder or a row in a second catalog. Each accepted answer is an immutable <strong>Release</strong>. A <strong>Snapshot</strong> selects the current answer while old answers and their evidence remain citable.</div>
+
+  <h2>The four independently owned jobs</h2>
+  <div class="grid">
+    <article class="card"><b>The Great Library · identity</b><span>Stable question IDs and URLs, research contracts, answer Releases, relationships, and the current portfolio projection.</span></article>
+    <article class="card"><b>Foundry · discovery</b><span>Maps the relevant repository, person, topic, capability, and momentum universe. Its buckets are retrieval scopes and demand signals—not conclusions.</span></article>
+    <article class="card"><b>SISO Knowledge · corpus</b><span>Preserves durable source material, provenance, indexes, graphs, and retrieval while keeping large or rights-bearing payloads outside the Library repository.</span></article>
+    <article class="card"><b>Evidence Engines · transformation</b><span>Turns explicit sources into typed claims, counter-evidence, principles, ranked ideas, and answer candidates with traceable receipts.</span></article>
+  </div>
+
+  <h2>One question package</h2>
+  <table>
+    <thead><tr><th>Layer</th><th>Contract</th></tr></thead>
+    <tbody>
+      <tr><td>Identity</td><td>Stable Work ID, GQ label, title, question text, steward, and permanent Library URL.</td></tr>
+      <tr><td>Frame</td><td>Evidence mode, source systems, Foundry scopes, expected answer shape, known exclusions, and publication boundary.</td></tr>
+      <tr><td>Evidence map</td><td>Source locators and content hashes live with their owning corpus or engine. The Library stores citations and receipts, not raw warehouse payloads.</td></tr>
+      <tr><td>Reasoning</td><td>Candidate claims, supporting and refuting evidence, witness independence, unresolved contradictions, and killed hypotheses.</td></tr>
+      <tr><td>Answer</td><td>An immutable Release with an explicit grade, date, evidence universe, limitations, and falsifiable refresh trigger.</td></tr>
+      <tr><td>Watch</td><td>Foundry or another source owner signals material drift; a successor answer is produced without rewriting the earlier Release.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The research loop</h2>
+  <ol>
+    <li><strong>Frame before search.</strong> Separate overloaded questions and pre-register candidate claims or evaluation dimensions.</li>
+    <li><strong>Map the evidence universe.</strong> Use Foundry categories, resource buckets, people, momentum, and explicit live anchors to define what can bear on the question.</li>
+    <li><strong>Acquire by value.</strong> Read the highest-information sources first, widen until marginal evidence stops changing the answer, and preserve rights and provenance.</li>
+    <li><strong>Reason in claims.</strong> Record support, contradiction, independence, uncertainty, and dead ends. Repository popularity is a retrieval prior, never proof.</li>
+    <li><strong>Adversarially synthesize.</strong> Try to break load-bearing claims, distinguish universal findings from SISO preferences, and state what the evidence cannot answer.</li>
+    <li><strong>Release, then watch.</strong> Publish the answer and receipts that are safe to publish; trigger a successor when new evidence or a failed prediction materially changes the conclusion.</li>
+  </ol>
+
+  <h2>What does not enter this public repository</h2>
+  <div class="boundary"><p>Personal questions, private operational data, conversations, raw databases, credentials, private topology, machine-specific paths, and rights-unclear corpora remain outside the public Great Library. A public question may carry <code>public_metadata_only</code> while its private evidence is reviewed. A private question gets no public record until a safe projection exists.</p></div>
+
+  <h2>Why this is not a new registry type</h2>
+  <p class="muted">The existing Library primitives already express the lifecycle correctly: Work = durable question, Release = immutable answer, Snapshot = current selection, typed relationships = evidence-system responsibilities. The only schema addition is a research contract on Works whose type is <code>research_question</code>.</p>
+
+  <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
+</main></body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T15:19:04.000Z",
+  "generated_at": "2026-08-01T15:40:00.000Z",
   "base_path": "/",
   "works": [
     {
@@ -10,6 +10,60 @@
       "type": "section",
       "maturity": "active",
       "section": "Agents"
+    },
+    {
+      "id": "gls:work:2ac84615-3f9d-4040-95d6-9d9f39e4dc84",
+      "slug": "frontier-question-agent-workspace",
+      "name": "GQ-001 · The Agent Workspace",
+      "library_url": "/works/frontier-question-agent-workspace/",
+      "type": "research_question",
+      "maturity": "active",
+      "section": "Research"
+    },
+    {
+      "id": "gls:work:e38b054f-b926-4410-b84d-4fd3249fd4f4",
+      "slug": "frontier-question-agent-layer-efficiency",
+      "name": "GQ-002 · 10× the Agent Layer",
+      "library_url": "/works/frontier-question-agent-layer-efficiency/",
+      "type": "research_question",
+      "maturity": "active",
+      "section": "Research"
+    },
+    {
+      "id": "gls:work:85964f1c-2efe-48b0-8f71-dc32bb668c0c",
+      "slug": "frontier-question-best-software-primitive",
+      "name": "GQ-004 · Best Software Primitive",
+      "library_url": "/works/frontier-question-best-software-primitive/",
+      "type": "research_question",
+      "maturity": "experimental",
+      "section": "Research"
+    },
+    {
+      "id": "gls:work:7782f923-d44e-4a47-8ce6-134e31816673",
+      "slug": "frontier-question-field-momentum",
+      "name": "GQ-005 · Where the Field Is Moving",
+      "library_url": "/works/frontier-question-field-momentum/",
+      "type": "research_question",
+      "maturity": "experimental",
+      "section": "Research"
+    },
+    {
+      "id": "gls:work:2144e900-4886-461e-92f1-49571f2e9f74",
+      "slug": "frontier-question-information-organ",
+      "name": "GQ-006 · The Information Organ",
+      "library_url": "/works/frontier-question-information-organ/",
+      "type": "research_question",
+      "maturity": "active",
+      "section": "Research"
+    },
+    {
+      "id": "gls:work:3b4c4fa6-31f2-4cfc-9542-00f32e200621",
+      "slug": "frontier-question-model-routing",
+      "name": "GQ-008 · Model Routing Evidence",
+      "library_url": "/works/frontier-question-model-routing/",
+      "type": "research_question",
+      "maturity": "active",
+      "section": "Research"
     },
     {
       "id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
