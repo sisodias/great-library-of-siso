@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-30T14:11:00.000Z",
-  "snapshot_id": "gls:snapshot:5a50033a-03b1-408c-9aa8-74076faf3f12",
-  "snapshot_version": "21.0.0",
+  "generated_at": "2026-08-01T13:28:00.000Z",
+  "snapshot_id": "gls:snapshot:95cec3fe-9c7a-4135-9eb6-02fdecc3696d",
+  "snapshot_version": "22.0.0",
   "repositories": [
     {
       "owner": "Lordsisodia",
@@ -254,6 +254,42 @@
       "active_release_id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05",
       "active_release_version": "master+514e446",
       "artifact_revision": "514e4465ee33d4d81682d06ee2934483982a54ed"
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-agent-hooks",
+      "url": "https://github.com/sisodias/siso-agent-hooks",
+      "work_id": "gls:work:4198f323-9855-43f6-a99a-72143086818e",
+      "work_name": "SISO Agent Hooks",
+      "work_slug": "siso-agent-hooks",
+      "work_type": "capability_pack",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-agent-hooks/",
+      "locator_type": "source_repository",
+      "locator_revision": "main@9125a972b4ba03661bf17ee135790282f246c15f",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:98ba8230-3cdc-478b-b855-e9d808655c46",
+      "active_release_version": "0.1.0+9125a97",
+      "artifact_revision": "9125a972b4ba03661bf17ee135790282f246c15f"
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-agent-stack",
+      "url": "https://github.com/sisodias/siso-agent-stack",
+      "work_id": "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+      "work_name": "SISO Agent Stack Distribution",
+      "work_slug": "siso-agent-stack-distribution",
+      "work_type": "bundle",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-agent-stack-distribution/",
+      "locator_type": "source_repository",
+      "locator_revision": "main@f4a9626c0a1771cd3ee449f25a1ab63c8b297845",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:a085911a-30f7-4075-b8e1-680a65a2a0cd",
+      "active_release_version": "0.1.0+f4a9626",
+      "artifact_revision": "f4a9626c0a1771cd3ee449f25a1ab63c8b297845"
     }
   ]
 }

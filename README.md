@@ -50,7 +50,7 @@ The first slice began with carefully reviewed seed records centered on:
 - Herdr
 - Agent Zero
 
-Those four Works are now connected through the source-backed **SISO Agent Stack 1.0.0** Assembly. Project OS, Agent Base, Herdr, and Agent Zero remain independently addressable Works; the Assembly records how they operate together. Skills are reusable capabilities, while playbooks compose skills, tools, lanes, and verification for a scenario. They are not separate top-level shelves.
+That foundation is preserved in immutable Assembly 1.0.0. **SISO Agent Stack 2.0.0** now records the complete public composition: Project OS, Runtime, Agent Zero, Skills, Playbook, Hooks, and optional Brain, Session Intelligence, Integrations, and Herdr. The separate Stack Distribution Work provides the one-clone installer; it does not absorb component identities. Skills remain reusable capabilities while playbooks compose them for scenarios.
 
 Read the [SISO Agent Stack model](docs/agent-stack-model.html) for the corrected hierarchy and placement rules.
 

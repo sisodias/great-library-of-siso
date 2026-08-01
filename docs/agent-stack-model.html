@@ -10,9 +10,9 @@
 </head>
 <body>
   <header>
-    <p class="eyebrow">Agents / Assembly 1.0.0 / 2026-07-30</p>
+    <p class="eyebrow">Agents / Assembly 2.0.0 / 2026-08-01</p>
     <h1>One SISO Agent Stack.</h1>
-    <p>Not four unrelated shelves. A versioned assembly that keeps the components of the working system together while preserving each component's independent identity, source, releases, and evidence.</p>
+    <p>A versioned, publicly installable assembly that keeps every component independently addressable while one distribution pins and verifies how they operate together.</p>
   </header>
 
   <section>
@@ -21,9 +21,17 @@
 └── Agents                         section / browse view
     └── SISO Agent Stack           versioned assembly
         ├── SISO Project OS        required component
-        ├── SISO Agent Base        required component
-        ├── Herdr                  required component
-        └── Agent Zero             required component</pre>
+        ├── SISO Agent Runtime     required component
+        ├── Agent Zero             required component
+        ├── Skills Hub             required component
+        ├── Agent Playbook         required component
+        ├── Agent Hooks            required component
+        ├── Agent Brain            optional component
+        ├── Session Intelligence   optional component
+        ├── Agent Integrations     optional component
+        └── Herdr                  optional external component
+
+    SISO Agent Stack Distribution  one-clone installer for the assembly</pre>
     <p class="rule">The component row is deliberately flat. Runtime, coordination, memory, model, tool, and playbook labels do not become artificial second-level categories. The assembly record carries each component's contextual role and connections.</p>
   </section>
 
@@ -31,9 +39,15 @@
     <h2>What each component owns in this assembly</h2>
     <div class="stack">
       <article class="card"><span class="required">Required</span><b>SISO Project OS</b><small>Project-local operating layer</small><p>Architecture, canonical work, claims, run packets, verification, delivery, durable knowledge, and cold-pickup state.</p></article>
-      <article class="card"><span class="required">Required</span><b>SISO Agent Base</b><small>Current coding-agent application boundary</small><p>Installs and starts the coding-agent runtime and supplies shared status, routing, context, lifecycle, and TUI surfaces. Direct decomposition review found that the surrounding repository is a mixed-purpose warehouse; the application boundary is provisional, not a generic agent framework.</p></article>
-      <article class="card"><span class="required">Required</span><b>Herdr</b><small>Persistent terminal and lane substrate</small><p>Workspaces, tabs, panes, agent addressing, messaging, and observable persistent lanes. It is part of the stack, not a separate “control plane” shelf.</p></article>
+      <article class="card"><span class="required">Required</span><b>SISO Agent Runtime</b><small>Provider-neutral host execution</small><p>Runs agent sessions, lifecycle, context, status, profiles, and command surfaces without owning project truth or coordination policy.</p></article>
       <article class="card"><span class="required">Required</span><b>Agent Zero</b><small>Conversation and coordination layer</small><p>Holds intent, priorities, lane boundaries, durable context, dispatch state, evidence distinctions, and final synthesis. The current artifact is a skill, not a generic playbook category.</p></article>
+      <article class="card"><span class="required">Required</span><b>Skills Hub</b><small>Atomic capabilities</small><p>Supplies reusable capabilities installed into both supported hosts from exact source pins.</p></article>
+      <article class="card"><span class="required">Required</span><b>Agent Playbook</b><small>Scenario composition</small><p>Composes skills, tools, prompts, lanes, gates, and evidence into repeatable operating scenarios.</p></article>
+      <article class="card"><span class="required">Required</span><b>Agent Hooks</b><small>Lifecycle automation</small><p>Generates Claude Code and Codex hook configuration from one manifest and verifies exact installed payloads.</p></article>
+      <article class="card"><b>Agent Brain</b><small>Optional shared state</small><p>Provides durable task, artifact, memory, timeline, heartbeat, cost, and coordination APIs without publishing live databases.</p></article>
+      <article class="card"><b>Session Intelligence</b><small>Optional privacy-sensitive learning</small><p>Learns from explicitly supplied sessions while raw inputs and generated state remain outside the distribution.</p></article>
+      <article class="card"><b>Agent Integrations</b><small>Optional adapters</small><p>Houses experimental runtime adapters with independent promotion and rollback gates.</p></article>
+      <article class="card"><b>Herdr</b><small>Optional external terminal substrate</small><p>Provides persistent workspaces and addressable lanes while retaining external ownership and Apache-2.0 licensing.</p></article>
     </div>
   </section>
 
@@ -41,9 +55,9 @@
     <h2>The operating loop</h2>
     <div class="flow">
       <div><span>1</span><br><b>Orient</b><br>Agent Zero reads the human outcome against Project OS state.</div>
-      <div><span>2</span><br><b>Brief</b><br>Agent Zero and Agent Base select a capability and explicit return contract.</div>
-      <div><span>3</span><br><b>Run</b><br>Agent Base agents execute through addressable Herdr lanes.</div>
-      <div><span>4</span><br><b>Prove</b><br>Project OS records claims, attempts, verification, delivery, and learning.</div>
+      <div><span>2</span><br><b>Brief</b><br>Agent Zero, Runtime, Skills, and Playbook select roles, capabilities, and an explicit return contract.</div>
+      <div><span>3</span><br><b>Run</b><br>Runtime executes while Hooks and optional Herdr lanes expose observable lifecycle state.</div>
+      <div><span>4</span><br><b>Prove</b><br>Hooks enforce verification; Project OS and optional Brain persist the appropriate durable truth.</div>
       <div><span>5</span><br><b>Synthesize</b><br>Agent Zero returns verified state and the next bounded action.</div>
     </div>
   </section>
@@ -55,7 +69,8 @@
       <tbody>
         <tr><td><b>Skill</b></td><td>A reusable agent capability with a trigger, bounded instructions, and an expected result contract.</td><td>With the component or package that owns the behavior; indexed across the stack.</td></tr>
         <tr><td><b>Playbook</b></td><td>A scenario-specific composition selecting and sequencing skills, tools, lanes, model choices, evidence, and verification. It may itself be delivered through a skill.</td><td>With its owning capability package; not a separate top-level stack layer.</td></tr>
-        <tr><td><b>SISO Agent Playbook</b></td><td>An observed installable package containing skills, tools, prompts, telemetry, and evidence. Its product name does not mean every playbook is a peer category.</td><td>Candidate independent Work once its public locator, boundary, and release evidence are accepted.</td></tr>
+        <tr><td><b>SISO Agent Playbook</b></td><td>An independently released package containing scenario skills, tools, prompts, telemetry, and evidence.</td><td>Required Assembly component and independently addressable Work.</td></tr>
+        <tr><td><b>SISO Agent Hooks</b></td><td>Mechanical lifecycle automation around host events, commands, state, and completion verification.</td><td>Required Assembly component and independently addressable capability pack.</td></tr>
       </tbody>
     </table>
   </section>
@@ -82,13 +97,13 @@
       <li>New browse trees, dependency graphs, onboarding views, CLI output, and MCP responses are generated from the same Assembly record.</li>
       <li>A category is added only when it is stable over time, mutually useful, and changes what a person or agent can do.</li>
     </ol>
-    <p>The machine-readable source is <code>registry/assemblies/siso-agent-stack-v1.json</code>, validated by <code>schemas/assembly.schema.json</code>. This HTML is an explanation of that record, not a second registry.</p>
+    <p>The machine-readable current source is <code>registry/assemblies/siso-agent-stack-v2.json</code>, validated by <code>schemas/assembly.schema.json</code>. Immutable V1 remains preserved. This HTML is an explanation, not a second registry.</p>
     <p><a href="agent-base-decomposition.html">Read the SISO Agent Base repository decomposition →</a></p>
   </section>
 
   <section>
     <h2>Evidence read before classification</h2>
-    <p>The model was rebuilt from the current Agent Base README; Project OS README, specification, capability guide, and work lifecycle; the Herdr and Agent Zero skills; the orchestration-playbook skill; and the SISO Agent Playbook README and architecture. The earlier noun-first split was rejected because it contradicted those sources.</p>
+    <p>V2 is grounded in the exact public Stack manifest, Hooks manifest, clean-install receipts, host-native Claude Code and Codex configuration, component release records, and independent 97/100 and 98/100 adversarial reviews.</p>
     <p><a href="../agents/">Return to Agents</a></p>
   </section>
 

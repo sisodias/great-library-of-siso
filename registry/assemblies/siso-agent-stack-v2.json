@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "assembly",
+  "id": "gls:assembly:ef7be4ec-da44-4c95-b43f-096e1e8bb85d",
+  "slug": "siso-agent-stack",
+  "name": "SISO Agent Stack",
+  "summary": "The expanded, publicly distributable composition of project operating state, provider-neutral runtime, coordination, capabilities, playbooks, lifecycle hooks, optional shared state and learning, integrations, and persistent terminal lanes.",
+  "version": "2.0.0",
+  "created_at": "2026-08-01T20:26:00+07:00",
+  "immutable": true,
+  "section_work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
+  "outcome": "A new operator can clone one public distribution, install exact component revisions into an isolated Claude Code and Codex profile, verify every managed surface, and still address, fork, update, or omit each component independently.",
+  "components": [
+    {
+      "component_id": "project-os", "work_id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943", "required": true,
+      "role": "project-local operating layer",
+      "responsibilities": ["Expose architecture, canonical work, claims, verification, delivery, and cold-pickup state.", "Keep project truth in the project rather than in the portable global profile."],
+      "depends_on": [],
+      "evidence": [{"kind":"source_review","reference":"stack-manifest:project-os:d6290c609a6922e14b3faa27019aae31628686cb","observed_at":"2026-08-01","summary":"Project OS is a required independently pinned component of the public distribution."}]
+    },
+    {
+      "component_id": "runtime", "work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224", "required": true,
+      "role": "provider-neutral host execution",
+      "responsibilities": ["Run agent sessions, lifecycle, context, status, profiles, and command surfaces.", "Remain replaceable independently from coordination policy and project state."],
+      "depends_on": [],
+      "evidence": [{"kind":"source_review","reference":"stack-manifest:runtime:a4aefc0345f979d67b5b3fac2829364a1a9100b9","observed_at":"2026-08-01","summary":"Runtime is required and pinned independently from Agent Zero, Brain, and integrations."}]
+    },
+    {
+      "component_id": "agent-zero", "work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719", "required": true,
+      "role": "intent and coordination policy",
+      "responsibilities": ["Hold current intent, priorities, lane boundaries, and synthesis policy.", "Build explicit worker packets and distinguish dispatch, worker report, and independent verification."],
+      "depends_on": ["project-os", "runtime"],
+      "evidence": [{"kind":"source_review","reference":"stack-manifest:agent-zero:dacfc6c30b2f478c9d3382910674bd30289d3981","observed_at":"2026-08-01","summary":"Agent Zero is required and exact-pinned as the coordination layer."}]
+    },
+    {
+      "component_id": "skills", "work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd", "required": true,
+      "role": "atomic capability registry",
+      "responsibilities": ["Supply reusable capabilities with bounded instructions and expected results.", "Install the same reviewed capability sources into both supported hosts."],
+      "depends_on": ["runtime"],
+      "evidence": [{"kind":"integration_check","reference":"clean-install:siso-agent-stack:skills:32:2026-08-01","observed_at":"2026-08-01","summary":"The installer discovered and linked 32 exact skill sources into Claude Code and Codex."}]
+    },
+    {
+      "component_id": "playbook", "work_id": "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc", "required": true,
+      "role": "scenario and worker-tool composition",
+      "responsibilities": ["Compose skills, tools, prompts, lanes, evidence, and verification for repeatable scenarios.", "Provide worker and lane commands without absorbing the Skills registry."],
+      "depends_on": ["runtime", "skills"],
+      "evidence": [{"kind":"source_review","reference":"stack-manifest:playbook:1d4c2fae6207b928299279bde735e88578fad128","observed_at":"2026-08-01","summary":"Playbook is a required exact-pinned package and remains independently addressable."}]
+    },
+    {
+      "component_id": "hooks", "work_id": "gls:work:4198f323-9855-43f6-a99a-72143086818e", "required": true,
+      "role": "host lifecycle automation and mechanical guardrails",
+      "responsibilities": ["Generate host-native lifecycle configuration from one versioned manifest.", "Track privacy-reduced lifecycle state, guard narrow destructive commands, and require evidence after mutation."],
+      "depends_on": ["runtime"],
+      "evidence": [{"kind":"release_receipt","reference":"repo-check:siso-agent-hooks:9125a972b4ba03661bf17ee135790282f246c15f","observed_at":"2026-08-01","summary":"Seven hooks, both profiles, exact doctor checks, 21 tests, and 97/100 adversarial review passed."}]
+    },
+    {
+      "component_id": "agent-brain", "work_id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b", "required": false,
+      "role": "optional shared durable state service",
+      "responsibilities": ["Provide tasks, artifacts, memory, timeline, heartbeat, cost, and coordination APIs when shared durable state is needed.", "Keep runtime databases and personal state outside the public distribution source."],
+      "depends_on": ["runtime"],
+      "evidence": [{"kind":"source_review","reference":"stack-manifest:agent-brain:ed50bec86f5cfb86cc5c84ebfce97fad595598b4","observed_at":"2026-08-01","summary":"Brain is optional, exact-pinned, and installed as source plus commands without copying live databases."}]
+    },
+    {
+      "component_id": "session-intelligence", "work_id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84", "required": false,
+      "role": "optional privacy-sensitive learning",
+      "responsibilities": ["Learn from explicitly supplied sessions using privacy-reduced records.", "Retain an independent lifecycle because raw session inputs and learned state are not distribution source."],
+      "depends_on": ["agent-brain"],
+      "evidence": [{"kind":"source_review","reference":"stack-manifest:session-intelligence:7f2ace6b9ba4b11dd95700cd4050ae5970a06171","observed_at":"2026-08-01","summary":"Session Intelligence is optional and exact-pinned; no raw sessions are bundled."}]
+    },
+    {
+      "component_id": "integrations", "work_id": "gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a", "required": false,
+      "role": "optional experimental adapters",
+      "responsibilities": ["Provide opt-in adapters around the runtime.", "Preserve promotion, rollback, and source boundaries independently from runtime core."],
+      "depends_on": ["runtime"],
+      "evidence": [{"kind":"source_review","reference":"stack-manifest:integrations:808eb51c079db40ae273e721527b245be09e9544","observed_at":"2026-08-01","summary":"Integrations is optional, source-only, exact-pinned, and included in full non-external verification."}]
+    },
+    {
+      "component_id": "herdr", "work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc", "required": false,
+      "role": "optional external persistent terminal substrate",
+      "responsibilities": ["Provide addressable workspaces, tabs, panes, messaging, and durable terminal lanes.", "Remain externally owned, separately licensed, and separately installed."],
+      "depends_on": [],
+      "evidence": [{"kind":"public_locator","reference":"https://github.com/herdrdev/herdr/commit/26a7bc860e4af516ef687d90b9f9dd2830f88d2a","observed_at":"2026-08-01","summary":"External Apache-2.0 source is optional and pinned without changing ownership."}]
+    }
+  ],
+  "operating_loop": [
+    {"step":1,"component_ids":["agent-zero","project-os"],"action":"Interpret the requested outcome against project truth and the portable operating profile.","output":"A bounded objective, constraints, ownership, and proof contract."},
+    {"step":2,"component_ids":["agent-zero","runtime","skills","playbook"],"action":"Select host-native agent roles, atomic capabilities, scenario tooling, and execution lanes.","output":"Explicit worker packets and a version-resolved execution plan."},
+    {"step":3,"component_ids":["runtime","hooks","herdr"],"action":"Run work through the selected host while lifecycle hooks and optional persistent lanes expose observable state.","output":"Worker artifacts, lifecycle state, and returned verdicts."},
+    {"step":4,"component_ids":["hooks","project-os","agent-brain"],"action":"Verify mutations, reject incomplete or dirty state, and persist only the appropriate project or optional shared-state records.","output":"Evidence-backed, recoverable state without publishing private runtime data."},
+    {"step":5,"component_ids":["agent-zero","session-intelligence","integrations"],"action":"Synthesize the verified outcome and selectively use optional learning or adapters under their own boundaries.","output":"A human-facing result and the next bounded action."}
+  ],
+  "capability_model": {
+    "skill": "A reusable host-discoverable capability with a trigger, bounded instructions, and an expected result contract.",
+    "playbook": "A scenario-specific composition that sequences skills, tools, agents, lanes, evidence, and verification without absorbing their source identities.",
+    "placement_rule": "Every capability, hook, adapter, state service, and distribution stays with the Work that owns its behavior and release cadence; the Assembly records composition rather than filesystem containment."
+  },
+  "evidence": [
+    {"kind":"release_receipt","reference":"https://github.com/sisodias/siso-agent-stack/blob/f4a9626c0a1771cd3ee449f25a1ab63c8b297845/reports/implementation-checkpoint.html","observed_at":"2026-08-01","summary":"Assembly roles match the exact public distribution manifest, clean install receipts, explicit exclusions, and independent 97/100 and 98/100 reviews."},
+    {"kind":"source_review","reference":"source-review:siso-agent-stack:assembly-v2:2026-08-01","observed_at":"2026-08-01","summary":"V2 expands rather than rewrites immutable V1, and separates the distribution bundle Work from the component Assembly it installs."}
+  ]
+}
