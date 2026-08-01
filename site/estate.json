@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-01T16:01:50.000Z",
-  "snapshot_id": "gls:snapshot:64961639-513b-4f75-b57a-b4b07375a9be",
-  "snapshot_version": "26.0.0",
+  "generated_at": "2026-08-01T16:09:36.000Z",
+  "snapshot_id": "gls:snapshot:e53e7ef2-2766-4b4c-8291-a8f6171e0a75",
+  "snapshot_version": "27.0.0",
   "repositories": [
     {
       "owner": "Lordsisodia",
@@ -17,9 +17,9 @@
       "locator_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:7e775112-82ee-44d7-9d41-2a22bb471508",
-      "active_release_version": "0.6.0+100f07c",
-      "artifact_revision": "100f07cda65efbced0f6792e37df1854ee509e63"
+      "active_release_id": "gls:release:e8e22d48-190d-4f9d-8553-a3a36f5cc2e6",
+      "active_release_version": "0.6.1+807c532",
+      "artifact_revision": "807c532be3c341ef2b2134450c0c3bbe81778a5a"
     },
     {
       "owner": "Lordsisodia",

@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-01T16:01:50.000Z",
+  "generated_at": "2026-08-01T16:09:36.000Z",
   "base_path": "/",
   "counts": {
-    "events": 9,
+    "events": 10,
     "decisions": 4,
     "active_initiatives": 0,
-    "registry_changes": 82
+    "registry_changes": 84
   },
   "active_initiatives": [],
   "decisions": [
@@ -374,6 +374,112 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:78d5f765-4880-48bf-81b4-c0f502fc07e1",
+      "occurred_at": "2026-08-01T23:09:36+07:00",
+      "recorded_at": "2026-08-01T23:09:36+07:00",
+      "immutable": true,
+      "entry_type": "correction_recorded",
+      "thread": {
+        "id": "gls:thread:mission-question-architecture",
+        "name": "SISO mission and question-driven research architecture",
+        "kind": "research"
+      },
+      "status": "completed",
+      "title": "Frontier Question answer maturity wording corrected",
+      "summary": "An independent read-only audit found and corrected Research navigation that overstated metadata seed Releases as versioned answers; the page now names versioned-answer contracts and says seeds are not accepted answers.",
+      "intent": "Keep the public Frontier Question surface exact about the difference between a durable question contract, a metadata seed Release, and an accepted Answer Release.",
+      "reasoning": [
+        "The six selected question Releases are publication-safe metadata seeds, not completed research answers.",
+        "The Research summary must not make a stronger maturity claim than the individual Work contracts and Releases support.",
+        "A positive required phrase and a negative retired phrase now make the answer-maturity boundary machine-verifiable."
+      ],
+      "changes": [
+        {
+          "kind": "commit",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/807c532be3c341ef2b2134450c0c3bbe81778a5a",
+          "summary": "Corrected the generated Research copy and added positive and negative site assertions."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "gls:release:e8e22d48-190d-4f9d-8553-a3a36f5cc2e6",
+          "summary": "Pinned the exact answer-maturity correction."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "gls:snapshot:e53e7ef2-2766-4b4c-8291-a8f6171e0a75",
+          "summary": "Selected the correction through Whole Library V27."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+        ],
+        "release_ids": [
+          "gls:release:e8e22d48-190d-4f9d-8553-a3a36f5cc2e6"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:e53e7ef2-2766-4b4c-8291-a8f6171e0a75"
+        ],
+        "decision_ids": [
+          "gls:decision:c1217342-d5cb-4015-bf1b-b04034d09f8a"
+        ]
+      },
+      "coordination": {
+        "owner": "Great Library research maintainer",
+        "branch": "codex/mission-question-architecture-20260801",
+        "reserved_paths": []
+      },
+      "visibility": "public",
+      "predecessor_event_id": "gls:event:8c8b83dd-6061-48a2-94f9-1af1b22f808e",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "independent-audit:frontier-question-answer-maturity:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The audit compared the Research summary against individual scoped and partial contracts and their registry-seed Releases."
+        },
+        {
+          "kind": "registry_validation",
+          "reference": "repo-check:great-library-answer-maturity:807c532",
+          "observed_at": "2026-08-01",
+          "summary": "All Great Library gates passed after the wording correction and regression assertions."
+        }
+      ],
+      "next_actions": [
+        "Retain the distinction between question identity, metadata seeds, candidate synthesis, and accepted Answer Releases in future Research copy."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+        ],
+        "release_ids": [
+          "gls:release:e8e22d48-190d-4f9d-8553-a3a36f5cc2e6"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:e53e7ef2-2766-4b4c-8291-a8f6171e0a75"
+        ],
+        "decision_ids": [
+          "gls:decision:c1217342-d5cb-4015-bf1b-b04034d09f8a"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+            "name": "Research",
+            "library_url": "/works/research/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",
@@ -1287,6 +1393,24 @@
     }
   ],
   "registry_changes": [
+    {
+      "kind": "release",
+      "occurred_at": "2026-08-01T23:09:36+07:00",
+      "id": "gls:release:e8e22d48-190d-4f9d-8553-a3a36f5cc2e6",
+      "version": "0.6.1+807c532",
+      "title": "Frontier Question answer-maturity wording correction",
+      "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "work_name": "The Great Library of SISO"
+    },
+    {
+      "kind": "snapshot",
+      "occurred_at": "2026-08-01T23:09:36+07:00",
+      "id": "gls:snapshot:e53e7ef2-2766-4b4c-8291-a8f6171e0a75",
+      "version": "27.0.0",
+      "title": "Whole Library V27 — Answer Maturity Correction",
+      "work_count": 24,
+      "release_count": 24
+    },
     {
       "kind": "release",
       "occurred_at": "2026-08-01T23:01:50+07:00",

@@ -21,13 +21,14 @@
 - Immutable SISO Agent Stack Assembly 2.0.0 expands the composition to the complete portable public stack without rewriting V1.
 - The agent-capability promotion campaign is a first-class Library surface at `/promotion/` and `/promotion.json`: one active immutable campaign head tracks 18 publication-safe candidate units, with seven at `candidate`, eight at `owner_assigned`, three at `read`, and zero unresolved target Works.
 - The promotion lifecycle is mechanically enforced from `unverified` through `stack_pinned` and `retired`; advanced stages must bind real evidence, Releases, Snapshots, and verified Stack manifest receipts.
-- Ecosystem Intelligence is generated at `/intelligence/` and `/intelligence.json` from four immutable ADRs, nine append-only Events, and the automatic history of all 56 Releases and 26 Snapshots. The current projection has zero active initiatives; live lanes must publish branch and machine-neutral path reservations before parallel work begins.
-- Whole Library V26 — Mission and Question-Driven Research (`gls:snapshot:64961639-513b-4f75-b57a-b4b07375a9be`) is the active Snapshot.
+- Ecosystem Intelligence is generated at `/intelligence/` and `/intelligence.json` from four immutable ADRs, ten append-only Events, and the automatic history of all 57 Releases and 27 Snapshots. The current projection has zero active initiatives; live lanes must publish branch and machine-neutral path reservations before parallel work begins.
+- Whole Library V27 — Answer Maturity Correction (`gls:snapshot:e53e7ef2-2766-4b4c-8291-a8f6171e0a75`) is the active Snapshot.
 - Frontier Questions reuses the core Library model: a question is a Work, an accepted answer is a Release, and the latest Snapshot selects the current portfolio. Its current six Releases are explicitly publication-safe metadata seeds rather than public answer artifacts. Foundry discovers relevant evidence, SISO Knowledge preserves it, and Evidence Engines transform it.
 - The SISO mission charter records the durable public direction while explicitly keeping the Great Library as the identity, lineage, and reading surface rather than the company or operating business engine.
 - The question-driven research architecture now defines a ten-pass first-principles loop, global/domain/question/action assumption dependencies, targeted book reading, claim and contradiction ledgers, ADR and experiment implications, Answer Releases, and watch triggers.
 - The reusable Frontier Question dossier includes a worked composable-CRM example and an explicit rights boundary between publicly observable product behavior and reusable source code.
-- The Library's selected self-release is `0.6.0+100f07c`, pinned to `100f07cda65efbced0f6792e37df1854ee509e63`.
+- The Research page explicitly distinguishes versioned-answer contracts and metadata seed Releases from accepted Answer Releases; a positive and negative generated-site assertion protect that boundary.
+- The Library's selected self-release is `0.6.1+807c532`, pinned to `807c532be3c341ef2b2134450c0c3bbe81778a5a`.
 - The latest active state is always the highest-numbered immutable whole-Library Snapshot. Do not infer “current” from filename order alone; compare numeric `version` fields.
 
 ## Operating boundaries
