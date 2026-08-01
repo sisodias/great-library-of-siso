@@ -3,12 +3,12 @@
 **Verified:** 2026-08-02
 **Public repository:** https://github.com/Lordsisodia/great-library-of-siso  
 **Live Library:** https://great-library-of-siso.vercel.app/  
-**Operating status:** God Questions infrastructure v1 complete; safe for a cold agent to resume from measured use rather than schema expansion.
+**Operating status:** Public estate reconciliation complete on the God Questions infrastructure; safe for a cold agent to resume from measured use rather than schema expansion.
 
 ## What is live
 
 - The public registry, generated site, repository estate, and machine-readable catalog are deployed.
-- Twenty-five stable Works span the Library, Agents, and Research, including seven publication-safe Frontier Questions and three preservation-aware source inventories. GQ-009 dogfoods the God Questions infrastructure itself, while the authored SISO mission and question-driven research module explain what those questions serve and how they operate without adding a second registry.
+- Twenty-five stable Works span the Library, Agents, and Research, including seven publication-safe Frontier Questions and three preservation-aware source inventories. GQ-009 dogfoods the God Questions infrastructure itself, while the authored SISO mission, question-driven research module, and public estate reconciliation model explain what those questions serve and how evidence returns without adding a second registry.
 - The Agents story separates Project OS, Runtime, coordination, integrations, Skills, Playbooks, Agent Brain, and Session Intelligence using typed relationships rather than directory hierarchy.
 - The machine-neutral local convention groups ten independent checkouts flat at `$SISO_WORKSPACE/SISO_Agents`; this placement changes no Work, Release, Snapshot, locator, or public URL.
 - SISO Agent Brain `0.3.0` is pinned to `ed50bec86f5cfb86cc5c84ebfce97fad595598b4`.
@@ -22,17 +22,18 @@
 - SISO Foundry 0.2.0 is released at `d29480a139edb48be14ee5f24d86349a7ae2a0ae` with a public ten-family agent-systems campaign, dependency-free resumable runner, query-hash checkpoints, append-only observation routing, deduplicated candidate lineage, rights-review defaults, and quota/anti-spam stop gates. The first live query stopped on GitHub anti-spam before accepting results; its local restart checkpoint is preserved outside Git.
 - The agent-capability promotion campaign is a first-class Library surface at `/promotion/` and `/promotion.json`: one active immutable campaign head tracks 18 publication-safe candidate units, with seven at `candidate`, eight at `owner_assigned`, three at `read`, and zero unresolved target Works.
 - The promotion lifecycle is mechanically enforced from `unverified` through `stack_pinned` and `retired`; advanced stages must bind real evidence, Releases, Snapshots, and verified Stack manifest receipts.
-- Ecosystem Intelligence is generated at `/intelligence/` and `/intelligence.json` from four immutable ADRs, 21 append-only Events, and the automatic history of all 67 Releases and 32 Snapshots. The current projection has zero active initiatives; live lanes must publish branch and machine-neutral path reservations before parallel work begins.
-- Whole Library V32 — God Questions Infrastructure V1 (`gls:snapshot:a7a99ae1-a2e2-4e44-8fb3-c0235a35023b`) is the active Snapshot. Its completion Event is `gls:event:9c8e46f9-0a2a-4396-bda1-f2a3967c2cb9`.
+- Ecosystem Intelligence is generated at `/intelligence/` and `/intelligence.json` from four immutable ADRs, 23 append-only Events, and the automatic history of all 69 Releases and 33 Snapshots. The current projection has zero active initiatives; live lanes must publish branch and machine-neutral path reservations before parallel work begins.
+- Whole Library V33 — Public Estate Reconciliation (`gls:snapshot:5929e723-9789-4a33-af63-ba472650a522`) is the active Snapshot. Its completion Event is `gls:event:dc9d1aef-28e7-4d5a-8a97-3eee45be4cf1`.
 - Frontier Questions reuses the core Library model: a question is a Work, a question-program metadata Release is not an answer, an explicitly typed and evidenced Answer Release is an accepted public answer, and the latest Snapshot selects the current portfolio. The generated God Questions Observatory exposes portfolio state, stewardship, freshness, next useful work, assumptions, evidence connections, action/learning lineage, and public answer state. Foundry discovers relevant evidence, SISO Knowledge preserves it, and Evidence Engines transform and adjudicate it.
 - The canonical God Questions infrastructure constitution is published at `/docs/god-questions-infrastructure.html`. Its first tranche extends the existing Work/Release/Snapshot/Event projection rather than creating a second question registry; it explicitly defers contradiction adjudication, autonomous execution, capability promotion, counterfactual portfolio optimization, and a mature Learning Capital Market until their dependency gates are evidenced.
-- GQ-001, GQ-002, and GQ-009 are heterogeneous registry fixtures for the first tranche. GQ-009 exercised the approved demand-to-observation-to-learning boundary and returned an honest `no_change` result; it remains `researching`, with challenged assumptions and no accepted public Answer Release.
+- The public estate reconciliation model at `/docs/estate-reconciliation.html` routes four reviewed public repository observations to two existing identity links, one historical no-change outcome, and one owner-and-license-review deferral. It creates no Work or Source Inventory and makes no source-repository mutation or whole-estate completeness claim.
+- GQ-001, GQ-002, and GQ-009 are heterogeneous registry fixtures for the first tranche. GQ-009 now also carries the estate reconciliation evidence connection and an honest `no_change`, `not_adjudicated` Learning Return; it remains `researching`, with challenged assumptions and no accepted public Answer Release.
 - The SISO mission charter records the durable public direction while explicitly keeping the Great Library as the identity, lineage, and reading surface rather than the company or operating business engine.
 - The question-driven research architecture now defines a ten-pass first-principles loop, global/domain/question/action assumption dependencies, targeted book reading, claim and contradiction ledgers, ADR and experiment implications, Answer Releases, and watch triggers.
 - The reusable Frontier Question dossier includes a worked composable-CRM example and an explicit rights boundary between publicly observable product behavior and reusable source code.
 - The 100 Million Token Program preserves fifteen ecosystem investments as a dependency-aware portfolio, while its accepted build-first operating plan prioritizes outsider-ready Agent Stack distribution, resumable Foundry discovery, rights-aware Library lineage, and repeated capability promotion. Package-specific safety and authority boundaries still apply.
 - The Research page explicitly distinguishes versioned-answer contracts and metadata seed Releases from accepted Answer Releases; a positive and negative generated-site assertion protect that boundary.
-- The Library's selected self-release is `1.0.0+ea7f0e4` (`gls:release:c89fe623-8b4b-49d1-9fa0-e0b6cb91c291`), pinned to the verified implementation checkpoint `ea7f0e4609517453c0ae72a07fcd1b256e0e3aed`.
+- The Library's selected self-release is `1.1.0+0066cfa` (`gls:release:21bac572-08ee-45e3-9cd0-697a828dedd4`), pinned to the verified implementation checkpoint `0066cfa3b30f8cefedffee09e1c86ae928f6b0cc`.
 - The latest active state is always the highest-numbered immutable whole-Library Snapshot. Do not infer “current” from filename order alone; compare numeric `version` fields.
 
 ## Operating boundaries
@@ -59,7 +60,7 @@ The gate validates schemas and immutable history, runs ten promotion-contract, t
 
 1. Read `AGENTS.md`, then the latest whole-Library Snapshot.
 2. Read `site/intelligence.json` for active initiatives, reserved paths, recent Events, ADRs, and registry history before opening a lane.
-3. Use `site/estate.json` to see which public repositories have released source, linked homes, or staging homes.
+3. Use `site/estate.json` for selected public repository homes and `docs/estate-reconciliation.html` for the bounded link-existing, no-change, and deferred decision model.
 4. Continue only from evidenced source inventories or a named Work; do not bulk-import the old Agent Base or the dirty local Knowledge data plane.
 5. Measure first-tranche authoring overhead and decision-path usefulness across GQ-001, GQ-002, and GQ-009 before adding fields or new programmed questions.
 6. Route a public-safe Observation Receipt from an independently owned runtime through Evidence Engine adjudication before claiming that the action bridge is operationally proven beyond fixtures and the bounded GQ-009 dogfood loop.

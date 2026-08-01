@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:dc9d1aef-28e7-4d5a-8a97-3eee45be4cf1",
+  "occurred_at": "2026-08-02T05:14:55+07:00",
+  "recorded_at": "2026-08-02T05:14:55+07:00",
+  "immutable": true,
+  "entry_type": "initiative_completed",
+  "thread": {
+    "id": "gls:thread:c309e9d3-2d27-470c-b99f-c7a0ac469151",
+    "name": "Public estate reconciliation",
+    "kind": "initiative"
+  },
+  "status": "completed",
+  "title": "Public estate reconciliation completed",
+  "summary": "The Great Library now exposes a bounded public reconciliation model and GQ-009 metadata successor that route four public repository observations to existing identities, no-change outcomes, or explicit owner and license-review deferral without importing private estate evidence.",
+  "intent": "Close the smallest public-safe successor with immutable lineage while preserving repository-owner authority, reuse-rights review, independent Research organs, and honest GQ-009 answer maturity.",
+  "reasoning": [
+    "Project OS and Agent Stack observations resolve to existing Work identity; the Stack observation does not silently supersede its separately evidenced selected Release revision.",
+    "The older Agent Base revision remains source evidence under existing Runtime and warehouse lineage, while Oracle Streaming remains outside the registry behind owner and license review.",
+    "The cohort justifies neither a new Work nor a Source Inventory: link-existing, historical no-change, and deferred outcomes are already expressible through the canonical Library and GQ-009 contracts.",
+    "The returned learning is a no-change, not-adjudicated proposal. GQ-009 remains researching and no Answer Release or capability promotion is claimed."
+  ],
+  "changes": [
+    {
+      "kind": "commit",
+      "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/0066cfa3b30f8cefedffee09e1c86ae928f6b0cc",
+      "summary": "Published the authored reconciliation model, GQ-009 learning successor, deterministic generator integration, public projections, and contract markers."
+    },
+    {
+      "kind": "document",
+      "reference": "docs/estate-reconciliation.html",
+      "summary": "Defines the observation, identity, owner and rights review, disposition, public evidence, organ boundary, and next-gate model with four exact outcomes."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "gls:release:df8a236d-b092-4d51-9e17-d1016671db64",
+      "summary": "Pins the GQ-009 public estate reconciliation Learning Return as question-program metadata, not an Answer Release."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "gls:release:21bac572-08ee-45e3-9cd0-697a828dedd4",
+      "summary": "Pins the Great Library authored model and deterministic reading surfaces to the exact implementation checkpoint."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "gls:snapshot:5929e723-9789-4a33-af63-ba472650a522",
+      "summary": "Whole Library V33 selects the two successors while preserving twenty-three unaffected Work selections and the Agent Stack Assembly."
+    },
+    {
+      "kind": "test",
+      "reference": "repo-check:estate-reconciliation:0066cfa",
+      "summary": "The complete Library verification and publication-safety gate passed, followed by independent Luna privacy and cold-reader review."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
+      "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+      "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae"
+    ],
+    "release_ids": [
+      "gls:release:df8a236d-b092-4d51-9e17-d1016671db64",
+      "gls:release:21bac572-08ee-45e3-9cd0-697a828dedd4"
+    ],
+    "snapshot_ids": [
+      "gls:snapshot:5929e723-9789-4a33-af63-ba472650a522"
+    ],
+    "repository_urls": [
+      "https://github.com/Lordsisodia/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "Great Library estate reconciliation Sol maintainer",
+    "branch": "codex/estate-reconciliation-20260802",
+    "reserved_paths": [
+      "docs/estate-reconciliation.html",
+      "docs/README.md",
+      "CURRENT_STATE.md",
+      "registry/works/frontier-question-gq-009.json",
+      "registry/releases/frontier-question-gq-009-estate-reconciliation-v1.json",
+      "registry/releases/great-library-estate-reconciliation-*.json",
+      "registry/snapshots/whole-library-v33.json",
+      "registry/events/2026-08-02-estate-reconciliation-*.json",
+      "scripts/build.mjs",
+      "scripts/check-site.mjs",
+      "tests/god-questions-infrastructure.test.mjs",
+      "site/"
+    ]
+  },
+  "visibility": "public",
+  "predecessor_event_id": "gls:event:9b09caed-89b4-4c1e-8829-b58cbddeb115",
+  "evidence": [
+    {
+      "kind": "registry_validation",
+      "reference": "registry:snapshot:whole-library-v33",
+      "observed_at": "2026-08-02",
+      "summary": "V33 selects twenty-five Work Releases and one Assembly, replaces exactly two V32 selections, and leaves no active initiative."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:estate-reconciliation:0066cfa",
+      "observed_at": "2026-08-02",
+      "summary": "Full verification, publication scanning, candidate revision checks, and independent privacy review passed at the exact public implementation checkpoint."
+    },
+    {
+      "kind": "documentation",
+      "reference": "docs/estate-reconciliation.html",
+      "observed_at": "2026-08-02",
+      "summary": "The public model states all four dispositions, organ boundaries, rights limits, forbidden claims, GQ-009 maturity, and exact reopening gates without publishing private estate payloads."
+    }
+  ],
+  "next_actions": [
+    "Measure whether cold readers repeatedly reproduce the public dispositions without private context before adding any new schema field or automation.",
+    "Reopen the deferred candidate only after its owner provides public rights, boundary, consumer, steward, verification, and release evidence.",
+    "Route one independently adjudicated runtime receipt before treating the GQ-009 action bridge as operationally proven beyond bounded Library dogfood."
+  ]
+}

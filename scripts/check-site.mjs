@@ -96,10 +96,11 @@ if (!intelligence.events?.some((event) => event.scope?.snapshot_ids?.includes("g
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "24.0.0")) errors.push("intelligence.json: automatic registry changelog is missing V24");
 if (!intelligence.events?.some((event) => event.id === "gls:event:9c8e46f9-0a2a-4396-bda1-f2a3967c2cb9" && event.status === "completed" && event.scope?.snapshot_ids?.includes("gls:snapshot:a7a99ae1-a2e2-4e44-8fb3-c0235a35023b"))) errors.push("intelligence.json: God Questions infrastructure completion lineage is missing");
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "32.0.0" && change.id === "gls:snapshot:a7a99ae1-a2e2-4e44-8fb3-c0235a35023b")) errors.push("intelligence.json: automatic registry changelog is missing V32");
-if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 67) errors.push("intelligence.json: expected 67 immutable Releases at V32 closeout");
-if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 32) errors.push("intelligence.json: expected 32 immutable Snapshots at V32 closeout");
-if (intelligence.counts?.events !== 22 || intelligence.counts?.active_initiatives !== 1) errors.push("intelligence.json: expected the estate reconciliation reservation to be the sole active initiative");
-if (!intelligence.active_initiatives?.some((initiative) => initiative.event_id === "gls:event:9b09caed-89b4-4c1e-8829-b58cbddeb115" && initiative.thread_id === "gls:thread:c309e9d3-2d27-470c-b99f-c7a0ac469151")) errors.push("intelligence.json: estate reconciliation reservation is missing from active initiatives");
+if (!intelligence.events?.some((event) => event.id === "gls:event:dc9d1aef-28e7-4d5a-8a97-3eee45be4cf1" && event.status === "completed" && event.predecessor_event_id === "gls:event:9b09caed-89b4-4c1e-8829-b58cbddeb115" && event.scope?.snapshot_ids?.includes("gls:snapshot:5929e723-9789-4a33-af63-ba472650a522"))) errors.push("intelligence.json: estate reconciliation completion lineage is missing");
+if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "33.0.0" && change.id === "gls:snapshot:5929e723-9789-4a33-af63-ba472650a522")) errors.push("intelligence.json: automatic registry changelog is missing V33");
+if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 69) errors.push("intelligence.json: expected 69 immutable Releases at V33 closeout");
+if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 33) errors.push("intelligence.json: expected 33 immutable Snapshots at V33 closeout");
+if (intelligence.counts?.events !== 23 || intelligence.counts?.active_initiatives !== 0) errors.push("intelligence.json: expected 23 Events and zero active initiatives at V33 closeout");
 
 const frontierQuestions = [
   ["GQ-001", "frontier-question-agent-workspace"],
@@ -121,7 +122,7 @@ if (researchIndex.includes("explicit evidence scopes, and versioned answers.")) 
 for (const [field, expected] of Object.entries({ questions: 7, programmed_questions: 3, assumptions: 7, evidence_connections: 10, challenge_edges: 2, action_learning_links: 8, public_answers_released: 0 })) {
   if (researchProjection.counts?.[field] !== expected) errors.push(`research.json: expected ${field}=${expected}, found ${researchProjection.counts?.[field]}`);
 }
-if (researchProjection.snapshot_version !== "32.0.0") errors.push("research.json: must identify the selected V32 source snapshot");
+if (researchProjection.snapshot_version !== "33.0.0" || researchProjection.snapshot_id !== "gls:snapshot:5929e723-9789-4a33-af63-ba472650a522") errors.push("research.json: must identify the selected V33 estate reconciliation snapshot");
 for (const [questionId, state, assumptions, evidence, links] of [
   ["GQ-001", "partial", 2, 2, 1],
   ["GQ-002", "answered", 2, 2, 1],
@@ -131,6 +132,7 @@ for (const [questionId, state, assumptions, evidence, links] of [
   if (!question) { errors.push(`research.json: missing ${questionId}`); continue; }
   if (question.research_state !== state) errors.push(`research.json: ${questionId} research state changed from ${state}`);
   if (question.selected_release?.release_kind !== "question_program_metadata" || question.selected_release?.public_answer_state !== "not_released" || question.selected_release?.artifact_count !== 1) errors.push(`research.json: ${questionId} program metadata Release is missing or inflated into a public answer`);
+  if (questionId === "GQ-009" && question.selected_release?.id !== "gls:release:df8a236d-b092-4d51-9e17-d1016671db64") errors.push("research.json: GQ-009 estate reconciliation program Release is not selected");
   if (question.authoring_metrics?.assumptions !== assumptions || question.authoring_metrics?.evidence_connections !== evidence || question.authoring_metrics?.action_learning_links !== links) errors.push(`research.json: ${questionId} program fixture counts changed unexpectedly`);
 }
 for (const question of researchProjection.questions ?? []) {

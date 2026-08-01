@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-01T22:02:31.000Z",
+  "generated_at": "2026-08-01T22:14:55.000Z",
   "base_path": "/",
   "schema_version": "1.0.0",
-  "snapshot_id": "gls:snapshot:a7a99ae1-a2e2-4e44-8fb3-c0235a35023b",
-  "snapshot_version": "32.0.0",
+  "snapshot_id": "gls:snapshot:5929e723-9789-4a33-af63-ba472650a522",
+  "snapshot_version": "33.0.0",
   "infrastructure_contract_url": "/docs/god-questions-infrastructure.html",
   "counts": {
     "questions": 7,
@@ -572,10 +572,10 @@
       "refresh_policy": "Re-answer when a real question cannot use the contract, a source or action interface changes, three-question evaluation evidence lands, or measured operating overhead exceeds the value created.",
       "publication_boundary": "public_metadata_only",
       "selected_release": {
-        "id": "gls:release:0fea28b2-f6b3-4031-859c-27e89943f68c",
+        "id": "gls:release:df8a236d-b092-4d51-9e17-d1016671db64",
         "release_kind": "question_program_metadata",
-        "version": "program-metadata-1.0.0+ea7f0e4",
-        "released_at": "2026-08-02T02:08:30+07:00",
+        "version": "program-metadata-1.1.0+0066cfa",
+        "released_at": "2026-08-02T05:13:21+07:00",
         "artifact_count": 1,
         "public_answer_state": "not_released",
         "public_answer_note": "Not released — the selected Release contains question-program metadata, not an answer artifact."

@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:21bac572-08ee-45e3-9cd0-697a828dedd4",
+  "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+  "release_kind": "general",
+  "version": "1.1.0+0066cfa",
+  "title": "Public estate reconciliation model",
+  "released_at": "2026-08-02T05:13:21+07:00",
+  "observed_at": "2026-08-02",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:8f4bed21-bc71-4a4c-9718-db12d36cd2c4",
+      "kind": "source_archive",
+      "locator": "https://github.com/Lordsisodia/great-library-of-siso/archive/0066cfa3b30f8cefedffee09e1c86ae928f6b0cc.tar.gz",
+      "revision": "0066cfa3b30f8cefedffee09e1c86ae928f6b0cc",
+      "availability": "public",
+      "owner": "Lordsisodia",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The pinned public registry source carries the repository MIT license.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/Lordsisodia/great-library-of-siso/blob/0066cfa3b30f8cefedffee09e1c86ae928f6b0cc/LICENSE",
+            "observed_at": "2026-08-02",
+            "summary": "The MIT license is present at the exact public implementation checkpoint."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "0066cfa3b30f8cefedffee09e1c86ae928f6b0cc"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The authored model and its deterministic integration are pinned to an exact public commit.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/0066cfa3b30f8cefedffee09e1c86ae928f6b0cc",
+          "observed_at": "2026-08-02",
+          "summary": "The exact implementation checkpoint resolves from the public branch."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "A public commit-scoped archive locator is recorded.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/archive/0066cfa3b30f8cefedffee09e1c86ae928f6b0cc.tar.gz",
+          "observed_at": "2026-08-02",
+          "summary": "The source archive is pinned by immutable commit revision."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The Library validates and builds the authored model, GQ-009 successor, and public reader paths deterministically.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "repo-check:estate-reconciliation:0066cfa",
+          "observed_at": "2026-08-02",
+          "summary": "The complete pre-release Library gate and independent privacy review passed."
+        }
+      ]
+    },
+    "installable": {
+      "state": "verified",
+      "reason": "A clean Node installation validates and builds the static Library.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:estate-reconciliation:0066cfa",
+          "observed_at": "2026-08-02",
+          "summary": "The complete npm verification gate passed at the exact public checkpoint."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The public repository remains source-complete and MIT licensed.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso",
+          "observed_at": "2026-08-02",
+          "summary": "Public source includes the registry, contracts, authored model, generator, tests, and generated outputs."
+        }
+      ]
+    },
+    "portable": {
+      "state": "verified",
+      "reason": "The release includes no private estate payload, machine path, client data, raw locator hash, private topology, or source-repository mutation.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:estate-reconciliation:0066cfa",
+          "observed_at": "2026-08-02",
+          "summary": "Repository-wide publication scanning and independent privacy review passed."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:estate-reconciliation:0066cfa",
+      "observed_at": "2026-08-02",
+      "summary": "The Great Library now exposes a bounded public estate reconciliation model with four owner-reviewed outcomes, stable identity reuse, explicit deferral, and an honest GQ-009 no-change Learning Return."
+    }
+  ]
+}

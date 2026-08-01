@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:df8a236d-b092-4d51-9e17-d1016671db64",
+  "work_id": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
+  "release_kind": "question_program_metadata",
+  "version": "program-metadata-1.1.0+0066cfa",
+  "title": "GQ-009 public estate reconciliation learning — not an Answer Release",
+  "released_at": "2026-08-02T05:13:21+07:00",
+  "observed_at": "2026-08-02",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:ae6e333c-4947-4967-861b-b193ada69f0e",
+      "kind": "registry_metadata",
+      "locator": "https://github.com/Lordsisodia/great-library-of-siso/blob/0066cfa3b30f8cefedffee09e1c86ae928f6b0cc/registry/works/frontier-question-gq-009.json",
+      "revision": "0066cfa3b30f8cefedffee09e1c86ae928f6b0cc",
+      "availability": "public",
+      "owner": "SISO Open Source Foundation",
+      "ownership": "siso",
+      "license": {
+        "status": "not_applicable",
+        "spdx": "NONE",
+        "reason": "The artifact is publication-safe question-program metadata; source-review receipts and owner-held evidence remain outside the Library.",
+        "evidence": []
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "0066cfa3b30f8cefedffee09e1c86ae928f6b0cc"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The GQ-009 estate reconciliation metadata is pinned to an exact public implementation commit.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/0066cfa3b30f8cefedffee09e1c86ae928f6b0cc",
+          "observed_at": "2026-08-02",
+          "summary": "The authored model, GQ-009 Work successor, generator integration, and generated readers resolve at the exact public branch checkpoint."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "not_applicable",
+      "reason": "This Release identifies registry metadata rather than a standalone answer or corpus archive.",
+      "evidence": []
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The manifest resolves to GQ-009 and its deterministic public human and agent projections.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "repo-check:estate-reconciliation:0066cfa",
+          "observed_at": "2026-08-02",
+          "summary": "Registry validation, God Questions contracts, generated-site checks, and public-reference checks passed."
+        }
+      ]
+    },
+    "installable": {
+      "state": "not_applicable",
+      "reason": "Question-program metadata is consumed by the Library generator and is not independently installed.",
+      "evidence": []
+    },
+    "forkable": {
+      "state": "not_applicable",
+      "reason": "This record does not claim a separately forkable software or answer payload.",
+      "evidence": []
+    },
+    "portable": {
+      "state": "verified",
+      "reason": "Only stable IDs, public commits, safe hashes, rights states, dispositions, and bounded summaries are published.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:estate-reconciliation:0066cfa",
+          "observed_at": "2026-08-02",
+          "summary": "Independent privacy review and the repository publication scanner found no private paths, topology, credentials, client identifiers, or raw private evidence."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:estate-reconciliation:0066cfa",
+      "observed_at": "2026-08-02",
+      "summary": "GQ-009 remains researching after a public cohort resolved to link-existing, no-change, or deferred outcomes; the Learning Return is no-change and not adjudicated, with no Answer Release or capability promotion."
+    }
+  ]
+}
