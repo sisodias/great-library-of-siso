@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T17:28:12.000Z",
+  "generated_at": "2026-08-01T17:33:07.000Z",
   "base_path": "/",
   "works": [
     {
@@ -3322,11 +3322,49 @@
   },
   "intelligence": {
     "counts": {
-      "events": 19,
+      "events": 20,
       "decisions": 4,
-      "active_initiatives": 0,
+      "active_initiatives": 1,
       "registry_changes": 94
     },
-    "active_initiatives": []
+    "active_initiatives": [
+      {
+        "event_id": "gls:event:43f26801-1225-4650-90eb-7a1362760f8d",
+        "thread_id": "gls:thread:god-questions-infrastructure-program",
+        "name": "God Questions infrastructure program",
+        "status": "active",
+        "title": "God Questions infrastructure program started",
+        "intent": "Build the reusable infrastructure that makes God Questions visible, evidence-connected, assumption-aware, agent-addressable, action-linked, and capable of returning verified learning without attempting to research every question or centralize every SISO system inside the Library.",
+        "occurred_at": "2026-08-02T00:33:07+07:00",
+        "owner": "God Questions infrastructure Sol maintainer",
+        "branch": "codex/god-questions-infrastructure-program-20260802",
+        "reserved_paths": [
+          "docs/god-questions-infrastructure.html",
+          "docs/README.md",
+          "schemas/god-question-*.schema.json",
+          "registry/works/frontier-question-gq-001.json",
+          "registry/works/frontier-question-gq-002.json",
+          "registry/works/frontier-question-gq-009.json",
+          "registry/releases/frontier-question-gq-001-*",
+          "registry/releases/frontier-question-gq-002-*",
+          "registry/releases/frontier-question-gq-009-*",
+          "registry/releases/great-library-god-questions-infrastructure-*",
+          "registry/snapshots/whole-library-v32.json",
+          "registry/events/2026-08-02-god-questions-infrastructure-program-*.json",
+          "scripts/build.mjs",
+          "scripts/check-site.mjs",
+          "scripts/verify.mjs",
+          "tests/god-questions-*.test.mjs",
+          "tests/research-contract.test.mjs",
+          "site/",
+          "CURRENT_STATE.md"
+        ],
+        "next_actions": [
+          "Write and adversarially review the canonical God Questions infrastructure super-document with explicit ownership, object contracts, dependency order, failure modes, and build gates.",
+          "Translate only the stable first tranche into machine-verifiable schemas, fixtures, generated projections, and checks using existing research rather than broad new probes.",
+          "Continuously commit and push reviewable checkpoints, then publish exact Releases, a successor Snapshot, completion Event, current-state receipt, and live deployment when the verified tranche is complete."
+        ]
+      }
+    ]
   }
 }

@@ -1,13 +1,51 @@
 {
-  "generated_at": "2026-08-01T17:28:12.000Z",
+  "generated_at": "2026-08-01T17:33:07.000Z",
   "base_path": "/",
   "counts": {
-    "events": 19,
+    "events": 20,
     "decisions": 4,
-    "active_initiatives": 0,
+    "active_initiatives": 1,
     "registry_changes": 94
   },
-  "active_initiatives": [],
+  "active_initiatives": [
+    {
+      "event_id": "gls:event:43f26801-1225-4650-90eb-7a1362760f8d",
+      "thread_id": "gls:thread:god-questions-infrastructure-program",
+      "name": "God Questions infrastructure program",
+      "status": "active",
+      "title": "God Questions infrastructure program started",
+      "intent": "Build the reusable infrastructure that makes God Questions visible, evidence-connected, assumption-aware, agent-addressable, action-linked, and capable of returning verified learning without attempting to research every question or centralize every SISO system inside the Library.",
+      "occurred_at": "2026-08-02T00:33:07+07:00",
+      "owner": "God Questions infrastructure Sol maintainer",
+      "branch": "codex/god-questions-infrastructure-program-20260802",
+      "reserved_paths": [
+        "docs/god-questions-infrastructure.html",
+        "docs/README.md",
+        "schemas/god-question-*.schema.json",
+        "registry/works/frontier-question-gq-001.json",
+        "registry/works/frontier-question-gq-002.json",
+        "registry/works/frontier-question-gq-009.json",
+        "registry/releases/frontier-question-gq-001-*",
+        "registry/releases/frontier-question-gq-002-*",
+        "registry/releases/frontier-question-gq-009-*",
+        "registry/releases/great-library-god-questions-infrastructure-*",
+        "registry/snapshots/whole-library-v32.json",
+        "registry/events/2026-08-02-god-questions-infrastructure-program-*.json",
+        "scripts/build.mjs",
+        "scripts/check-site.mjs",
+        "scripts/verify.mjs",
+        "tests/god-questions-*.test.mjs",
+        "tests/research-contract.test.mjs",
+        "site/",
+        "CURRENT_STATE.md"
+      ],
+      "next_actions": [
+        "Write and adversarially review the canonical God Questions infrastructure super-document with explicit ownership, object contracts, dependency order, failure modes, and build gates.",
+        "Translate only the stable first tranche into machine-verifiable schemas, fixtures, generated projections, and checks using existing research rather than broad new probes.",
+        "Continuously commit and push reviewable checkpoints, then publish exact Releases, a successor Snapshot, completion Event, current-state receipt, and live deployment when the verified tranche is complete."
+      ]
+    }
+  ],
   "decisions": [
     {
       "schema_version": "1.0.0",
@@ -374,6 +412,124 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:43f26801-1225-4650-90eb-7a1362760f8d",
+      "occurred_at": "2026-08-02T00:33:07+07:00",
+      "recorded_at": "2026-08-02T00:33:07+07:00",
+      "immutable": true,
+      "entry_type": "initiative_started",
+      "thread": {
+        "id": "gls:thread:god-questions-infrastructure-program",
+        "name": "God Questions infrastructure program",
+        "kind": "initiative"
+      },
+      "status": "active",
+      "title": "God Questions infrastructure program started",
+      "summary": "A dedicated GPT-5.6 Sol maintainer will turn GQ-009 and the existing research architecture into a tracked, buildable God Questions infrastructure program, using existing SISO research as fixtures and bounded Luna or MiniMax subagents for supporting work.",
+      "intent": "Build the reusable infrastructure that makes God Questions visible, evidence-connected, assumption-aware, agent-addressable, action-linked, and capable of returning verified learning without attempting to research every question or centralize every SISO system inside the Library.",
+      "reasoning": [
+        "The Observatory and GQ-009 establish identity and visible portfolio state, but the next valuable step is a durable infrastructure specification plus the smallest machine-verifiable contracts that can be implemented incrementally.",
+        "Existing GQ-001, GQ-002, CRM, Foundry, Knowledge, book, repository, ADR, and operational material should be aligned as fixtures before commissioning broad new research.",
+        "One long-running Sol owner should preserve architectural coherence, review cheap-agent contributions, verify changes, and maintain GitHub lineage rather than allowing many workers to compete over the canonical Library surface."
+      ],
+      "changes": [
+        {
+          "kind": "coordination",
+          "reference": "gls:thread:god-questions-infrastructure-program",
+          "summary": "Reserved a non-overlapping long-running lane for the infrastructure super-document, contracts, generated projections, verification, immutable Library lineage, and successor selection."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+          "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso"
+        ]
+      },
+      "coordination": {
+        "owner": "God Questions infrastructure Sol maintainer",
+        "branch": "codex/god-questions-infrastructure-program-20260802",
+        "reserved_paths": [
+          "docs/god-questions-infrastructure.html",
+          "docs/README.md",
+          "schemas/god-question-*.schema.json",
+          "registry/works/frontier-question-gq-001.json",
+          "registry/works/frontier-question-gq-002.json",
+          "registry/works/frontier-question-gq-009.json",
+          "registry/releases/frontier-question-gq-001-*",
+          "registry/releases/frontier-question-gq-002-*",
+          "registry/releases/frontier-question-gq-009-*",
+          "registry/releases/great-library-god-questions-infrastructure-*",
+          "registry/snapshots/whole-library-v32.json",
+          "registry/events/2026-08-02-god-questions-infrastructure-program-*.json",
+          "scripts/build.mjs",
+          "scripts/check-site.mjs",
+          "scripts/verify.mjs",
+          "tests/god-questions-*.test.mjs",
+          "tests/research-contract.test.mjs",
+          "site/",
+          "CURRENT_STATE.md"
+        ]
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry/works/frontier-question-gq-009.json",
+          "observed_at": "2026-08-02",
+          "summary": "GQ-009 defines the standing decision, success criteria, falsifiers, evidence gaps, watch triggers, publication boundary, and answer shape for the God Questions operating architecture."
+        },
+        {
+          "kind": "documentation",
+          "reference": "docs/question-driven-research.html",
+          "observed_at": "2026-08-02",
+          "summary": "The existing question-driven research architecture defines the ten-pass loop, assumption hierarchy, source handling, Answer Release lineage, and reopening behavior the infrastructure must operationalize."
+        },
+        {
+          "kind": "documentation",
+          "reference": "workspace-handoff:glos-100m-frontier-joint-lineage-20260801",
+          "observed_at": "2026-08-02",
+          "summary": "The joint lineage design defines the typed, approval-gated bridge from epistemic demand through execution receipts and learning returns without assigning runtime or truth authority to the Library."
+        }
+      ],
+      "next_actions": [
+        "Write and adversarially review the canonical God Questions infrastructure super-document with explicit ownership, object contracts, dependency order, failure modes, and build gates.",
+        "Translate only the stable first tranche into machine-verifiable schemas, fixtures, generated projections, and checks using existing research rather than broad new probes.",
+        "Continuously commit and push reviewable checkpoints, then publish exact Releases, a successor Snapshot, completion Event, current-state receipt, and live deployment when the verified tranche is complete."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+          "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+            "name": "Research",
+            "library_url": "/works/research/"
+          },
+          {
+            "id": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
+            "name": "GQ-009 · The God Questions Observatory",
+            "library_url": "/works/frontier-question-god-questions-infrastructure/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",
