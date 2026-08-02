@@ -112,9 +112,11 @@ if (!intelligence.events?.some((event) => event.id === "gls:event:dc9d1aef-28e7-
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "33.0.0" && change.id === "gls:snapshot:5929e723-9789-4a33-af63-ba472650a522")) errors.push("intelligence.json: automatic registry changelog is missing V33");
 if (!intelligence.events?.some((event) => event.id === "gls:event:3f79b614-bd24-4b14-89dd-6e822ffc1720" && event.status === "completed" && event.predecessor_event_id === "gls:event:eda7d606-a2c9-4919-83cc-c7358d19fb2f" && event.scope?.snapshot_ids?.includes("gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b"))) errors.push("intelligence.json: Foundry Agency intelligence completion lineage is missing");
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "34.0.0" && change.id === "gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b")) errors.push("intelligence.json: automatic registry changelog is missing V34");
-if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 71) errors.push("intelligence.json: expected 71 immutable Releases at V34 closeout");
-if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 34) errors.push("intelligence.json: expected 34 immutable Snapshots at V34 closeout");
-if (intelligence.counts?.events !== 25 || intelligence.counts?.active_initiatives !== 0) errors.push("intelligence.json: expected 25 Events and zero active initiatives at V34 closeout");
+if (!intelligence.events?.some((event) => event.id === "gls:event:4d237823-29e9-4dc1-bcc4-0ebd952ab2b2" && event.status === "completed" && event.predecessor_event_id === "gls:event:3f79b614-bd24-4b14-89dd-6e822ffc1720" && event.scope?.snapshot_ids?.includes("gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a"))) errors.push("intelligence.json: Foundry Agency value-matrix completion lineage is missing");
+if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "35.0.0" && change.id === "gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a")) errors.push("intelligence.json: automatic registry changelog is missing V35");
+if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 73) errors.push("intelligence.json: expected 73 immutable Releases at V35 closeout");
+if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 35) errors.push("intelligence.json: expected 35 immutable Snapshots at V35 closeout");
+if (intelligence.counts?.events !== 26 || intelligence.counts?.active_initiatives !== 0) errors.push("intelligence.json: expected 26 Events and zero active initiatives at V35 closeout");
 if (intelligence.active_initiatives?.some((initiative) => initiative.thread_id === "gls:thread:foundry-agency-intelligence")) errors.push("intelligence.json: completed Foundry Agency intelligence initiative remains active");
 
 const frontierQuestions = [
@@ -137,7 +139,7 @@ if (researchIndex.includes("explicit evidence scopes, and versioned answers.")) 
 for (const [field, expected] of Object.entries({ questions: 7, programmed_questions: 3, assumptions: 7, evidence_connections: 10, challenge_edges: 2, action_learning_links: 8, public_answers_released: 0 })) {
   if (researchProjection.counts?.[field] !== expected) errors.push(`research.json: expected ${field}=${expected}, found ${researchProjection.counts?.[field]}`);
 }
-if (researchProjection.snapshot_version !== "34.0.0" || researchProjection.snapshot_id !== "gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b") errors.push("research.json: must identify the selected V34 Foundry Agency intelligence snapshot");
+if (researchProjection.snapshot_version !== "35.0.0" || researchProjection.snapshot_id !== "gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a") errors.push("research.json: must identify the selected V35 Foundry Agency value-matrix snapshot");
 for (const [questionId, state, assumptions, evidence, links] of [
   ["GQ-001", "partial", 2, 2, 1],
   ["GQ-002", "answered", 2, 2, 1],

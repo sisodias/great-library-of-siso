@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:47922651-40fb-4da4-9d7c-5635957e9d19",
+  "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+  "version": "0.4.0+233edef",
+  "title": "SISO Foundry Agency OS value matrix",
+  "released_at": "2026-08-02T23:33:05+07:00",
+  "observed_at": "2026-08-02",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:aa5d3776-3c82-412a-af1c-9d5da3583cd2",
+      "kind": "source_archive",
+      "locator": "https://github.com/Lordsisodia/siso-foundry/archive/233edef7408afb95571ecd25f64189dfd92a6860.tar.gz",
+      "revision": "233edef7408afb95571ecd25f64189dfd92a6860",
+      "availability": "public",
+      "owner": "Lordsisodia",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The Foundry software and authored value-matrix package are MIT licensed; upstream repositories and external data-plane assets retain their own rights.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/Lordsisodia/siso-foundry/blob/233edef7408afb95571ecd25f64189dfd92a6860/LICENSE",
+            "observed_at": "2026-08-02",
+            "summary": "The MIT source license resolves at the exact value-matrix release commit."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "233edef7408afb95571ecd25f64189dfd92a6860"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The value matrix and GitHub release are pinned to an exact public commit.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.4.0",
+          "observed_at": "2026-08-02",
+          "summary": "The public 0.4.0 release resolves at the canonical value-matrix revision."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "The public code and intelligence package have a commit-scoped source archive; operational corpus payloads remain outside Git.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/archive/233edef7408afb95571ecd25f64189dfd92a6860.tar.gz",
+          "observed_at": "2026-08-02",
+          "summary": "The immutable source archive resolves."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The matrix is machine-readable and carries its scoring model, evidence states, routes, proof gates and source-universe boundary.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/blob/233edef7408afb95571ecd25f64189dfd92a6860/intelligence/agency/value-matrix.json",
+          "observed_at": "2026-08-02",
+          "summary": "Twenty repository-by-use-case-by-route entries record value, feasibility, priority, evidence maturity, authority groups, agent operations and falsifiable next gates."
+        }
+      ]
+    },
+    "installable": {
+      "state": "verified",
+      "reason": "The repository gate validates source, campaigns, Agency manifests, score arithmetic, evidence thresholds and publication safety.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-foundry:233edef7408afb95571ecd25f64189dfd92a6860",
+          "observed_at": "2026-08-02",
+          "summary": "Thirty Python files compiled, three campaign tests passed, all matrix formula and God Source evidence gates passed, and the publication scan passed."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The source, scoring contract, first decision tranche and verifier are public and MIT licensed.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/blob/233edef7408afb95571ecd25f64189dfd92a6860/intelligence/agency/VALUE-MATRIX.md",
+          "observed_at": "2026-08-02",
+          "summary": "The human-readable matrix explains the God Source definition, decision tranche, platform primitives, evidence limitations and continuation contract."
+        }
+      ]
+    },
+    "portable": {
+      "state": "experimental",
+      "reason": "The decision contract and publication-safe evidence are portable; the underlying 9,636-repository ledger and larger operational corpora remain externally owned and unreleased.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-foundry:233edef7408afb95571ecd25f64189dfd92a6860",
+          "observed_at": "2026-08-02",
+          "summary": "The release publishes scored decisions and source receipts without copying databases, raw observations, client data, private topology or upstream source trees."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.4.0",
+      "observed_at": "2026-08-02",
+      "summary": "Foundry 0.4.0 promotes the first cross-agency value matrix from the recovered 9,636-repository evidence universe, with twenty scored applications, twelve evidence-qualified God Sources and zero outcome-proven claims."
+    }
+  ]
+}

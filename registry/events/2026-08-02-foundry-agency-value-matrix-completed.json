@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:4d237823-29e9-4dc1-bcc4-0ebd952ab2b2",
+  "occurred_at": "2026-08-02T23:33:05+07:00",
+  "recorded_at": "2026-08-02T23:33:05+07:00",
+  "immutable": true,
+  "entry_type": "initiative_completed",
+  "thread": {
+    "id": "gls:thread:foundry-agency-intelligence",
+    "name": "Foundry Agency Intelligence",
+    "kind": "initiative"
+  },
+  "status": "completed",
+  "title": "Foundry Agency OS value matrix released and selected",
+  "summary": "Foundry 0.4.0 turns the recovered 9,636-repository evidence universe into a reusable repository-by-use-case-by-route decision contract; Whole Library V35 selects the exact Foundry and Library releases that publish the first twenty cross-agency applications.",
+  "intent": "Make GitHub source application value explicit for SISO Agency OS, distinguish complete God Sources from platform primitives and interfaces, and stop repeating broad repository research without a business use case, ownership route, agent surface and proof gate.",
+  "reasoning": [
+    "The prior Foundry release made the corpus and mission durable but did not provide the cross-agency scored decision system the product needs.",
+    "Repository quality is not a universal verdict; the stable decision unit is repository × SISO use case × adoption route.",
+    "Gross value and feasibility remain separate so restrictive rights, tenancy gaps or integration burden do not erase strategic value or masquerade as adoption readiness.",
+    "Twelve entries clear the evidence-qualified God Source rule, while Meilisearch, Qdrant, Keycloak and OpenFGA remain platform primitives and AionUI remains an interface rather than a business authority.",
+    "The matrix records zero outcome-proven sources, preventing research confidence from being inflated into demonstrated commercial ROI.",
+    "Whole Library V35 changes only the selected Great Library and Foundry Releases while preserving twenty-three unaffected Work selections and the immutable Agent Stack Assembly."
+  ],
+  "changes": [
+    {
+      "kind": "commit",
+      "reference": "https://github.com/Lordsisodia/siso-foundry/commit/233edef7408afb95571ecd25f64189dfd92a6860",
+      "summary": "Published SISO Foundry 0.4.0 with the machine-readable score model, twenty application entries, God Source portfolio, authority groups, agent operations and proof gates."
+    },
+    {
+      "kind": "commit",
+      "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/7c732ec9f77fcb0368ac63011326c7a6d205a7d1",
+      "summary": "Published the human-readable value-matrix briefing and updated the current Foundry source locator."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "gls:release:47922651-40fb-4da4-9d7c-5635957e9d19",
+      "summary": "Pinned the exact public Foundry 0.4.0 artifact, score contract, evidence boundary and verifier receipt."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "gls:release:902daf04-b080-4543-a5b9-6186c8643751",
+      "summary": "Pinned the exact public Great Library value-matrix publication checkpoint."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a",
+      "summary": "Selected both successor Releases through Whole Library V35 while retaining all unaffected selections."
+    },
+    {
+      "kind": "document",
+      "reference": "docs/foundry-agency-intelligence.html",
+      "summary": "Published the God Source definition, first cross-agency portfolio, evidence limits and continuation contract."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+    ],
+    "release_ids": [
+      "gls:release:902daf04-b080-4543-a5b9-6186c8643751",
+      "gls:release:47922651-40fb-4da4-9d7c-5635957e9d19"
+    ],
+    "snapshot_ids": [
+      "gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a"
+    ],
+    "source_inventory_ids": [
+      "gls:source-inventory:77f07470-51a6-41a2-9cae-0799297ebff7"
+    ],
+    "repository_urls": [
+      "https://github.com/Lordsisodia/great-library-of-siso",
+      "https://github.com/Lordsisodia/siso-foundry"
+    ]
+  },
+  "coordination": {
+    "owner": "Foundry and Great Library maintainers",
+    "branch": "main",
+    "reserved_paths": []
+  },
+  "visibility": "public",
+  "predecessor_event_id": "gls:event:3f79b614-bd24-4b14-89dd-6e822ffc1720",
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.4.0",
+      "observed_at": "2026-08-02",
+      "summary": "The public Foundry 0.4.0 GitHub release resolves at the exact canonical source revision."
+    },
+    {
+      "kind": "registry_validation",
+      "reference": "repo-check:foundry-value-matrix:7c732ec",
+      "observed_at": "2026-08-02",
+      "summary": "Promotion, intelligence, research, God Questions, registry, generated-site, link, immutable-history and publication-safety checks passed before selection."
+    }
+  ],
+  "next_actions": [
+    "Apply the matrix row contract to the existing source-read dossiers and 707 proof selections before starting another broad GitHub discovery sweep.",
+    "Register the Agency OS product owner so evidence-qualified modules can advance beyond Foundry intake without assigning product authority to Foundry.",
+    "Feed deployment receipts for cost saved, labour saved, revenue created, risk reduced and agent autonomy back into the matrix until outcome-proven rows exist."
+  ]
+}

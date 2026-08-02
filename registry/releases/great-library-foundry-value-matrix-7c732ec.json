@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:902daf04-b080-4543-a5b9-6186c8643751",
+  "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+  "release_kind": "general",
+  "version": "1.3.0+7c732ec",
+  "title": "Foundry Agency OS value-matrix publication",
+  "released_at": "2026-08-02T23:33:05+07:00",
+  "observed_at": "2026-08-02",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:edb8f9eb-cf14-4827-ae96-5b9618b33d16",
+      "kind": "source_archive",
+      "locator": "https://github.com/Lordsisodia/great-library-of-siso/archive/7c732ec9f77fcb0368ac63011326c7a6d205a7d1.tar.gz",
+      "revision": "7c732ec9f77fcb0368ac63011326c7a6d205a7d1",
+      "availability": "public",
+      "owner": "Lordsisodia",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The pinned public registry source carries the repository MIT license.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/Lordsisodia/great-library-of-siso/blob/7c732ec9f77fcb0368ac63011326c7a6d205a7d1/LICENSE",
+            "observed_at": "2026-08-02",
+            "summary": "The MIT license is present at the exact public value-matrix publication checkpoint."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "7c732ec9f77fcb0368ac63011326c7a6d205a7d1"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The authored operating brief, current Foundry locator and generated public projection are pinned to an exact public commit.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/7c732ec9f77fcb0368ac63011326c7a6d205a7d1",
+          "observed_at": "2026-08-02",
+          "summary": "The exact Foundry Agency OS value-matrix publication checkpoint resolves publicly."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "A public commit-scoped archive locator is recorded.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/archive/7c732ec9f77fcb0368ac63011326c7a6d205a7d1.tar.gz",
+          "observed_at": "2026-08-02",
+          "summary": "The source archive is pinned by immutable commit revision."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The Library validates the current Foundry locator, authored matrix briefing and deterministic site projections.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "repo-check:foundry-value-matrix:7c732ec",
+          "observed_at": "2026-08-02",
+          "summary": "The complete Library verification gate passed at the public integration checkpoint."
+        }
+      ]
+    },
+    "installable": {
+      "state": "verified",
+      "reason": "A clean Node installation validates and builds the static Library.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:foundry-value-matrix:7c732ec",
+          "observed_at": "2026-08-02",
+          "summary": "Promotion, intelligence, research, registry, generated-site, link and publication-safety checks passed."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The public repository remains source-complete and MIT licensed.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso",
+          "observed_at": "2026-08-02",
+          "summary": "Public source includes the registry, authored briefing, generator, tests and generated outputs."
+        }
+      ]
+    },
+    "portable": {
+      "state": "verified",
+      "reason": "The release contains publication-safe metadata and links without private corpora, client data, machine paths, credentials or copied upstream source.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:foundry-value-matrix:7c732ec",
+          "observed_at": "2026-08-02",
+          "summary": "Repository-wide publication scanning passed at the public integration checkpoint."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:foundry-value-matrix:7c732ec",
+      "observed_at": "2026-08-02",
+      "summary": "The Great Library now makes the Foundry value-matrix model, God Source portfolio, evidence limits and continuation contract publicly discoverable."
+    }
+  ]
+}
