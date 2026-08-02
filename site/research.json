@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T16:33:05.000Z",
+  "generated_at": "2026-08-02T18:32:47.000Z",
   "base_path": "/",
   "schema_version": "1.0.0",
   "snapshot_id": "gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a",
@@ -29,7 +29,7 @@
         "state": "current",
         "assessed_at": "2026-08-02",
         "review_due_at": "2026-09-01",
-        "as_of": "2026-08-02"
+        "as_of": "2026-08-03"
       },
       "next_useful_work": "Run one cold reconstruction task against the typed workspace boundary and compare errors, intervention, and elapsed time with the prior evidence path.",
       "evidence_mode": "hybrid",
@@ -173,7 +173,7 @@
         "state": "current",
         "assessed_at": "2026-08-02",
         "review_due_at": "2026-09-01",
-        "as_of": "2026-08-02"
+        "as_of": "2026-08-03"
       },
       "next_useful_work": "Run one paired agent task with and without the evidence-aware context and receipt path, including retrieval and repair overhead in the comparison.",
       "evidence_mode": "hybrid",
@@ -315,7 +315,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-02"
+        "as_of": "2026-08-03"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "corpus",
@@ -368,7 +368,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-02"
+        "as_of": "2026-08-03"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "corpus",
@@ -421,7 +421,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-02"
+        "as_of": "2026-08-03"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",
@@ -474,7 +474,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-02"
+        "as_of": "2026-08-03"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",
@@ -527,7 +527,7 @@
         "state": "current",
         "assessed_at": "2026-08-02",
         "review_due_at": "2026-08-16",
-        "as_of": "2026-08-02"
+        "as_of": "2026-08-03"
       },
       "next_useful_work": "Measure whether cold readers can reproduce the public estate dispositions without private context, then route one independently adjudicated runtime receipt before expanding the action bridge.",
       "evidence_mode": "hybrid",

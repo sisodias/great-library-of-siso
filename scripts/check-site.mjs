@@ -95,6 +95,15 @@ for (const unitId of ["siso-business-control-plane-gaps", "agency-source-module-
   if (unit?.target_owner_state !== "unassigned" || unit?.target_works?.length !== 0) errors.push(`promotion.json: ${unitId} must retain an unassigned product owner without a target Work link`);
   if (!unit?.evidence_owner_works?.some((owner) => owner.id === "gls:work:ec664d93-df93-48c5-be40-5d0165886c01")) errors.push(`promotion.json: ${unitId} must retain Foundry as its evidence owner`);
 }
+const coverageUnit = agencyPromotion?.units?.find((candidate) => candidate.id === "foundry-agency-coverage-v0-5-1");
+if (!coverageUnit) errors.push("promotion.json: missing Foundry v0.5.1 Agency coverage unit");
+else {
+  if (coverageUnit.stage !== "candidate" || coverageUnit.target_owner_state !== "unassigned") errors.push("promotion.json: v0.5.1 coverage must remain a candidate with no Agency product owner");
+  const summary = coverageUnit.evidence?.map((entry) => entry.summary).join(" ") || "";
+  for (const marker of ["628 projects", "497 applications", "189 capabilities", "30 frontier rows", "114 multi-vertical", "10 confirmed/79 source-read/408 metadata/131 inferred", "89 source-read/reusable", "Published=coverage inventory + 20-row decision matrix", "analyzed=628 projects with 89 source-read/reusable and 10 confirmed", "specified=10 integration proofs", "runtime-proven=1 named script", "job-level pillar mapping verified", "coverage-inventory.json 1084043 bytes sha256 cc103906478ff1c44a6c96921269d9695afb7f020092b8b54e1e0993efe4552d", "COVERAGE.md 2809 bytes sha256 d1b89a8cc76e6dfb8f55c1ffcce85bbb7fffa532966ba5c42949d79d03554947", "capability-pillar-map.json 74534 bytes sha256 4bacd6a1d198d661506659f38668dbe7810941a7457b55adea6ecd7bff1fe9cc"]) {
+    if (!summary.includes(marker)) errors.push(`promotion.json: v0.5.1 coverage receipt missing: ${marker}`);
+  }
+}
 const promotionHtml = await readFile(path.join(root, "promotion", "index.html"), "utf8");
 for (const marker of ["No product owner assigned", "Evidence owner Works"]) {
   if (!promotionHtml.includes(marker)) errors.push(`promotion/index.html: missing owner-boundary marker: ${marker}`);
@@ -116,7 +125,8 @@ if (!intelligence.events?.some((event) => event.id === "gls:event:4d237823-29e9-
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "35.0.0" && change.id === "gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a")) errors.push("intelligence.json: automatic registry changelog is missing V35");
 if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 73) errors.push("intelligence.json: expected 73 immutable Releases at V35 closeout");
 if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 35) errors.push("intelligence.json: expected 35 immutable Snapshots at V35 closeout");
-if (intelligence.counts?.events !== 26 || intelligence.counts?.active_initiatives !== 0) errors.push("intelligence.json: expected 26 Events and zero active initiatives at V35 closeout");
+if (intelligence.counts?.events !== 27 || intelligence.counts?.active_initiatives !== 1) errors.push("intelligence.json: expected 27 Events and the active Foundry Agency coverage initiative");
+if (!intelligence.active_initiatives?.some((initiative) => initiative.thread_id === "gls:thread:foundry-agency-coverage")) errors.push("intelligence.json: active Foundry Agency coverage initiative is missing");
 if (intelligence.active_initiatives?.some((initiative) => initiative.thread_id === "gls:thread:foundry-agency-intelligence")) errors.push("intelligence.json: completed Foundry Agency intelligence initiative remains active");
 
 const frontierQuestions = [

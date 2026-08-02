@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T16:33:05.000Z",
+  "generated_at": "2026-08-02T18:32:47.000Z",
   "base_path": "/",
   "works": [
     {
@@ -1965,6 +1965,342 @@
       ]
     },
     {
+      "schema_version": "1.1.0",
+      "record_type": "source_inventory",
+      "id": "gls:source-inventory:4f6c3a98-6e45-4e26-9e1b-2a9b0c3f7d41",
+      "supersedes_inventory_id": "gls:source-inventory:77f07470-51a6-41a2-9cae-0799297ebff7",
+      "name": "Foundry Agency intelligence promotion inventory",
+      "inventory_kind": "agent_capabilities",
+      "immutable": true,
+      "observed_at": "2026-08-03",
+      "inventory_state": "partial",
+      "source_scopes": [
+        {
+          "scope_id": "foundry-public-work",
+          "name": "SISO Foundry public Work",
+          "source_type": "work",
+          "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "publication_boundary": "public_source"
+        },
+        {
+          "scope_id": "foundry-operational-evidence",
+          "name": "Foundry external data plane and operational evidence",
+          "source_type": "workspace",
+          "publication_boundary": "public_metadata_only"
+        },
+        {
+          "scope_id": "agency-source-portfolio",
+          "name": "External Agency software candidates",
+          "source_type": "external_upstream",
+          "publication_boundary": "external_public_source"
+        }
+      ],
+      "campaign": {
+        "campaign_id": "foundry-agency-intelligence",
+        "owner_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+        "objective": "Turn recovered source intelligence into evidence-backed Agency OS capability decisions and promote verified results to their owning Works without copying private corpora or source-owned applications into the Library.",
+        "lifecycle": [
+          "unverified",
+          "read",
+          "candidate",
+          "owner_assigned",
+          "extracted",
+          "verified",
+          "released",
+          "library_indexed",
+          "stack_pinned",
+          "retired"
+        ]
+      },
+      "preservation": {
+        "mode": "read_only",
+        "dirty_state": "withheld",
+        "reason": "Only publication-safe metadata and conclusions are recorded. The operational database, raw observations, generated artifacts, rights-sensitive payloads, local topology, and unrelated source state are neither copied nor mutated.",
+        "nested_repositories": []
+      },
+      "units": [
+        {
+          "unit_id": "agency-intelligence-package",
+          "name": "Foundry Agency intelligence package",
+          "paths": [
+            "intelligence/agency/README.md",
+            "intelligence/agency/snapshot.json",
+            "intelligence/agency/BACKLOG.md"
+          ],
+          "source_scope_id": "foundry-public-work",
+          "classification": "shared_package",
+          "disposition": "keep",
+          "target": "SISO Foundry",
+          "promotion": {
+            "stage": "released",
+            "priority": "critical",
+            "confidence": "high",
+            "portability": "ready",
+            "target_work_ids": [
+              "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+            ],
+            "release_id": "gls:release:47922651-40fb-4da4-9d7c-5635957e9d19",
+            "verification_evidence_refs": [
+              "release-receipt:foundry-0.4.0"
+            ],
+            "next_gate": "Select the accepted Foundry 0.4.0 Release in a successor Library Snapshot; keep Agency coverage receipts and ownership boundaries current as Foundry publishes later revisions.",
+            "blockers": []
+          },
+          "rationale": "The package makes the recovered Agency mission, metadata counts, application map, caveats, and evidence backlog durable inside the Work that owns source intelligence rather than burying them in an agent transcript or duplicating them in the Library.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:foundry-agency-intelligence-package:2026-08-02",
+              "observed_at": "2026-08-03",
+              "summary": "The package boundary and counts were reconciled against Foundry's public data-plane contract and read-only operational evidence."
+            },
+            {
+              "kind": "release_receipt",
+              "reference": "release-receipt:foundry-0.4.0",
+              "observed_at": "2026-08-02",
+              "summary": "Foundry 0.4.0 is represented by accepted immutable Release gls:release:47922651-40fb-4da4-9d7c-5635957e9d19 at public commit 233edef7408afb95571ecd25f64189dfd92a6860."
+            }
+          ]
+        },
+        {
+          "unit_id": "foundry-agency-coverage-v0-5-1",
+          "name": "Foundry Agency coverage inventory v0.5.1",
+          "paths": [
+            "intelligence/agency/COVERAGE.md",
+            "intelligence/agency/coverage-inventory.json"
+          ],
+          "source_scope_id": "foundry-public-work",
+          "classification": "shared_package",
+          "disposition": "keep",
+          "target": "SISO Foundry; future Agency owner remains unassigned",
+          "promotion": {
+            "stage": "candidate",
+            "priority": "critical",
+            "confidence": "high",
+            "portability": "ready",
+            "target_owner_state": "unassigned",
+            "target_work_ids": [],
+            "evidence_owner_work_ids": [
+              "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+            ],
+            "next_gate": "Phase 2: direct-source dossiers and integration proofs for the ten specified Agency integrations, followed by an owner decision; do not infer source-code reuse rights or runtime adoption authorization from this coverage receipt.",
+            "blockers": [
+              "Coverage is published metadata only; no Agency product Work owns these candidates and no runtime adoption authorization is granted."
+            ]
+          },
+          "rationale": "Foundry v0.5.1 publishes a coverage inventory, 20-row decision matrix, and verified job-level pillar mapping over 628 projects. It is analyzed coverage, not a reusable source bundle: 89 projects are source-read/reusable and 10 confirmed; ten integration proofs are specified and one named script is runtime-proven.",
+          "evidence": [
+            {
+              "kind": "integration_check",
+              "reference": "source-receipt:foundry-agency-coverage:v0.5.1",
+              "observed_at": "2026-08-03",
+              "summary": "Foundry public tag v0.5.1 at commit b28b0f7 exposes COVERAGE.md, coverage-inventory.json, and capability-pillar-map.json with 628 projects, 497 applications, 189 capabilities, 30 frontier rows, 114 multi-vertical projects, grades 10 confirmed/79 source-read/408 metadata/131 inferred, and 89 source-read/reusable projects. Published=coverage inventory + 20-row decision matrix; analyzed=628 projects with 89 source-read/reusable and 10 confirmed; specified=10 integration proofs; runtime-proven=1 named script; job-level pillar mapping verified. Pillar counts: automation86, communication96, data105, deployment42, files49, finance67, identity42, knowledge66, legal19, marketing45, revenue89, work91. Source artifact receipts: coverage-inventory.json 1084043 bytes sha256 cc103906478ff1c44a6c96921269d9695afb7f020092b8b54e1e0993efe4552d; COVERAGE.md 2809 bytes sha256 d1b89a8cc76e6dfb8f55c1ffcce85bbb7fffa532966ba5c42949d79d03554947; capability-pillar-map.json 74534 bytes sha256 4bacd6a1d198d661506659f38668dbe7810941a7457b55adea6ecd7bff1fe9cc."
+            }
+          ]
+        },
+        {
+          "unit_id": "source-oracle-and-adoption-evidence",
+          "name": "Source Oracle, adoption truth, and dependency evidence",
+          "paths": [
+            "domains/github/identity/identity.sqlite",
+            "domains/github/curated/adoption",
+            "domains/github/curated/capability-graph"
+          ],
+          "source_scope_id": "foundry-operational-evidence",
+          "classification": "data_or_archive",
+          "disposition": "move_to_data_store",
+          "target": "Foundry external data plane behind a read-only Source Oracle contract",
+          "promotion": {
+            "stage": "candidate",
+            "priority": "critical",
+            "confidence": "high",
+            "portability": "requires_sanitization",
+            "target_work_ids": [
+              "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+            ],
+            "next_gate": "Version a typed read-only API and create schema, content-hash, rights, privacy, generator, and durable-copy receipts for an external data snapshot.",
+            "blockers": [
+              "The corpus payload is not published.",
+              "879 adoption records remain unresolved.",
+              "Current external assets do not yet carry the complete release receipt set."
+            ]
+          },
+          "rationale": "Repository identity, adoption decisions, capability dependencies, contract cards, and verification receipts are the compounding source-intelligence asset. Agents should query them through a stable contract rather than receive direct database authority.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:foundry-operational-metadata:2026-08-02",
+              "observed_at": "2026-08-03",
+              "summary": "Read-only counts confirmed 1,358,200 repository cards, 2,722 adoption records, 70 total contract cards with a 20-card verified subset, and a 104-node capability graph while retaining the payload outside Git."
+            },
+            {
+              "kind": "source_review",
+              "reference": "sha256:cfb73b50405fcd71383440cfbcee3d4b896c549a206d3840194de26d50fb843c",
+              "observed_at": "2026-08-03",
+              "summary": "Content receipt for the 1,879,339,008-byte logical Foundry identity database queried read-only; no database payload is published by this inventory."
+            }
+          ]
+        },
+        {
+          "unit_id": "behavior-and-composition-proof",
+          "name": "Behavior and composition proof harness",
+          "paths": [
+            "packages/bank-api/rig",
+            "packages/bank-api/bank.py",
+            "pipelines/github"
+          ],
+          "source_scope_id": "foundry-public-work",
+          "classification": "experiment",
+          "disposition": "keep",
+          "target": "SISO Foundry verification and outcome evidence",
+          "promotion": {
+            "stage": "candidate",
+            "priority": "critical",
+            "confidence": "high",
+            "portability": "ready",
+            "target_work_ids": [
+              "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+            ],
+            "verification_evidence_refs": [
+              "logical-source:foundry-operational:research/wild/WILD-compose-proof-rig.html",
+              "logical-source:foundry-operational:research/wild3/rig"
+            ],
+            "next_gate": "Publish reproducible fixtures for the WILD experiments and require every Agency module verdict to carry behavioral, integration, cost, and outcome evidence.",
+            "blockers": [
+              "Current composition results support narrow verification leverage, not automatic application assembly."
+            ]
+          },
+          "rationale": "Foundry creates leverage only when source selection is tied to falsifiable behavior and integration outcomes. The existing evidence supports contract cards as steering and validation aids while rejecting stronger Lego-style composition claims.",
+          "evidence": [
+            {
+              "kind": "integration_check",
+              "reference": "source-review:foundry-composition-receipts:2026-08-02",
+              "observed_at": "2026-08-03",
+              "summary": "WILD-1 showed no overall lift across 9-of-9 variants; WILD-3 tied at 12-of-12 but card-guided validation rejected one invalid pattern accepted by a hand-rolled alternative."
+            }
+          ]
+        },
+        {
+          "unit_id": "siso-business-control-plane-gaps",
+          "name": "SISO-owned business control-plane gaps",
+          "paths": [
+            "agency-intelligence/control-plane-gaps"
+          ],
+          "source_scope_id": "foundry-operational-evidence",
+          "classification": "candidate_work",
+          "disposition": "distribute_to_owners",
+          "target": "SISO Foundry evidence intake; future SISO Agency OS product owner is unassigned",
+          "promotion": {
+            "stage": "read",
+            "priority": "critical",
+            "confidence": "medium",
+            "portability": "unknown",
+            "target_owner_state": "unassigned",
+            "target_work_ids": [],
+            "evidence_owner_work_ids": [
+              "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+            ],
+            "next_gate": "Register or identify the owning Agency control-plane Work, specify the six gaps as product contracts, and rerun source discovery against each contract before authorizing a build.",
+            "blockers": [
+              "No accepted Agency OS or business control-plane Work currently exists in the Library.",
+              "A source gap is a build hypothesis, not proof that suitable source does not exist."
+            ]
+          },
+          "rationale": "Foundry owns the candidate evidence only, not the future product. Usage metering, pricing and entitlements, multi-tenancy, append-only business audit, reliable webhook delivery, and OAuth authority recur across the source portfolio without one proven drop-in owner. They are likely SISO leverage only after contract definition, renewed evidence, and Agency owner registration.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:foundry-agency-control-plane-gaps:2026-08-02",
+              "observed_at": "2026-08-03",
+              "summary": "The adoption and source-analysis results were reconciled into six recurring product-glue gaps with an explicit requirement for renewed source review before build."
+            }
+          ]
+        },
+        {
+          "unit_id": "agent-system-pattern-bank",
+          "name": "Agent-system pattern and prompt bank",
+          "paths": [
+            "domains/github/curated/agent-patterns",
+            "domains/github/curated/prompt-corpus",
+            "domains/github/curated/source-signals"
+          ],
+          "source_scope_id": "foundry-operational-evidence",
+          "classification": "shared_package",
+          "disposition": "distribute_to_owners",
+          "target": "SISO Skills, SISO Agent Playbook, and SISO Agent Stack Distribution",
+          "promotion": {
+            "stage": "candidate",
+            "priority": "high",
+            "confidence": "high",
+            "portability": "requires_sanitization",
+            "target_work_ids": [
+              "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+              "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc",
+              "gls:work:b9196c61-901f-4105-93d9-899876d17016"
+            ],
+            "next_gate": "Review every promoted pattern against its direct source, attribution, rights, behavior, overlap, and owner contract before extraction or Playbook integration.",
+            "blockers": [
+              "The 62 patterns and 26 prompt records are research evidence, not independently licensed release artifacts.",
+              "Owner-specific tests and packaging do not yet exist."
+            ]
+          },
+          "rationale": "Foundry has already mined useful agent patterns and prompt evidence. The value becomes durable only when the appropriate owning Work turns selected mechanisms into attributed, verified, installable releases.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:foundry-agent-pattern-bank:2026-08-02",
+              "observed_at": "2026-08-03",
+              "summary": "Operational metadata confirmed 62 agent patterns, 26 prompt-corpus records, and 259 repository source signals with source-by-source promotion gates still open."
+            }
+          ]
+        },
+        {
+          "unit_id": "agency-source-module-portfolio",
+          "name": "Agency source-module candidate portfolio",
+          "paths": [
+            "upstream/agency-modules"
+          ],
+          "source_scope_id": "agency-source-portfolio",
+          "classification": "external_upstream",
+          "disposition": "compare",
+          "target": "SISO Foundry evidence intake; future SISO Agency OS module-portfolio owner is unassigned",
+          "promotion": {
+            "stage": "read",
+            "priority": "high",
+            "confidence": "medium",
+            "portability": "unknown",
+            "target_owner_state": "unassigned",
+            "target_work_ids": [],
+            "evidence_owner_work_ids": [
+              "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+            ],
+            "next_gate": "Create direct-source dossiers and integration proofs for each capability cluster, then assign accepted modules to an Agency portfolio Work instead of treating a star-ranked list as architecture.",
+            "blockers": [
+              "License, security, maintenance, tenancy, API coverage, deployment burden, and current source revisions require direct review.",
+              "No accepted Agency OS portfolio Work currently owns these candidates."
+            ]
+          },
+          "rationale": "Foundry owns the candidate evidence only, not the future product portfolio. Teable, AFFiNE, Open Notebook, Plane, Documenso, Chatwoot, Cal.com, Activepieces, Listmonk, Postiz, Formbricks, Metabase, PostHog, Superset, Meilisearch, Qdrant, RAGFlow, Coolify, Airbyte, dlt, Meltano, Langflow, Coze, and Flowgram are operator-nominated starting ideas, but each requires a current evidence-backed adoption verdict and an Agency owner.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:foundry-agency-module-portfolio:2026-08-02",
+              "observed_at": "2026-08-03",
+              "summary": "Recovered Agency analysis grouped source candidates by business capability and adoption mode while retaining candidate status pending direct review."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:foundry-agency-intelligence-recovery:2026-08-02",
+          "observed_at": "2026-08-03",
+          "summary": "The Foundry public source, external-data boundary, operational metadata, Agency application analysis, composition evidence, and Great Library ownership model were reconciled into one preservation-aware promotion inventory."
+        }
+      ]
+    },
+    {
       "schema_version": "1.0.0",
       "record_type": "source_inventory",
       "id": "gls:source-inventory:d3e37616-1005-4d67-b5c5-82684dceed70",
@@ -2812,7 +3148,7 @@
   ],
   "promotion": {
     "inventory_count": 2,
-    "unit_count": 24,
+    "unit_count": 25,
     "counts": {
       "stage": [
         {
@@ -2826,12 +3162,16 @@
         {
           "value": "read",
           "count": 5
+        },
+        {
+          "value": "released",
+          "count": 1
         }
       ],
       "priority": [
         {
           "value": "critical",
-          "count": 12
+          "count": 13
         },
         {
           "value": "high",
@@ -2917,6 +3257,10 @@
         },
         {
           "value": "SISO Foundry verification and outcome evidence",
+          "count": 1
+        },
+        {
+          "value": "SISO Foundry; future Agency owner remains unassigned",
           "count": 1
         },
         {
@@ -3670,10 +4014,10 @@
         ]
       },
       {
-        "inventory_id": "gls:source-inventory:77f07470-51a6-41a2-9cae-0799297ebff7",
+        "inventory_id": "gls:source-inventory:4f6c3a98-6e45-4e26-9e1b-2a9b0c3f7d41",
         "inventory_name": "Foundry Agency intelligence promotion inventory",
         "inventory_state": "partial",
-        "observed_at": "2026-08-02",
+        "observed_at": "2026-08-03",
         "campaign_id": "foundry-agency-intelligence",
         "objective": "Turn recovered source intelligence into evidence-backed Agency OS capability decisions and promote verified results to their owning Works without copying private corpora or source-owned applications into the Library.",
         "lifecycle": [
@@ -3695,23 +4039,27 @@
             "source_scope_id": "foundry-public-work",
             "classification": "shared_package",
             "disposition": "keep",
-            "stage": "candidate",
+            "stage": "released",
             "priority": "critical",
             "confidence": "high",
             "portability": "ready",
             "target": "SISO Foundry",
-            "next_gate": "Publish an exact Foundry source revision, pass the repository gate, and register the immutable Release before selecting it in a successor Library Snapshot.",
-            "blockers": [
-              "The package is not yet represented by an accepted immutable Foundry Release."
-            ],
+            "next_gate": "Select the accepted Foundry 0.4.0 Release in a successor Library Snapshot; keep Agency coverage receipts and ownership boundaries current as Foundry publishes later revisions.",
+            "blockers": [],
             "rationale": "The package makes the recovered Agency mission, metadata counts, application map, caveats, and evidence backlog durable inside the Work that owns source intelligence rather than burying them in an agent transcript or duplicating them in the Library.",
-            "evidence_count": 1,
+            "evidence_count": 2,
             "evidence": [
               {
                 "kind": "source_review",
                 "reference": "source-review:foundry-agency-intelligence-package:2026-08-02",
-                "observed_at": "2026-08-02",
+                "observed_at": "2026-08-03",
                 "summary": "The package boundary and counts were reconciled against Foundry's public data-plane contract and read-only operational evidence."
+              },
+              {
+                "kind": "release_receipt",
+                "reference": "release-receipt:foundry-0.4.0",
+                "observed_at": "2026-08-02",
+                "summary": "Foundry 0.4.0 is represented by accepted immutable Release gls:release:47922651-40fb-4da4-9d7c-5635957e9d19 at public commit 233edef7408afb95571ecd25f64189dfd92a6860."
               }
             ],
             "target_owner_state": "assigned",
@@ -3724,6 +4072,42 @@
               }
             ],
             "evidence_owner_works": []
+          },
+          {
+            "id": "foundry-agency-coverage-v0-5-1",
+            "name": "Foundry Agency coverage inventory v0.5.1",
+            "source_scope_id": "foundry-public-work",
+            "classification": "shared_package",
+            "disposition": "keep",
+            "stage": "candidate",
+            "priority": "critical",
+            "confidence": "high",
+            "portability": "ready",
+            "target": "SISO Foundry; future Agency owner remains unassigned",
+            "next_gate": "Phase 2: direct-source dossiers and integration proofs for the ten specified Agency integrations, followed by an owner decision; do not infer source-code reuse rights or runtime adoption authorization from this coverage receipt.",
+            "blockers": [
+              "Coverage is published metadata only; no Agency product Work owns these candidates and no runtime adoption authorization is granted."
+            ],
+            "rationale": "Foundry v0.5.1 publishes a coverage inventory, 20-row decision matrix, and verified job-level pillar mapping over 628 projects. It is analyzed coverage, not a reusable source bundle: 89 projects are source-read/reusable and 10 confirmed; ten integration proofs are specified and one named script is runtime-proven.",
+            "evidence_count": 1,
+            "evidence": [
+              {
+                "kind": "integration_check",
+                "reference": "source-receipt:foundry-agency-coverage:v0.5.1",
+                "observed_at": "2026-08-03",
+                "summary": "Foundry public tag v0.5.1 at commit b28b0f7 exposes COVERAGE.md, coverage-inventory.json, and capability-pillar-map.json with 628 projects, 497 applications, 189 capabilities, 30 frontier rows, 114 multi-vertical projects, grades 10 confirmed/79 source-read/408 metadata/131 inferred, and 89 source-read/reusable projects. Published=coverage inventory + 20-row decision matrix; analyzed=628 projects with 89 source-read/reusable and 10 confirmed; specified=10 integration proofs; runtime-proven=1 named script; job-level pillar mapping verified. Pillar counts: automation86, communication96, data105, deployment42, files49, finance67, identity42, knowledge66, legal19, marketing45, revenue89, work91. Source artifact receipts: coverage-inventory.json 1084043 bytes sha256 cc103906478ff1c44a6c96921269d9695afb7f020092b8b54e1e0993efe4552d; COVERAGE.md 2809 bytes sha256 d1b89a8cc76e6dfb8f55c1ffcce85bbb7fffa532966ba5c42949d79d03554947; capability-pillar-map.json 74534 bytes sha256 4bacd6a1d198d661506659f38668dbe7810941a7457b55adea6ecd7bff1fe9cc."
+              }
+            ],
+            "target_owner_state": "unassigned",
+            "target_works": [],
+            "evidence_owner_works": [
+              {
+                "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+                "name": "SISO Foundry",
+                "library_url": "/works/siso-foundry/",
+                "resolved": true
+              }
+            ]
           },
           {
             "id": "source-oracle-and-adoption-evidence",
@@ -3748,13 +4132,13 @@
               {
                 "kind": "source_review",
                 "reference": "source-review:foundry-operational-metadata:2026-08-02",
-                "observed_at": "2026-08-02",
+                "observed_at": "2026-08-03",
                 "summary": "Read-only counts confirmed 1,358,200 repository cards, 2,722 adoption records, 70 total contract cards with a 20-card verified subset, and a 104-node capability graph while retaining the payload outside Git."
               },
               {
                 "kind": "source_review",
                 "reference": "sha256:cfb73b50405fcd71383440cfbcee3d4b896c549a206d3840194de26d50fb843c",
-                "observed_at": "2026-08-02",
+                "observed_at": "2026-08-03",
                 "summary": "Content receipt for the 1,879,339,008-byte logical Foundry identity database queried read-only; no database payload is published by this inventory."
               }
             ],
@@ -3790,7 +4174,7 @@
               {
                 "kind": "integration_check",
                 "reference": "source-review:foundry-composition-receipts:2026-08-02",
-                "observed_at": "2026-08-02",
+                "observed_at": "2026-08-03",
                 "summary": "WILD-1 showed no overall lift across 9-of-9 variants; WILD-3 tied at 12-of-12 but card-guided validation rejected one invalid pattern accepted by a hand-rolled alternative."
               }
             ],
@@ -3827,7 +4211,7 @@
               {
                 "kind": "source_review",
                 "reference": "source-review:foundry-agency-control-plane-gaps:2026-08-02",
-                "observed_at": "2026-08-02",
+                "observed_at": "2026-08-03",
                 "summary": "The adoption and source-analysis results were reconciled into six recurring product-glue gaps with an explicit requirement for renewed source review before build."
               }
             ],
@@ -3864,7 +4248,7 @@
               {
                 "kind": "source_review",
                 "reference": "source-review:foundry-agent-pattern-bank:2026-08-02",
-                "observed_at": "2026-08-02",
+                "observed_at": "2026-08-03",
                 "summary": "Operational metadata confirmed 62 agent patterns, 26 prompt-corpus records, and 259 repository source signals with source-by-source promotion gates still open."
               }
             ],
@@ -3913,7 +4297,7 @@
               {
                 "kind": "source_review",
                 "reference": "source-review:foundry-agency-module-portfolio:2026-08-02",
-                "observed_at": "2026-08-02",
+                "observed_at": "2026-08-03",
                 "summary": "Recovered Agency analysis grouped source candidates by business capability and adoption mode while retaining candidate status pending direct review."
               }
             ],
@@ -3934,11 +4318,49 @@
   },
   "intelligence": {
     "counts": {
-      "events": 26,
+      "events": 27,
       "decisions": 4,
-      "active_initiatives": 0,
+      "active_initiatives": 1,
       "registry_changes": 108
     },
-    "active_initiatives": []
+    "active_initiatives": [
+      {
+        "event_id": "gls:event:6c9b3055-a75b-4c17-bafe-bd80ceec2b1d",
+        "thread_id": "gls:thread:foundry-agency-coverage",
+        "name": "Foundry Agency Coverage",
+        "status": "active",
+        "title": "Foundry Agency coverage closeout started",
+        "intent": "Make every Agency OS project, vertical, evidence depth, reusable analysis field, and remaining proof gap findable and machine-verifiable while preserving Foundry as the evidence owner and the Library as the immutable publication and discovery plane.",
+        "occurred_at": "2026-08-03T01:32:47+07:00",
+        "owner": "Codex with GPT-5.6 Luna audit and implementation lanes",
+        "branch": "main",
+        "reserved_paths": [
+          "siso-foundry:docs/AGENCY_OS_APPLICATION_MISSION.md",
+          "siso-foundry:packages/business-application/",
+          "siso-foundry:pipelines/github/campaigns/agency-business-software-v1.json",
+          "siso-foundry:pipelines/github/test_campaign.py",
+          "siso-foundry:intelligence/agency/COVERAGE.md",
+          "siso-foundry:intelligence/agency/coverage-inventory.json",
+          "siso-foundry:intelligence/agency/README.md",
+          "siso-foundry:README.md",
+          "siso-foundry:CHANGELOG.md",
+          "siso-foundry:scripts/build_agency_coverage.py",
+          "siso-foundry:scripts/check.py",
+          "registry/source-inventories/foundry-agency-intelligence-2026-08-02.json",
+          "registry/events/2026-08-03-foundry-agency-coverage-*.json",
+          "registry/releases/",
+          "registry/snapshots/",
+          "CURRENT_STATE.md",
+          "docs/foundry-agency-intelligence.html",
+          "scripts/check-site.mjs",
+          "site/"
+        ],
+        "next_actions": [
+          "Promote and verify the unique campaign assets and deterministic project-by-vertical coverage inventory in Foundry.",
+          "Publish the exact Foundry source commit as an immutable Release and select it in a successor whole-Library Snapshot.",
+          "Correct the stale Source Inventory promotion state, regenerate Library projections, record proof coverage honestly, and close this Event with exact receipts."
+        ]
+      }
+    ]
   }
 }

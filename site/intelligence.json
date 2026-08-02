@@ -1,13 +1,51 @@
 {
-  "generated_at": "2026-08-02T16:33:05.000Z",
+  "generated_at": "2026-08-02T18:32:47.000Z",
   "base_path": "/",
   "counts": {
-    "events": 26,
+    "events": 27,
     "decisions": 4,
-    "active_initiatives": 0,
+    "active_initiatives": 1,
     "registry_changes": 108
   },
-  "active_initiatives": [],
+  "active_initiatives": [
+    {
+      "event_id": "gls:event:6c9b3055-a75b-4c17-bafe-bd80ceec2b1d",
+      "thread_id": "gls:thread:foundry-agency-coverage",
+      "name": "Foundry Agency Coverage",
+      "status": "active",
+      "title": "Foundry Agency coverage closeout started",
+      "intent": "Make every Agency OS project, vertical, evidence depth, reusable analysis field, and remaining proof gap findable and machine-verifiable while preserving Foundry as the evidence owner and the Library as the immutable publication and discovery plane.",
+      "occurred_at": "2026-08-03T01:32:47+07:00",
+      "owner": "Codex with GPT-5.6 Luna audit and implementation lanes",
+      "branch": "main",
+      "reserved_paths": [
+        "siso-foundry:docs/AGENCY_OS_APPLICATION_MISSION.md",
+        "siso-foundry:packages/business-application/",
+        "siso-foundry:pipelines/github/campaigns/agency-business-software-v1.json",
+        "siso-foundry:pipelines/github/test_campaign.py",
+        "siso-foundry:intelligence/agency/COVERAGE.md",
+        "siso-foundry:intelligence/agency/coverage-inventory.json",
+        "siso-foundry:intelligence/agency/README.md",
+        "siso-foundry:README.md",
+        "siso-foundry:CHANGELOG.md",
+        "siso-foundry:scripts/build_agency_coverage.py",
+        "siso-foundry:scripts/check.py",
+        "registry/source-inventories/foundry-agency-intelligence-2026-08-02.json",
+        "registry/events/2026-08-03-foundry-agency-coverage-*.json",
+        "registry/releases/",
+        "registry/snapshots/",
+        "CURRENT_STATE.md",
+        "docs/foundry-agency-intelligence.html",
+        "scripts/check-site.mjs",
+        "site/"
+      ],
+      "next_actions": [
+        "Promote and verify the unique campaign assets and deterministic project-by-vertical coverage inventory in Foundry.",
+        "Publish the exact Foundry source commit as an immutable Release and select it in a successor whole-Library Snapshot.",
+        "Correct the stale Source Inventory promotion state, regenerate Library projections, record proof coverage honestly, and close this Event with exact receipts."
+      ]
+    }
+  ],
   "decisions": [
     {
       "schema_version": "1.0.0",
@@ -374,6 +412,107 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:6c9b3055-a75b-4c17-bafe-bd80ceec2b1d",
+      "occurred_at": "2026-08-03T01:32:47+07:00",
+      "recorded_at": "2026-08-03T01:32:47+07:00",
+      "immutable": true,
+      "entry_type": "initiative_started",
+      "thread": {
+        "id": "gls:thread:foundry-agency-coverage",
+        "name": "Foundry Agency Coverage",
+        "kind": "initiative"
+      },
+      "status": "active",
+      "title": "Foundry Agency coverage closeout started",
+      "summary": "The stranded campaign contract and the completed 497-candidate and 189-capability research are being reconciled into a deterministic Foundry coverage inventory and accurately represented in the Great Library without overstating runtime proof or adoption readiness.",
+      "intent": "Make every Agency OS project, vertical, evidence depth, reusable analysis field, and remaining proof gap findable and machine-verifiable while preserving Foundry as the evidence owner and the Library as the immutable publication and discovery plane.",
+      "reasoning": [
+        "The accepted Foundry 0.3 and 0.4 Releases publish a 20-entry decision matrix and metadata-only corpus receipts, but the newer research payloads remain only in a local run directory.",
+        "The existing Source Inventory still claims the Agency intelligence package lacks an accepted Release even though the Foundry Releases are selected in whole-Library Snapshot V35.",
+        "The old Foundry campaign worktree contains unique mission, routing-contract, campaign, and validation material that must be promoted before the worktree can be safely removed.",
+        "Integration proof specifications must remain distinct from runtime proof: only one of the ten named proof commands currently exists."
+      ],
+      "changes": [
+        {
+          "kind": "coordination",
+          "reference": "gls:thread:foundry-agency-coverage",
+          "summary": "Reserved the Foundry campaign recovery, coverage inventory, Source Inventory truth repair, successor Release and Snapshot, generated projections, and closeout evidence."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "source_inventory_ids": [
+          "gls:source-inventory:77f07470-51a6-41a2-9cae-0799297ebff7"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/siso-foundry",
+          "https://github.com/Lordsisodia/great-library-of-siso"
+        ]
+      },
+      "coordination": {
+        "owner": "Codex with GPT-5.6 Luna audit and implementation lanes",
+        "branch": "main",
+        "reserved_paths": [
+          "siso-foundry:docs/AGENCY_OS_APPLICATION_MISSION.md",
+          "siso-foundry:packages/business-application/",
+          "siso-foundry:pipelines/github/campaigns/agency-business-software-v1.json",
+          "siso-foundry:pipelines/github/test_campaign.py",
+          "siso-foundry:intelligence/agency/COVERAGE.md",
+          "siso-foundry:intelligence/agency/coverage-inventory.json",
+          "siso-foundry:intelligence/agency/README.md",
+          "siso-foundry:README.md",
+          "siso-foundry:CHANGELOG.md",
+          "siso-foundry:scripts/build_agency_coverage.py",
+          "siso-foundry:scripts/check.py",
+          "registry/source-inventories/foundry-agency-intelligence-2026-08-02.json",
+          "registry/events/2026-08-03-foundry-agency-coverage-*.json",
+          "registry/releases/",
+          "registry/snapshots/",
+          "CURRENT_STATE.md",
+          "docs/foundry-agency-intelligence.html",
+          "scripts/check-site.mjs",
+          "site/"
+        ]
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:foundry-agency-coverage-audit:2026-08-03",
+          "observed_at": "2026-08-03",
+          "summary": "Independent Luna audits verified the old campaign worktree contents, current Foundry and Library publication state, research-artifact representation gap, and exact integration-proof script existence."
+        }
+      ],
+      "next_actions": [
+        "Promote and verify the unique campaign assets and deterministic project-by-vertical coverage inventory in Foundry.",
+        "Publish the exact Foundry source commit as an immutable Release and select it in a successor whole-Library Snapshot.",
+        "Correct the stale Source Inventory promotion state, regenerate Library projections, record proof coverage honestly, and close this Event with exact receipts."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "source_inventory_ids": [
+          "gls:source-inventory:77f07470-51a6-41a2-9cae-0799297ebff7"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/siso-foundry",
+          "https://github.com/Lordsisodia/great-library-of-siso"
+        ],
+        "works": [
+          {
+            "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+            "name": "SISO Foundry",
+            "library_url": "/works/siso-foundry/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",
