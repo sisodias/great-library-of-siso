@@ -158,7 +158,7 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-foundry/",
       "locator_type": "source_repository",
-      "locator_revision": "main@8c6eb30b8c972080c569cdf769cc77734ddc2bc4",
+      "locator_revision": "main@233edef7408afb95571ecd25f64189dfd92a6860",
       "visibility": "public",
       "status": "released",
       "active_release_id": "gls:release:cd41ce58-cb2b-433d-a031-8dadff806171",

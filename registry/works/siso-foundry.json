@@ -14,15 +14,21 @@
     "locators": [{
       "type": "source_repository",
       "url": "https://github.com/Lordsisodia/siso-foundry",
-      "revision": "main@8c6eb30b8c972080c569cdf769cc77734ddc2bc4",
+      "revision": "main@233edef7408afb95571ecd25f64189dfd92a6860",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-foundry:8c6eb30b8c972080c569cdf769cc77734ddc2bc4", "observed_at": "2026-08-02", "summary": "Canonical public source includes the resumable agent-systems campaign and the receipt-bound Agency intelligence package while preserving the external data-plane boundary; the 30-file code check, three campaign tests, intelligence invariants, and publication scan passed." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-foundry:233edef7408afb95571ecd25f64189dfd92a6860", "observed_at": "2026-08-02", "summary": "Canonical public source includes the resumable source-campaign platform and the scored Agency OS value matrix while preserving the external data-plane boundary; the 30-file code check, three campaign tests, matrix arithmetic and evidence gates, intelligence invariants, and publication scan passed." }
     }],
     "license": { "status": "verified", "spdx": "MIT", "reason": "The public repository contains reviewed SISO-owned software under MIT; dataset and upstream-source rights remain explicitly asset-specific and outside the source license claim.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-foundry/blob/f6afca0db5bf333fd5535aaed6242c42d16c12b3/PROVENANCE.md", "observed_at": "2026-07-30", "summary": "The public extraction records included software, excluded payloads, path normalization, and independent data/upstream ownership boundaries." }] }
   },
   "relationships": [],
   "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.4.0",
+      "observed_at": "2026-08-02",
+      "summary": "Foundry 0.4.0 publishes the repository-by-use-case-by-route value matrix over the recovered 9,636-repository evidence universe, including twenty scored applications, twelve evidence-qualified God Sources, platform primitives, authority groups, agent-operation surfaces, and proof gates."
+    },
     { "kind": "release_receipt", "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.3.0", "observed_at": "2026-08-02", "summary": "Foundry 0.3.0 adds the durable Agency intelligence mission, exact logical-source and query receipts, candidate and ownership boundaries, application map, and promotion backlog to the resumable source-campaign platform." },
     { "kind": "source_review", "reference": "source-review:siso-agent-base-decomposition:foundry:2026-07-30", "observed_at": "2026-07-30", "summary": "Foundry has an independent research outcome and belongs in the Research section rather than inside Agents." },
     { "kind": "release_receipt", "reference": "repo-check:siso-foundry:f6afca0db5bf333fd5535aaed6242c42d16c12b3", "observed_at": "2026-07-30", "summary": "Twenty-eight Python files compiled, JavaScript and shell entrypoints passed syntax checks, the topic-registry disposable-database smoke passed, and the publication scan passed." }
