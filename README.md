@@ -60,7 +60,7 @@ Inclusion means the Library describes the Work. It does not by itself promise a 
 
 ## Research and Knowledge
 
-Research is a separate browse section with independently addressable responsibilities: **SISO Knowledge** owns durable corpus and retrieval; **SISO Foundry** owns source discovery and reuse intelligence; **SISO Evidence Engines** own source-grounded transformation. Their repositories may be checked out together locally, but physical nesting does not imply containment.
+Research is a separate browse section with independently addressable responsibilities: **SISO Knowledge** owns durable corpus and retrieval; **SISO Foundry** owns source discovery and reuse intelligence; **SISO Evidence Engines** own source-grounded transformation. Their repositories may be checked out together locally, but physical nesting does not imply containment. The [Foundry Agency Intelligence brief](docs/foundry-agency-intelligence.html) shows how source evidence is promoted through the Library and applied by SISO Agency OS without copying source products or private corpora into this repository.
 
 Read the [SISO Knowledge model](docs/siso-knowledge-model.html) for the source-backed boundary, current migration state, data-plane rules, and repository split test.
 

@@ -349,6 +349,16 @@ function buildPromotionProjection(sourceInventories, works) {
           summary: text(entry.summary),
         }));
         const targetWorkIds = Array.isArray(promotion.target_work_ids) ? promotion.target_work_ids : [];
+        const evidenceOwnerWorkIds = Array.isArray(promotion.evidence_owner_work_ids) ? promotion.evidence_owner_work_ids : [];
+        const projectWorks = (ids) => ids.map((id) => {
+          const work = worksById.get(id);
+          return {
+            id,
+            name: work?.name || null,
+            library_url: work ? href(`works/${work.slug}/`) : null,
+            resolved: Boolean(work),
+          };
+        });
         return {
           id: text(unit.unit_id || unit.id, 'unassigned-unit'),
           name: text(unit.name, unit.unit_id || 'Unnamed candidate'),
@@ -365,15 +375,9 @@ function buildPromotionProjection(sourceInventories, works) {
           rationale: text(unit.rationale),
           evidence_count: evidence.length,
           evidence,
-          target_works: targetWorkIds.map((id) => {
-            const work = worksById.get(id);
-            return {
-              id,
-              name: work?.name || null,
-              library_url: work ? href(`works/${work.slug}/`) : null,
-              resolved: Boolean(work),
-            };
-          }),
+          target_owner_state: text(promotion.target_owner_state, targetWorkIds.length ? 'assigned' : 'unassigned'),
+          target_works: projectWorks(targetWorkIds),
+          evidence_owner_works: projectWorks(evidenceOwnerWorkIds),
         };
       });
       return {
@@ -414,10 +418,13 @@ function promotionPage(projection) {
     const evidence = unit.evidence.length ? `<ul>${unit.evidence.map((entry) => `<li><code>${esc(entry.reference)}</code><br><small>${esc(entry.kind)} · ${esc(entry.observed_at)}</small></li>`).join('')}</ul>` : '<p>None recorded.</p>';
     const targetWorks = unit.target_works.length ? unit.target_works.map((target) => target.resolved
       ? `<a href="${esc(target.library_url)}"><span>${esc(target.name)}</span><code>${esc(target.id)}</code></a>`
-      : `<span><span>${esc(target.id)}</span><small>Unresolved in this build</small></span>`).join('') : '<span><span>No target Work ID recorded</span></span>';
+      : `<span><span>${esc(target.id)}</span><small>Unresolved in this build</small></span>`).join('') : '<span><span>No product owner assigned</span><small>Owner registration is the next gate.</small></span>';
+    const evidenceOwners = unit.evidence_owner_works.length ? unit.evidence_owner_works.map((owner) => owner.resolved
+      ? `<a href="${esc(owner.library_url)}"><span>${esc(owner.name)}</span><code>${esc(owner.id)}</code></a>`
+      : `<span><span>${esc(owner.id)}</span><small>Unresolved in this build</small></span>`).join('') : '<span><span>Same as product owner</span></span>';
     return `<article class="promotion-unit">
       <header><div><span>${esc(unit.stage.replaceAll('_', ' '))}</span><span>${esc(unit.priority)} priority</span><span>${esc(unit.confidence)} confidence</span><span>${esc(unit.portability.replaceAll('_', ' '))}</span></div><h3>${esc(unit.name)}</h3></header>
-      <dl><div><dt>Classification</dt><dd>${esc(unit.classification.replaceAll('_', ' '))}</dd></div><div><dt>Disposition</dt><dd>${esc(unit.disposition.replaceAll('_', ' '))}</dd></div><div><dt>Source scope</dt><dd>${esc(unit.source_scope_id)}</dd></div><div><dt>Target</dt><dd>${esc(unit.target)}</dd></div><div><dt>Target Works</dt><dd class="promotion-targets">${targetWorks}</dd></div><div><dt>Next gate</dt><dd>${esc(unit.next_gate)}</dd></div><div><dt>Blockers</dt><dd>${blockers}</dd></div><div><dt>Rationale</dt><dd>${esc(unit.rationale)}</dd></div><div><dt>Evidence · ${esc(unit.evidence_count)} ${unit.evidence_count === 1 ? 'record' : 'records'}</dt><dd>${evidence}</dd></div></dl>
+      <dl><div><dt>Classification</dt><dd>${esc(unit.classification.replaceAll('_', ' '))}</dd></div><div><dt>Disposition</dt><dd>${esc(unit.disposition.replaceAll('_', ' '))}</dd></div><div><dt>Source scope</dt><dd>${esc(unit.source_scope_id)}</dd></div><div><dt>Target</dt><dd>${esc(unit.target)}</dd></div><div><dt>Product owner Works</dt><dd class="promotion-targets">${targetWorks}</dd></div><div><dt>Evidence owner Works</dt><dd class="promotion-targets">${evidenceOwners}</dd></div><div><dt>Next gate</dt><dd>${esc(unit.next_gate)}</dd></div><div><dt>Blockers</dt><dd>${blockers}</dd></div><div><dt>Rationale</dt><dd>${esc(unit.rationale)}</dd></div><div><dt>Evidence · ${esc(unit.evidence_count)} ${unit.evidence_count === 1 ? 'record' : 'records'}</dt><dd>${evidence}</dd></div></dl>
     </article>`;
   }).join('');
   return page({
@@ -578,7 +585,7 @@ function researchPage(works, snapshot, sectionWork, activeReleasesByWork, asOfDa
     title: 'Research', active: 'research', rootClass: 'agents-page',
     description: 'The Research section of The Great Library of SISO.',
     body: `<section class="subhero shell">${eyebrow('Library / Sections / Research')}<div><h1>Research</h1><p>Foundry discovers the evidence universe. SISO Knowledge preserves it. Evidence Engines turn it into traceable claims. Frontier Questions keep the highest-leverage questions and their answer lineage alive.</p></div><span class="folio">R—01</span></section>
-    <section class="relationship-map shell" aria-labelledby="research-map-title"><div class="map-copy">${eyebrow(`Projection / ${snapshot?.version || 'unversioned'}`)}<h2 id="research-map-title">One evidence loop.<br>Clear ownership.</h2><p>The Library owns stable question and answer identities, not the corpus payload. Each Research system remains independently addressable and releasable.</p><p><a href="${href('docs/siso-mission.html')}">Read the SISO mission →</a><br><a href="${href('docs/question-driven-research.html')}">Open the question-driven research architecture →</a><br><a href="${href('docs/frontier-question-template.html')}">Use the Frontier Question template + CRM example →</a><br><a href="${href('docs/god-questions-infrastructure.html')}">Read the God Questions infrastructure constitution →</a><br><a href="${href('docs/estate-reconciliation.html')}">See the public estate reconciliation model →</a><br><a href="${href('research.json')}">Open the agent-readable Observatory JSON →</a><br><a href="${href('docs/research-question-model.html')}">Read the Frontier Question identity model →</a><br><a href="${href('docs/siso-knowledge-model.html')}">Read the SISO Knowledge boundary →</a></p></div><div class="map-stack">${systems.map((work, i) => `<div class="map-node"><span>${String(i + 1).padStart(2, '0')}</span><div><b>${esc(work.name)}</b><small>${esc(work.type)} · ${esc(work.maturity)}</small></div></div>`).join('') || '<p class="map-key">Accepted Research systems are being indexed.</p>'}</div></section>
+    <section class="relationship-map shell" aria-labelledby="research-map-title"><div class="map-copy">${eyebrow(`Projection / ${snapshot?.version || 'unversioned'}`)}<h2 id="research-map-title">One evidence loop.<br>Clear ownership.</h2><p>The Library owns stable question and answer identities, not the corpus payload. Each Research system remains independently addressable and releasable.</p><p><a href="${href('docs/siso-mission.html')}">Read the SISO mission →</a><br><a href="${href('docs/question-driven-research.html')}">Open the question-driven research architecture →</a><br><a href="${href('docs/foundry-agency-intelligence.html')}">See Foundry intelligence become Agency capability →</a><br><a href="${href('docs/frontier-question-template.html')}">Use the Frontier Question template + CRM example →</a><br><a href="${href('docs/god-questions-infrastructure.html')}">Read the God Questions infrastructure constitution →</a><br><a href="${href('docs/estate-reconciliation.html')}">See the public estate reconciliation model →</a><br><a href="${href('research.json')}">Open the agent-readable Observatory JSON →</a><br><a href="${href('docs/research-question-model.html')}">Read the Frontier Question identity model →</a><br><a href="${href('docs/siso-knowledge-model.html')}">Read the SISO Knowledge boundary →</a></p></div><div class="map-stack">${systems.map((work, i) => `<div class="map-node"><span>${String(i + 1).padStart(2, '0')}</span><div><b>${esc(work.name)}</b><small>${esc(work.type)} · ${esc(work.maturity)}</small></div></div>`).join('') || '<p class="map-key">Accepted Research systems are being indexed.</p>'}</div></section>
     <section class="model-strip"><div class="shell"><p><b>God Questions Observatory.</b> ${esc(questionStates || 'No question state recorded')} across ${questions.length} standing questions.</p><p><b>Program substrate.</b> ${programCounts.programmed} questions · ${programCounts.assumptions} assumptions · ${programCounts.evidence} evidence connections · ${programCounts.links} action/learning links.</p><p><b>Questions drive the portfolio.</b> Research state is distinct from public answer maturity; artifact-free metadata seed Releases are not accepted answers.</p></div></section>
     <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Frontier Questions · God Questions')}<h2>Questions worth answering again.</h2><p><span data-result-count>${questions.length}</span> standing questions with stable identities, explicit evidence scopes, and versioned-answer contracts. Metadata seed Releases are not accepted answers.</p></div>${questions.length ? catalogControls(questions) : ''}<div class="work-grid" data-catalog>${questions.length ? questions.map((work) => questionCard(work, activeReleasesByWork.get(work.id), asOfDate)).join('') : emptyCatalog('Questions appear only after a publication-safe research contract is accepted.')}</div><p class="no-results" data-no-results hidden>No questions match those filters.</p></section>
     <section class="section shell catalog-section"><div class="section-heading compact">${eyebrow('Research systems')}<h2>The machinery behind the answers.</h2><p>${systems.length} independently owned Works.</p></div><div class="work-grid">${systems.map(workCard).join('')}</div></section>`,
@@ -871,6 +878,7 @@ await emit('docs/god-questions-infrastructure.html', await readFile(join(ROOT, '
 await emit('docs/estate-reconciliation.html', await readFile(join(ROOT, 'docs', 'estate-reconciliation.html'), 'utf8'));
 await emit('docs/onboarding.html', await readFile(join(ROOT, 'docs', 'onboarding.html'), 'utf8'));
 await emit('docs/agent-capability-promotion.html', await readFile(join(ROOT, 'docs', 'agent-capability-promotion.html'), 'utf8'));
+await emit('docs/foundry-agency-intelligence.html', await readFile(join(ROOT, 'docs', 'foundry-agency-intelligence.html'), 'utf8'));
 await emit('docs/ecosystem-intelligence.html', await readFile(join(ROOT, 'docs', 'ecosystem-intelligence.html'), 'utf8'));
 await emit('docs/100-million-token-program.html', await readFile(join(ROOT, 'docs', '100-million-token-program.html'), 'utf8'));
 await emit('docs/100-million-token-operating-plan.html', await readFile(join(ROOT, 'docs', '100-million-token-operating-plan.html'), 'utf8'));

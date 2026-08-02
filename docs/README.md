@@ -12,6 +12,7 @@ These authored documents explain the public model and its operating boundaries. 
 - [Agent capability discovery and promotion](agent-capability-promotion.html) — the evidence-gated intake loop from useful local mechanism to owned release, Library record, and Stack pin.
 - [Skill repository map](skills-repository-map.html) — direct-source assessment of all 28 current Skills Hub entries and the evidence gates for bundled, Playbook, system, retirement, or repository outcomes.
 - [SISO Knowledge model](siso-knowledge-model.html) — the source-backed boundary between the Great Library registry, durable Knowledge system, Foundry, Evidence Engines, and external data plane.
+- [Foundry Agency Intelligence](foundry-agency-intelligence.html) — the evidence loop from source discovery through Library promotion and owning Work releases into an agent-native SISO Agency OS control plane.
 - [Frontier Questions model](research-question-model.html) — how standing God Questions become stable Works, versioned answers, Foundry evidence scopes, and privacy-safe public projections.
 - [SISO mission](siso-mission.html) — the durable public direction behind the question portfolio, agent systems, and value-creation loop without confusing the Library with the company.
 - [Question-driven research](question-driven-research.html) — the first-principles loop from mission and questions through books, repositories, claims, assumptions, ADRs, experiments, Answer Releases, and watch triggers.

@@ -84,8 +84,20 @@ function publicProjectionReferenceProblem(value, depth = 0) {
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "research.json", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/god-questions-infrastructure.html", "docs/estate-reconciliation.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "estate/index.html", "estate.json"]) {
+for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "research.json", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/god-questions-infrastructure.html", "docs/estate-reconciliation.html", "docs/foundry-agency-intelligence.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "estate/index.html", "estate.json"]) {
   if (!await exists(path.join(root, required))) errors.push(`missing required page: ${required}`);
+}
+
+const promotionProjection = JSON.parse(await readFile(path.join(root, "promotion.json"), "utf8"));
+const agencyPromotion = promotionProjection.campaigns?.find((campaign) => campaign.campaign_id === "foundry-agency-intelligence");
+for (const unitId of ["siso-business-control-plane-gaps", "agency-source-module-portfolio"]) {
+  const unit = agencyPromotion?.units?.find((candidate) => candidate.id === unitId);
+  if (unit?.target_owner_state !== "unassigned" || unit?.target_works?.length !== 0) errors.push(`promotion.json: ${unitId} must retain an unassigned product owner without a target Work link`);
+  if (!unit?.evidence_owner_works?.some((owner) => owner.id === "gls:work:ec664d93-df93-48c5-be40-5d0165886c01")) errors.push(`promotion.json: ${unitId} must retain Foundry as its evidence owner`);
+}
+const promotionHtml = await readFile(path.join(root, "promotion", "index.html"), "utf8");
+for (const marker of ["No product owner assigned", "Evidence owner Works"]) {
+  if (!promotionHtml.includes(marker)) errors.push(`promotion/index.html: missing owner-boundary marker: ${marker}`);
 }
 
 const intelligence = JSON.parse(await readFile(path.join(root, "intelligence.json"), "utf8"));
@@ -100,7 +112,8 @@ if (!intelligence.events?.some((event) => event.id === "gls:event:dc9d1aef-28e7-
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "33.0.0" && change.id === "gls:snapshot:5929e723-9789-4a33-af63-ba472650a522")) errors.push("intelligence.json: automatic registry changelog is missing V33");
 if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 69) errors.push("intelligence.json: expected 69 immutable Releases at V33 closeout");
 if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 33) errors.push("intelligence.json: expected 33 immutable Snapshots at V33 closeout");
-if (intelligence.counts?.events !== 23 || intelligence.counts?.active_initiatives !== 0) errors.push("intelligence.json: expected 23 Events and zero active initiatives at V33 closeout");
+if (intelligence.counts?.events !== 24 || intelligence.counts?.active_initiatives !== 1) errors.push("intelligence.json: expected 24 Events and one active initiative after Foundry Agency intelligence intake");
+if (!intelligence.active_initiatives?.some((initiative) => initiative.thread_id === "gls:thread:foundry-agency-intelligence" && initiative.status === "active")) errors.push("intelligence.json: missing active Foundry Agency intelligence initiative");
 
 const frontierQuestions = [
   ["GQ-001", "frontier-question-agent-workspace"],
@@ -180,6 +193,10 @@ for (const marker of ["The 100 Million Token Program", "No. They should run as a
 const operatingPlanHtml = await readFile(path.join(root, "docs/100-million-token-operating-plan.html"), "utf8");
 for (const marker of ["Build-first orientation", "Distribute the complete Stack", "P13 · Outside-user distribution", "Foundry discovery campaign", "rights-aware candidate metadata"]) {
   if (!operatingPlanHtml.includes(marker)) errors.push(`docs/100-million-token-operating-plan.html: missing build-first marker: ${marker}`);
+}
+const foundryAgencyHtml = await readFile(path.join(root, "docs/foundry-agency-intelligence.html"), "utf8");
+for (const marker of ["Foundry is the source-intelligence engine", "Source-owned modules", "Foundry does not become the system of record", "SISO Agency OS", "879 adoption records remain unresolved"]) {
+  if (!foundryAgencyHtml.includes(marker)) errors.push(`docs/foundry-agency-intelligence.html: missing Agency intelligence marker: ${marker}`);
 }
 for (const [questionId, slug] of frontierQuestions) {
   const questionPath = path.join(root, "works", slug, "index.html");

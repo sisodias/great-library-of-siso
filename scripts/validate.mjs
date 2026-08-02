@@ -365,12 +365,22 @@ for (const { file, value: inventory } of records.source_inventory) {
     }
     if (inventory.inventory_kind === "agent_capabilities" && !unit.promotion) fail(`${label}: agent capability unit ${unit.unit_id} requires promotion metadata`);
     if (unit.promotion) {
-      for (const targetWorkId of unit.promotion.target_work_ids ?? []) {
+      const targetWorkIds = unit.promotion.target_work_ids ?? [];
+      const evidenceOwnerWorkIds = unit.promotion.evidence_owner_work_ids ?? [];
+      const targetOwnerState = unit.promotion.target_owner_state ?? "assigned";
+      for (const targetWorkId of targetWorkIds) {
         if (!works.has(targetWorkId)) fail(`${label}: unit ${unit.unit_id} promotion target Work ${targetWorkId} does not resolve`);
       }
+      for (const evidenceOwnerWorkId of evidenceOwnerWorkIds) {
+        if (!works.has(evidenceOwnerWorkId)) fail(`${label}: unit ${unit.unit_id} evidence owner Work ${evidenceOwnerWorkId} does not resolve`);
+      }
+      if (targetOwnerState === "unassigned" && targetWorkIds.length) fail(`${label}: unit ${unit.unit_id} cannot declare target Works while its target owner is unassigned`);
+      if (targetOwnerState === "unassigned" && !evidenceOwnerWorkIds.length) fail(`${label}: unit ${unit.unit_id} with an unassigned target owner requires an evidence owner Work`);
+      if (targetOwnerState === "assigned" && !targetWorkIds.length) fail(`${label}: unit ${unit.unit_id} with an assigned target owner requires a target Work`);
       const stage = unit.promotion.stage;
       const stageRank = promotionLifecycle.indexOf(stage);
       const isRetired = stage === "retired";
+      if (!isRetired && stageRank >= promotionLifecycle.indexOf("owner_assigned") && targetOwnerState === "unassigned") fail(`${label}: unit ${unit.unit_id} cannot reach owner_assigned while its target owner is unassigned`);
       const evidenceByReference = new Map(unit.evidence.map((entry) => [entry.reference, entry]));
       if (!isRetired && stageRank >= promotionLifecycle.indexOf("verified")) {
         if (!unit.promotion.verification_evidence_refs?.length) fail(`${label}: verified-or-later unit ${unit.unit_id} requires bound verification_evidence_refs`);
@@ -383,7 +393,7 @@ for (const { file, value: inventory } of records.source_inventory) {
       if (!isRetired && stageRank >= promotionLifecycle.indexOf("released")) {
         owningRelease = releases.get(unit.promotion.release_id)?.value;
         if (!owningRelease) fail(`${label}: released-or-later unit ${unit.unit_id} requires a resolving release_id`);
-        else if (!unit.promotion.target_work_ids.includes(owningRelease.work_id)) fail(`${label}: unit ${unit.unit_id} release Work must be one of its target Works`);
+        else if (!targetWorkIds.includes(owningRelease.work_id)) fail(`${label}: unit ${unit.unit_id} release Work must be one of its target Works`);
       }
       let selectedSnapshot;
       if (!isRetired && stageRank >= promotionLifecycle.indexOf("library_indexed")) {

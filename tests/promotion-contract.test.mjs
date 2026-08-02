@@ -113,6 +113,20 @@ function configureStackPinnedUnit(value, manifestDigest = manifestSha256) {
 
 await test("baseline campaign validates", async () => {}, 0, "PASS registry validation");
 
+await test("unassigned product owner cannot retain a product target", async (target) => {
+  const { file, value } = await readInventory(target);
+  const unit = value.units[0];
+  unit.promotion.target_owner_state = "unassigned";
+  unit.promotion.evidence_owner_work_ids = [unit.promotion.target_work_ids[0]];
+  await writeFile(file, `${JSON.stringify(value, null, 2)}\n`);
+}, 1, "cannot declare target Works while its target owner is unassigned");
+
+await test("assigned product owner requires a product target", async (target) => {
+  const { file, value } = await readInventory(target);
+  value.units[0].promotion.target_work_ids = [];
+  await writeFile(file, `${JSON.stringify(value, null, 2)}\n`);
+}, 1, "with an assigned target owner requires a target Work");
+
 await test("valid successor advances without losing history", async (target) => {
   await addSuccessor(target, (value) => {
     value.units.find((unit) => unit.unit_id === "deterministic-policy-guards").promotion.stage = "owner_assigned";

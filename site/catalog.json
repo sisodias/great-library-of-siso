@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T22:14:55.000Z",
+  "generated_at": "2026-08-02T15:15:09.000Z",
   "base_path": "/",
   "works": [
     {
@@ -1674,6 +1674,297 @@
       ]
     },
     {
+      "schema_version": "1.1.0",
+      "record_type": "source_inventory",
+      "id": "gls:source-inventory:77f07470-51a6-41a2-9cae-0799297ebff7",
+      "name": "Foundry Agency intelligence promotion inventory",
+      "inventory_kind": "agent_capabilities",
+      "immutable": true,
+      "observed_at": "2026-08-02",
+      "inventory_state": "partial",
+      "source_scopes": [
+        {
+          "scope_id": "foundry-public-work",
+          "name": "SISO Foundry public Work",
+          "source_type": "work",
+          "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "publication_boundary": "public_source"
+        },
+        {
+          "scope_id": "foundry-operational-evidence",
+          "name": "Foundry external data plane and operational evidence",
+          "source_type": "workspace",
+          "publication_boundary": "public_metadata_only"
+        },
+        {
+          "scope_id": "agency-source-portfolio",
+          "name": "External Agency software candidates",
+          "source_type": "external_upstream",
+          "publication_boundary": "external_public_source"
+        }
+      ],
+      "campaign": {
+        "campaign_id": "foundry-agency-intelligence",
+        "owner_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+        "objective": "Turn recovered source intelligence into evidence-backed Agency OS capability decisions and promote verified results to their owning Works without copying private corpora or source-owned applications into the Library.",
+        "lifecycle": [
+          "unverified",
+          "read",
+          "candidate",
+          "owner_assigned",
+          "extracted",
+          "verified",
+          "released",
+          "library_indexed",
+          "stack_pinned",
+          "retired"
+        ]
+      },
+      "preservation": {
+        "mode": "read_only",
+        "dirty_state": "withheld",
+        "reason": "Only publication-safe metadata and conclusions are recorded. The operational database, raw observations, generated artifacts, rights-sensitive payloads, local topology, and unrelated source state are neither copied nor mutated.",
+        "nested_repositories": []
+      },
+      "units": [
+        {
+          "unit_id": "agency-intelligence-package",
+          "name": "Foundry Agency intelligence package",
+          "paths": [
+            "intelligence/agency/README.md",
+            "intelligence/agency/snapshot.json",
+            "intelligence/agency/BACKLOG.md"
+          ],
+          "source_scope_id": "foundry-public-work",
+          "classification": "shared_package",
+          "disposition": "keep",
+          "target": "SISO Foundry",
+          "promotion": {
+            "stage": "candidate",
+            "priority": "critical",
+            "confidence": "high",
+            "portability": "ready",
+            "target_work_ids": [
+              "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+            ],
+            "next_gate": "Publish an exact Foundry source revision, pass the repository gate, and register the immutable Release before selecting it in a successor Library Snapshot.",
+            "blockers": [
+              "The package is not yet represented by an accepted immutable Foundry Release."
+            ]
+          },
+          "rationale": "The package makes the recovered Agency mission, metadata counts, application map, caveats, and evidence backlog durable inside the Work that owns source intelligence rather than burying them in an agent transcript or duplicating them in the Library.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:foundry-agency-intelligence-package:2026-08-02",
+              "observed_at": "2026-08-02",
+              "summary": "The package boundary and counts were reconciled against Foundry's public data-plane contract and read-only operational evidence."
+            }
+          ]
+        },
+        {
+          "unit_id": "source-oracle-and-adoption-evidence",
+          "name": "Source Oracle, adoption truth, and dependency evidence",
+          "paths": [
+            "domains/github/identity/identity.sqlite",
+            "domains/github/curated/adoption",
+            "domains/github/curated/capability-graph"
+          ],
+          "source_scope_id": "foundry-operational-evidence",
+          "classification": "data_or_archive",
+          "disposition": "move_to_data_store",
+          "target": "Foundry external data plane behind a read-only Source Oracle contract",
+          "promotion": {
+            "stage": "candidate",
+            "priority": "critical",
+            "confidence": "high",
+            "portability": "requires_sanitization",
+            "target_work_ids": [
+              "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+            ],
+            "next_gate": "Version a typed read-only API and create schema, content-hash, rights, privacy, generator, and durable-copy receipts for an external data snapshot.",
+            "blockers": [
+              "The corpus payload is not published.",
+              "879 adoption records remain unresolved.",
+              "Current external assets do not yet carry the complete release receipt set."
+            ]
+          },
+          "rationale": "Repository identity, adoption decisions, capability dependencies, contract cards, and verification receipts are the compounding source-intelligence asset. Agents should query them through a stable contract rather than receive direct database authority.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:foundry-operational-metadata:2026-08-02",
+              "observed_at": "2026-08-02",
+              "summary": "Read-only counts confirmed 1,358,200 repository cards, 2,722 adoption records, 70 total contract cards with a 20-card verified subset, and a 104-node capability graph while retaining the payload outside Git."
+            },
+            {
+              "kind": "source_review",
+              "reference": "sha256:cfb73b50405fcd71383440cfbcee3d4b896c549a206d3840194de26d50fb843c",
+              "observed_at": "2026-08-02",
+              "summary": "Content receipt for the 1,879,339,008-byte logical Foundry identity database queried read-only; no database payload is published by this inventory."
+            }
+          ]
+        },
+        {
+          "unit_id": "behavior-and-composition-proof",
+          "name": "Behavior and composition proof harness",
+          "paths": [
+            "packages/bank-api/rig",
+            "packages/bank-api/bank.py",
+            "pipelines/github"
+          ],
+          "source_scope_id": "foundry-public-work",
+          "classification": "experiment",
+          "disposition": "keep",
+          "target": "SISO Foundry verification and outcome evidence",
+          "promotion": {
+            "stage": "candidate",
+            "priority": "critical",
+            "confidence": "high",
+            "portability": "ready",
+            "target_work_ids": [
+              "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+            ],
+            "verification_evidence_refs": [
+              "logical-source:foundry-operational:research/wild/WILD-compose-proof-rig.html",
+              "logical-source:foundry-operational:research/wild3/rig"
+            ],
+            "next_gate": "Publish reproducible fixtures for the WILD experiments and require every Agency module verdict to carry behavioral, integration, cost, and outcome evidence.",
+            "blockers": [
+              "Current composition results support narrow verification leverage, not automatic application assembly."
+            ]
+          },
+          "rationale": "Foundry creates leverage only when source selection is tied to falsifiable behavior and integration outcomes. The existing evidence supports contract cards as steering and validation aids while rejecting stronger Lego-style composition claims.",
+          "evidence": [
+            {
+              "kind": "integration_check",
+              "reference": "source-review:foundry-composition-receipts:2026-08-02",
+              "observed_at": "2026-08-02",
+              "summary": "WILD-1 showed no overall lift across 9-of-9 variants; WILD-3 tied at 12-of-12 but card-guided validation rejected one invalid pattern accepted by a hand-rolled alternative."
+            }
+          ]
+        },
+        {
+          "unit_id": "siso-business-control-plane-gaps",
+          "name": "SISO-owned business control-plane gaps",
+          "paths": [
+            "agency-intelligence/control-plane-gaps"
+          ],
+          "source_scope_id": "foundry-operational-evidence",
+          "classification": "candidate_work",
+          "disposition": "distribute_to_owners",
+          "target": "SISO Foundry evidence intake; future SISO Agency OS product owner is unassigned",
+          "promotion": {
+            "stage": "read",
+            "priority": "critical",
+            "confidence": "medium",
+            "portability": "unknown",
+            "target_owner_state": "unassigned",
+            "target_work_ids": [],
+            "evidence_owner_work_ids": [
+              "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+            ],
+            "next_gate": "Register or identify the owning Agency control-plane Work, specify the six gaps as product contracts, and rerun source discovery against each contract before authorizing a build.",
+            "blockers": [
+              "No accepted Agency OS or business control-plane Work currently exists in the Library.",
+              "A source gap is a build hypothesis, not proof that suitable source does not exist."
+            ]
+          },
+          "rationale": "Foundry owns the candidate evidence only, not the future product. Usage metering, pricing and entitlements, multi-tenancy, append-only business audit, reliable webhook delivery, and OAuth authority recur across the source portfolio without one proven drop-in owner. They are likely SISO leverage only after contract definition, renewed evidence, and Agency owner registration.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:foundry-agency-control-plane-gaps:2026-08-02",
+              "observed_at": "2026-08-02",
+              "summary": "The adoption and source-analysis results were reconciled into six recurring product-glue gaps with an explicit requirement for renewed source review before build."
+            }
+          ]
+        },
+        {
+          "unit_id": "agent-system-pattern-bank",
+          "name": "Agent-system pattern and prompt bank",
+          "paths": [
+            "domains/github/curated/agent-patterns",
+            "domains/github/curated/prompt-corpus",
+            "domains/github/curated/source-signals"
+          ],
+          "source_scope_id": "foundry-operational-evidence",
+          "classification": "shared_package",
+          "disposition": "distribute_to_owners",
+          "target": "SISO Skills, SISO Agent Playbook, and SISO Agent Stack Distribution",
+          "promotion": {
+            "stage": "candidate",
+            "priority": "high",
+            "confidence": "high",
+            "portability": "requires_sanitization",
+            "target_work_ids": [
+              "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+              "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc",
+              "gls:work:b9196c61-901f-4105-93d9-899876d17016"
+            ],
+            "next_gate": "Review every promoted pattern against its direct source, attribution, rights, behavior, overlap, and owner contract before extraction or Playbook integration.",
+            "blockers": [
+              "The 62 patterns and 26 prompt records are research evidence, not independently licensed release artifacts.",
+              "Owner-specific tests and packaging do not yet exist."
+            ]
+          },
+          "rationale": "Foundry has already mined useful agent patterns and prompt evidence. The value becomes durable only when the appropriate owning Work turns selected mechanisms into attributed, verified, installable releases.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:foundry-agent-pattern-bank:2026-08-02",
+              "observed_at": "2026-08-02",
+              "summary": "Operational metadata confirmed 62 agent patterns, 26 prompt-corpus records, and 259 repository source signals with source-by-source promotion gates still open."
+            }
+          ]
+        },
+        {
+          "unit_id": "agency-source-module-portfolio",
+          "name": "Agency source-module candidate portfolio",
+          "paths": [
+            "upstream/agency-modules"
+          ],
+          "source_scope_id": "agency-source-portfolio",
+          "classification": "external_upstream",
+          "disposition": "compare",
+          "target": "SISO Foundry evidence intake; future SISO Agency OS module-portfolio owner is unassigned",
+          "promotion": {
+            "stage": "read",
+            "priority": "high",
+            "confidence": "medium",
+            "portability": "unknown",
+            "target_owner_state": "unassigned",
+            "target_work_ids": [],
+            "evidence_owner_work_ids": [
+              "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+            ],
+            "next_gate": "Create direct-source dossiers and integration proofs for each capability cluster, then assign accepted modules to an Agency portfolio Work instead of treating a star-ranked list as architecture.",
+            "blockers": [
+              "License, security, maintenance, tenancy, API coverage, deployment burden, and current source revisions require direct review.",
+              "No accepted Agency OS portfolio Work currently owns these candidates."
+            ]
+          },
+          "rationale": "Foundry owns the candidate evidence only, not the future product portfolio. Teable, AFFiNE, Open Notebook, Plane, Documenso, Chatwoot, Cal.com, Activepieces, Listmonk, Postiz, Formbricks, Metabase, PostHog, Superset, Meilisearch, Qdrant, RAGFlow, Coolify, Airbyte, dlt, Meltano, Langflow, Coze, and Flowgram are operator-nominated starting ideas, but each requires a current evidence-backed adoption verdict and an Agency owner.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "source-review:foundry-agency-module-portfolio:2026-08-02",
+              "observed_at": "2026-08-02",
+              "summary": "Recovered Agency analysis grouped source candidates by business capability and adoption mode while retaining candidate status pending direct review."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:foundry-agency-intelligence-recovery:2026-08-02",
+          "observed_at": "2026-08-02",
+          "summary": "The Foundry public source, external-data boundary, operational metadata, Agency application analysis, composition evidence, and Great Library ownership model were reconciled into one preservation-aware promotion inventory."
+        }
+      ]
+    },
+    {
       "schema_version": "1.0.0",
       "record_type": "source_inventory",
       "id": "gls:source-inventory:d3e37616-1005-4d67-b5c5-82684dceed70",
@@ -2520,13 +2811,13 @@
     }
   ],
   "promotion": {
-    "inventory_count": 1,
-    "unit_count": 18,
+    "inventory_count": 2,
+    "unit_count": 24,
     "counts": {
       "stage": [
         {
           "value": "candidate",
-          "count": 7
+          "count": 11
         },
         {
           "value": "owner_assigned",
@@ -2534,17 +2825,17 @@
         },
         {
           "value": "read",
-          "count": 3
+          "count": 5
         }
       ],
       "priority": [
         {
           "value": "critical",
-          "count": 8
+          "count": 12
         },
         {
           "value": "high",
-          "count": 8
+          "count": 10
         },
         {
           "value": "medium",
@@ -2552,6 +2843,10 @@
         }
       ],
       "target": [
+        {
+          "value": "Foundry external data plane behind a read-only Source Oracle contract",
+          "count": 1
+        },
         {
           "value": "Optional SISO Agent Hooks efficiency profile",
           "count": 1
@@ -2609,6 +2904,22 @@
           "count": 1
         },
         {
+          "value": "SISO Foundry",
+          "count": 1
+        },
+        {
+          "value": "SISO Foundry evidence intake; future SISO Agency OS module-portfolio owner is unassigned",
+          "count": 1
+        },
+        {
+          "value": "SISO Foundry evidence intake; future SISO Agency OS product owner is unassigned",
+          "count": 1
+        },
+        {
+          "value": "SISO Foundry verification and outcome evidence",
+          "count": 1
+        },
+        {
           "value": "SISO Project OS drift checks and Great Library operating docs",
           "count": 1
         },
@@ -2622,6 +2933,10 @@
         },
         {
           "value": "SISO Skills next reviewed release",
+          "count": 1
+        },
+        {
+          "value": "SISO Skills, SISO Agent Playbook, and SISO Agent Stack Distribution",
           "count": 1
         }
       ]
@@ -2673,6 +2988,7 @@
                 "summary": "The hub design, README, audit contract, registry, and public Hooks manifest were read and compared."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:4198f323-9855-43f6-a99a-72143086818e",
@@ -2680,7 +2996,8 @@
                 "library_url": "/works/siso-agent-hooks/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "deterministic-policy-guards",
@@ -2707,6 +3024,7 @@
                 "summary": "The hook implementation and the released safety-guard behavior were read and compared by policy responsibility."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:4198f323-9855-43f6-a99a-72143086818e",
@@ -2714,7 +3032,8 @@
                 "library_url": "/works/siso-agent-hooks/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "dispatch-evidence-contract",
@@ -2741,6 +3060,7 @@
                 "summary": "The evidence hook and related Playbook dispatch contract were read and their distribution gap confirmed."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:4198f323-9855-43f6-a99a-72143086818e",
@@ -2754,7 +3074,8 @@
                 "library_url": "/works/siso-agent-playbook/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "closeout-and-attention-gates",
@@ -2782,6 +3103,7 @@
                 "summary": "Three local gate implementations and the portable verify-stop hook were read and compared."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:4198f323-9855-43f6-a99a-72143086818e",
@@ -2795,7 +3117,8 @@
                 "library_url": "/works/siso-project-os/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "orchestration-efficiency-hooks",
@@ -2822,6 +3145,7 @@
                 "summary": "The local hook behavior and overlapping fan-out and Playbook guidance were compared."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:4198f323-9855-43f6-a99a-72143086818e",
@@ -2835,7 +3159,8 @@
                 "library_url": "/works/siso-agent-integrations/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "skills-catalog-reconciliation",
@@ -2863,6 +3188,7 @@
                 "summary": "Skill manifests were enumerated across the warehouse, Agent OS, released Skills registry, and released Playbook, followed by direct reads of priority candidates."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
@@ -2876,7 +3202,8 @@
                 "library_url": "/works/siso-agent-playbook/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "priority-portable-skill-batch",
@@ -2904,6 +3231,7 @@
                 "summary": "The selected skill bodies and their released-catalog absence were reviewed; portability gates remain open."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
@@ -2911,7 +3239,8 @@
                 "library_url": "/works/siso-skills/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "pi-harness-lab",
@@ -2939,6 +3268,7 @@
                 "summary": "The lab mission, package manifest, workspaces, agent profiles, experiments, and verification commands were read."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
@@ -2946,7 +3276,8 @@
                 "library_url": "/works/siso-agent-base/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "child-task-lifecycle",
@@ -2973,6 +3304,7 @@
                 "summary": "The lifecycle specification was read and exact contract names were checked against the released Runtime surface."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
@@ -2980,7 +3312,8 @@
                 "library_url": "/works/siso-agent-base/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "agent-tui-parity",
@@ -3008,6 +3341,7 @@
                 "summary": "The TUI README, package surfaces, application boundary, and existing Runtime extraction record were reconciled."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
@@ -3015,7 +3349,8 @@
                 "library_url": "/works/siso-agent-base/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "agent-legibility-standards",
@@ -3042,6 +3377,7 @@
                 "summary": "The conventions, standards index, architecture skill, enforcement templates, and module handoff format were read."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
@@ -3055,7 +3391,8 @@
                 "library_url": "/works/siso-skills/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "manager-worker-validator-playbook",
@@ -3082,6 +3419,7 @@
                 "summary": "The three role contracts and the evidence-backed prompting principles were read and compared with released Playbook scenarios."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc",
@@ -3089,7 +3427,8 @@
                 "library_url": "/works/siso-agent-playbook/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "agent-stack-benchmark-harness",
@@ -3116,6 +3455,7 @@
                 "summary": "The benchmark plan, task families, scorecard, representative results, and mechanism-level evaluation brief were read."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
@@ -3129,7 +3469,8 @@
                 "library_url": "/works/siso-agent-stack-distribution/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "agent-zero-voice-replay",
@@ -3157,6 +3498,7 @@
                 "summary": "Typed contracts, risk tiers, idempotency, replay fixtures, and the released Agent Zero boundary were read and compared."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
@@ -3164,7 +3506,8 @@
                 "library_url": "/works/siso-agent-zero/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "atlas-architectural-auditor",
@@ -3192,6 +3535,7 @@
                 "summary": "The README, rubric, scripts, source map, and ticket-only boundary were read; activity was not inferred."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a",
@@ -3199,7 +3543,8 @@
                 "library_url": "/works/siso-agent-integrations/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "operator-status-hud",
@@ -3226,6 +3571,7 @@
                 "summary": "The statusline implementation and existing portable agent-state hook were read and compared."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
@@ -3233,7 +3579,8 @@
                 "library_url": "/works/siso-agent-base/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "memory-lifecycle-adapter",
@@ -3261,6 +3608,7 @@
                 "summary": "Only the hook lifecycle contract was reviewed; private memory payloads, databases, logs, and personal state were excluded."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
@@ -3274,7 +3622,8 @@
                 "library_url": "/works/siso-session-intelligence/",
                 "resolved": true
               }
-            ]
+            ],
+            "evidence_owner_works": []
           },
           {
             "id": "generated-workspace-canon",
@@ -3301,6 +3650,7 @@
                 "summary": "The root orientation documents, ownership map, and current Agents domain manifest were read and compared."
               }
             ],
+            "target_owner_state": "assigned",
             "target_works": [
               {
                 "id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
@@ -3314,6 +3664,268 @@
                 "library_url": "/works/great-library-of-siso/",
                 "resolved": true
               }
+            ],
+            "evidence_owner_works": []
+          }
+        ]
+      },
+      {
+        "inventory_id": "gls:source-inventory:77f07470-51a6-41a2-9cae-0799297ebff7",
+        "inventory_name": "Foundry Agency intelligence promotion inventory",
+        "inventory_state": "partial",
+        "observed_at": "2026-08-02",
+        "campaign_id": "foundry-agency-intelligence",
+        "objective": "Turn recovered source intelligence into evidence-backed Agency OS capability decisions and promote verified results to their owning Works without copying private corpora or source-owned applications into the Library.",
+        "lifecycle": [
+          "unverified",
+          "read",
+          "candidate",
+          "owner_assigned",
+          "extracted",
+          "verified",
+          "released",
+          "library_indexed",
+          "stack_pinned",
+          "retired"
+        ],
+        "units": [
+          {
+            "id": "agency-intelligence-package",
+            "name": "Foundry Agency intelligence package",
+            "source_scope_id": "foundry-public-work",
+            "classification": "shared_package",
+            "disposition": "keep",
+            "stage": "candidate",
+            "priority": "critical",
+            "confidence": "high",
+            "portability": "ready",
+            "target": "SISO Foundry",
+            "next_gate": "Publish an exact Foundry source revision, pass the repository gate, and register the immutable Release before selecting it in a successor Library Snapshot.",
+            "blockers": [
+              "The package is not yet represented by an accepted immutable Foundry Release."
+            ],
+            "rationale": "The package makes the recovered Agency mission, metadata counts, application map, caveats, and evidence backlog durable inside the Work that owns source intelligence rather than burying them in an agent transcript or duplicating them in the Library.",
+            "evidence_count": 1,
+            "evidence": [
+              {
+                "kind": "source_review",
+                "reference": "source-review:foundry-agency-intelligence-package:2026-08-02",
+                "observed_at": "2026-08-02",
+                "summary": "The package boundary and counts were reconciled against Foundry's public data-plane contract and read-only operational evidence."
+              }
+            ],
+            "target_owner_state": "assigned",
+            "target_works": [
+              {
+                "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+                "name": "SISO Foundry",
+                "library_url": "/works/siso-foundry/",
+                "resolved": true
+              }
+            ],
+            "evidence_owner_works": []
+          },
+          {
+            "id": "source-oracle-and-adoption-evidence",
+            "name": "Source Oracle, adoption truth, and dependency evidence",
+            "source_scope_id": "foundry-operational-evidence",
+            "classification": "data_or_archive",
+            "disposition": "move_to_data_store",
+            "stage": "candidate",
+            "priority": "critical",
+            "confidence": "high",
+            "portability": "requires_sanitization",
+            "target": "Foundry external data plane behind a read-only Source Oracle contract",
+            "next_gate": "Version a typed read-only API and create schema, content-hash, rights, privacy, generator, and durable-copy receipts for an external data snapshot.",
+            "blockers": [
+              "The corpus payload is not published.",
+              "879 adoption records remain unresolved.",
+              "Current external assets do not yet carry the complete release receipt set."
+            ],
+            "rationale": "Repository identity, adoption decisions, capability dependencies, contract cards, and verification receipts are the compounding source-intelligence asset. Agents should query them through a stable contract rather than receive direct database authority.",
+            "evidence_count": 2,
+            "evidence": [
+              {
+                "kind": "source_review",
+                "reference": "source-review:foundry-operational-metadata:2026-08-02",
+                "observed_at": "2026-08-02",
+                "summary": "Read-only counts confirmed 1,358,200 repository cards, 2,722 adoption records, 70 total contract cards with a 20-card verified subset, and a 104-node capability graph while retaining the payload outside Git."
+              },
+              {
+                "kind": "source_review",
+                "reference": "sha256:cfb73b50405fcd71383440cfbcee3d4b896c549a206d3840194de26d50fb843c",
+                "observed_at": "2026-08-02",
+                "summary": "Content receipt for the 1,879,339,008-byte logical Foundry identity database queried read-only; no database payload is published by this inventory."
+              }
+            ],
+            "target_owner_state": "assigned",
+            "target_works": [
+              {
+                "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+                "name": "SISO Foundry",
+                "library_url": "/works/siso-foundry/",
+                "resolved": true
+              }
+            ],
+            "evidence_owner_works": []
+          },
+          {
+            "id": "behavior-and-composition-proof",
+            "name": "Behavior and composition proof harness",
+            "source_scope_id": "foundry-public-work",
+            "classification": "experiment",
+            "disposition": "keep",
+            "stage": "candidate",
+            "priority": "critical",
+            "confidence": "high",
+            "portability": "ready",
+            "target": "SISO Foundry verification and outcome evidence",
+            "next_gate": "Publish reproducible fixtures for the WILD experiments and require every Agency module verdict to carry behavioral, integration, cost, and outcome evidence.",
+            "blockers": [
+              "Current composition results support narrow verification leverage, not automatic application assembly."
+            ],
+            "rationale": "Foundry creates leverage only when source selection is tied to falsifiable behavior and integration outcomes. The existing evidence supports contract cards as steering and validation aids while rejecting stronger Lego-style composition claims.",
+            "evidence_count": 1,
+            "evidence": [
+              {
+                "kind": "integration_check",
+                "reference": "source-review:foundry-composition-receipts:2026-08-02",
+                "observed_at": "2026-08-02",
+                "summary": "WILD-1 showed no overall lift across 9-of-9 variants; WILD-3 tied at 12-of-12 but card-guided validation rejected one invalid pattern accepted by a hand-rolled alternative."
+              }
+            ],
+            "target_owner_state": "assigned",
+            "target_works": [
+              {
+                "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+                "name": "SISO Foundry",
+                "library_url": "/works/siso-foundry/",
+                "resolved": true
+              }
+            ],
+            "evidence_owner_works": []
+          },
+          {
+            "id": "siso-business-control-plane-gaps",
+            "name": "SISO-owned business control-plane gaps",
+            "source_scope_id": "foundry-operational-evidence",
+            "classification": "candidate_work",
+            "disposition": "distribute_to_owners",
+            "stage": "read",
+            "priority": "critical",
+            "confidence": "medium",
+            "portability": "unknown",
+            "target": "SISO Foundry evidence intake; future SISO Agency OS product owner is unassigned",
+            "next_gate": "Register or identify the owning Agency control-plane Work, specify the six gaps as product contracts, and rerun source discovery against each contract before authorizing a build.",
+            "blockers": [
+              "No accepted Agency OS or business control-plane Work currently exists in the Library.",
+              "A source gap is a build hypothesis, not proof that suitable source does not exist."
+            ],
+            "rationale": "Foundry owns the candidate evidence only, not the future product. Usage metering, pricing and entitlements, multi-tenancy, append-only business audit, reliable webhook delivery, and OAuth authority recur across the source portfolio without one proven drop-in owner. They are likely SISO leverage only after contract definition, renewed evidence, and Agency owner registration.",
+            "evidence_count": 1,
+            "evidence": [
+              {
+                "kind": "source_review",
+                "reference": "source-review:foundry-agency-control-plane-gaps:2026-08-02",
+                "observed_at": "2026-08-02",
+                "summary": "The adoption and source-analysis results were reconciled into six recurring product-glue gaps with an explicit requirement for renewed source review before build."
+              }
+            ],
+            "target_owner_state": "unassigned",
+            "target_works": [],
+            "evidence_owner_works": [
+              {
+                "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+                "name": "SISO Foundry",
+                "library_url": "/works/siso-foundry/",
+                "resolved": true
+              }
+            ]
+          },
+          {
+            "id": "agent-system-pattern-bank",
+            "name": "Agent-system pattern and prompt bank",
+            "source_scope_id": "foundry-operational-evidence",
+            "classification": "shared_package",
+            "disposition": "distribute_to_owners",
+            "stage": "candidate",
+            "priority": "high",
+            "confidence": "high",
+            "portability": "requires_sanitization",
+            "target": "SISO Skills, SISO Agent Playbook, and SISO Agent Stack Distribution",
+            "next_gate": "Review every promoted pattern against its direct source, attribution, rights, behavior, overlap, and owner contract before extraction or Playbook integration.",
+            "blockers": [
+              "The 62 patterns and 26 prompt records are research evidence, not independently licensed release artifacts.",
+              "Owner-specific tests and packaging do not yet exist."
+            ],
+            "rationale": "Foundry has already mined useful agent patterns and prompt evidence. The value becomes durable only when the appropriate owning Work turns selected mechanisms into attributed, verified, installable releases.",
+            "evidence_count": 1,
+            "evidence": [
+              {
+                "kind": "source_review",
+                "reference": "source-review:foundry-agent-pattern-bank:2026-08-02",
+                "observed_at": "2026-08-02",
+                "summary": "Operational metadata confirmed 62 agent patterns, 26 prompt-corpus records, and 259 repository source signals with source-by-source promotion gates still open."
+              }
+            ],
+            "target_owner_state": "assigned",
+            "target_works": [
+              {
+                "id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+                "name": "SISO Skills",
+                "library_url": "/works/siso-skills/",
+                "resolved": true
+              },
+              {
+                "id": "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc",
+                "name": "SISO Agent Playbook",
+                "library_url": "/works/siso-agent-playbook/",
+                "resolved": true
+              },
+              {
+                "id": "gls:work:b9196c61-901f-4105-93d9-899876d17016",
+                "name": "SISO Agent Stack Distribution",
+                "library_url": "/works/siso-agent-stack-distribution/",
+                "resolved": true
+              }
+            ],
+            "evidence_owner_works": []
+          },
+          {
+            "id": "agency-source-module-portfolio",
+            "name": "Agency source-module candidate portfolio",
+            "source_scope_id": "agency-source-portfolio",
+            "classification": "external_upstream",
+            "disposition": "compare",
+            "stage": "read",
+            "priority": "high",
+            "confidence": "medium",
+            "portability": "unknown",
+            "target": "SISO Foundry evidence intake; future SISO Agency OS module-portfolio owner is unassigned",
+            "next_gate": "Create direct-source dossiers and integration proofs for each capability cluster, then assign accepted modules to an Agency portfolio Work instead of treating a star-ranked list as architecture.",
+            "blockers": [
+              "License, security, maintenance, tenancy, API coverage, deployment burden, and current source revisions require direct review.",
+              "No accepted Agency OS portfolio Work currently owns these candidates."
+            ],
+            "rationale": "Foundry owns the candidate evidence only, not the future product portfolio. Teable, AFFiNE, Open Notebook, Plane, Documenso, Chatwoot, Cal.com, Activepieces, Listmonk, Postiz, Formbricks, Metabase, PostHog, Superset, Meilisearch, Qdrant, RAGFlow, Coolify, Airbyte, dlt, Meltano, Langflow, Coze, and Flowgram are operator-nominated starting ideas, but each requires a current evidence-backed adoption verdict and an Agency owner.",
+            "evidence_count": 1,
+            "evidence": [
+              {
+                "kind": "source_review",
+                "reference": "source-review:foundry-agency-module-portfolio:2026-08-02",
+                "observed_at": "2026-08-02",
+                "summary": "Recovered Agency analysis grouped source candidates by business capability and adoption mode while retaining candidate status pending direct review."
+              }
+            ],
+            "target_owner_state": "unassigned",
+            "target_works": [],
+            "evidence_owner_works": [
+              {
+                "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+                "name": "SISO Foundry",
+                "library_url": "/works/siso-foundry/",
+                "resolved": true
+              }
             ]
           }
         ]
@@ -3322,11 +3934,42 @@
   },
   "intelligence": {
     "counts": {
-      "events": 23,
+      "events": 24,
       "decisions": 4,
-      "active_initiatives": 0,
+      "active_initiatives": 1,
       "registry_changes": 102
     },
-    "active_initiatives": []
+    "active_initiatives": [
+      {
+        "event_id": "gls:event:eda7d606-a2c9-4919-83cc-c7358d19fb2f",
+        "thread_id": "gls:thread:foundry-agency-intelligence",
+        "name": "Foundry Agency Intelligence",
+        "status": "active",
+        "title": "Foundry Agency intelligence promotion started",
+        "intent": "Make Foundry's accumulated source intelligence findable and operational for SISO Agency OS while preserving independent repository ownership, evidence boundaries, and the Work to Release to Snapshot promotion model.",
+        "occurred_at": "2026-08-02T22:15:09+07:00",
+        "owner": "Foundry and Great Library maintainers",
+        "branch": "codex/foundry-intelligence-v1",
+        "reserved_paths": [
+          "siso-foundry:intelligence/agency/",
+          "siso-foundry:README.md",
+          "siso-foundry:CHANGELOG.md",
+          "siso-foundry:scripts/check.py",
+          "registry/source-inventories/foundry-agency-intelligence-2026-08-02.json",
+          "registry/events/2026-08-02-foundry-agency-intelligence-*.json",
+          "docs/foundry-agency-intelligence.html",
+          "docs/README.md",
+          "README.md",
+          "scripts/build.mjs",
+          "scripts/check-site.mjs",
+          "site/"
+        ],
+        "next_actions": [
+          "Publish and verify the publication-safe Agency intelligence package in the independent Foundry repository.",
+          "Verify and retain the accepted Source Inventory and authored briefing in the Great Library generated surface.",
+          "After the source commit is public, create a Foundry Release, select it in a successor whole-Library Snapshot, and close this Event thread with exact verification evidence."
+        ]
+      }
+    ]
   }
 }
