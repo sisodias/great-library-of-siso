@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:2c6e1a70-2b53-4e8b-9fb1-66a4f4d6871b",
+  "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+  "version": "0.5.1+b28b0f7",
+  "title": "SISO Foundry Agency OS coverage inventory",
+  "released_at": "2026-08-03T02:01:04+07:00",
+  "observed_at": "2026-08-03",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:3d5f7a91-8c24-4e6b-b0a2-1f9d6c7e5b38",
+      "kind": "source_archive",
+      "locator": "https://github.com/Lordsisodia/siso-foundry/archive/b28b0f7.tar.gz",
+      "revision": "b28b0f7",
+      "availability": "public",
+      "owner": "Lordsisodia",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The Foundry software and authored Agency coverage package are MIT licensed; upstream repositories and external data-plane assets retain their own rights.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/Lordsisodia/siso-foundry/blob/b28b0f7/LICENSE",
+            "observed_at": "2026-08-03",
+            "summary": "The MIT source license resolves at the exact Agency coverage release commit."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "b28b0f7"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The Agency coverage package and GitHub release are pinned to an exact public commit.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.5.1",
+          "observed_at": "2026-08-03",
+          "summary": "The public v0.5.1 release resolves at the canonical job-level coverage revision."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "The public code and intelligence package have a commit-scoped source archive; operational corpus payloads remain outside Git.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/archive/b28b0f7.tar.gz",
+          "observed_at": "2026-08-03",
+          "summary": "The immutable source archive resolves."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The coverage inventory is machine-readable and carries project-level pillars, evidence grades, reusable-analysis fields, source receipts, and proof boundaries.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/blob/b28b0f7/intelligence/agency/coverage-inventory.json",
+          "observed_at": "2026-08-03",
+          "summary": "The inventory records 628 unique projects, 12 canonical Agency pillars, 89 source-read or confirmed projects, 10 confirmed projects, and explicit metadata-versus-runtime boundaries."
+        }
+      ]
+    },
+    "installable": {
+      "state": "verified",
+      "reason": "The repository gate validates the coverage generator, campaign contract, job-level pillar map, source receipts, deterministic outputs, and publication safety.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-foundry:b28b0f7",
+          "observed_at": "2026-08-03",
+          "summary": "Thirty-one Python files compiled, four tests passed, the coverage artifacts regenerated deterministically, and the publication scan passed."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The source, coverage generator, job-level pillar map, campaign contract, decision tranche, and verifier are public and MIT licensed.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/blob/b28b0f7/intelligence/agency/COVERAGE.md",
+          "observed_at": "2026-08-03",
+          "summary": "The human-readable coverage report explains the project inventory, pillar counts, evidence depth, reusable-analysis boundary, and remaining integration-proof gap."
+        }
+      ]
+    },
+    "portable": {
+      "state": "experimental",
+      "reason": "The coverage contract and publication-safe evidence are portable; the larger operational corpus remains externally stored and unreleased.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-foundry:b28b0f7",
+          "observed_at": "2026-08-03",
+          "summary": "The release publishes coverage decisions and source receipts without copying databases, raw observations, client data, private topology, or upstream source trees."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.5.1",
+      "observed_at": "2026-08-03",
+      "summary": "Foundry v0.5.1 publishes deterministic Agency coverage over 628 projects: 89 are source-read or confirmed, 10 are adversarial-confirmed, 10 integration proofs are specified, and only one named proof script is runtime-proven."
+    }
+  ]
+}

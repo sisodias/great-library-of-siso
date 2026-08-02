@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-02T18:32:47.000Z",
+  "generated_at": "2026-08-02T19:10:00.000Z",
   "base_path": "/",
   "schema_version": "1.0.0",
-  "snapshot_id": "gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a",
-  "snapshot_version": "35.0.0",
+  "snapshot_id": "gls:snapshot:8d4f2a91-7c53-4e6b-a0d8-1f92b6c4e8a7",
+  "snapshot_version": "36.0.0",
   "infrastructure_contract_url": "/docs/god-questions-infrastructure.html",
   "counts": {
     "questions": 7,

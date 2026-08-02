@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T18:32:47.000Z",
+  "generated_at": "2026-08-02T19:10:00.000Z",
   "base_path": "/",
   "works": [
     {
@@ -243,9 +243,9 @@
       "locator_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:902daf04-b080-4543-a5b9-6186c8643751",
-      "active_release_version": "1.3.0+7c732ec",
-      "artifact_revision": "7c732ec9f77fcb0368ac63011326c7a6d205a7d1"
+      "active_release_id": "gls:release:1f8b6c2d-72f4-4b90-9e1f-3d5a7c8b2e64",
+      "active_release_version": "1.4.0+2e9b7c8",
+      "artifact_revision": "2e9b7c80ad93b56e974f4d42e39a9981701986b5"
     },
     {
       "owner": "Lordsisodia",
@@ -387,9 +387,9 @@
       "locator_revision": "main@233edef7408afb95571ecd25f64189dfd92a6860",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:47922651-40fb-4da4-9d7c-5635957e9d19",
-      "active_release_version": "0.4.0+233edef",
-      "artifact_revision": "233edef7408afb95571ecd25f64189dfd92a6860"
+      "active_release_id": "gls:release:2c6e1a70-2b53-4e8b-9fb1-66a4f4d6871b",
+      "active_release_version": "0.5.1+b28b0f7",
+      "artifact_revision": "b28b0f7"
     },
     {
       "owner": "Lordsisodia",
@@ -4318,49 +4318,11 @@
   },
   "intelligence": {
     "counts": {
-      "events": 27,
+      "events": 28,
       "decisions": 4,
-      "active_initiatives": 1,
-      "registry_changes": 108
+      "active_initiatives": 0,
+      "registry_changes": 111
     },
-    "active_initiatives": [
-      {
-        "event_id": "gls:event:6c9b3055-a75b-4c17-bafe-bd80ceec2b1d",
-        "thread_id": "gls:thread:foundry-agency-coverage",
-        "name": "Foundry Agency Coverage",
-        "status": "active",
-        "title": "Foundry Agency coverage closeout started",
-        "intent": "Make every Agency OS project, vertical, evidence depth, reusable analysis field, and remaining proof gap findable and machine-verifiable while preserving Foundry as the evidence owner and the Library as the immutable publication and discovery plane.",
-        "occurred_at": "2026-08-03T01:32:47+07:00",
-        "owner": "Codex with GPT-5.6 Luna audit and implementation lanes",
-        "branch": "main",
-        "reserved_paths": [
-          "siso-foundry:docs/AGENCY_OS_APPLICATION_MISSION.md",
-          "siso-foundry:packages/business-application/",
-          "siso-foundry:pipelines/github/campaigns/agency-business-software-v1.json",
-          "siso-foundry:pipelines/github/test_campaign.py",
-          "siso-foundry:intelligence/agency/COVERAGE.md",
-          "siso-foundry:intelligence/agency/coverage-inventory.json",
-          "siso-foundry:intelligence/agency/README.md",
-          "siso-foundry:README.md",
-          "siso-foundry:CHANGELOG.md",
-          "siso-foundry:scripts/build_agency_coverage.py",
-          "siso-foundry:scripts/check.py",
-          "registry/source-inventories/foundry-agency-intelligence-2026-08-02.json",
-          "registry/events/2026-08-03-foundry-agency-coverage-*.json",
-          "registry/releases/",
-          "registry/snapshots/",
-          "CURRENT_STATE.md",
-          "docs/foundry-agency-intelligence.html",
-          "scripts/check-site.mjs",
-          "site/"
-        ],
-        "next_actions": [
-          "Promote and verify the unique campaign assets and deterministic project-by-vertical coverage inventory in Foundry.",
-          "Publish the exact Foundry source commit as an immutable Release and select it in a successor whole-Library Snapshot.",
-          "Correct the stale Source Inventory promotion state, regenerate Library projections, record proof coverage honestly, and close this Event with exact receipts."
-        ]
-      }
-    ]
+    "active_initiatives": []
   }
 }

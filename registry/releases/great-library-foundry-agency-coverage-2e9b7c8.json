@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:1f8b6c2d-72f4-4b90-9e1f-3d5a7c8b2e64",
+  "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+  "release_kind": "general",
+  "version": "1.4.0+2e9b7c8",
+  "title": "Foundry Agency intelligence promotion",
+  "released_at": "2026-08-03T02:03:27+07:00",
+  "observed_at": "2026-08-03",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:7b2e4c91-6d53-4f80-a1c9-8e3b5d7f2a64",
+      "kind": "source_archive",
+      "locator": "https://github.com/Lordsisodia/great-library-of-siso/archive/2e9b7c80ad93b56e974f4d42e39a9981701986b5.tar.gz",
+      "revision": "2e9b7c80ad93b56e974f4d42e39a9981701986b5",
+      "availability": "public",
+      "owner": "Lordsisodia",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The pinned public registry source carries the repository MIT license.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/Lordsisodia/great-library-of-siso/blob/2e9b7c80ad93b56e974f4d42e39a9981701986b5/LICENSE",
+            "observed_at": "2026-08-03",
+            "summary": "The MIT license is present at the exact public implementation checkpoint."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "2e9b7c80ad93b56e974f4d42e39a9981701986b5"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The Source Inventory, Event, ownership schema, authored briefing, and deterministic projections are pinned to an exact public commit.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/2e9b7c80ad93b56e974f4d42e39a9981701986b5",
+          "observed_at": "2026-08-03",
+          "summary": "The exact Foundry Agency intelligence integration checkpoint resolves publicly."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "A public commit-scoped archive locator is recorded.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/archive/2e9b7c80ad93b56e974f4d42e39a9981701986b5.tar.gz",
+          "observed_at": "2026-08-03",
+          "summary": "The source archive is pinned by immutable commit revision."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The Library validates the Source Inventory, ownership contract, Event lineage, generated promotion projection, and authored Research briefing deterministically.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "repo-check:foundry-agency-intelligence:2e9b7c8",
+          "observed_at": "2026-08-03",
+          "summary": "The complete Library verification gate passed at the public integration checkpoint."
+        }
+      ]
+    },
+    "installable": {
+      "state": "verified",
+      "reason": "A clean Node installation validates and builds the static Library.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:foundry-agency-intelligence:2e9b7c8",
+          "observed_at": "2026-08-03",
+          "summary": "Promotion, intelligence, research, registry, generated-site, link, and publication-safety checks passed."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The public repository remains source-complete and MIT licensed.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso",
+          "observed_at": "2026-08-03",
+          "summary": "Public source includes the registry, ownership schema, authored brief, generator, tests, and generated outputs."
+        }
+      ]
+    },
+    "portable": {
+      "state": "verified",
+      "reason": "The release includes publication-safe metadata and receipts without private databases, client data, machine paths, raw transcripts, credentials, or copied upstream source.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:foundry-agency-intelligence:2e9b7c8",
+          "observed_at": "2026-08-03",
+          "summary": "Repository-wide publication scanning and independent architecture review passed."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:foundry-agency-intelligence:2e9b7c8",
+      "observed_at": "2026-08-03",
+      "summary": "The Great Library now exposes Foundry's Agency intelligence as an independent Work release, promotion campaign, authored Research brief, and evidence-owner/product-owner contract."
+    }
+  ]
+}

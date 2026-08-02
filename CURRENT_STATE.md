@@ -1,9 +1,9 @@
 # Current state — The Great Library of SISO
 
-**Verified:** 2026-08-02
+**Verified:** 2026-08-03
 **Public repository:** https://github.com/Lordsisodia/great-library-of-siso  
 **Live Library:** https://great-library-of-siso.vercel.app/  
-**Operating status:** Foundry Agency OS value intelligence is publicly released and selected through Whole Library V35; safe for a cold agent to resume from the scored God Source portfolio, evidence-backed source discovery, and owner-gated promotion.
+**Operating status:** Foundry Agency OS coverage intelligence is publicly released and selected through Whole Library V36; safe for a cold agent to resume from the 628-project inventory, evidence-backed source discovery, and owner-gated promotion.
 
 ## What is live
 
@@ -19,11 +19,11 @@
 - SISO Agent Hooks is released at `9125a972b4ba03661bf17ee135790282f246c15f` after 21 tests and a 97/100 adversarial review.
 - SISO Agent Stack Distribution 0.2.0 is released at `9d1786575cce55df61ce3cf8564969536c47d186`: it retains the complete ten-component pin set, installs a managed `siso-stack` command, documents first-use/update/rollback and contribution ownership, and passes eight tests plus manifest verification.
 - Immutable SISO Agent Stack Assembly 2.0.0 expands the composition to the complete portable public stack without rewriting V1.
-- SISO Foundry 0.4.0 is released at `233edef7408afb95571ecd25f64189dfd92a6860` with the resumable source-campaign platform, durable Agency intelligence mission, exact logical-source and query receipts, and the first cross-agency value matrix over the recovered 9,636-repository evidence universe. The matrix defines `repository × SISO use case × adoption route`, scores twenty applications, identifies twelve evidence-qualified God Sources and four platform primitives, records authority groups and agent operations, and honestly reports zero outcome-proven rows. Databases, raw observations, generated artifacts, and the full 9,636-row ledger remain outside Git.
+- SISO Foundry 0.5.1 is released at `b28b0f7` with verified job-level Agency coverage: 628 projects, 497 applications, 189 capabilities, 30 frontier rows, 114 multi-vertical projects, and 89 source-read/reusable projects. The coverage inventory, 20-row decision matrix, and pillar map remain metadata receipts; they do not grant source-code reuse or runtime adoption authorization.
 - The promotion surface at `/promotion/` and `/promotion.json` now projects two active immutable campaign heads and 24 publication-safe candidate units: eleven at `candidate`, eight at `owner_assigned`, and five at `read`. Two future Agency product owners are intentionally unassigned while Foundry remains their explicit evidence owner; the machine contract and UI no longer render Foundry as their product target.
 - The promotion lifecycle is mechanically enforced from `unverified` through `stack_pinned` and `retired`; advanced stages must bind real evidence, Releases, Snapshots, and verified Stack manifest receipts.
-- Ecosystem Intelligence is generated at `/intelligence/` and `/intelligence.json` from four immutable ADRs, 26 append-only Events, and the automatic history of all 73 Releases and 35 Snapshots. The current projection has zero active initiatives; live lanes must publish branch and machine-neutral path reservations before parallel work begins.
-- Whole Library V35 — Foundry Agency OS Value Matrix (`gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a`) is the active Snapshot. Its completion Event is `gls:event:4d237823-29e9-4dc1-bcc4-0ebd952ab2b2`.
+- Ecosystem Intelligence is generated at `/intelligence/` and `/intelligence.json` from four immutable ADRs, 28 append-only Events, and the automatic history of all 75 Releases and 36 Snapshots. The completed Foundry Agency coverage Event is `gls:event:4e7d9a21-5c83-4f60-b2a6-8d1e3c7f9b45`.
+- Whole Library V36 (`gls:snapshot:8d4f2a91-7c53-4e6b-a0d8-1f92b6c4e8a7`) is the active Snapshot, preserving V35 selections while replacing the selected Foundry and Great Library coverage Releases.
 - Frontier Questions reuses the core Library model: a question is a Work, a question-program metadata Release is not an answer, an explicitly typed and evidenced Answer Release is an accepted public answer, and the latest Snapshot selects the current portfolio. The generated God Questions Observatory exposes portfolio state, stewardship, freshness, next useful work, assumptions, evidence connections, action/learning lineage, and public answer state. Foundry discovers relevant evidence, SISO Knowledge preserves it, and Evidence Engines transform and adjudicate it.
 - The canonical God Questions infrastructure constitution is published at `/docs/god-questions-infrastructure.html`. Its first tranche extends the existing Work/Release/Snapshot/Event projection rather than creating a second question registry; it explicitly defers contradiction adjudication, autonomous execution, capability promotion, counterfactual portfolio optimization, and a mature Learning Capital Market until their dependency gates are evidenced.
 - The public estate reconciliation model at `/docs/estate-reconciliation.html` routes four reviewed public repository observations to two existing identity links, one historical no-change outcome, and one owner-and-license-review deferral. It creates no Work or Source Inventory and makes no source-repository mutation or whole-estate completeness claim.
@@ -33,7 +33,7 @@
 - The reusable Frontier Question dossier includes a worked composable-CRM example and an explicit rights boundary between publicly observable product behavior and reusable source code.
 - The 100 Million Token Program preserves fifteen ecosystem investments as a dependency-aware portfolio, while its accepted build-first operating plan prioritizes outsider-ready Agent Stack distribution, resumable Foundry discovery, rights-aware Library lineage, and repeated capability promotion. Package-specific safety and authority boundaries still apply.
 - The Research page explicitly distinguishes versioned-answer contracts and metadata seed Releases from accepted Answer Releases; a positive and negative generated-site assertion protect that boundary.
-- The Library's selected self-release is `1.3.0+7c732ec` (`gls:release:902daf04-b080-4543-a5b9-6186c8643751`), pinned to the verified public value-matrix checkpoint `7c732ec9f77fcb0368ac63011326c7a6d205a7d1`.
+- The Library's selected self-release is `1.4.0+2e9b7c8` (`gls:release:1f8b6c2d-72f4-4b90-9e1f-3d5a7c8b2e64`), pinned to authored coverage commit `2e9b7c80ad93b56e974f4d42e39a9981701986b5`.
 - The latest active state is always the highest-numbered immutable whole-Library Snapshot. Do not infer “current” from filename order alone; compare numeric `version` fields.
 
 ## Operating boundaries
