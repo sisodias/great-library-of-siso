@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T15:15:09.000Z",
+  "generated_at": "2026-08-02T15:54:54.000Z",
   "base_path": "/",
   "works": [
     {
@@ -243,9 +243,9 @@
       "locator_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:21bac572-08ee-45e3-9cd0-697a828dedd4",
-      "active_release_version": "1.1.0+0066cfa",
-      "artifact_revision": "0066cfa3b30f8cefedffee09e1c86ae928f6b0cc"
+      "active_release_id": "gls:release:9bee9fb7-eb0c-4658-86b8-cfeed2fdfe17",
+      "active_release_version": "1.2.0+33c2ce1",
+      "artifact_revision": "33c2ce1f82ba472c0bde0d25e3cc1e99848a1675"
     },
     {
       "owner": "Lordsisodia",
@@ -384,12 +384,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-foundry/",
       "locator_type": "source_repository",
-      "locator_revision": "main@d29480a139edb48be14ee5f24d86349a7ae2a0ae",
+      "locator_revision": "main@8c6eb30b8c972080c569cdf769cc77734ddc2bc4",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:69e37171-b72b-4c31-9e02-6c441a90e3a1",
-      "active_release_version": "0.2.0+d29480a",
-      "artifact_revision": "d29480a139edb48be14ee5f24d86349a7ae2a0ae"
+      "active_release_id": "gls:release:cd41ce58-cb2b-433d-a031-8dadff806171",
+      "active_release_version": "0.3.0+8c6eb30",
+      "artifact_revision": "8c6eb30b8c972080c569cdf769cc77734ddc2bc4"
     },
     {
       "owner": "Lordsisodia",
@@ -3934,42 +3934,11 @@
   },
   "intelligence": {
     "counts": {
-      "events": 24,
+      "events": 25,
       "decisions": 4,
-      "active_initiatives": 1,
-      "registry_changes": 102
+      "active_initiatives": 0,
+      "registry_changes": 105
     },
-    "active_initiatives": [
-      {
-        "event_id": "gls:event:eda7d606-a2c9-4919-83cc-c7358d19fb2f",
-        "thread_id": "gls:thread:foundry-agency-intelligence",
-        "name": "Foundry Agency Intelligence",
-        "status": "active",
-        "title": "Foundry Agency intelligence promotion started",
-        "intent": "Make Foundry's accumulated source intelligence findable and operational for SISO Agency OS while preserving independent repository ownership, evidence boundaries, and the Work to Release to Snapshot promotion model.",
-        "occurred_at": "2026-08-02T22:15:09+07:00",
-        "owner": "Foundry and Great Library maintainers",
-        "branch": "codex/foundry-intelligence-v1",
-        "reserved_paths": [
-          "siso-foundry:intelligence/agency/",
-          "siso-foundry:README.md",
-          "siso-foundry:CHANGELOG.md",
-          "siso-foundry:scripts/check.py",
-          "registry/source-inventories/foundry-agency-intelligence-2026-08-02.json",
-          "registry/events/2026-08-02-foundry-agency-intelligence-*.json",
-          "docs/foundry-agency-intelligence.html",
-          "docs/README.md",
-          "README.md",
-          "scripts/build.mjs",
-          "scripts/check-site.mjs",
-          "site/"
-        ],
-        "next_actions": [
-          "Publish and verify the publication-safe Agency intelligence package in the independent Foundry repository.",
-          "Verify and retain the accepted Source Inventory and authored briefing in the Great Library generated surface.",
-          "After the source commit is public, create a Foundry Release, select it in a successor whole-Library Snapshot, and close this Event thread with exact verification evidence."
-        ]
-      }
-    ]
+    "active_initiatives": []
   }
 }

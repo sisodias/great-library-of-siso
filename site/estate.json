@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-02T15:15:09.000Z",
-  "snapshot_id": "gls:snapshot:5929e723-9789-4a33-af63-ba472650a522",
-  "snapshot_version": "33.0.0",
+  "generated_at": "2026-08-02T15:54:54.000Z",
+  "snapshot_id": "gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b",
+  "snapshot_version": "34.0.0",
   "repositories": [
     {
       "owner": "Lordsisodia",
@@ -17,9 +17,9 @@
       "locator_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:21bac572-08ee-45e3-9cd0-697a828dedd4",
-      "active_release_version": "1.1.0+0066cfa",
-      "artifact_revision": "0066cfa3b30f8cefedffee09e1c86ae928f6b0cc"
+      "active_release_id": "gls:release:9bee9fb7-eb0c-4658-86b8-cfeed2fdfe17",
+      "active_release_version": "1.2.0+33c2ce1",
+      "artifact_revision": "33c2ce1f82ba472c0bde0d25e3cc1e99848a1675"
     },
     {
       "owner": "Lordsisodia",
@@ -158,12 +158,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-foundry/",
       "locator_type": "source_repository",
-      "locator_revision": "main@d29480a139edb48be14ee5f24d86349a7ae2a0ae",
+      "locator_revision": "main@8c6eb30b8c972080c569cdf769cc77734ddc2bc4",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:69e37171-b72b-4c31-9e02-6c441a90e3a1",
-      "active_release_version": "0.2.0+d29480a",
-      "artifact_revision": "d29480a139edb48be14ee5f24d86349a7ae2a0ae"
+      "active_release_id": "gls:release:cd41ce58-cb2b-433d-a031-8dadff806171",
+      "active_release_version": "0.3.0+8c6eb30",
+      "artifact_revision": "8c6eb30b8c972080c569cdf769cc77734ddc2bc4"
     },
     {
       "owner": "Lordsisodia",

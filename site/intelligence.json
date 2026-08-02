@@ -1,44 +1,13 @@
 {
-  "generated_at": "2026-08-02T15:15:09.000Z",
+  "generated_at": "2026-08-02T15:54:54.000Z",
   "base_path": "/",
   "counts": {
-    "events": 24,
+    "events": 25,
     "decisions": 4,
-    "active_initiatives": 1,
-    "registry_changes": 102
+    "active_initiatives": 0,
+    "registry_changes": 105
   },
-  "active_initiatives": [
-    {
-      "event_id": "gls:event:eda7d606-a2c9-4919-83cc-c7358d19fb2f",
-      "thread_id": "gls:thread:foundry-agency-intelligence",
-      "name": "Foundry Agency Intelligence",
-      "status": "active",
-      "title": "Foundry Agency intelligence promotion started",
-      "intent": "Make Foundry's accumulated source intelligence findable and operational for SISO Agency OS while preserving independent repository ownership, evidence boundaries, and the Work to Release to Snapshot promotion model.",
-      "occurred_at": "2026-08-02T22:15:09+07:00",
-      "owner": "Foundry and Great Library maintainers",
-      "branch": "codex/foundry-intelligence-v1",
-      "reserved_paths": [
-        "siso-foundry:intelligence/agency/",
-        "siso-foundry:README.md",
-        "siso-foundry:CHANGELOG.md",
-        "siso-foundry:scripts/check.py",
-        "registry/source-inventories/foundry-agency-intelligence-2026-08-02.json",
-        "registry/events/2026-08-02-foundry-agency-intelligence-*.json",
-        "docs/foundry-agency-intelligence.html",
-        "docs/README.md",
-        "README.md",
-        "scripts/build.mjs",
-        "scripts/check-site.mjs",
-        "site/"
-      ],
-      "next_actions": [
-        "Publish and verify the publication-safe Agency intelligence package in the independent Foundry repository.",
-        "Verify and retain the accepted Source Inventory and authored briefing in the Great Library generated surface.",
-        "After the source commit is public, create a Foundry Release, select it in a successor whole-Library Snapshot, and close this Event thread with exact verification evidence."
-      ]
-    }
-  ],
+  "active_initiatives": [],
   "decisions": [
     {
       "schema_version": "1.0.0",
@@ -405,6 +374,141 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:3f79b614-bd24-4b14-89dd-6e822ffc1720",
+      "occurred_at": "2026-08-02T22:54:54+07:00",
+      "recorded_at": "2026-08-02T22:54:54+07:00",
+      "immutable": true,
+      "entry_type": "initiative_completed",
+      "thread": {
+        "id": "gls:thread:foundry-agency-intelligence",
+        "name": "Foundry Agency Intelligence",
+        "kind": "initiative"
+      },
+      "status": "completed",
+      "title": "Foundry Agency intelligence promoted and released",
+      "summary": "Foundry 0.3.0 now publishes the receipt-bound Agency intelligence package, and Whole Library V34 selects it alongside the Library release that exposes its Source Inventory, ownership gates, authored brief, and generated promotion surfaces.",
+      "intent": "Make Foundry's accumulated source intelligence findable and operational for SISO Agency OS while preserving independent repository ownership, evidence boundaries, and the Work to Release to Snapshot promotion model.",
+      "reasoning": [
+        "Foundry remains an independent Research Work and repository; the Library links its exact public Release rather than copying source, payloads, or repository state.",
+        "The Foundry package separates 70 total contract cards from the 20-card verified subset and binds database, capability-graph, adoption, and proof-selection claims to exact logical-source, file, hash, and query receipts.",
+        "Operator-nominated software ideas remain candidates pending direct source, rights, security, maintenance, tenancy, operability, and outcome review; the release does not convert them into accepted Works or endorsements.",
+        "The promotion contract now distinguishes Foundry as evidence owner from an unassigned Agency product owner, preventing candidate evidence from implying accidental product ownership.",
+        "Whole Library V34 changes only the selected Great Library and Foundry Releases while preserving twenty-three unaffected Work selections and the immutable Agent Stack Assembly."
+      ],
+      "changes": [
+        {
+          "kind": "commit",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/commit/8c6eb30b8c972080c569cdf769cc77734ddc2bc4",
+          "summary": "Published SISO Foundry 0.3.0 with the Agency intelligence mission, receipt-bound metadata snapshot, application map, and continuing evidence backlog."
+        },
+        {
+          "kind": "commit",
+          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/33c2ce1f82ba472c0bde0d25e3cc1e99848a1675",
+          "summary": "Published the Source Inventory, active intake Event, authored briefing, owner-state schema, validation, tests, and generated promotion projection."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "gls:release:cd41ce58-cb2b-433d-a031-8dadff806171",
+          "summary": "Pinned the exact public Foundry 0.3.0 artifact and its source, receipt, rights, and external data-plane boundaries."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "gls:release:9bee9fb7-eb0c-4658-86b8-cfeed2fdfe17",
+          "summary": "Pinned the exact public Great Library Agency intelligence integration checkpoint."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b",
+          "summary": "Selected both successor Releases through Whole Library V34 while retaining all unaffected selections."
+        },
+        {
+          "kind": "document",
+          "reference": "docs/foundry-agency-intelligence.html",
+          "summary": "Published the human-readable Foundry to Library to Agency OS operating model."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "release_ids": [
+          "gls:release:9bee9fb7-eb0c-4658-86b8-cfeed2fdfe17",
+          "gls:release:cd41ce58-cb2b-433d-a031-8dadff806171"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b"
+        ],
+        "source_inventory_ids": [
+          "gls:source-inventory:77f07470-51a6-41a2-9cae-0799297ebff7"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso",
+          "https://github.com/Lordsisodia/siso-foundry"
+        ]
+      },
+      "coordination": {
+        "owner": "Foundry and Great Library maintainers",
+        "branch": "codex/foundry-intelligence-v1",
+        "reserved_paths": []
+      },
+      "visibility": "public",
+      "predecessor_event_id": "gls:event:eda7d606-a2c9-4919-83cc-c7358d19fb2f",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.3.0",
+          "observed_at": "2026-08-02",
+          "summary": "The public Foundry 0.3.0 GitHub release resolves at the exact canonical source revision."
+        },
+        {
+          "kind": "registry_validation",
+          "reference": "repo-check:foundry-agency-intelligence:33c2ce1",
+          "observed_at": "2026-08-02",
+          "summary": "Promotion, intelligence, research, God Questions, registry, generated-site, link, immutable-history, and publication-safety checks passed before selection."
+        }
+      ],
+      "next_actions": [
+        "Build the read-only Source Oracle contract over the external Foundry data plane without granting agents direct database authority.",
+        "Resolve the 879 unresolved adoption records and add rights, privacy, generator, and durable-copy receipts before any external dataset release.",
+        "Register the Agency OS control-plane owner before promoting business-glue gaps or source-module candidates beyond Foundry evidence intake."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "release_ids": [
+          "gls:release:9bee9fb7-eb0c-4658-86b8-cfeed2fdfe17",
+          "gls:release:cd41ce58-cb2b-433d-a031-8dadff806171"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b"
+        ],
+        "source_inventory_ids": [
+          "gls:source-inventory:77f07470-51a6-41a2-9cae-0799297ebff7"
+        ],
+        "repository_urls": [
+          "https://github.com/Lordsisodia/great-library-of-siso",
+          "https://github.com/Lordsisodia/siso-foundry"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+            "name": "SISO Foundry",
+            "library_url": "/works/siso-foundry/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",
@@ -3138,6 +3242,33 @@
     }
   ],
   "registry_changes": [
+    {
+      "kind": "release",
+      "occurred_at": "2026-08-02T22:54:54+07:00",
+      "id": "gls:release:9bee9fb7-eb0c-4658-86b8-cfeed2fdfe17",
+      "version": "1.2.0+33c2ce1",
+      "title": "Foundry Agency intelligence promotion",
+      "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "work_name": "The Great Library of SISO"
+    },
+    {
+      "kind": "snapshot",
+      "occurred_at": "2026-08-02T22:54:54+07:00",
+      "id": "gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b",
+      "version": "34.0.0",
+      "title": "Whole Library V34 — Foundry Agency Intelligence",
+      "work_count": 25,
+      "release_count": 25
+    },
+    {
+      "kind": "release",
+      "occurred_at": "2026-08-02T22:53:47+07:00",
+      "id": "gls:release:cd41ce58-cb2b-433d-a031-8dadff806171",
+      "version": "0.3.0+8c6eb30",
+      "title": "SISO Foundry Agency source intelligence",
+      "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "work_name": "SISO Foundry"
+    },
     {
       "kind": "snapshot",
       "occurred_at": "2026-08-02T05:13:22+07:00",

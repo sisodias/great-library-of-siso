@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:cd41ce58-cb2b-433d-a031-8dadff806171",
+  "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+  "version": "0.3.0+8c6eb30",
+  "title": "SISO Foundry Agency source intelligence",
+  "released_at": "2026-08-02T22:53:47+07:00",
+  "observed_at": "2026-08-02",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:ee7af706-846f-4ce2-b7e5-0fc1ac13ecf6",
+      "kind": "source_archive",
+      "locator": "https://github.com/Lordsisodia/siso-foundry/archive/8c6eb30b8c972080c569cdf769cc77734ddc2bc4.tar.gz",
+      "revision": "8c6eb30b8c972080c569cdf769cc77734ddc2bc4",
+      "availability": "public",
+      "owner": "Lordsisodia",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The Foundry software and authored intelligence package are MIT licensed; observed upstream metadata and external data-plane assets retain separate rights.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/Lordsisodia/siso-foundry/blob/8c6eb30b8c972080c569cdf769cc77734ddc2bc4/LICENSE",
+            "observed_at": "2026-08-02",
+            "summary": "The MIT source license resolves at the exact release commit."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "8c6eb30b8c972080c569cdf769cc77734ddc2bc4"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The Agency intelligence package and GitHub release are pinned to an exact public commit.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.3.0",
+          "observed_at": "2026-08-02",
+          "summary": "The public 0.3.0 release resolves and targets the canonical main branch."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "The code and publication-safe intelligence metadata have a commit-scoped source archive; operational payloads remain outside Git.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/archive/8c6eb30b8c972080c569cdf769cc77734ddc2bc4.tar.gz",
+          "observed_at": "2026-08-02",
+          "summary": "The immutable code-plane archive resolves."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The Agency snapshot is machine-readable, receipt-bound metadata with explicit publication and candidate boundaries.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/blob/8c6eb30b8c972080c569cdf769cc77734ddc2bc4/intelligence/agency/snapshot.json",
+          "observed_at": "2026-08-02",
+          "summary": "The snapshot records exact logical asset receipts, population splits, query receipts, candidate states, and caveats without materializing the corpus."
+        }
+      ]
+    },
+    "installable": {
+      "state": "verified",
+      "reason": "The repository-level check validates source, campaigns, topic storage, manifests, Agency intelligence invariants, and publication safety.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-foundry:8c6eb30b8c972080c569cdf769cc77734ddc2bc4",
+          "observed_at": "2026-08-02",
+          "summary": "Thirty Python files compiled, three campaign tests passed, the Agency receipt invariants passed, and the publication scan passed."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The source, intelligence package, verification contract, and external data-plane boundary are public and MIT licensed.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/blob/8c6eb30b8c972080c569cdf769cc77734ddc2bc4/intelligence/agency/README.md",
+          "observed_at": "2026-08-02",
+          "summary": "The public package explains the Foundry, Library, owning Work, and Agency OS promotion loop."
+        }
+      ]
+    },
+    "portable": {
+      "state": "experimental",
+      "reason": "The metadata package is portable, while the underlying databases, raw observations, generated artifacts, and private operational state remain external and unreleased.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "sha256:cfb73b50405fcd71383440cfbcee3d4b896c549a206d3840194de26d50fb843c",
+          "observed_at": "2026-08-02",
+          "summary": "The external identity database is represented only by a content receipt and logical metadata; no payload is included in the source release."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/Lordsisodia/siso-foundry/releases/tag/v0.3.0",
+      "observed_at": "2026-08-02",
+      "summary": "Foundry 0.3.0 publishes the durable Agency intelligence mission, exact metadata receipts, evidence and ownership boundaries, application map, and continuing promotion backlog."
+    }
+  ]
+}

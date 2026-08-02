@@ -110,10 +110,12 @@ if (!intelligence.events?.some((event) => event.id === "gls:event:9c8e46f9-0a2a-
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "32.0.0" && change.id === "gls:snapshot:a7a99ae1-a2e2-4e44-8fb3-c0235a35023b")) errors.push("intelligence.json: automatic registry changelog is missing V32");
 if (!intelligence.events?.some((event) => event.id === "gls:event:dc9d1aef-28e7-4d5a-8a97-3eee45be4cf1" && event.status === "completed" && event.predecessor_event_id === "gls:event:9b09caed-89b4-4c1e-8829-b58cbddeb115" && event.scope?.snapshot_ids?.includes("gls:snapshot:5929e723-9789-4a33-af63-ba472650a522"))) errors.push("intelligence.json: estate reconciliation completion lineage is missing");
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "33.0.0" && change.id === "gls:snapshot:5929e723-9789-4a33-af63-ba472650a522")) errors.push("intelligence.json: automatic registry changelog is missing V33");
-if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 69) errors.push("intelligence.json: expected 69 immutable Releases at V33 closeout");
-if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 33) errors.push("intelligence.json: expected 33 immutable Snapshots at V33 closeout");
-if (intelligence.counts?.events !== 24 || intelligence.counts?.active_initiatives !== 1) errors.push("intelligence.json: expected 24 Events and one active initiative after Foundry Agency intelligence intake");
-if (!intelligence.active_initiatives?.some((initiative) => initiative.thread_id === "gls:thread:foundry-agency-intelligence" && initiative.status === "active")) errors.push("intelligence.json: missing active Foundry Agency intelligence initiative");
+if (!intelligence.events?.some((event) => event.id === "gls:event:3f79b614-bd24-4b14-89dd-6e822ffc1720" && event.status === "completed" && event.predecessor_event_id === "gls:event:eda7d606-a2c9-4919-83cc-c7358d19fb2f" && event.scope?.snapshot_ids?.includes("gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b"))) errors.push("intelligence.json: Foundry Agency intelligence completion lineage is missing");
+if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "34.0.0" && change.id === "gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b")) errors.push("intelligence.json: automatic registry changelog is missing V34");
+if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 71) errors.push("intelligence.json: expected 71 immutable Releases at V34 closeout");
+if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 34) errors.push("intelligence.json: expected 34 immutable Snapshots at V34 closeout");
+if (intelligence.counts?.events !== 25 || intelligence.counts?.active_initiatives !== 0) errors.push("intelligence.json: expected 25 Events and zero active initiatives at V34 closeout");
+if (intelligence.active_initiatives?.some((initiative) => initiative.thread_id === "gls:thread:foundry-agency-intelligence")) errors.push("intelligence.json: completed Foundry Agency intelligence initiative remains active");
 
 const frontierQuestions = [
   ["GQ-001", "frontier-question-agent-workspace"],
@@ -135,7 +137,7 @@ if (researchIndex.includes("explicit evidence scopes, and versioned answers.")) 
 for (const [field, expected] of Object.entries({ questions: 7, programmed_questions: 3, assumptions: 7, evidence_connections: 10, challenge_edges: 2, action_learning_links: 8, public_answers_released: 0 })) {
   if (researchProjection.counts?.[field] !== expected) errors.push(`research.json: expected ${field}=${expected}, found ${researchProjection.counts?.[field]}`);
 }
-if (researchProjection.snapshot_version !== "33.0.0" || researchProjection.snapshot_id !== "gls:snapshot:5929e723-9789-4a33-af63-ba472650a522") errors.push("research.json: must identify the selected V33 estate reconciliation snapshot");
+if (researchProjection.snapshot_version !== "34.0.0" || researchProjection.snapshot_id !== "gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b") errors.push("research.json: must identify the selected V34 Foundry Agency intelligence snapshot");
 for (const [questionId, state, assumptions, evidence, links] of [
   ["GQ-001", "partial", 2, 2, 1],
   ["GQ-002", "answered", 2, 2, 1],
