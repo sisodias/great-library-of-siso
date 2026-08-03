@@ -3,7 +3,7 @@
   "record_type": "work",
   "id": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
   "slug": "frontier-question-god-questions-infrastructure",
-  "name": "GQ-009 · The God Questions Observatory",
+  "name": "GQ-009 \u00b7 The God Questions Observatory",
   "summary": "A standing meta-question about how the Great Library should make SISO's highest-value questions visible, composable, continuously revisable, and connected to evidence and approved action.",
   "work_type": "research_question",
   "lifecycle_status": "active",
@@ -113,23 +113,27 @@
     "evidence_gaps": [
       "No evaluated end-to-end user flow yet proves that the portfolio view helps a cold operator choose the next valuable investigation.",
       "Claim, contradiction, assumption, experiment, mandate, observation, and learning-return objects do not yet share one proven cross-system receipt contract.",
-      "No three-question cohort yet measures authoring overhead, evidence reuse, decision impact, or capability promotion rate."
+      "No three-question cohort yet measures authoring overhead, evidence reuse, decision impact, or capability promotion rate.",
+      "MEASURED 2026-08-04: extraction does not scale to the corpus. Claim extraction over the 932-book philosophy shelf alone needs ~400M tokens against a 150M budget (267%); the full 41.5M-passage corpus needs ~33,200M (22,133%). The budget covers ~187,500 passages. So evidence selection must be question-driven; 'extract everything and index it' is arithmetically impossible, not merely wasteful.",
+      "The retrieval unit is unresolved. Passages are the evidence substrate but not the search surface -- a paragraph is not a thing you can agree or disagree with. Claims (position + grounding quote + confidence) are ~2 orders of magnitude fewer and match the Evidence Engines ingest contract, but the extraction layer that produces them does not exist.",
+      "No standing agent operates the loop. Every piece of infrastructure built to date is supply; nothing continuously reads a question, finds bearing evidence, and updates an answer. This is the gap between a warehouse and an organ."
     ],
     "watch_triggers": [
       "A new God Question cannot express a decision target, falsifier, evidence gap, or refresh condition in the current contract.",
       "Foundry or Knowledge ships a question-addressable export that can replace a manual evidence link.",
       "The first approved experiment returns an Observation Receipt and exposes a missing Library lineage field.",
-      "Three heterogeneous questions complete a full research-to-decision loop and justify stabilizing or deleting provisional fields."
+      "Three heterogeneous questions complete a full research-to-decision loop and justify stabilizing or deleting provisional fields.",
+      "A standing agent proposes a change to the Library or Foundry and it survives independent review -- the first evidence that self-improvement is real rather than asserted."
     ],
     "answer_shape": "A versioned God Questions operating architecture with a generated Observatory, machine-readable question-program contract, evidence and action-return interfaces, ownership boundaries, acceptance fixtures, and explicit promotion and kill gates.",
     "refresh_policy": "Re-answer when a real question cannot use the contract, a source or action interface changes, three-question evaluation evidence lands, or measured operating overhead exceeds the value created.",
     "publication_boundary": "public_metadata_only",
     "program": {
       "freshness": {
-        "assessed_at": "2026-08-02",
-        "review_due_at": "2026-08-16"
+        "assessed_at": "2026-08-04",
+        "review_due_at": "2026-08-18"
       },
-      "next_useful_work": "Measure whether cold readers can reproduce the public estate dispositions without private context, then route one independently adjudicated runtime receipt before expanding the action bridge.",
+      "next_useful_work": "Stand up the operating loop on always-on hardware: a single agent whose domain is improving the Library/Foundry/people-graph system, with a public dossier surface showing data bucket counts, question states, and what it changed and when. Evidence selection must be question-driven given the measured extraction ceiling.",
       "assumptions": [
         {
           "id": "QA-GQ009-CANONICAL-EXTENSION",
@@ -424,6 +428,24 @@
       "reference": "user-intent:god-questions-infrastructure:2026-08-02",
       "observed_at": "2026-08-02",
       "summary": "The requested priority is the reusable God Questions Library infrastructure, using existing research as dogfood instead of producing redundant speculative answers."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "https://github.com/sisodias/siso-book-library/releases/tag/payload-v1",
+      "observed_at": "2026-08-04",
+      "summary": "A question-addressable corpus export now exists. 79,071 works are byte-addressable from any machine with no local data: one HTTP Range request against a release asset returned 26,460 bytes and yielded a complete 101,354-character book in 0.79s. This is the first source that can replace a manual evidence link with a resolvable locator."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "https://github.com/sisodias/siso-people-graph/releases/tag/graph-v1",
+      "observed_at": "2026-08-04",
+      "summary": "Cross-domain people graph published: 280,708 people, 564,486 content edges spanning books/GitHub/YouTube, 2,050,629 topic edges across five deliberately-separate vocabularies. Verified by downloading from clean and querying."
+    },
+    {
+      "kind": "source_review",
+      "reference": "local:passages.sqlite:2026-08-04",
+      "observed_at": "2026-08-04",
+      "summary": "41,501,325 passages indexed across 77,540 books as byte ranges into immutable source. Establishes the evidence granularity a question actually needs -- a paragraph, not a book."
     }
   ]
 }

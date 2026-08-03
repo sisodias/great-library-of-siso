@@ -13,7 +13,7 @@
     "challenge_edges": 2,
     "action_learning_links": 8,
     "public_answers_released": 0,
-    "serialized_program_bytes": 19002
+    "serialized_program_bytes": 19130
   },
   "questions": [
     {
@@ -524,12 +524,12 @@
       "lifecycle_status": "active",
       "steward": "SISO Open Source Foundation",
       "freshness": {
-        "state": "current",
-        "assessed_at": "2026-08-02",
-        "review_due_at": "2026-08-16",
+        "state": "not_yet_assessed",
+        "assessed_at": "2026-08-04",
+        "review_due_at": "2026-08-18",
         "as_of": "2026-08-03"
       },
-      "next_useful_work": "Measure whether cold readers can reproduce the public estate dispositions without private context, then route one independently adjudicated runtime receipt before expanding the action bridge.",
+      "next_useful_work": "Stand up the operating loop on always-on hardware: a single agent whose domain is improving the Library/Foundry/people-graph system, with a public dossier surface showing data bucket counts, question states, and what it changed and when. Evidence selection must be question-driven given the measured extraction ceiling.",
       "evidence_mode": "hybrid",
       "decision_to_change": "Which registry fields, Library projections, evidence interfaces, and action-return contracts should become the standard infrastructure for every SISO God Question?",
       "success_criteria": [
@@ -547,13 +547,17 @@
       "evidence_gaps": [
         "No evaluated end-to-end user flow yet proves that the portfolio view helps a cold operator choose the next valuable investigation.",
         "Claim, contradiction, assumption, experiment, mandate, observation, and learning-return objects do not yet share one proven cross-system receipt contract.",
-        "No three-question cohort yet measures authoring overhead, evidence reuse, decision impact, or capability promotion rate."
+        "No three-question cohort yet measures authoring overhead, evidence reuse, decision impact, or capability promotion rate.",
+        "MEASURED 2026-08-04: extraction does not scale to the corpus. Claim extraction over the 932-book philosophy shelf alone needs ~400M tokens against a 150M budget (267%); the full 41.5M-passage corpus needs ~33,200M (22,133%). The budget covers ~187,500 passages. So evidence selection must be question-driven; 'extract everything and index it' is arithmetically impossible, not merely wasteful.",
+        "The retrieval unit is unresolved. Passages are the evidence substrate but not the search surface -- a paragraph is not a thing you can agree or disagree with. Claims (position + grounding quote + confidence) are ~2 orders of magnitude fewer and match the Evidence Engines ingest contract, but the extraction layer that produces them does not exist.",
+        "No standing agent operates the loop. Every piece of infrastructure built to date is supply; nothing continuously reads a question, finds bearing evidence, and updates an answer. This is the gap between a warehouse and an organ."
       ],
       "watch_triggers": [
         "A new God Question cannot express a decision target, falsifier, evidence gap, or refresh condition in the current contract.",
         "Foundry or Knowledge ships a question-addressable export that can replace a manual evidence link.",
         "The first approved experiment returns an Observation Receipt and exposes a missing Library lineage field.",
-        "Three heterogeneous questions complete a full research-to-decision loop and justify stabilizing or deleting provisional fields."
+        "Three heterogeneous questions complete a full research-to-decision loop and justify stabilizing or deleting provisional fields.",
+        "A standing agent proposes a change to the Library or Foundry and it survives independent review -- the first evidence that self-improvement is real rather than asserted."
       ],
       "source_work_ids": [
         "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
@@ -582,10 +586,10 @@
       },
       "program": {
         "freshness": {
-          "assessed_at": "2026-08-02",
-          "review_due_at": "2026-08-16"
+          "assessed_at": "2026-08-04",
+          "review_due_at": "2026-08-18"
         },
-        "next_useful_work": "Measure whether cold readers can reproduce the public estate dispositions without private context, then route one independently adjudicated runtime receipt before expanding the action bridge.",
+        "next_useful_work": "Stand up the operating loop on always-on hardware: a single agent whose domain is improving the Library/Foundry/people-graph system, with a public dossier surface showing data bucket counts, question states, and what it changed and when. Evidence selection must be question-driven given the measured extraction ceiling.",
         "assumptions": [
           {
             "id": "QA-GQ009-CANONICAL-EXTENSION",
@@ -871,7 +875,7 @@
         "assumptions": 3,
         "evidence_connections": 6,
         "action_learning_links": 6,
-        "serialized_program_bytes": 12099
+        "serialized_program_bytes": 12227
       }
     }
   ]
