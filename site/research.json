@@ -524,9 +524,9 @@
       "lifecycle_status": "active",
       "steward": "SISO Open Source Foundation",
       "freshness": {
-        "state": "not_yet_assessed",
-        "assessed_at": "2026-08-04",
-        "review_due_at": "2026-08-18",
+        "state": "current",
+        "assessed_at": "2026-08-03",
+        "review_due_at": "2026-08-17",
         "as_of": "2026-08-03"
       },
       "next_useful_work": "Stand up the operating loop on always-on hardware: a single agent whose domain is improving the Library/Foundry/people-graph system, with a public dossier surface showing data bucket counts, question states, and what it changed and when. Evidence selection must be question-driven given the measured extraction ceiling.",
@@ -586,8 +586,8 @@
       },
       "program": {
         "freshness": {
-          "assessed_at": "2026-08-04",
-          "review_due_at": "2026-08-18"
+          "assessed_at": "2026-08-03",
+          "review_due_at": "2026-08-17"
         },
         "next_useful_work": "Stand up the operating loop on always-on hardware: a single agent whose domain is improving the Library/Foundry/people-graph system, with a public dossier surface showing data bucket counts, question states, and what it changed and when. Evidence selection must be question-driven given the measured extraction ceiling.",
         "assumptions": [
