@@ -2303,6 +2303,146 @@
     {
       "schema_version": "1.0.0",
       "record_type": "source_inventory",
+      "id": "gls:source-inventory:7b2e4f81-3a6d-4c95-b0e7-1d84f6a29c53",
+      "name": "Project Gutenberg public-domain text corpus and catalog metadata",
+      "observed_at": "2026-08-03",
+      "inventory_state": "mapped",
+      "preservation": {
+        "mode": "clean",
+        "reason": "Nothing is dirty: the corpus is an external public-domain source, mirrored rather than authored. The index is deterministic -- delete it and re-run the builders to get it back byte-for-byte. Payload integrity is enforced by SHA-256 per book, so drift against upstream is detectable rather than silently inherited.",
+        "nested_repositories": [],
+        "dirty_entries": 0
+      },
+      "units": [
+        {
+          "unit_id": "gutenberg-catalog-metadata",
+          "name": "Project Gutenberg catalog metadata, complete and lossless",
+          "paths": [
+            "https://github.com/sisodias/siso-book-library"
+          ],
+          "classification": "data_or_archive",
+          "disposition": "move_to_data_store",
+          "target": "SISO Book Library",
+          "rationale": "79,071 catalog rows with every upstream column preserved verbatim, plus 184,624 book-subject, 206,269 book-shelf and 82,405 Library of Congress classification edges. Membership is stored as relations rather than paths because ~100% of sampled books carry multiple subjects, so single-folder placement would discard most of the upstream classification. No derived score or tier is stored; ranking is a projection computed from evidence at read time. Foundry owns source discovery, so the metadata plane belongs there rather than in the Great Library, which stays a catalog and not a warehouse.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://www.gutenberg.org/cache/epub/feeds/pg_catalog.csv",
+              "observed_at": "2026-08-03",
+              "summary": "Official bulk catalog feed returned HTTP 200 and 21,155,633 bytes containing 79,071 Text-and-media rows. Gutenberg's offline-catalogs page directs consumers to this file instead of crawling the site."
+            },
+            {
+              "kind": "integration_check",
+              "reference": "local:books.sqlite:column-coverage-and-roundtrip-2026-08-03",
+              "observed_at": "2026-08-03",
+              "summary": "Losslessness verified two ways: all nine upstream columns (Text#, Type, Issued, Title, Language, Authors, Subjects, LoCC, Bookshelves) are present with zero missing, and five sampled books round-tripped from the database to an exact match against the source row."
+            },
+            {
+              "kind": "documentation",
+              "reference": "local:books.sqlite:locc-coverage-2026-08-03",
+              "observed_at": "2026-08-03",
+              "summary": "Library of Congress Classification is present on 77,801 of 77,820 Text works (99.98%), yielding 21 sections and their bookcases without any curation, classifier, or model call."
+            }
+          ],
+          "source_scope_id": "siso-book-library"
+        },
+        {
+          "unit_id": "gutenberg-plaintext-payload",
+          "name": "Project Gutenberg complete plaintext archive",
+          "paths": [
+            "https://www.gutenberg.org/cache/epub/feeds/txt-files.tar.zip"
+          ],
+          "classification": "data_or_archive",
+          "disposition": "preserve_external",
+          "target": "SISO Foundry",
+          "rationale": "The full plaintext corpus is 11,244,765,936 bytes, refreshed weekly upstream. It is deliberately not mirrored yet: acquisition consumes a material share of available local disk, and no owner-approved storage plane has been selected. Upstream already provides a maintained, addressable copy, so preserving externally is the honest state until placement is decided.",
+          "evidence": [
+            {
+              "kind": "public_locator",
+              "reference": "https://www.gutenberg.org/cache/epub/feeds/txt-files.tar.zip",
+              "observed_at": "2026-08-03",
+              "summary": "HTTP HEAD returned 200 with content-length 11244765936 and last-modified 2026-08-02, confirming a live weekly-refreshed archive of every plaintext file."
+            },
+            {
+              "kind": "documentation",
+              "reference": "https://www.gutenberg.org/policy/license.html",
+              "observed_at": "2026-08-03",
+              "summary": "Project Gutenberg states its collection is nearly all public domain in the United States and directs users to verify status under non-US law. Rights are therefore recorded as public_domain_us rather than a blanket public-domain claim."
+            }
+          ],
+          "source_scope_id": "project-gutenberg"
+        },
+        {
+          "unit_id": "github-payload-distribution",
+          "name": "Candidate GitHub release-asset distribution plane",
+          "paths": [
+            "https://github.com/sisodias/siso-book-library"
+          ],
+          "classification": "data_or_archive",
+          "disposition": "keep",
+          "target": "SISO Book Library",
+          "rationale": "Published as sisodias/siso-book-library. The index ships in Git and as release assets; the payload ships as release assets carrying individually gzipped books inside uncompressed tars, so one HTTP Range request retrieves exactly one book. Release assets are measured not to count against repository size (electron/electron reports 1,790 GB of assets against a 205 MB git tree), and the 2 GiB per-asset cap is the real constraint. Byte-exact retrieval and SHA-256 per book are verified.",
+          "evidence": [
+            {
+              "kind": "documentation",
+              "reference": "https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases",
+              "observed_at": "2026-08-03",
+              "summary": "Official limits: up to 1000 release assets per release, each file under 2 GiB, with no stated limit on total release size or bandwidth. No line states whether assets count toward repository or LFS quota."
+            },
+            {
+              "kind": "integration_check",
+              "reference": "https://api.github.com/repos/yt-dlp/yt-dlp",
+              "observed_at": "2026-08-03",
+              "summary": "yt-dlp reports 60.1 MB repository size while three recent releases alone carry 1,674 MB of assets, indicating assets are excluded from reported repository size. Observed, not documented; treat as empirical evidence rather than a guarantee."
+            },
+            {
+              "kind": "public_locator",
+              "reference": "https://api.github.com/orgs/GITenberg",
+              "observed_at": "2026-08-03",
+              "summary": "GITenberg hosts 50,000 public repositories on a one-repository-per-book model, establishing prior art that bulk text corpora are distributed as archives or per-item repositories rather than one large Git history."
+            },
+            {
+              "kind": "public_locator",
+              "reference": "https://github.com/sisodias/siso-book-library/releases/tag/index-v1",
+              "observed_at": "2026-08-04",
+              "summary": "Index release downloaded from a clean directory and queried: 79,071 works, 36,456 people, Plato 75 works. The publication chain works end to end."
+            }
+          ],
+          "source_scope_id": "siso-book-library"
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "local:books.sqlite:build-2026-08-03",
+          "observed_at": "2026-08-03",
+          "summary": "The metadata module was built from the official bulk catalog in 51 seconds, producing a 182 MB database that retains every upstream column verbatim alongside parsed classification relations. No book payload was acquired and no existing registry record was modified."
+        },
+        {
+          "kind": "documentation",
+          "reference": "https://www.gutenberg.org/ebooks/offline_catalogs",
+          "observed_at": "2026-08-03",
+          "summary": "Gutenberg publishes catalog metadata as CSV, XML/RDF and MARC and asks consumers to use these files rather than crawling the site, so the bulk path taken here is the sanctioned one."
+        }
+      ],
+      "source_scopes": [
+        {
+          "scope_id": "project-gutenberg",
+          "name": "Project Gutenberg public-domain corpus",
+          "source_type": "external_upstream",
+          "publication_boundary": "public_source"
+        },
+        {
+          "scope_id": "siso-book-library",
+          "name": "SISO Book Library index and payload distribution",
+          "source_type": "workspace",
+          "publication_boundary": "public_source"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "source_inventory",
       "id": "gls:source-inventory:d3e37616-1005-4d67-b5c5-82684dceed70",
       "name": "SISO Agent Base source reallocation inventory",
       "source_work_id": "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae",
