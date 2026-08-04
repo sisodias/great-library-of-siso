@@ -104,10 +104,18 @@
     ],
     "evidence_gaps": [
       "No movement map exists yet and no prediction has been made, so nothing can be scored. This contract sets the bar in advance, which is the only time it can be set honestly.",
-      "No baseline has been defined, and falsifier 1 requires one to be meaningful."
+      "The baseline covers primary language on one curated GitHub corpus. Categories, techniques, and projects \u2014 the other three things the question asks about \u2014 have no baseline.",
+      "Star velocity cannot be used: the graph carries star_delta and momentum_day, but there is exactly ONE distinct momentum_day (2026-07-11) and star_delta is null on 406,297 of 463,230 rows. A single observation day yields no delta, so momentum must come from repo-creation cohorts instead."
     ],
     "decision_to_change": "Where to direct research attention and which techniques to adopt early versus wait out.",
-    "state_note": "Contract written 2026-08-04 while state remains 'scoped'. Predictions must be dated and scored against a baseline that does not yet exist; falsifier 1 is currently unusable for that reason."
+    "state_note": "Contract written 2026-08-04 while state remains 'scoped'. Falsifier 1 was recorded as UNUSABLE that day because no baseline existed; a baseline now exists (scripts/movement-baseline.mjs, metrics/2026-08-04-movement-baseline.json) so the falsifier can fire. It covers language share by repo-creation cohort only \u2014 not categories, techniques, or individual projects.",
+    "baseline_reference": {
+      "rule": "next cohort share = last complete cohort share",
+      "from_cohort": "2025",
+      "script": "scripts/movement-baseline.mjs (siso-librarian)",
+      "metrics": "metrics/2026-08-04-movement-baseline.json (siso-librarian)",
+      "scope": "primary language share of curated GitHub repositories, by creation year"
+    }
   },
   "evidence": [
     {
