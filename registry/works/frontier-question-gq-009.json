@@ -418,7 +418,7 @@
     "watch_trigger_status": {
       "evaluated_at": "2026-08-04",
       "1": "DOES NOT FIRE \u2014 tested. All 7 registry questions express decision target, falsifiers, evidence gaps and refresh policy in the current contract. The contract carries every question without strain.",
-      "2": "NOT EVALUATED \u2014 depends on Foundry/Knowledge exports outside this repo.",
+      "2": "DOES NOT FIRE \u2014 tested 2026-08-04. ~/foundry-data/research/ holds 4 question-addressable exports (one directory per question, each with answer.md and evidence.json). But the evidence records are model-extracted summaries \u2014 {relevant, patterns} \u2014 with no URL, quote or citation. Nothing dereferences, so they cannot replace a manual evidence link. The structure is right; the addressability is missing.",
       "3": "CANNOT FIRE \u2014 requires an approved experiment; none exists.",
       "4": "DOES NOT FIRE \u2014 tested. 1 of 7 claims has action=done; the trigger needs three. Blocked by the missing approval step, NOT by incomplete research: six claims sit at action=proposed with grounding complete.",
       "5": "CANNOT FIRE BY CONSTRUCTION \u2014 the standing agent is the proposer and the trigger requires INDEPENDENT review. This is the only one genuinely blocked on a second party.",
