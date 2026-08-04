@@ -3,29 +3,85 @@
   "record_type": "work",
   "id": "gls:work:e38b054f-b926-4410-b84d-4fd3249fd4f4",
   "slug": "frontier-question-agent-layer-efficiency",
-  "name": "GQ-002 · 10× the Agent Layer",
+  "name": "GQ-002 \u00b7 10\u00d7 the Agent Layer",
   "summary": "A standing research question about making a provider-neutral multi-agent operating layer materially more effective, efficient, observable, and self-improving.",
   "work_type": "research_question",
   "lifecycle_status": "active",
-  "updated_at": "2026-08-01",
+  "updated_at": "2026-08-04",
   "provenance": {
     "origin": "siso",
-    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
     "locators": [],
-    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.", "evidence": [] }
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.",
+      "evidence": []
+    }
   },
   "relationships": [
-    { "type": "integrates_with", "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "context": "Foundry supplies the outside-in harness, coordination, memory, and execution-pattern landscape.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns discovery and evidence-universe selection to Foundry." }] },
-    { "type": "depends_on", "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "context": "SISO Knowledge preserves public source and privacy-safe longitudinal evidence.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge." }] },
-    { "type": "coordinates_via", "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f", "context": "Evidence Engines separate measured facts, hypotheses, counter-evidence, and improvement proposals.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns source-grounded transformation to Evidence Engines." }] }
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "context": "Foundry supplies the outside-in harness, coordination, memory, and execution-pattern landscape.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns discovery and evidence-universe selection to Foundry."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "context": "SISO Knowledge preserves public source and privacy-safe longitudinal evidence.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "context": "Evidence Engines separate measured facts, hypotheses, counter-evidence, and improvement proposals.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns source-grounded transformation to Evidence Engines."
+        }
+      ]
+    }
   ],
   "research_contract": {
     "question_id": "GQ-002",
     "question": "What changes would make the complete provider-neutral SISO agent layer ten times more effective per unit of time, attention, and compute?",
-    "state": "answered",
+    "state": "partial",
     "evidence_mode": "hybrid",
-    "source_work_ids": ["gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"],
-    "source_scopes": ["public agent harnesses and orchestration systems", "released SISO Agent Stack components", "privacy-safe operational measurements", "memory, routing, budget, and handoff mechanisms"],
+    "source_work_ids": [
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+    ],
+    "source_scopes": [
+      "public agent harnesses and orchestration systems",
+      "released SISO Agent Stack components",
+      "privacy-safe operational measurements",
+      "memory, routing, budget, and handoff mechanisms"
+    ],
     "answer_shape": "A ranked leverage map whose recommendations each carry measurements, external analogues, an experiment, and a falsifiable success threshold.",
     "refresh_policy": "Re-answer after material stack changes or when new measurements overturn the current bottleneck model.",
     "publication_boundary": "public_metadata_only",
@@ -118,7 +174,39 @@
           "summary": "The public frame requests evidence about agent-layer leverage while private measurements and execution authority remain owner-held."
         }
       ]
-    }
+    },
+    "success_criteria": [
+      "Every recommendation in the leverage map carries a measurement taken on this fleet, not an estimate or a vendor claim.",
+      "Each recommendation states a numeric success threshold that a later measurement could fail to meet.",
+      "The map ranks by measured effect on tokens, latency, or attention per unit of delivered work \u2014 not by expected effort to implement.",
+      "At least one recommendation has been applied and re-measured, with the before and after both recorded."
+    ],
+    "falsifiers": [
+      "The highest-ranked lever, once applied and re-measured, produces less than a 2x improvement on the metric it was ranked by. Measured on the Bifrost request log, not asserted.",
+      "The ranking is unstable: re-deriving it from the same log a week later reorders the top three, meaning it described a moment rather than a structure.",
+      "Aggregate gains are dominated by a single provider or harness, so the 'agent layer' framing is wrong and the question should be about that component instead.",
+      "The measured bottleneck turns out to be human review or decision latency rather than tokens, latency, or compute, in which case no change to the agent layer reaches 10x."
+    ],
+    "watch_triggers": [
+      "A provider's cached-read rate on the gateway log moves by more than 20 percentage points, changing the economics the ranking was built on.",
+      "A new model or provider is added to the gateway, which can reorder the leverage map without any code changing.",
+      "Any recommendation in the map is applied, requiring a re-measurement to confirm or refute its predicted threshold.",
+      "Request volume on any provider falls below 100 in the trailing window, at which point per-request averages stop being trustworthy."
+    ],
+    "evidence_gaps": [
+      "No before/after pair exists for any applied lever: scripts/minimax-cache-route.sh is written and tested but NOT APPLIED, so the largest predicted gain is unverified.",
+      "Latency and attention are named in the question but only token economics have been measured. The ranking currently covers one of three axes.",
+      "Cached-read rates are measured on the gateway log only. Whether they reflect provider-side billing is unconfirmed."
+    ],
+    "decision_to_change": "Where to spend the next unit of agent-layer engineering effort: fixing an existing path's economics versus substituting a model or harness.",
+    "state_note": "Downgraded from 'answered' on 2026-08-04. The contract's fourth success criterion requires at least one lever applied and re-measured; evidence gap 1 records that none has been. The question was marked answered while carrying zero falsifiers, so nothing could contradict it. Writing the falsifiers is what exposed the gap."
   },
-  "evidence": [{ "kind": "source_review", "reference": "source-review:frontier-question-intake:gq-002:2026-08-01", "observed_at": "2026-08-01", "summary": "The existing campaign answer and receipts were read; operational and machine-specific evidence remains outside the public Library." }]
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:frontier-question-intake:gq-002:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The existing campaign answer and receipts were read; operational and machine-specific evidence remains outside the public Library."
+    }
+  ]
 }
