@@ -7,7 +7,7 @@
   "summary": "A standing meta-question about how the Great Library should make SISO's highest-value questions visible, composable, continuously revisable, and connected to evidence and approved action.",
   "work_type": "research_question",
   "lifecycle_status": "active",
-  "updated_at": "2026-08-02",
+  "updated_at": "2026-08-04",
   "provenance": {
     "origin": "siso",
     "owners": [
@@ -414,6 +414,15 @@
           "summary": "Owner-reviewed estate reconciliation supports the existing identity and authority boundaries, records no new Work or inventory, keeps the deferred candidate outside promotion, and proposes no Answer Release."
         }
       ]
+    },
+    "watch_trigger_status": {
+      "evaluated_at": "2026-08-04",
+      "1": "DOES NOT FIRE \u2014 tested. All 7 registry questions express decision target, falsifiers, evidence gaps and refresh policy in the current contract. The contract carries every question without strain.",
+      "2": "NOT EVALUATED \u2014 depends on Foundry/Knowledge exports outside this repo.",
+      "3": "CANNOT FIRE \u2014 requires an approved experiment; none exists.",
+      "4": "DOES NOT FIRE \u2014 tested. 1 of 7 claims has action=done; the trigger needs three. Blocked by the missing approval step, NOT by incomplete research: six claims sit at action=proposed with grounding complete.",
+      "5": "CANNOT FIRE BY CONSTRUCTION \u2014 the standing agent is the proposer and the trigger requires INDEPENDENT review. This is the only one genuinely blocked on a second party.",
+      "note": "Recorded because \"blocked on a person\" had been used to describe GQ-009 as a whole. That is true of trigger 5 alone. Trigger 1 not firing is a positive result about the contract that was never written down."
     }
   },
   "evidence": [
