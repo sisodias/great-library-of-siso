@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:3f8c1a52-6d94-4e07-9b31-2c5a7e4d8f16",
+  "slug": "siso-people-graph",
+  "name": "SISO People Graph",
+  "summary": "One canonical graph of people who produced something, joining a person's identities across GitHub, books, crates.io and video into a single person identity with typed edges to their works.",
+  "work_type": "knowledge_system",
+  "lifecycle_status": "active",
+  "updated_at": "2026-08-04",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-people-graph",
+        "revision": "main",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-people-graph:releases/graph-v2",
+          "observed_at": "2026-08-04",
+          "summary": "The repository holds the schema and loaders in git while the graph itself ships as a release asset. Release graph-v2 was downloaded to a clean directory, decompressed and queried: person=339217, person_person=1272495, organisation=1131. The preceding graph-v1 verified the same way at person=280708. The publication chain works end to end without access to the machine that builds it."
+        }
+      }
+    ],
+    "license": {
+      "status": "pending",
+      "spdx": "NOASSERTION",
+      "reason": "No license has been selected for this repository. The graph aggregates metadata from sources with differing terms, including Project Gutenberg catalog metadata, GitHub repository metadata, and the crates.io database dump whose own README states no license at all. Rights must be resolved per source scope before any redistribution claim is made.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-people-graph",
+          "observed_at": "2026-08-04",
+          "summary": "No LICENSE file is present in the repository root listing, which contains only .gitignore, README.md, loaders and schema. Public visibility is therefore not a reuse grant, consistent with the Library's own pending-license posture."
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "type": "depends_on",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "context": "The graph is built by loaders that live in the Foundry pipelines tree. Foundry owns source discovery and evaluation; the people graph owns canonical person identity and the edges to what each person produced. Physical co-location of the checkouts does not imply containment.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/Lordsisodia/siso-foundry/tree/main/pipelines",
+          "observed_at": "2026-08-04",
+          "summary": "Twenty-two loaders under pipelines/ write into the graph, sharing one contract: a read-only source argument, a --graph target, --limit and --apply. Three create people; the remainder enrich existing people or derive structure from what is already loaded."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "integration_check",
+      "reference": "local:people_graph_v2.sqlite:counts-2026-08-04",
+      "observed_at": "2026-08-04",
+      "summary": "The published graph-v2 asset was retrieved from a clean directory and independently queried rather than trusted: 339,217 people, 901,524 person-to-work edges, 1,272,495 person-to-person edges, 1,131 organisations and 442,499 external identities across five domains. The preceding graph-v1 verified the same way at 280,708 people with no relational layer at all."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "local:people_graph_v2.sqlite:person-person-2026-08-04",
+      "observed_at": "2026-08-04",
+      "summary": "The relational layer is derived from 32,243,556 declared package dependency rows, of which 27,847,334 runtime edges were kept and 4,396,222 development and build edges deliberately excluded as a different claim. An edge therefore means one person's software does not build without another's, which is machine-checked rather than inferred. It answers who is load-bearing rather than who is popular: the most depended-upon person is relied on by 45,037 distinct others. Two earlier attempts at this layer were measured and rejected, one yielding 720,107,620 meaningless co-membership pairs and one yielding five usable edges."
+    },
+    {
+      "kind": "source_review",
+      "reference": "local:people_graph_v2.sqlite:admission-rule-2026-08-04",
+      "observed_at": "2026-08-04",
+      "summary": "Membership is evidence-led rather than popularity-led. 58,509 people were admitted because a third party measured use of their published work, not because their repositories cleared a 100-star threshold; the preceding population matched that threshold to within nine people. Among those admitted are maintainers of infrastructure with billions of recorded installs whose repositories fall below the threshold, which is the case against it. People whose output is not yet linked are recorded as tracked rather than omitted."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/Lordsisodia/siso-foundry/blob/main/core/people_schema_v2.sql",
+      "observed_at": "2026-08-04",
+      "summary": "The schema encodes the graph's design laws: satellites are referenced rather than duplicated, so content_ref holds a repository name or catalog identifier and the bytes stay in the domain that owns them; every cross-source match is an explicit, evidenced, reversible identity_claim rather than a silent merge; role sits on the edge rather than the person; and person.state distinguishes a tracked person with no linked output from a broken row."
+    },
+    {
+      "kind": "documentation",
+      "reference": "https://github.com/Lordsisodia/siso-foundry/blob/main/docs/PEOPLE-GRAPH-ENRICHMENT-LOG.md",
+      "observed_at": "2026-08-04",
+      "summary": "Fifteen enrichment rounds are recorded with the command and raw output behind every number, including three negative results that stopped expensive work: a GitHub-to-book identity stitch capped at 419 candidate people and yielding zero plausible matches, naive person-to-person co-membership measured at 720,107,620 pairs and rejected, and a repository source-diversity signal shown to be a restatement of stars once controlled for."
+    }
+  ]
+}

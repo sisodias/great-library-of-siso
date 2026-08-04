@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T19:10:00.000Z",
+  "generated_at": "2026-08-04T00:00:00.000Z",
   "base_path": "/",
   "works": [
     {
@@ -165,6 +165,15 @@
       "section": "Agents"
     },
     {
+      "id": "gls:work:9d47b2e1-8c05-4a63-b7f8-1e5904af3c72",
+      "slug": "siso-book-library",
+      "name": "SISO Book Library",
+      "library_url": "/works/siso-book-library/",
+      "type": "knowledge_system",
+      "maturity": "active",
+      "section": "Unassigned"
+    },
+    {
       "id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
       "slug": "siso-evidence-engines",
       "name": "SISO Evidence Engines",
@@ -190,6 +199,15 @@
       "type": "knowledge_system",
       "maturity": "active",
       "section": "Research"
+    },
+    {
+      "id": "gls:work:3f8c1a52-6d94-4e07-9b31-2c5a7e4d8f16",
+      "slug": "siso-people-graph",
+      "name": "SISO People Graph",
+      "library_url": "/works/siso-people-graph/",
+      "type": "knowledge_system",
+      "maturity": "active",
+      "section": "Unassigned"
     },
     {
       "id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
@@ -516,6 +534,42 @@
       "active_release_id": "gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34",
       "active_release_version": "0.2.0+9d17865",
       "artifact_revision": "9d1786575cce55df61ce3cf8564969536c47d186"
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-book-library",
+      "url": "https://github.com/sisodias/siso-book-library",
+      "work_id": "gls:work:9d47b2e1-8c05-4a63-b7f8-1e5904af3c72",
+      "work_name": "SISO Book Library",
+      "work_slug": "siso-book-library",
+      "work_type": "knowledge_system",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-book-library/",
+      "locator_type": "source_repository",
+      "locator_revision": "main",
+      "visibility": "public",
+      "status": "staging",
+      "active_release_id": null,
+      "active_release_version": null,
+      "artifact_revision": null
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-people-graph",
+      "url": "https://github.com/sisodias/siso-people-graph",
+      "work_id": "gls:work:3f8c1a52-6d94-4e07-9b31-2c5a7e4d8f16",
+      "work_name": "SISO People Graph",
+      "work_slug": "siso-people-graph",
+      "work_type": "knowledge_system",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-people-graph/",
+      "locator_type": "source_repository",
+      "locator_revision": "main",
+      "visibility": "public",
+      "status": "staging",
+      "active_release_id": null,
+      "active_release_version": null,
+      "artifact_revision": null
     }
   ],
   "assemblies": [

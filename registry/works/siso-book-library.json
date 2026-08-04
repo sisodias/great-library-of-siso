@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:9d47b2e1-8c05-4a63-b7f8-1e5904af3c72",
+  "slug": "siso-book-library",
+  "name": "SISO Book Library",
+  "summary": "A queryable index over the world's public-domain books, built from Project Gutenberg's bulk catalog, with the plaintext payload distributed as release assets rather than mirrored into git.",
+  "work_type": "knowledge_system",
+  "lifecycle_status": "active",
+  "updated_at": "2026-08-04",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-book-library",
+        "revision": "main",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-book-library:releases",
+          "observed_at": "2026-08-04",
+          "summary": "Two releases exist. index-v1 carries books.sqlite.gz at 50,163,670 bytes and people_books.sqlite.gz at 7,520,915 bytes; payload-v1 carries the Gutenberg plaintext corpus. The index release was downloaded from a clean directory and queried: 79,071 works, 36,456 people, Plato 75 works."
+        }
+      }
+    ],
+    "license": {
+      "status": "pending",
+      "spdx": "NOASSERTION",
+      "reason": "Project Gutenberg states its collection is nearly all public domain in the United States and directs users to verify status under non-US law, so upstream rights are recorded as public_domain_us rather than a blanket public-domain claim. No license has been selected for the SISO index and tooling that sit on top.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "https://www.gutenberg.org/policy/license.html",
+          "observed_at": "2026-08-03",
+          "summary": "Project Gutenberg's stated policy is that its collection is nearly all public domain in the United States, with a direction to verify status under other jurisdictions."
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:3f8c1a52-6d94-4e07-9b31-2c5a7e4d8f16",
+      "context": "The book library supplies the book domain of the people graph: 35,366 people and 101,124 person-to-work edges. The graph references Gutenberg identifiers rather than copying catalog rows, so the two Works stay independently addressable.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "local:people_graph_v1.sqlite:domain-split-2026-08-04",
+          "observed_at": "2026-08-04",
+          "summary": "Querying the published graph by domain returns book at 35,366 distinct people and 101,124 edges, matching the book library's own people count of 36,456 less the authors with no linked work."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "https://www.gutenberg.org/cache/epub/feeds/pg_catalog.csv",
+      "observed_at": "2026-08-03",
+      "summary": "The official bulk catalog feed returned HTTP 200 and 21,155,633 bytes containing 79,071 rows. Gutenberg's offline-catalogs page directs consumers to this file rather than crawling the site, so the bulk path taken is the sanctioned one."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "local:books.sqlite:column-coverage-and-roundtrip-2026-08-03",
+      "observed_at": "2026-08-03",
+      "summary": "Losslessness was verified two ways: all nine upstream columns are present with zero missing, and five sampled books round-tripped from the database to an exact match against the source row. Library of Congress Classification is present on 77,801 of 77,820 text works, or 99.98 percent, without any curation, classifier or model call."
+    },
+    {
+      "kind": "documentation",
+      "reference": "https://github.com/sisodias/siso-book-library/releases/tag/index-v1",
+      "observed_at": "2026-08-04",
+      "summary": "The distribution design ships the index in git and as release assets while the payload ships as release assets carrying individually gzipped books inside uncompressed tars, so one HTTP range request retrieves exactly one book. Release assets are measured not to count against repository size, leaving the 2 GiB per-asset cap as the real constraint."
+    }
+  ]
+}
