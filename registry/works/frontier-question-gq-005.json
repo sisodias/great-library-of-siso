@@ -104,7 +104,7 @@
     ],
     "evidence_gaps": [
       "No movement map exists yet and no prediction has been made, so nothing can be scored. This contract sets the bar in advance, which is the only time it can be set honestly.",
-      "The baseline covers primary language on one curated GitHub corpus. Categories, techniques, and projects \u2014 the other three things the question asks about \u2014 have no baseline.",
+      "The baseline covers primary language on one curated GitHub corpus. Categories, techniques, and projects have no baseline and cannot get one from this corpus: awesome_sections was tried and rejected \u2014 10,185 of 28,177 sections are singletons (free-text list headings, not a taxonomy), the dense head merely restates language, and the largest agent-related section is 145 rows across six cohorts. A categories baseline needs a different source, not a different query.",
       "Star velocity cannot be used: the graph carries star_delta and momentum_day, but there is exactly ONE distinct momentum_day (2026-07-11) and star_delta is null on 406,297 of 463,230 rows. A single observation day yields no delta, so momentum must come from repo-creation cohorts instead."
     ],
     "decision_to_change": "Where to direct research attention and which techniques to adopt early versus wait out.",
