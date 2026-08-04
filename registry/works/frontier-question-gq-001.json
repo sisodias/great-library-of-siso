@@ -3,29 +3,85 @@
   "record_type": "work",
   "id": "gls:work:2ac84615-3f9d-4040-95d6-9d9f39e4dc84",
   "slug": "frontier-question-agent-workspace",
-  "name": "GQ-001 · The Agent Workspace",
+  "name": "GQ-001 \u00b7 The Agent Workspace",
   "summary": "A standing research question about the complete code, agent, memory, enforcement, and user-interface architecture of an agent-native workspace.",
   "work_type": "research_question",
   "lifecycle_status": "active",
-  "updated_at": "2026-08-01",
+  "updated_at": "2026-08-04",
   "provenance": {
     "origin": "siso",
-    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
     "locators": [],
-    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.", "evidence": [] }
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.",
+      "evidence": []
+    }
   },
   "relationships": [
-    { "type": "integrates_with", "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "context": "Foundry maps relevant agent systems, architecture patterns, and counter-examples.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns discovery and evidence-universe selection to Foundry." }] },
-    { "type": "depends_on", "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "context": "SISO Knowledge preserves the durable, rights-aware corpus and retrieval layer.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge." }] },
-    { "type": "coordinates_via", "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f", "context": "Evidence Engines turn explicit sources into grounded claims, counter-evidence, and answer candidates.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns source-grounded transformation to Evidence Engines." }] }
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "context": "Foundry maps relevant agent systems, architecture patterns, and counter-examples.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns discovery and evidence-universe selection to Foundry."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "context": "SISO Knowledge preserves the durable, rights-aware corpus and retrieval layer.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "context": "Evidence Engines turn explicit sources into grounded claims, counter-evidence, and answer candidates.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns source-grounded transformation to Evidence Engines."
+        }
+      ]
+    }
   ],
   "research_contract": {
     "question_id": "GQ-001",
     "question": "How should the complete agent workspace be designed across code layout, agent architecture, memory, enforcement, and agent-generated user interfaces?",
     "state": "partial",
     "evidence_mode": "hybrid",
-    "source_work_ids": ["gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"],
-    "source_scopes": ["public agent-workspace repositories", "code-layout and architectural enforcement", "memory and context systems", "agent-facing interface patterns"],
+    "source_work_ids": [
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+    ],
+    "source_scopes": [
+      "public agent-workspace repositories",
+      "code-layout and architectural enforcement",
+      "memory and context systems",
+      "agent-facing interface patterns"
+    ],
     "answer_shape": "Evidence-graded principles, reference architectures, rejected patterns, and tests that distinguish universal findings from SISO preferences.",
     "refresh_policy": "Re-answer when a major agent platform, workspace architecture, or failed forward prediction changes a load-bearing conclusion.",
     "publication_boundary": "public_metadata_only",
@@ -120,7 +176,39 @@
           "summary": "The current question frame defines learning demand but grants no implementation or budget authority."
         }
       ]
-    }
+    },
+    "success_criteria": [
+      "Each principle is graded by the evidence behind it and states whether it is a universal finding or a SISO preference \u2014 the answer_shape's own distinction, made checkable per principle rather than claimed for the set.",
+      "Rejected patterns are recorded with the observation that rejected them, so a later reader can tell a tried-and-failed pattern from an untried one.",
+      "Every architectural claim names a workspace where it was actually run, not a design sketch.",
+      "A principle that has never been violated in practice is marked as untested rather than as confirmed."
+    ],
+    "falsifiers": [
+      "A principle stated as universal is contradicted by a workspace outside SISO, making it a preference that was mislabelled.",
+      "The architecture cannot be described without naming a specific tool, meaning what was learned is a vendor workflow rather than a workspace design.",
+      "Following the principles produces a workspace that a new agent cannot orient in \u2014 the design optimises for its author rather than for a cold reader.",
+      "Enforcement mechanisms are routinely bypassed by the agents they govern, indicating the design describes intended rather than actual behaviour."
+    ],
+    "watch_triggers": [
+      "An enforcement mechanism (gate, hook, contract) is added or disabled, which changes what the workspace actually guarantees.",
+      "A new agent joins the workspace and takes measurably longer to orient than the design predicts.",
+      "A principle is violated in practice without the violation being caught, exposing an unenforced claim.",
+      "Agent-generated UI surfaces begin carrying values that are not derived from a named source."
+    ],
+    "evidence_gaps": [
+      "Evidence comes almost entirely from a single workspace operated by a single agent, so 'universal' cannot yet be distinguished from 'true here'. The answer_shape demands exactly that distinction.",
+      "Memory architecture is named in the question but only lightly exercised \u2014 no claim rests on measured memory behaviour.",
+      "Agent-generated user interfaces have one instance (the observatory) and no comparison, so its design choices are untested against alternatives."
+    ],
+    "decision_to_change": "How to lay out a new agent workspace \u2014 what to enforce mechanically, what to leave to convention, and which patterns to refuse to repeat.",
+    "state_note": "Contract written 2026-08-04. Evidence gap 1 is the honest headline: this question is answered from one workspace, and its own answer_shape requires separating universal findings from SISO preferences. It stays 'partial' for that reason."
   },
-  "evidence": [{ "kind": "source_review", "reference": "source-review:frontier-question-intake:gq-001:2026-08-01", "observed_at": "2026-08-01", "summary": "The existing question registry and partial answer were read; only publication-safe metadata was promoted." }]
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:frontier-question-intake:gq-001:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The existing question registry and partial answer were read; only publication-safe metadata was promoted."
+    }
+  ]
 }

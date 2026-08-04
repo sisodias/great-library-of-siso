@@ -3,32 +3,118 @@
   "record_type": "work",
   "id": "gls:work:7782f923-d44e-4a47-8ce6-134e31816673",
   "slug": "frontier-question-field-momentum",
-  "name": "GQ-005 · Where the Field Is Moving",
+  "name": "GQ-005 \u00b7 Where the Field Is Moving",
   "summary": "A standing research question about which technologies, categories, techniques, and projects are accelerating and what those changes predict.",
   "work_type": "research_question",
   "lifecycle_status": "experimental",
-  "updated_at": "2026-08-01",
+  "updated_at": "2026-08-04",
   "provenance": {
     "origin": "siso",
-    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
     "locators": [],
-    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.", "evidence": [] }
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.",
+      "evidence": []
+    }
   },
   "relationships": [
-    { "type": "integrates_with", "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "context": "Foundry supplies frozen momentum snapshots, category movements, and emergent-source discovery.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns discovery and longitudinal source signals to Foundry." }] },
-    { "type": "depends_on", "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "context": "SISO Knowledge preserves comparable time-indexed evidence and retrieval history.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge." }] },
-    { "type": "coordinates_via", "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f", "context": "Evidence Engines distinguish observed momentum, causal hypotheses, and predictions.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns source-grounded transformation to Evidence Engines." }] }
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "context": "Foundry supplies frozen momentum snapshots, category movements, and emergent-source discovery.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns discovery and longitudinal source signals to Foundry."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "context": "SISO Knowledge preserves comparable time-indexed evidence and retrieval history.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "context": "Evidence Engines distinguish observed momentum, causal hypotheses, and predictions.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns source-grounded transformation to Evidence Engines."
+        }
+      ]
+    }
   ],
   "research_contract": {
     "question_id": "GQ-005",
     "question": "Which categories, techniques, and projects are gaining real momentum, what mechanisms explain the change, and what does the acceleration predict next?",
     "state": "scoped",
     "evidence_mode": "corpus",
-    "source_work_ids": ["gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"],
-    "source_scopes": ["frozen Foundry momentum snapshots", "category and capability movement", "release and adoption signals", "counter-signals that separate durable emergence from short-lived attention"],
+    "source_work_ids": [
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+    ],
+    "source_scopes": [
+      "frozen Foundry momentum snapshots",
+      "category and capability movement",
+      "release and adoption signals",
+      "counter-signals that separate durable emergence from short-lived attention"
+    ],
     "answer_shape": "A ranked movement map with observed deltas, causal hypotheses, confidence, leading indicators, and dated predictions that can later be scored.",
     "refresh_policy": "Re-answer on a fixed cadence and whenever a leading indicator crosses a pre-registered materiality threshold.",
-    "publication_boundary": "public_metadata_only"
+    "publication_boundary": "public_metadata_only",
+    "success_criteria": [
+      "Every predicted movement carries a date and a scoring rule fixed in advance, so it can later be marked right or wrong without renegotiation.",
+      "Each movement names an observed delta with the measurement window it came from, not a general impression of momentum.",
+      "Causal hypotheses are stated separately from the observations, so a correct observation with a wrong mechanism is visible as such.",
+      "Leading indicators are things that can be checked without waiting for the outcome they predict."
+    ],
+    "falsifiers": [
+      "Dated predictions, once scored, do no better than a naive 'current trends continue' baseline.",
+      "Movements are only ever identified after they are widely known, meaning the map lags rather than leads.",
+      "The observed deltas are dominated by measurement artifacts \u2014 a source changing its reporting rather than the field changing.",
+      "Confidence ratings show no correlation with which predictions later score correct, making them decorative."
+    ],
+    "watch_triggers": [
+      "A dated prediction reaches its date and must be scored.",
+      "A tracked source changes how it reports, which can create an apparent delta with no real movement.",
+      "A prediction is contradicted before its date, which is information that should not wait for the scoring window."
+    ],
+    "evidence_gaps": [
+      "No movement map exists yet and no prediction has been made, so nothing can be scored. This contract sets the bar in advance, which is the only time it can be set honestly.",
+      "No baseline has been defined, and falsifier 1 requires one to be meaningful."
+    ],
+    "decision_to_change": "Where to direct research attention and which techniques to adopt early versus wait out.",
+    "state_note": "Contract written 2026-08-04 while state remains 'scoped'. Predictions must be dated and scored against a baseline that does not yet exist; falsifier 1 is currently unusable for that reason."
   },
-  "evidence": [{ "kind": "source_review", "reference": "source-review:frontier-question-intake:gq-005:2026-08-01", "observed_at": "2026-08-01", "summary": "The standing momentum question and its dependence on non-backfillable longitudinal evidence were read before intake." }]
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:frontier-question-intake:gq-005:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The standing momentum question and its dependence on non-backfillable longitudinal evidence were read before intake."
+    }
+  ]
 }

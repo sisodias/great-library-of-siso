@@ -3,32 +3,120 @@
   "record_type": "work",
   "id": "gls:work:2144e900-4886-461e-92f1-49571f2e9f74",
   "slug": "frontier-question-information-organ",
-  "name": "GQ-006 · The Information Organ",
+  "name": "GQ-006 \u00b7 The Information Organ",
   "summary": "A standing research and systems question about making broad, continuously refreshed evidence reliably accessible to every authorized agent workflow.",
   "work_type": "research_question",
   "lifecycle_status": "active",
-  "updated_at": "2026-08-01",
+  "updated_at": "2026-08-04",
   "provenance": {
     "origin": "siso",
-    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
     "locators": [],
-    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.", "evidence": [] }
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.",
+      "evidence": []
+    }
   },
   "relationships": [
-    { "type": "integrates_with", "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "context": "Foundry supplies source discovery, query surfaces, freshness signals, and evidence-universe selection.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns discovery and longitudinal source signals to Foundry." }] },
-    { "type": "depends_on", "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "context": "SISO Knowledge owns durable corpus, provenance, indexes, and rights-aware retrieval.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge." }] },
-    { "type": "coordinates_via", "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f", "context": "Evidence Engines convert newly acquired sources and feedback into traceable learning candidates.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns source-grounded transformation to Evidence Engines." }] }
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "context": "Foundry supplies source discovery, query surfaces, freshness signals, and evidence-universe selection.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns discovery and longitudinal source signals to Foundry."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "context": "SISO Knowledge owns durable corpus, provenance, indexes, and rights-aware retrieval.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "context": "Evidence Engines convert newly acquired sources and feedback into traceable learning candidates.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns source-grounded transformation to Evidence Engines."
+        }
+      ]
+    }
   ],
   "research_contract": {
     "question_id": "GQ-006",
     "question": "How should the information organ continuously gather, preserve, query, and push valuable evidence into authorized agent workflows and self-improvement loops?",
     "state": "partial",
     "evidence_mode": "hybrid",
-    "source_work_ids": ["gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"],
-    "source_scopes": ["public source-acquisition and retrieval systems", "Library Research Works and their public contracts", "privacy-safe health and freshness evidence", "feedback-to-learning mechanisms"],
+    "source_work_ids": [
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+    ],
+    "source_scopes": [
+      "public source-acquisition and retrieval systems",
+      "Library Research Works and their public contracts",
+      "privacy-safe health and freshness evidence",
+      "feedback-to-learning mechanisms"
+    ],
     "answer_shape": "A verified operating architecture with explicit ownership, freshness contracts, query primitives, feedback loops, failure modes, and observed end-to-end receipts.",
     "refresh_policy": "Re-answer when a source lane, retrieval contract, or learning loop materially changes or fails its freshness guarantee.",
-    "publication_boundary": "public_metadata_only"
+    "publication_boundary": "public_metadata_only",
+    "success_criteria": [
+      "Freshness is derived from observable state, never asserted by whoever last touched the record. A ledger entry that says 'fresh' must be checkable against the repository.",
+      "Every number the organ publishes can be re-derived mechanically from a named source by a second program that did not produce it.",
+      "Evidence attaches to a question by reference \u2014 byte ranges into sources \u2014 rather than by copying corpora into the registry.",
+      "A delivery path that stops working becomes visible without anyone remembering to check it."
+    ],
+    "falsifiers": [
+      "A published number cannot be re-derived from its named source, and the disagreement is invisible until a human notices. This has fired repeatedly: a hyphen/underscore path typo reported 0 source inventories when 6 existed, because the builder and the checker shared the wrong path.",
+      "The freshness mechanism produces so many false positives that its output is routinely dismissed \u2014 a gate that cries wolf is worse than no gate. This fired once: hardening a verifier marked all 10 claims stale at once.",
+      "Maintaining the organ costs more attention than the decisions it improves.",
+      "The organ reports a pipeline as healthy while that pipeline has never actually run end to end. This fired on 2026-08-04: outbox/sent/ was empty \u2014 zero escalations ever delivered \u2014 while the queue was reported as merely 'queued'."
+    ],
+    "watch_triggers": [
+      "A gate is added, narrowed, or disabled \u2014 each changes what the organ can detect and can silently reduce coverage.",
+      "A derivation's named source moves or is renamed, which makes file-count silently return 0 rather than error.",
+      "Any delivery or ingestion path reports success without a receipt proving the far end received something.",
+      "A published surface begins carrying a hardcoded value where it previously carried a measured one."
+    ],
+    "evidence_gaps": [
+      "Escalation delivery is automated but still unproven end to end: zero messages have been delivered because the peer has been offline the whole time. The drain is verified to run and no-op correctly; it has never been verified to succeed.",
+      "No independent reviewer has checked any claim. Eight claims await review, and self-review cannot satisfy the criterion that a second party can re-derive the numbers.",
+      "Push freshness into agent workflows is named in the question but unbuilt: the organ currently publishes and waits to be read rather than pushing into a loop."
+    ],
+    "decision_to_change": "Whether to trust a published Library number without re-deriving it, and whether an evidence path is sound enough to attach to a standing question.",
+    "state_note": "Contract written 2026-08-04. Three of the four falsifiers have already fired at least once and are recorded with what fired them, so this contract is a record of observed failure modes rather than anticipated ones."
   },
-  "evidence": [{ "kind": "source_review", "reference": "source-review:frontier-question-intake:gq-006:2026-08-01", "observed_at": "2026-08-01", "summary": "The existing answer receipts were read; machine state, private topology, and operational details remain outside the public Library." }]
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:frontier-question-intake:gq-006:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The existing answer receipts were read; machine state, private topology, and operational details remain outside the public Library."
+    }
+  ]
 }

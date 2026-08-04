@@ -3,32 +3,118 @@
   "record_type": "work",
   "id": "gls:work:85964f1c-2efe-48b0-8f71-dc32bb668c0c",
   "slug": "frontier-question-best-software-primitive",
-  "name": "GQ-004 · Best Software Primitive",
+  "name": "GQ-004 \u00b7 Best Software Primitive",
   "summary": "A parametric standing question for identifying the best implementation of a reusable software primitive across the corpus with quality, rights, and composability evidence.",
   "work_type": "research_question",
   "lifecycle_status": "experimental",
-  "updated_at": "2026-08-01",
+  "updated_at": "2026-08-04",
   "provenance": {
     "origin": "siso",
-    "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
     "locators": [],
-    "license": { "status": "not_applicable", "spdx": "NONE", "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.", "evidence": [] }
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.",
+      "evidence": []
+    }
   },
   "relationships": [
-    { "type": "integrates_with", "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "context": "Foundry supplies capability categories, candidate repositories, quality signals, and reuse intelligence.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model treats Foundry buckets as retrieval scopes and demand signals rather than conclusions." }] },
-    { "type": "depends_on", "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "context": "SISO Knowledge preserves source, provenance, and retrieval records needed to reproduce a ranking.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge." }] },
-    { "type": "coordinates_via", "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f", "context": "Evidence Engines produce typed comparisons, refutations, and ranked answer candidates.", "evidence": [{ "kind": "documentation", "reference": "decision:frontier-questions:evidence-loop:2026-08-01", "observed_at": "2026-08-01", "summary": "The accepted model assigns source-grounded transformation to Evidence Engines." }] }
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "context": "Foundry supplies capability categories, candidate repositories, quality signals, and reuse intelligence.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model treats Foundry buckets as retrieval scopes and demand signals rather than conclusions."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "context": "SISO Knowledge preserves source, provenance, and retrieval records needed to reproduce a ranking.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "context": "Evidence Engines produce typed comparisons, refutations, and ranked answer candidates.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns source-grounded transformation to Evidence Engines."
+        }
+      ]
+    }
   ],
   "research_contract": {
     "question_id": "GQ-004",
     "question": "For a named software primitive, which implementation is best for the stated context, and is it safe and valuable to reuse, vendor, or learn from?",
     "state": "scoped",
     "evidence_mode": "corpus",
-    "source_work_ids": ["gls:work:ec664d93-df93-48c5-be40-5d0165886c01", "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302", "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"],
-    "source_scopes": ["Foundry capability category selected by the requested primitive", "implementation and interface evidence", "maintenance, adoption, security, and license evidence", "counter-examples across language and scale"],
+    "source_work_ids": [
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+    ],
+    "source_scopes": [
+      "Foundry capability category selected by the requested primitive",
+      "implementation and interface evidence",
+      "maintenance, adoption, security, and license evidence",
+      "counter-examples across language and scale"
+    ],
     "answer_shape": "A context-specific ranked shortlist with interface fit, evidence grade, rights gate, adoption cost, and explicit reasons not to choose each candidate.",
     "refresh_policy": "Re-answer when the category gains a high-signal implementation, a selected project materially changes, or security and rights evidence changes.",
-    "publication_boundary": "public_metadata_only"
+    "publication_boundary": "public_metadata_only",
+    "success_criteria": [
+      "Every candidate carries an explicit reason NOT to choose it, as the answer_shape requires \u2014 a shortlist without stated downsides is advocacy, not evaluation.",
+      "The rights gate is applied and recorded per candidate before any code is vendored or reused, not after.",
+      "Interface fit is assessed against the named context's actual call sites, not against the candidate's own documentation.",
+      "Adoption cost includes the cost of removing the candidate later, not only of adding it."
+    ],
+    "falsifiers": [
+      "A shortlist recommendation is adopted and the stated adoption cost is exceeded by more than 2x, meaning the estimate was not grounded.",
+      "Two candidates receive the same evidence grade on materially different amounts of evidence, showing the grade encodes confidence rather than evidence.",
+      "The 'best' choice changes when the context is restated slightly, indicating the ranking tracked the phrasing rather than the requirement.",
+      "A rights determination made here is later contradicted by the licence text, which would mean the gate is decorative."
+    ],
+    "watch_triggers": [
+      "A candidate changes licence, which can invalidate a rights determination without any code changing.",
+      "A candidate is archived or loses maintenance, changing adoption cost without changing interface fit.",
+      "The named context's call sites change, which is what interface fit was assessed against."
+    ],
+    "evidence_gaps": [
+      "No primitive has been evaluated yet. This contract defines what an answer would have to satisfy; it does not report findings.",
+      "No rights-gate procedure has been exercised end to end on a real candidate, so its cost and failure modes are unknown."
+    ],
+    "decision_to_change": "Whether to build, vendor, reuse, or learn from an existing implementation of a named primitive.",
+    "state_note": "Contract written 2026-08-04 while state remains 'scoped'. No candidate has been evaluated; this records the bar, not an answer."
   },
-  "evidence": [{ "kind": "source_review", "reference": "source-review:frontier-question-intake:gq-004:2026-08-01", "observed_at": "2026-08-01", "summary": "The parametric Foundry question and current capability-bucket model were read before the public research contract was written." }]
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:frontier-question-intake:gq-004:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The parametric Foundry question and current capability-bucket model were read before the public research contract was written."
+    }
+  ]
 }
