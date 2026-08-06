@@ -2,7 +2,7 @@
 
 ## Scope
 
-Create the Great Library public program spine for the People Graph 100× expansion: stable independent Works, exact source-contract Releases, ADR-0005, one thirteen-lane `initiative_started` Event, GQ-010 seed and program metadata, V37, public interfaces, current-state guidance, and the narrow Work-schema compatibility needed to validate question metadata already present on `main`.
+Create the Great Library public program spine for the People Graph 100× expansion: stable independent Works, exact source-contract Releases, ADR-0005, one thirteen-lane `initiative_started` Event, GQ-010 seed and program metadata, V37, public interfaces, current-state guidance, and the narrow Work-schema and site-check compatibility needed to validate question metadata and current projections already present on `main`.
 
 ## Changed paths
 
@@ -17,6 +17,7 @@ Create the Great Library public program spine for the People Graph 100× expansi
 - `registry/events/2026-08-06-people-graph-parallel-program-started.json`
 - `registry/snapshots/whole-library-v37.json`
 - `schemas/work.schema.json`
+- `scripts/check-site.mjs`
 - `docs/people-graph-program/**`
 - `CURRENT_STATE.md`
 - generated `site/**` only through repository tooling
@@ -35,6 +36,8 @@ The pull-request workflow is the authoritative execution environment for this co
 
 - Registry and schema validation for three new Works, four Releases, ADR-0005, the program Event, and V37.
 - Compatibility validation for existing optional question metadata: `state_note`, the structured GQ-005 `baseline_reference`, and the structured GQ-009 `watch_trigger_status`.
+- V37 projection checks for 79 immutable Releases, 37 Snapshots, 29 Events, five ADRs, one active People Graph initiative, the V37 changelog entry, the ADR/Event/Snapshot lineage, eight Frontier Questions, the selected GQ-010 program Release, and generated Work pages for People Graph, Book Library, and GQ-010.
+- Existing V24–V35 lineage checks remain intact; GQ-002 is checked against the `partial` state and downgrade rationale already recorded on `main`, rather than the stale `answered` expectation.
 - Immutable-history protection: no existing Release, Snapshot, Decision, or Event is modified.
 - Research-question contract validation for GQ-010.
 - Snapshot manifest SHA-256 checks for all selected Release files.
@@ -48,6 +51,7 @@ The pull-request workflow is the authoritative execution environment for this co
 - SISO Knowledge can own canonical-service governance while People Graph and Book Library retain independent Work and repository identity.
 - All future lanes can start from current main and publish draft contracts without waiting for this PR to merge.
 - Optional research-contract fields already committed on `main` are intentional metadata, so the schema should describe them rather than forcing edits to established question records.
+- Projection checks should advance with the selected immutable Snapshot and authored question state; they should not pin a superseded V36 closeout after V37 is selected.
 
 ## Compatibility seams
 
@@ -58,6 +62,7 @@ The pull-request workflow is the authoritative execution environment for this co
 - Control-plane decision: `ADR-0005`.
 - Current selection after merge: Whole Library V37 `gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9`.
 - `schemas/work.schema.json` adds only typed optional properties already used by existing GQ records; it does not relax top-level Work identity, provenance, relationship, publication-boundary, or evidence rules.
+- `scripts/check-site.mjs` retains historical lineage and publication-safety checks while advancing only the current count, selection, active-initiative, question-state, and GQ-010 assertions required by V37.
 - Generated `site/` remains tooling-owned; source records and authored docs are the edit surfaces.
 
 ## Known risks
@@ -87,4 +92,5 @@ The pull-request workflow is the authoritative execution environment for this co
 5. Recompute V37 Release hashes after any selected Release-file edit; the unselected seed does not change the V37 pin set.
 6. Keep generated `site/` changes subordinate to `npm run verify`.
 7. Keep the optional question-metadata schema definitions narrow; future generic research fields should receive their own versioned contract rather than an unrestricted object.
-8. Close the active Event only with a successor Event that cites reviewed handoffs, verification evidence, and the next selected Snapshot.
+8. Advance current-state assertions through a new selected Snapshot rather than deleting historical lineage checks.
+9. Close the active Event only with a successor Event that cites reviewed handoffs, verification evidence, and the next selected Snapshot.
