@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:2ca7db4f-032c-4012-a572-d86f8dcaac11",
+  "occurred_at": "2026-08-07T03:14:00+07:00",
+  "recorded_at": "2026-08-07T03:14:00+07:00",
+  "immutable": true,
+  "entry_type": "initiative_completed",
+  "thread": {
+    "id": "gls:thread:declassified-government-records-department",
+    "name": "Declassified Government Records Department",
+    "kind": "research"
+  },
+  "status": "completed",
+  "title": "Declassified government records department authored and verified",
+  "summary": "The isolated Research department blueprint is complete: thirteen authored module files define a provenance-first catalog for declassified and public government records, thirty bounded collection programmes, thirty-seven source systems including thirty-two official systems, a seventeen-field document contract, a worked metadata-only CIA example, research and safety playbooks, and an offline verifier.",
+  "intent": "Close the authored-module initiative with an auditable handoff while keeping canonical Work, Release, Source Inventory, payload preservation, generated-site, and whole-Library Snapshot promotion explicitly deferred until source contracts, rights, safety, and repository-wide integration gates are independently reviewed.",
+  "reasoning": [
+    "A document department is useful only when it separates historical record identity, origin, custody, release mechanism, public version, digital object, OCR, and research interpretation instead of flattening them into a PDF title.",
+    "The Great Library remains a catalog and reading surface, so the branch commits original metadata contracts, source maps, and research methods but no copied agency PDF corpus, scraped database, leaked material, credentials, or hazardous payload archive.",
+    "Official custodians and publishers are distinguished from secondary discovery and preservation aids, and public availability is not treated as proof of declassification, completeness, redistribution rights, factual accuracy, privacy clearance, or operational safety.",
+    "The STARGATE collection is represented as a typed document-programme projection that can later integrate with the separate Remote Viewing Research & Practice module without duplicating its historical, experimental, or practice identity.",
+    "The module-local verifier passed every declared structural, reference, link, payload-boundary, secret-pattern, and Python-compilation check; the complete repository verification suite remains an integration gate for the pull-request environment."
+  ],
+  "changes": [
+    {
+      "kind": "document",
+      "reference": "research/declassified-government-records/",
+      "summary": "Added the thirteen-file department charter, source map, source and collection ledgers, catalog contract, JSON Schema, worked example, research playbook, rights and safety policy, handoff, and verifier."
+    },
+    {
+      "kind": "document",
+      "reference": "research/declassified-government-records/source-index.json",
+      "summary": "Recorded thirty-seven source systems, including thirty-two official agency, archive, oversight, or government-publishing systems and five explicitly labeled secondary discovery or preservation aids."
+    },
+    {
+      "kind": "document",
+      "reference": "research/declassified-government-records/collections.json",
+      "summary": "Defined thirty bounded research programmes spanning CIA collections, intelligence history, oversight, civil liberties, covert action, science and technology, special statutory collections, FOIA operations, and international expansion."
+    },
+    {
+      "kind": "schema",
+      "reference": "research/declassified-government-records/document-record.schema.json",
+      "summary": "Added a module-local seventeen-field provenance, version, rights, safety, and research-state contract for one public government document record."
+    },
+    {
+      "kind": "test",
+      "reference": "python3 research/declassified-government-records/verify_module.py",
+      "summary": "Passed with module_files=13, sources=37, official_sources=32, collections=30, schema_required_fields=17, example_digital_objects=1, relative_links_checked=22, and publication_safe_files_scanned=13."
+    },
+    {
+      "kind": "coordination",
+      "reference": "agent/declassified-government-records-department",
+      "summary": "Kept all authored work inside the reserved research directory and append-only Event lane, without modifying generated site, active registry entities, or other research modules."
+    }
+  ],
+  "scope": {
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "GPT-5.6 Pro for Shaan Sisodia",
+    "branch": "agent/declassified-government-records-department",
+    "reserved_paths": [
+      "research/declassified-government-records/**",
+      "registry/events/2026-08-07-declassified-government-records-*.json"
+    ]
+  },
+  "visibility": "public",
+  "predecessor_event_id": "gls:event:5565a798-65fa-4aea-99b1-12b256fb88f4",
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "research/declassified-government-records/source-index.json",
+      "observed_at": "2026-08-07",
+      "summary": "The source ledger and human source map preserve official-versus-secondary authority, custody role, access mode, update model, machine-access status, limitations, rights notes, safety notes, and dated locators."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "python3 research/declassified-government-records/verify_module.py",
+      "observed_at": "2026-08-07",
+      "summary": "Offline verification completed successfully for all thirteen authored module files and their internal contracts."
+    },
+    {
+      "kind": "documentation",
+      "reference": "research/declassified-government-records/HANDOFF.md",
+      "observed_at": "2026-08-07",
+      "summary": "The handoff records delivered scope, integration boundaries, validation limits, first pilots, and promotion gates."
+    }
+  ],
+  "next_actions": [
+    "Review the draft pull request and run the complete repository npm run verify suite from a clean checkout or CI environment.",
+    "Select the CIA Reading Room catalog as the first metadata-only pilot, freeze its discovery and change-detection contract, and independently audit a stratified sample before scaling.",
+    "Promote the department to a canonical Work, immutable Release, Source Inventory, generated reading surface, and successor Snapshot only after source, rights, safety, correction, deletion, and independent-review gates pass."
+  ]
+}
