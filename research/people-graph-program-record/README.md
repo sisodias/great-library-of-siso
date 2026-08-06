@@ -36,7 +36,7 @@ A capable agent should be able to independently retrace the audit from these rec
 | [`prompts/dependency-ordered-superseded.md`](prompts/dependency-ordered-superseded.md) | Original prompt pack, retained for history and comparison. |
 | [`prompts/parallel-slam.md`](prompts/parallel-slam.md) | Current thirteen-agent parallel pack. |
 | [`verify_record.py`](verify_record.py) | Offline consistency validation. |
-| [`file-manifest.json`](file-manifest.json) | SHA-256 and byte-size receipt for every record file except the manifest itself. |
+| [`file-manifest.json`](file-manifest.json) | Git-native blob-ID receipt for every record file except the manifest itself. |
 | [`HANDOFF.md`](HANDOFF.md) | Scope, limitations and next review actions. |
 
 ## Fast verification
