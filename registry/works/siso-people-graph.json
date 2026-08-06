@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+  "slug": "siso-people-graph",
+  "name": "SISO People Graph",
+  "summary": "An independently addressable Research Work for durable person, identity, work, topic, and temporal graph contracts, with mutable databases and source snapshots kept outside the Great Library registry.",
+  "work_type": "knowledge_system",
+  "lifecycle_status": "experimental",
+  "updated_at": "2026-08-06",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      },
+      {
+        "name": "sisodias",
+        "role": "repository_owner",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-people-graph",
+        "revision": "main@de048bb3b34bf931b56fd741cb46c1334acdfb98",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "https://github.com/sisodias/siso-people-graph/commit/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+          "observed_at": "2026-08-06",
+          "summary": "The public repository and exact source commit resolve; this verifies addressability only, not a clean build, database payload, installation, or production deployment."
+        }
+      }
+    ],
+    "license": {
+      "status": "pending",
+      "spdx": "NONE",
+      "reason": "The exact source tree has no accepted repository license; public visibility is not a general copying, modification, or redistribution grant.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+          "observed_at": "2026-08-06",
+          "summary": "The reviewed tracked source inventory contains no accepted license file."
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "context": "SISO Knowledge owns canonical-service governance for durable graph and index semantics, while the People Graph keeps independent repository identity, release lineage, and data-plane boundaries.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry:decision:ADR-0005",
+          "observed_at": "2026-08-06",
+          "summary": "ADR-0005 assigns canonical-service governance without absorbing the source repository or mutable databases."
+        }
+      ]
+    },
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "context": "Foundry may discover and evaluate source universes and emit source observations, but it is not the canonical truth store for person identity, claims, or merges.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-people-graph/blob/de048bb3b34bf931b56fd741cb46c1334acdfb98/README.md",
+          "observed_at": "2026-08-06",
+          "summary": "The source currently describes Foundry affiliation; the Library records the narrower discovery-and-observation boundary."
+        }
+      ]
+    },
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "context": "Evidence Engines transform and adjudicate source-grounded observations into claims or knowledge; they do not silently mutate canonical identity.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/people-graph-program/control-plane-data-plane.md",
+          "observed_at": "2026-08-06",
+          "summary": "The public program contract separates observation, transformation, adjudication, and canonical graph responsibilities."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+      "context": "The Book Library is one independently released source and contract surface that can emit people, work, role, subject, and locator observations for the graph.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-people-graph/blob/de048bb3b34bf931b56fd741cb46c1334acdfb98/loaders/build_people_graph_books.py",
+          "observed_at": "2026-08-06",
+          "summary": "The reviewed loader consumes a book catalog to derive person and person-work observations."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+      "observed_at": "2026-08-06",
+      "summary": "The exact source tree contains one v2 SQL schema, identity and enrichment loaders, source-to-graph loaders, and a read-only query router; no generated database is selected by this Work record."
+    },
+    {
+      "kind": "documentation",
+      "reference": "docs/people-graph-program/README.md",
+      "observed_at": "2026-08-06",
+      "summary": "The public program spine documents ownership, control-plane and data-plane boundaries, observation interchange, parallel lanes, and honest release claims."
+    }
+  ]
+}
