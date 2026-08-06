@@ -2,6 +2,7 @@
 """Offline integrity checks for the People Graph program record."""
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -70,17 +71,15 @@ def main() -> int:
     if len(old_headings) != 13:
         fail(f"historical prompt pack has {len(old_headings)} prompts, expected 13", errors)
 
-    import hashlib
     for relative, receipt in manifest["files"].items():
         path = ROOT / relative
         if not path.exists():
             fail(f"manifest path missing: {relative}", errors)
             continue
-        digest = hashlib.sha256(path.read_bytes()).hexdigest()
-        if digest != receipt["sha256"]:
-            fail(f"manifest digest mismatch: {relative}", errors)
-        if path.stat().st_size != receipt["bytes"]:
-            fail(f"manifest byte count mismatch: {relative}", errors)
+        data = path.read_bytes()
+        git_blob = hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest()
+        if git_blob != receipt["git_blob_sha1"]:
+            fail(f"manifest Git blob mismatch: {relative}", errors)
 
     markdown_files = list(ROOT.rglob("*.md"))
     link_pattern = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
