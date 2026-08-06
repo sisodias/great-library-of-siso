@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:3de55ee0-ec67-433a-b061-5bebabf0cb4e",
+  "work_id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+  "release_kind": "general",
+  "version": "registry-seed-2026-08-06",
+  "title": "GQ-010 publication-safe metadata seed",
+  "released_at": "2026-08-06T22:24:00+07:00",
+  "observed_at": "2026-08-06",
+  "immutable": true,
+  "artifacts": [],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The question is addressable by stable Work ID and Great Library registry identity.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "registry:release:frontier-question-gq-010-seed",
+          "observed_at": "2026-08-06",
+          "summary": "The seed resolves to the stable GQ-010 Work and its publication-safe research contract."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "unavailable",
+      "reason": "No accepted answer archive, evidence payload, database, or corpus is attached to this metadata seed.",
+      "evidence": []
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The immutable seed manifest resolves inside the registry.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "registry:release:frontier-question-gq-010-seed",
+          "observed_at": "2026-08-06",
+          "summary": "The Release-to-Work reference and research-question identity validate."
+        }
+      ]
+    },
+    "installable": {
+      "state": "not_applicable",
+      "reason": "A research-question metadata seed is not software.",
+      "evidence": []
+    },
+    "forkable": {
+      "state": "not_applicable",
+      "reason": "No separately licensed source or data payload is attached to this metadata seed.",
+      "evidence": []
+    },
+    "portable": {
+      "state": "verified",
+      "reason": "The seed contains stable publication-safe identity and contract metadata only.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "registry:release:frontier-question-gq-010-seed",
+          "observed_at": "2026-08-06",
+          "summary": "No private authorization, restricted source, raw payload, machine-local locator, or answer claim is included."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "documentation",
+      "reference": "user-intent:people-graph-100x-parallel-program:2026-08-06",
+      "observed_at": "2026-08-06",
+      "summary": "Only publication-safe question identity and initial contract metadata are seeded here; the separate program Release carries the fuller program artifact and remains explicitly not an Answer Release."
+    }
+  ]
+}
