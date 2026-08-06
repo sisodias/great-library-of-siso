@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e",
+  "work_id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+  "release_kind": "general",
+  "version": "source-contract+de048bb",
+  "title": "SISO People Graph code and data-contract baseline",
+  "released_at": "2026-08-06T22:24:00+07:00",
+  "observed_at": "2026-08-06",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:80f7c3c8-be9c-4e82-b6ae-48d7d2d034af",
+      "kind": "source_archive",
+      "locator": "https://github.com/sisodias/siso-people-graph/archive/de048bb3b34bf931b56fd741cb46c1334acdfb98.tar.gz",
+      "revision": "de048bb3b34bf931b56fd741cb46c1334acdfb98",
+      "availability": "public",
+      "owner": "sisodias",
+      "ownership": "siso",
+      "license": {
+        "status": "pending",
+        "spdx": "NONE",
+        "reason": "No accepted repository license was present at the reviewed revision; the artifact is addressable but no general reuse right is claimed.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+            "observed_at": "2026-08-06",
+            "summary": "The exact tracked source tree contains no accepted license file."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "de048bb3b34bf931b56fd741cb46c1334acdfb98"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The source contract is pinned to an exact public commit.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/sisodias/siso-people-graph/commit/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+          "observed_at": "2026-08-06",
+          "summary": "The exact public commit resolves."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "experimental",
+      "reason": "A standard commit-scoped archive locator is recorded, but this registry lane did not download or hash the archive bytes.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/sisodias/siso-people-graph/archive/de048bb3b34bf931b56fd741cb46c1334acdfb98.tar.gz",
+          "observed_at": "2026-08-06",
+          "summary": "The immutable archive locator is recorded without a fresh transfer receipt."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The Release resolves to the stable People Graph Work and exact source artifact.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "registry:release:siso-people-graph-de048bb",
+          "observed_at": "2026-08-06",
+          "summary": "Work ID, Release ID, exact revision, artifact integrity declaration, and distribution states are validated by the Great Library gate."
+        }
+      ]
+    },
+    "installable": {
+      "state": "unavailable",
+      "reason": "This is a source and data-contract baseline, not an independently verified installation or production database release.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-people-graph/blob/de048bb3b34bf931b56fd741cb46c1334acdfb98/loaders/build_people_graph_v2.py",
+          "observed_at": "2026-08-06",
+          "summary": "The source requires external databases and the reviewed schema lookup does not match the tracked schema path, so no clean-build claim is made."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "unavailable",
+      "reason": "GitHub exposes the source, but no accepted license grants general copying, modification, or redistribution rights.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+          "observed_at": "2026-08-06",
+          "summary": "No accepted repository license is present at the pinned revision."
+        }
+      ]
+    },
+    "portable": {
+      "state": "experimental",
+      "reason": "The schema and observation concepts are machine-neutral, but the reviewed loaders depend on external databases, environment-specific source locations, and an unverified build path.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-people-graph/blob/de048bb3b34bf931b56fd741cb46c1334acdfb98/loaders/ask.py",
+          "observed_at": "2026-08-06",
+          "summary": "The query router is read-only but includes multiple environment-specific candidate locations; portable configuration remains future work."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "source-review:siso-people-graph-contract:2026-08-06",
+      "observed_at": "2026-08-06",
+      "summary": "This Release selects only the exact public code and data-contract source. It does not claim a v3 schema, fresh database, row counts, release assets, installation, payload download, or production operation."
+    }
+  ]
+}
