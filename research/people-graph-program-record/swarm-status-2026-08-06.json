@@ -1,0 +1,171 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at": "2026-08-06T23:03:01+07:00",
+  "baselines": {
+    "sisodias/great-library-of-siso": "12f4cc249b2b5dc268d05d1698fe9c5e3079327d",
+    "sisodias/siso-people-graph": "de048bb3b34bf931b56fd741cb46c1334acdfb98",
+    "sisodias/siso-book-library": "be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b"
+  },
+  "lanes": [
+    {
+      "prompt": 1,
+      "repository": "sisodias/great-library-of-siso",
+      "branch": "gls/people-graph-parallel-spine-20260806",
+      "github_state": "draft_pr",
+      "ahead_by": 19,
+      "behind_by": 0,
+      "pr": 1,
+      "head_sha": "4dc9714096630b3d88c1aa34104ceec3c74a0bc0",
+      "note": "Registry, ownership ADR, GQ-010 and Whole Library V37 proposal."
+    },
+    {
+      "prompt": 2,
+      "repository": "sisodias/siso-people-graph",
+      "branch": "pg/red-team-fixtures-20260806",
+      "github_state": "draft_pr",
+      "ahead_by": 12,
+      "behind_by": 0,
+      "pr": 1,
+      "head_sha": "89dfec07acc38c6dadba69547a7ad4d60fbccf15",
+      "note": "22 fixture cases; 16 findings reported in PR body."
+    },
+    {
+      "prompt": 3,
+      "repository": "sisodias/siso-people-graph",
+      "branch": "pg/v3-ontology-schema-20260806",
+      "github_state": "draft_pr",
+      "ahead_by": 1,
+      "behind_by": 0,
+      "pr": 3,
+      "head_sha": "2f66fbe1f4523399463d9e1ff8971879a84f5b88",
+      "note": "Additive v3 ontology and offline tests."
+    },
+    {
+      "prompt": 4,
+      "repository": "sisodias/siso-people-graph",
+      "branch": "pg/identity-resolution-parallel-20260806",
+      "github_state": "branch_reserved_empty",
+      "ahead_by": 0,
+      "behind_by": 0,
+      "pr": null,
+      "head_sha": "de048bb3b34bf931b56fd741cb46c1334acdfb98",
+      "note": "Branch exists but is identical to main; no GitHub work is yet durable."
+    },
+    {
+      "prompt": 5,
+      "repository": "sisodias/siso-people-graph",
+      "branch": "pg/reproducible-builds-parallel-20260806",
+      "github_state": "absent",
+      "ahead_by": null,
+      "behind_by": null,
+      "pr": null,
+      "head_sha": null,
+      "note": "No matching branch or PR observed."
+    },
+    {
+      "prompt": 6,
+      "repository": "sisodias/siso-people-graph",
+      "branch": "pg/query-surface-parallel-20260806",
+      "github_state": "absent",
+      "ahead_by": null,
+      "behind_by": null,
+      "pr": null,
+      "head_sha": null,
+      "note": "No matching branch or PR observed."
+    },
+    {
+      "prompt": 7,
+      "repository": "sisodias/siso-book-library",
+      "branch": "books/integrity-export-parallel-20260806",
+      "github_state": "absent",
+      "ahead_by": null,
+      "behind_by": null,
+      "pr": null,
+      "head_sha": null,
+      "note": "Book Library exposes main only as of this observation."
+    },
+    {
+      "prompt": 8,
+      "repository": "sisodias/great-library-of-siso",
+      "branch": "gls/people-graph-source-research-20260806",
+      "github_state": "draft_pr",
+      "ahead_by": 7,
+      "behind_by": 0,
+      "pr": 2,
+      "head_sha": "20dc000451c28c707b0a97b943d1a4b178ea9bf0",
+      "note": "39-source rights-aware research portfolio."
+    },
+    {
+      "prompt": 9,
+      "repository": "sisodias/siso-people-graph",
+      "branch": "pg/scholarly-authority-pilot-20260806",
+      "github_state": "absent",
+      "ahead_by": null,
+      "behind_by": null,
+      "pr": null,
+      "head_sha": null,
+      "note": "No matching branch or PR observed."
+    },
+    {
+      "prompt": 10,
+      "repository": "sisodias/siso-people-graph",
+      "branch": "pg/software-ai-pilot-20260806",
+      "github_state": "draft_pr",
+      "ahead_by": 24,
+      "behind_by": 0,
+      "pr": 2,
+      "head_sha": "b78ff6704783dff100774063c305011ce456d704",
+      "note": "Seven fixture adapters and observation envelope pilot."
+    },
+    {
+      "prompt": 11,
+      "repository": "sisodias/siso-people-graph",
+      "branch": "pg/living-creators-media-pilot-20260806",
+      "github_state": "branch_reserved_empty",
+      "ahead_by": 0,
+      "behind_by": 0,
+      "pr": null,
+      "head_sha": "de048bb3b34bf931b56fd741cb46c1334acdfb98",
+      "note": "Branch exists but is identical to main."
+    },
+    {
+      "prompt": 12,
+      "repository": "sisodias/siso-people-graph",
+      "branch": "pg/claims-temporal-relations-20260806",
+      "github_state": "branch_reserved_empty",
+      "ahead_by": 0,
+      "behind_by": 0,
+      "pr": null,
+      "head_sha": "de048bb3b34bf931b56fd741cb46c1334acdfb98",
+      "note": "Branch exists but is identical to main."
+    },
+    {
+      "prompt": 13,
+      "repository": "sisodias/siso-people-graph",
+      "branch": "pg/parallel-integration-contract-20260806",
+      "github_state": "pushed_no_pr",
+      "ahead_by": 1,
+      "behind_by": 0,
+      "pr": null,
+      "head_sha": null,
+      "note": "Large integration harness is pushed; draft PR has not been observed."
+    }
+  ],
+  "other_branches": [
+    {
+      "repository": "sisodias/great-library-of-siso",
+      "branch": "register-graph-and-book-library",
+      "state": "diverged_unreviewed",
+      "ahead_by": 1,
+      "behind_by": 8,
+      "note": "Older branch overlaps registry work and modifies generated site files; do not count as Prompt 5 or silently merge."
+    }
+  ],
+  "summary": {
+    "draft_prs": 5,
+    "pushed_nonempty_without_pr": 1,
+    "reserved_empty_branches": 3,
+    "expected_branches_absent": 4,
+    "book_library_non_main_branches": 0
+  }
+}
