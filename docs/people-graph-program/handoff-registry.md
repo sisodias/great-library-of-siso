@@ -2,7 +2,7 @@
 
 ## Scope
 
-Create the Great Library public program spine for the People Graph 100× expansion: stable independent Works, exact source-contract Releases, ADR-0005, one thirteen-lane `initiative_started` Event, GQ-010, V37, public interfaces, and current-state guidance.
+Create the Great Library public program spine for the People Graph 100× expansion: stable independent Works, exact source-contract Releases, ADR-0005, one thirteen-lane `initiative_started` Event, GQ-010, V37, public interfaces, current-state guidance, and the narrow Work-schema compatibility needed to validate question metadata already present on `main`.
 
 ## Changed paths
 
@@ -15,6 +15,7 @@ Create the Great Library public program spine for the People Graph 100× expansi
 - `registry/decisions/adr-0005-people-graph-ownership-and-data-plane.json`
 - `registry/events/2026-08-06-people-graph-parallel-program-started.json`
 - `registry/snapshots/whole-library-v37.json`
+- `schemas/work.schema.json`
 - `docs/people-graph-program/**`
 - `CURRENT_STATE.md`
 - generated `site/**` only through repository tooling
@@ -23,6 +24,7 @@ Create the Great Library public program spine for the People Graph 100× expansi
 
 ```bash
 npm ci
+npm run check:immutable
 npm run verify
 ```
 
@@ -31,6 +33,7 @@ The pull-request workflow is the authoritative execution environment for this co
 ## Tests
 
 - Registry and schema validation for three new Works, three Releases, ADR-0005, the program Event, and V37.
+- Compatibility validation for existing optional question metadata: `state_note`, the structured GQ-005 `baseline_reference`, and the structured GQ-009 `watch_trigger_status`.
 - Immutable-history protection: no existing Release, Snapshot, Decision, or Event is modified.
 - Research-question contract validation for GQ-010.
 - Snapshot manifest SHA-256 checks for all selected Release files.
@@ -43,14 +46,16 @@ The pull-request workflow is the authoritative execution environment for this co
 - Repository visibility proves addressability, not a license, clean build, data availability, installation, or production operation.
 - SISO Knowledge can own canonical-service governance while People Graph and Book Library retain independent Work and repository identity.
 - All future lanes can start from current main and publish draft contracts without waiting for this PR to merge.
+- Optional research-contract fields already committed on `main` are intentional metadata, so the schema should describe them rather than forcing edits to established question records.
 
 ## Compatibility seams
 
 - Stable Work IDs: People Graph `gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236`, Book Library `gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef`, GQ-010 `gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be`.
 - Source revisions: People Graph `de048bb3b34bf931b56fd741cb46c1334acdfb98`, Book Library `be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b`.
-- Cross-lane observation envelope: `pg-observation-0.1`.
+- Cross-lane observation envelope: the prescribed `pg-observation-0.1` shape with `envelope_version`, `source`, `subject`, `identifiers`, `contributions`, `relationships`, `evidence`, and `raw_pointer`.
 - Control-plane decision: `ADR-0005`.
 - Current selection after merge: Whole Library V37 `gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9`.
+- `schemas/work.schema.json` adds only typed optional properties already used by existing GQ records; it does not relax top-level Work identity, provenance, relationship, publication-boundary, or evidence rules.
 - Generated `site/` remains tooling-owned; source records and authored docs are the edit surfaces.
 
 ## Known risks
@@ -61,11 +66,12 @@ The pull-request workflow is the authoritative execution environment for this co
 - Historical links using a different GitHub owner remain an evidence-backed migration question, not an assumed alias.
 - Current database counts, data quality, Book Library payload assets, byte-range behavior, external APIs, and production operations were not independently verified.
 - GQ-010 has no baseline decision-use measurements or accepted Answer Release.
+- The first Actions attempt failed before checkout because GitHub could not resolve action downloads; infrastructure failures must not be reported as repository test results.
 
 ## Data and rights notes
 
 - No database, raw source snapshot, restricted observation, payload archive, credential, private receipt, or machine-specific locator is committed.
-- Rights are source- and jurisdiction-specific. Unknown and restricted states block public payload promotion.
+- Rights are source- and jurisdiction-specific. `restricted`, `discovery_only`, and `pending` states block public payload promotion.
 - Living-person collection must be purpose-limited, minimized, correctable, and tied to public or authorized evidence.
 - Public GitHub source visibility is not treated as a copying or redistribution grant.
 - Book public-domain claims must remain jurisdiction-scoped and source-evidenced.
@@ -78,4 +84,5 @@ The pull-request workflow is the authoritative execution environment for this co
 4. Treat lane outputs as proposals until their owning repositories pass tests and rights review.
 5. Recompute V37 Release hashes after any Release-file edit.
 6. Keep generated `site/` changes subordinate to `npm run verify`.
-7. Close the active Event only with a successor Event that cites reviewed handoffs, verification evidence, and the next selected Snapshot.
+7. Keep the optional question-metadata schema definitions narrow; future generic research fields should receive their own versioned contract rather than an unrestricted object.
+8. Close the active Event only with a successor Event that cites reviewed handoffs, verification evidence, and the next selected Snapshot.
