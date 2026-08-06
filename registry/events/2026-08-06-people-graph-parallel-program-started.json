@@ -26,7 +26,7 @@
     {
       "kind": "coordination",
       "reference": "branch:gls/people-graph-parallel-spine-20260806",
-      "summary": "Lane 1 — Great Library registry and public program. Starts from current main, does not wait on other lanes, writes only new People Graph and Book Library Works and Releases; ADR-0005; program Event; GQ-010 seed and program Releases; V37; `CURRENT_STATE.md`; `docs/people-graph-program/**`; generated `site/`; and only relevant schema, generator, or check changes, opens a draft PR early, and publishes the required handoff."
+      "summary": "Lane 1 — Great Library registry and public program. Starts from current main, does not wait on other lanes, writes only new People Graph and Book Library Works and Releases; ADR-0005; program Event; GQ-010 seed and program Releases; V37; `CURRENT_STATE.md`; `docs/people-graph-program/**`; generated `site/`; `schemas/work.schema.json`; `scripts/check-site.mjs`; and only other relevant generator or check changes, opens a draft PR early, and publishes the required handoff."
     },
     {
       "kind": "coordination",
@@ -133,6 +133,7 @@
       "registry/events/2026-08-06-people-graph-parallel-program-started.json",
       "registry/snapshots/whole-library-v37.json",
       "schemas/work.schema.json",
+      "scripts/check-site.mjs",
       "docs/people-graph-program/",
       "CURRENT_STATE.md",
       "site/"
