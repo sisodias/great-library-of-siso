@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:5565a798-65fa-4aea-99b1-12b256fb88f4",
+  "occurred_at": "2026-08-07T02:22:00+07:00",
+  "recorded_at": "2026-08-07T02:22:00+07:00",
+  "immutable": true,
+  "entry_type": "initiative_started",
+  "thread": {
+    "id": "gls:thread:declassified-government-records-department",
+    "name": "Declassified Government Records Department",
+    "kind": "research"
+  },
+  "status": "active",
+  "title": "Declassified government records department started",
+  "summary": "A bounded Research department is being authored to map CIA declassified collections and other public government-record universes, preserve document-level provenance and release history, and make historically significant records discoverable without turning the Great Library into an unreviewed PDF warehouse.",
+  "intent": "Create an evidence-led department charter, official-source map, machine-readable source ledger, document and collection contracts, research workflow, safety and rights boundaries, and seed collection roadmap for declassified and otherwise public government records of historical interest.",
+  "reasoning": [
+    "The Great Library is a registry and reading surface rather than a payload warehouse, so government documents should enter through stable metadata, exact upstream locators, hashes, custody and release receipts, while bulk files remain in an external governed data plane.",
+    "Declassified, FOIA-released, mandatory-declassification-review, archival, public-domain, leaked, and merely publicly accessible records are different states and must not be collapsed into one sensational category.",
+    "CIA records are only one part of the source universe; NARA, presidential libraries, FBI, NSA, DIA, ODNI, State, Defense, Energy, Congress, courts, technical repositories, and foreign official archives require separate custody and provenance fields.",
+    "The active remote-viewing and UNSOLVEABLE Mathematics lanes reserve different paths, so this department can proceed safely under a new isolated research directory and later project those subjects through typed relationships.",
+    "Some released records can still expose personal data, operational methods, exploit details, or dangerous technical information; public availability alone is not an automatic promotion or republication decision."
+  ],
+  "changes": [
+    {
+      "kind": "coordination",
+      "reference": "gls:thread:declassified-government-records-department",
+      "summary": "Reserved a new research/declassified-government-records module and this append-only Event thread for a draft pull request."
+    }
+  ],
+  "scope": {
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "GPT-5.6 Pro for Shaan Sisodia",
+    "branch": "agent/declassified-government-records-department",
+    "reserved_paths": [
+      "research/declassified-government-records/**",
+      "registry/events/2026-08-07-declassified-government-records-*.json"
+    ]
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "documentation",
+      "reference": "user-intent:declassified-government-records-department:2026-08-07",
+      "observed_at": "2026-08-07",
+      "summary": "Shaan requested a Great Library department for CIA declassified documents and other government records of historical interest, explicitly as a curiosity-driven research collection."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "github-api:sisodias/great-library-of-siso:main:2026-08-07",
+      "observed_at": "2026-08-07",
+      "summary": "Current main, repository operating rules, active draft pull requests, and existing path reservations were inspected before selecting a non-overlapping module boundary."
+    }
+  ],
+  "next_actions": [
+    "Review official archive and reading-room sources, then author the department charter, source map, custody and document contracts, collection roadmap, research workflow, and rights and safety rules.",
+    "Create a machine-readable source index and seed collection ledger that distinguish official custody from secondary discovery mirrors and treat every URL, release state, and document version as evidence requiring refresh.",
+    "Build and run an offline module verifier, publish the isolated branch, open a draft pull request, and close this Event thread with exact validation receipts and promotion gates."
+  ]
+}
