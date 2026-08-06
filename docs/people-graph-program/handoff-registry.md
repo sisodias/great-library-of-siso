@@ -2,7 +2,7 @@
 
 ## Scope
 
-Create the Great Library public program spine for the People Graph 100× expansion: stable independent Works, exact source-contract Releases, ADR-0005, one thirteen-lane `initiative_started` Event, GQ-010, V37, public interfaces, current-state guidance, and the narrow Work-schema compatibility needed to validate question metadata already present on `main`.
+Create the Great Library public program spine for the People Graph 100× expansion: stable independent Works, exact source-contract Releases, ADR-0005, one thirteen-lane `initiative_started` Event, GQ-010 seed and program metadata, V37, public interfaces, current-state guidance, and the narrow Work-schema compatibility needed to validate question metadata already present on `main`.
 
 ## Changed paths
 
@@ -11,6 +11,7 @@ Create the Great Library public program spine for the People Graph 100× expansi
 - `registry/works/frontier-question-gq-010.json`
 - `registry/releases/siso-people-graph-de048bb.json`
 - `registry/releases/siso-book-library-be9ab08.json`
+- `registry/releases/frontier-question-gq-010-seed.json`
 - `registry/releases/frontier-question-gq-010-program-v1.json`
 - `registry/decisions/adr-0005-people-graph-ownership-and-data-plane.json`
 - `registry/events/2026-08-06-people-graph-parallel-program-started.json`
@@ -32,7 +33,7 @@ The pull-request workflow is the authoritative execution environment for this co
 
 ## Tests
 
-- Registry and schema validation for three new Works, three Releases, ADR-0005, the program Event, and V37.
+- Registry and schema validation for three new Works, four Releases, ADR-0005, the program Event, and V37.
 - Compatibility validation for existing optional question metadata: `state_note`, the structured GQ-005 `baseline_reference`, and the structured GQ-009 `watch_trigger_status`.
 - Immutable-history protection: no existing Release, Snapshot, Decision, or Event is modified.
 - Research-question contract validation for GQ-010.
@@ -52,6 +53,7 @@ The pull-request workflow is the authoritative execution environment for this co
 
 - Stable Work IDs: People Graph `gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236`, Book Library `gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef`, GQ-010 `gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be`.
 - Source revisions: People Graph `de048bb3b34bf931b56fd741cb46c1334acdfb98`, Book Library `be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b`.
+- GQ lineage: seed Release `gls:release:3de55ee0-ec67-433a-b061-5bebabf0cb4e` establishes publication-safe identity; program Release `gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787` carries the richer contract and is the only GQ-010 Release selected in V37. Neither is an Answer Release.
 - Cross-lane observation envelope: the prescribed `pg-observation-0.1` shape with `envelope_version`, `source`, `subject`, `identifiers`, `contributions`, `relationships`, `evidence`, and `raw_pointer`.
 - Control-plane decision: `ADR-0005`.
 - Current selection after merge: Whole Library V37 `gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9`.
@@ -82,7 +84,7 @@ The pull-request workflow is the authoritative execution environment for this co
 2. Preserve the exact Work and Release IDs; use successor immutable records for corrections.
 3. Require all thirteen draft handoffs before selecting a production schema or database migration.
 4. Treat lane outputs as proposals until their owning repositories pass tests and rights review.
-5. Recompute V37 Release hashes after any Release-file edit.
+5. Recompute V37 Release hashes after any selected Release-file edit; the unselected seed does not change the V37 pin set.
 6. Keep generated `site/` changes subordinate to `npm run verify`.
 7. Keep the optional question-metadata schema definitions narrow; future generic research fields should receive their own versioned contract rather than an unrestricted object.
 8. Close the active Event only with a successor Event that cites reviewed handoffs, verification evidence, and the next selected Snapshot.
