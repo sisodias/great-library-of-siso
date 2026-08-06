@@ -68,6 +68,8 @@ The Research section now also hosts **Frontier Questions**—the public projecti
 
 SISO's [public mission charter](docs/siso-mission.html) records the durable direction that Frontier Questions serve without redefining the Great Library as a company or operating engine. The [question-driven research architecture](docs/question-driven-research.html) connects books, repositories, people, datasets, operational evidence, assumptions, ADRs, experiments, and answer Releases; the [reusable Frontier Question template](docs/frontier-question-template.html) includes a worked CRM architecture example.
 
+The [UNSOLVEABLE Mathematics Program](docs/unsolveable-mathematics-program.html) applies those contracts to open mathematics: exact problem identity, rewards, prior solution communities, formal statement fidelity, novelty review, proof certificates, independent replay, human scrutiny, portfolio selection, and phased AI-assisted campaigns. It starts as an authored Research constitution; selected problems become Frontier Question Works only after canonical-source and status review.
+
 **Ecosystem Intelligence** adds the operational memory layer: immutable Events for intent, changes, ownership, evidence, and handoffs; machine-readable ADRs for architectural decisions; active branch/path reservations for concurrent agents; and an automatic Release/Snapshot changelog. Agents should read `site/intelligence.json`; humans can read the generated `/intelligence/` timeline. Read the [operating contract](docs/ecosystem-intelligence.html).
 
 ## What you can do
