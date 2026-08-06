@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec",
+  "work_id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+  "release_kind": "general",
+  "version": "source-contract+be9ab08",
+  "title": "SISO Book Library code and data-contract baseline",
+  "released_at": "2026-08-06T22:24:00+07:00",
+  "observed_at": "2026-08-06",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:a204eccd-91ff-4a2a-a497-bfd6fe44eeab",
+      "kind": "source_archive",
+      "locator": "https://github.com/sisodias/siso-book-library/archive/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b.tar.gz",
+      "revision": "be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+      "availability": "public",
+      "owner": "sisodias",
+      "ownership": "siso",
+      "license": {
+        "status": "pending",
+        "spdx": "NONE",
+        "reason": "No accepted repository license was present at the reviewed revision; upstream public-domain status and repository visibility do not create a blanket source-code or payload grant.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+            "observed_at": "2026-08-06",
+            "summary": "The exact tracked source tree contains no accepted license file."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The source contract is pinned to an exact public commit.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/sisodias/siso-book-library/commit/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+          "observed_at": "2026-08-06",
+          "summary": "The exact public commit resolves."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "experimental",
+      "reason": "A standard commit-scoped archive locator is recorded, but this registry lane did not download or hash the archive bytes or any separately described payload assets.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/sisodias/siso-book-library/archive/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b.tar.gz",
+          "observed_at": "2026-08-06",
+          "summary": "The immutable source archive locator is recorded without a fresh transfer receipt."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The Release resolves to the stable Book Library Work and exact source artifact.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "registry:release:siso-book-library-be9ab08",
+          "observed_at": "2026-08-06",
+          "summary": "Work ID, Release ID, exact revision, artifact integrity declaration, and distribution states are validated by the Great Library gate."
+        }
+      ]
+    },
+    "installable": {
+      "state": "unavailable",
+      "reason": "This is a source and data-contract baseline, not an independently verified installation, rebuilt SQLite index, or content-payload release.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-book-library/blob/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b/scripts/build_books_module.py",
+          "observed_at": "2026-08-06",
+          "summary": "The deterministic builder contract is visible, but its upstream catalog input and produced index were not executed or inspected in this lane."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "unavailable",
+      "reason": "GitHub exposes the source, but no accepted repository license grants general copying, modification, or redistribution rights.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+          "observed_at": "2026-08-06",
+          "summary": "No accepted repository license is present at the pinned revision."
+        }
+      ]
+    },
+    "portable": {
+      "state": "experimental",
+      "reason": "The metadata schema, source-native identifiers, rights field, and locator model are portable concepts, but payload archives, indexes, local routes, and source inputs were not independently verified.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-book-library/blob/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b/scripts/build_locator.py",
+          "observed_at": "2026-08-06",
+          "summary": "The locator contract separates identities from local or remote routes; actual container and payload receipts remain outside this Release."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "source-review:siso-book-library-contract:2026-08-06",
+      "observed_at": "2026-08-06",
+      "summary": "This Release selects only the exact public code and data-contract source. It does not claim rebuilt indexes, current work or edge counts, fresh release assets, payload completeness, installation, HTTP range behavior, or production operation."
+    }
+  ]
+}
