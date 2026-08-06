@@ -55,10 +55,12 @@
           "required": ["evaluated_at"],
           "properties": {
             "evaluated_at": { "type": "string", "format": "date" },
+            "1": { "type": "string", "minLength": 3 },
+            "2": { "type": "string", "minLength": 3 },
+            "3": { "type": "string", "minLength": 3 },
+            "4": { "type": "string", "minLength": 3 },
+            "5": { "type": "string", "minLength": 3 },
             "note": { "type": "string", "minLength": 3 }
-          },
-          "patternProperties": {
-            "^[1-9][0-9]*$": { "type": "string", "minLength": 3 }
           }
         }
       }
