@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787",
+  "work_id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+  "release_kind": "question_program_metadata",
+  "version": "program-metadata-1.0.0+57320d3",
+  "title": "GQ-010 People Graph 100× program metadata v1 — not an Answer Release",
+  "released_at": "2026-08-06T22:24:00+07:00",
+  "observed_at": "2026-08-06",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:f9f54a73-82b7-4edd-a2fd-72865ead2d62",
+      "kind": "registry_metadata",
+      "locator": "https://github.com/sisodias/great-library-of-siso/blob/57320d35c631732fa3f414be733f404ba6e15366/registry/works/frontier-question-gq-010.json",
+      "revision": "57320d35c631732fa3f414be733f404ba6e15366",
+      "availability": "public",
+      "owner": "SISO Open Source Foundation",
+      "ownership": "siso",
+      "license": {
+        "status": "not_applicable",
+        "spdx": "NONE",
+        "reason": "This artifact is publication-safe question and program metadata; source payloads, private receipts, and operational databases are not attached.",
+        "evidence": []
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "57320d35c631732fa3f414be733f404ba6e15366"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The complete GQ-010 research contract is pinned to an exact public commit.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/sisodias/great-library-of-siso/commit/57320d35c631732fa3f414be733f404ba6e15366",
+          "observed_at": "2026-08-06",
+          "summary": "The commit containing the GQ-010 Work resolves."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "not_applicable",
+      "reason": "This Release identifies registry metadata rather than an answer, database, corpus, or standalone archive.",
+      "evidence": []
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The metadata manifest resolves to GQ-010 and its measurable decision, falsifier, evidence-gap, rights, privacy, and refresh contract.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "registry:release:frontier-question-gq-010-program-v1",
+          "observed_at": "2026-08-06",
+          "summary": "The Release-to-Work reference and question-program artifact validate."
+        }
+      ]
+    },
+    "installable": {
+      "state": "not_applicable",
+      "reason": "Question-program metadata is consumed by the Great Library generator and is not independently installed.",
+      "evidence": []
+    },
+    "forkable": {
+      "state": "not_applicable",
+      "reason": "This record makes no claim about a separately forkable software or data payload.",
+      "evidence": []
+    },
+    "portable": {
+      "state": "verified",
+      "reason": "The selected artifact contains publication-safe metadata and public locators only; private authorization, restricted payloads, and operational receipts remain external.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "registry:release:frontier-question-gq-010-program-v1",
+          "observed_at": "2026-08-06",
+          "summary": "The contract publishes only stable identifiers, public source revisions, measurable criteria, summaries, and explicit boundaries."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "registry:release:frontier-question-gq-010-program-v1",
+      "observed_at": "2026-08-06",
+      "summary": "GQ-010 is scoped and active as a research program. No accepted answer, production database, source-pilot result, v3 schema, identity benchmark, or capability promotion is claimed."
+    }
+  ]
+}
