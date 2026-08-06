@@ -1,0 +1,383 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at": "2026-08-06T23:03:01+07:00",
+  "findings": [
+    {
+      "id": "PG-AUDIT-001",
+      "severity": "P0",
+      "title": "Non-unique attributes can be promoted to near-certain identity evidence",
+      "status": "source-proven; independently fixture-tested by draft PR",
+      "repositories": [
+        "sisodias/siso-people-graph"
+      ],
+      "evidence": [
+        {
+          "path": "loaders/enrich_owners.py",
+          "revision": "9ea6956f30a06115b8c5946be02ef2dfffb7208b",
+          "fact": "Stores company, location and real_name values in external_ids."
+        },
+        {
+          "path": "loaders/match_identities.py",
+          "revision": "541c68e7083e54327141aaed37f004579b024c4c",
+          "fact": "Treats any duplicated external_ids platform/value pair as shared_external_id confidence 0.98."
+        },
+        {
+          "url": "https://github.com/sisodias/siso-people-graph/pull/1",
+          "revision": "89dfec07acc38c6dadba69547a7ad4d60fbccf15",
+          "fact": "Red-team lane reports executable fixtures for current identity failure modes."
+        }
+      ],
+      "reasoning": "An employer, city, display name or website string is an attribute, not a source-issued unique identifier. If two people share such a value, the matcher can generate a near-certain same-person claim. The schema does not encode identifier uniqueness semantics, so the error is structural rather than a single bad threshold.",
+      "blast_radius": "Any auto-accept or downstream clustering based on shared_external_id can fuse unrelated humans or organisations.",
+      "recommended_action": "Introduce an identifier registry with issuer, uniqueness scope, stability and lifecycle. Exclude non-unique attributes from exact-identifier rules; retain them only as weak positive or negative evidence.",
+      "blocks": [
+        "bulk identity auto-accept",
+        "production canonical clustering"
+      ]
+    },
+    {
+      "id": "PG-AUDIT-002",
+      "severity": "P0",
+      "title": "Accepted identity claims are not a complete canonical resolution mechanism",
+      "status": "source-proven",
+      "repositories": [
+        "sisodias/siso-people-graph"
+      ],
+      "evidence": [
+        {
+          "path": "loaders/match_identities.py",
+          "revision": "541c68e7083e54327141aaed37f004579b024c4c",
+          "fact": "Writes proposed/accepted pairwise claims but does not materialize a safe transitive cluster."
+        },
+        {
+          "path": "loaders/ask.py",
+          "revision": "37e19c92d242bc979eb2ab55b4f6f6a02872083d",
+          "fact": "Queries person rows directly and does not resolve accepted claims or redirects."
+        }
+      ],
+      "reasoning": "Pairwise claims are evidence, not a canonical entity. Normal read paths can still return several records for one human, select an empty record, or miss Works and dates held by a duplicate. Accepted claims need conflict-aware transitive resolution, a canonical redirect, and reversible decision lineage.",
+      "blast_radius": "Core who/works/topic/contemporary queries can remain fragmented even after review work is completed.",
+      "recommended_action": "Separate evidence claims from accepted cluster decisions; add conflict guards, deterministic cluster export, canonical redirects and undo receipts. Make all query surfaces use the resolved view explicitly.",
+      "blocks": [
+        "claiming one canonical person per human"
+      ]
+    },
+    {
+      "id": "PG-AUDIT-003",
+      "severity": "P0",
+      "title": "The v2 build path silently merges by normalized name despite the stated identity policy",
+      "status": "source-proven",
+      "repositories": [
+        "sisodias/siso-people-graph",
+        "sisodias/siso-book-library"
+      ],
+      "evidence": [
+        {
+          "path": "loaders/build_people_graph_v2.py",
+          "revision": "7983db530d242b386fcd3c8277718010b7a43034",
+          "fact": "Reuses an existing person ID when lowercased normalized names match."
+        },
+        {
+          "path": "scripts/load_into_people_graph.py",
+          "repository": "sisodias/siso-book-library",
+          "revision": "de4e9fd91c076fd514887c82bd334dde43271d7b",
+          "fact": "Old Book export also matches canonical people by normalized name."
+        }
+      ],
+      "reasoning": "The README and schema commentary correctly say name matching must create reviewable identity claims. The builders bypass that invariant and mutate canonical membership directly. At scale, common names and transliteration collisions make silent false fusion inevitable.",
+      "blast_radius": "A rebuild can permanently assign Works, dates and topics to the wrong canonical row before the review layer runs.",
+      "recommended_action": "Import source-native observations first. Generate identity candidates separately. Rebuild canonical tables only from accepted decisions.",
+      "blocks": [
+        "fresh production rebuild from mixed domains"
+      ]
+    },
+    {
+      "id": "PG-AUDIT-004",
+      "severity": "P0",
+      "title": "Clean-checkout v2 schema path appears inconsistent with repository layout",
+      "status": "source-proven; red-team fixture exists in draft PR",
+      "repositories": [
+        "sisodias/siso-people-graph"
+      ],
+      "evidence": [
+        {
+          "path": "loaders/build_people_graph_v2.py",
+          "revision": "7983db530d242b386fcd3c8277718010b7a43034",
+          "fact": "Resolves people_schema_v2.sql relative to the loaders directory."
+        },
+        {
+          "path": "schema/people_schema_v2.sql",
+          "revision": "07b70a2eaf8db48d741010d2d5f31810a0c9d0d1",
+          "fact": "Tracked schema is under schema/, not loaders/."
+        },
+        {
+          "url": "https://github.com/sisodias/siso-people-graph/pull/1",
+          "revision": "89dfec07acc38c6dadba69547a7ad4d60fbccf15",
+          "fact": "Clean-checkout path is one of the executable red-team cases."
+        }
+      ],
+      "reasoning": "A deterministic rebuild contract starts with a clean checkout. A path that only works in an untracked local layout means the published source is not yet the complete build recipe.",
+      "blast_radius": "External agents cannot independently reproduce the graph from the tracked repository.",
+      "recommended_action": "Fix path resolution, add a clean-checkout fixture build and publish exact input manifests and digests.",
+      "blocks": [
+        "reproducible release claim"
+      ]
+    },
+    {
+      "id": "PG-AUDIT-005",
+      "severity": "P1",
+      "title": "rank_score mixes incompatible units and can drift on rerun",
+      "status": "source-proven",
+      "repositories": [
+        "sisodias/siso-people-graph",
+        "sisodias/siso-book-library"
+      ],
+      "evidence": [
+        {
+          "path": "loaders/build_people_graph_v2.py",
+          "revision": "7983db530d242b386fcd3c8277718010b7a43034",
+          "fact": "Book work count enters rank_score."
+        },
+        {
+          "path": "loaders/load_owners_into_people_graph.py",
+          "revision": "726742a7e7dcfe8c0f76107daef0c147f9e42e34",
+          "fact": "Summed repository stars enter rank_score."
+        },
+        {
+          "path": "loaders/load_owner_topics.py",
+          "revision": "f33d0cfc459330fd97fb69865c7cb7da33468e57",
+          "fact": "Model-rated repository value is added to rank_score on apply."
+        },
+        {
+          "path": "loaders/enrich_owners.py",
+          "revision": "9ea6956f30a06115b8c5946be02ef2dfffb7208b",
+          "fact": "GitHub follower count overwrites rank_score."
+        }
+      ],
+      "reasoning": "Work count, stars, followers and model-rated value have different dimensions, bias profiles and time semantics. Adding or overwriting them creates a number with no stable interpretation. A repeated additive loader can also change the value without new evidence.",
+      "blast_radius": "Ordering, enrichment priority and any downstream tiering can be arbitrary or non-reproducible.",
+      "recommended_action": "Store timestamped metric observations by scheme. Publish named/versioned projections with method cards; do not keep one universal canonical score.",
+      "blocks": [
+        "trustworthy cross-domain ranking"
+      ]
+    },
+    {
+      "id": "PG-AUDIT-006",
+      "severity": "P1",
+      "title": "Source enrichment mutates canonical identity fields",
+      "status": "source-proven",
+      "repositories": [
+        "sisodias/siso-people-graph"
+      ],
+      "evidence": [
+        {
+          "path": "loaders/enrich_owners.py",
+          "revision": "9ea6956f30a06115b8c5946be02ef2dfffb7208b",
+          "fact": "Updates person.kind, person.name, person.rank_score and person.built_at from one GitHub response."
+        }
+      ],
+      "reasoning": "A GitHub profile name is one source observation and can be a project name, joke, stale value or organisation label. It should not silently replace a reviewed canonical label. Source facts, canonical decisions and build metadata need separate tables.",
+      "blast_radius": "Canonical names and entity kind can change due to source refresh without review or history.",
+      "recommended_action": "Write immutable profile observations and aliases. Derive or review canonical labels separately with provenance.",
+      "blocks": []
+    },
+    {
+      "id": "PG-AUDIT-007",
+      "severity": "P1",
+      "title": "GitHub enrichment and topic loaders are coupled to origin and ID prefix",
+      "status": "source-proven",
+      "repositories": [
+        "sisodias/siso-people-graph"
+      ],
+      "evidence": [
+        {
+          "path": "loaders/enrich_owners.py",
+          "revision": "9ea6956f30a06115b8c5946be02ef2dfffb7208b",
+          "fact": "Only selects person.origin='github'."
+        },
+        {
+          "path": "loaders/load_owner_topics.py",
+          "revision": "f33d0cfc459330fd97fb69865c7cb7da33468e57",
+          "fact": "Builds known owners from person_id LIKE 'gh:%'."
+        }
+      ],
+      "reasoning": "A canonical human first discovered in books or a registry may later acquire a GitHub identity. Origin and canonical ID namespace should not determine which source observations can attach to the entity.",
+      "blast_radius": "The exact cross-domain people the graph values most can miss GitHub enrichment and topics.",
+      "recommended_action": "Join source adapters through source-scoped identifier observations and accepted identity clusters, not canonical ID prefixes or first-origin fields.",
+      "blocks": []
+    },
+    {
+      "id": "PG-AUDIT-008",
+      "severity": "P1",
+      "title": "A Work is embedded in person_content rather than represented as a first-class entity",
+      "status": "architecture gap; v3 draft PR addresses it",
+      "repositories": [
+        "sisodias/siso-people-graph"
+      ],
+      "evidence": [
+        {
+          "path": "schema/people_schema_v2.sql",
+          "revision": "07b70a2eaf8db48d741010d2d5f31810a0c9d0d1",
+          "fact": "person_content stores domain, content_ref, role and title on the contribution edge but has no canonical Work table."
+        },
+        {
+          "url": "https://github.com/sisodias/siso-people-graph/pull/3",
+          "revision": "2f66fbe1f4523399463d9e1ff8971879a84f5b88",
+          "fact": "Draft v3 ontology adds first-class Works, versions and contribution relationships."
+        }
+      ],
+      "reasoning": "Without a Work node, the graph cannot reliably represent multi-contributor Works, versions, editions, releases, translations, forks, citations, dependencies, adaptations, podcast show/episode structure, or model–dataset–Space relationships.",
+      "blast_radius": "Depth cannot grow cleanly; source-specific content references become the de facto ontology.",
+      "recommended_action": "Adopt first-class Work and Work-version entities, role-bearing contributions and typed Work-to-Work relations.",
+      "blocks": [
+        "100x research-depth goal"
+      ]
+    },
+    {
+      "id": "PG-AUDIT-009",
+      "severity": "P1",
+      "title": "Observation, canonical decision and derived projection are not consistently separated",
+      "status": "architecture gap; parallel branches converge on a replacement contract",
+      "repositories": [
+        "sisodias/siso-people-graph",
+        "sisodias/great-library-of-siso"
+      ],
+      "evidence": [
+        {
+          "path": "schema/people_schema_v2.sql",
+          "revision": "07b70a2eaf8db48d741010d2d5f31810a0c9d0d1",
+          "fact": "Canonical person rows mix origin facts, names, state, tiers and rank."
+        },
+        {
+          "url": "https://github.com/sisodias/great-library-of-siso/pull/1",
+          "revision": "4dc9714096630b3d88c1aa34104ceec3c74a0bc0",
+          "fact": "Program-spine PR publishes pg-observation-0.1 and an ownership/data-plane decision."
+        },
+        {
+          "url": "https://github.com/sisodias/siso-people-graph/pull/2",
+          "revision": "b78ff6704783dff100774063c305011ce456d704",
+          "fact": "Software/AI pilot emits observation envelopes and explicitly refuses canonical IDs and universal scores."
+        },
+        {
+          "url": "https://github.com/sisodias/siso-people-graph/pull/3",
+          "revision": "2f66fbe1f4523399463d9e1ff8971879a84f5b88",
+          "fact": "V3 schema draft separates observations, entities, identity, assertions and projections."
+        }
+      ],
+      "reasoning": "Trustworthy correction requires retaining what a source said, what was proposed, what was accepted and what was derived. Collapsing those layers makes refreshes and corrections destructive and obscures authority.",
+      "blast_radius": "Every source expansion increases correction cost and weakens auditability unless the separation is established first.",
+      "recommended_action": "Stabilize the observation envelope and accepted-decision interfaces before any large ingest.",
+      "blocks": [
+        "safe 10x ingestion"
+      ]
+    },
+    {
+      "id": "PG-AUDIT-010",
+      "severity": "P1",
+      "title": "Book Library reruns can retain stale relational metadata",
+      "status": "source-proven; dedicated Book lane has not pushed a branch as of this record",
+      "repositories": [
+        "sisodias/siso-book-library"
+      ],
+      "evidence": [
+        {
+          "path": "scripts/build_books_module.py",
+          "revision": "d912a3c74aad53fcf9a14c0dfa546ffd8a168d27",
+          "fact": "Main book row is replaced, while subject/shelf/class rows are inserted with INSERT OR IGNORE and are not source-replaced per book."
+        }
+      ],
+      "reasoning": "If upstream removes or corrects a classification, rebuilding into an existing database can retain the old edge. Deterministic source snapshots require replacement semantics or rebuilding from an empty database.",
+      "blast_radius": "Topic, shelf, extraction and People Graph exports can contain stale facts.",
+      "recommended_action": "Build from empty outputs or delete/reinsert all source-owned relations per record/snapshot; publish logical digests and changed-snapshot tests.",
+      "blocks": [
+        "incremental refresh trust"
+      ]
+    },
+    {
+      "id": "PG-AUDIT-011",
+      "severity": "P1",
+      "title": "The documented extraction queue is not one row per Work",
+      "status": "source-proven",
+      "repositories": [
+        "sisodias/siso-book-library"
+      ],
+      "evidence": [
+        {
+          "path": "index/tier_queries.sql",
+          "revision": "0b86dfd7bad5c7564ef083d3dbf456e61af9638d",
+          "fact": "UNION rows retain different reason/tier values for the same gid."
+        },
+        {
+          "url": "https://github.com/sisodias/siso-book-library/commit/3a5d1875b395342730205100e99443308d3263e3",
+          "revision": "3a5d1875b395342730205100e99443308d3263e3",
+          "fact": "Commit reports 19,532 queue rows for 17,750 distinct books."
+        }
+      ],
+      "reasoning": "SQL UNION removes only identical complete rows. Different reason values preserve duplicates, contradicting the stated deduplication claim.",
+      "blast_radius": "Extraction planning can double-count Works and distort token/cost estimates.",
+      "recommended_action": "Aggregate reasons per gid and select priority in a separate deterministic step.",
+      "blocks": []
+    },
+    {
+      "id": "PG-AUDIT-012",
+      "severity": "P1",
+      "title": "Locator documentation and tracked locator schema are not fully aligned",
+      "status": "source/documentation contradiction",
+      "repositories": [
+        "sisodias/siso-book-library"
+      ],
+      "evidence": [
+        {
+          "path": "scripts/build_locator.py",
+          "revision": "0f1b41eaf18693852f7a8b7c1e31bbdfef82765e",
+          "fact": "Tracked location table has offset and length but no per-book sha256 column."
+        },
+        {
+          "url": "https://github.com/sisodias/siso-book-library/commit/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+          "revision": "be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+          "fact": "README claims locator.sqlite maps every gid to asset, offset, length and sha256."
+        }
+      ],
+      "reasoning": "A release can contain a richer generated locator than the tracked builder, but then the public source is not yet the complete recipe. The mismatch must be resolved before claiming independent reproducibility.",
+      "blast_radius": "Agents cannot know whether integrity receipts are reproducible from tracked code.",
+      "recommended_action": "Version the locator schema and ship a fixture packer/checksum verifier that reproduces the documented shape.",
+      "blocks": [
+        "independent payload-integrity verification"
+      ]
+    },
+    {
+      "id": "PG-AUDIT-013",
+      "severity": "Governance",
+      "title": "Repository ownership and system responsibility were ambiguous",
+      "status": "identified in audit; draft ADR now exists in Great Library PR #1",
+      "repositories": [
+        "sisodias/great-library-of-siso",
+        "sisodias/siso-people-graph",
+        "sisodias/siso-book-library"
+      ],
+      "evidence": [
+        {
+          "path": "README.md",
+          "repository": "sisodias/siso-people-graph",
+          "revision": "3ae7738eed163cabb72ed5ea4d57d38453ec40f1",
+          "fact": "Describes People Graph as part of SISO Foundry."
+        },
+        {
+          "path": "docs/siso-knowledge-model.html",
+          "repository": "sisodias/great-library-of-siso",
+          "revision": "dc1f74cdf77eea64f54f56c828ae996d8345a1e6",
+          "fact": "Assigns canonical knowledge records, indexes, graphs and queries to SISO Knowledge."
+        },
+        {
+          "url": "https://github.com/sisodias/great-library-of-siso/pull/1",
+          "revision": "4dc9714096630b3d88c1aa34104ceec3c74a0bc0",
+          "fact": "Draft ADR-0005 proposes a control-plane/data-plane split."
+        }
+      ],
+      "reasoning": "Without a named boundary, source discovery, canonical identity, evidence adjudication, public lineage and mutable databases can drift into whichever repository an agent is editing.",
+      "blast_radius": "Parallel work duplicates abstractions and weakens accountability.",
+      "recommended_action": "Review and either accept or supersede ADR-0005 before production integration. Keep source repositories independent and mutable data outside the Great Library Git tree.",
+      "blocks": []
+    }
+  ]
+}
