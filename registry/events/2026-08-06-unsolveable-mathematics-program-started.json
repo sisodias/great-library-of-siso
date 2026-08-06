@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:fc942f5b-cf6f-4ede-afc1-bce7ed113cff",
+  "occurred_at": "2026-08-06T23:24:33+07:00",
+  "recorded_at": "2026-08-06T23:24:33+07:00",
+  "immutable": true,
+  "entry_type": "initiative_started",
+  "thread": {
+    "id": "gls:thread:unsolveable-mathematics-program",
+    "name": "UNSOLVEABLE Mathematics Program",
+    "kind": "research"
+  },
+  "status": "active",
+  "title": "UNSOLVEABLE mathematics programme architecture started",
+  "summary": "A bounded Research module is being authored to map open mathematical problems, reward-bearing challenges, prior solution communities, formal verification systems, and an evidence-gated intelligence pipeline without creating a second registry or claiming a complete problem corpus prematurely.",
+  "intent": "Place the programme correctly inside Research and Frontier Questions, extract reusable proof and verification patterns from OpenAI ten-proofs and the Lean ecosystem, define the future problem-record and campaign contracts, and identify the authoritative source universes required for a later global inventory.",
+  "reasoning": [
+    "The Great Library already models durable research questions as Works and changing accepted answers as immutable Releases, so open mathematical problems should reuse that lineage instead of becoming rows in a parallel catalogue.",
+    "The phrase unsolvable conflates open problems, independent or undecidable statements, impossibility theorems, disputed claims, and solved-but-unverified results; the module must classify these states before ranking or attempting them.",
+    "A kernel-checked proof is not by itself evidence of novelty, exact statement fidelity, reward eligibility, or mathematical community acceptance, so the programme needs separate gates for each claim.",
+    "The first publication should be an authored operating constitution and evidence map; individual problem Works and Source Inventories should be promoted only after direct source review and ownership boundaries are clear."
+  ],
+  "changes": [
+    {
+      "kind": "coordination",
+      "reference": "gls:thread:unsolveable-mathematics-program",
+      "summary": "Reserved the programme constitution, documentation indexes, and this append-only event thread for a draft pull request."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso",
+      "https://github.com/openai/ten-proofs",
+      "https://github.com/leanprover-community/mathlib4"
+    ]
+  },
+  "coordination": {
+    "owner": "GPT-5.6 Pro for Shaan Sisodia",
+    "branch": "agent/unsolveable-mathematics-program",
+    "reserved_paths": [
+      "README.md",
+      "docs/README.md",
+      "docs/unsolveable-mathematics-program.html",
+      "registry/events/2026-08-06-unsolveable-mathematics-program-*.json"
+    ]
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "documentation",
+      "reference": "user-intent:unsolveable-mathematics-program:2026-08-06",
+      "observed_at": "2026-08-06",
+      "summary": "Shaan requested a Great Library module that gathers open mathematical problems, rewards, communities and historical solution methods, then applies AI and formal verification to work through them."
+    },
+    {
+      "kind": "source_review",
+      "reference": "source-review:openai-ten-proofs-and-lean-community:2026-08-06",
+      "observed_at": "2026-08-06",
+      "summary": "The OpenAI ten-proofs repository, its formalization manifest and Comparator challenges, the Lean community project map, mathlib, and the Great Library research contracts were reviewed before choosing the module boundary."
+    }
+  ],
+  "next_actions": [
+    "Author the programme constitution with taxonomy, source map, problem contract, verification ladder, intelligence roles, historical case-study method, pilot portfolio, and phased delivery plan.",
+    "Update the authored documentation indexes without hand-editing generated site projections.",
+    "Run available structural checks, open a draft pull request, and close this Event thread with exact files, validation limits, and next promotion gates."
+  ]
+}
