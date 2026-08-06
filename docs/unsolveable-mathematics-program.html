@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="The operating constitution for UNSOLVEABLE, SISO's programme for mapping open mathematical problems, rewards, solution histories, formal verification, and evidence-gated AI research campaigns.">
+  <title>UNSOLVEABLE Mathematics Program — Great Library of SISO</title>
+  <style>
+    :root{color-scheme:dark;--bg:#060a10;--panel:#0e1722;--panel2:#111d2b;--line:#2a3a4d;--text:#eef6fb;--muted:#a9b7c8;--green:#79e4b5;--blue:#7cbcff;--gold:#edca72;--red:#f29292;--violet:#b8a4ff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:
+      radial-gradient(circle at 82% -8%,rgba(63,119,173,.24),transparent 31%),
+      radial-gradient(circle at 8% 24%,rgba(58,145,112,.13),transparent 28%),
+      linear-gradient(145deg,#060b12,#080d14 48%,#0c0d17);
+      color:var(--text);font:16px/1.62 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{max-width:1180px;margin:auto;padding:54px 24px 96px}
+    a{color:var(--blue)}
+    h1{font-size:clamp(3rem,8vw,6.8rem);line-height:.9;letter-spacing:-.055em;max-width:1100px;margin:.13em 0 .28em}
+    h2{font-size:clamp(1.65rem,3vw,2.5rem);line-height:1.12;margin-top:2.7em;letter-spacing:-.02em}
+    h3{margin-top:1.8em}
+    p{max-width:980px}
+    .eyebrow{color:var(--green);font-weight:780;text-transform:uppercase;letter-spacing:.14em}
+    .lede{font-size:1.18rem;color:var(--muted);max-width:920px}
+    .decision{border:1px solid var(--green);background:rgba(121,228,181,.07);padding:24px;border-radius:18px;margin:32px 0}
+    .warning{border-left:4px solid var(--gold);padding:2px 0 2px 18px;margin:28px 0}
+    .danger{border-left:4px solid var(--red);padding:2px 0 2px 18px;margin:28px 0}
+    .note{border-left:4px solid var(--violet);padding:2px 0 2px 18px;margin:28px 0}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:28px 0}
+    .flow div,.card{border:1px solid var(--line);background:linear-gradient(145deg,var(--panel),var(--panel2));border-radius:15px;padding:17px}
+    .flow b,.card b{display:block;color:var(--green);margin-bottom:5px}
+    .flow span,.card p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    table{width:100%;border-collapse:collapse;background:var(--panel);margin:22px 0}
+    th,td{border:1px solid var(--line);padding:11px;text-align:left;vertical-align:top}
+    th{color:var(--blue);background:#101c29}
+    code{color:var(--green)}
+    pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#09111a;border:1px solid var(--line);border-radius:15px;padding:20px;color:#dceaf4}
+    .ladder{counter-reset:gate;list-style:none;padding:0}
+    .ladder li{counter-increment:gate;display:grid;grid-template-columns:74px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+    .ladder li:before{content:"G" counter(gate);color:var(--green);font-weight:850;font-size:1.18rem}
+    .ladder strong{display:block}
+    .ladder p{color:var(--muted);margin:.25em 0}
+    .tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 9px;margin:2px 4px 2px 0;color:var(--muted);font-size:.84rem}
+    .small{font-size:.9rem;color:var(--muted)}
+    footer{color:var(--muted);border-top:1px solid var(--line);padding-top:25px;margin-top:68px}
+    @media(max-width:980px){.flow{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr 1fr}}
+    @media(max-width:720px){.grid,.grid3{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.ladder li{grid-template-columns:52px 1fr}table{font-size:.88rem}}
+  </style>
+</head>
+<body><main>
+  <p class="eyebrow">The Great Library of SISO · Research · Frontier Questions</p>
+  <h1>UNSOLVEABLE.<br>Map the frontier.<br>Attack it honestly.</h1>
+  <p class="lede"><strong>UNSOLVEABLE Mathematics</strong> is the proposed SISO research programme for discovering important open mathematical questions, preserving their exact statements and histories, mapping rewards and active communities, learning from earlier breakthroughs, and running AI-assisted campaigns whose claims survive novelty review, statement-fidelity review, formal verification, independent replay, and human mathematical scrutiny.</p>
+
+  <div class="decision"><strong>Placement decision</strong><br>This begins as an authored Research module beside the existing <a href="research-question-model.html">Frontier Questions model</a> and <a href="question-driven-research.html">question-driven research architecture</a>. It is not a loose maths folder and it is not a second registry. A selected mathematical problem becomes a <strong>research-question Work</strong>; a verified accepted solution or disproof becomes an immutable <strong>Answer Release</strong>; the current portfolio is selected through a <strong>Snapshot</strong>. External catalogues enter through evidence-led Source Inventories and their payloads remain with their rightful owners.</div>
+
+  <div class="flow" aria-label="UNSOLVEABLE programme flow">
+    <div><b>1 · Discover</b><span>Problems, prizes, people, projects, proofs</span></div>
+    <div><b>2 · Resolve</b><span>Exact identity, statement, status, provenance</span></div>
+    <div><b>3 · Prioritise</b><span>Value, tractability, readiness, learning</span></div>
+    <div><b>4 · Attack</b><span>Search, experiments, proofs, counterexamples</span></div>
+    <div><b>5 · Verify</b><span>Novelty, fidelity, kernels, experts, releases</span></div>
+  </div>
+
+  <h2>“Unsolvable” is not one status</h2>
+  <p>The public name is intentionally ambitious, but the data must be precise. The programme must never collapse fundamentally different states into a single label.</p>
+  <div class="grid3">
+    <article class="card"><b>Open / unsolved</b><p>No accepted proof or counterexample is known within the audited evidence universe.</p></article>
+    <article class="card"><b>Partially resolved</b><p>Important cases, bounds, reductions, or conditional forms are known, while the canonical question remains open.</p></article>
+    <article class="card"><b>Claimed / disputed</b><p>A proposed resolution exists but novelty, correctness, statement match, or community acceptance remains unsettled.</p></article>
+    <article class="card"><b>Independent</b><p>The statement is proved independent of a named axiom system, so “solve it” requires changing or clarifying foundations.</p></article>
+    <article class="card"><b>Undecidable</b><p>No algorithm can decide every instance in the stated class; individual instances may still be resolvable.</p></article>
+    <article class="card"><b>Impossible / non-existent</b><p>The mathematical answer is a theorem that an object, algorithm, construction, or bound cannot exist.</p></article>
+    <article class="card"><b>Solved, informally checked</b><p>A mathematical proof is accepted but no machine-checked formalisation is selected.</p></article>
+    <article class="card"><b>Formally verified</b><p>An exact formal statement has a kernel-checked proof under an explicit axiom and dependency set.</p></article>
+    <article class="card"><b>Resolved and accepted</b><p>Correctness, novelty, canonical statement, publication, and relevant community or prize procedures are complete.</p></article>
+  </div>
+  <div class="warning"><p><strong>Honesty rule:</strong> “No solution found” means only that a declared search and evidence universe found none. It is not proof that a problem remains open. Every status needs a source, observation date, confidence, and refresh trigger.</p></div>
+
+  <h2>How this fits the Great Library</h2>
+  <table>
+    <thead><tr><th>Library primitive or organ</th><th>UNSOLVEABLE responsibility</th><th>Boundary</th></tr></thead>
+    <tbody>
+      <tr><td>Authored Research module</td><td>This constitution, vocabulary, evidence-reading rules, verification ladder, and programme plan.</td><td>Explains the system; it does not become the problem database.</td></tr>
+      <tr><td>Frontier Question Work</td><td>Stable identity for one selected mathematical problem, including exact wording, scope, steward, success criteria, falsifiers, and watch triggers.</td><td>Created only after canonical-source and status review; discovery alone does not grant Work status.</td></tr>
+      <tr><td>Release</td><td>Immutable metadata seed, benchmark package, partial-result package, or explicitly typed Answer Release.</td><td>A metadata or benchmark Release is never silently presented as an accepted mathematical answer.</td></tr>
+      <tr><td>Snapshot</td><td>Selects the current public problem and answer portfolio while preserving prior states.</td><td>“Current” is a versioned projection, not a mutable row.</td></tr>
+      <tr><td>Source Inventory</td><td>Maps external problem lists, prize systems, formalisation projects, and mixed candidate sets before promotion.</td><td>Does not copy whole external databases or imply ownership, completeness, or redistribution rights.</td></tr>
+      <tr><td>Foundry</td><td>Discovers source universes, monitors changes, resolves candidate duplicates, and produces demand signals.</td><td>Discovery is not mathematical adjudication.</td></tr>
+      <tr><td>SISO Knowledge</td><td>Preserves lawful source material, provenance, bibliographic graphs, proof histories, and retrieval indexes.</td><td>Large, copyrighted, private, or rights-unclear payloads remain outside the public Library.</td></tr>
+      <tr><td>Evidence Engines</td><td>Extracts typed claims, dependencies, contradictions, historical pathways, and candidate syntheses from explicit sources.</td><td>A synthesis is not a proof certificate or expert acceptance.</td></tr>
+      <tr><td>Proof repositories</td><td>Own Lean, Coq, Isabelle, HOL, SAT, SMT, CAS, code, tests, toolchain pins, and generated certificates.</td><td>The Great Library cites exact releases; it does not become a giant theorem-prover monorepo.</td></tr>
+    </tbody>
+  </table>
+  <p>The authored module should become an independently addressable programme Work only after it has at least one of: dedicated source code, an operated ingestion pipeline, a maintained corpus lifecycle, named programme stewardship, or its own release cadence. Until then the correct home is this authored Research document.</p>
+
+  <h2>The first source universe</h2>
+  <p>This is a source map, not a claim of global completeness. Each source family has a different authority, update cadence, rights boundary, and failure mode.</p>
+  <table>
+    <thead><tr><th>Source family</th><th>What it contributes</th><th>How UNSOLVEABLE should treat it</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://www.claymath.org/millennium-problems/">Clay Millennium Prize Problems</a></td><td>Canonical statements, institutional prize rules, and six remaining north-star problems.</td><td>Highest-authority prize source; preserve exact rule gates. Clay requires publication, a two-year wait, and general global acceptance before considering a proposed solution.</td></tr>
+      <tr><td><a href="https://www.bealconjecture.com/">Beal Conjecture and Prize</a></td><td>A standing reward-bearing number-theory problem and its submission/publication conditions.</td><td>Record the reward administrator, amount, eligibility procedure, and “unclaimed” status separately from mathematical status.</td></tr>
+      <tr><td><a href="https://www.erdosproblems.com/">Erdős Problems</a></td><td>A large, actively maintained set with original references, partial results, cash-prize metadata, formalisation flags, comments, and collaboration signals.</td><td>Excellent discovery and triage surface, but its own pages warn that open status reflects the maintainer’s current belief. Audit original literature before spending serious effort or publishing status.</td></tr>
+      <tr><td><a href="https://aimath.org/problemlists/">AIM workshop problem lists</a></td><td>Expert-created, domain-specific lists across major mathematical fields.</td><td>Ingest list identity and provenance first; split compound workshop prompts into candidate questions only after expert-source review.</td></tr>
+      <tr><td><a href="https://aimath.org/pastworkshops/aint26.html">AIM AI and number theory benchmarks</a></td><td>A 2026 curated problem list, including selected Lean benchmarks and stated current AI limits.</td><td>Use as the first benchmark-aligned intake lane because it was designed for research-mathematics AI evaluation.</td></tr>
+      <tr><td><a href="https://leanprover-community.github.io/lean_projects.html">Lean community projects and intentions</a></td><td>Established formalisation projects, early intentions, collaboration routes, and anti-duplication signals.</td><td>Check before starting a formalisation. Intention records aid coordination but explicitly do not guarantee completeness or scientific moderation.</td></tr>
+      <tr><td><a href="https://github.com/Google-DeepMind/formal-conjectures">Formal Conjectures</a> and formal statement corpora</td><td>Machine-readable conjecture statements that expose formalisation readiness and prerequisite gaps.</td><td>Review statement fidelity against canonical mathematics before treating a declaration as the problem.</td></tr>
+      <tr><td><a href="https://github.com/openai/ten-proofs">OpenAI ten-proofs</a></td><td>Ten recent research advances, Lean certificates, a formalisation manifest, reasoning walkthroughs, and independent Comparator challenges.</td><td>Use as a solved-campaign and verification case study—not as a complete registry of open mathematics.</td></tr>
+      <tr><td><a href="https://polymathprojects.org/">Polymath</a> and other public collaborations</td><td>Timestamped collective reasoning, partial improvements, failed routes, code, and community coordination.</td><td>Model contribution lineage and idea dependencies; do not flatten a collaboration into one “solver” field.</td></tr>
+      <tr><td>Primary papers, journals, arXiv, MathSciNet, zbMATH, MathOverflow</td><td>Original statements, claimed resolutions, citations, expert discussion, and novelty evidence.</td><td>Required for status and novelty audits. Secondary lists are queues, never sufficient adjudication.</td></tr>
+      <tr><td>OEIS, LMFDB, proof-certificate archives, CAS/SAT/SMT repositories</td><td>Computational evidence, examples, counterexample search, executable artifacts, and independently checkable certificates.</td><td>Record code, data, hardware, seeds, hashes, resource cost, certificate format, and checker—not only the reported conclusion.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What OpenAI’s ten-proofs contributes</h2>
+  <p>The reusable idea is not “ask a model for ten answers.” It is an evidence and verification spine connecting a mathematical claim to an exact machine-checkable declaration.</p>
+  <div class="grid">
+    <article class="card"><b>Named result declarations</b><p>Every main result is tied to an exact Lean declaration and source file, rather than only a prose title.</p></article>
+    <article class="card"><b>Explicit proof debt</b><p>The manifest records zero <code>sorry</code> placeholders and distinguishes placeholders inside definitions.</p></article>
+    <article class="card"><b>Axiom inventory</b><p>Permitted axioms are listed per result, making foundational dependence inspectable.</p></article>
+    <article class="card"><b>Source provenance</b><p>The project records paper identity, date, authorship, prior work, review state, and formalisation scope.</p></article>
+    <article class="card"><b>Independent replay</b><p>Comparator challenge configurations separate the trusted statement from the candidate solution and replay exported proof terms through independent checking machinery.</p></article>
+    <article class="card"><b>Reasoning history</b><p>The walkthroughs preserve obstacles, dead ends, perspective changes, and decisive pivots instead of exposing only polished final proofs.</p></article>
+  </div>
+
+  <h3>The six claims that must remain separate</h3>
+  <table>
+    <thead><tr><th>Claim</th><th>Question it answers</th><th>Evidence required</th></tr></thead>
+    <tbody>
+      <tr><td>Kernel correctness</td><td>Does the formal proof term type-check under the declared foundations?</td><td>Pinned toolchain, zero placeholders, dependency and axiom audit, reproducible build.</td></tr>
+      <tr><td>Statement fidelity</td><td>Is the formal theorem exactly the intended mathematical claim?</td><td>Bilingual statement map, expert review, quantified assumptions and exclusions, challenge tests.</td></tr>
+      <tr><td>Novelty</td><td>Was this result already known, implied, published, or independently discovered?</td><td>Literature search, citation graph, timestamped provenance, domain-expert review.</td></tr>
+      <tr><td>Independence</td><td>Did the claimed agent or method produce the decisive work without hidden solution leakage?</td><td>Data and prompt lineage, contamination audit, prior-work disclosure, reproducible campaign receipts.</td></tr>
+      <tr><td>Mathematical acceptance</td><td>Do qualified mathematicians accept the argument and its significance?</td><td>Human review, publication, correction history, community response.</td></tr>
+      <tr><td>Prize eligibility</td><td>Does a solution satisfy the administrator’s legal and procedural rules?</td><td>Current official rules, qualifying publication, time periods, acceptance and attribution requirements.</td></tr>
+    </tbody>
+  </table>
+  <div class="danger"><p><strong>Non-negotiable:</strong> a Lean file can be perfectly correct while proving the wrong theorem, a weaker theorem, a theorem with stronger hidden assumptions, or a theorem that was already known. Formal verification closes one failure channel; it does not close them all.</p></div>
+
+  <h2>The proposed problem contract</h2>
+  <p>This is a design target for later schema work, not a second live registry. The contract should be tested on a pilot before fields are frozen.</p>
+  <pre><code>{
+  identity: {
+    stable_id, canonical_title, aliases, domain, problem_family,
+    canonical_statement, statement_variants, first_known_source
+  },
+  classification: {
+    problem_kind, current_status, status_confidence,
+    status_as_of, finite_counterexample_possible, foundation_context
+  },
+  provenance: {
+    original_authors, canonical_sources, secondary_trackers,
+    source_digests, rights_state, attribution_notes
+  },
+  reward: {
+    offered, amount, currency, sponsor, administrator,
+    official_rules, eligibility, expiry, last_verified
+  },
+  knowledge_map: {
+    partial_results, equivalent_forms, reductions, conditional_results,
+    known_obstructions, failed_routes, computational_frontier,
+    solved_analogues, prerequisite_theories
+  },
+  community: {
+    active_people, groups, repositories, workshops, discussions,
+    project_intentions, collaboration_status, contact_boundary
+  },
+  formalisation: {
+    prover, toolchain, statement_declaration, prerequisite_coverage,
+    source_repository, release, sorry_count, axioms,
+    statement_fidelity_review, independent_checker
+  },
+  campaign: {
+    decision_target, hypotheses, work_packages, experiments,
+    compute_budget, model_and_prompt_lineage, killed_hypotheses,
+    next_useful_work, stop_conditions
+  },
+  verification: {
+    novelty_audit, correctness_reviews, reproducibility_receipts,
+    certificate_hashes, expert_reviews, publication_state,
+    prize_state, answer_release
+  },
+  watch: {
+    review_due_at, source_deltas, new_claims, failed_predictions,
+    formal_library_changes, reward_rule_changes
+  }
+}</code></pre>
+
+  <h2>The verification ladder</h2>
+  <ol class="ladder">
+    <li><div><strong>Discovery receipt</strong><p>A candidate problem, prize, claim, project, or source has been found and classified. No open-status claim is made yet.</p></div></li>
+    <li><div><strong>Canonical statement lock</strong><p>Original or institutionally authoritative sources have been read; aliases, variants, quantifiers, assumptions, and exclusions are explicit.</p></div></li>
+    <li><div><strong>Status and novelty audit</strong><p>Recent literature, references, trackers, and experts have been checked. Competing claims and search limits are recorded.</p></div></li>
+    <li><div><strong>Formal statement fidelity</strong><p>The informal and formal statements are mapped in both directions. Test cases expose vacuous, strengthened, weakened, or mistranslated forms.</p></div></li>
+    <li><div><strong>Candidate mathematical result</strong><p>A proof, disproof, improved bound, reduction, algorithm, or computational certificate exists with complete derivation and provenance.</p></div></li>
+    <li><div><strong>Primary formal verification</strong><p>The proof builds with a pinned toolchain, explicit dependencies and axioms, zero unapproved placeholders, and reproducible commands.</p></div></li>
+    <li><div><strong>Independent proof audit</strong><p>A separated trusted statement and checker replay the result, ideally through an independent kernel, exporter, or certificate verifier.</p></div></li>
+    <li><div><strong>Adversarial mathematical review</strong><p>Domain experts attack assumptions, edge cases, novelty, significance, and statement match. Criticism and corrections remain public where safe.</p></div></li>
+    <li><div><strong>Publication and institutional gates</strong><p>The relevant journal, community, benchmark, or prize process has completed its own required procedure and waiting periods.</p></div></li>
+    <li><div><strong>Immutable Answer Release</strong><p>The Great Library publishes the exact accepted answer, evidence universe, grade, limitations, formal artifacts, and triggers for correction or successor work.</p></div></li>
+  </ol>
+
+  <h2>The intelligence system</h2>
+  <p>These are typed responsibilities. One agent may perform several roles, but no role should silently certify its own output.</p>
+  <div class="grid3">
+    <article class="card"><b>Frontier Scout</b><p>Discovers problems, prizes, new claims, benchmark lists, and source changes.</p></article>
+    <article class="card"><b>Identity Resolver</b><p>Deduplicates aliases and variants; binds each candidate to canonical sources and exact scope.</p></article>
+    <article class="card"><b>Mathematical Historian</b><p>Builds the chronology of partial results, failed approaches, key tools, and community structure.</p></article>
+    <article class="card"><b>Novelty Auditor</b><p>Searches prior literature and equivalent formulations; tries to prove the “new” result is already known.</p></article>
+    <article class="card"><b>Formalisation Architect</b><p>Maps prerequisites, chooses prover and representations, and defines statement-fidelity tests.</p></article>
+    <article class="card"><b>Proof Researcher</b><p>Develops arguments, reductions, constructions, bounds, algorithms, and experiments.</p></article>
+    <article class="card"><b>Counterexample Hunter</b><p>Attacks conjectures and candidate lemmas through adversarial search, computation, and edge cases.</p></article>
+    <article class="card"><b>Certificate Engineer</b><p>Turns computational work into compact, reproducible, independently checkable evidence.</p></article>
+    <article class="card"><b>Kernel Formalizer</b><p>Produces the machine-checked proof while tracking placeholders, axioms, imports, and toolchain state.</p></article>
+    <article class="card"><b>Comparator / Auditor</b><p>Checks exported terms or certificates against a separated trusted challenge and records the replay receipt.</p></article>
+    <article class="card"><b>Human Referee</b><p>Reviews mathematical meaning, novelty, attribution, significance, and any gap between formal and canonical statements.</p></article>
+    <article class="card"><b>Portfolio Governor</b><p>Allocates attention by value and learning, prevents duplicate campaigns, enforces stop conditions, and selects Releases.</p></article>
+  </div>
+
+  <h2>How earlier communities solved hard problems</h2>
+  <p>UNSOLVEABLE should preserve solution processes as reusable playbooks. A case study is not a hero biography; it is a causal map of representations, tools, coordination, dead ends, verification, and decisive insight.</p>
+  <table>
+    <thead><tr><th>Case</th><th>Coordination and proof medium</th><th>Transferable lesson</th></tr></thead>
+    <tbody>
+      <tr><td>Polymath8 and bounded gaps</td><td>Open, timestamped collaboration rapidly improved numerical bounds after Zhang’s breakthrough while participants clarified and modularised the argument.</td><td>Begin from a real foothold, expose work in public, split numerical optimisation from conceptual understanding, and let many contributors improve independent modules.</td></tr>
+      <tr><td>Polynomial Freiman–Ruzsa formalisation</td><td>A large Lean collaboration formalised a newly announced modern combinatorics result in roughly three weeks.</td><td>Real-time formalisation is viable when prerequisite libraries are strong, the proof decomposes cleanly, and coordination is explicit.</td></tr>
+      <tr><td>Liquid Tensor Experiment</td><td>A public challenge, blueprint, shared library work, and sustained Lean collaboration formally verified the main theorem over about eighteen months.</td><td>For deep prerequisite-heavy mathematics, the blueprint and library-building programme are first-class deliverables, not overhead.</td></tr>
+      <tr><td>Flyspeck / Kepler conjecture</td><td>A multi-year project used HOL Light and Isabelle to verify both conventional mathematics and computer-heavy components of a proof that had strained ordinary review.</td><td>Long proofs need decomposition, independently checkable computational components, and auditing of the formalisation itself.</td></tr>
+      <tr><td>Boolean Pythagorean triples</td><td>Cube-and-Conquer SAT solving resolved the problem and emitted a very large proof certificate for independent checking.</td><td>Computation is mathematical evidence only when the search space, solver, certificate format, reconstruction, and checker are preserved.</td></tr>
+      <tr><td>OpenAI ten-proofs</td><td>An AI research campaign paired manuscripts and reasoning reconstructions with exact Lean declarations, zero-placeholder manifests, axiom inventories, and Comparator challenges.</td><td>Machine discovery becomes durable only when narrative reasoning, formal proof, provenance, and independent replay are connected but separately assessed.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Case-study template</h3>
+  <p>For every previous resolution record: canonical problem; state before breakthrough; people and organisations; prior bottleneck; decisive representation change; new lemma or tool; division of labour; computational resources; failed routes; proof medium; verification chain; time and cost; attribution; objections and corrections; transferable playbook; conditions under which the playbook would fail.</p>
+
+  <h2>Portfolio selection: do not begin with fame alone</h2>
+  <p>The six unsolved Millennium problems are essential north stars, but they are poor choices for the entire first attack portfolio. The programme should maximise both expected mathematical value and expected learning per unit of research effort.</p>
+  <table>
+    <thead><tr><th>Dimension</th><th>Positive signal</th><th>Penalty or risk</th></tr></thead>
+    <tbody>
+      <tr><td>Impact</td><td>Scientific importance, useful intermediate results, meaningful reward, broad dependency unlock.</td><td>Prestige without a tractable subproblem or measurable feedback loop.</td></tr>
+      <tr><td>Formalisation readiness</td><td>Canonical statement, existing formal declaration, strong library prerequisites, small fidelity gap.</td><td>Decades of prerequisite formalisation before the first testable lemma.</td></tr>
+      <tr><td>Search feedback</td><td>Computable examples, falsifiable lemmas, benchmarkable bounds, short experiment cycles.</td><td>Only all-or-nothing progress with no observable intermediate signal.</td></tr>
+      <tr><td>Decomposability</td><td>Independent lemmas, representations, computation, and literature lanes.</td><td>One inseparable insight bottleneck with no useful parallel work.</td></tr>
+      <tr><td>Novelty confidence</td><td>Well-indexed literature and clear equivalent forms.</td><td>High rediscovery risk, disputed statement, private or inaccessible prior work.</td></tr>
+      <tr><td>Verification cost</td><td>Compact certificate, independent checker, reproducible environment.</td><td>Unbounded compute, enormous uncheckable output, proprietary dependencies.</td></tr>
+      <tr><td>Community fit</td><td>Active experts, collaboration signals, project intention, workshop or benchmark support.</td><td>Duplicating a student or active team, unclear attribution, or unwanted outreach.</td></tr>
+      <tr><td>Learning value</td><td>Builds reusable formal libraries, tactics, datasets, proof patterns, or evaluation infrastructure.</td><td>A one-off trick that teaches little even if successful.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Recommended pilot composition</h3>
+  <div class="grid">
+    <article class="card"><b>North-star lane</b><p>The six open Millennium problems, captured as high-authority metadata and dependency maps—not represented as near-term autonomous targets.</p></article>
+    <article class="card"><b>Reward lane</b><p>The Beal Conjecture plus a small source-audited set of reward-bearing Erdős problems, especially candidates with existing formal statements.</p></article>
+    <article class="card"><b>Benchmark lane</b><p>The AIM 2026 AI-and-number-theory problems and Lean benchmarks, chosen because current AI limits and evaluation intent are explicit.</p></article>
+    <article class="card"><b>Formalisation lane</b><p>Open problems with canonical informal sources and existing Lean declarations, used to test statement-fidelity and prerequisite mapping before proof search.</p></article>
+    <article class="card"><b>Computation lane</b><p>One problem where finite search, SAT/SMT, verified numerics, or certificate construction can produce frequent falsifiable feedback.</p></article>
+    <article class="card"><b>Negative-control lane</b><p>Known solved, independent, or intentionally mistranslated fixtures that test whether the system invents novelty, confuses status, or accepts a proof of the wrong statement.</p></article>
+  </div>
+
+  <h2>Campaign operating loop</h2>
+  <ol>
+    <li><strong>Lock the question.</strong> Resolve identity, exact statement, variants, foundations, reward rules, current status, and publication boundary.</li>
+    <li><strong>Build the dependency graph.</strong> Map definitions, equivalent formulations, prerequisite theories, formal-library coverage, partial results, and known obstructions.</li>
+    <li><strong>Reconstruct history.</strong> Record what was tried, why it failed, which approaches remain live, and where a representation change created progress in analogous problems.</li>
+    <li><strong>Pre-register hypotheses.</strong> State candidate routes, likely bottlenecks, falsifiers, measurable intermediate results, and stop conditions before generating large searches.</li>
+    <li><strong>Run diverse lanes.</strong> Proof search, counterexample search, computation, literature audit, representation discovery, and formalisation proceed independently enough to challenge one another.</li>
+    <li><strong>Preserve dead ends.</strong> Failed lemmas and counterexamples become structured learning capital; they are not deleted from the narrative.</li>
+    <li><strong>Formalise early enough.</strong> Use formalisation to reveal ambiguity and missing prerequisites, but do not force every speculative branch through a prover before it earns that cost.</li>
+    <li><strong>Separate solver and verifier.</strong> The system that generated a result does not control the trusted challenge, independent checker, novelty verdict, or final Answer Release.</li>
+    <li><strong>Escalate to humans.</strong> Engage appropriate mathematicians with a complete, respectful, source-grounded package—not mass unsolicited claims.</li>
+    <li><strong>Release or kill.</strong> Publish a verified result, a useful partial result, a benchmark/library improvement, or an explicit failed-campaign report with next triggers.</li>
+  </ol>
+
+  <h2>What the Observatory should eventually show</h2>
+  <div class="grid3">
+    <article class="card"><b>Problem map</b><p>Domain, status, authority, reward, dependencies, formalisation readiness, active work, and freshness.</p></article>
+    <article class="card"><b>Proof lineage</b><p>Statements, lemmas, papers, code, certificates, formal declarations, reviews, and answer Releases.</p></article>
+    <article class="card"><b>Community graph</b><p>People, teams, workshops, projects, intentions, contributions, and attribution boundaries.</p></article>
+    <article class="card"><b>Campaign cockpit</b><p>Hypotheses, lanes, experiments, compute, dead ends, current bottleneck, and next useful work.</p></article>
+    <article class="card"><b>Verification matrix</b><p>Correctness, fidelity, novelty, independence, reproducibility, acceptance, and prize eligibility as separate axes.</p></article>
+    <article class="card"><b>Learning returns</b><p>Libraries, tactics, datasets, benchmarks, reductions, counterexamples, and methods produced even without a final solution.</p></article>
+  </div>
+
+  <h2>Delivery sequence</h2>
+  <table>
+    <thead><tr><th>Phase</th><th>Deliverable</th><th>Exit gate</th></tr></thead>
+    <tbody>
+      <tr><td>0 · Constitution</td><td>This placement decision, taxonomy, source universe, problem contract, verification ladder, roles, and roadmap.</td><td>Reviewed as an authored Research module with no parallel registry.</td></tr>
+      <tr><td>1 · Source inventories</td><td>Dated, provenance-aware maps of prize systems, problem lists, formal conjecture corpora, project intentions, and solved-campaign sources.</td><td>Rights, ownership, update method, and authority level explicit per source.</td></tr>
+      <tr><td>2 · First 100</td><td>One hundred source-audited candidate problem dossiers spanning fields and difficulty, with no completeness claim.</td><td>Duplicate rate, stale-status rate, citation coverage, and statement ambiguity measured.</td></tr>
+      <tr><td>3 · Pilot 10</td><td>Ten selected Frontier Question Works with formal statement maps, histories, dependency graphs, and campaign plans.</td><td>Human statement review and formalisation-readiness review completed.</td></tr>
+      <tr><td>4 · Proof campaigns</td><td>Independent research lanes, reproducible experiments, formal repositories, comparator challenges, and learning-return records.</td><td>At least one independently replayed result or one high-value falsified route per campaign.</td></tr>
+      <tr><td>5 · Observatory</td><td>Generated public portfolio, proof lineage, campaign state, community graph, rewards, and verification matrices.</td><td>All visible claims derive from accepted records and current source receipts.</td></tr>
+      <tr><td>6 · Programme Work</td><td>Dedicated operated repository, ingestion/watch services, schemas, release cadence, and named stewardship.</td><td>Independent lifecycle exists; promote without moving problem identities or rewriting history.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Metrics that matter</h3>
+  <p>
+    <span class="tag">canonical-source coverage</span>
+    <span class="tag">status freshness</span>
+    <span class="tag">duplicate resolution</span>
+    <span class="tag">statement-fidelity defects found</span>
+    <span class="tag">novelty false-positive rate</span>
+    <span class="tag">formal prerequisite coverage</span>
+    <span class="tag">zero-sorry build rate</span>
+    <span class="tag">independent replay rate</span>
+    <span class="tag">human-review turnaround</span>
+    <span class="tag">useful partial results</span>
+    <span class="tag">reusable library growth</span>
+    <span class="tag">compute and token cost per verified advance</span>
+  </p>
+
+  <h2>Governance and safety</h2>
+  <ul>
+    <li>Never announce that SISO or an agent has solved an open problem before canonical statement, novelty, correctness, independent verification, attribution, and publication boundaries are satisfied.</li>
+    <li>Never contact prize administrators with raw model output. Follow their current official rules; several explicitly reject direct submissions.</li>
+    <li>Credit original authors, prior partial results, formal-library contributors, proof engineers, computational infrastructure, reviewers, and independent rediscoveries.</li>
+    <li>Respect project intentions and student work. Collaboration intelligence is for coordination, not scooping.</li>
+    <li>Do not publish private correspondence, reviewer identities, licensed papers, proprietary databases, personal notes, credentials, machine-specific paths, or unpublished claims without permission.</li>
+    <li>Do not treat model confidence, repository popularity, citations, benchmark score, or a single successful verifier as mathematical consensus.</li>
+    <li>Preserve corrections. An invalidated Answer Release gets a successor or correction record; history is not rewritten.</li>
+  </ul>
+
+  <h2>Exact next work</h2>
+  <ol>
+    <li>Create a publication-safe Source Inventory for Clay, Beal, Erdős Problems, AIM problem lists, AIM’s 2026 Lean benchmarks, Lean Formal Conjectures, Lean project intentions, Polymath, and formal proof archives.</li>
+    <li>Build ten sample dossiers before proposing a schema change: two north stars, two reward-bearing/formalised candidates, two AIM benchmarks, one computational candidate, one active formalisation, and two negative controls.</li>
+    <li>Measure ambiguity, duplicate identity, status drift, source rights, formal prerequisite gaps, and human review cost across the ten samples.</li>
+    <li>Only then propose machine-readable fields, a generated Mathematical Frontiers Observatory, and a dedicated programme repository if the corpus and operations justify an independent Work.</li>
+    <li>Use the first pilot campaign to test the full chain from discovery through independent replay and a correctly typed Release—even if the result is a valuable partial bound or a killed hypothesis rather than a famous final solution.</li>
+  </ol>
+
+  <div class="note"><p><strong>Programme thesis:</strong> the durable advantage is not a model that occasionally guesses a proof. It is a living system that knows which questions exist, what they exactly mean, who has worked on them, what failed, what changed, what can be formalised now, which result is genuinely new, and which evidence is strong enough to become public mathematical memory.</p></div>
+
+  <h2>Primary starting references</h2>
+  <ul class="small">
+    <li><a href="https://github.com/openai/ten-proofs">OpenAI · ten-proofs repository</a>, including <code>formalization.yaml</code> and Comparator challenge configurations.</li>
+    <li><a href="https://openai.com/index/ten-advances-in-mathematics/">OpenAI · Ten advances in mathematics and theoretical computer science</a>, plus the linked paper and reasoning walkthroughs.</li>
+    <li><a href="https://github.com/leanprover/comparator">Lean Comparator</a> and <a href="https://github.com/leanprover-community/mathlib4">mathlib4</a>.</li>
+    <li><a href="https://leanprover-community.github.io/lean_projects.html">Lean projects and project intentions</a>.</li>
+    <li><a href="https://www.claymath.org/millennium-problems/">Clay Millennium Prize Problems</a> and <a href="https://www.claymath.org/millennium-problems/rules/">official rules</a>.</li>
+    <li><a href="https://aimath.org/problemlists/">AIM workshop problem lists</a> and <a href="https://aimath.org/pastworkshops/aint26.html">AI and number theory 2026</a>.</li>
+    <li><a href="https://www.erdosproblems.com/">Erdős Problems</a> and <a href="https://www.bealconjecture.com/">Beal Conjecture</a>.</li>
+    <li><a href="https://polymathprojects.org/2013/06/04/polymath-proposal-bounded-gaps-between-primes/">Polymath8 bounded-gaps proposal</a>.</li>
+    <li><a href="https://leanprover-community.github.io/blog/posts/lte-final/">Liquid Tensor completion</a>, <a href="https://leanprover-community.github.io/">Polynomial Freiman–Ruzsa formalisation</a>, and <a href="https://doi.org/10.1017/fmp.2017.1">Flyspeck</a>.</li>
+    <li><a href="https://arxiv.org/abs/1605.00723">Boolean Pythagorean Triples proof and certificate</a>.</li>
+  </ul>
+
+  <p>Return to the <a href="research-question-model.html">Frontier Questions model</a>, the <a href="question-driven-research.html">question-driven research architecture</a>, or the <a href="god-questions-infrastructure.html">God Questions infrastructure constitution</a>.</p>
+  <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
+</main></body>
+</html>
