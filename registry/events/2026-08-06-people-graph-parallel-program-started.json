@@ -26,7 +26,7 @@
     {
       "kind": "coordination",
       "reference": "branch:gls/people-graph-parallel-spine-20260806",
-      "summary": "Lane 1 — Great Library registry and public program. Starts from current main, does not wait on other lanes, writes only New People Graph and Book Library Works and Releases; ADR-0005; program Event; GQ-010 and program Release; V37; `CURRENT_STATE.md`; `docs/people-graph-program/**`; generated `site/` and only relevant generator/check changes, opens a draft PR early, and publishes the required handoff."
+      "summary": "Lane 1 — Great Library registry and public program. Starts from current main, does not wait on other lanes, writes only new People Graph and Book Library Works and Releases; ADR-0005; program Event; GQ-010 seed and program Releases; V37; `CURRENT_STATE.md`; `docs/people-graph-program/**`; generated `site/`; and only relevant schema, generator, or check changes, opens a draft PR early, and publishes the required handoff."
     },
     {
       "kind": "coordination",
@@ -56,7 +56,7 @@
     {
       "kind": "coordination",
       "reference": "branch:books/integrity-export-parallel-20260806",
-      "summary": "Lane 7 — Book Library integrity and export. Starts from current main, does not wait on other lanes, writes only In the Book Library: `scripts/**`; `index/**`; new `tests/**`; `manifests/**`; `docs/**`; `.github/workflows/**`, opens a draft PR early, and publishes the required handoff."
+      "summary": "Lane 7 — Book Library integrity and export. Starts from current main, does not wait on other lanes, writes only in the Book Library: `scripts/**`; `index/**`; new `tests/**`; `manifests/**`; `docs/**`; `.github/workflows/**`, opens a draft PR early, and publishes the required handoff."
     },
     {
       "kind": "coordination",
@@ -103,6 +103,7 @@
     "release_ids": [
       "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e",
       "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec",
+      "gls:release:3de55ee0-ec67-433a-b061-5bebabf0cb4e",
       "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787"
     ],
     "snapshot_ids": [
@@ -126,10 +127,12 @@
       "registry/works/frontier-question-gq-010.json",
       "registry/releases/siso-people-graph-de048bb.json",
       "registry/releases/siso-book-library-be9ab08.json",
+      "registry/releases/frontier-question-gq-010-seed.json",
       "registry/releases/frontier-question-gq-010-program-v1.json",
       "registry/decisions/adr-0005-people-graph-ownership-and-data-plane.json",
       "registry/events/2026-08-06-people-graph-parallel-program-started.json",
       "registry/snapshots/whole-library-v37.json",
+      "schemas/work.schema.json",
       "docs/people-graph-program/",
       "CURRENT_STATE.md",
       "site/"
