@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+  "slug": "frontier-question-gq-010",
+  "name": "GQ-010 — How do we increase the People Graph's value by 100×?",
+  "summary": "A standing research question that treats breadth, identity resolution, research depth, and decision value as separate measurable dimensions and rejects row-count growth as a sufficient success signal.",
+  "work_type": "research_question",
+  "lifecycle_status": "active",
+  "updated_at": "2026-08-06",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "documentation",
+        "url": "https://github.com/sisodias/great-library-of-siso/tree/main/docs/people-graph-program",
+        "revision": "registry-program-spine-2026-08-06",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "documentation",
+          "reference": "docs/people-graph-program/README.md",
+          "observed_at": "2026-08-06",
+          "summary": "The authored program documents the public question, governance boundary, observation contract, lanes, and handoff requirements."
+        }
+      }
+    ],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "This Work contains publication-safe question and program metadata, not a source-code or dataset redistribution claim.",
+      "evidence": []
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+      "context": "The People Graph is the primary system whose value, quality, and decision utility the question tests.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/people-graph-program/README.md",
+          "observed_at": "2026-08-06",
+          "summary": "The program defines the People Graph as the primary Work under evaluation."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "target_work_id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+      "context": "The Book Library provides one bounded source and export pilot for testing source-native observations, identities, roles, rights, and replayability.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+          "observed_at": "2026-08-06",
+          "summary": "The exact source tree exposes metadata, person, role, subject, and locator contracts suitable for a bounded pilot."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "target_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "context": "The Great Library supplies stable Work, Release, Decision, Event, and Snapshot identity plus public program lineage; it does not hold the mutable graph database.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry:decision:ADR-0005",
+          "observed_at": "2026-08-06",
+          "summary": "ADR-0005 records the public control-plane and external data-plane split."
+        }
+      ]
+    }
+  ],
+  "research_contract": {
+    "question_id": "GQ-010",
+    "question": "How do we increase the People Graph's research and decision value by 100× without treating row count as value or weakening identity quality, provenance, rights, privacy, reproducibility, and reversibility?",
+    "state": "scoped",
+    "evidence_mode": "hybrid",
+    "source_work_ids": [
+      "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+      "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+      "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+    ],
+    "source_scopes": [
+      "SISO People Graph code and contract at de048bb3b34bf931b56fd741cb46c1334acdfb98",
+      "SISO Book Library code and contract at be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+      "Publication-safe outputs from the thirteen named parallel lanes and their draft handoffs",
+      "Public or authorized source observations expressed through pg-observation-0.1; raw restricted payloads remain outside the registry"
+    ],
+    "decision_to_change": "Choose which source classes, identity methods, temporal and claim layers, query surfaces, and operating loops to fund, merge, revise, or kill for the next evidence-backed People Graph release.",
+    "success_criteria": [
+      "Breadth: demonstrate at least tenfold source-native observation coverage across four distinct source classes, with every promoted observation carrying source, native identifier, observed-at time, rights state, provenance, and receipt references.",
+      "Resolution quality: on a versioned stratified benchmark, auto-accepted identity links achieve at least 99.5% precision, recall and abstention are reported separately, and every accepted merge or alias remains reversible with literal evidence.",
+      "Research depth: for at least 100 prioritized people or 25 named research questions, expose a three-layer path from raw observation to cited claim to explicit adjudication, with no unsupported cross-source assertion presented as fact.",
+      "Decision value: in at least five pre-registered operator or research decisions, the graph changes the selected action or reduces evidence-retrieval time by at least 80% against a measured baseline; additional rows alone cannot satisfy this criterion.",
+      "Rights and privacy: every promoted observation has an explicit rights state, restricted or discovery-only material never appears as a public payload, and living-person data is limited to justified public or authorized evidence.",
+      "Reproducibility and cost: the accepted increment rebuilds from versioned manifests, produces comparable quality reports, and stays within a declared per-source acquisition and refresh budget."
+    ],
+    "falsifiers": [
+      "Source expansion increases rows or edges by at least tenfold but produces no measured improvement in the five decision-use cases.",
+      "Auto-accepted identity precision falls below 99.5%, accepted links cannot be reversed, or ambiguous names are silently merged.",
+      "Any promoted public record lacks a rights state, leaks restricted payloads, or exposes unjustified sensitive information about a living person.",
+      "New source pilots mostly duplicate existing low-signal entities and cannot produce replayable source-native observations with receipts.",
+      "The graph remains a collection of names and topics without cited claims, temporal context, contradiction handling, or adjudication.",
+      "Refresh and build costs exceed the declared budget without a proportional improvement in resolution, research depth, or decision value."
+    ],
+    "evidence_gaps": [
+      "There is no agreed baseline for current evidence-retrieval time, decision changes, or operator utility.",
+      "The exact People Graph source commit has not been proven as a clean reproducible build in this registry lane, and the reviewed v2 builder's schema path does not match the tracked schema location.",
+      "A versioned identity-resolution benchmark with precision, recall, abstention, collision, living-person, and historical-person strata is not yet published.",
+      "Source-specific terms, privacy, retention, and redistribution rules are incomplete for the proposed scholarly, software, AI, creator, and media pilots.",
+      "The pg-observation-0.1 interchange has not yet been exercised end to end through Foundry discovery, Evidence Engine adjudication, and canonical graph admission.",
+      "Historical references under a different GitHub owner remain a verification and migration question rather than an assumed alias."
+    ],
+    "watch_triggers": [
+      "Any identity benchmark regression, disputed auto-merge, rollback, or evidence-loss incident.",
+      "Any source terms, rights, privacy, API, rate-limit, or retention change that alters admissible observations.",
+      "A parallel source pilot publishes a replayable observation set and draft handoff.",
+      "The v3 schema, identity, query, claims, build, or integration lane publishes a compatibility contract.",
+      "The first five decision-use cases receive measured baselines and post-change outcomes.",
+      "Review at least monthly until a first Answer Release, and immediately after a material source, schema, quality, or governance change."
+    ],
+    "answer_shape": "A source-by-source and capability-by-capability decision matrix separating breadth, resolution quality, research depth, decision value, rights and privacy, reproducibility, and cost, with explicit fund, merge, revise, or kill recommendations and traceable evidence.",
+    "refresh_policy": "Reassess on every material lane handoff and at least monthly until a first evidenced Answer Release; afterward refresh on source-contract, rights, schema, identity-quality, cost, or decision-utility triggers.",
+    "publication_boundary": "public_metadata_only"
+  },
+  "evidence": [
+    {
+      "kind": "documentation",
+      "reference": "user-intent:people-graph-100x-parallel-program:2026-08-06",
+      "observed_at": "2026-08-06",
+      "summary": "The requested program separates breadth, resolution, research depth, and decision value; requires measurable kill criteria; and launches thirteen no-wait parallel lanes."
+    },
+    {
+      "kind": "documentation",
+      "reference": "docs/people-graph-program/parallel-lanes.md",
+      "observed_at": "2026-08-06",
+      "summary": "The authored lane manifest records branches, exclusive path zones, current-main starts, and draft-PR handoffs."
+    }
+  ]
+}
