@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:d8933ea1-61f8-4532-a389-610363f0ccf8",
+  "occurred_at": "2026-08-06T23:41:30+07:00",
+  "recorded_at": "2026-08-06T23:41:30+07:00",
+  "immutable": true,
+  "entry_type": "initiative_completed",
+  "thread": {
+    "id": "gls:thread:unsolveable-mathematics-program",
+    "name": "UNSOLVEABLE Mathematics Program",
+    "kind": "research"
+  },
+  "status": "completed",
+  "title": "UNSOLVEABLE programme constitution drafted and Phase 1 queued",
+  "summary": "The mathematical-frontier programme now has a correctly placed authored Research constitution, a scoped draft pull request, and an executable Phase 1 issue for source inventory, upstream reuse assessment, and ten pilot problem dossiers without introducing a second registry.",
+  "intent": "Close the architecture and placement lane with an auditable handoff: preserve the programme constitution, expose its documentation routes, retain the draft review gate, and give the next research phase explicit sources, deliverables, and acceptance conditions.",
+  "reasoning": [
+    "The existing Frontier Question Work, immutable Release, Snapshot, Source Inventory, Foundry, Knowledge, and Evidence Engine contracts already express the required identity and research lineage; the programme should reuse them rather than create a loose mathematics database.",
+    "The constitution keeps open status, formal correctness, statement fidelity, novelty, agent independence, mathematical acceptance, and prize eligibility as distinct evidence claims.",
+    "Direct review identified existing upstream systems that should be evaluated before SISO builds replacements: teorth/erdosproblems, Erdős Navigator, Formal Conjectures, unsorry, Comparator, mathlib, and the OpenAI ten-proofs evidence pattern.",
+    "The full repository verification gate could not be run locally because this execution environment lacks gh and could not resolve GitHub through outbound Git; the pull request therefore remains a draft and GitHub Actions is the authoritative pre-merge gate."
+  ],
+  "changes": [
+    {
+      "kind": "document",
+      "reference": "docs/unsolveable-mathematics-program.html",
+      "summary": "Authored the programme placement decision, status taxonomy, source universe, problem contract, verification ladder, intelligence roles, historical solution playbooks, portfolio model, campaign loop, Observatory shape, delivery sequence, metrics, governance, and exact next work."
+    },
+    {
+      "kind": "document",
+      "reference": "README.md and docs/README.md",
+      "summary": "Routed the new module through the existing Research and authored-document navigation without hand-editing generated site projections."
+    },
+    {
+      "kind": "coordination",
+      "reference": "https://github.com/sisodias/great-library-of-siso/pull/5",
+      "summary": "Opened the constitution as a three-file draft pull request for review and repository verification."
+    },
+    {
+      "kind": "coordination",
+      "reference": "https://github.com/sisodias/great-library-of-siso/issues/6",
+      "summary": "Created the Phase 1 source-inventory and upstream-integration track with ten pilot dossiers and explicit acceptance gates."
+    },
+    {
+      "kind": "test",
+      "reference": "structural-check:unsolveable-mathematics-program:e76675272457da639b2f8f9e0953aa6380674811",
+      "summary": "Parsed the complete authored HTML without structural tag errors and matched its local Git blob hash to the exact blob stored on the branch."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso",
+      "https://github.com/openai/ten-proofs",
+      "https://github.com/leanprover-community/mathlib4",
+      "https://github.com/teorth/erdosproblems",
+      "https://github.com/0bserver07/erdos-navigator",
+      "https://github.com/agenticsnz/unsorry",
+      "https://github.com/leanprover/comparator"
+    ]
+  },
+  "coordination": {
+    "owner": "GPT-5.6 Pro for Shaan Sisodia",
+    "branch": "agent/unsolveable-mathematics-program",
+    "reserved_paths": []
+  },
+  "visibility": "public",
+  "predecessor_event_id": "gls:event:fc942f5b-cf6f-4ede-afc1-bce7ed113cff",
+  "evidence": [
+    {
+      "kind": "public_locator",
+      "reference": "https://github.com/sisodias/great-library-of-siso/pull/5",
+      "observed_at": "2026-08-06",
+      "summary": "The draft pull request publicly resolves with the authored constitution and both documentation-index changes."
+    },
+    {
+      "kind": "documentation",
+      "reference": "https://github.com/sisodias/great-library-of-siso/issues/6",
+      "observed_at": "2026-08-06",
+      "summary": "The next phase has an explicit source universe, reuse matrix, ten-pilot composition, dossier fields, and acceptance gates."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "structural-check:unsolveable-mathematics-program:e76675272457da639b2f8f9e0953aa6380674811",
+      "observed_at": "2026-08-06",
+      "summary": "The authored HTML parsed cleanly and its exact content hash matched the branch blob before pull-request creation."
+    },
+    {
+      "kind": "source_review",
+      "reference": "source-review:unsolveable-upstream-stack:2026-08-06",
+      "observed_at": "2026-08-06",
+      "summary": "OpenAI ten-proofs, the Lean community, mathlib, Comparator, Clay, AIM, Beal, Erdős sources, Erdős Navigator, Formal Conjectures, unsorry, and major historical collaborative or certificate-based proof cases were reviewed at architecture depth."
+    }
+  ],
+  "next_actions": [
+    "Require the Verify Great Library GitHub Actions workflow to pass before this draft is considered merge-ready.",
+    "Execute issue #6 by producing the publication-safe source inventory, upstream reuse verdicts, and ten evidence-audited pilot dossiers.",
+    "Promote individual mathematical problems to Frontier Question Works only after canonical-statement, status, provenance, rights, and stewardship review.",
+    "Create schemas, generated Observatory surfaces, or a dedicated programme repository only after the pilot measures justify those boundaries."
+  ]
+}
