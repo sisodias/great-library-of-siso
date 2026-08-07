@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:2b7f4c19-8d63-4a05-91e7-5c03f8a2b641",
+  "occurred_at": "2026-08-07T23:28:00+07:00",
+  "recorded_at": "2026-08-07T23:55:00+07:00",
+  "immutable": true,
+  "entry_type": "verification_completed",
+  "thread": {
+    "id": "gls:thread:gq-009-self-improvement",
+    "name": "GQ-009 self-improvement evidence",
+    "kind": "research"
+  },
+  "status": "completed",
+  "title": "GQ-009 watch trigger 5 fires partially: 16 of 17 librarian proposals survive independent review",
+  "summary": "The seventeen proposals in sisodias/siso-librarian received their first review by anyone other than their author. Sixteen survived adversarial review intact. The seventeenth, the flagship MiniMax cache proposal, survived AS A FINDING and failed AS AN EXECUTABLE: its measurement is sound and reproducible while its patch anchor no longer matches the code it patches. This is the first evidence that estate self-improvement is real rather than asserted -- recorded with the reviewer's own independence caveat intact, because the trigger fires only partially under the stronger reading.",
+  "intent": "Record the first independent review of standing-agent proposals as evidence against GQ-009 watch trigger 5, without overstating what the review establishes.",
+  "reasoning": [
+    "The trigger's verb is 'survives', not 'passes unchanged'. Sixteen of seventeen proposals survived intact, and the seventeenth survived as a finding while failing as an executable, which the trigger's wording accommodates.",
+    "The review was adversarial by design and did find something the author missed: the patch anchor 'upstreamPath' is absent from the live shim, so the proposal's promise of 'one command to apply, one to undo' is not currently true. The script fails safe, aborting before any write, so the cost is a wasted run rather than damage.",
+    "The reviewer flagged a falsifier it could not rule out rather than letting the trigger fire on a definition it quietly chose: it is a Claude instance reviewing another Claude instance's work. That is independent in the mechanical sense (separate context, no shared state, adversarial instruction, and it found a real defect) but not independent in the sense of a different mind with different blind spots. Under the stronger reading of trigger 5, a human or non-Claude reviewer would be required to fire it fully.",
+    "The review demonstrated its own good faith in a way worth recording: it verified read-only discipline (HEAD unchanged at d519a82, no script executed, no file written under ~/.config/bifrost/), and it declined to re-run the cache experiment because doing so requires the mini's proxy and would spend live tokens, saying so rather than implying reproduction it did not perform.",
+    "A self-correction against the author's own interest raises rather than lowers confidence: the librarian had already demoted its own '~97%' cache headline to a point observation across four runs (11.9%, 83.1%, 95.0%, 97.1%), resting the claim on the categorical result (proxy non-zero on every run, Bifrost exactly zero on every run) rather than on the flattering magnitude."
+  ],
+  "changes": [
+    {
+      "kind": "coordination",
+      "reference": "gls:thread:gq-009-self-improvement",
+      "summary": "Recorded the first independent review of all 17 librarian proposals. Two required changes were tracked as tasks in sisodias/siso-librarian on branch lib/track-review-findings-20260807; no proposal was merged, closed or executed as a result of this Event."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92"
+    ],
+    "source_inventory_ids": [],
+    "release_ids": []
+  },
+  "coordination": {
+    "owner": "GLS-CONSOLIDATION",
+    "branch": "gls/track-open-work-20260807",
+    "reserved_paths": [
+      "great-library-of-siso:registry/events/2026-08-07-gq-009-independent-review-evidence.json"
+    ]
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": ".agents/tasks/consolidation-source/LIBRARIAN-REVIEW.html",
+      "observed_at": "2026-08-07",
+      "summary": "Full review of all 17 proposals with a per-proposal verdict. Read-only discipline verified: repo HEAD unchanged at d519a82, git status --porcelain empty at close, no script executed and in particular not minimax-cache-route.sh apply, no file written under ~/.config/bifrost/, no *.bak-route-* created."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "grep -n 'upstreamPath' ~/.config/bifrost/claude-model-catalog.mjs",
+      "observed_at": "2026-08-07",
+      "summary": "Returned no output. The identifier does not occur anywhere in the 24,419-byte shim, and neither does the literal MiniMax-M3; the upstream path is now computed inline via bifrostUpstreamPath(req.url) with no model-gated branch. This is structural divergence, not whitespace drift. Honest limit stated by the reviewer: it ran on the laptop while the librarian runs on the Mac mini, which did not answer on the tailnet, so the supported claim is that the anchor fails on at least one host running this exact file at this exact path."
+    }
+  ],
+  "next_actions": [
+    "Treat trigger 5 as PARTIALLY fired. A human or non-Claude reviewer is required before claiming it fired under the stronger reading of independence.",
+    "Re-verify the shim anchor on the Mac mini before minimax-cache-route.sh apply is ever run.",
+    "Make the patch anchor-independent or drift-detecting rather than updating the exact-match string, since the shim is actively edited by other processes (backup history 5,714 to 22,098 to 24,419 bytes)."
+  ]
+}
