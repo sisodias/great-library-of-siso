@@ -15,8 +15,8 @@ The exact arithmetic stitch used by the public all-`N` candidate.
 
 This theorem proves only the *coverage logic*: if each of the five advertised
 components establishes the exact `Erdos848For` proposition on its stated range,
-then the canonical positive-`N` conjecture follows.  No component theorem is
-smuggled in as an axiom.
+then the canonical positive-`N` conjecture follows. No component theorem is
+silently assumed.
 -/
 theorem allN_of_candidate_five_ranges
     (hFinite : HoldsOn 1 100000006)
@@ -40,7 +40,7 @@ theorem allN_of_candidate_five_ranges
   · have hlo : 264000000000000000 ≤ N := by omega
     exact hHigh N hlo
 
-/-- The same stitch exposed as five explicit proof obligations.  This is the
+/-- The same stitch exposed as five explicit proof obligations. This is the
 formal completion checklist for turning the candidate into a kernel theorem. -/
 theorem allN_iff_five_range_suffices
     (hFinite : HoldsOn 1 100000006)
