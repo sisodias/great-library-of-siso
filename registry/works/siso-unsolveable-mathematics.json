@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:5c1e8a34-6d72-4f19-8a0b-2e7c94d1f635",
+  "slug": "siso-unsolveable-mathematics",
+  "name": "SISO Unsolveable Mathematics",
+  "summary": "An open-problem attack programme covering the UNSOLVEABLE constitution, the ten-agent Erdos campaign master prompt, the Erdos 41 flagship dossier, and agent 09's Erdos 23 workspace.",
+  "work_type": "research_question",
+  "lifecycle_status": "active",
+  "updated_at": "2026-08-07",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-unsolveable-mathematics",
+        "revision": "main@2c772ab122858aec67d7958bf860b7d223210187",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-unsolveable-mathematics:refs/heads/main",
+          "observed_at": "2026-08-07",
+          "summary": "The repository and exact commit resolve on GitHub at main@2c772ab122858aec67d7958bf860b7d223210187 with 8 commits of history carried across from branch agent/erdos-09-23 of sisodias/great-library-of-siso using git filter-repo path selection, not a fresh initialisation. This verifies addressability and that commit lineage survived the split; it does not assert a release, packaged artifact, or deployment, none of which exist for this Work."
+        }
+      }
+    ],
+    "license": {
+      "status": "pending",
+      "spdx": "NOASSERTION",
+      "reason": "No license has been selected for the programme documents or agent workspaces. Cited mathematical literature is third-party and referenced rather than reproduced.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "LICENSE",
+          "observed_at": "2026-08-07",
+          "summary": "No LICENSE file is present in the split repository and no license has been selected for the SISO-authored material. Recorded as pending rather than asserting a permissive default."
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "context": "Split out of the Great Library on 2026-08-07. The branch agent/erdos-09-23 was proven by git merge-base --is-ancestor to contain all eleven other Erdos campaign refs, which were then deleted as redundant.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/great-library-of-siso/tree/agent/erdos-09-23",
+          "observed_at": "2026-08-07",
+          "summary": "Split executed 2026-08-07. The Great Library README states it is a catalog rather than a giant monorepo, and ADR-0005 rejected storing the People Graph database on the same grounds; working research material with executable code belongs in its own Work rather than inside the catalog."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "docs/campaigns/erdos-10-2026-08-07/agents/09-23/verdict.md",
+      "observed_at": "2026-08-07",
+      "summary": "Agent 09 recorded a NEW CANDIDATE PARTIAL RESULT and explicitly not a solution: conditional on a frozen exact upstream certificate, the exact floor target holds for 147 orders through 200 including every order through 42, with 43 the first order not closed. The record states there is no kernel-verified full proof, no counterexample, and no novelty-verified resolution, and names the unresolved objection as the integral step to beta(G) <= N^2/25 in the odd-K5 obstruction class."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "git merge-base --is-ancestor",
+      "observed_at": "2026-08-07",
+      "summary": "Ancestry was proven for all eleven non-target Erdos refs against agent/erdos-09-23 immediately before deletion, with zero failures. Eight of the eleven pointed at the identical commit f69b670, an instance of the branch-reservation versus durable-pushed-work distinction the programme had already recorded."
+    }
+  ],
+  "research_contract": {
+    "question_id": "GQ-011",
+    "question": "Which Erdos problems can a coordinated agent campaign move from open to a defensible partial result, and what exactly is the standing of each claim produced?",
+    "state": "partial",
+    "evidence_mode": "corpus",
+    "source_work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+    ],
+    "source_scopes": [
+      "Erdos problem literature cited in the campaign dossiers",
+      "agent campaign workspaces under docs/campaigns/erdos-10-2026-08-07"
+    ],
+    "answer_shape": "Per problem, a stated verdict with its conditionality, the orders or cases closed, the first case not closed, and the strongest unresolved objection.",
+    "refresh_policy": "Re-examined when a campaign agent records a new verdict, or when an upstream certificate the results are conditional on is revised or retracted.",
+    "publication_boundary": "public_evidence",
+    "success_criteria": [
+      "A claim is promoted only with a kernel-verified proof or an explicit counterexample",
+      "Every retained claim names the exact assumption it is conditional on"
+    ],
+    "falsifiers": [
+      "The frozen upstream certificate the Erdos 23 corollary depends on is retracted",
+      "The integral step to beta(G) <= N^2/25 is shown to fail in the odd-K5 obstruction class"
+    ],
+    "evidence_gaps": [
+      "No kernel-verified full proof exists for any campaign claim",
+      "Novelty against the existing literature is not independently verified"
+    ]
+  }
+}

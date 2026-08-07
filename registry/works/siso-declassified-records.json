@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:1f4a6d92-5b83-4e07-a2c9-6d38b1e75403",
+  "slug": "siso-declassified-records",
+  "name": "SISO Declassified Records",
+  "summary": "A research department for declassified government records, separating record truth, custody and release truth, source-asserted truth, and research conclusion, with four rights-and-safety tiers.",
+  "work_type": "knowledge_system",
+  "lifecycle_status": "active",
+  "updated_at": "2026-08-07",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-declassified-records",
+        "revision": "main@fb615f281b6c89c31a5c16b3512299f2e1064569",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-declassified-records:refs/heads/main",
+          "observed_at": "2026-08-07",
+          "summary": "The repository and exact commit resolve on GitHub at main@fb615f281b6c89c31a5c16b3512299f2e1064569 with 3 commits of history carried across from branch agent/declassified-government-records-department of sisodias/great-library-of-siso using git filter-repo path selection, not a fresh initialisation. This verifies addressability and that commit lineage survived the split; it does not assert a release, packaged artifact, or deployment, none of which exist for this Work."
+        }
+      }
+    ],
+    "license": {
+      "status": "pending",
+      "spdx": "NOASSERTION",
+      "reason": "No license has been selected. Underlying records are predominantly US Government work in the public domain, but per-item rights are not guaranteed and the department's own policy records custody and release state rather than assuming it.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "LICENSE",
+          "observed_at": "2026-08-07",
+          "summary": "No LICENSE file is present in the split repository and no license has been selected for the SISO-authored material. Recorded as pending rather than asserting a permissive default."
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "context": "Split out of the Great Library on 2026-08-07. Working research material with an executable verifier does not belong inside a metadata catalog.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/great-library-of-siso/tree/agent/declassified-government-records-department",
+          "observed_at": "2026-08-07",
+          "summary": "Split executed 2026-08-07. The Great Library README states it is a catalog rather than a giant monorepo, and ADR-0005 rejected storing the People Graph database on the same grounds; working research material with executable code belongs in its own Work rather than inside the catalog."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "research/declassified-government-records/rights-safety-and-ethics.md",
+      "observed_at": "2026-08-07",
+      "summary": "Four safety tiers are defined (standard, enhanced_privacy, hazardous_technical, restricted_metadata_only) with the governing principles that a capability manual must not be assembled from individually public records, that official release does not eliminate risk, and that a name in an intelligence or law-enforcement file is not proof of guilt, affiliation, reliability or agency employment. The last of these directly constrains any future People Graph link built from this material."
+    },
+    {
+      "kind": "source_review",
+      "reference": "research/declassified-government-records/catalog-contract.md",
+      "observed_at": "2026-08-07",
+      "summary": "The department holds that FOIA release and declassification are not synonyms, separating formal declassification, FOIA, mandatory declassification review, systematic review, statutory special collections and never-classified archival-open material, and rules that the system must never silently move from source-asserted truth to research conclusion."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "python3 verify_module.py",
+      "observed_at": "2026-08-07",
+      "summary": "Executed against the split repository after the filter: PASS at module_files=13, sources=37, official_sources=32, collections=30, schema_required_fields=17, relative_links_checked=22. This verifies internal structural consistency only; no document payload was acquired and no source claim was adjudicated."
+    }
+  ]
+}
