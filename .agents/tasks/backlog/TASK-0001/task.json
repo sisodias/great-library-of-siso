@@ -1,0 +1,31 @@
+{
+  "id": "TASK-0001",
+  "title": "Merge the People Graph control-plane spine",
+  "status": "backlog",
+  "priority": "high",
+  "domain": "lifecycle",
+  "category": "infrastructure",
+  "created_at": "2026-08-07T00:00:00Z",
+  "created_by": "GLS-CONSOLIDATION",
+  "evidence": "Branch gls/people-graph-parallel-spine-20260806, 26 commits. Additive schema only; modifies no immutable record.",
+  "verified": false,
+  "target_agent": "",
+  "dependencies": [],
+  "spec": {
+    "description": "The spine carries ADR-0005, the Works and Releases records, V37, GQ-010 and the pg-observation-0.1 interchange format. It is the control plane the rest of the program hangs off.",
+    "context": "Verify with: npm ci && npm run check:immutable && npm run verify. It is additive-schema-only and touches no immutable record, which is why it is safe to merge before the lanes it describes are finished. Merge this BEFORE the docs-only branches so their references resolve.",
+    "acceptance_criteria": [
+      "npm run check:immutable passes",
+      "npm run verify passes",
+      "No immutable record is modified"
+    ]
+  },
+  "execution_log": [
+    {
+      "timestamp": "2026-08-07T00:00:00Z",
+      "action": "seeded",
+      "by": "GLS-CONSOLIDATION",
+      "notes": "Seeded from the 2026-08-07 estate consolidation. Durable rationale in .agents/tasks/consolidation-source/."
+    }
+  ]
+}
