@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-04T00:00:00.000Z",
+  "generated_at": "2026-08-07T21:40:00.000Z",
   "base_path": "/",
   "schema_version": "1.0.0",
-  "snapshot_id": "gls:snapshot:8d4f2a91-7c53-4e6b-a0d8-1f92b6c4e8a7",
-  "snapshot_version": "36.0.0",
+  "snapshot_id": "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9",
+  "snapshot_version": "37.0.0",
   "infrastructure_contract_url": "/docs/god-questions-infrastructure.html",
   "counts": {
-    "questions": 7,
+    "questions": 8,
     "programmed_questions": 3,
     "assumptions": 7,
     "evidence_connections": 10,
@@ -29,15 +29,34 @@
         "state": "current",
         "assessed_at": "2026-08-02",
         "review_due_at": "2026-09-01",
-        "as_of": "2026-08-04"
+        "as_of": "2026-08-08"
       },
       "next_useful_work": "Run one cold reconstruction task against the typed workspace boundary and compare errors, intervention, and elapsed time with the prior evidence path.",
       "evidence_mode": "hybrid",
-      "decision_to_change": null,
-      "success_criteria": [],
-      "falsifiers": [],
-      "evidence_gaps": [],
-      "watch_triggers": [],
+      "decision_to_change": "How to lay out a new agent workspace — what to enforce mechanically, what to leave to convention, and which patterns to refuse to repeat.",
+      "success_criteria": [
+        "Each principle is graded by the evidence behind it and states whether it is a universal finding or a SISO preference — the answer_shape's own distinction, made checkable per principle rather than claimed for the set.",
+        "Rejected patterns are recorded with the observation that rejected them, so a later reader can tell a tried-and-failed pattern from an untried one.",
+        "Every architectural claim names a workspace where it was actually run, not a design sketch.",
+        "A principle that has never been violated in practice is marked as untested rather than as confirmed."
+      ],
+      "falsifiers": [
+        "A principle stated as universal is contradicted by a workspace outside SISO, making it a preference that was mislabelled.",
+        "The architecture cannot be described without naming a specific tool, meaning what was learned is a vendor workflow rather than a workspace design.",
+        "Following the principles produces a workspace that a new agent cannot orient in — the design optimises for its author rather than for a cold reader.",
+        "Enforcement mechanisms are routinely bypassed by the agents they govern, indicating the design describes intended rather than actual behaviour."
+      ],
+      "evidence_gaps": [
+        "Evidence comes almost entirely from a single workspace operated by a single agent, so 'universal' cannot yet be distinguished from 'true here'. The answer_shape demands exactly that distinction.",
+        "Memory architecture is named in the question but only lightly exercised — no claim rests on measured memory behaviour.",
+        "Agent-generated user interfaces have one instance (the observatory) and no comparison, so its design choices are untested against alternatives."
+      ],
+      "watch_triggers": [
+        "An enforcement mechanism (gate, hook, contract) is added or disabled, which changes what the workspace actually guarantees.",
+        "A new agent joins the workspace and takes measurably longer to orient than the design predicts.",
+        "A principle is violated in practice without the violation being caught, exposing an unenforced claim.",
+        "Agent-generated UI surfaces begin carrying values that are not derived from a named source."
+      ],
       "source_work_ids": [
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
@@ -166,22 +185,41 @@
       "slug": "frontier-question-agent-layer-efficiency",
       "library_url": "/works/frontier-question-agent-layer-efficiency/",
       "question": "What changes would make the complete provider-neutral SISO agent layer ten times more effective per unit of time, attention, and compute?",
-      "research_state": "answered",
+      "research_state": "partial",
       "lifecycle_status": "active",
       "steward": "SISO Open Source Foundation",
       "freshness": {
         "state": "current",
         "assessed_at": "2026-08-02",
         "review_due_at": "2026-09-01",
-        "as_of": "2026-08-04"
+        "as_of": "2026-08-08"
       },
       "next_useful_work": "Run one paired agent task with and without the evidence-aware context and receipt path, including retrieval and repair overhead in the comparison.",
       "evidence_mode": "hybrid",
-      "decision_to_change": null,
-      "success_criteria": [],
-      "falsifiers": [],
-      "evidence_gaps": [],
-      "watch_triggers": [],
+      "decision_to_change": "Where to spend the next unit of agent-layer engineering effort: fixing an existing path's economics versus substituting a model or harness.",
+      "success_criteria": [
+        "Every recommendation in the leverage map carries a measurement taken on this fleet, not an estimate or a vendor claim.",
+        "Each recommendation states a numeric success threshold that a later measurement could fail to meet.",
+        "The map ranks by measured effect on tokens, latency, or attention per unit of delivered work — not by expected effort to implement.",
+        "At least one recommendation has been applied and re-measured, with the before and after both recorded."
+      ],
+      "falsifiers": [
+        "The highest-ranked lever, once applied and re-measured, produces less than a 2x improvement on the metric it was ranked by. Measured on the Bifrost request log, not asserted.",
+        "The ranking is unstable: re-deriving it from the same log a week later reorders the top three, meaning it described a moment rather than a structure.",
+        "Aggregate gains are dominated by a single provider or harness, so the 'agent layer' framing is wrong and the question should be about that component instead.",
+        "The measured bottleneck turns out to be human review or decision latency rather than tokens, latency, or compute, in which case no change to the agent layer reaches 10x."
+      ],
+      "evidence_gaps": [
+        "No before/after pair exists for any applied lever: scripts/minimax-cache-route.sh is written and tested but NOT APPLIED, so the largest predicted gain is unverified.",
+        "Latency and attention are named in the question but only token economics have been measured. The ranking currently covers one of three axes.",
+        "Cached-read rates are measured on the gateway log only. Whether they reflect provider-side billing is unconfirmed."
+      ],
+      "watch_triggers": [
+        "A provider's cached-read rate on the gateway log moves by more than 20 percentage points, changing the economics the ranking was built on.",
+        "A new model or provider is added to the gateway, which can reorder the leverage map without any code changing.",
+        "Any recommendation in the map is applied, requiring a re-measurement to confirm or refute its predicted threshold.",
+        "Request volume on any provider falls below 100 in the trailing window, at which point per-request averages stop being trustworthy."
+      ],
       "source_work_ids": [
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
@@ -315,15 +353,32 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-04"
+        "as_of": "2026-08-08"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "corpus",
-      "decision_to_change": null,
-      "success_criteria": [],
-      "falsifiers": [],
-      "evidence_gaps": [],
-      "watch_triggers": [],
+      "decision_to_change": "Whether to build, vendor, reuse, or learn from an existing implementation of a named primitive.",
+      "success_criteria": [
+        "Every candidate carries an explicit reason NOT to choose it, as the answer_shape requires — a shortlist without stated downsides is advocacy, not evaluation.",
+        "The rights gate is applied and recorded per candidate before any code is vendored or reused, not after.",
+        "Interface fit is assessed against the named context's actual call sites, not against the candidate's own documentation.",
+        "Adoption cost includes the cost of removing the candidate later, not only of adding it."
+      ],
+      "falsifiers": [
+        "A shortlist recommendation is adopted and the stated adoption cost is exceeded by more than 2x, meaning the estimate was not grounded.",
+        "Two candidates receive the same evidence grade on materially different amounts of evidence, showing the grade encodes confidence rather than evidence.",
+        "The 'best' choice changes when the context is restated slightly, indicating the ranking tracked the phrasing rather than the requirement.",
+        "A rights determination made here is later contradicted by the licence text, which would mean the gate is decorative."
+      ],
+      "evidence_gaps": [
+        "No primitive has been evaluated yet. This contract defines what an answer would have to satisfy; it does not report findings.",
+        "No rights-gate procedure has been exercised end to end on a real candidate, so its cost and failure modes are unknown."
+      ],
+      "watch_triggers": [
+        "A candidate changes licence, which can invalidate a rights determination without any code changing.",
+        "A candidate is archived or loses maintenance, changing adoption cost without changing interface fit.",
+        "The named context's call sites change, which is what interface fit was assessed against."
+      ],
       "source_work_ids": [
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
@@ -368,15 +423,33 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-04"
+        "as_of": "2026-08-08"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "corpus",
-      "decision_to_change": null,
-      "success_criteria": [],
-      "falsifiers": [],
-      "evidence_gaps": [],
-      "watch_triggers": [],
+      "decision_to_change": "Where to direct research attention and which techniques to adopt early versus wait out.",
+      "success_criteria": [
+        "Every predicted movement carries a date and a scoring rule fixed in advance, so it can later be marked right or wrong without renegotiation.",
+        "Each movement names an observed delta with the measurement window it came from, not a general impression of momentum.",
+        "Causal hypotheses are stated separately from the observations, so a correct observation with a wrong mechanism is visible as such.",
+        "Leading indicators are things that can be checked without waiting for the outcome they predict."
+      ],
+      "falsifiers": [
+        "Dated predictions, once scored, do no better than a naive 'current trends continue' baseline.",
+        "Movements are only ever identified after they are widely known, meaning the map lags rather than leads.",
+        "The observed deltas are dominated by measurement artifacts — a source changing its reporting rather than the field changing.",
+        "Confidence ratings show no correlation with which predictions later score correct, making them decorative."
+      ],
+      "evidence_gaps": [
+        "No movement map exists yet and no prediction has been made, so nothing can be scored. This contract sets the bar in advance, which is the only time it can be set honestly.",
+        "The baseline covers primary language on one curated GitHub corpus. A categories x time axis IS constructible — 55,467 repos join between momentum.sqlite (3 days) and the curated taxonomy in identity.sqlite — but it does not yet yield a signal. Measured 2026-08-04: the top category by star gain (agent-extension-pack, 2.06/repo against a 0.045 baseline) draws 92.1% of its gain from ONE repository, and only 29 repos in the whole corpus moved at all across the three days. The window is too short, not the taxonomy too weak — which is the opposite of the awesome_sections failure and needs more observation days, not a different source.",
+        "Star velocity is unusable FROM THE PEOPLE GRAPH — one distinct momentum_day (2026-07-11), star_delta null on 406,297 of 463,230 rows. CORRECTED 2026-08-04: a separate database, foundry-data/domains/github/momentum.sqlite, holds 170,062 repo_snapshot rows across THREE consecutive days (2026-07-09/10/11, ~56,687 repos each). Real deltas are computable there — 56,687 repos appear on all three days and the top mover gained 1,112 stars. So a velocity-based movement signal IS available; it was the graph that could not support it, not the machine. Three days is still a short window and the observations stop on 2026-07-11, so it cannot yet score a dated prediction."
+      ],
+      "watch_triggers": [
+        "A dated prediction reaches its date and must be scored.",
+        "A tracked source changes how it reports, which can create an apparent delta with no real movement.",
+        "A prediction is contradicted before its date, which is information that should not wait for the scoring window."
+      ],
       "source_work_ids": [
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
@@ -421,15 +494,34 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-04"
+        "as_of": "2026-08-08"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",
-      "decision_to_change": null,
-      "success_criteria": [],
-      "falsifiers": [],
-      "evidence_gaps": [],
-      "watch_triggers": [],
+      "decision_to_change": "Whether to trust a published Library number without re-deriving it, and whether an evidence path is sound enough to attach to a standing question.",
+      "success_criteria": [
+        "Freshness is derived from observable state, never asserted by whoever last touched the record. A ledger entry that says 'fresh' must be checkable against the repository.",
+        "Every number the organ publishes can be re-derived mechanically from a named source by a second program that did not produce it.",
+        "Evidence attaches to a question by reference — byte ranges into sources — rather than by copying corpora into the registry.",
+        "A delivery path that stops working becomes visible without anyone remembering to check it."
+      ],
+      "falsifiers": [
+        "A published number cannot be re-derived from its named source, and the disagreement is invisible until a human notices. This has fired repeatedly: a hyphen/underscore path typo reported 0 source inventories when 6 existed, because the builder and the checker shared the wrong path.",
+        "The freshness mechanism produces so many false positives that its output is routinely dismissed — a gate that cries wolf is worse than no gate. This fired once: hardening a verifier marked all 10 claims stale at once.",
+        "Maintaining the organ costs more attention than the decisions it improves.",
+        "The organ reports a pipeline as healthy while that pipeline has never actually run end to end. This fired on 2026-08-04: outbox/sent/ was empty — zero escalations ever delivered — while the queue was reported as merely 'queued'."
+      ],
+      "evidence_gaps": [
+        "Escalation delivery is automated but still unproven end to end: zero messages have been delivered because the peer has been offline the whole time. The drain is verified to run and no-op correctly; it has never been verified to succeed.",
+        "No independent reviewer has checked any claim. Eight claims await review, and self-review cannot satisfy the criterion that a second party can re-derive the numbers.",
+        "Push freshness into agent workflows is named in the question but unbuilt: the organ currently publishes and waits to be read rather than pushing into a loop."
+      ],
+      "watch_triggers": [
+        "A gate is added, narrowed, or disabled — each changes what the organ can detect and can silently reduce coverage.",
+        "A derivation's named source moves or is renamed, which makes file-count silently return 0 rather than error.",
+        "Any delivery or ingestion path reports success without a receipt proving the far end received something.",
+        "A published surface begins carrying a hardcoded value where it previously carried a measured one."
+      ],
       "source_work_ids": [
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
@@ -467,22 +559,42 @@
       "slug": "frontier-question-model-routing",
       "library_url": "/works/frontier-question-model-routing/",
       "question": "Which available model should own each recurring work shape after quality, reliability, tool use, latency, quota, and cost are evaluated together?",
-      "research_state": "answered",
+      "research_state": "partial",
       "lifecycle_status": "active",
       "steward": "SISO Open Source Foundation",
       "freshness": {
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-04"
+        "as_of": "2026-08-08"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",
-      "decision_to_change": null,
-      "success_criteria": [],
-      "falsifiers": [],
-      "evidence_gaps": [],
-      "watch_triggers": [],
+      "decision_to_change": "Which model owns each recurring work shape, and whether an observed cost gap justifies changing the model or fixing the gateway path it was measured through.",
+      "success_criteria": [
+        "Every cell in the routing matrix carries an evidence grade and the request volume it was derived from, so a reader can tell a measured cell from an assumed one.",
+        "Each recommendation names the work shape it applies to, not just the model — a matrix that ranks models without scenarios has not answered the question asked.",
+        "Cost and latency figures are derived from the gateway request log by a re-runnable query, never from vendor pricing pages or estimates.",
+        "The matrix distinguishes provider capability from gateway configuration, so a defect in the path is not recorded as a property of the model."
+      ],
+      "falsifiers": [
+        "A cell's recommendation, once routed to in production, is reversed on re-measurement — the model it named is not in fact best for that work shape.",
+        "Two cells derived from fewer than 100 requests each disagree with cells derived from thousands, indicating the matrix is reporting sampling noise as routing signal.",
+        "A measured cost gap between providers disappears once gateway configuration is corrected, meaning the matrix ranked a misconfiguration rather than a model. This has already partially fired: MiniMax reads 0 cached tokens through Bifrost and 2,944 of 3,033 through the local proxy.",
+        "Quality or tool-use reliability cannot be measured on this fleet at all, in which case the matrix covers only cost and latency and must say so rather than implying a complete answer."
+      ],
+      "evidence_gaps": [
+        "Quality and tool-use reliability are named in the question but unmeasured. Only cost, cache behaviour, and volume have been derived, so the matrix currently answers a narrower question than it poses.",
+        "The MiniMax cache defect is isolated but NOT FIXED: scripts/minimax-cache-route.sh is written and tested, awaiting a topology decision. Every MiniMax cost figure describes a known-broken path.",
+        "Latency is not yet extracted from the gateway log, so the 'latency' axis of the question is unevidenced.",
+        "Cached-read counts come from the gateway log; whether they match provider-side billing is unconfirmed."
+      ],
+      "watch_triggers": [
+        "Any provider's cached-read rate on the gateway log moves by more than 20 percentage points.",
+        "A model is added, removed, or re-versioned on the gateway.",
+        "Gateway topology changes — including applying scripts/minimax-cache-route.sh, which would invalidate every MiniMax cost cell.",
+        "Trailing-window volume for any provider drops below 100 requests, at which point its per-request averages stop being trustworthy."
+      ],
       "source_work_ids": [
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
@@ -527,7 +639,7 @@
         "state": "current",
         "assessed_at": "2026-08-03",
         "review_due_at": "2026-08-17",
-        "as_of": "2026-08-04"
+        "as_of": "2026-08-08"
       },
       "next_useful_work": "Stand up the operating loop on always-on hardware: a single agent whose domain is improving the Library/Foundry/people-graph system, with a public dossier surface showing data bucket counts, question states, and what it changed and when. Evidence selection must be question-driven given the measured extraction ceiling.",
       "evidence_mode": "hybrid",
@@ -876,6 +988,89 @@
         "evidence_connections": 6,
         "action_learning_links": 6,
         "serialized_program_bytes": 12227
+      }
+    },
+    {
+      "work_id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+      "question_id": "GQ-010",
+      "slug": "frontier-question-gq-010",
+      "library_url": "/works/frontier-question-gq-010/",
+      "question": "How do we increase the People Graph's research and decision value by 100× without treating row count as value or weakening identity quality, provenance, rights, privacy, reproducibility, and reversibility?",
+      "research_state": "scoped",
+      "lifecycle_status": "active",
+      "steward": "SISO Open Source Foundation",
+      "freshness": {
+        "state": "not_declared",
+        "assessed_at": null,
+        "review_due_at": null,
+        "as_of": "2026-08-08"
+      },
+      "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
+      "evidence_mode": "hybrid",
+      "decision_to_change": "Choose which source classes, identity methods, temporal and claim layers, query surfaces, and operating loops to fund, merge, revise, or kill for the next evidence-backed People Graph release.",
+      "success_criteria": [
+        "Breadth: demonstrate at least tenfold source-native observation coverage across four distinct source classes, with every promoted observation carrying source, native identifier, observed-at time, rights state, provenance, and receipt references.",
+        "Resolution quality: on a versioned stratified benchmark, auto-accepted identity links achieve at least 99.5% precision, recall and abstention are reported separately, and every accepted merge or alias remains reversible with literal evidence.",
+        "Research depth: for at least 100 prioritized people or 25 named research questions, expose a three-layer path from raw observation to cited claim to explicit adjudication, with no unsupported cross-source assertion presented as fact.",
+        "Decision value: in at least five pre-registered operator or research decisions, the graph changes the selected action or reduces evidence-retrieval time by at least 80% against a measured baseline; additional rows alone cannot satisfy this criterion.",
+        "Rights and privacy: every promoted observation has an explicit rights state, restricted or discovery-only material never appears as a public payload, and living-person data is limited to justified public or authorized evidence.",
+        "Reproducibility and cost: the accepted increment rebuilds from versioned manifests, produces comparable quality reports, and stays within a declared per-source acquisition and refresh budget."
+      ],
+      "falsifiers": [
+        "Source expansion increases rows or edges by at least tenfold but produces no measured improvement in the five decision-use cases.",
+        "Auto-accepted identity precision falls below 99.5%, accepted links cannot be reversed, or ambiguous names are silently merged.",
+        "Any promoted public record lacks a rights state, leaks restricted payloads, or exposes unjustified sensitive information about a living person.",
+        "New source pilots mostly duplicate existing low-signal entities and cannot produce replayable source-native observations with receipts.",
+        "The graph remains a collection of names and topics without cited claims, temporal context, contradiction handling, or adjudication.",
+        "Refresh and build costs exceed the declared budget without a proportional improvement in resolution, research depth, or decision value."
+      ],
+      "evidence_gaps": [
+        "There is no agreed baseline for current evidence-retrieval time, decision changes, or operator utility.",
+        "The exact People Graph source commit has not been proven as a clean reproducible build in this registry lane, and the reviewed v2 builder's schema path does not match the tracked schema location.",
+        "A versioned identity-resolution benchmark with precision, recall, abstention, collision, living-person, and historical-person strata is not yet published.",
+        "Source-specific terms, privacy, retention, and redistribution rules are incomplete for the proposed scholarly, software, AI, creator, and media pilots.",
+        "The pg-observation-0.1 interchange has not yet been exercised end to end through Foundry discovery, Evidence Engine adjudication, and canonical graph admission.",
+        "Historical references under a different GitHub owner remain a verification and migration question rather than an assumed alias."
+      ],
+      "watch_triggers": [
+        "Any identity benchmark regression, disputed auto-merge, rollback, or evidence-loss incident.",
+        "Any source terms, rights, privacy, API, rate-limit, or retention change that alters admissible observations.",
+        "A parallel source pilot publishes a replayable observation set and draft handoff.",
+        "The v3 schema, identity, query, claims, build, or integration lane publishes a compatibility contract.",
+        "The first five decision-use cases receive measured baselines and post-change outcomes.",
+        "Review at least monthly until a first Answer Release, and immediately after a material source, schema, quality, or governance change."
+      ],
+      "source_work_ids": [
+        "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+        "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+        "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+        "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+        "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_scopes": [
+        "SISO People Graph code and contract at de048bb3b34bf931b56fd741cb46c1334acdfb98",
+        "SISO Book Library code and contract at be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+        "Publication-safe outputs from the thirteen named parallel lanes and their draft handoffs",
+        "Public or authorized source observations expressed through pg-observation-0.1; raw restricted payloads remain outside the registry"
+      ],
+      "answer_shape": "A source-by-source and capability-by-capability decision matrix separating breadth, resolution quality, research depth, decision value, rights and privacy, reproducibility, and cost, with explicit fund, merge, revise, or kill recommendations and traceable evidence.",
+      "refresh_policy": "Reassess on every material lane handoff and at least monthly until a first evidenced Answer Release; afterward refresh on source-contract, rights, schema, identity-quality, cost, or decision-utility triggers.",
+      "publication_boundary": "public_metadata_only",
+      "selected_release": {
+        "id": "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787",
+        "release_kind": "question_program_metadata",
+        "version": "program-metadata-1.0.0+57320d3",
+        "released_at": "2026-08-06T22:24:00+07:00",
+        "artifact_count": 1,
+        "public_answer_state": "not_released",
+        "public_answer_note": "Not released — the selected Release contains question-program metadata, not an answer artifact."
+      },
+      "program": null,
+      "authoring_metrics": {
+        "assumptions": 0,
+        "evidence_connections": 0,
+        "action_learning_links": 0,
+        "serialized_program_bytes": 0
       }
     }
   ]
