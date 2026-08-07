@@ -35,7 +35,34 @@
         "answer_shape": { "type": "string", "minLength": 10 },
         "refresh_policy": { "type": "string", "minLength": 10 },
         "publication_boundary": { "enum": ["public_metadata_only", "public_evidence", "public_answer"] },
-        "program": { "$ref": "god-question-program.schema.json" }
+        "program": { "$ref": "god-question-program.schema.json" },
+        "state_note": { "type": "string", "minLength": 3 },
+        "baseline_reference": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rule", "from_cohort", "script", "metrics", "scope"],
+          "properties": {
+            "rule": { "type": "string", "minLength": 1 },
+            "from_cohort": { "type": "string", "minLength": 1 },
+            "script": { "type": "string", "minLength": 1 },
+            "metrics": { "type": "string", "minLength": 1 },
+            "scope": { "type": "string", "minLength": 1 }
+          }
+        },
+        "watch_trigger_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["evaluated_at"],
+          "properties": {
+            "evaluated_at": { "type": "string", "format": "date" },
+            "1": { "type": "string", "minLength": 3 },
+            "2": { "type": "string", "minLength": 3 },
+            "3": { "type": "string", "minLength": 3 },
+            "4": { "type": "string", "minLength": 3 },
+            "5": { "type": "string", "minLength": 3 },
+            "note": { "type": "string", "minLength": 3 }
+          }
+        }
       }
     },
     "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/evidence" } }

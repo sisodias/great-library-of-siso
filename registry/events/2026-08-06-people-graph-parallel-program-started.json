@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:f7dbd510-879c-405b-9cac-58d3dd598501",
+  "occurred_at": "2026-08-06T22:24:00+07:00",
+  "recorded_at": "2026-08-06T22:24:00+07:00",
+  "immutable": true,
+  "entry_type": "initiative_started",
+  "thread": {
+    "id": "gls:thread:people-graph-parallel-expansion",
+    "name": "People Graph 100× parallel expansion",
+    "kind": "research"
+  },
+  "status": "active",
+  "title": "People Graph 100× thirteen-lane parallel program started",
+  "summary": "The Great Library registered the People Graph and Book Library as independent Research Works, accepted the ownership and data-plane boundary, scoped GQ-010, and launched thirteen simultaneous current-main lanes with exclusive path zones and draft-PR handoffs.",
+  "intent": "Increase the People Graph's research and decision value by 100× through independent no-wait lanes while keeping public lineage, canonical-service governance, source discovery, evidence adjudication, mutable data, rights, privacy, and repository ownership explicit.",
+  "reasoning": [
+    "The source systems are already independently addressable, so stable Work and Release identity should precede schema or database convergence.",
+    "Parallel lanes can explore ontology, identity, builds, queries, sources, claims, and integration faster when they exchange explicit observations and draft handoffs instead of waiting on one master implementation.",
+    "Starting every lane from current main and reserving exclusive paths reduces hidden branch coupling and makes merge conflicts an explicit integration concern.",
+    "A single initiative Event gives cold agents one public launch manifest without turning the Great Library into the mutable graph database or source-control coordinator.",
+    "GQ-010 supplies measurable kill criteria so tenfold or hundredfold data growth cannot pass without identity quality, research depth, decision value, rights, reproducibility, and cost evidence."
+  ],
+  "changes": [
+    {
+      "kind": "coordination",
+      "reference": "branch:gls/people-graph-parallel-spine-20260806",
+      "summary": "Lane 1 — Great Library registry and public program. Starts from current main, does not wait on other lanes, writes only new People Graph and Book Library Works and Releases; ADR-0005; program Event; GQ-010 seed and program Releases; V37; `CURRENT_STATE.md`; `docs/people-graph-program/**`; generated `site/`; `schemas/work.schema.json`; `scripts/check-site.mjs`; and only other relevant generator or check changes, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:pg/red-team-fixtures-20260806",
+      "summary": "Lane 2 — People Graph red-team fixtures. Starts from current main, does not wait on other lanes, writes only `tests/red_team/**`; `docs/audits/**`; `docs/handoffs/red-team.md`; `tests/red_team/run.py`, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:pg/v3-ontology-schema-20260806",
+      "summary": "Lane 3 — v3 ontology and schema. Starts from current main, does not wait on other lanes, writes only `schema/v3/**`; `docs/architecture/**`; `tests/schema_v3/**`; `docs/handoffs/schema-v3.md`, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:pg/identity-resolution-parallel-20260806",
+      "summary": "Lane 4 — Identity resolution. Starts from current main, does not wait on other lanes, writes only `identity_v3/**`; `loaders/match_identities.py`; `loaders/enrich_owners.py`; `tests/identity_v3/**`; `docs/handoffs/identity-resolution.md`, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:pg/reproducible-builds-parallel-20260806",
+      "summary": "Lane 5 — Reproducible builds. Starts from current main, does not wait on other lanes, writes only `build_v3/**`; `manifests/**`; `loaders/build_people_graph_v2.py`; `loaders/load_owner_topics.py`; `loaders/load_owners_into_people_graph.py`; `tests/build_v3/**`; build-specific `.github/workflows/**`; `docs/handoffs/reproducible-builds.md`, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:pg/query-surface-parallel-20260806",
+      "summary": "Lane 6 — Query, API, MCP, and explorer. Starts from current main, does not wait on other lanes, writes only `query_v3/**`; `api/**`; `mcp/**`; `viewer/**`; `loaders/ask.py`; `tests/query_v3/**`; `docs/handoffs/query-surface.md`, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:books/integrity-export-parallel-20260806",
+      "summary": "Lane 7 — Book Library integrity and export. Starts from current main, does not wait on other lanes, writes only in the Book Library: `scripts/**`; `index/**`; new `tests/**`; `manifests/**`; `docs/**`; `.github/workflows/**`, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:gls/people-graph-source-research-20260806",
+      "summary": "Lane 8 — Source research. Starts from current main, does not wait on other lanes, writes only `research/people-graph-sources/**`, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:pg/scholarly-authority-pilot-20260806",
+      "summary": "Lane 9 — Scholarly authority pilot. Starts from current main, does not wait on other lanes, writes only `sources/scholarly/**`; `tests/sources_scholarly/**`; `docs/source-methods/scholarly/**`; `docs/handoffs/scholarly-pilot.md`, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:pg/software-ai-pilot-20260806",
+      "summary": "Lane 10 — Software and AI pilot. Starts from current main, does not wait on other lanes, writes only `sources/software/**`; `sources/ai/**`; `tests/sources_software_ai/**`; `docs/source-methods/software-ai/**`; `docs/handoffs/software-ai-pilot.md`, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:pg/living-creators-media-pilot-20260806",
+      "summary": "Lane 11 — Living creators and media pilot. Starts from current main, does not wait on other lanes, writes only `sources/creators/**`; `sources/media/**`; `tests/sources_creators_media/**`; `docs/source-methods/living-creators/**`; `docs/handoffs/living-creators-pilot.md`, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:pg/claims-temporal-relations-20260806",
+      "summary": "Lane 12 — Claims, temporal model, and projections. Starts from current main, does not wait on other lanes, writes only `claims/**`; `projections/**`; `tests/claims/**`; `docs/reasoning/**`; `docs/handoffs/claims-relations.md`, opens a draft PR early, and publishes the required handoff."
+    },
+    {
+      "kind": "coordination",
+      "reference": "branch:pg/parallel-integration-contract-20260806",
+      "summary": "Lane 13 — Parallel integration contract. Starts from current main, does not wait on other lanes, writes only `integration/**`; `tests/integration_parallel/**`; `docs/integration/**`; `docs/handoffs/integration-contract.md`, opens a draft PR early, and publishes the required handoff."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+      "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+      "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+      "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be"
+    ],
+    "release_ids": [
+      "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e",
+      "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec",
+      "gls:release:3de55ee0-ec67-433a-b061-5bebabf0cb4e",
+      "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787"
+    ],
+    "snapshot_ids": [
+      "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9"
+    ],
+    "decision_ids": [
+      "gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso",
+      "https://github.com/sisodias/siso-people-graph",
+      "https://github.com/sisodias/siso-book-library"
+    ]
+  },
+  "coordination": {
+    "owner": "Great Library People Graph registry lane",
+    "branch": "gls/people-graph-parallel-spine-20260806",
+    "reserved_paths": [
+      "registry/works/siso-people-graph.json",
+      "registry/works/siso-book-library.json",
+      "registry/works/frontier-question-gq-010.json",
+      "registry/releases/siso-people-graph-de048bb.json",
+      "registry/releases/siso-book-library-be9ab08.json",
+      "registry/releases/frontier-question-gq-010-seed.json",
+      "registry/releases/frontier-question-gq-010-program-v1.json",
+      "registry/decisions/adr-0005-people-graph-ownership-and-data-plane.json",
+      "registry/events/2026-08-06-people-graph-parallel-program-started.json",
+      "registry/snapshots/whole-library-v37.json",
+      "schemas/work.schema.json",
+      "scripts/check-site.mjs",
+      "docs/people-graph-program/",
+      "CURRENT_STATE.md",
+      "site/"
+    ]
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+      "observed_at": "2026-08-06",
+      "summary": "The exact People Graph source and data-contract revision was reviewed read-only before registration."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+      "observed_at": "2026-08-06",
+      "summary": "The exact Book Library source and data-contract revision was reviewed read-only before registration."
+    },
+    {
+      "kind": "documentation",
+      "reference": "docs/people-graph-program/parallel-lanes.md",
+      "observed_at": "2026-08-06",
+      "summary": "The authored manifest lists all thirteen lanes, branches, exclusive path zones, simultaneous start rule, no-wait rule, current-main rule, and draft-handoff requirement."
+    },
+    {
+      "kind": "documentation",
+      "reference": "registry:decision:ADR-0005",
+      "observed_at": "2026-08-06",
+      "summary": "The accepted ownership decision assigns public identity, canonical-service governance, discovery, adjudication, and external data-plane responsibilities."
+    }
+  ],
+  "next_actions": [
+    "Start all thirteen branches from the current main of their owning repository without waiting for another lane.",
+    "Open draft PRs early and publish the required handoff fields even when a dependency remains an assumption or proposed interface.",
+    "Use pg-observation-0.1 or a documented compatible successor for cross-lane source observations.",
+    "Keep source repositories read-only from the Great Library registry lane and keep each source lane inside its exclusive path zone.",
+    "Review all draft handoffs before choosing a production schema, database migration, identity policy, or source-promotion plan.",
+    "Record a successor Event rather than editing this immutable launch Event when the initiative changes state."
+  ]
+}

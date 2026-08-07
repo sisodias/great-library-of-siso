@@ -84,7 +84,7 @@ function publicProjectionReferenceProblem(value, depth = 0) {
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "research.json", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/god-questions-infrastructure.html", "docs/estate-reconciliation.html", "docs/foundry-agency-intelligence.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "estate/index.html", "estate.json"]) {
+for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "research.json", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/god-questions-infrastructure.html", "docs/estate-reconciliation.html", "docs/foundry-agency-intelligence.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "estate/index.html", "estate.json", "works/siso-people-graph/index.html", "works/siso-book-library/index.html", "works/frontier-question-gq-010/index.html"]) {
   if (!await exists(path.join(root, required))) errors.push(`missing required page: ${required}`);
 }
 
@@ -111,9 +111,10 @@ for (const marker of ["No product owner assigned", "Evidence owner Works"]) {
 }
 
 const intelligence = JSON.parse(await readFile(path.join(root, "intelligence.json"), "utf8"));
-if (intelligence.counts?.decisions < 4) errors.push("intelligence.json: expected the four foundational ADRs");
+if (intelligence.counts?.decisions < 5) errors.push("intelligence.json: expected the five accepted ADRs through ADR-0005");
 if (intelligence.counts?.events < 5) errors.push("intelligence.json: expected the seeded ecosystem events");
 if (!intelligence.decisions?.some((decision) => decision.decision_key === "ADR-0004")) errors.push("intelligence.json: missing ADR-0004");
+if (!intelligence.decisions?.some((decision) => decision.id === "gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8" && decision.decision_key === "ADR-0005")) errors.push("intelligence.json: missing ADR-0005 People Graph ownership boundary");
 if (!intelligence.events?.some((event) => event.scope?.snapshot_ids?.includes("gls:snapshot:73ee0c53-7e65-4c1c-9fe8-c990607ebf89"))) errors.push("intelligence.json: Whole Library V24 is not connected to an authored event");
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "24.0.0")) errors.push("intelligence.json: automatic registry changelog is missing V24");
 if (!intelligence.events?.some((event) => event.id === "gls:event:9c8e46f9-0a2a-4396-bda1-f2a3967c2cb9" && event.status === "completed" && event.scope?.snapshot_ids?.includes("gls:snapshot:a7a99ae1-a2e2-4e44-8fb3-c0235a35023b"))) errors.push("intelligence.json: God Questions infrastructure completion lineage is missing");
@@ -124,10 +125,13 @@ if (!intelligence.events?.some((event) => event.id === "gls:event:3f79b614-bd24-
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "34.0.0" && change.id === "gls:snapshot:3c7cb166-8056-48c8-948f-f9cf16d8d69b")) errors.push("intelligence.json: automatic registry changelog is missing V34");
 if (!intelligence.events?.some((event) => event.id === "gls:event:4d237823-29e9-4dc1-bcc4-0ebd952ab2b2" && event.status === "completed" && event.predecessor_event_id === "gls:event:3f79b614-bd24-4b14-89dd-6e822ffc1720" && event.scope?.snapshot_ids?.includes("gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a"))) errors.push("intelligence.json: Foundry Agency value-matrix completion lineage is missing");
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "35.0.0" && change.id === "gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a")) errors.push("intelligence.json: automatic registry changelog is missing V35");
-if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 75) errors.push("intelligence.json: expected 75 immutable Releases at V36 closeout");
-if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 36) errors.push("intelligence.json: expected 36 immutable Snapshots at V36 closeout");
-if (intelligence.counts?.events !== 28 || intelligence.counts?.active_initiatives !== 0) errors.push("intelligence.json: expected 28 Events and zero active initiatives after Foundry Agency coverage closeout");
+if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "37.0.0" && change.id === "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9")) errors.push("intelligence.json: automatic registry changelog is missing V37");
+if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 79) errors.push("intelligence.json: expected 79 immutable Releases at V37 program launch");
+if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 37) errors.push("intelligence.json: expected 37 immutable Snapshots at V37 program launch");
+if (intelligence.counts?.events !== 32 || intelligence.counts?.active_initiatives !== 4) errors.push("intelligence.json: expected 32 Events and four active initiatives (People Graph, UNSOLVEABLE mathematics, remote viewing, declassified records)");
 if (intelligence.active_initiatives?.some((initiative) => initiative.thread_id === "gls:thread:foundry-agency-intelligence")) errors.push("intelligence.json: completed Foundry Agency intelligence initiative remains active");
+if (!intelligence.active_initiatives?.some((initiative) => initiative.thread_id === "gls:thread:people-graph-parallel-expansion")) errors.push("intelligence.json: People Graph parallel initiative is not projected as active");
+if (!intelligence.events?.some((event) => event.id === "gls:event:f7dbd510-879c-405b-9cac-58d3dd598501" && event.status === "active" && event.scope?.snapshot_ids?.includes("gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9") && event.scope?.decision_ids?.includes("gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8"))) errors.push("intelligence.json: People Graph launch Event is missing its V37 and ADR-0005 lineage");
 
 const frontierQuestions = [
   ["GQ-001", "frontier-question-agent-workspace"],
@@ -137,6 +141,7 @@ const frontierQuestions = [
   ["GQ-006", "frontier-question-information-organ"],
   ["GQ-008", "frontier-question-model-routing"],
   ["GQ-009", "frontier-question-god-questions-infrastructure"],
+  ["GQ-010", "frontier-question-gq-010"],
 ];
 const researchIndex = await readFile(path.join(root, "research/index.html"), "utf8");
 const researchProjection = JSON.parse(await readFile(path.join(root, "research.json"), "utf8"));
@@ -146,20 +151,22 @@ if (!researchIndex.includes("/research.json")) errors.push("research/index.html:
 if (!researchIndex.includes("Program substrate.</b> 3 questions · 7 assumptions · 10 evidence connections · 8 action/learning links.")) errors.push("research/index.html: missing program substrate coverage");
 if (!researchIndex.includes("versioned-answer contracts. Metadata seed Releases are not accepted answers.")) errors.push("research/index.html: answer maturity boundary is missing");
 if (researchIndex.includes("explicit evidence scopes, and versioned answers.")) errors.push("research/index.html: metadata seeds are overstated as accepted versioned answers");
-for (const [field, expected] of Object.entries({ questions: 7, programmed_questions: 3, assumptions: 7, evidence_connections: 10, challenge_edges: 2, action_learning_links: 8, public_answers_released: 0 })) {
+for (const [field, expected] of Object.entries({ questions: 8, programmed_questions: 3, assumptions: 7, evidence_connections: 10, challenge_edges: 2, action_learning_links: 8, public_answers_released: 0 })) {
   if (researchProjection.counts?.[field] !== expected) errors.push(`research.json: expected ${field}=${expected}, found ${researchProjection.counts?.[field]}`);
 }
-if (researchProjection.snapshot_version !== "36.0.0" || researchProjection.snapshot_id !== "gls:snapshot:8d4f2a91-7c53-4e6b-a0d8-1f92b6c4e8a7") errors.push("research.json: must identify the selected V36 Foundry Agency coverage snapshot");
+if (researchProjection.snapshot_version !== "37.0.0" || researchProjection.snapshot_id !== "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9") errors.push("research.json: must identify the selected V37 People Graph program snapshot");
 for (const [questionId, state, assumptions, evidence, links] of [
   ["GQ-001", "partial", 2, 2, 1],
-  ["GQ-002", "answered", 2, 2, 1],
+  ["GQ-002", "partial", 2, 2, 1],
   ["GQ-009", "researching", 3, 6, 6],
+  ["GQ-010", "scoped", 0, 0, 0],
 ]) {
   const question = researchProjection.questions?.find((entry) => entry.question_id === questionId);
   if (!question) { errors.push(`research.json: missing ${questionId}`); continue; }
   if (question.research_state !== state) errors.push(`research.json: ${questionId} research state changed from ${state}`);
   if (question.selected_release?.release_kind !== "question_program_metadata" || question.selected_release?.public_answer_state !== "not_released" || question.selected_release?.artifact_count !== 1) errors.push(`research.json: ${questionId} program metadata Release is missing or inflated into a public answer`);
   if (questionId === "GQ-009" && question.selected_release?.id !== "gls:release:df8a236d-b092-4d51-9e17-d1016671db64") errors.push("research.json: GQ-009 estate reconciliation program Release is not selected");
+  if (questionId === "GQ-010" && question.selected_release?.id !== "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787") errors.push("research.json: GQ-010 People Graph program Release is not selected");
   if (question.authoring_metrics?.assumptions !== assumptions || question.authoring_metrics?.evidence_connections !== evidence || question.authoring_metrics?.action_learning_links !== links) errors.push(`research.json: ${questionId} program fixture counts changed unexpectedly`);
 }
 for (const question of researchProjection.questions ?? []) {

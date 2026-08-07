@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "decision",
+  "id": "gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8",
+  "decision_key": "ADR-0005",
+  "title": "Separate People Graph identity, canonical-service governance, and the external data plane",
+  "status": "accepted",
+  "decided_at": "2026-08-06T22:24:00+07:00",
+  "immutable": true,
+  "context": "The People Graph and Book Library are independently addressable repositories with their own source and data contracts, while the existing Research architecture assigns durable graphs and indexes to SISO Knowledge and the source repositories describe themselves as Foundry domains. The program needs one explicit ownership model before parallel schema, build, identity, source, claims, and integration lanes can hand work across boundaries without creating competing canonical systems.",
+  "decision": "Register SISO People Graph and SISO Book Library as independent Research Works. The Great Library owns their stable public identity, lineage, Decisions, Events, Releases, Snapshots, and reading surface. SISO Knowledge owns canonical-service governance for durable graph and index semantics but does not absorb either repository or their mutable databases. Foundry discovers and evaluates source universes and emits source observations; it is not canonical identity or claim truth. Evidence Engines transform and adjudicate source-grounded observations before canonical admission. Mutable databases, raw and restricted source snapshots, payload archives, private receipts, and machine-specific locators remain an external governed data plane.",
+  "rationale": [
+    "Independent Work identity preserves repository-specific release, security, rights, compatibility, and rollback boundaries.",
+    "A Great Library control plane can describe public identity and lineage without becoming a database, source mirror, or runtime.",
+    "Canonical-service governance belongs with the durable Knowledge architecture, but repository absorption would erase independently useful source and export contracts.",
+    "Foundry's discovery and evaluation role is valuable precisely because it can remain separate from canonical truth and admit uncertainty.",
+    "Evidence Engines provide the explicit transformation and adjudication seam needed to keep source observations from becoming silent facts or identity merges.",
+    "The split lets all thirteen lanes start from current main and exchange versioned observations and handoffs without waiting for a monolithic schema or database."
+  ],
+  "alternatives": [
+    {
+      "option": "Treat the People Graph and Book Library as internal Foundry modules",
+      "disposition": "rejected",
+      "reason": "That would make a discovery and evaluation system the implicit canonical owner and would hide independent release, rights, and compatibility boundaries."
+    },
+    {
+      "option": "Move both repositories and their databases inside SISO Knowledge",
+      "disposition": "rejected",
+      "reason": "Knowledge should govern canonical-service semantics, but physical absorption would couple source-specific builders, payloads, and security lifecycles to the durable corpus repository."
+    },
+    {
+      "option": "Store the graph database, source snapshots, and payloads in the Great Library",
+      "disposition": "rejected",
+      "reason": "The Great Library is the public identity and lineage control plane; mutable or restricted data would violate its publication and portability boundary."
+    },
+    {
+      "option": "Keep independent Works with explicit governance and interchange seams",
+      "disposition": "chosen",
+      "reason": "It preserves independent addressability while making canonical governance, discovery, transformation, adjudication, and data ownership mechanically visible."
+    }
+  ],
+  "consequences": {
+    "positive": [
+      "People Graph and Book Library receive stable Work and Release lineage without overstating production readiness.",
+      "Parallel lanes can exchange pg-observation-0.1 envelopes and draft handoffs instead of coupling directly to one mutable database.",
+      "Canonical claims, identity changes, and public distribution states require explicit evidence and adjudication.",
+      "Large or restricted data remains outside the public registry while its manifests and receipts can still be referenced safely."
+    ],
+    "negative": [
+      "Cross-repository integration now requires versioned schemas, source receipts, compatibility seams, and explicit promotion gates.",
+      "Existing source prose that calls these repositories Foundry domains remains a bounded ownership clarification task for source-owning lanes.",
+      "The current Work records cannot by themselves prove clean builds, current databases, payload availability, or production operation."
+    ],
+    "follow_ups": [
+      "Exercise pg-observation-0.1 through at least one source pilot, Evidence Engine adjudication, and canonical admission path.",
+      "Publish source-specific rights, privacy, refresh, and retention rules before promoting observations.",
+      "Resolve historical repository-owner references through evidence rather than global replacement.",
+      "Use GQ-010 to measure breadth, identity resolution, research depth, decision value, rights, reproducibility, and cost separately.",
+      "Close the active program Event with successor evidence when the thirteen draft handoffs have been reviewed."
+    ]
+  },
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+      "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+      "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+      "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso",
+      "https://github.com/sisodias/siso-people-graph",
+      "https://github.com/sisodias/siso-book-library"
+    ]
+  },
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+      "observed_at": "2026-08-06",
+      "summary": "The People Graph has an independently addressable schema, loader, identity, enrichment, and query surface."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+      "observed_at": "2026-08-06",
+      "summary": "The Book Library has independently addressable metadata, people, locator, quality, and export contracts."
+    },
+    {
+      "kind": "documentation",
+      "reference": "docs/siso-knowledge-model.html",
+      "observed_at": "2026-08-06",
+      "summary": "The existing Research architecture assigns durable corpus, graph, and index responsibility to SISO Knowledge while preserving separate Research Works."
+    },
+    {
+      "kind": "documentation",
+      "reference": "user-intent:people-graph-parallel-program:2026-08-06",
+      "observed_at": "2026-08-06",
+      "summary": "The requested program requires explicit Great Library, Knowledge, Foundry, Evidence Engine, and external data-plane boundaries before parallel expansion."
+    }
+  ]
+}
