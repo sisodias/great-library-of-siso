@@ -13,7 +13,7 @@
   "dependencies": [],
   "spec": {
     "description": "GQ-010 has no baseline, so nothing downstream of it is measurable. This is TIME-CRITICAL in a way the other tasks are not: once the merges land, today's graph is gone and the before-picture cannot be reconstructed.",
-    "context": "Pre-register 5 real decisions and time them against TODAY's graph before any merge changes it. Pre-registration must be frozen before the first measurement, and the module's own experimental-method.md makes the point that a Git commit should not replace an external preregistration - timestamp it somewhere not controlled by the analyst. Without this, any later claim that the work improved retrieval or decision quality is unfalsifiable.",
+    "context": "Pre-register 5 real decisions and time them against TODAY's graph before any merge changes it. Pre-registration must be frozen before the first measurement, and the module's own experimental-method.md makes the point that a Git commit should not replace an external preregistration - timestamp it somewhere not controlled by the analyst. Without this, any later claim that the work improved retrieval or decision quality is unfalsifiable. BASELINE NOW EXISTS: PG-BASELINE captured it 2026-08-07 against the shipped asset before any consolidation PR was merged -- see consolidation-source/GQ-010-BASELINE.html. It records the five pre-registered decisions (written before any query ran), the 0-of-6 criterion score, and F3/F5 already firing. REMAINING WORK: the baseline explicitly states it could NOT measure human evidence-retrieval time, only sub-second machine latency, and warns that any future '80% faster' claim must time the analyst loop rather than sqlite3 wall-clock. That measurement is still owed.",
     "acceptance_criteria": [
       "5 decisions pre-registered with their measurement protocol frozen before the first timing",
       "Timings recorded against the pre-merge graph",
@@ -26,6 +26,12 @@
       "action": "seeded",
       "by": "GLS-CONSOLIDATION",
       "notes": "Seeded from the 2026-08-07 estate consolidation. Durable rationale in .agents/tasks/consolidation-source/."
+    },
+    {
+      "timestamp": "2026-08-07T00:00:00Z",
+      "action": "partially_satisfied",
+      "by": "GLS-CONSOLIDATION",
+      "notes": "Structural and decision baseline captured by PG-BASELINE before any merge. Analyst-loop timing still outstanding."
     }
   ]
 }
