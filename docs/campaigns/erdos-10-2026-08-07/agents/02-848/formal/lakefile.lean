@@ -12,4 +12,5 @@ require mathlib from git
 
 @[default_target]
 lean_lib Erdos848 where
-  globs := #[.submodules `Erdos848]
+  roots := #[`Erdos848, `ErdosBanger848]
+  globs := #[.submodules `Erdos848, .one `ErdosBanger848]
