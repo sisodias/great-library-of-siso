@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "algorithm": "git-blob-sha1",
+  "observed_at": "2026-08-06T23:03:01+07:00",
+  "branch": "agent/people-graph-audit-record-20260806",
+  "files": {
+    "HANDOFF.md": {
+      "git_blob_sha1": "fcf6223b7a19ad1fb4da0d376d15283821aeace1"
+    },
+    "README.md": {
+      "git_blob_sha1": "b96b0b7505cfddb904df5c3ea9c61cc12c37035a"
+    },
+    "complete-decision-record.md": {
+      "git_blob_sha1": "8c09591847763a80040a6f46ae944e8035fa830e"
+    },
+    "findings.json": {
+      "git_blob_sha1": "c6a88ee8b95e96e3ef3398a4e53eae2132272307"
+    },
+    "prompt-evolution.md": {
+      "git_blob_sha1": "22f4977401419372b9de1d70368319d02687ada1"
+    },
+    "prompts/dependency-ordered-superseded.md": {
+      "git_blob_sha1": "91b909baa06265c4ab29a5e8d23aba9092a7df39"
+    },
+    "prompts/parallel-slam.md": {
+      "git_blob_sha1": "b8e431b53443ef66bd0954986b8a02d11f7168f0"
+    },
+    "source-receipts.json": {
+      "git_blob_sha1": "5f0ba1c38096bc04ca8eda2b3703bce4ed565776"
+    },
+    "source-receipts.md": {
+      "git_blob_sha1": "5f3fbd2a0659a4b3e7447c79f5721bed6fa46255"
+    },
+    "swarm-status-2026-08-06.json": {
+      "git_blob_sha1": "494d9e2f46e248261f9fe84b9a2d5c06b9fdac89"
+    },
+    "swarm-status-2026-08-06.md": {
+      "git_blob_sha1": "b528ba88c615a33977c7eae85df31f19cd2f4c3b"
+    },
+    "verify_record.py": {
+      "git_blob_sha1": "91f932b276df4a0119c737ef378e83bf62bf1b83"
+    }
+  }
+}
