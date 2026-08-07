@@ -23,12 +23,12 @@
         "url": "https://github.com/sisodias/siso-people-graph",
         "revision": "main",
         "visibility": "public",
-        "verified": true,
+        "verified": false,
         "evidence": {
           "kind": "integration_check",
           "reference": "github-api:sisodias/siso-people-graph:releases/graph-v2",
-          "observed_at": "2026-08-04",
-          "summary": "The repository holds the schema and loaders in git while the graph itself ships as a release asset. Release graph-v2 was downloaded to a clean directory, decompressed and queried: person=339217, person_person=1272495, organisation=1131. The preceding graph-v1 verified the same way at person=280708. The publication chain works end to end without access to the machine that builds it."
+          "observed_at": "2026-08-07",
+          "summary": "The repository holds the schema and loaders in git while the graph itself ships as a release asset. Release graph-v2 was downloaded to a clean directory, decompressed and queried on 2026-08-04, reporting person=339217, person_person=1272495, organisation=1131; the preceding graph-v1 reported person=280708 the same way. These counts are recorded as repository-asserted and have NOT been independently re-counted. No query log, receipt or other reproducible artifact for the 2026-08-04 query survives anywhere in the source repository, and two subsequent independent audits were each unable to reach the data: the v2 red team states 'No production SQLite assets were opened. Dataset-wide counts and collision rates are therefore not claimed', and the first-principles audit states 'Published row counts are therefore treated as repository claims, not independently re-counted observations' because its connector 'did not expose arbitrary SQL execution against the published 688 MB graph release asset'. What this entry verifies is addressability and that the publication chain resolves end to end -- not the magnitudes, and not that the counts denote distinct humans."
         }
       }
     ],
@@ -65,8 +65,8 @@
     {
       "kind": "integration_check",
       "reference": "local:people_graph_v2.sqlite:counts-2026-08-04",
-      "observed_at": "2026-08-04",
-      "summary": "The published graph-v2 asset was retrieved from a clean directory and independently queried rather than trusted: 339,217 people, 901,524 person-to-work edges, 1,272,495 person-to-person edges, 1,131 organisations and 442,499 external identities across five domains. The preceding graph-v1 verified the same way at 280,708 people with no relational layer at all."
+      "observed_at": "2026-08-07",
+      "summary": "The published graph-v2 asset was retrieved to a clean directory and queried on 2026-08-04, reporting 339,217 people, 901,524 person-to-work edges, 1,272,495 person-to-person edges, 1,131 organisations and 442,499 external identities across five domains; graph-v1 reported 280,708 people with no relational layer. CORRECTION 2026-08-07: this is a single unreplicated observation, recorded as a repository claim rather than a verified measurement. The figures survive only as this prose summary -- the value 339217 appears in no file on any branch of siso-people-graph, so no query log or receipt backs it. Neither of the two independent audits could re-count them (red team: 'No production SQLite assets were opened. Dataset-wide counts and collision rates are therefore not claimed'; first-principles: 'Published row counts are therefore treated as repository claims, not independently re-counted observations'). Separately, red-team findings PGRT-002/003/009/016 establish that person rows are not defensible as distinct-human counts under name fusion, 0.98 attribute auto-accept and CJK label collapse. Re-counting against the release asset, with the query recorded as a receipt, is required before any of these magnitudes is cited as verified."
     },
     {
       "kind": "integration_check",
