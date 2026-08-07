@@ -1,7 +1,7 @@
 import Lake
 open Lake DSL
 
-package erdos848exact where
+package erdos where
   leanOptions := #[
     ⟨`autoImplicit, false⟩,
     ⟨`pp.unicode.fun, true⟩,
