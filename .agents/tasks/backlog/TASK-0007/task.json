@@ -1,0 +1,28 @@
+{
+  "id": "TASK-0007",
+  "title": "Resolve the remote-viewing Event lifecycle conflict blocking GL PR #7",
+  "status": "backlog",
+  "priority": "high",
+  "domain": "registry",
+  "category": "data-integrity",
+  "created_at": "2026-08-07T17:45:00Z",
+  "created_by": "FOLD-IN",
+  "verified": true,
+  "target_agent": "",
+  "dependencies": [],
+  "evidence": "GL PR #7 carries two registry Events that exist in NO other repository -- not in siso-stargate-library, not on GL main: 2026-08-07-remote-viewing-research-completed.json (gls:event:ff89dfcd) and -expanded.json (gls:event:f0ace343). Its 18 research files ARE byte-identical (sha256, 18/18) in siso-stargate-library, so only the Events are unique. Adding both to a branch off current main fails npm run verify in two different ways: (1) validate.mjs:505 -- entry_type initiative_updated cannot use status completed; (2) changing status to active instead fails with 'event thread gls:thread:remote-viewing-research-module: terminal status completed cannot transition to active'. Neither legal value works.",
+  "spec": {
+    "description": "Root cause is chronological inversion: -expanded occurred_at 2026-08-07T02:36:02+07:00, 63 minutes AFTER -completed at 01:33:32+07:00. The thread was closed, then substantively expanded (12 more sources, 9 more graded claims), and never re-opened or re-closed. The records describe what actually happened; the lifecycle model has no legal encoding for it as written. Authored on an isolated branch, never validated against GL's schema, which is why it never merged.",
+    "context": "Deliberately NOT resolved automatically during the estate fold-in pass. Each option encodes a different claim about history, and authoring a new immutable Event asserting a lifecycle nobody signed off on is a judgement call, not a merge fix. npm run verify is fully green on main at 8faa97b -- this is the only thing between PR #7 and a merge.",
+    "options": [
+      "Re-time the pair if -completed was in fact recorded last (the timestamps may simply be wrong).",
+      "Change -expanded to entry_type initiative_resumed with status active (legal per validate.mjs:507) and add a SUCCESSOR completion Event closing the thread after the expansion. Most faithful to the record and consistent with the Library's own rule that corrections happen through successors.",
+      "Merge -expanded's substance into -completed as a single completion covering both rounds."
+    ],
+    "acceptance": [
+      "npm run verify green on main with both Events present",
+      "no immutable record edited in place -- corrections made via successor records only",
+      "GL PR #7 merged or closed with the outcome recorded in the PR"
+    ]
+  }
+}

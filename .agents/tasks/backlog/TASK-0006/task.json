@@ -1,14 +1,14 @@
 {
   "id": "TASK-0006",
   "title": "Register the three split repositories as Works",
-  "status": "backlog",
+  "status": "done",
   "priority": "medium",
   "domain": "lifecycle",
   "category": "infrastructure",
   "created_at": "2026-08-07T00:00:00Z",
   "created_by": "GLS-CONSOLIDATION",
   "evidence": "Branch gls/register-split-repos-20260807 at commit 77fefe3. npm run validate PASS at 31 Works.",
-  "verified": false,
+  "verified": true,
   "target_agent": "",
   "dependencies": [],
   "spec": {
@@ -25,5 +25,7 @@
       "by": "GLS-CONSOLIDATION",
       "notes": "Seeded from the 2026-08-07 estate consolidation. Durable rationale in .agents/tasks/consolidation-source/."
     }
-  ]
+  ],
+  "completed_at": "2026-08-07T17:45:00Z",
+  "completion_evidence": "Merged branch gls/register-split-repos-20260807 to main (8faa97b). Registry now holds 32 Works including siso-stargate-library, siso-declassified-records and siso-unsolveable-mathematics, plus the declassified corpus as a 7th Source Inventory. Required resolving a genuine add/add conflict on registry/works/siso-people-graph.json and siso-book-library.json: both sides created these Works independently with different UUIDs. Kept the spine's records (4 relationships wired to ADR-0005 and the merged Decisions, vs 1 on the branch, whose locators cite the dead Lordsisodia org and whose targets lost the add/add), then ported all 8 evidence entries unique to the branch onto them keyed by (kind, reference). npm run verify green on a fresh clone; CI green on 8faa97b."
 }

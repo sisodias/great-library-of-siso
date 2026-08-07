@@ -1,14 +1,14 @@
 {
   "id": "TASK-0001",
   "title": "Merge the People Graph control-plane spine",
-  "status": "backlog",
+  "status": "done",
   "priority": "high",
   "domain": "lifecycle",
   "category": "infrastructure",
   "created_at": "2026-08-07T00:00:00Z",
   "created_by": "GLS-CONSOLIDATION",
   "evidence": "Branch gls/people-graph-parallel-spine-20260806, 26 commits. Additive schema only; modifies no immutable record.",
-  "verified": false,
+  "verified": true,
   "target_agent": "",
   "dependencies": [],
   "spec": {
@@ -27,5 +27,7 @@
       "by": "GLS-CONSOLIDATION",
       "notes": "Seeded from the 2026-08-07 estate consolidation. Durable rationale in .agents/tasks/consolidation-source/."
     }
-  ]
+  ],
+  "completed_at": "2026-08-07T17:45:00Z",
+  "completion_evidence": "PR #1 merged: main b54fe2e -> 08f5275. npm run verify fully green on a fresh clone. ROOT CAUSE of the pre-merge UNSTABLE CI, which was NOT a rewrite: check:immutable two-dot-diffs the branch against origin/main, so the three Events main gained AFTER this branch forked read as deletions from the branch. Proven with `git merge-base --is-ancestor` -- the commit adding 2026-08-06-unsolveable-mathematics-program-started.json is not an ancestor of the branch. Merging main resolved it. One real follow-on fix was required (commit 2118817): the V37 launch assertion in scripts/check-site.mjs pinned counts.events===29 and active_initiatives===1; the merged registry holds 32 Events and 4 active initiatives. Updated to the merged truth, still pinning exact numbers."
 }

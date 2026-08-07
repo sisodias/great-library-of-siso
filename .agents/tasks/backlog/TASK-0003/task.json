@@ -28,5 +28,7 @@
       "by": "GLS-CONSOLIDATION",
       "notes": "Seeded from the 2026-08-07 estate consolidation. Durable rationale in .agents/tasks/consolidation-source/."
     }
-  ]
+  ],
+  "progress_note": "Still open, and the honest count is now 8 of 13 DELIVERED with a further correction: of the five that did not deliver properly, Lanes 5 and 6 turn out to have SHIPPED as PG PRs #24 and #23 (both held on one blocking finding each), Lane 9 is an empty branch, and Lane 12 was CLOSED this pass with its reason recorded. Any successor Event should state that rather than a flat 8-of-13. NOTE: the immutable launch Event must not be edited -- record a successor.",
+  "reverified_at": "2026-08-07T17:45:00Z"
 }
