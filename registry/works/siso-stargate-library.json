@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:8e2b4f07-3a91-4c58-9d16-7b05e3ca2841",
+  "slug": "siso-stargate-library",
+  "name": "SISO Stargate Library",
+  "summary": "Remote viewing and psychoenergetics research, holding a three-track truth boundary between practice, evidence and theory, with 33 adjudicated claims and a commitment-based target manager.",
+  "work_type": "knowledge_system",
+  "lifecycle_status": "active",
+  "updated_at": "2026-08-07",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-stargate-library",
+        "revision": "main@7f89393c7aff6c1977d29f124d1b194c9dbc40f3",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-stargate-library:refs/heads/main",
+          "observed_at": "2026-08-07",
+          "summary": "The repository and exact commit resolve on GitHub at main@7f89393c7aff6c1977d29f124d1b194c9dbc40f3 with 28 commits of history carried across from branch agent/remote-viewing-research-module of sisodias/great-library-of-siso using git filter-repo path selection, not a fresh initialisation. This verifies addressability and that commit lineage survived the split; it does not assert a release, packaged artifact, or deployment, none of which exist for this Work."
+        }
+      }
+    ],
+    "license": {
+      "status": "pending",
+      "spdx": "NOASSERTION",
+      "reason": "No license has been selected. Cited government records are predominantly US Government work and are referenced rather than mirrored; the module's raw-payload policy keeps external scans upstream until a governed data plane records identifier, checksum, provenance, redaction state and rights.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "LICENSE",
+          "observed_at": "2026-08-07",
+          "summary": "No LICENSE file is present in the split repository and no license has been selected for the SISO-authored material. Recorded as pending rather than asserting a permissive default."
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "context": "Split out of the Great Library on 2026-08-07, reuniting agent/remote-viewing-research-module and agent/psychoenergetics-terrain-scan, which forked at c9e4876 with neither containing the other. The repository name was the module's own stated destination.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/great-library-of-siso/tree/agent/remote-viewing-research-module",
+          "observed_at": "2026-08-07",
+          "summary": "Split executed 2026-08-07. The Great Library README states it is a catalog rather than a giant monorepo, and ADR-0005 rejected storing the People Graph database on the same grounds; working research material with executable code belongs in its own Work rather than inside the catalog."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "research/remote-viewing/data/README.md",
+      "observed_at": "2026-08-07",
+      "summary": "The module recorded that it implemented the requested standalone data skeleton under its canonical path in order to avoid 'pretending that a separate siso-stargate-library repository already exists'. That repository now exists and this Work registers it."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "python3 tools/test_target_manager.py; python3 verify_module.py",
+      "observed_at": "2026-08-07",
+      "summary": "Executed against the split repository after the filter, not merely inspected: test_target_manager.py ran 7 tests with result OK, and verify_module.py reported PASS at sources=36, claims=33, demo_targets=12, relative_links_checked=16, publication_safe_files_scanned=20. This verifies the module's own structural checks and its tamper-detection tests; it does not evaluate any remote-viewing claim."
+    },
+    {
+      "kind": "source_review",
+      "reference": "research/remote-viewing/claims.json",
+      "observed_at": "2026-08-07",
+      "summary": "33 claims each carry an update_gate naming the exact evidence that would change status: 14 not_established, 11 documented_record, 2 reported_positive, 2 reported_negative, 3 methodological_rule, 1 unknown. RV-C003 and RV-C004 split the same AIR source into a documented above-chance lab result and a negative finding on operational value."
+    }
+  ]
+}

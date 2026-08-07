@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Canonical lane numbering map — People Graph program</title>
+<meta name="record-type" content="reference">
+<meta name="observed-at" content="2026-08-07">
+<meta name="status" content="canonical">
+</head>
+<body>
+
+<h1>Canonical lane numbering map</h1>
+
+<p><strong>Purpose.</strong> Three different documents in this estate number the
+People Graph program lanes, and they disagree. The phrase &ldquo;Lane 5&rdquo; resolves to
+three different bodies of work depending on which document is open. This is a
+live mis-merge hazard: the schemes are <em>adjacent but offset</em>, so a mix-up
+selects a real-but-wrong lane rather than failing loudly.</p>
+
+<p><strong>Ruling.</strong> Scheme B (parallel-slam, Prompts 1&ndash;13) is
+<strong>canonical</strong>. It is the only scheme that was actually launched, and
+every branch, draft PR and handoff in the estate is numbered against it. Schemes A
+and C are historical and must always be cited with their scheme letter attached.</p>
+
+<h2>Citation rule</h2>
+
+<p>Write <code>Prompt 5 (B)</code> or simply <code>Prompt 5</code> for the canonical
+scheme. Never write a bare lane number when referring to schemes A or C &mdash; write
+<code>Prompt 5 (A, superseded)</code> or <code>Lane 05 (C)</code>. A bare number
+always means scheme B.</p>
+
+<h2>The off-by-one that causes the damage</h2>
+
+<p>Scheme A opens with Prompt 0, a program coordinator whose PR was to merge
+<em>before</em> parallel work began. The parallel redesign dropped that coordinator
+and inserted a new Prompt 1 (Great Library registry spine). The result is a clean
+one-place shift: <strong>A(n) === B(n+1) for n = 1..11</strong>.</p>
+
+<p>The consequence is that every number in the range 1&ndash;11 is valid in both
+schemes and points at different work. Two examples that matter most:</p>
+
+<ul>
+<li><strong>&ldquo;Prompt 5&rdquo;</strong> = <em>Reproducible builds and source
+manifests</em> in B, but <em>Read-only query engine, API/MCP surface, and
+explorer</em> in A. Both of these lanes exist, both went unshipped, and they own the
+fixes for two <em>different</em> P0s. Confusing them silently assigns the wrong
+fix to the wrong defect.</li>
+<li><strong>&ldquo;Prompt 12&rdquo;</strong> = <em>Claims, positions, temporal
+relationships</em> in B, but the <em>adversarial release gate</em> in A. These are
+not merely different, they are different <em>kinds</em> of work &mdash; a content lane
+versus the program's convergence gate.</li>
+</ul>
+
+<h2>Scheme B &mdash; parallel-slam (CANONICAL, launched 2026-08-06)</h2>
+
+<p>Source: <code>research/people-graph-program-record/prompts/parallel-slam.md</code>
+on branch <code>agent/people-graph-audit-record-20260806</code>.</p>
+
+<table border="1" cellpadding="4" cellspacing="0">
+<thead><tr><th>B #</th><th>Title</th><th>Delivery status</th><th>Equivalent in A</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Great Library registry, ownership, and public program spine</td><td>DELIVERED (26 commits)</td><td>&mdash; (new in B)</td></tr>
+<tr><td>2</td><td>People Graph forensic red-team and executable failure fixtures</td><td>DELIVERED (4,804 lines, 16 findings)</td><td>A1</td></tr>
+<tr><td>3</td><td>Additive People Graph v3 ontology and schema</td><td>DELIVERED (6,687 lines, 26/26 tests)</td><td>A2</td></tr>
+<tr><td>4</td><td>Safe identity resolution and canonical clusters</td><td>DELIVERED (3,505 lines, 15 tests)</td><td>A3</td></tr>
+<tr><td>5</td><td>Reproducible builds and source manifests</td><td><strong>NEVER PUSHED</strong></td><td>A4</td></tr>
+<tr><td>6</td><td>Read-only query library, API/MCP, and explorer</td><td><strong>NEVER PUSHED</strong></td><td>A5</td></tr>
+<tr><td>7</td><td>Book Library integrity and parallel graph export</td><td>DELIVERED (5,378 lines, 13 tests)</td><td>A6</td></tr>
+<tr><td>8</td><td>External-source research, GitHub landscape, internet, and rights matrix</td><td>DELIVERED (39 sources)</td><td>A7</td></tr>
+<tr><td>9</td><td>Scholarly and authority-source pilot</td><td><strong>BRANCH EXISTS, 0 LINES</strong></td><td>A8</td></tr>
+<tr><td>10</td><td>Software, packages, and AI-creator pilot</td><td>DELIVERED (4,655 lines, 18 tests)</td><td>A9</td></tr>
+<tr><td>11</td><td>Living writers, podcasts, talks, video, and public-web pilot</td><td>DELIVERED (5,876 lines, 18 tests)</td><td>A10</td></tr>
+<tr><td>12</td><td>Claims, positions, temporal relationships, and derived projections</td><td><strong>165 lines, WRONG CONTENT</strong> (2 CI files vs declared <code>claims/**</code>, <code>projections/**</code>)</td><td>A11</td></tr>
+<tr><td>13</td><td>Parallel integration contract and merge-risk sweeper</td><td>DELIVERED (4,712 lines, 27 tests)</td><td>&mdash; (replaced A12, see below)</td></tr>
+</tbody>
+</table>
+
+<p>Delivered properly: <strong>8 of 13</strong>.</p>
+
+<h2>Scheme A &mdash; dependency-ordered (SUPERSEDED, never launched)</h2>
+
+<p>Source: <code>research/people-graph-program-record/prompts/dependency-ordered-superseded.md</code>,
+same branch. Prompts 0&ndash;12, dependency-ordered rather than parallel.</p>
+
+<table border="1" cellpadding="4" cellspacing="0">
+<thead><tr><th>A #</th><th>Title</th><th>Equivalent in B</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>Program coordinator, ownership ADR, and reservations</td><td>&mdash; <strong>DROPPED</strong></td></tr>
+<tr><td>1</td><td>Forensic red-team and executable failure fixtures</td><td>B2</td></tr>
+<tr><td>2</td><td>People Graph v3 architecture and schema contract</td><td>B3</td></tr>
+<tr><td>3</td><td>Identity resolution safety and canonicalization</td><td>B4</td></tr>
+<tr><td>4</td><td>Reproducible builds, data contracts, and release engineering</td><td>B5</td></tr>
+<tr><td>5</td><td>Read-only query engine, API/MCP surface, and explorer</td><td>B6</td></tr>
+<tr><td>6</td><td>Book Library integrity, reproducibility, and graph export contract</td><td>B7</td></tr>
+<tr><td>7</td><td>External source universe, rights matrix, and acquisition portfolio</td><td>B8</td></tr>
+<tr><td>8</td><td>Scholarly and authority-identity pilot</td><td>B9</td></tr>
+<tr><td>9</td><td>Software, package, and AI-creator pilot</td><td>B10</td></tr>
+<tr><td>10</td><td>Living writers, podcasts, talks, video, and public-web pilot</td><td>B11</td></tr>
+<tr><td>11</td><td>Claims, positions, temporal relationships, and influence projections</td><td>B12</td></tr>
+<tr><td>12</td><td>Final integration, registry publication, and adversarial release gate</td><td>&mdash; <strong>NOT CARRIED OVER</strong></td></tr>
+</tbody>
+</table>
+
+<h3>Two scheme-A lanes have no scheme-B equivalent</h3>
+
+<p><strong>A0 (coordinator)</strong> was dropped deliberately. Per
+<code>prompt-evolution.md</code>, the execution surface was the ChatGPT/Codex web UI,
+where one chat cannot launch child agents or wait on branch completion. A dependency
+graph would have idled agents and made a human the scheduler. Dependencies were
+replaced by exclusive path ownership, current-main starts, additive compatibility
+shims, and draft-PR handoff &mdash; <em>the branches were the orchestrator</em>. That
+constraint no longer applies.</p>
+
+<p><strong>A12 (adversarial release gate)</strong> is the more serious loss. It owned
+eight named gates including &ldquo;run Prompt 1's original failure fixtures and prove
+the selected P0s are resolved&rdquo; and the rule &ldquo;do not paper over a red
+gate&rdquo;, plus Work registration, immutable Release manifests, the snapshot, and
+the closing Event. B13 replaced it with a compatibility harness that could run at
+launch time &mdash; correct for the tool constraint, but B13 <em>evaluates
+compatibility</em> where A12 would have <em>proven the P0s fixed</em>. <strong>Nobody
+currently owns final convergence.</strong> The A12 spec survives and is reusable.</p>
+
+<h2>Scheme C &mdash; first-principles agent program (Lanes 00&ndash;12)</h2>
+
+<p>Source: <code>docs/first-principles/agent-program.md</code> on branch
+<code>agent/first-principles-audit-2026-08-06</code> of
+<code>sisodias/siso-people-graph</code>.</p>
+
+<p><strong>Scheme C is not a renumbering of A or B.</strong> It is an independently
+derived dependency tree produced by the first-principles re-derivation, with its own
+decomposition. Do not attempt positional alignment with A or B &mdash; there is no
+consistent offset. It also uses zero-padded two-digit numbering
+(<code>Lane 00</code>), which is the cheapest way to tell it apart on sight.</p>
+
+<p>Its declared dependency tree:</p>
+
+<pre>
+Lane 00 — Baseline verification and CI
+  ├── Lane 01 — Identity safety hotfix
+  │     └── Lane 02 — Canonical actor assignments
+  │           ├── Lane 03 — Query truth contract
+  │           ├── Lane 04 — Temporal semantics
+  │           └── Lane 05 — Typed observations
+  ├── Lane 06 — Work/version/artifact contract
+  │     ├── Lane 07 — Book export boundary
+  │     └── Lane 08 — Release protocol
+  ├── Lane 09 — Evidence receipt contract
+  │     └── Lane 10 — Statement/position pilot
+  └── Lane 11 — Source-overlap economics
+        └── Lane 12 — Event source pilot
+</pre>
+
+<p>Note the collisions this creates against the canonical scheme:
+<code>Lane 05 (C)</code> is <em>typed observations and ranking projections</em>, where
+<code>Prompt 5 (B)</code> is <em>reproducible builds</em>; <code>Lane 07 (C)</code> is
+the <em>Book export boundary</em>, which is genuinely close in subject to
+<code>Prompt 7 (B)</code> (Book Library integrity and export) without being the same
+scope. Near-misses like these are more dangerous than clean mismatches.</p>
+
+<h2>Practical guidance during consolidation</h2>
+
+<ol>
+<li>When reading any document that says &ldquo;Lane N&rdquo; or &ldquo;Prompt N&rdquo;,
+first identify which scheme the document belongs to by its source path, then translate
+to scheme B before acting.</li>
+<li>Zero-padded two-digit numbers (<code>00</code>&ndash;<code>12</code>) are always
+scheme C.</li>
+<li>A reference to Prompt 0 is always scheme A &mdash; scheme B has no Prompt 0.</li>
+<li>A reference to Prompt 13 is always scheme B &mdash; only B goes that high.</li>
+<li>The two unshipped canonical lanes are <strong>B5 (reproducible builds)</strong>,
+fixing PG-AUDIT-004/PGRT-001, and <strong>B6 (query surface)</strong>, fixing
+PG-AUDIT-002/PGRT-004 and PGRT-015. Both have complete work orders in <em>two</em>
+independent versions (A4+A5 and B5+B6), so they are executable rather than
+re-derivable.</li>
+</ol>
+
+<h2>Provenance</h2>
+
+<p>Every row in the three tables above was read from the source documents named in each
+section on 2026-08-07, not from any summary. Delivery statuses in the scheme B table
+are carried from the estate branch survey of the same date and reflect what was pushed
+to <code>sisodias/siso-people-graph</code> and
+<code>sisodias/great-library-of-siso</code> as of that survey.</p>
+
+</body>
+</html>

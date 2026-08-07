@@ -117,6 +117,24 @@
       "reference": "docs/people-graph-program/control-plane-data-plane.md",
       "observed_at": "2026-08-06",
       "summary": "The public control-plane contract keeps source code and manifests distinct from mutable databases, raw text, payload archives, and machine-local locators."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://www.gutenberg.org/cache/epub/feeds/pg_catalog.csv",
+      "observed_at": "2026-08-03",
+      "summary": "The official bulk catalog feed returned HTTP 200 and 21,155,633 bytes containing 79,071 rows. Gutenberg's offline-catalogs page directs consumers to this file rather than crawling the site, so the bulk path taken is the sanctioned one."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "local:books.sqlite:column-coverage-and-roundtrip-2026-08-03",
+      "observed_at": "2026-08-03",
+      "summary": "Losslessness was verified two ways: all nine upstream columns are present with zero missing, and five sampled books round-tripped from the database to an exact match against the source row. Library of Congress Classification is present on 77,801 of 77,820 text works, or 99.98 percent, without any curation, classifier or model call."
+    },
+    {
+      "kind": "documentation",
+      "reference": "https://github.com/sisodias/siso-book-library/releases/tag/index-v1",
+      "observed_at": "2026-08-04",
+      "summary": "The distribution design ships the index in git and as release assets while the payload ships as release assets carrying individually gzipped books inside uncompressed tars, so one HTTP range request retrieves exactly one book. Release assets are measured not to count against repository size, leaving the 2 GiB per-asset cap as the real constraint."
     }
   ]
 }
