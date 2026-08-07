@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:7a3f1c5d-2b89-4e6c-9d04-3f8a5b1e7c92",
+  "slug": "declassified-corpus",
+  "name": "Declassified Document Corpus (CREST, NARA, Black Vault, NSArchive, DOE)",
+  "summary": "A bulk-available catalogue of public-domain declassified government documents — CIA CREST (incl. Stargate/remote-viewing), the NARA AWS Catalog and JFK release tranches, the National Security Archive (GWU free site), DOE OpenNet, and The Black Vault curated FOIA archive — with full provenance and per-unit rights posture. The Great Library holds the inventory; SISO Knowledge holds the durable corpus; Foundry owns source discovery; Evidence Engines perform source-grounded transformation.",
+  "work_type": "knowledge_system",
+  "lifecycle_status": "planned",
+  "updated_at": "2026-08-07",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/Lordsisodia/great-library-of-siso/blob/main/registry/source-inventories/declassified-corpus-2026-08-07.json",
+        "revision": "main",
+        "visibility": "public",
+        "verified": false,
+        "evidence": {
+          "kind": "source_review",
+          "reference": "registry/source-inventories/declassified-corpus-2026-08-07.json",
+          "observed_at": "2026-08-07",
+          "summary": "Source-inventory record authored 2026-08-07 against schemas/source-inventory.schema.json, covering 10 units across 3 source scopes (ia-crest, nara-catalog, blackvault-curated). Validator failure 2026-08-07 required this Work to be authored before the campaign owner_work_id could resolve."
+        }
+      }
+    ],
+    "license": {
+      "status": "pending",
+      "spdx": "NOASSERTION",
+      "reason": "Source documents are predominantly US Government work (public domain) but rights posture is per-unit: CREST via IA torrents is Public Domain Mark 1.0; NARA federal materials are generally public domain but NARA does not guarantee per-item status; DOE OpenNet documents may be retroactively withdrawn if they contain improperly declassified Restricted Data; The Black Vault has no published terms of use so its curation layer is recorded as external_public_source rather than mirrored until explicit permission is obtained from John Greenewald. ProQuest Digital National Security Archive (NSArchive commercial) is link-only and MUST NOT be mirrored.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "registry/source-inventories/declassified-corpus-2026-08-07.json",
+          "observed_at": "2026-08-07",
+          "summary": "Inventory record units carry per-unit rights posture in their rationales (unit_id blackvault-archive disposition=link_existing pending permission; unit_id doe-opennet RD/FRD withdrawal risk noted; unit_id nsarchive-gwu-free free-site ATTRIBUTION required and DNSA NEVER MIRROR)."
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "context": "The Great Library of SISO holds the inventory catalog and lineage for this corpus; this Work's source-inventory record lives at registry/source-inventories/declassified-corpus-2026-08-07.json under the Great Library registry. The Great Library stays a catalog and not a warehouse: it records what exists, not the bytes.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "registry/source-inventories/declassified-corpus-2026-08-07.json:preservation.mode",
+          "observed_at": "2026-08-07",
+          "summary": "Inventory preservation.mode is read_only with nested_repositories: [] and inventory_state: partial — the corpus is catalogued here, not forked."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "context": "SISO Knowledge is the intended durable home for the corpus bytes once per-unit rights clear and the campaign advances from unverified to verified. Ingestion will follow the same shape the SISO Book Library used for Project Gutenberg: metadata index in the Great Library, payload distribution as release assets rather than mirrored into git.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "registry/source-inventories/gutenberg-corpus-2026-08-03.json:preservation.reason",
+          "observed_at": "2026-08-07",
+          "summary": "Gutenberg precedent: 'Nothing is dirty: the corpus is an external public-domain source, mirrored rather than authored. The index is deterministic -- delete it and re-run the builders to get it back byte-for-byte. Payload integrity is enforced by SHA-256 per book, so drift against upstream is detectable rather than silently inherited.'"
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "context": "SISO Foundry owns source discovery for this corpus — identifying additional declassified sources, evaluating mirror candidates, surfacing rights posture changes (e.g. DOE OpenNet RD/FRD withdrawals, Black Vault archive updates), and routing primary documents into the durable corpus held by SISO Knowledge. The Foundry also evaluates whether claimable intelligence emerges from source-grounded transformation performed by Evidence Engines.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry/works/siso-foundry.json",
+          "observed_at": "2026-08-07",
+          "summary": "SISO Foundry operates Foundry Agency OS coverage intelligence across 628 projects, with verified job-level evidence receipts. Source discovery is Foundry's stated domain per CURRENT_STATE.md."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "https://archive.org/details/CREST-1",
+      "observed_at": "2026-08-07",
+      "summary": "Internet Archive CREST-1 verified: 195.5 GB, 250,000 declassified files, Public Domain Mark 1.0, TAR+CSV+torrent bundle. Combined with CREST-2/3/4 the four-torrent set covers 934,739 documents / ~12M pages / 528.7 GB."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://www.archives.gov/developer/national-archives-catalog-dataset",
+      "observed_at": "2026-08-07",
+      "summary": "NARA Catalog dataset on AWS verified: anonymous S3 sync with 'aws s3 sync s3://nara-national-archives-catalog/ [dest] --no-sign-request' command documented; over 261 GB of JSON metadata covering URLs for over 148 million digital objects as of 2026-03-01."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://www.archives.gov/research/jfk/jfkbulkdownload",
+      "observed_at": "2026-08-07",
+      "summary": "JFK Assassination Records bulk-download page verified with direct ZIPs for 2017/2018/2021/2022/2023/2025 tranches, MD5 checksums, and total corpus 'over six million pages.'"
+    },
+    {
+      "kind": "integration_check",
+      "reference": "node scripts/validate.mjs",
+      "observed_at": "2026-08-07",
+      "summary": "Project's own validator (npm run validate) executes against schemas/source-inventory.schema.json with internal $ref resolution, no Ajv dependency. Initial run on the declassified corpus inventory returned 3 errors: campaign owner_work_id pattern mismatch, preservation missing dirty_entries, and campaign owner Work not resolved — all three fixed by authoring this Work and adding 'dirty_entries: 0' to the inventory's preservation block."
+    }
+  ]
+}
