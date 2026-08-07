@@ -1,0 +1,56 @@
+name: Erdős 848 exact Lean gate
+
+on:
+  push:
+    branches:
+      - agent/erdos-02-848
+    paths:
+      - 'docs/campaigns/erdos-10-2026-08-07/agents/02-848/formal/**'
+      - '.github/workflows/erdos-02-848-lean.yml'
+  pull_request:
+    branches:
+      - agent/erdos-10-campaign-2026-08-07
+    paths:
+      - 'docs/campaigns/erdos-10-2026-08-07/agents/02-848/formal/**'
+      - '.github/workflows/erdos-02-848-lean.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    name: Lean 4.27 kernel check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch pinned upstream asymptotic proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          FORMAL='docs/campaigns/erdos-10-2026-08-07/agents/02-848/formal'
+          curl --fail --location --silent --show-error \
+            'https://raw.githubusercontent.com/The-Obstacle-Is-The-Way/erdos-banger/1cc2ac8e9d70516e979733c6ea5c4d2eb652d1f5/formal/lean/Erdos/848.lean' \
+            --output "$FORMAL/ErdosBanger848.lean"
+          echo 'ba6d3c2eb78bbb29b65b1a75c85be31cb704e57010f8871e1bdc764bd747fb24  '"$FORMAL/ErdosBanger848.lean" | sha256sum --check --strict
+
+      - name: Reject authored placeholders and custom axioms
+        shell: bash
+        run: |
+          set -euo pipefail
+          DIR='docs/campaigns/erdos-10-2026-08-07/agents/02-848/formal/Erdos848'
+          if grep -RInE '\b(sorry|admit|axiom)\b|native_decide' "$DIR" --include='*.lean'; then
+            echo 'Forbidden proof placeholder/oracle/custom axiom found.' >&2
+            exit 1
+          fi
+
+      - name: Build and kernel-check Lean project
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: docs/campaigns/erdos-10-2026-08-07/agents/02-848/formal
+          build: true
+          test: false
+          lint: false
+          use-mathlib-cache: true
+          leanchecker: true
