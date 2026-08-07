@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:6c1d94a7-38f2-4bd6-9e05-7a4c2f81b3de",
+  "occurred_at": "2026-08-08T04:40:00+07:00",
+  "recorded_at": "2026-08-08T04:40:00+07:00",
+  "immutable": true,
+  "entry_type": "initiative_completed",
+  "thread": {
+    "id": "gls:thread:people-graph-parallel-expansion",
+    "name": "People Graph 100× parallel expansion",
+    "kind": "research"
+  },
+  "status": "completed",
+  "title": "Integration of the thirteen-lane parallel program: 8 of 13 lanes delivered, 18 pull requests merged, zero previously",
+  "summary": "The launch Event of 2026-08-06 reserved thirteen simultaneous lanes across three repositories. This successor closes that thread with the measured outcome rather than the intended one. Eight lanes delivered usable work; two were never pushed; one reserved a branch and pushed nothing; one shipped 165 lines of continuous-integration configuration against a declared scope of claims, projections and reasoning documentation; one delivered under a collision-safe suffix after two prior attempts. Across the estate 18 pull requests merged where none had ever merged before, four repository mains verify green from fresh clones, and the People Graph was measured against its real published asset for the first time. It scores 0 of 6 on its own success criteria, with two falsifiers already firing. That number is the honest starting line, not a failure of the program.",
+  "intent": "Close the launch Event with an evidenced account of what was delivered, what was not, and what the work revealed, so that no later reader mistakes thirteen reserved lanes for thirteen completed ones.",
+  "reasoning": [
+    "The launch Event enumerated thirteen lanes as coordination reservations. Branch reservation is not durable pushed work — a distinction the program's own prompt-evolution record identified, and which was verified again here by direct inspection of the remote.",
+    "Recording completion against the reservation count would repeat the reference-to-evidence collapse that this program's first-principles audit names as one of eleven category collapses in the system it was auditing.",
+    "Delivery is therefore reported as measured against the remote, and the defects closed are reported as measured against the published database asset rather than against the documents that describe it."
+  ],
+  "changes": [
+    {
+      "kind": "commit",
+      "reference": "repository:sisodias/siso-foundry",
+      "summary": "First merge in the estate's history. The crates.io and Wikidata relational layer had one commit ahead of main and no pull request had ever been opened for it. It carries the enrichment log whose measurements every downstream document cites, including the structural overlap gap and the rejected identity stitch."
+    },
+    {
+      "kind": "commit",
+      "reference": "repository:sisodias/great-library-of-siso",
+      "summary": "Program spine, source research, first-principles program and audit record merged, plus registration of three split repositories as Works. An immutability alarm on the spine was diagnosed as a false positive: the check two-dot-diffs against main, so records added to main after the fork read as deletions. Proven with merge-base ancestry rather than assumed."
+    },
+    {
+      "kind": "commit",
+      "reference": "repository:sisodias/siso-book-library",
+      "summary": "The restructured integrity and export lane merged after nine failing checks were diagnosed as stale pinned fixture digests in six places rather than corrupt payloads. Two superseded attempts closed with reasons recorded. The audit lane was merged rather than closed because it ships an executable verifier, which then reported 8 of 8 historical findings no longer reproducing."
+    },
+    {
+      "kind": "commit",
+      "reference": "repository:sisodias/siso-people-graph",
+      "summary": "Integration contract, red-team fixtures, identity resolution, v3 ontology as an additive parallel schema, three source pilots, the query surface, the sentinel guard and a test-harness repair merged. The reproducible-build lane remains open on a red continuous-integration run from its own final push."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/works/siso-people-graph.json",
+      "summary": "Evidence corrected in both directions against the measured asset. The person count was restored to verified after being downgraded on a false premise: it appears in no source file because it is the release title. The 1,272,495 person-to-person rows were corrected from an implied human relational layer to what they are, crates.io package dependencies at flat confidence with relation depends_on."
+    },
+    {
+      "kind": "commit",
+      "reference": "repository:sisodias/siso-unsolveable-mathematics",
+      "summary": "Twelve branches collapsed to one after ancestry proof, then cut to an independent repository with full history. Nine of the twelve were byte-identical bootstrap commits pushed to nine branch names."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+      "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+      "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+    ],
+    "release_ids": [],
+    "snapshot_ids": [],
+    "decision_ids": [],
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso",
+      "https://github.com/sisodias/siso-people-graph",
+      "https://github.com/sisodias/siso-book-library",
+      "https://github.com/sisodias/siso-foundry",
+      "https://github.com/sisodias/siso-unsolveable-mathematics",
+      "https://github.com/sisodias/siso-stargate-library",
+      "https://github.com/sisodias/siso-declassified-records"
+    ]
+  },
+  "coordination": {
+    "owner": "Great Library integration lane",
+    "branch": "gls/program-integration-20260808",
+    "reserved_paths": [
+      "registry/events/2026-08-08-people-graph-parallel-program-integrated.json"
+    ]
+  },
+  "predecessor_event_id": "gls:event:f7dbd510-879c-405b-9cac-58d3dd598501",
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "integration_check",
+      "reference": "local:people_graph_v2.sqlite:gq-010-baseline-2026-08-07",
+      "observed_at": "2026-08-07",
+      "summary": "The published graph-v2 asset was downloaded and queried directly rather than trusted. identity_claim held zero rows, so the recorded defect that reads ignore accepted decisions was in truth that no decisions existed. 86.7 percent of person rows carry kind unknown. Four shipped tables appear in no tracked schema. No rights or privacy column exists anywhere, which contradicts ADR-0005, the pg-observation-0.1 invariants and the thirty-eight source rights matrix. The cross-domain population is 9,818, not the three the README states. GQ-010 scores 0 of 6 with falsifiers three and five firing."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "local:identity_v3:auto-accept-precision-2026-08-08",
+      "observed_at": "2026-08-08",
+      "summary": "Candidate generation over the real graph produced 29,524 candidates, of which 159 were eligible for automatic acceptance. All 159 were false: they pair distinct humans through crates.io sentinel values of zero and minus one in github_id, meaning no GitHub account. Measured precision was 0.000 against a method card claiming 1.000. Applying the shipped policy on a disposable copy fused eighteen named distinct people into one canonical cluster and four into another; undo reversed all seventy-two decisions with 339,217 entities intact. A sentinel guard at two layers reduced eligible candidates to zero while leaving 12,834 legitimate conflict blocks untouched."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-people-graph/pull/24",
+      "observed_at": "2026-08-08",
+      "summary": "The build lane established that no crates loader exists in the repository's history. Seven loaders were committed and none writes the person_person table. An entire pipeline stage is absent from the repository that publishes the graph, which is why 1,287,159 rows exist in production with no tracked schema. The validator's static expected-table list never required them, so a build omitting all four passed schema validation and two such builds matched each other."
+    },
+    {
+      "kind": "registry_validation",
+      "reference": "local:merged-main-suites-2026-08-08",
+      "observed_at": "2026-08-08",
+      "summary": "Merging two independently green pull requests produced four failures on main. Neither was a production defect. Three regression tests extracted the prior implementation from the moving reference origin/main to assert it was broken, so once the fix merged they failed because they had succeeded; they are now pinned to the last commit carrying the defect. The fourth imported a test framework that is not a dependency, so the guard protecting against the measured identity defect failed to load and was never exercised. Both repaired; 107 tests pass from a fresh clone."
+    },
+    {
+      "kind": "documentation",
+      "reference": ".agents/commissions/README.html",
+      "observed_at": "2026-08-08",
+      "summary": "Seven times across the two days a check reported success while doing nothing: a test that failed to import, a delete loop silenced by a filter, a validator that never required missing tables, a substring counter matching values as keys, a full-text query that raised and fell back to a scan, an application programming interface returning a stale cache, and a digest that silently excluded the central edge table. Every one was found by an outside reader or by measurement against real data, none by the author's own tests."
+    }
+  ],
+  "next_actions": [
+    "Repair the reproducible-build lane's failing continuous-integration run and merge it; it is the last open pull request in the People Graph.",
+    "Record a successor Event for the remote viewing research thread, which reached completed at 01:33 and expanded at 02:36 on 2026-08-07 and has no legal encoding under the current entry-type vocabulary.",
+    "Close the rights and privacy gap. Three accepted documents assume rights state travels with every observation and the database has no column to carry it; every source pilot is gated behind this.",
+    "Publish an identity-resolution benchmark. Criterion two moved from unmeasurable to measured at 0.000, and there is still no versioned ground truth to grade future changes against.",
+    "Treat independent review as a standing gate rather than an escalation, on the evidence that no author's own test suite caught any of the seven silent-success defects."
+  ]
+}

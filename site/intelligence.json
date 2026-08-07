@@ -1,14 +1,242 @@
 {
-  "generated_at": "2026-08-04T00:00:00.000Z",
+  "generated_at": "2026-08-07T21:40:00.000Z",
   "base_path": "/",
   "counts": {
-    "events": 28,
-    "decisions": 4,
-    "active_initiatives": 0,
-    "registry_changes": 111
+    "events": 33,
+    "decisions": 5,
+    "active_initiatives": 3,
+    "registry_changes": 116
   },
-  "active_initiatives": [],
+  "active_initiatives": [
+    {
+      "event_id": "gls:event:5565a798-65fa-4aea-99b1-12b256fb88f4",
+      "thread_id": "gls:thread:declassified-government-records-department",
+      "name": "Declassified Government Records Department",
+      "status": "active",
+      "title": "Declassified government records department started",
+      "intent": "Create an evidence-led department charter, official-source map, machine-readable source ledger, document and collection contracts, research workflow, safety and rights boundaries, and seed collection roadmap for declassified and otherwise public government records of historical interest.",
+      "occurred_at": "2026-08-07T02:22:00+07:00",
+      "owner": "GPT-5.6 Pro for Shaan Sisodia",
+      "branch": "agent/declassified-government-records-department",
+      "reserved_paths": [
+        "research/declassified-government-records/**",
+        "registry/events/2026-08-07-declassified-government-records-*.json"
+      ],
+      "next_actions": [
+        "Review official archive and reading-room sources, then author the department charter, source map, custody and document contracts, collection roadmap, research workflow, and rights and safety rules.",
+        "Create a machine-readable source index and seed collection ledger that distinguish official custody from secondary discovery mirrors and treat every URL, release state, and document version as evidence requiring refresh.",
+        "Build and run an offline module verifier, publish the isolated branch, open a draft pull request, and close this Event thread with exact validation receipts and promotion gates."
+      ]
+    },
+    {
+      "event_id": "gls:event:a5b790fd-abe1-49e9-a648-76676c50ba17",
+      "thread_id": "gls:thread:remote-viewing-research-module",
+      "name": "Remote Viewing Research Module",
+      "status": "active",
+      "title": "Remote viewing research and practice module started",
+      "intent": "Place remote viewing inside the existing Research section as an authored, testable module; honor the requested first-principles practice premise while preserving an independent evidence track; and provide source maps, session templates, target-management tooling, judging rules, and promotion gates for later Work and Release registration.",
+      "occurred_at": "2026-08-07T00:35:49+07:00",
+      "owner": "GPT-5.6 Pro for Shaan Sisodia",
+      "branch": "agent/remote-viewing-research-module",
+      "reserved_paths": [
+        "research/remote-viewing/**",
+        "registry/events/2026-08-07-remote-viewing-research-*.json"
+      ],
+      "next_actions": [
+        "Author the module constitution, history and evidence review, mechanism-hypothesis map, practice protocol, experimental method, source ledger, session template, and public-safe target-management tool.",
+        "Validate all JSON and Python artifacts locally, check links and source identifiers, run the module verifier and tests, and compare stored Git blobs with the locally validated files.",
+        "Open a draft pull request and close this Event thread with exact changed paths, validation results, remaining source and licensing limits, and the gate for later Work, Release, Source Inventory, and Snapshot promotion."
+      ]
+    },
+    {
+      "event_id": "gls:event:fc942f5b-cf6f-4ede-afc1-bce7ed113cff",
+      "thread_id": "gls:thread:unsolveable-mathematics-program",
+      "name": "UNSOLVEABLE Mathematics Program",
+      "status": "active",
+      "title": "UNSOLVEABLE mathematics programme architecture started",
+      "intent": "Place the programme correctly inside Research and Frontier Questions, extract reusable proof and verification patterns from OpenAI ten-proofs and the Lean ecosystem, define the future problem-record and campaign contracts, and identify the authoritative source universes required for a later global inventory.",
+      "occurred_at": "2026-08-06T23:24:33+07:00",
+      "owner": "GPT-5.6 Pro for Shaan Sisodia",
+      "branch": "agent/unsolveable-mathematics-program",
+      "reserved_paths": [
+        "README.md",
+        "docs/README.md",
+        "docs/unsolveable-mathematics-program.html",
+        "registry/events/2026-08-06-unsolveable-mathematics-program-*.json"
+      ],
+      "next_actions": [
+        "Author the programme constitution with taxonomy, source map, problem contract, verification ladder, intelligence roles, historical case-study method, pilot portfolio, and phased delivery plan.",
+        "Update the authored documentation indexes without hand-editing generated site projections.",
+        "Run available structural checks, open a draft pull request, and close this Event thread with exact files, validation limits, and next promotion gates."
+      ]
+    }
+  ],
   "decisions": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "decision",
+      "id": "gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8",
+      "decision_key": "ADR-0005",
+      "title": "Separate People Graph identity, canonical-service governance, and the external data plane",
+      "status": "accepted",
+      "decided_at": "2026-08-06T22:24:00+07:00",
+      "immutable": true,
+      "context": "The People Graph and Book Library are independently addressable repositories with their own source and data contracts, while the existing Research architecture assigns durable graphs and indexes to SISO Knowledge and the source repositories describe themselves as Foundry domains. The program needs one explicit ownership model before parallel schema, build, identity, source, claims, and integration lanes can hand work across boundaries without creating competing canonical systems.",
+      "decision": "Register SISO People Graph and SISO Book Library as independent Research Works. The Great Library owns their stable public identity, lineage, Decisions, Events, Releases, Snapshots, and reading surface. SISO Knowledge owns canonical-service governance for durable graph and index semantics but does not absorb either repository or their mutable databases. Foundry discovers and evaluates source universes and emits source observations; it is not canonical identity or claim truth. Evidence Engines transform and adjudicate source-grounded observations before canonical admission. Mutable databases, raw and restricted source snapshots, payload archives, private receipts, and machine-specific locators remain an external governed data plane.",
+      "rationale": [
+        "Independent Work identity preserves repository-specific release, security, rights, compatibility, and rollback boundaries.",
+        "A Great Library control plane can describe public identity and lineage without becoming a database, source mirror, or runtime.",
+        "Canonical-service governance belongs with the durable Knowledge architecture, but repository absorption would erase independently useful source and export contracts.",
+        "Foundry's discovery and evaluation role is valuable precisely because it can remain separate from canonical truth and admit uncertainty.",
+        "Evidence Engines provide the explicit transformation and adjudication seam needed to keep source observations from becoming silent facts or identity merges.",
+        "The split lets all thirteen lanes start from current main and exchange versioned observations and handoffs without waiting for a monolithic schema or database."
+      ],
+      "alternatives": [
+        {
+          "option": "Treat the People Graph and Book Library as internal Foundry modules",
+          "disposition": "rejected",
+          "reason": "That would make a discovery and evaluation system the implicit canonical owner and would hide independent release, rights, and compatibility boundaries."
+        },
+        {
+          "option": "Move both repositories and their databases inside SISO Knowledge",
+          "disposition": "rejected",
+          "reason": "Knowledge should govern canonical-service semantics, but physical absorption would couple source-specific builders, payloads, and security lifecycles to the durable corpus repository."
+        },
+        {
+          "option": "Store the graph database, source snapshots, and payloads in the Great Library",
+          "disposition": "rejected",
+          "reason": "The Great Library is the public identity and lineage control plane; mutable or restricted data would violate its publication and portability boundary."
+        },
+        {
+          "option": "Keep independent Works with explicit governance and interchange seams",
+          "disposition": "chosen",
+          "reason": "It preserves independent addressability while making canonical governance, discovery, transformation, adjudication, and data ownership mechanically visible."
+        }
+      ],
+      "consequences": {
+        "positive": [
+          "People Graph and Book Library receive stable Work and Release lineage without overstating production readiness.",
+          "Parallel lanes can exchange pg-observation-0.1 envelopes and draft handoffs instead of coupling directly to one mutable database.",
+          "Canonical claims, identity changes, and public distribution states require explicit evidence and adjudication.",
+          "Large or restricted data remains outside the public registry while its manifests and receipts can still be referenced safely."
+        ],
+        "negative": [
+          "Cross-repository integration now requires versioned schemas, source receipts, compatibility seams, and explicit promotion gates.",
+          "Existing source prose that calls these repositories Foundry domains remains a bounded ownership clarification task for source-owning lanes.",
+          "The current Work records cannot by themselves prove clean builds, current databases, payload availability, or production operation."
+        ],
+        "follow_ups": [
+          "Exercise pg-observation-0.1 through at least one source pilot, Evidence Engine adjudication, and canonical admission path.",
+          "Publish source-specific rights, privacy, refresh, and retention rules before promoting observations.",
+          "Resolve historical repository-owner references through evidence rather than global replacement.",
+          "Use GQ-010 to measure breadth, identity resolution, research depth, decision value, rights, reproducibility, and cost separately.",
+          "Close the active program Event with successor evidence when the thirteen draft handoffs have been reviewed."
+        ]
+      },
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+          "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+          "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+          "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-people-graph",
+          "https://github.com/sisodias/siso-book-library"
+        ]
+      },
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+          "observed_at": "2026-08-06",
+          "summary": "The People Graph has an independently addressable schema, loader, identity, enrichment, and query surface."
+        },
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+          "observed_at": "2026-08-06",
+          "summary": "The Book Library has independently addressable metadata, people, locator, quality, and export contracts."
+        },
+        {
+          "kind": "documentation",
+          "reference": "docs/siso-knowledge-model.html",
+          "observed_at": "2026-08-06",
+          "summary": "The existing Research architecture assigns durable corpus, graph, and index responsibility to SISO Knowledge while preserving separate Research Works."
+        },
+        {
+          "kind": "documentation",
+          "reference": "user-intent:people-graph-parallel-program:2026-08-06",
+          "observed_at": "2026-08-06",
+          "summary": "The requested program requires explicit Great Library, Knowledge, Foundry, Evidence Engine, and external data-plane boundaries before parallel expansion."
+        }
+      ],
+      "active": true,
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+          "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+          "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+          "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-people-graph",
+          "https://github.com/sisodias/siso-book-library"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+            "name": "Research",
+            "library_url": "/works/research/"
+          },
+          {
+            "id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+            "name": "SISO Knowledge",
+            "library_url": "/works/siso-knowledge/"
+          },
+          {
+            "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+            "name": "SISO Foundry",
+            "library_url": "/works/siso-foundry/"
+          },
+          {
+            "id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+            "name": "SISO Evidence Engines",
+            "library_url": "/works/siso-evidence-engines/"
+          },
+          {
+            "id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+            "name": "SISO People Graph",
+            "library_url": "/works/siso-people-graph/"
+          },
+          {
+            "id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+            "name": "SISO Book Library",
+            "library_url": "/works/siso-book-library/"
+          },
+          {
+            "id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+            "name": "GQ-010 — How do we increase the People Graph's value by 100×?",
+            "library_url": "/works/frontier-question-gq-010/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "decision",
@@ -374,6 +602,681 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:6c1d94a7-38f2-4bd6-9e05-7a4c2f81b3de",
+      "occurred_at": "2026-08-08T04:40:00+07:00",
+      "recorded_at": "2026-08-08T04:40:00+07:00",
+      "immutable": true,
+      "entry_type": "initiative_completed",
+      "thread": {
+        "id": "gls:thread:people-graph-parallel-expansion",
+        "name": "People Graph 100× parallel expansion",
+        "kind": "research"
+      },
+      "status": "completed",
+      "title": "Integration of the thirteen-lane parallel program: 8 of 13 lanes delivered, 18 pull requests merged, zero previously",
+      "summary": "The launch Event of 2026-08-06 reserved thirteen simultaneous lanes across three repositories. This successor closes that thread with the measured outcome rather than the intended one. Eight lanes delivered usable work; two were never pushed; one reserved a branch and pushed nothing; one shipped 165 lines of continuous-integration configuration against a declared scope of claims, projections and reasoning documentation; one delivered under a collision-safe suffix after two prior attempts. Across the estate 18 pull requests merged where none had ever merged before, four repository mains verify green from fresh clones, and the People Graph was measured against its real published asset for the first time. It scores 0 of 6 on its own success criteria, with two falsifiers already firing. That number is the honest starting line, not a failure of the program.",
+      "intent": "Close the launch Event with an evidenced account of what was delivered, what was not, and what the work revealed, so that no later reader mistakes thirteen reserved lanes for thirteen completed ones.",
+      "reasoning": [
+        "The launch Event enumerated thirteen lanes as coordination reservations. Branch reservation is not durable pushed work — a distinction the program's own prompt-evolution record identified, and which was verified again here by direct inspection of the remote.",
+        "Recording completion against the reservation count would repeat the reference-to-evidence collapse that this program's first-principles audit names as one of eleven category collapses in the system it was auditing.",
+        "Delivery is therefore reported as measured against the remote, and the defects closed are reported as measured against the published database asset rather than against the documents that describe it."
+      ],
+      "changes": [
+        {
+          "kind": "commit",
+          "reference": "repository:sisodias/siso-foundry",
+          "summary": "First merge in the estate's history. The crates.io and Wikidata relational layer had one commit ahead of main and no pull request had ever been opened for it. It carries the enrichment log whose measurements every downstream document cites, including the structural overlap gap and the rejected identity stitch."
+        },
+        {
+          "kind": "commit",
+          "reference": "repository:sisodias/great-library-of-siso",
+          "summary": "Program spine, source research, first-principles program and audit record merged, plus registration of three split repositories as Works. An immutability alarm on the spine was diagnosed as a false positive: the check two-dot-diffs against main, so records added to main after the fork read as deletions. Proven with merge-base ancestry rather than assumed."
+        },
+        {
+          "kind": "commit",
+          "reference": "repository:sisodias/siso-book-library",
+          "summary": "The restructured integrity and export lane merged after nine failing checks were diagnosed as stale pinned fixture digests in six places rather than corrupt payloads. Two superseded attempts closed with reasons recorded. The audit lane was merged rather than closed because it ships an executable verifier, which then reported 8 of 8 historical findings no longer reproducing."
+        },
+        {
+          "kind": "commit",
+          "reference": "repository:sisodias/siso-people-graph",
+          "summary": "Integration contract, red-team fixtures, identity resolution, v3 ontology as an additive parallel schema, three source pilots, the query surface, the sentinel guard and a test-harness repair merged. The reproducible-build lane remains open on a red continuous-integration run from its own final push."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "registry/works/siso-people-graph.json",
+          "summary": "Evidence corrected in both directions against the measured asset. The person count was restored to verified after being downgraded on a false premise: it appears in no source file because it is the release title. The 1,272,495 person-to-person rows were corrected from an implied human relational layer to what they are, crates.io package dependencies at flat confidence with relation depends_on."
+        },
+        {
+          "kind": "commit",
+          "reference": "repository:sisodias/siso-unsolveable-mathematics",
+          "summary": "Twelve branches collapsed to one after ancestry proof, then cut to an independent repository with full history. Nine of the twelve were byte-identical bootstrap commits pushed to nine branch names."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+          "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+          "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "release_ids": [],
+        "snapshot_ids": [],
+        "decision_ids": [],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-people-graph",
+          "https://github.com/sisodias/siso-book-library",
+          "https://github.com/sisodias/siso-foundry",
+          "https://github.com/sisodias/siso-unsolveable-mathematics",
+          "https://github.com/sisodias/siso-stargate-library",
+          "https://github.com/sisodias/siso-declassified-records"
+        ]
+      },
+      "coordination": {
+        "owner": "Great Library integration lane",
+        "branch": "gls/program-integration-20260808",
+        "reserved_paths": [
+          "registry/events/2026-08-08-people-graph-parallel-program-integrated.json"
+        ]
+      },
+      "predecessor_event_id": "gls:event:f7dbd510-879c-405b-9cac-58d3dd598501",
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "local:people_graph_v2.sqlite:gq-010-baseline-2026-08-07",
+          "observed_at": "2026-08-07",
+          "summary": "The published graph-v2 asset was downloaded and queried directly rather than trusted. identity_claim held zero rows, so the recorded defect that reads ignore accepted decisions was in truth that no decisions existed. 86.7 percent of person rows carry kind unknown. Four shipped tables appear in no tracked schema. No rights or privacy column exists anywhere, which contradicts ADR-0005, the pg-observation-0.1 invariants and the thirty-eight source rights matrix. The cross-domain population is 9,818, not the three the README states. GQ-010 scores 0 of 6 with falsifiers three and five firing."
+        },
+        {
+          "kind": "integration_check",
+          "reference": "local:identity_v3:auto-accept-precision-2026-08-08",
+          "observed_at": "2026-08-08",
+          "summary": "Candidate generation over the real graph produced 29,524 candidates, of which 159 were eligible for automatic acceptance. All 159 were false: they pair distinct humans through crates.io sentinel values of zero and minus one in github_id, meaning no GitHub account. Measured precision was 0.000 against a method card claiming 1.000. Applying the shipped policy on a disposable copy fused eighteen named distinct people into one canonical cluster and four into another; undo reversed all seventy-two decisions with 339,217 entities intact. A sentinel guard at two layers reduced eligible candidates to zero while leaving 12,834 legitimate conflict blocks untouched."
+        },
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-people-graph/pull/24",
+          "observed_at": "2026-08-08",
+          "summary": "The build lane established that no crates loader exists in the repository's history. Seven loaders were committed and none writes the person_person table. An entire pipeline stage is absent from the repository that publishes the graph, which is why 1,287,159 rows exist in production with no tracked schema. The validator's static expected-table list never required them, so a build omitting all four passed schema validation and two such builds matched each other."
+        },
+        {
+          "kind": "registry_validation",
+          "reference": "local:merged-main-suites-2026-08-08",
+          "observed_at": "2026-08-08",
+          "summary": "Merging two independently green pull requests produced four failures on main. Neither was a production defect. Three regression tests extracted the prior implementation from the moving reference origin/main to assert it was broken, so once the fix merged they failed because they had succeeded; they are now pinned to the last commit carrying the defect. The fourth imported a test framework that is not a dependency, so the guard protecting against the measured identity defect failed to load and was never exercised. Both repaired; 107 tests pass from a fresh clone."
+        },
+        {
+          "kind": "documentation",
+          "reference": ".agents/commissions/README.html",
+          "observed_at": "2026-08-08",
+          "summary": "Seven times across the two days a check reported success while doing nothing: a test that failed to import, a delete loop silenced by a filter, a validator that never required missing tables, a substring counter matching values as keys, a full-text query that raised and fell back to a scan, an application programming interface returning a stale cache, and a digest that silently excluded the central edge table. Every one was found by an outside reader or by measurement against real data, none by the author's own tests."
+        }
+      ],
+      "next_actions": [
+        "Repair the reproducible-build lane's failing continuous-integration run and merge it; it is the last open pull request in the People Graph.",
+        "Record a successor Event for the remote viewing research thread, which reached completed at 01:33 and expanded at 02:36 on 2026-08-07 and has no legal encoding under the current entry-type vocabulary.",
+        "Close the rights and privacy gap. Three accepted documents assume rights state travels with every observation and the database has no column to carry it; every source pilot is gated behind this.",
+        "Publish an identity-resolution benchmark. Criterion two moved from unmeasurable to measured at 0.000, and there is still no versioned ground truth to grade future changes against.",
+        "Treat independent review as a standing gate rather than an escalation, on the evidence that no author's own test suite caught any of the seven silent-success defects."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+          "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+          "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "release_ids": [],
+        "snapshot_ids": [],
+        "decision_ids": [],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-people-graph",
+          "https://github.com/sisodias/siso-book-library",
+          "https://github.com/sisodias/siso-foundry",
+          "https://github.com/sisodias/siso-unsolveable-mathematics",
+          "https://github.com/sisodias/siso-stargate-library",
+          "https://github.com/sisodias/siso-declassified-records"
+        ],
+        "works": [
+          {
+            "id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+            "name": "SISO People Graph",
+            "library_url": "/works/siso-people-graph/"
+          },
+          {
+            "id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+            "name": "SISO Book Library",
+            "library_url": "/works/siso-book-library/"
+          },
+          {
+            "id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+            "name": "GQ-010 — How do we increase the People Graph's value by 100×?",
+            "library_url": "/works/frontier-question-gq-010/"
+          },
+          {
+            "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+            "name": "SISO Foundry",
+            "library_url": "/works/siso-foundry/"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:5565a798-65fa-4aea-99b1-12b256fb88f4",
+      "occurred_at": "2026-08-07T02:22:00+07:00",
+      "recorded_at": "2026-08-07T02:22:00+07:00",
+      "immutable": true,
+      "entry_type": "initiative_started",
+      "thread": {
+        "id": "gls:thread:declassified-government-records-department",
+        "name": "Declassified Government Records Department",
+        "kind": "research"
+      },
+      "status": "active",
+      "title": "Declassified government records department started",
+      "summary": "A bounded Research department is being authored to map CIA declassified collections and other public government-record universes, preserve document-level provenance and release history, and make historically significant records discoverable without turning the Great Library into an unreviewed PDF warehouse.",
+      "intent": "Create an evidence-led department charter, official-source map, machine-readable source ledger, document and collection contracts, research workflow, safety and rights boundaries, and seed collection roadmap for declassified and otherwise public government records of historical interest.",
+      "reasoning": [
+        "The Great Library is a registry and reading surface rather than a payload warehouse, so government documents should enter through stable metadata, exact upstream locators, hashes, custody and release receipts, while bulk files remain in an external governed data plane.",
+        "Declassified, FOIA-released, mandatory-declassification-review, archival, public-domain, leaked, and merely publicly accessible records are different states and must not be collapsed into one sensational category.",
+        "CIA records are only one part of the source universe; NARA, presidential libraries, FBI, NSA, DIA, ODNI, State, Defense, Energy, Congress, courts, technical repositories, and foreign official archives require separate custody and provenance fields.",
+        "The active remote-viewing and UNSOLVEABLE Mathematics lanes reserve different paths, so this department can proceed safely under a new isolated research directory and later project those subjects through typed relationships.",
+        "Some released records can still expose personal data, operational methods, exploit details, or dangerous technical information; public availability alone is not an automatic promotion or republication decision."
+      ],
+      "changes": [
+        {
+          "kind": "coordination",
+          "reference": "gls:thread:declassified-government-records-department",
+          "summary": "Reserved a new research/declassified-government-records module and this append-only Event thread for a draft pull request."
+        }
+      ],
+      "scope": {
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso"
+        ]
+      },
+      "coordination": {
+        "owner": "GPT-5.6 Pro for Shaan Sisodia",
+        "branch": "agent/declassified-government-records-department",
+        "reserved_paths": [
+          "research/declassified-government-records/**",
+          "registry/events/2026-08-07-declassified-government-records-*.json"
+        ]
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "user-intent:declassified-government-records-department:2026-08-07",
+          "observed_at": "2026-08-07",
+          "summary": "Shaan requested a Great Library department for CIA declassified documents and other government records of historical interest, explicitly as a curiosity-driven research collection."
+        },
+        {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/great-library-of-siso:main:2026-08-07",
+          "observed_at": "2026-08-07",
+          "summary": "Current main, repository operating rules, active draft pull requests, and existing path reservations were inspected before selecting a non-overlapping module boundary."
+        }
+      ],
+      "next_actions": [
+        "Review official archive and reading-room sources, then author the department charter, source map, custody and document contracts, collection roadmap, research workflow, and rights and safety rules.",
+        "Create a machine-readable source index and seed collection ledger that distinguish official custody from secondary discovery mirrors and treat every URL, release state, and document version as evidence requiring refresh.",
+        "Build and run an offline module verifier, publish the isolated branch, open a draft pull request, and close this Event thread with exact validation receipts and promotion gates."
+      ],
+      "resolved_scope": {
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso"
+        ],
+        "works": []
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:a5b790fd-abe1-49e9-a648-76676c50ba17",
+      "occurred_at": "2026-08-07T00:35:49+07:00",
+      "recorded_at": "2026-08-07T00:35:49+07:00",
+      "immutable": true,
+      "entry_type": "initiative_started",
+      "thread": {
+        "id": "gls:thread:remote-viewing-research-module",
+        "name": "Remote Viewing Research Module",
+        "kind": "research"
+      },
+      "status": "active",
+      "title": "Remote viewing research and practice module started",
+      "summary": "A bounded Research module is being authored to preserve the declassified STARGATE record, distinguish Controlled Remote Viewing practitioner theory from established findings, teach a reproducible blind practice protocol, and make positive, null, ambiguous, and critical evidence inspectable without creating a parallel registry.",
+      "intent": "Place remote viewing inside the existing Research section as an authored, testable module; honor the requested first-principles practice premise while preserving an independent evidence track; and provide source maps, session templates, target-management tooling, judging rules, and promotion gates for later Work and Release registration.",
+      "reasoning": [
+        "The subject combines historical archives, a contested empirical literature, practitioner methods, and repeatable experiments, so Research is a better first boundary than History, Intelligence, or a generic skills collection.",
+        "The user-provided framing asks to move past an abstract possibility debate and investigate how remote viewing is said to work and how to do it; the module can adopt that premise for practice without silently treating the Matrix, signal line, telepathy, clairvoyance, or precognition as established mechanisms.",
+        "The 1995 AIR review reported above-chance laboratory results while rejecting continued intelligence use, and its expert reviewers disagreed about paranormal attribution; successful, failed, and ambiguous declassified sessions must therefore be preserved together.",
+        "The active People Graph registry lane owns the next whole-Library Snapshot and related registry surfaces, while another active Research lane reserves the root documentation indexes; this module is isolated under research/remote-viewing and can be promoted to an independently addressable Work after those lanes close.",
+        "External manuals, papers, and government documents remain upstream-owned; the Library will publish original synthesis, metadata, and tools, and will link to source payloads rather than copying them wholesale."
+      ],
+      "changes": [
+        {
+          "kind": "coordination",
+          "reference": "gls:thread:remote-viewing-research-module",
+          "summary": "Reserved a new research/remote-viewing module and this append-only Event thread for a draft pull request."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso"
+        ]
+      },
+      "coordination": {
+        "owner": "GPT-5.6 Pro for Shaan Sisodia",
+        "branch": "agent/remote-viewing-research-module",
+        "reserved_paths": [
+          "research/remote-viewing/**",
+          "registry/events/2026-08-07-remote-viewing-research-*.json"
+        ]
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "user-intent:remote-viewing-module:2026-08-07",
+          "observed_at": "2026-08-07",
+          "summary": "Shaan requested a deep-research Great Library module on remote viewing, how to perform it, and the associated documents, using a first-principles practice framing rather than another abstract possibility debate."
+        },
+        {
+          "kind": "source_review",
+          "reference": "source-review:remote-viewing-primary-record:2026-08-07",
+          "observed_at": "2026-08-07",
+          "summary": "CIA STARGATE records, the 1995 AIR evaluation and its opposing expert reviews, early Nature and IEEE studies and critiques, later systematic review work, and the 2026 expert-guideline paper were reviewed before selecting the module boundary."
+        },
+        {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/great-library-of-siso:main@e96e37f9c10ab5b6ef9f3e91484ddc2fa410eefc",
+          "observed_at": "2026-08-07",
+          "summary": "Current main, open draft pull requests, path reservations, Research contracts, and publication rules were inspected; the selected paths do not overlap the active UNSOLVEABLE Mathematics or People Graph lanes."
+        }
+      ],
+      "next_actions": [
+        "Author the module constitution, history and evidence review, mechanism-hypothesis map, practice protocol, experimental method, source ledger, session template, and public-safe target-management tool.",
+        "Validate all JSON and Python artifacts locally, check links and source identifiers, run the module verifier and tests, and compare stored Git blobs with the locally validated files.",
+        "Open a draft pull request and close this Event thread with exact changed paths, validation results, remaining source and licensing limits, and the gate for later Work, Release, Source Inventory, and Snapshot promotion."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+            "name": "Research",
+            "library_url": "/works/research/"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:fc942f5b-cf6f-4ede-afc1-bce7ed113cff",
+      "occurred_at": "2026-08-06T23:24:33+07:00",
+      "recorded_at": "2026-08-06T23:24:33+07:00",
+      "immutable": true,
+      "entry_type": "initiative_started",
+      "thread": {
+        "id": "gls:thread:unsolveable-mathematics-program",
+        "name": "UNSOLVEABLE Mathematics Program",
+        "kind": "research"
+      },
+      "status": "active",
+      "title": "UNSOLVEABLE mathematics programme architecture started",
+      "summary": "A bounded Research module is being authored to map open mathematical problems, reward-bearing challenges, prior solution communities, formal verification systems, and an evidence-gated intelligence pipeline without creating a second registry or claiming a complete problem corpus prematurely.",
+      "intent": "Place the programme correctly inside Research and Frontier Questions, extract reusable proof and verification patterns from OpenAI ten-proofs and the Lean ecosystem, define the future problem-record and campaign contracts, and identify the authoritative source universes required for a later global inventory.",
+      "reasoning": [
+        "The Great Library already models durable research questions as Works and changing accepted answers as immutable Releases, so open mathematical problems should reuse that lineage instead of becoming rows in a parallel catalogue.",
+        "The phrase unsolvable conflates open problems, independent or undecidable statements, impossibility theorems, disputed claims, and solved-but-unverified results; the module must classify these states before ranking or attempting them.",
+        "A kernel-checked proof is not by itself evidence of novelty, exact statement fidelity, reward eligibility, or mathematical community acceptance, so the programme needs separate gates for each claim.",
+        "The first publication should be an authored operating constitution and evidence map; individual problem Works and Source Inventories should be promoted only after direct source review and ownership boundaries are clear."
+      ],
+      "changes": [
+        {
+          "kind": "coordination",
+          "reference": "gls:thread:unsolveable-mathematics-program",
+          "summary": "Reserved the programme constitution, documentation indexes, and this append-only event thread for a draft pull request."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/openai/ten-proofs",
+          "https://github.com/leanprover-community/mathlib4"
+        ]
+      },
+      "coordination": {
+        "owner": "GPT-5.6 Pro for Shaan Sisodia",
+        "branch": "agent/unsolveable-mathematics-program",
+        "reserved_paths": [
+          "README.md",
+          "docs/README.md",
+          "docs/unsolveable-mathematics-program.html",
+          "registry/events/2026-08-06-unsolveable-mathematics-program-*.json"
+        ]
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "user-intent:unsolveable-mathematics-program:2026-08-06",
+          "observed_at": "2026-08-06",
+          "summary": "Shaan requested a Great Library module that gathers open mathematical problems, rewards, communities and historical solution methods, then applies AI and formal verification to work through them."
+        },
+        {
+          "kind": "source_review",
+          "reference": "source-review:openai-ten-proofs-and-lean-community:2026-08-06",
+          "observed_at": "2026-08-06",
+          "summary": "The OpenAI ten-proofs repository, its formalization manifest and Comparator challenges, the Lean community project map, mathlib, and the Great Library research contracts were reviewed before choosing the module boundary."
+        }
+      ],
+      "next_actions": [
+        "Author the programme constitution with taxonomy, source map, problem contract, verification ladder, intelligence roles, historical case-study method, pilot portfolio, and phased delivery plan.",
+        "Update the authored documentation indexes without hand-editing generated site projections.",
+        "Run available structural checks, open a draft pull request, and close this Event thread with exact files, validation limits, and next promotion gates."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/openai/ten-proofs",
+          "https://github.com/leanprover-community/mathlib4"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+            "name": "Research",
+            "library_url": "/works/research/"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:f7dbd510-879c-405b-9cac-58d3dd598501",
+      "occurred_at": "2026-08-06T22:24:00+07:00",
+      "recorded_at": "2026-08-06T22:24:00+07:00",
+      "immutable": true,
+      "entry_type": "initiative_started",
+      "thread": {
+        "id": "gls:thread:people-graph-parallel-expansion",
+        "name": "People Graph 100× parallel expansion",
+        "kind": "research"
+      },
+      "status": "active",
+      "title": "People Graph 100× thirteen-lane parallel program started",
+      "summary": "The Great Library registered the People Graph and Book Library as independent Research Works, accepted the ownership and data-plane boundary, scoped GQ-010, and launched thirteen simultaneous current-main lanes with exclusive path zones and draft-PR handoffs.",
+      "intent": "Increase the People Graph's research and decision value by 100× through independent no-wait lanes while keeping public lineage, canonical-service governance, source discovery, evidence adjudication, mutable data, rights, privacy, and repository ownership explicit.",
+      "reasoning": [
+        "The source systems are already independently addressable, so stable Work and Release identity should precede schema or database convergence.",
+        "Parallel lanes can explore ontology, identity, builds, queries, sources, claims, and integration faster when they exchange explicit observations and draft handoffs instead of waiting on one master implementation.",
+        "Starting every lane from current main and reserving exclusive paths reduces hidden branch coupling and makes merge conflicts an explicit integration concern.",
+        "A single initiative Event gives cold agents one public launch manifest without turning the Great Library into the mutable graph database or source-control coordinator.",
+        "GQ-010 supplies measurable kill criteria so tenfold or hundredfold data growth cannot pass without identity quality, research depth, decision value, rights, reproducibility, and cost evidence."
+      ],
+      "changes": [
+        {
+          "kind": "coordination",
+          "reference": "branch:gls/people-graph-parallel-spine-20260806",
+          "summary": "Lane 1 — Great Library registry and public program. Starts from current main, does not wait on other lanes, writes only new People Graph and Book Library Works and Releases; ADR-0005; program Event; GQ-010 seed and program Releases; V37; `CURRENT_STATE.md`; `docs/people-graph-program/**`; generated `site/`; `schemas/work.schema.json`; `scripts/check-site.mjs`; and only other relevant generator or check changes, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:pg/red-team-fixtures-20260806",
+          "summary": "Lane 2 — People Graph red-team fixtures. Starts from current main, does not wait on other lanes, writes only `tests/red_team/**`; `docs/audits/**`; `docs/handoffs/red-team.md`; `tests/red_team/run.py`, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:pg/v3-ontology-schema-20260806",
+          "summary": "Lane 3 — v3 ontology and schema. Starts from current main, does not wait on other lanes, writes only `schema/v3/**`; `docs/architecture/**`; `tests/schema_v3/**`; `docs/handoffs/schema-v3.md`, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:pg/identity-resolution-parallel-20260806",
+          "summary": "Lane 4 — Identity resolution. Starts from current main, does not wait on other lanes, writes only `identity_v3/**`; `loaders/match_identities.py`; `loaders/enrich_owners.py`; `tests/identity_v3/**`; `docs/handoffs/identity-resolution.md`, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:pg/reproducible-builds-parallel-20260806",
+          "summary": "Lane 5 — Reproducible builds. Starts from current main, does not wait on other lanes, writes only `build_v3/**`; `manifests/**`; `loaders/build_people_graph_v2.py`; `loaders/load_owner_topics.py`; `loaders/load_owners_into_people_graph.py`; `tests/build_v3/**`; build-specific `.github/workflows/**`; `docs/handoffs/reproducible-builds.md`, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:pg/query-surface-parallel-20260806",
+          "summary": "Lane 6 — Query, API, MCP, and explorer. Starts from current main, does not wait on other lanes, writes only `query_v3/**`; `api/**`; `mcp/**`; `viewer/**`; `loaders/ask.py`; `tests/query_v3/**`; `docs/handoffs/query-surface.md`, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:books/integrity-export-parallel-20260806",
+          "summary": "Lane 7 — Book Library integrity and export. Starts from current main, does not wait on other lanes, writes only in the Book Library: `scripts/**`; `index/**`; new `tests/**`; `manifests/**`; `docs/**`; `.github/workflows/**`, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:gls/people-graph-source-research-20260806",
+          "summary": "Lane 8 — Source research. Starts from current main, does not wait on other lanes, writes only `research/people-graph-sources/**`, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:pg/scholarly-authority-pilot-20260806",
+          "summary": "Lane 9 — Scholarly authority pilot. Starts from current main, does not wait on other lanes, writes only `sources/scholarly/**`; `tests/sources_scholarly/**`; `docs/source-methods/scholarly/**`; `docs/handoffs/scholarly-pilot.md`, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:pg/software-ai-pilot-20260806",
+          "summary": "Lane 10 — Software and AI pilot. Starts from current main, does not wait on other lanes, writes only `sources/software/**`; `sources/ai/**`; `tests/sources_software_ai/**`; `docs/source-methods/software-ai/**`; `docs/handoffs/software-ai-pilot.md`, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:pg/living-creators-media-pilot-20260806",
+          "summary": "Lane 11 — Living creators and media pilot. Starts from current main, does not wait on other lanes, writes only `sources/creators/**`; `sources/media/**`; `tests/sources_creators_media/**`; `docs/source-methods/living-creators/**`; `docs/handoffs/living-creators-pilot.md`, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:pg/claims-temporal-relations-20260806",
+          "summary": "Lane 12 — Claims, temporal model, and projections. Starts from current main, does not wait on other lanes, writes only `claims/**`; `projections/**`; `tests/claims/**`; `docs/reasoning/**`; `docs/handoffs/claims-relations.md`, opens a draft PR early, and publishes the required handoff."
+        },
+        {
+          "kind": "coordination",
+          "reference": "branch:pg/parallel-integration-contract-20260806",
+          "summary": "Lane 13 — Parallel integration contract. Starts from current main, does not wait on other lanes, writes only `integration/**`; `tests/integration_parallel/**`; `docs/integration/**`; `docs/handoffs/integration-contract.md`, opens a draft PR early, and publishes the required handoff."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+          "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+          "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+          "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be"
+        ],
+        "release_ids": [
+          "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e",
+          "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec",
+          "gls:release:3de55ee0-ec67-433a-b061-5bebabf0cb4e",
+          "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9"
+        ],
+        "decision_ids": [
+          "gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-people-graph",
+          "https://github.com/sisodias/siso-book-library"
+        ]
+      },
+      "coordination": {
+        "owner": "Great Library People Graph registry lane",
+        "branch": "gls/people-graph-parallel-spine-20260806",
+        "reserved_paths": [
+          "registry/works/siso-people-graph.json",
+          "registry/works/siso-book-library.json",
+          "registry/works/frontier-question-gq-010.json",
+          "registry/releases/siso-people-graph-de048bb.json",
+          "registry/releases/siso-book-library-be9ab08.json",
+          "registry/releases/frontier-question-gq-010-seed.json",
+          "registry/releases/frontier-question-gq-010-program-v1.json",
+          "registry/decisions/adr-0005-people-graph-ownership-and-data-plane.json",
+          "registry/events/2026-08-06-people-graph-parallel-program-started.json",
+          "registry/snapshots/whole-library-v37.json",
+          "schemas/work.schema.json",
+          "scripts/check-site.mjs",
+          "docs/people-graph-program/",
+          "CURRENT_STATE.md",
+          "site/"
+        ]
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+          "observed_at": "2026-08-06",
+          "summary": "The exact People Graph source and data-contract revision was reviewed read-only before registration."
+        },
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+          "observed_at": "2026-08-06",
+          "summary": "The exact Book Library source and data-contract revision was reviewed read-only before registration."
+        },
+        {
+          "kind": "documentation",
+          "reference": "docs/people-graph-program/parallel-lanes.md",
+          "observed_at": "2026-08-06",
+          "summary": "The authored manifest lists all thirteen lanes, branches, exclusive path zones, simultaneous start rule, no-wait rule, current-main rule, and draft-handoff requirement."
+        },
+        {
+          "kind": "documentation",
+          "reference": "registry:decision:ADR-0005",
+          "observed_at": "2026-08-06",
+          "summary": "The accepted ownership decision assigns public identity, canonical-service governance, discovery, adjudication, and external data-plane responsibilities."
+        }
+      ],
+      "next_actions": [
+        "Start all thirteen branches from the current main of their owning repository without waiting for another lane.",
+        "Open draft PRs early and publish the required handoff fields even when a dependency remains an assumption or proposed interface.",
+        "Use pg-observation-0.1 or a documented compatible successor for cross-lane source observations.",
+        "Keep source repositories read-only from the Great Library registry lane and keep each source lane inside its exclusive path zone.",
+        "Review all draft handoffs before choosing a production schema, database migration, identity policy, or source-promotion plan.",
+        "Record a successor Event rather than editing this immutable launch Event when the initiative changes state."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+          "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+          "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+          "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be"
+        ],
+        "release_ids": [
+          "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e",
+          "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec",
+          "gls:release:3de55ee0-ec67-433a-b061-5bebabf0cb4e",
+          "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9"
+        ],
+        "decision_ids": [
+          "gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-people-graph",
+          "https://github.com/sisodias/siso-book-library"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+            "name": "Research",
+            "library_url": "/works/research/"
+          },
+          {
+            "id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+            "name": "SISO Knowledge",
+            "library_url": "/works/siso-knowledge/"
+          },
+          {
+            "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+            "name": "SISO Foundry",
+            "library_url": "/works/siso-foundry/"
+          },
+          {
+            "id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+            "name": "SISO Evidence Engines",
+            "library_url": "/works/siso-evidence-engines/"
+          },
+          {
+            "id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+            "name": "SISO People Graph",
+            "library_url": "/works/siso-people-graph/"
+          },
+          {
+            "id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+            "name": "SISO Book Library",
+            "library_url": "/works/siso-book-library/"
+          },
+          {
+            "id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+            "name": "GQ-010 — How do we increase the People Graph's value by 100×?",
+            "library_url": "/works/frontier-question-gq-010/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",
@@ -3608,6 +4511,51 @@
     }
   ],
   "registry_changes": [
+    {
+      "kind": "release",
+      "occurred_at": "2026-08-06T22:24:00+07:00",
+      "id": "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787",
+      "version": "program-metadata-1.0.0+57320d3",
+      "title": "GQ-010 People Graph 100× program metadata v1 — not an Answer Release",
+      "work_id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+      "work_name": "GQ-010 — How do we increase the People Graph's value by 100×?"
+    },
+    {
+      "kind": "release",
+      "occurred_at": "2026-08-06T22:24:00+07:00",
+      "id": "gls:release:3de55ee0-ec67-433a-b061-5bebabf0cb4e",
+      "version": "registry-seed-2026-08-06",
+      "title": "GQ-010 publication-safe metadata seed",
+      "work_id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+      "work_name": "GQ-010 — How do we increase the People Graph's value by 100×?"
+    },
+    {
+      "kind": "release",
+      "occurred_at": "2026-08-06T22:24:00+07:00",
+      "id": "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec",
+      "version": "source-contract+be9ab08",
+      "title": "SISO Book Library code and data-contract baseline",
+      "work_id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+      "work_name": "SISO Book Library"
+    },
+    {
+      "kind": "release",
+      "occurred_at": "2026-08-06T22:24:00+07:00",
+      "id": "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e",
+      "version": "source-contract+de048bb",
+      "title": "SISO People Graph code and data-contract baseline",
+      "work_id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+      "work_name": "SISO People Graph"
+    },
+    {
+      "kind": "snapshot",
+      "occurred_at": "2026-08-06T22:24:00+07:00",
+      "id": "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9",
+      "version": "37.0.0",
+      "title": "Whole Library V37 — People Graph Parallel Program Spine",
+      "work_count": 28,
+      "release_count": 28
+    },
     {
       "kind": "snapshot",
       "occurred_at": "2026-08-03T02:10:00+07:00",
