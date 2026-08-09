@@ -26,6 +26,7 @@ tmp/
 .secrets/
 .local/
 .claude/session-context/
+.claude/instance-uuid.json
 *.key
 *.pem
 *.p12
