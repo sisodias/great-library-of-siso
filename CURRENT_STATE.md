@@ -34,9 +34,10 @@ verified laptop-estate baseline; exact machine placement remains private.
   redacted deterministic receipt under the ignored local boundary.
 - No second laptop/workspace identity registry is permitted.
 
-The first baseline covers sixteen high-value roots with zero drift. This is a
-verified starting set, not a claim that every nested repository is already
-declared.
+The completion receipt covers sixteen high-value roots with zero drift,
+including the implementation worktree. After merge and worktree removal, the
+live overlay covers fifteen active roots with zero drift. This is a verified
+starting set, not a claim that every nested repository is already declared.
 
 ## Knowledge and data boundaries
 
