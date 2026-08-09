@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:a84bdff6-8000-4b63-a72d-f145dc87c421",
+  "occurred_at": "2026-08-09T09:05:37+07:00",
+  "recorded_at": "2026-08-09T09:05:37+07:00",
+  "immutable": true,
+  "entry_type": "verification_completed",
+  "thread": {
+    "id": "gls:thread:laptop-estate-canonicalization",
+    "name": "Laptop Estate Canonicalization",
+    "kind": "initiative"
+  },
+  "status": "completed",
+  "title": "Laptop estate private overlay expanded to owner-level coverage",
+  "summary": "The ignored private placement overlay now resolves 67 meaningful repositories, containers, data planes, archives, runtime surfaces, and protected stores through Great Library identities with zero drift. The immutable sixteen-root completion receipt remains historical evidence; the broader live overlay is the current machine state.",
+  "intent": "Record the bounded owner-specific expansion without publishing machine paths, private payloads, or a competing identity registry.",
+  "reasoning": [
+    "The first completion Event intentionally captured a small verified baseline and named bounded expansion as its next action.",
+    "Meaningful estate coverage requires canonical repositories, protected containers, data planes, archives, and private stores, but treating every vendor clone or nested reference as a project would recreate the clutter.",
+    "The Great Library remains the sole identity and lineage registry; exact placement stays in the ignored private overlay and only a path-free projection and deterministic receipt are used as evidence.",
+    "Dirty repositories, client and personal material, transcripts, unique databases, recovery state, and external corpora remain protected rather than being moved or deleted for cosmetic cleanup."
+  ],
+  "changes": [
+    {
+      "kind": "document",
+      "reference": "CURRENT_STATE.md",
+      "summary": "Updated current state to distinguish the immutable sixteen-root completion receipt from the broader 67-entry live overlay."
+    },
+    {
+      "kind": "document",
+      "reference": "docs/laptop-estate.html",
+      "summary": "Documented the current owner-level coverage and deliberate exclusion of vendor, reference, and ephemeral roots."
+    },
+    {
+      "kind": "coordination",
+      "reference": "gls:thread:laptop-estate-canonicalization",
+      "summary": "Closed the owner-specific registry expansion after independent Luna coverage review and a zero-drift local audit."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+      "gls:work:8e2b4f07-3a91-4c58-9d16-7b05e3ca2841",
+      "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae",
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "gls:work:5c1e8a34-6d72-4f19-8a0b-2e7c94d1f635"
+    ],
+    "release_ids": [],
+    "snapshot_ids": [
+      "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9"
+    ],
+    "decision_ids": [
+      "gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "Codex orchestrator with GPT-5.6 Luna classification and verification lanes",
+    "branch": "agents/laptop-estate-wave4-20260809",
+    "reserved_paths": [
+      "registry/events/2026-08-09-laptop-estate-private-overlay-expanded.json",
+      "CURRENT_STATE.md",
+      "docs/laptop-estate.html"
+    ]
+  },
+  "predecessor_event_id": "gls:event:a8c2d687-f709-419f-80a1-6fb46f57d9bb",
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "integration_check",
+      "reference": "audit:laptop:redacted-receipt:2a8f9048941d3d8505ef6d9765e0d6912c12a8e6b38900b937b3ea2a6f83d79b",
+      "observed_at": "2026-08-09",
+      "summary": "The ignored deterministic receipt reports 67 declared entries, 67 pass, and zero drift. Its path-free public projection digest is 5c5d6876b08ebc71a288ff9b1aa376ffcdeb15ede610e6d35d3bf45df04c7f41."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "npm-run:verify:2026-08-09:owner-level-expansion",
+      "observed_at": "2026-08-09",
+      "summary": "The complete Great Library gate passed immutable history, contract tests, registry validation, site links and identity, and publication safety with the expanded ignored overlay in place."
+    },
+    {
+      "kind": "source_review",
+      "reference": "luna-review:laptop-estate-coverage:2026-08-09",
+      "observed_at": "2026-08-09",
+      "summary": "An independent Luna lane compared the 67-entry overlay with the exhaustive Git-root receipt and project-domain maps and found no justified identity delta for this phase."
+    }
+  ],
+  "next_actions": [
+    "Create independent encrypted backups and sampled restore proofs before reclaiming protected transcript, database, corpus, recovery, legal, or personal payload storage.",
+    "Assign a deliberate identity or Source Inventory boundary to mixed legacy containers only after an owner and unique-work comparison exist.",
+    "Use the Great Library overlay audit for drift checks and add entries only when a material canonical or preservation boundary is discovered."
+  ]
+}

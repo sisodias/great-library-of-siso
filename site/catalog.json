@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T01:35:00.000Z",
+  "generated_at": "2026-08-09T02:05:37.000Z",
   "base_path": "/",
   "works": [
     {
@@ -5282,7 +5282,7 @@
   },
   "intelligence": {
     "counts": {
-      "events": 35,
+      "events": 36,
       "decisions": 5,
       "active_initiatives": 3,
       "registry_changes": 116
