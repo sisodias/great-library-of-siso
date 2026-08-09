@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-09T02:05:37.000Z",
+  "generated_at": "2026-08-09T03:07:26.000Z",
   "base_path": "/",
   "counts": {
-    "events": 36,
+    "events": 37,
     "decisions": 5,
     "active_initiatives": 3,
     "registry_changes": 116
@@ -602,6 +602,116 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:13acc5b2-8ae0-4281-bc5e-46e22e436951",
+      "occurred_at": "2026-08-09T10:07:26+07:00",
+      "recorded_at": "2026-08-09T10:07:26+07:00",
+      "immutable": true,
+      "entry_type": "change_published",
+      "thread": {
+        "id": "gls:thread:laptop-estate-canonicalization",
+        "name": "Laptop Estate Canonicalization",
+        "kind": "initiative"
+      },
+      "status": "completed",
+      "title": "Private laptop estate status control published",
+      "summary": "The existing 67-entry private placement overlay now drives a deterministic status projection covering repository commit, branch, upstream, remote, dirty count, boundary, and front-door contract facts without creating a second registry or emitting machine-local paths.",
+      "intent": "Make the verified laptop estate continuously legible while keeping identity in the Great Library, exact placement private, and dirty repository state informational rather than destructive cleanup authority.",
+      "reasoning": [
+        "The placement overlay already resolves canonical identity, so a separate project registry would duplicate truth; the new command is only a private status projection over existing IDs.",
+        "Dirty work is expected across active repositories and must not be mistaken for identity drift, while missing direct Git boundaries, commits, or expected remotes remain material drift.",
+        "Repository status is useful only when it records exact commit and branch evidence, clearly states that it writes a private report, and proves paths and remote credentials cannot leak.",
+        "Five bounded Luna lanes separated implementation, documentation, Oracle provenance, repository contracts, and adversarial verification so incorrect duplicate and verification claims could be rejected before integration."
+      ],
+      "changes": [
+        {
+          "kind": "commit",
+          "reference": "scripts/estate-status.mjs",
+          "summary": "Added a repository-non-mutating deterministic private status projection over the existing estate overlay."
+        },
+        {
+          "kind": "test",
+          "reference": "tests/estate-status.test.mjs",
+          "summary": "Added focused identity, cleanliness, determinism, redaction, remote-drift, and nested-boundary coverage and integrated it into the full verifier."
+        },
+        {
+          "kind": "document",
+          "reference": ".agents/runs/laptop-beautification-20260809/STATUS.md",
+          "summary": "Recorded the five-Luna execution and convergence evidence without copying model transcripts or private topology."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+        ],
+        "source_inventory_ids": [
+          "gls:source-inventory:7c9e2a41-5d68-4f03-b8a7-1e6c9d2f405b"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso"
+        ]
+      },
+      "coordination": {
+        "owner": "Codex parent with five GPT-5.6 Luna implementation, classification, and verification lanes",
+        "branch": "agents/estate-status-20260809",
+        "reserved_paths": [
+          "scripts/estate-status.mjs",
+          "tests/estate-status.test.mjs",
+          "scripts/verify.mjs",
+          "package.json",
+          "CURRENT_STATE.md",
+          ".agents/runs/laptop-beautification-20260809/",
+          "registry/events/2026-08-09-laptop-estate-status-control-published.json"
+        ]
+      },
+      "predecessor_event_id": "gls:event:a84bdff6-8000-4b63-a72d-f145dc87c421",
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "npm-run:status-estate:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "The private status projection reports 67 declared entries, 67 pass, zero drift, and 19 dirty repositories as informational at convergence time."
+        },
+        {
+          "kind": "integration_check",
+          "reference": "npm-run:verify:2026-08-09:estate-status-control",
+          "observed_at": "2026-08-09",
+          "summary": "The complete Great Library gate passes with the estate-status tests included, generated site refreshed, links valid, and publication safety preserved."
+        },
+        {
+          "kind": "source_review",
+          "reference": "luna-review:laptop-beautification-five-lane-convergence:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "Five distinct Luna lanes covered status implementation, documentation, Oracle provenance, repository contracts, and adversarial refutation; the parent independently repaired and verified material findings."
+        }
+      ],
+      "next_actions": [
+        "Complete a controlled Oracle relaunch, camera, and owned-mesh smoke before retiring distinct rollback bundles or installers.",
+        "Add or repair repository front-door contracts only where existing dirty work can be isolated and the owning source of truth is known.",
+        "Run cache cleanup only in a quiet process window and only for reconstructable, inactive material with before-and-after receipts."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+        ],
+        "source_inventory_ids": [
+          "gls:source-inventory:7c9e2a41-5d68-4f03-b8a7-1e6c9d2f405b"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",

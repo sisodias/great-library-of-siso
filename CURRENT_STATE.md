@@ -15,7 +15,7 @@ verified laptop-estate baseline; exact machine placement remains private.
 - Whole Library V37 is
   `gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9`.
 - The registry contains 32 Work records, 79 Releases, two Assemblies, eight
-  Source Inventories, 37 Snapshots, five Decisions, and 36 Events.
+  Source Inventories, 37 Snapshots, five Decisions, and 37 Events.
 - V37 selects 28 exact Releases. A Work or Source Inventory added after its
   selection may be accepted identity or intake without pretending to be a new
   whole-Library Snapshot.
@@ -32,6 +32,10 @@ verified laptop-estate baseline; exact machine placement remains private.
   `.local/private-registry/overlay.json`, joined to resolving Library IDs.
 - `npm run audit:laptop` validates the declared physical state and writes a
   redacted deterministic receipt under the ignored local boundary.
+- `npm run status:estate` makes no repository mutations and writes a
+  deterministic private status projection with repository boundary, commit,
+  branch, upstream, remote, dirty-count, and front-door contract facts. It
+  reports dirty work without treating it as identity drift and emits no paths.
 - No second laptop/workspace identity registry is permitted.
 
 The immutable completion Event preserves the first sixteen-root receipt,
@@ -100,6 +104,7 @@ topology, and duplicate memory brains do not belong there.
 npm ci
 npm run build:private-overlay
 npm run audit:laptop
+npm run status:estate
 npm run verify
 ```
 
