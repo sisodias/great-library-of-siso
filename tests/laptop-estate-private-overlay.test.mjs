@@ -35,6 +35,18 @@ function entry(overrides = {}) {
   };
 }
 
+async function writeLargeDirtyFixture(repo, count = 5000) {
+  const directory = join(repo, "large-status");
+  await mkdir(directory);
+  const suffix = "x".repeat(210);
+  for (let offset = 0; offset < count; offset += 200) {
+    await Promise.all(Array.from({ length: Math.min(200, count - offset) }, (_, index) => {
+      const number = String(offset + index).padStart(5, "0");
+      return writeFile(join(directory, `${number}-${suffix}`), "");
+    }));
+  }
+}
+
 async function test(name, value, expectedStatus, expectedText) {
   const dir = await mkdtemp(join(tmpdir(), "gls-overlay-test-"));
   try {
@@ -119,6 +131,14 @@ try {
   await writeFile(input, `${JSON.stringify(overlay([entry({ unit_kind: "canonical_repo", path: nested, expected_visibility: "public", storage_class: "tracked_source", expected_remote: undefined })]), null, 2)}\n`);
   result = audit(input, receipt);
   if (result.status !== 1 || !result.stdout.includes("repository-boundary-not-direct")) throw new Error("nested canonical repo must be drift exit 1");
+  passed += 1;
+
+  await writeLargeDirtyFixture(repository);
+  await writeFile(input, `${JSON.stringify(overlay([entry({ unit_kind: "canonical_repo", path: repository, expected_visibility: "public", storage_class: "tracked_source", expected_remote: "https://example.invalid/actual.git" })]), null, 2)}\n`);
+  result = audit(input, receipt, ["--json"]);
+  const largeReceipt = JSON.parse(await readFile(receipt, "utf8"));
+  const observedDirtyEntries = largeReceipt.entries[0].git?.dirty_entries;
+  if (result.status !== 0 || observedDirtyEntries !== 5000) throw new Error(`audit collector must not silently truncate repositories above the default child-process buffer (exit=${result.status}, dirty_entries=${observedDirtyEntries}, findings=${largeReceipt.entries[0].findings.join(",")}, stderr=${result.stderr.trim()})`);
   passed += 1;
 } finally {
   await rm(auditDir, { recursive: true, force: true });

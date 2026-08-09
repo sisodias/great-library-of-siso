@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 import { createHash } from "node:crypto";
-import { lstat, mkdir, readFile, writeFile } from "node:fs/promises";
+import { lstat, mkdir, readFile, realpath, writeFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const privateOutputBoundary = path.join(root, ".local/private-registry");
+const gitMaxBuffer = 64 * 1024 * 1024;
 
 function argument(name, fallback) {
   const index = process.argv.indexOf(`--${name}`);
@@ -15,9 +16,14 @@ function argument(name, fallback) {
   return path.resolve(process.argv[index + 1]);
 }
 
-function git(args, cwd) {
-  const result = spawnSync("/usr/bin/git", ["-C", cwd, ...args], { encoding: "utf8" });
-  return result.status === 0 ? result.stdout.trim() : null;
+function git(args, cwd, { required = false } = {}) {
+  const result = spawnSync("/usr/bin/git", ["-C", cwd, ...args], { encoding: "utf8", maxBuffer: gitMaxBuffer });
+  if (result.error) throw new Error(`git ${args[0]} failed: ${result.error.message}`);
+  if (result.status !== 0) {
+    if (required) throw new Error(`git ${args[0]} failed with exit ${result.status}: ${(result.stderr || result.stdout).trim()}`);
+    return null;
+  }
+  return result.stdout.trim();
 }
 
 function sha256(buffer) {
@@ -70,14 +76,14 @@ async function main() {
 
       const topLevel = git(["rev-parse", "--show-toplevel"], entry.path);
       if (topLevel) {
-        const boundary = path.resolve(topLevel) === path.resolve(entry.path) ? "direct" : "contained";
+        const boundary = (await realpath(topLevel)) === (await realpath(entry.path)) ? "direct" : "contained";
         const head = git(["rev-parse", "HEAD"], entry.path);
         const origin = git(["remote", "get-url", "origin"], entry.path);
         gitState = {
           boundary,
           has_head: Boolean(head),
           origin_matches: entry.expected_remote ? origin === entry.expected_remote : null,
-          dirty_entries: (git(["status", "--porcelain=v1", "--untracked-files=all"], entry.path) || "").split("\n").filter(Boolean).length
+          dirty_entries: git(["status", "--porcelain=v1", "--untracked-files=all"], entry.path, { required: true }).split("\n").filter(Boolean).length
         };
         if (["canonical_repo", "worktree"].includes(entry.unit_kind) && boundary !== "direct") findings.push("repository-boundary-not-direct");
         if (["canonical_repo", "worktree"].includes(entry.unit_kind) && !head) findings.push("repository-head-missing");
