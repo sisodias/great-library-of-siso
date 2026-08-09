@@ -15,7 +15,7 @@ verified laptop-estate baseline; exact machine placement remains private.
 - Whole Library V37 is
   `gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9`.
 - The registry contains 32 Work records, 79 Releases, two Assemblies, eight
-  Source Inventories, 37 Snapshots, five Decisions, and 35 Events.
+  Source Inventories, 37 Snapshots, five Decisions, and 36 Events.
 - V37 selects 28 exact Releases. A Work or Source Inventory added after its
   selection may be accepted identity or intake without pretending to be a new
   whole-Library Snapshot.
@@ -116,8 +116,8 @@ local links and identity, and publication safety.
    not paste either into public docs or prompts.
 4. Start implementation from current main, preserve dirty/sole-copy/private
    material, use project-local scratchpads, and finish with a successor Event.
-5. Expand the laptop baseline in bounded owner-specific waves; do not repeat a
-   laptop-wide archaeology scan merely to answer one path question.
+5. Maintain the 67-entry baseline in bounded owner-specific waves; do not
+   repeat a laptop-wide archaeology scan merely to answer one path question.
 
 ## Known external action
 
