@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-09T03:07:26.000Z",
+  "generated_at": "2026-08-09T03:23:42.000Z",
   "base_path": "/",
   "counts": {
-    "events": 37,
+    "events": 38,
     "decisions": 5,
     "active_initiatives": 3,
     "registry_changes": 116
@@ -602,6 +602,120 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:c6bd8a78-8d77-42b0-8139-055d54d828ba",
+      "occurred_at": "2026-08-09T10:23:42+07:00",
+      "recorded_at": "2026-08-09T10:23:42+07:00",
+      "immutable": true,
+      "entry_type": "change_published",
+      "thread": {
+        "id": "gls:thread:laptop-estate-canonicalization",
+        "name": "Laptop Estate Canonicalization",
+        "kind": "initiative"
+      },
+      "status": "completed",
+      "title": "Five-Luna laptop beautification wave converged",
+      "summary": "Five bounded Luna lanes converged the private estate status control, project front doors, and a recoverable Oracle application-retention pass without creating a second registry or deleting protected payloads.",
+      "intent": "Close the bounded beautification wave with public-safe evidence while keeping private topology and reversible cleanup receipts outside publication.",
+      "reasoning": [
+        "The Great Library remains the sole identity registry; repository front doors belong in their owning repositories and private placement stays in the ignored overlay.",
+        "Dirty repositories, caches with active owners, transcripts, databases, recovery stores, and unique corpora are not generic disk-cleanup stock.",
+        "Historical application bundles became eligible only after the retained current build passed signed identity, normal launch, Ready state, live local preview, owned-mesh, no-broadcast, and clean-quit checks.",
+        "Moving eligible bundles to recoverable Trash organizes the live Applications surface but reclaims no bytes until an explicit irreversible emptying decision."
+      ],
+      "changes": [
+        {
+          "kind": "document",
+          "reference": ".agents/runs/laptop-beautification-20260809/STATUS.md",
+          "summary": "Closed the five-lane run with exact safe, protected, recoverable, and still-gated boundaries."
+        },
+        {
+          "kind": "coordination",
+          "reference": "sisodias/siso-stargate-library#1",
+          "summary": "Published the Stargate project front door through its owning repository."
+        },
+        {
+          "kind": "coordination",
+          "reference": "sisodias/siso-people-graph#27",
+          "summary": "Published the People Graph project front door through a clean main-based worktree while preserving the existing dirty checkout."
+        },
+        {
+          "kind": "test",
+          "reference": "private-receipt:oracle-retention-smoke-2026-08-09",
+          "summary": "Recorded the successful retained-build smoke and recoverable relocation privately with exact hashes and paths."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+        ],
+        "source_inventory_ids": [
+          "gls:source-inventory:7c9e2a41-5d68-4f03-b8a7-1e6c9d2f405b"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-stargate-library",
+          "https://github.com/sisodias/siso-people-graph"
+        ]
+      },
+      "coordination": {
+        "owner": "Codex parent with five GPT-5.6 Luna implementation, classification, and verification lanes",
+        "branch": "agents/laptop-beautification-closeout-20260809",
+        "reserved_paths": [
+          ".agents/runs/laptop-beautification-20260809/STATUS.md",
+          "registry/events/2026-08-09-laptop-beautification-converged.json"
+        ]
+      },
+      "predecessor_event_id": "gls:event:13acc5b2-8ae0-4281-bc5e-46e22e436951",
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "npm-run:status-estate:2026-08-09:beautification-closeout",
+          "observed_at": "2026-08-09",
+          "summary": "The private status projection reports 67 declared entries, 67 pass, zero drift, and 18 dirty repositories as informational at closeout."
+        },
+        {
+          "kind": "integration_check",
+          "reference": "npm-run:verify:2026-08-09:beautification-closeout",
+          "observed_at": "2026-08-09",
+          "summary": "The complete Great Library publication and contract suite passes after the closeout record."
+        },
+        {
+          "kind": "source_review",
+          "reference": "luna-review:laptop-beautification-five-lane-convergence:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "Five distinct Luna lanes and parent convergence separated implementation, provenance, documentation, and adversarial review."
+        }
+      ],
+      "next_actions": [
+        "Reconcile the pre-existing dirty Agent Base front-door deletion only in its owning lane.",
+        "Perform live-owner cache pruning only in a quiet window with rebuild and before/after receipts.",
+        "Empty recoverable Trash only after an explicit irreversible owner decision."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+        ],
+        "source_inventory_ids": [
+          "gls:source-inventory:7c9e2a41-5d68-4f03-b8a7-1e6c9d2f405b"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-stargate-library",
+          "https://github.com/sisodias/siso-people-graph"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",
