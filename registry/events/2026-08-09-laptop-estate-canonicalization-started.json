@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:14ead824-e318-436f-bed2-6259a4c92cb3",
+  "occurred_at": "2026-08-09T08:13:51+07:00",
+  "recorded_at": "2026-08-09T08:13:51+07:00",
+  "immutable": true,
+  "entry_type": "initiative_started",
+  "thread": {
+    "id": "gls:thread:laptop-estate-canonicalization",
+    "name": "Laptop Estate Canonicalization",
+    "kind": "initiative"
+  },
+  "status": "active",
+  "title": "Laptop estate canonicalization started",
+  "summary": "The current laptop estate is being reconciled into the Great Library as the sole identity and lineage registry, with public-safe Source Inventories, a governed private overlay for exact local state, project-local agent operating contracts, and a repeatable drift audit instead of a competing registry.",
+  "intent": "Make every valuable repository, worktree, data plane, runtime, archive, and recovery boundary findable through Great Library identity while keeping raw private payloads and machine topology outside the public projection and preserving dirty or sole-copy work.",
+  "reasoning": [
+    "The laptop cleanup produced verified Git-root, worktree, placement, database, transcript, and recovery receipts, but current truth remains split across dated evidence and prose maps.",
+    "Great Library already owns stable public identity and Source Inventory intake, so a separate laptop project registry would create the same competing-source problem this cleanup is intended to remove.",
+    "The public repository cannot contain credentials, client source, personal records, raw transcripts, mutable databases, or machine-specific paths, so exact private state requires a governed local overlay that projects through the same Great Library identities without entering public Git history.",
+    "Oracle Streaming demonstrates the useful project-local agent primitives, but its full fleet history is too specialized to copy into every project; a smaller contract is required."
+  ],
+  "changes": [
+    {
+      "kind": "coordination",
+      "reference": "gls:thread:laptop-estate-canonicalization",
+      "summary": "Reserved the laptop estate Source Inventory, private-overlay contract, audit and projection tooling, project-local agent contract, generated public-safe projection, and closeout evidence."
+    }
+  ],
+  "scope": {
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "Codex orchestrator with GPT-5.6 Luna audit, implementation, and verification lanes",
+    "branch": "agents/laptop-canonicalization-20260809",
+    "reserved_paths": [
+      "registry/source-inventories/laptop-estate-2026-08-09.json",
+      "registry/events/2026-08-09-laptop-estate-canonicalization-*.json",
+      "schemas/private-source-overlay.schema.json",
+      "scripts/audit-laptop-estate.mjs",
+      "scripts/build-private-overlay.mjs",
+      "tests/laptop-estate*.mjs",
+      "docs/laptop-estate.html",
+      "site/laptop-estate/**",
+      ".agents/**",
+      "package.json",
+      "CURRENT_STATE.md"
+    ]
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:laptop-cleanup-reconciliation:2026-08-09",
+      "observed_at": "2026-08-09",
+      "summary": "Luna audits and parent verification established current repository, worktree, placement, People Graph and Foundry database, transcript, private-recovery, personal-data, Agent Base, and Agency boundaries without deleting unique or private material."
+    }
+  ],
+  "next_actions": [
+    "Publish a public-safe Source Inventory that maps accepted Works, candidates, mixed imports, data planes, runtime state, private preservation units, and exact promotion blockers without machine-local paths.",
+    "Implement and test a read-only estate auditor plus an optional ignored private overlay that links exact local state to Great Library identities without changing public registry semantics.",
+    "Adopt the portable project-local agent contract only in canonical active projects, execute locally verifiable placement and cache cleanup with receipts, then close this Event through an immutable successor."
+  ]
+}
