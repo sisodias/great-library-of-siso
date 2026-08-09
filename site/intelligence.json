@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-07T21:40:00.000Z",
+  "generated_at": "2026-08-09T01:35:00.000Z",
   "base_path": "/",
   "counts": {
-    "events": 33,
+    "events": 35,
     "decisions": 5,
     "active_initiatives": 3,
     "registry_changes": 116
@@ -602,6 +602,240 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:a8c2d687-f709-419f-80a1-6fb46f57d9bb",
+      "occurred_at": "2026-08-09T08:35:00+07:00",
+      "recorded_at": "2026-08-09T08:35:00+07:00",
+      "immutable": true,
+      "entry_type": "initiative_completed",
+      "thread": {
+        "id": "gls:thread:laptop-estate-canonicalization",
+        "name": "Laptop Estate Canonicalization",
+        "kind": "initiative"
+      },
+      "status": "completed",
+      "title": "Laptop estate identity and placement control plane completed",
+      "summary": "The Great Library is now the sole project and source identity registry for the first high-value laptop-estate baseline. A public-safe Source Inventory, ignored private placement overlay, deterministic path-free projection, read-only drift auditor, public guide, and project-local agent contract were implemented and verified. Sixteen declared high-value roots pass the live audit with zero drift. A false Stargate path collision was separated without deleting its protected corpus payload.",
+      "intent": "Close the initiative with verified identity, privacy, placement, and continuation contracts while recording the remaining backup- and owner-gated work honestly.",
+      "reasoning": [
+        "A second laptop registry would duplicate Great Library identity and lineage, so exact machine placement is an ignored overlay joined to existing Work and Source Inventory IDs.",
+        "One logical knowledge surface may depend on several independently owned physical databases; source, identity, ingestion, working, recovery, and assembled stores therefore remain separate entries or inventory units rather than duplicate Works.",
+        "The old Stargate-named directory held a unique corpus payload and uncommitted index scaffold rather than the accepted research Work, so it was preserved as a declassified-corpus data plane and the accepted Work received the canonical checkout path.",
+        "Recovery stores, transcripts, databases, dirty repositories, client or personal state, and sole-copy archives remain preservation targets until an independent backup and restore proof exist."
+      ],
+      "changes": [
+        {
+          "kind": "registry_record",
+          "reference": "registry/source-inventories/laptop-estate-2026-08-09.json",
+          "summary": "Added the public-safe estate intake with eight logical units covering accepted Works, candidates, data planes, private state, transcripts, and runtime/configuration boundaries."
+        },
+        {
+          "kind": "commit",
+          "reference": "scripts/audit-laptop-estate.mjs",
+          "summary": "Added a read-only audit with resolving identity checks, direct repository-boundary and remote checks, redacted deterministic receipts, and distinct pass, drift, and runtime exit codes."
+        },
+        {
+          "kind": "commit",
+          "reference": "scripts/build-private-overlay.mjs",
+          "summary": "Added deterministic validation and path-free projection for the ignored owner-held placement overlay."
+        },
+        {
+          "kind": "commit",
+          "reference": ".agents/README.md",
+          "summary": "Preserved the existing Great Library task contract and added bounded run, lane-handoff, and plural scratchpad contracts without copying Oracle-specific fleet machinery."
+        },
+        {
+          "kind": "document",
+          "reference": "docs/laptop-estate.html",
+          "summary": "Published the sole-registry, privacy, multi-database, and preservation boundary for humans and agents."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+          "gls:work:8e2b4f07-3a91-4c58-9d16-7b05e3ca2841",
+          "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "gls:work:5c1e8a34-6d72-4f19-8a0b-2e7c94d1f635"
+        ],
+        "release_ids": [],
+        "snapshot_ids": [
+          "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9"
+        ],
+        "decision_ids": [
+          "gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-people-graph",
+          "https://github.com/sisodias/siso-stargate-library"
+        ]
+      },
+      "coordination": {
+        "owner": "Codex orchestrator with GPT-5.6 Luna audit, implementation, and verification lanes",
+        "branch": "agents/laptop-canonicalization-20260809",
+        "reserved_paths": [
+          "registry/events/2026-08-09-laptop-estate-canonicalization-completed.json"
+        ]
+      },
+      "predecessor_event_id": "gls:event:14ead824-e318-436f-bed2-6259a4c92cb3",
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "npm-run:verify:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "The complete Great Library gate passed immutable history, contract tests, registry validation, generated-site links and identity, and publication safety after the estate integration."
+        },
+        {
+          "kind": "integration_check",
+          "reference": "audit:laptop:redacted-receipt:ae608324696b420d8d05bf795f49388b428db89af0064b3d9a4752696b71e3ca",
+          "observed_at": "2026-08-09",
+          "summary": "The ignored redacted receipt reports sixteen declared high-value entries, sixteen pass, zero drift. Its public-safe projection digest is 5656c6bcf8dd76e0b9b1721fbff097595efbf8fdfdf9b2f2de1e304b67fbbc29. No local paths are included in this Event."
+        },
+        {
+          "kind": "source_review",
+          "reference": "source-review:stargate-path-collision:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "The prior Stargate-named tree was read before classification and proved to be a separate Black Vault corpus/index data plane with no commit history. The accepted public Work was cloned at its exact registered revision while the corpus bytes remained intact under their Research data-plane owner."
+        }
+      ],
+      "next_actions": [
+        "Expand the ignored overlay from the sixteen high-value roots to the remaining active canonical repositories and owner-approved data planes using bounded read-only waves.",
+        "Create independent encrypted copies and sampled restore proofs for transcripts, unique databases, recovery state, and the Stargate corpus before considering payload cleanup.",
+        "Reconcile SISO UI Base ownership, rights, history, tests, and release boundary before proposing a Work, and reconcile local math-bounties material with the accepted Unsolveable Mathematics revision without publishing private datasets."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+          "gls:work:8e2b4f07-3a91-4c58-9d16-7b05e3ca2841",
+          "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "gls:work:5c1e8a34-6d72-4f19-8a0b-2e7c94d1f635"
+        ],
+        "release_ids": [],
+        "snapshot_ids": [
+          "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9"
+        ],
+        "decision_ids": [
+          "gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-people-graph",
+          "https://github.com/sisodias/siso-stargate-library"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+            "name": "SISO People Graph",
+            "library_url": "/works/siso-people-graph/"
+          },
+          {
+            "id": "gls:work:8e2b4f07-3a91-4c58-9d16-7b05e3ca2841",
+            "name": "SISO Stargate Library",
+            "library_url": "/works/siso-stargate-library/"
+          },
+          {
+            "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+            "name": "SISO Agent Runtime",
+            "library_url": "/works/siso-agent-base/"
+          },
+          {
+            "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+            "name": "SISO Foundry",
+            "library_url": "/works/siso-foundry/"
+          },
+          {
+            "id": "gls:work:5c1e8a34-6d72-4f19-8a0b-2e7c94d1f635",
+            "name": "SISO Unsolveable Mathematics",
+            "library_url": "/works/siso-unsolveable-mathematics/"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:14ead824-e318-436f-bed2-6259a4c92cb3",
+      "occurred_at": "2026-08-09T08:13:51+07:00",
+      "recorded_at": "2026-08-09T08:13:51+07:00",
+      "immutable": true,
+      "entry_type": "initiative_started",
+      "thread": {
+        "id": "gls:thread:laptop-estate-canonicalization",
+        "name": "Laptop Estate Canonicalization",
+        "kind": "initiative"
+      },
+      "status": "active",
+      "title": "Laptop estate canonicalization started",
+      "summary": "The current laptop estate is being reconciled into the Great Library as the sole identity and lineage registry, with public-safe Source Inventories, a governed private overlay for exact local state, project-local agent operating contracts, and a repeatable drift audit instead of a competing registry.",
+      "intent": "Make every valuable repository, worktree, data plane, runtime, archive, and recovery boundary findable through Great Library identity while keeping raw private payloads and machine topology outside the public projection and preserving dirty or sole-copy work.",
+      "reasoning": [
+        "The laptop cleanup produced verified Git-root, worktree, placement, database, transcript, and recovery receipts, but current truth remains split across dated evidence and prose maps.",
+        "Great Library already owns stable public identity and Source Inventory intake, so a separate laptop project registry would create the same competing-source problem this cleanup is intended to remove.",
+        "The public repository cannot contain credentials, client source, personal records, raw transcripts, mutable databases, or machine-specific paths, so exact private state requires a governed local overlay that projects through the same Great Library identities without entering public Git history.",
+        "Oracle Streaming demonstrates the useful project-local agent primitives, but its full fleet history is too specialized to copy into every project; a smaller contract is required."
+      ],
+      "changes": [
+        {
+          "kind": "coordination",
+          "reference": "gls:thread:laptop-estate-canonicalization",
+          "summary": "Reserved the laptop estate Source Inventory, private-overlay contract, audit and projection tooling, project-local agent contract, generated public-safe projection, and closeout evidence."
+        }
+      ],
+      "scope": {
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso"
+        ]
+      },
+      "coordination": {
+        "owner": "Codex orchestrator with GPT-5.6 Luna audit, implementation, and verification lanes",
+        "branch": "agents/laptop-canonicalization-20260809",
+        "reserved_paths": [
+          "registry/source-inventories/laptop-estate-2026-08-09.json",
+          "registry/events/2026-08-09-laptop-estate-canonicalization-*.json",
+          "schemas/private-source-overlay.schema.json",
+          "scripts/audit-laptop-estate.mjs",
+          "scripts/build-private-overlay.mjs",
+          "tests/laptop-estate*.mjs",
+          "docs/laptop-estate.html",
+          "site/laptop-estate/**",
+          ".agents/**",
+          "package.json",
+          "CURRENT_STATE.md"
+        ]
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:laptop-cleanup-reconciliation:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "Luna audits and parent verification established current repository, worktree, placement, People Graph and Foundry database, transcript, private-recovery, personal-data, Agent Base, and Agency boundaries without deleting unique or private material."
+        }
+      ],
+      "next_actions": [
+        "Publish a public-safe Source Inventory that maps accepted Works, candidates, mixed imports, data planes, runtime state, private preservation units, and exact promotion blockers without machine-local paths.",
+        "Implement and test a read-only estate auditor plus an optional ignored private overlay that links exact local state to Great Library identities without changing public registry semantics.",
+        "Adopt the portable project-local agent contract only in canonical active projects, execute locally verifiable placement and cache cleanup with receipts, then close this Event through an immutable successor."
+      ],
+      "resolved_scope": {
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso"
+        ],
+        "works": []
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",

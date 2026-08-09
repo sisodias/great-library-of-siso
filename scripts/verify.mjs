@@ -4,6 +4,8 @@ const checks = [
   ["immutable history", "scripts/check-immutable-history.mjs"],
   ["promotion contract tests", "tests/promotion-contract.test.mjs"],
   ["intelligence contract tests", "tests/intelligence-contract.test.mjs"],
+  ["laptop estate contract tests", "tests/laptop-estate.test.mjs"],
+  ["private overlay contract tests", "tests/laptop-estate-private-overlay.test.mjs"],
   ["research question contract tests", "tests/research-contract.test.mjs"],
   ["God Questions infrastructure contract tests", "tests/god-questions-infrastructure.test.mjs"],
   ["registry validation", "scripts/validate.mjs"],

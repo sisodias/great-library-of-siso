@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Oracle Streaming Task / Idea / Gap",
-  "description": "Cross-domain backlog entry. Any agent or human may create one. Adopted from the SISO org .tasks convention (SISO_Internal_Lab/.tasks), extended with ui/security categories + a domain tag so UI ideas, security gaps, and future work live in ONE registry.",
+  "title": "Great Library Task / Idea / Gap",
+  "description": "Great Library and estate-wide engineering backlog entry. Any agent or human may create one. Uses the existing SISO task convention while keeping task truth separate from Works, Releases, Snapshots, Source Inventories, Decisions, and Events.",
   "type": "object",
   "required": ["id", "title", "status", "priority", "domain", "created_at"],
   "properties": {

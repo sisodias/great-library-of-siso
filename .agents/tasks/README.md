@@ -8,6 +8,10 @@ Adopts the SISO org `.agents/tasks/` convention (see
 `backlog/TASK-NNNN/task.json`, validated against `task_schema.json`, with the
 `status` field canonical and the folder mirroring it.
 
+Tasks may move among `backlog/`, `in_progress/`, and `completed/`; the JSON
+`status` remains canonical. Lane handoffs use `lane_closure_schema.json` and do
+not create a second task shape.
+
 ## Why tasks are here and not in `registry/`
 
 The registry is a catalog. `docs/task-state-system-map.html` is an accepted

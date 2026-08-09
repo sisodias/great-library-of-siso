@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:siso:great-library:schema:private-source-overlay:1",
+  "title": "Owner-held private source overlay",
+  "description": "Machine-local placement attached to public Great Library identities. This file and its projections must remain under the ignored .local boundary.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_type", "inventory_id", "observed_at", "entries"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "private_source_overlay" },
+    "inventory_id": { "type": "string", "pattern": "^gls:source-inventory:[0-9a-f-]{36}$" },
+    "observed_at": { "type": "string", "format": "date" },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["entry_id", "registry_record_id", "unit_kind", "path", "expected_visibility", "storage_class"],
+        "properties": {
+          "entry_id": { "type": "string", "pattern": "^gls:private-entry:[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "registry_record_id": { "type": "string", "pattern": "^gls:(?:work|release|assembly|source-inventory|snapshot|decision|event):[0-9a-f-]{36}$" },
+          "source_unit_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "unit_kind": { "enum": ["canonical_repo", "worktree", "project_tree", "data_plane", "archive", "private_store", "runtime"] },
+          "path": { "type": "string", "minLength": 1 },
+          "expected_visibility": { "enum": ["public", "private", "mixed"] },
+          "storage_class": { "enum": ["tracked_source", "external_data", "private_state", "recoverable_archive", "runtime_state"] },
+          "expected_remote": { "type": "string", "minLength": 1 },
+          "notes": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}
