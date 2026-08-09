@@ -9,6 +9,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const privateBoundary = path.join(root, ".local/private-registry");
 const defaultInput = path.join(privateBoundary, "overlay.json");
 const defaultOutput = path.join(privateBoundary, "estate-status.json");
+const gitMaxBuffer = 64 * 1024 * 1024;
 const excludedKinds = ["archive", "data_plane", "private_store", "runtime"];
 const excludedBoundaries = [
   "vendor clones",
@@ -27,9 +28,14 @@ function argument(name, fallback) {
   return path.resolve(value);
 }
 
-function git(args, cwd) {
-  const result = spawnSync("/usr/bin/git", ["-C", cwd, ...args], { encoding: "utf8" });
-  return result.status === 0 ? result.stdout.trim() : null;
+function git(args, cwd, { required = false } = {}) {
+  const result = spawnSync("/usr/bin/git", ["-C", cwd, ...args], { encoding: "utf8", maxBuffer: gitMaxBuffer });
+  if (result.error) throw new Error(`git ${args[0]} failed: ${result.error.message}`);
+  if (result.status !== 0) {
+    if (required) throw new Error(`git ${args[0]} failed with exit ${result.status}: ${(result.stderr || result.stdout).trim()}`);
+    return null;
+  }
+  return result.stdout.trim();
 }
 
 function sha256(value) { return createHash("sha256").update(value).digest("hex"); }
@@ -105,7 +111,7 @@ async function inspectEntry(entry, records) {
     const head = git(["rev-parse", "HEAD"], entry.path);
     const branch = git(["symbolic-ref", "--short", "HEAD"], entry.path);
     const upstream = git(["rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{upstream}"], entry.path);
-    const dirtyEntries = (git(["status", "--porcelain=v1", "--untracked-files=all"], entry.path) || "").split("\n").filter(Boolean).length;
+    const dirtyEntries = git(["status", "--porcelain=v1", "--untracked-files=all"], entry.path, { required: true }).split("\n").filter(Boolean).length;
     result.repository = {
       boundary,
       head_sha: head,

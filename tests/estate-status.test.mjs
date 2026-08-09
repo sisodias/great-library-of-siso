@@ -24,6 +24,18 @@ function git(cwd, args) {
   if (result.status !== 0) throw new Error(result.stderr);
 }
 
+async function writeLargeDirtyFixture(repo, count = 5000) {
+  const directory = join(repo, "large-status");
+  await mkdir(directory);
+  const suffix = "x".repeat(210);
+  for (let offset = 0; offset < count; offset += 200) {
+    await Promise.all(Array.from({ length: Math.min(200, count - offset) }, (_, index) => {
+      const number = String(offset + index).padStart(5, "0");
+      return writeFile(join(directory, `${number}-${suffix}`), "");
+    }));
+  }
+}
+
 const dir = await mkdtemp(join(tmpdir(), "gls-estate-status-"));
 try {
   const repo = join(dir, "repo");
@@ -67,6 +79,16 @@ try {
   await writeFile(input, `${JSON.stringify(overlay(entry(nested)), null, 2)}\n`);
   result = run(input, output);
   if (result.status !== 1 || !result.stdout.includes('"boundary": "contained"')) throw new Error("contained repository must be drift");
+  passed += 1;
+
+  const largeRepo = join(dir, "large-repo");
+  await mkdir(largeRepo);
+  git(largeRepo, ["init"]); git(largeRepo, ["config", "user.email", "status@example.invalid"]); git(largeRepo, ["config", "user.name", "Estate Status"]); git(largeRepo, ["commit", "--allow-empty", "-m", "fixture"]);
+  await writeLargeDirtyFixture(largeRepo);
+  await writeFile(input, `${JSON.stringify(overlay(entry(largeRepo)), null, 2)}\n`);
+  result = run(input, output);
+  const large = JSON.parse(await readFile(output, "utf8"));
+  if (result.status !== 0 || large.entries[0].repository.dirty_entries !== 5000) throw new Error("status collector must not silently truncate repositories above the default child-process buffer");
   passed += 1;
 } finally { await rm(dir, { recursive: true, force: true }); }
 
