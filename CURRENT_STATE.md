@@ -34,10 +34,12 @@ verified laptop-estate baseline; exact machine placement remains private.
   redacted deterministic receipt under the ignored local boundary.
 - No second laptop/workspace identity registry is permitted.
 
-The completion receipt covers sixteen high-value roots with zero drift,
-including the implementation worktree. After merge and worktree removal, the
-live overlay covers fifteen active roots with zero drift. This is a verified
-starting set, not a claim that every nested repository is already declared.
+The immutable completion Event preserves the first sixteen-root receipt,
+including its temporary implementation worktree. The current ignored overlay
+now covers 67 meaningful repositories, containers, data planes, archives,
+runtime surfaces, and protected stores with zero drift. An exhaustive prior
+scan found 352 Git roots; vendor clones, nested references, ephemeral
+worktrees, and runtime tooling are deliberately not promoted into projects.
 
 ## Knowledge and data boundaries
 
