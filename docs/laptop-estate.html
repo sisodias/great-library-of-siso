@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Public-safe laptop estate intake for The Great Library of SISO.">
+  <title>Laptop Estate Canonicalization — Great Library of SISO</title>
+  <style>
+    :root{color-scheme:dark;--bg:#081018;--panel:#111a25;--line:#2b394b;--text:#edf4fa;--muted:#a7b4c5;--green:#76e4b4;--blue:#78baff;--amber:#f4c46d}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 82% 0,#12253a 0,transparent 33%),var(--bg);color:var(--text);font:16px/1.58 system-ui,sans-serif}
+    main{max-width:1120px;margin:auto;padding:52px 24px 88px}h1{font-size:clamp(2.6rem,7vw,5.7rem);line-height:.96;letter-spacing:-.045em;max-width:980px;margin:.15em 0 .3em}h2{margin-top:2.4em}
+    .eyebrow{color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.13em}.lede,.muted{color:var(--muted)}.lede{font-size:1.15rem;max-width:860px}
+    .decision{background:rgba(118,228,180,.07);border:1px solid var(--green);border-radius:18px;padding:22px;margin:30px 0}.warning{background:rgba(244,196,109,.08);border-left:4px solid var(--amber);padding:16px 20px}
+    table{width:100%;border-collapse:collapse;background:var(--panel)}th,td{border:1px solid var(--line);padding:11px;text-align:left;vertical-align:top}th{color:var(--blue)}a{color:var(--blue)}code{color:var(--green)}footer{margin-top:64px;border-top:1px solid var(--line);padding-top:24px;color:var(--muted)}
+  </style>
+</head>
+<body><main>
+  <p class="eyebrow">The Great Library of SISO · Public estate intake · 2026-08-09</p>
+  <h1>Laptop Estate Canonicalization</h1>
+  <p class="lede">The laptop is replaceable infrastructure. The Great Library is the sole identity and lineage registry for accepted Works, Releases, Snapshots, and preservation-aware source intake.</p>
+  <div class="decision"><strong>Canonical rule:</strong> local folders, worktrees, databases, runtime state, and physical placement do not create Works. Public Works retain stable IDs. Exact local placement lives only in an ignored private overlay attached to those IDs.</div>
+  <h2>Current baseline</h2>
+  <p>This intake is anchored to Whole Library V37, <code>gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9</code>. Existing public Works are linked by stable IDs; they are not duplicated for each checkout or local location.</p>
+  <table><thead><tr><th>Material</th><th>Public representation</th><th>Disposition</th></tr></thead><tbody>
+    <tr><td>Accepted Works and Releases</td><td>Existing Work IDs, exact public revisions, and Snapshot selection</td><td>Link existing identity</td></tr>
+    <tr><td>SISO UI Base</td><td>Candidate Source Inventory unit; no Work ID yet</td><td>Read, sanitize, assign owner, then decide</td></tr>
+    <tr><td>Retired Agent Base warehouse</td><td>Existing retired source-record Work</td><td>Preserve; extract only through owner and rights gates</td></tr>
+    <tr><td>Agency imports</td><td>Foundry-owned evidence intake</td><td>Remain candidate until a product owner and proof exist</td></tr>
+    <tr><td>Foundry and knowledge-system data</td><td>Owner-held data-plane metadata only</td><td>Keep mutable payloads outside Git</td></tr>
+    <tr><td>Personal, runtime, recovery, and transcript material</td><td>Public boundary statement only</td><td>Private store or vault; never public payload</td></tr>
+  </tbody></table>
+  <h2>One logical answer surface, several databases</h2>
+  <p>The People Graph is one assembled logical graph, not one physical database. Foundry, GitHub identity, ingestion, working, recovery, and assembled graph databases keep independent owners and roles and are attached read-only where needed.</p>
+  <h2>What is deliberately excluded</h2>
+  <p>This public intake contains no credentials, personal records, client source, raw databases, raw transcripts, machine-specific paths, private topology, mutable runtime state, or rights-unclear payloads.</p>
+  <div class="warning"><strong>Publication stop conditions:</strong> unknown ownership, unclear rights, private or client material, credentials, raw sessions, machine-local locators, destructive movement without authority, or promotion without a coherent owner, Release, and verification surface.</div>
+  <h2>Source of truth</h2>
+  <p>The machine-readable record is <code>registry/source-inventories/laptop-estate-2026-08-09.json</code>. This page explains the boundary; it does not create a second estate registry.</p>
+  <p>See the <a href="registry-model.md">registry model</a>, <a href="ecosystem-intelligence.html">Ecosystem Intelligence contract</a>, and <a href="onboarding.html">onboarding map</a>.</p>
+  <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
+</main></body>
+</html>

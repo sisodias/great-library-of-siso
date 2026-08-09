@@ -1,0 +1,32 @@
+{
+  "id": "TASK-0002",
+  "title": "Merge the three docs-only branches",
+  "status": "backlog",
+  "priority": "medium",
+  "domain": "lifecycle",
+  "category": "infrastructure",
+  "created_at": "2026-08-07T00:00:00Z",
+  "created_by": "GLS-CONSOLIDATION",
+  "evidence": "agent/people-graph-audit-record-20260806 (15 commits), gls/people-graph-source-research-20260806 (8), agent/first-principles-people-graph-program-2026-08-06 (4).",
+  "verified": false,
+  "target_agent": "",
+  "dependencies": [
+    "TASK-0001"
+  ],
+  "spec": {
+    "description": "Three documentation branches with no conflict risk. The audit record holds findings PG-AUDIT-001 to 013, each pinning exact blob revisions, plus a 509-line complete-decision-record. Source research holds the 39-source matrix, rights and deletion matrix, 10 value theses and the pilot portfolio. First-principles holds R1-R10 and the value function.",
+    "context": "These also carry the ONLY surviving copies of the Lane 5 and Lane 6 work orders (prompts/parallel-slam.md and prompts/dependency-ordered-superseded.md). Until they are merged, the specs for two unshipped P0 fixes are reachable only by knowing the branch name - the exact 'correct findings, unreachable' failure this consolidation exists to end.",
+    "acceptance_criteria": [
+      "All three merged",
+      "The prompt packs are reachable from main"
+    ]
+  },
+  "execution_log": [
+    {
+      "timestamp": "2026-08-07T00:00:00Z",
+      "action": "seeded",
+      "by": "GLS-CONSOLIDATION",
+      "notes": "Seeded from the 2026-08-07 estate consolidation. Durable rationale in .agents/tasks/consolidation-source/."
+    }
+  ]
+}

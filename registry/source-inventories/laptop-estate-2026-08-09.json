@@ -1,0 +1,292 @@
+{
+  "schema_version": "1.1.0",
+  "record_type": "source_inventory",
+  "id": "gls:source-inventory:7c9e2a41-5d68-4f03-b8a7-1e6c9d2f405b",
+  "name": "Laptop estate canonicalization inventory",
+  "inventory_kind": "source_reallocation",
+  "immutable": true,
+  "observed_at": "2026-08-09",
+  "inventory_state": "mapped",
+  "source_scopes": [
+    {
+      "scope_id": "accepted-public-works",
+      "name": "Accepted public Great Library Works and Releases",
+      "source_type": "work",
+      "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "publication_boundary": "public_source"
+    },
+    {
+      "scope_id": "candidate-projects",
+      "name": "Unregistered or incompletely separated project candidates",
+      "source_type": "workspace",
+      "publication_boundary": "public_metadata_only"
+    },
+    {
+      "scope_id": "knowledge-data-planes",
+      "name": "Foundry and knowledge-system data planes",
+      "source_type": "workspace",
+      "publication_boundary": "public_metadata_only"
+    },
+    {
+      "scope_id": "private-operational-planes",
+      "name": "Private runtime, personal, recovery, configuration, and transcript state",
+      "source_type": "user_configuration",
+      "publication_boundary": "public_metadata_only"
+    }
+  ],
+  "preservation": {
+    "mode": "read_only",
+    "dirty_state": "withheld",
+    "reason": "This public inventory records stable Library identities, logical source classes, dispositions, and blockers only. Exact machine paths, dirty state, credentials, personal payloads, raw databases, transcripts, recovery artifacts, and private topology remain in an ignored owner-held overlay and are neither copied nor mutated here.",
+    "nested_repositories": []
+  },
+  "units": [
+    {
+      "unit_id": "accepted-library-works",
+      "name": "Accepted public Library, Agents, and Research Works",
+      "paths": [
+        "registry/works",
+        "registry/releases",
+        "registry/snapshots/whole-library-v37.json"
+      ],
+      "source_scope_id": "accepted-public-works",
+      "classification": "accepted_work",
+      "disposition": "link_existing",
+      "target": "Existing Great Library Work, Release, and Snapshot records",
+      "rationale": "These are accepted public identities. The laptop estate points to their stable Library IDs instead of creating a second catalog or one identity per checkout.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "registry:snapshot:whole-library-v37",
+          "observed_at": "2026-08-09",
+          "summary": "Whole Library V37 is the accepted identity baseline for this estate intake."
+        }
+      ]
+    },
+    {
+      "unit_id": "siso-ui-base-candidate",
+      "name": "SISO UI Base candidate material",
+      "paths": [
+        "siso-ui-base",
+        "siso-ui-base/packages",
+        "siso-ui-base/apps"
+      ],
+      "source_scope_id": "candidate-projects",
+      "classification": "candidate_work",
+      "disposition": "extract",
+      "target": "Future owning UI or shared-design Work; no accepted Work ID yet",
+      "promotion": {
+        "stage": "candidate",
+        "priority": "high",
+        "confidence": "low",
+        "portability": "requires_sanitization",
+        "target_owner_state": "unassigned",
+        "target_work_ids": [],
+        "evidence_owner_work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+        ],
+        "next_gate": "Separate reusable UI contracts from application state, assign an owner, and verify source history, rights, tests, and an independently addressable release boundary.",
+        "blockers": [
+          "No accepted SISO UI Base Work exists in V37.",
+          "Local project presence does not establish ownership, rights, or release readiness."
+        ]
+      },
+      "rationale": "The material is recorded as a candidate without inventing a public Work identity or treating a local directory as canonical.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:laptop-estate-ui-base-candidate:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "The estate reconciliation found independently structured UI material that still requires owner, rights, history, and release verification."
+        }
+      ]
+    },
+    {
+      "unit_id": "retired-agent-base-warehouse",
+      "name": "Retired Agent Base source warehouse",
+      "paths": [
+        "siso-agent-base",
+        "siso-agent-base/legacy-modules",
+        "siso-agent-base/extraction-receipts"
+      ],
+      "source_scope_id": "candidate-projects",
+      "classification": "external_upstream",
+      "disposition": "preserve_external",
+      "target": "Existing retired warehouse Work and distinct active Agent Runtime Work",
+      "rationale": "V37 already separates the retired warehouse from the active Runtime. Local placement changes neither identity.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "registry:work:siso-agent-base-warehouse",
+          "observed_at": "2026-08-09",
+          "summary": "The retired warehouse and active Agent Runtime are distinct accepted identities with separate lineage."
+        }
+      ]
+    },
+    {
+      "unit_id": "agency-import-candidates",
+      "name": "Agency source and application import candidates",
+      "paths": [
+        "foundry/agency-intelligence",
+        "foundry/agency-source-candidates",
+        "foundry/agency-proof-harness"
+      ],
+      "source_scope_id": "candidate-projects",
+      "classification": "candidate_work",
+      "disposition": "distribute_to_owners",
+      "target": "SISO Foundry evidence intake; future Agency product owner",
+      "promotion": {
+        "stage": "candidate",
+        "priority": "critical",
+        "confidence": "high",
+        "portability": "requires_sanitization",
+        "target_owner_state": "unassigned",
+        "target_work_ids": [],
+        "evidence_owner_work_ids": [
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "next_gate": "Complete direct-source, rights, behavioral, and integration proofs, then identify or register the owning Agency product Work.",
+        "blockers": [
+          "No accepted Agency product Work owns these candidates.",
+          "Foundry is the evidence owner, not the product owner.",
+          "Operational corpus payloads remain outside the public repository."
+        ]
+      },
+      "rationale": "Agency findings remain Foundry intake until an independently owned product accepts a capability and publishes its own Release.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:laptop-estate-agency-import-boundary:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "The estate review preserves Foundry as evidence owner and keeps Agency imports at candidate status."
+        }
+      ]
+    },
+    {
+      "unit_id": "knowledge-data-planes",
+      "name": "Foundry, People Graph, Book Library, and SISO Knowledge data planes",
+      "paths": [
+        "foundry/data",
+        "people-graph/data",
+        "book-library/data",
+        "siso-knowledge/data"
+      ],
+      "source_scope_id": "knowledge-data-planes",
+      "classification": "data_or_archive",
+      "disposition": "move_to_data_store",
+      "target": "Owner-held governed data planes for their accepted Works",
+      "promotion": {
+        "stage": "candidate",
+        "priority": "critical",
+        "confidence": "high",
+        "portability": "requires_sanitization",
+        "target_work_ids": [
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+          "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+          "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302"
+        ],
+        "evidence_owner_work_ids": [
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+          "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+          "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302"
+        ],
+        "next_gate": "Use typed read-only interfaces and publish only safe aggregate metadata, hashes, rights state, and exact public Releases.",
+        "blockers": [
+          "Mutable databases and raw source snapshots are not public registry artifacts.",
+          "Payload rights, privacy, durability, and restore receipts are incomplete."
+        ]
+      },
+      "rationale": "Each accepted Work retains its own responsibility while operational databases and source snapshots remain external data-plane evidence.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:laptop-estate-knowledge-data-planes:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "The reconciliation maps independently owned source, identity, ingestion, working, and assembled databases without claiming that they are one physical database."
+        }
+      ]
+    },
+    {
+      "unit_id": "private-personal-plane",
+      "name": "Private personal, legal, recovery, and operator material",
+      "paths": [
+        "private/personal-records",
+        "private/legal-records",
+        "private/recovery-material"
+      ],
+      "source_scope_id": "private-operational-planes",
+      "classification": "private_state",
+      "disposition": "move_to_private_store",
+      "target": "Governed owner-held private store; no public payload",
+      "rationale": "Personal, legal, and recovery material is not a public Library Work. Only its bounded handling policy and links to an accepted owner may be represented publicly.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:laptop-estate-private-boundary:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "Private and identity-bearing material is withheld from public payload publication."
+        }
+      ]
+    },
+    {
+      "unit_id": "transcript-session-plane",
+      "name": "Agent transcripts, archives, and raw session history",
+      "paths": [
+        "transcripts/raw",
+        "sessions/raw",
+        "session-intelligence/private-inputs"
+      ],
+      "source_scope_id": "private-operational-planes",
+      "classification": "private_state",
+      "disposition": "vault",
+      "target": "Owner-held transcript vault; public Events remain summaries, not raw sessions",
+      "rationale": "Transcripts are valuable private source material, not public Events. Their bytes remain outside the Library while their owner and preservation policy can be registered.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:laptop-estate-transcript-boundary:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "Raw sessions, compressed archives, and interaction history are retained outside the public registry."
+        }
+      ]
+    },
+    {
+      "unit_id": "runtime-configuration-plane",
+      "name": "Private runtime, credentials, caches, and configuration state",
+      "paths": [
+        "private/runtime-state",
+        "private/configuration",
+        "private/caches"
+      ],
+      "source_scope_id": "private-operational-planes",
+      "classification": "private_state",
+      "disposition": "move_to_private_store",
+      "target": "Governed runtime/configuration store; never a public Release artifact",
+      "rationale": "Runtime state, credentials, caches, and machine configuration are operational data rather than Works or Release artifacts.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:laptop-estate-runtime-boundary:2026-08-09",
+          "observed_at": "2026-08-09",
+          "summary": "Private topology, credentials, machine configuration, and mutable runtime state are excluded from public registry payloads."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:laptop-estate-canonicalization:2026-08-09",
+      "observed_at": "2026-08-09",
+      "summary": "The estate review reconciled accepted Works, candidate projects, data planes, private state, and transcript boundaries without publishing machine-specific topology or payloads."
+    },
+    {
+      "kind": "registry_validation",
+      "reference": "registry:snapshot:whole-library-v37",
+      "observed_at": "2026-08-09",
+      "summary": "V37 is the accepted Work and Release identity baseline used by this inventory."
+    }
+  ]
+}

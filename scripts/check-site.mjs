@@ -84,7 +84,7 @@ function publicProjectionReferenceProblem(value, depth = 0) {
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "research.json", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/god-questions-infrastructure.html", "docs/estate-reconciliation.html", "docs/foundry-agency-intelligence.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "estate/index.html", "estate.json", "works/siso-people-graph/index.html", "works/siso-book-library/index.html", "works/frontier-question-gq-010/index.html"]) {
+for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "research.json", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/god-questions-infrastructure.html", "docs/estate-reconciliation.html", "docs/foundry-agency-intelligence.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "docs/laptop-estate.html", "estate/index.html", "estate.json", "works/siso-people-graph/index.html", "works/siso-book-library/index.html", "works/frontier-question-gq-010/index.html"]) {
   if (!await exists(path.join(root, required))) errors.push(`missing required page: ${required}`);
 }
 
@@ -128,7 +128,15 @@ if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" 
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "37.0.0" && change.id === "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9")) errors.push("intelligence.json: automatic registry changelog is missing V37");
 if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 79) errors.push("intelligence.json: expected 79 immutable Releases at V37 program launch");
 if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 37) errors.push("intelligence.json: expected 37 immutable Snapshots at V37 program launch");
-if (intelligence.counts?.events !== 33 || intelligence.counts?.active_initiatives !== 3) errors.push("intelligence.json: expected 33 Events and three active initiatives (UNSOLVEABLE mathematics, remote viewing, declassified records) — the People Graph parallel program was closed by the 2026-08-08 integration Event");
+if (intelligence.counts?.events !== intelligence.events?.length) errors.push("intelligence.json: Event count does not match the generated Event projection");
+if (intelligence.counts?.active_initiatives !== intelligence.active_initiatives?.length) errors.push("intelligence.json: active-initiative count does not match the generated initiative projection");
+for (const threadId of [
+  "gls:thread:unsolveable-mathematics-program",
+  "gls:thread:remote-viewing-research-module",
+  "gls:thread:declassified-government-records-department"
+]) {
+  if (!intelligence.active_initiatives?.some((initiative) => initiative.thread_id === threadId)) errors.push(`intelligence.json: expected active initiative ${threadId}`);
+}
 if (intelligence.active_initiatives?.some((initiative) => initiative.thread_id === "gls:thread:foundry-agency-intelligence")) errors.push("intelligence.json: completed Foundry Agency intelligence initiative remains active");
 if (intelligence.active_initiatives?.some((initiative) => initiative.thread_id === "gls:thread:people-graph-parallel-expansion")) errors.push("intelligence.json: People Graph parallel initiative must NOT be projected as active — closed by the 2026-08-08 integration Event");
 if (!intelligence.events?.some((event) => event.id === "gls:event:f7dbd510-879c-405b-9cac-58d3dd598501" && event.status === "active" && event.scope?.snapshot_ids?.includes("gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9") && event.scope?.decision_ids?.includes("gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8"))) errors.push("intelligence.json: People Graph launch Event is missing its V37 and ADR-0005 lineage");

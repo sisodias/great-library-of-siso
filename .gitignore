@@ -31,4 +31,14 @@ tmp/
 *.p12
 *.pfx
 
+# Project-local agent runtime state. Durable goals, handoffs, and bounded
+# scratchpad checkpoints are tracked; generated runtime state is not.
+.agents/**/runtime/
+.agents/**/logs/
+.agents/**/secrets/
+.agents/**/credentials/
+.agents/**/browser-profiles/
+.agents/**/tmp/
+.agents/**/*.log
+
 # `site/` is intentionally not ignored: it is the generated publication artifact.

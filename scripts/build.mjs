@@ -882,6 +882,7 @@ await emit('docs/foundry-agency-intelligence.html', await readFile(join(ROOT, 'd
 await emit('docs/ecosystem-intelligence.html', await readFile(join(ROOT, 'docs', 'ecosystem-intelligence.html'), 'utf8'));
 await emit('docs/100-million-token-program.html', await readFile(join(ROOT, 'docs', '100-million-token-program.html'), 'utf8'));
 await emit('docs/100-million-token-operating-plan.html', await readFile(join(ROOT, 'docs', '100-million-token-operating-plan.html'), 'utf8'));
+await emit('docs/laptop-estate.html', await readFile(join(ROOT, 'docs', 'laptop-estate.html'), 'utf8'));
 await emit('docs/registry-model.md', await readFile(join(ROOT, 'docs', 'registry-model.md'), 'utf8'));
 await emit('docs/using-the-library.md', await readFile(join(ROOT, 'docs', 'using-the-library.md'), 'utf8'));
 await emit('index.html', homePage(works, releases, snapshots, assemblies, sections));
