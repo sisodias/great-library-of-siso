@@ -1,7 +1,16 @@
 {
-  "generated_at": "2026-08-09T03:23:42.000Z",
+  "generated_at": "2026-08-27T04:33:41.000Z",
   "base_path": "/",
   "works": [
+    {
+      "id": "gls:work:efb00129-4ec6-4637-a2f8-dcead4f7d8dd",
+      "slug": "actionmodel-connector-research",
+      "name": "Action Model · Connector Research",
+      "library_url": "/works/actionmodel-connector-research/",
+      "type": "project",
+      "maturity": "active",
+      "section": "Unassigned"
+    },
     {
       "id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
       "slug": "agents",
@@ -615,6 +624,24 @@
       "active_release_id": "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e",
       "active_release_version": "source-contract+de048bb",
       "artifact_revision": "de048bb3b34bf931b56fd741cb46c1334acdfb98"
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-connector-research",
+      "url": "https://github.com/sisodias/siso-connector-research",
+      "work_id": "gls:work:efb00129-4ec6-4637-a2f8-dcead4f7d8dd",
+      "work_name": "Action Model · Connector Research",
+      "work_slug": "actionmodel-connector-research",
+      "work_type": "project",
+      "lifecycle_status": "active",
+      "library_url": "/works/actionmodel-connector-research/",
+      "locator_type": "source_repository",
+      "locator_revision": "main@ae15a763d80f03c016a966426356ab3feec44708",
+      "visibility": "private",
+      "status": "staging",
+      "active_release_id": null,
+      "active_release_version": null,
+      "artifact_revision": null
     },
     {
       "owner": "sisodias",
@@ -5282,7 +5309,7 @@
   },
   "intelligence": {
     "counts": {
-      "events": 38,
+      "events": 39,
       "decisions": 5,
       "active_initiatives": 3,
       "registry_changes": 116
