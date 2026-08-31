@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T03:23:42.000Z",
+  "generated_at": "2026-08-27T04:33:41.000Z",
   "base_path": "/",
   "schema_version": "1.0.0",
   "snapshot_id": "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9",
@@ -29,7 +29,7 @@
         "state": "current",
         "assessed_at": "2026-08-02",
         "review_due_at": "2026-09-01",
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-27"
       },
       "next_useful_work": "Run one cold reconstruction task against the typed workspace boundary and compare errors, intervention, and elapsed time with the prior evidence path.",
       "evidence_mode": "hybrid",
@@ -192,7 +192,7 @@
         "state": "current",
         "assessed_at": "2026-08-02",
         "review_due_at": "2026-09-01",
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-27"
       },
       "next_useful_work": "Run one paired agent task with and without the evidence-aware context and receipt path, including retrieval and repair overhead in the comparison.",
       "evidence_mode": "hybrid",
@@ -353,7 +353,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-27"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "corpus",
@@ -423,7 +423,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-27"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "corpus",
@@ -494,7 +494,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-27"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",
@@ -566,7 +566,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-27"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",
@@ -636,10 +636,10 @@
       "lifecycle_status": "active",
       "steward": "SISO Open Source Foundation",
       "freshness": {
-        "state": "current",
+        "state": "review_due",
         "assessed_at": "2026-08-03",
         "review_due_at": "2026-08-17",
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-27"
       },
       "next_useful_work": "Stand up the operating loop on always-on hardware: a single agent whose domain is improving the Library/Foundry/people-graph system, with a public dossier surface showing data bucket counts, question states, and what it changed and when. Evidence selection must be question-driven given the measured extraction ceiling.",
       "evidence_mode": "hybrid",
@@ -1003,7 +1003,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-27"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",

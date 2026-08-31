@@ -182,6 +182,10 @@ for (const question of researchProjection.questions ?? []) {
   if (!question.lifecycle_status) errors.push(`research.json: ${question.question_id} has no lifecycle status`);
   if (!question.freshness?.state || !question.freshness?.as_of) errors.push(`research.json: ${question.question_id} has no explicit freshness read model`);
   if (!question.next_useful_work || question.next_useful_work.length < 10) errors.push(`research.json: ${question.question_id} has no explicit next useful work`);
+  if (question.source_works?.length !== question.source_work_ids?.length) errors.push(`research.json: ${question.question_id} does not resolve every source Work`);
+  for (const sourceWork of question.source_works || []) {
+    if (!sourceWork.work_id || !sourceWork.name || !sourceWork.library_url) errors.push(`research.json: ${question.question_id} has an incomplete source Work projection`);
+  }
   const program = question.program;
   if (!program) continue;
   if (question.freshness.state !== "current") errors.push(`research.json: ${question.question_id} expected current fixture freshness, found ${question.freshness.state}`);
@@ -236,6 +240,7 @@ for (const [questionId, slug] of frontierQuestions) {
   if (!researchIndex.includes(`/works/${slug}/`)) errors.push(`research/index.html: missing ${questionId} link`);
   const questionPage = await readFile(questionPath, "utf8");
   if (!questionPage.includes(`Research contract · ${questionId}`)) errors.push(`works/${slug}/index.html: missing ${questionId} research contract`);
+  if (!questionPage.includes("Research sources")) errors.push(`works/${slug}/index.html: missing dereferenceable Research sources`);
   if (!questionPage.includes("Public answer release</span><p>Not released")) errors.push(`works/${slug}/index.html: metadata seed is not explicitly separated from a public answer`);
 }
 const infrastructureQuestion = await readFile(path.join(root, "works/frontier-question-god-questions-infrastructure/index.html"), "utf8");
@@ -243,6 +248,7 @@ for (const marker of ["Steward", "Lifecycle status", "Freshness", "Next useful w
   if (!infrastructureQuestion.includes(marker)) errors.push(`GQ-009 page: missing program field ${marker}`);
 }
 if (infrastructureQuestion.includes("<b>Public answer:</b> released")) errors.push("GQ-009 page: researching metadata is inflated into a released answer");
+if (!infrastructureQuestion.includes("https://github.com/sisodias/great-library-of-siso")) errors.push("GQ-009 page: missing the current Great Library source repository");
 
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");

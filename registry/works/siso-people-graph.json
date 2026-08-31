@@ -7,7 +7,7 @@
   "summary": "An independently addressable Research Work for durable person, identity, work, topic, and temporal graph contracts, with mutable databases and source snapshots kept outside the Great Library registry.",
   "work_type": "knowledge_system",
   "lifecycle_status": "experimental",
-  "updated_at": "2026-08-06",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [
@@ -138,13 +138,13 @@
     },
     {
       "kind": "source_review",
-      "reference": "https://github.com/Lordsisodia/siso-foundry/blob/main/core/people_schema_v2.sql",
+      "reference": "https://github.com/sisodias/siso-foundry/blob/main/core/people_schema_v2.sql",
       "observed_at": "2026-08-04",
       "summary": "The schema encodes the graph's design laws: satellites are referenced rather than duplicated, so content_ref holds a repository name or catalog identifier and the bytes stay in the domain that owns them; every cross-source match is an explicit, evidenced, reversible identity_claim rather than a silent merge; role sits on the edge rather than the person; and person.state distinguishes a tracked person with no linked output from a broken row."
     },
     {
       "kind": "documentation",
-      "reference": "https://github.com/Lordsisodia/siso-foundry/blob/main/docs/PEOPLE-GRAPH-ENRICHMENT-LOG.md",
+      "reference": "https://github.com/sisodias/siso-foundry/blob/main/docs/PEOPLE-GRAPH-ENRICHMENT-LOG.md",
       "observed_at": "2026-08-04",
       "summary": "Fifteen enrichment rounds are recorded with the command and raw output behind every number, including three negative results that stopped expensive work: a GitHub-to-book identity stitch capped at 419 candidate people and yielding zero plausible matches, naive person-to-person co-membership measured at 720,107,620 pairs and rejected, and a repository source-diversity signal shown to be a restatement of stars once controlled for."
     }

@@ -7,19 +7,19 @@
   "summary": "A project-local operating system and contract bundle for durable agent work, evidence, knowledge, and handoff state.",
   "work_type": "project",
   "lifecycle_status": "active",
-  "updated_at": "2026-07-29",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "Lordsisodia", "role": "repository_owner", "classification": "siso" }],
     "locators": [{
       "type": "source_repository",
-      "url": "https://github.com/Lordsisodia/siso-project-os",
+      "url": "https://github.com/sisodias/siso-project-os",
       "revision": "main@d6290c609a6922e14b3faa27019aae31628686cb",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-project-os:d6290c609a6922e14b3faa27019aae31628686cb", "observed_at": "2026-07-30", "summary": "Complete public history and tags were mirrored to Lordsisodia; main remains pinned to the same verified commit." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:sisodias/siso-project-os:d6290c609a6922e14b3faa27019aae31628686cb", "observed_at": "2026-07-30", "summary": "Complete public history and tags were mirrored to Lordsisodia; main remains pinned to the same verified commit." }
     }],
-    "license": { "status": "verified", "spdx": "MIT", "reason": "The mirrored repository preserves the verified MIT license.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/Lordsisodia/siso-project-os", "observed_at": "2026-07-30", "summary": "Public mirror, exact HEAD, tags, and MIT license verified on the canonical public account." }] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The mirrored repository preserves the verified MIT license.", "evidence": [{ "kind": "integration_check", "reference": "https://github.com/sisodias/siso-project-os", "observed_at": "2026-07-30", "summary": "Public mirror, exact HEAD, tags, and MIT license verified on the canonical public account." }] }
   },
   "relationships": [{
     "type": "integrates_with",

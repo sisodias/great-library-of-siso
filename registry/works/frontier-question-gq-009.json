@@ -7,7 +7,7 @@
   "summary": "A standing meta-question about how the Great Library should make SISO's highest-value questions visible, composable, continuously revisable, and connected to evidence and approved action.",
   "work_type": "research_question",
   "lifecycle_status": "active",
-  "updated_at": "2026-08-04",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [
@@ -198,7 +198,7 @@
           "rights_state": "public",
           "publication_state": "public_safe_metadata",
           "observed_at": "2026-08-02",
-          "provenance_receipt": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+          "provenance_receipt": "https://github.com/sisodias/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
           "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
           "summary": "The pushed constitution preserves question identity, organ boundaries, action authority, learning proposals, and explicit later or rejected scope.",
           "supports_assumption_ids": [
@@ -211,7 +211,7 @@
           "id": "EC-GQ009-CHECKPOINT",
           "source_type": "repository",
           "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
-          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+          "reference": "https://github.com/sisodias/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
           "relevance_hypothesis": "The verified document checkpoint tests whether the existing generator can expose a canonical question-infrastructure reader without a second registry.",
           "rights_state": "public",
           "publication_state": "public_safe_metadata",
@@ -247,7 +247,7 @@
           "id": "EC-GQ009-OPERATOR-PASS",
           "source_type": "operational_receipt",
           "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
-          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "reference": "https://github.com/sisodias/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
           "relevance_hypothesis": "Independent cold-reader and contract replay test whether the canonical projection improves reconstruction and remains backward compatible.",
           "rights_state": "public_metadata_only",
           "publication_state": "public_safe_metadata",
@@ -265,7 +265,7 @@
           "id": "EC-GQ009-PRIVACY-FAIL",
           "source_type": "operational_receipt",
           "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
-          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "reference": "https://github.com/sisodias/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
           "relevance_hypothesis": "The independent privacy adversary tests whether typed public metadata actually prevents owner-held text, topology, credential, timing, or truth-state leakage.",
           "rights_state": "public_metadata_only",
           "publication_state": "public_safe_metadata",
@@ -358,7 +358,7 @@
           "object_type": "observation_receipt",
           "authority_state": "observation_only",
           "owner_role": "independent_verifier",
-          "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+          "reference": "https://github.com/sisodias/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
           "recorded_at": "2026-08-02T01:58:30+07:00",
           "content_sha256": "7befd52df946173b9754dd20b03fc5da1dde8b6327876768481e1a14ca86c2ae",
           "predecessor_ids": [

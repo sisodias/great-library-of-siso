@@ -7,25 +7,25 @@
   "summary": "The retired mixed-source repository from which SISO Runtime, capabilities, intelligence, integrations, and research Works are being read, preserved, and reallocated.",
   "work_type": "bundle",
   "lifecycle_status": "retired",
-  "updated_at": "2026-07-30",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [{"name":"Lordsisodia","role":"repository_owner","classification":"siso"}],
     "locators": [
       {
         "type": "source_repository",
-        "url": "https://github.com/Lordsisodia/siso-agent-base",
+        "url": "https://github.com/sisodias/siso-agent-base",
         "revision": "main@2e2edfe7a820617557fcff093a348dc0bb4fb040",
         "visibility": "public",
         "verified": true,
-        "evidence": {"kind":"integration_check","reference":"github-api:Lordsisodia/siso-agent-base:2e2edfe7a820617557fcff093a348dc0bb4fb040","observed_at":"2026-07-29","summary":"Public source warehouse pin resolves; it is preserved as extraction provenance rather than modeled as one application."}
+        "evidence": {"kind":"integration_check","reference":"github-api:sisodias/siso-agent-base:2e2edfe7a820617557fcff093a348dc0bb4fb040","observed_at":"2026-07-29","summary":"Public source warehouse pin resolves; it is preserved as extraction provenance rather than modeled as one application."}
       }
     ],
     "license": {
       "status": "verified",
       "spdx": "MIT",
       "reason": "The pinned public source warehouse reports and contains an MIT license.",
-      "evidence": [{"kind":"integration_check","reference":"https://github.com/Lordsisodia/siso-agent-base","observed_at":"2026-07-29","summary":"Public repository visibility and MIT license were verified during the source audit."}]
+      "evidence": [{"kind":"integration_check","reference":"https://github.com/sisodias/siso-agent-base","observed_at":"2026-07-29","summary":"Public repository visibility and MIT license were verified during the source audit."}]
     }
   },
   "relationships": [

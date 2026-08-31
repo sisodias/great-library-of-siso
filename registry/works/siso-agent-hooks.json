@@ -7,7 +7,7 @@
   "summary": "The portable lifecycle automation boundary for Claude Code and Codex, with one manifest-driven event map, host-native generated configuration, guarded installation, privacy-reduced state, and adversarial verification.",
   "work_type": "capability_pack",
   "lifecycle_status": "active",
-  "updated_at": "2026-08-01",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [{"name":"SISO Open Source Foundation","role":"steward","classification":"siso"}],

@@ -7,7 +7,7 @@
   "summary": "The one-clone, version-pinned public distribution for the SISO Claude Code and Codex environment, composing independently released skills, hooks, playbooks, agent roles, operating profiles, commands, runtimes, and optional services without merging their repository identities.",
   "work_type": "bundle",
   "lifecycle_status": "active",
-  "updated_at": "2026-08-02",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [{"name":"SISO Open Source Foundation","role":"steward","classification":"siso"}],

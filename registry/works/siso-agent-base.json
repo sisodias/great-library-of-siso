@@ -7,25 +7,25 @@
   "summary": "The provider-neutral SISO coding-agent application boundary: explicit configuration, safe host launch, profile composition, task control, checkpoints, bounded context, status, and runtime event contracts.",
   "work_type": "application",
   "lifecycle_status": "active",
-  "updated_at": "2026-07-30",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [{"name":"Lordsisodia","role":"repository_owner","classification":"siso"}],
     "locators": [
       {
         "type": "source_repository",
-        "url": "https://github.com/Lordsisodia/siso-agent-runtime",
+        "url": "https://github.com/sisodias/siso-agent-runtime",
         "revision": "main@a4aefc0345f979d67b5b3fac2829364a1a9100b9",
         "visibility": "public",
         "verified": true,
-        "evidence": {"kind":"integration_check","reference":"github-api:Lordsisodia/siso-agent-runtime:a4aefc0345f979d67b5b3fac2829364a1a9100b9","observed_at":"2026-07-30","summary":"Public main matches the pinned clean Runtime extraction; repository tests and publication gates passed."}
+        "evidence": {"kind":"integration_check","reference":"github-api:sisodias/siso-agent-runtime:a4aefc0345f979d67b5b3fac2829364a1a9100b9","observed_at":"2026-07-30","summary":"Public main matches the pinned clean Runtime extraction; repository tests and publication gates passed."}
       }
     ],
     "license": {
       "status": "verified",
       "spdx": "MIT",
       "reason": "The canonical clean Runtime extraction carries an MIT license at its pinned commit.",
-      "evidence": [{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/LICENSE","observed_at":"2026-07-30","summary":"MIT license text reviewed at the pinned canonical Runtime release."}]
+      "evidence": [{"kind":"source_review","reference":"https://github.com/sisodias/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/LICENSE","observed_at":"2026-07-30","summary":"MIT license text reviewed at the pinned canonical Runtime release."}]
     }
   },
   "relationships": [

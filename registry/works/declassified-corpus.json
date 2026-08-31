@@ -7,7 +7,7 @@
   "summary": "A bulk-available catalogue of public-domain declassified government documents — CIA CREST (incl. Stargate/remote-viewing), the NARA AWS Catalog and JFK release tranches, the National Security Archive (GWU free site), DOE OpenNet, and The Black Vault curated FOIA archive — with full provenance and per-unit rights posture. The Great Library holds the inventory; SISO Knowledge holds the durable corpus; Foundry owns source discovery; Evidence Engines perform source-grounded transformation.",
   "work_type": "knowledge_system",
   "lifecycle_status": "planned",
-  "updated_at": "2026-08-07",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [
@@ -20,7 +20,7 @@
     "locators": [
       {
         "type": "source_repository",
-        "url": "https://github.com/Lordsisodia/great-library-of-siso/blob/main/registry/source-inventories/declassified-corpus-2026-08-07.json",
+        "url": "https://github.com/sisodias/great-library-of-siso/blob/main/registry/source-inventories/declassified-corpus-2026-08-07.json",
         "revision": "main",
         "visibility": "public",
         "verified": false,

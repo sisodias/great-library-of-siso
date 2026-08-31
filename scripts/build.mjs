@@ -90,7 +90,8 @@ function linkEntries(raw) {
   const links = [];
   const add = (kind, label, value) => {
     const url = safeExternalUrl(typeof value === 'object' ? value?.url || value?.href : value);
-    if (url && !links.some((link) => link.url === url)) links.push({ kind, label, url });
+    const visibility = typeof value === 'object' ? text(value?.visibility, 'public') : 'public';
+    if (url && !links.some((link) => link.url === url)) links.push({ kind, label, url, visibility });
   };
   const source = raw.links || raw.urls || raw.locators || {};
   if (Array.isArray(source)) {
@@ -593,6 +594,7 @@ function researchPage(works, snapshot, sectionWork, activeReleasesByWork, asOfDa
 }
 
 function buildResearchProjection(works, snapshot, sectionWork, activeReleasesByWork, asOfDate) {
+  const worksById = new Map(works.map((work) => [work.id, work]));
   const questions = projectionMembers(sectionWork?.id, snapshot, works).map(({ work }) => work).filter((work) => work.type === 'research_question');
   const projectedQuestions = questions.map((work) => {
     const contract = work.researchContract;
@@ -618,6 +620,15 @@ function buildResearchProjection(works, snapshot, sectionWork, activeReleasesByW
       evidence_gaps: contract.evidence_gaps || [],
       watch_triggers: contract.watch_triggers || [],
       source_work_ids: contract.source_work_ids,
+      source_works: contract.source_work_ids.map((workId) => {
+        const sourceWork = worksById.get(workId);
+        return {
+          work_id: workId,
+          name: sourceWork?.name || null,
+          library_url: sourceWork ? href(`works/${sourceWork.slug}/`) : null,
+          source_links: sourceWork?.links || [],
+        };
+      }),
       source_scopes: contract.source_scopes,
       answer_shape: contract.answer_shape,
       refresh_policy: contract.refresh_policy,
@@ -677,9 +688,15 @@ function workPage(work, releases, byId, activeRelease, asOfDate) {
     const targetLabel = relation.label || target?.name || relation.target;
     return `<div><span>${esc(relation.type)}</span><p>${target ? `<a href="${href(`works/${target.slug}/`)}">${esc(targetLabel)}</a>` : esc(targetLabel)}${target ? '' : '<small> Unresolved in this build</small>'}</p></div>`;
   });
-  const linkRows = work.links.map((link) => `<a href="${esc(link.url)}" rel="noopener noreferrer"><span>${esc(link.kind)}</span><b>${esc(link.label)}</b><i aria-hidden="true">↗</i></a>`);
+  const linkRows = work.links.map((link) => `<a href="${esc(link.url)}" rel="noopener noreferrer"><span>${esc(`${link.kind} · ${link.visibility}`)}</span><b>${esc(link.label)}</b><i aria-hidden="true">↗</i></a>`);
   const libraryUrl = href(`works/${work.slug}/`);
   const researchContract = work.researchContract;
+  const sourceWorkRows = (researchContract?.source_work_ids || []).map((workId) => {
+    const sourceWork = byId.get(workId);
+    if (!sourceWork) return `<div><span>Source Work</span><p>${esc(workId)}<small>Unresolved in this build</small></p></div>`;
+    const sourceLinks = sourceWork.links.map((link) => `<a href="${esc(link.url)}" rel="noopener noreferrer">${esc(`${link.label} (${link.visibility})`)}</a>`).join(' · ');
+    return `<div><span>Source Work</span><p><a href="${href(`works/${sourceWork.slug}/`)}">${esc(sourceWork.name)}</a><small>${sourceLinks || 'No external source locator declared.'}</small></p></div>`;
+  });
   const researchProgram = researchContract?.program;
   const answerState = publicAnswerState(latest);
   const operations = researchContract ? questionOperationalState(work, asOfDate) : null;
@@ -719,6 +736,7 @@ function workPage(work, releases, byId, activeRelease, asOfDate) {
       <div class="permalink-bar"><div class="shell"><span>Permanent Library detail URL</span><code>${esc(libraryUrl)}</code></div></div>${researchRows.length ? `
       <div class="shell">${detailList(`Research contract · ${researchContract.question_id}`, researchRows)}<p><a href="${href('docs/god-questions-infrastructure.html')}">Read the God Questions infrastructure constitution →</a></p>${researchProgram ? `${detailList(`Assumptions · ${assumptionRows.length}`, assumptionRows)}${detailList(`Evidence connections · ${evidenceRows.length}`, evidenceRows)}${detailList(`Action and learning lineage · ${actionRows.length}`, actionRows)}` : ''}</div>` : ''}
       <div class="detail-layout shell"><div>
+        ${researchContract ? detailList('Research sources', sourceWorkRows) : ''}
         ${detailList('Relationships', relationshipRows)}
         ${detailList('Provenance', provenance.length ? [`<dl class="provenance-list">${provenance.join('')}</dl>`] : [])}
         ${detailList('Source & upstream links', linkRows)}
