@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
+  "slug": "frontier-question-god-questions-infrastructure",
+  "name": "GQ-009 · The God Questions Observatory",
+  "summary": "A standing meta-question about how the Great Library should make SISO's highest-value questions visible, composable, continuously revisable, and connected to evidence and approved action.",
+  "work_type": "research_question",
+  "lifecycle_status": "active",
+  "section": "Research",
+  "library_url": "/works/frontier-question-god-questions-infrastructure/",
+  "agent_context_url": "/works/frontier-question-god-questions-infrastructure/index.json",
+  "registry_source": "registry/works/frontier-question-gq-009.json",
+  "source_links": [],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "The Great Library is the public-safe registry and reading surface whose God Questions infrastructure this Work studies and dogfoods.",
+      "target_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "target_name": "The Great Library of SISO",
+      "target_library_url": "/works/great-library-of-siso/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/research-question-model.html",
+          "observed_at": "2026-08-02",
+          "summary": "The accepted identity model makes questions Works and accepted answers immutable Releases in the Great Library."
+        }
+      ]
+    },
+    {
+      "type": "integrates_with",
+      "context": "Foundry discovers source buckets, repositories, books, people, and watch signals relevant to each question without writing accepted truth.",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "target_name": "SISO Foundry",
+      "target_library_url": "/works/siso-foundry/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/question-driven-research.html",
+          "observed_at": "2026-08-02",
+          "summary": "The question-driven architecture assigns evidence-universe discovery and monitoring to Foundry."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "context": "SISO Knowledge preserves the large rights-aware corpus and retrieval plane that question dossiers reference but do not duplicate.",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "target_name": "SISO Knowledge",
+      "target_library_url": "/works/siso-knowledge/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/siso-knowledge-model.html",
+          "observed_at": "2026-08-02",
+          "summary": "The published boundary assigns durable corpus custody, provenance, retrieval, indexes, and graphs to SISO Knowledge."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "context": "Evidence Engines turn explicit sources into traceable claims, contradictions, and graded evidence packages that may change a question answer.",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "target_name": "SISO Evidence Engines",
+      "target_library_url": "/works/siso-evidence-engines/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/question-driven-research.html",
+          "observed_at": "2026-08-02",
+          "summary": "The question-driven architecture keeps evidence transformation independent from question identity and execution authority."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:god-questions-existing-architecture:2026-08-02",
+      "observed_at": "2026-08-02",
+      "summary": "The existing six Frontier Question Works, V28 selection, question-driven research documentation, generated Research surface, and live operating-architecture debate were reviewed before adding this dogfood question."
+    },
+    {
+      "kind": "documentation",
+      "reference": "user-intent:god-questions-infrastructure:2026-08-02",
+      "observed_at": "2026-08-02",
+      "summary": "The requested priority is the reusable God Questions Library infrastructure, using existing research as dogfood instead of producing redundant speculative answers."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "https://github.com/sisodias/siso-book-library/releases/tag/payload-v1",
+      "observed_at": "2026-08-03",
+      "summary": "A question-addressable corpus export now exists. 79,071 works are byte-addressable from any machine with no local data: one HTTP Range request against a release asset returned 26,460 bytes and yielded a complete 101,354-character book in 0.79s. This is the first source that can replace a manual evidence link with a resolvable locator."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "https://github.com/sisodias/siso-people-graph/releases/tag/graph-v1",
+      "observed_at": "2026-08-03",
+      "summary": "Cross-domain people graph published: 280,708 people, 564,486 content edges spanning books/GitHub/YouTube, 2,050,629 topic edges across five deliberately-separate vocabularies. Verified by downloading from clean and querying."
+    },
+    {
+      "kind": "source_review",
+      "reference": "local:passages.sqlite:2026-08-04",
+      "observed_at": "2026-08-03",
+      "summary": "41,501,325 passages indexed across 77,540 books as byte ranges into immutable source. Establishes the evidence granularity a question actually needs -- a paragraph, not a book."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "The Work record is question metadata; research inputs, operational receipts, and answer artifacts retain their own rights and publication review.",
+      "evidence": []
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:df8a236d-b092-4d51-9e17-d1016671db64",
+    "version": "program-metadata-1.1.0+0066cfa",
+    "released_at": "2026-08-02T05:13:21+07:00",
+    "release_kind": "question_program_metadata",
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The GQ-009 estate reconciliation metadata is pinned to an exact public implementation commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "not_applicable",
+        "reason": "This Release identifies registry metadata rather than a standalone answer or corpus archive.",
+        "evidence_count": 0
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The manifest resolves to GQ-009 and its deterministic public human and agent projections.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "not_applicable",
+        "reason": "Question-program metadata is consumed by the Library generator and is not independently installed.",
+        "evidence_count": 0
+      },
+      "forkable": {
+        "state": "not_applicable",
+        "reason": "This record does not claim a separately forkable software or answer payload.",
+        "evidence_count": 0
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "Only stable IDs, public commits, safe hashes, rights states, dispositions, and bounded summaries are published.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

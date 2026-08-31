@@ -84,8 +84,21 @@ function publicProjectionReferenceProblem(value, depth = 0) {
 const files = await walk(root);
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-for (const required of ["index.html", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "research.json", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/god-questions-infrastructure.html", "docs/estate-reconciliation.html", "docs/foundry-agency-intelligence.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "docs/laptop-estate.html", "estate/index.html", "estate.json", "works/siso-people-graph/index.html", "works/siso-book-library/index.html", "works/frontier-question-gq-010/index.html"]) {
+for (const required of ["index.html", "catalog.json", "agents/index.html", "promotion/index.html", "promotion.json", "intelligence/index.html", "intelligence.json", "research/index.html", "research.json", "docs/research-question-model.html", "docs/siso-mission.html", "docs/question-driven-research.html", "docs/frontier-question-template.html", "docs/god-questions-infrastructure.html", "docs/estate-reconciliation.html", "docs/foundry-agency-intelligence.html", "docs/ecosystem-intelligence.html", "docs/100-million-token-program.html", "docs/100-million-token-operating-plan.html", "docs/laptop-estate.html", "estate/index.html", "estate.json", "works/siso-people-graph/index.html", "works/siso-book-library/index.html", "works/frontier-question-gq-010/index.html"]) {
   if (!await exists(path.join(root, required))) errors.push(`missing required page: ${required}`);
+}
+
+const catalogProjection = JSON.parse(await readFile(path.join(root, "catalog.json"), "utf8"));
+for (const work of catalogProjection.works || []) {
+  if (!work.summary || !work.agent_context_url) errors.push(`catalog.json: ${work.id} lacks summary or agent context`);
+  const dossierPath = localTarget(work.agent_context_url, path.join(root, "catalog.json"));
+  if (!dossierPath || !await exists(dossierPath)) {
+    errors.push(`catalog.json: ${work.id} has no generated dossier at ${work.agent_context_url}`);
+    continue;
+  }
+  const dossier = JSON.parse(await readFile(dossierPath, "utf8"));
+  if (dossier.work_id !== work.id || !Array.isArray(dossier.evidence) || !Array.isArray(dossier.relationships)) errors.push(`works/${work.slug}/index.json: incomplete Work dossier`);
+  if (work.source_links?.some((link) => link.kind === "source_repository" && /^https:\/\/github\.com\/[^/]+\/[^/#]+\/?$/.test(link.url)) && !work.source_links.some((link) => link.kind === "readme")) errors.push(`catalog.json: ${work.id} has a repository but no README action`);
 }
 
 const promotionProjection = JSON.parse(await readFile(path.join(root, "promotion.json"), "utf8"));
@@ -248,6 +261,12 @@ for (const marker of ["Steward", "Lifecycle status", "Freshness", "Next useful w
 }
 if (infrastructureQuestion.includes("<b>Public answer:</b> released")) errors.push("GQ-009 page: researching metadata is inflated into a released answer");
 if (!infrastructureQuestion.includes("https://github.com/sisodias/great-library-of-siso")) errors.push("GQ-009 page: missing the current Great Library source repository");
+const foundryPage = await readFile(path.join(root, "works/siso-foundry/index.html"), "utf8");
+for (const marker of ["Read README", "Open machine-readable dossier", "Evidence &amp; receipts", "Foundry 0.4.0 publishes the repository-by-use-case-by-route value matrix"]) {
+  if (!foundryPage.includes(marker)) errors.push(`SISO Foundry page: missing learning affordance ${marker}`);
+}
+const knowledgePage = await readFile(path.join(root, "works/siso-knowledge/index.html"), "utf8");
+if (!knowledgePage.includes("Foundry is an independently released discovery and source-mining Work")) errors.push("SISO Knowledge page: relationship context was discarded");
 
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");

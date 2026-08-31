@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+  "slug": "siso-book-library",
+  "name": "SISO Book Library",
+  "summary": "An independently addressable Research Work for lossless public-domain book metadata, people and role exports, subject and classification edges, text-quality gates, and content-location contracts.",
+  "work_type": "knowledge_system",
+  "lifecycle_status": "experimental",
+  "section": "Research",
+  "library_url": "/works/siso-book-library/",
+  "agent_context_url": "/works/siso-book-library/index.json",
+  "registry_source": "registry/works/siso-book-library.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-book-library",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-book-library#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "SISO Knowledge may preserve and govern durable knowledge or index semantics derived from the Book Library, while the source repository and bulk data remain independently governed.",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "target_name": "SISO Knowledge",
+      "target_library_url": "/works/siso-knowledge/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry:decision:ADR-0005",
+          "observed_at": "2026-08-06",
+          "summary": "ADR-0005 keeps source Works independently addressable and places mutable indexes and payloads outside the Great Library control plane."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "The Book Library can emit source-native author, contributor-role, life-date, work, subject, and locator observations for the People Graph.",
+      "target_work_id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+      "target_name": "SISO People Graph",
+      "target_library_url": "/works/siso-people-graph/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-book-library/blob/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b/scripts/load_into_people_graph.py",
+          "observed_at": "2026-08-06",
+          "summary": "The reviewed exporter models the books domain as an additive source for a canonical people graph."
+        }
+      ]
+    },
+    {
+      "type": "integrates_with",
+      "context": "Foundry may discover, evaluate, and preserve book-source opportunities, but the Book Library owns its own metadata and locator contract and does not become canonical person truth.",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "target_name": "SISO Foundry",
+      "target_library_url": "/works/siso-foundry/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-book-library/blob/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b/README.md",
+          "observed_at": "2026-08-06",
+          "summary": "The source describes Foundry affiliation; the Library records discovery as an integration rather than repository containment."
+        }
+      ]
+    },
+    {
+      "type": "integrates_with",
+      "context": "Evidence Engines may transform cited book observations into grounded claims and adjudications while preserving source identity, rights state, and receipts.",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "target_name": "SISO Evidence Engines",
+      "target_library_url": "/works/siso-evidence-engines/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/people-graph-program/observation-envelope-v0.1.md",
+          "observed_at": "2026-08-06",
+          "summary": "The observation envelope carries source-native identity, rights, provenance, and receipt fields into downstream transformation."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+      "observed_at": "2026-08-06",
+      "summary": "The exact source tree contains deterministic metadata and people builders, a locator builder, a text-layer probe, tier-query definitions, and integration tooling; no generated index or payload is selected by this Work record."
+    },
+    {
+      "kind": "documentation",
+      "reference": "docs/people-graph-program/control-plane-data-plane.md",
+      "observed_at": "2026-08-06",
+      "summary": "The public control-plane contract keeps source code and manifests distinct from mutable databases, raw text, payload archives, and machine-local locators."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://www.gutenberg.org/cache/epub/feeds/pg_catalog.csv",
+      "observed_at": "2026-08-03",
+      "summary": "The official bulk catalog feed returned HTTP 200 and 21,155,633 bytes containing 79,071 rows. Gutenberg's offline-catalogs page directs consumers to this file rather than crawling the site, so the bulk path taken is the sanctioned one."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "local:books.sqlite:column-coverage-and-roundtrip-2026-08-03",
+      "observed_at": "2026-08-03",
+      "summary": "Losslessness was verified two ways: all nine upstream columns are present with zero missing, and five sampled books round-tripped from the database to an exact match against the source row. Library of Congress Classification is present on 77,801 of 77,820 text works, or 99.98 percent, without any curation, classifier or model call."
+    },
+    {
+      "kind": "documentation",
+      "reference": "https://github.com/sisodias/siso-book-library/releases/tag/index-v1",
+      "observed_at": "2026-08-04",
+      "summary": "The distribution design ships the index in git and as release assets while the payload ships as release assets carrying individually gzipped books inside uncompressed tars, so one HTTP range request retrieves exactly one book. Release assets are measured not to count against repository size, leaving the 2 GiB per-asset cap as the real constraint."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      },
+      {
+        "name": "sisodias",
+        "role": "repository_owner",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-book-library",
+        "revision": "main@be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "https://github.com/sisodias/siso-book-library/commit/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+          "observed_at": "2026-08-06",
+          "summary": "The public repository and exact source commit resolve; this verifies addressability only, not rebuilt indexes, payload assets, installation, or production operation."
+        }
+      }
+    ],
+    "license": {
+      "status": "pending",
+      "spdx": "NONE",
+      "reason": "The exact source tree has no accepted repository license; source-code visibility and upstream public-domain metadata do not create one blanket redistribution grant.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+          "observed_at": "2026-08-06",
+          "summary": "The reviewed tracked source inventory contains no accepted license file."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec",
+    "version": "source-contract+be9ab08",
+    "released_at": "2026-08-06T22:24:00+07:00",
+    "release_kind": "general",
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The source contract is pinned to an exact public commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "experimental",
+        "reason": "A standard commit-scoped archive locator is recorded, but this registry lane did not download or hash the archive bytes or any separately described payload assets.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The Release resolves to the stable Book Library Work and exact source artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "unavailable",
+        "reason": "This is a source and data-contract baseline, not an independently verified installation, rebuilt SQLite index, or content-payload release.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "unavailable",
+        "reason": "GitHub exposes the source, but no accepted repository license grants general copying, modification, or redistribution rights.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "experimental",
+        "reason": "The metadata schema, source-native identifiers, rights field, and locator model are portable concepts, but payload archives, indexes, local routes, and source inputs were not independently verified.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

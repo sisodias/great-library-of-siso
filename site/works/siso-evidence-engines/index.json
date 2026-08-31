@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+  "slug": "siso-evidence-engines",
+  "name": "SISO Evidence Engines",
+  "summary": "A Research package family for source-grounded knowledge items, credibility-ranked engineering principles, and evidence-gated improvement ideas.",
+  "work_type": "bundle",
+  "lifecycle_status": "active",
+  "section": "Research",
+  "library_url": "/works/siso-evidence-engines/",
+  "agent_context_url": "/works/siso-evidence-engines/index.json",
+  "registry_source": "registry/works/siso-evidence-engines.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-evidence-engines",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-evidence-engines#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "Foundry discovers and prepares explicit sources; Evidence Engines turns those sources into grounded knowledge, principles, and ranked ideas without owning acquisition or corpora.",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "target_name": "SISO Foundry",
+      "target_library_url": "/works/siso-foundry/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-evidence-engines/blob/6ffba38d77409d6317733ec5fe96386d0481d2ea/docs/ARCHITECTURE.html",
+          "observed_at": "2026-07-30",
+          "summary": "The public architecture assigns acquisition, scraping, provider execution, schedulers, and corpora to Foundry or external adapters."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:siso-agent-base-modules:evidence-engines:2026-07-30",
+      "observed_at": "2026-07-30",
+      "summary": "Knowledge value-item schema, quote grounding, credibility tiers, principle and idea gates, jury aggregation, deterministic scores, generated corpora, provider code, and mutation loops were read before classification."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-evidence-engines:6ffba38d77409d6317733ec5fe96386d0481d2ea",
+      "observed_at": "2026-07-30",
+      "summary": "Grounded and rejected knowledge, backed and unbacked principles, canonical graduation, backed and unbacked ideas, queued graduation, corpus non-retention, full CLI flow, and publication checks passed; checkpoint rated 94/100."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-evidence-engines",
+        "revision": "main@71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-evidence-engines:71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d",
+          "observed_at": "2026-07-30",
+          "summary": "Canonical public source includes the generated repository header plus the Knowledge, Principles, and Idea engine contracts, machine registry, CLI, synthetic fixtures, and corpus-exclusion checks; system tests passed."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The clean SISO-owned engine implementation carries MIT; ingested sources and external corpora retain their own rights.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-evidence-engines/blob/6ffba38d77409d6317733ec5fe96386d0481d2ea/PROVENANCE.md",
+          "observed_at": "2026-07-30",
+          "summary": "Reusable code, excluded corpora, machine configuration, provider adapters, and source-rights boundaries are recorded at the pinned release."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:f49dfb65-9cba-45d8-855a-9338f1cda30b",
+    "version": "0.1.1+71022ce",
+    "released_at": "2026-07-30T21:08:59+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "Public source is pinned to an exact commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A commit-scoped public archive is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The release resolves to its stable Work, engine registry, and artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "experimental",
+        "reason": "The dependency-free source CLI works; a built-wheel receipt is not yet recorded.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "Public MIT source includes three engine contracts, shared core, fixtures, architecture, provenance, CLI, and tests.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "The full CLI flow passed in a temporary database without corpora, provider keys, or network access.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

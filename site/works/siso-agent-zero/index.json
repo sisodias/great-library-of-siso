@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+  "slug": "siso-agent-zero",
+  "name": "SISO Agent Zero",
+  "summary": "The intent-holding coordination and boot package that joins a durable identity to current Agent Brain state, then hands work to an explicitly selected agent host.",
+  "work_type": "agent_system",
+  "lifecycle_status": "experimental",
+  "section": "Agents",
+  "library_url": "/works/siso-agent-zero/",
+  "agent_context_url": "/works/siso-agent-zero/index.json",
+  "registry_source": "registry/works/agent-zero-coordination-playbook.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-agent-zero",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-agent-zero#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "depends_on",
+      "context": "Agent Zero reads current coordination state through the Agent Brain command contract; it does not own the brain's storage, schema, or service lifecycle.",
+      "target_work_id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
+      "target_name": "SISO Agent Brain",
+      "target_library_url": "/works/siso-agent-brain/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-agent-zero/blob/dacfc6c30b2f478c9d3382910674bd30289d3981/docs/ARCHITECTURE.html",
+          "observed_at": "2026-07-30",
+          "summary": "The public architecture and implementation keep Agent Brain behind an external command contract."
+        }
+      ]
+    },
+    {
+      "type": "integrates_with",
+      "context": "Agent Zero explicitly hands its boot packet to a selected Agent Runtime or host CLI instead of embedding model execution and session lifecycle.",
+      "target_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "target_name": "SISO Agent Runtime",
+      "target_library_url": "/works/siso-agent-base/",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-agent-zero:dacfc6c30b2f478c9d3382910674bd30289d3981",
+          "observed_at": "2026-07-30",
+          "summary": "A disposable shell-free host handoff smoke passed."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "context": "Agent Zero may use Herdr for persistent workspaces and lanes through an optional adapter; Herdr remains an independently owned substrate.",
+      "target_work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
+      "target_name": "Herdr",
+      "target_library_url": "/works/herdr/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-agent-zero/blob/dacfc6c30b2f478c9d3382910674bd30289d3981/MIGRATION-MAP.json",
+          "observed_at": "2026-07-30",
+          "summary": "The extracted cmux adapter and deferred self-build coupling make workspace integration optional and replaceable."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:siso-agent-base:agent-zero-boundary:2026-07-30",
+      "observed_at": "2026-07-30",
+      "summary": "All six warehouse scripts were classified by behavior: core identity and rehydration were promoted, cmux isolated, voice and self-build deferred, and organization scaffolding reclassified."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-agent-zero:dacfc6c30b2f478c9d3382910674bd30289d3981",
+      "observed_at": "2026-07-30",
+      "summary": "Publication, syntax, read-only boot, explicit announcement, explicit host handoff, disposable install, installed execution, and marked uninstall checks passed."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-agent-zero",
+        "revision": "main@dacfc6c30b2f478c9d3382910674bd30289d3981",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-agent-zero:dacfc6c30b2f478c9d3382910674bd30289d3981",
+          "observed_at": "2026-07-30",
+          "summary": "Canonical public source contains the provider-neutral boot package, identity contract, explicit Agent Brain and host boundaries, optional cmux adapter, reversible installer, migration map, and HTML architecture."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The clean SISO-owned extraction carries an MIT license.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-agent-zero/blob/dacfc6c30b2f478c9d3382910674bd30289d3981/LICENSE",
+          "observed_at": "2026-07-30",
+          "summary": "MIT license is present at the pinned public source commit."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:c7cfb739-67d3-4c63-9146-5f47430f7970",
+    "version": "0.1.0+dacfc6c",
+    "released_at": "2026-07-30T06:24:26+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The remediated public commit resolves.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A commit-scoped public archive is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The release resolves to its stable Work and artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "verified",
+        "reason": "Install and uninstall checks pass.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "The repository is public, licensed, documented, and tested.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "experimental",
+        "reason": "Provider-neutral boot and host handoff pass; production host adapters retain their own receipts.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

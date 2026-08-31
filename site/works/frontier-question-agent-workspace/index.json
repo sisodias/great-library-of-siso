@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:2ac84615-3f9d-4040-95d6-9d9f39e4dc84",
+  "slug": "frontier-question-agent-workspace",
+  "name": "GQ-001 · The Agent Workspace",
+  "summary": "A standing research question about the complete code, agent, memory, enforcement, and user-interface architecture of an agent-native workspace.",
+  "work_type": "research_question",
+  "lifecycle_status": "active",
+  "section": "Research",
+  "library_url": "/works/frontier-question-agent-workspace/",
+  "agent_context_url": "/works/frontier-question-agent-workspace/index.json",
+  "registry_source": "registry/works/frontier-question-gq-001.json",
+  "source_links": [],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "Foundry maps relevant agent systems, architecture patterns, and counter-examples.",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "target_name": "SISO Foundry",
+      "target_library_url": "/works/siso-foundry/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns discovery and evidence-universe selection to Foundry."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "context": "SISO Knowledge preserves the durable, rights-aware corpus and retrieval layer.",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "target_name": "SISO Knowledge",
+      "target_library_url": "/works/siso-knowledge/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "context": "Evidence Engines turn explicit sources into grounded claims, counter-evidence, and answer candidates.",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "target_name": "SISO Evidence Engines",
+      "target_library_url": "/works/siso-evidence-engines/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns source-grounded transformation to Evidence Engines."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:frontier-question-intake:gq-001:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The existing question registry and partial answer were read; only publication-safe metadata was promoted."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.",
+      "evidence": []
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:0212a6f4-1860-453b-bb27-2e9ed70a09c4",
+    "version": "program-metadata-1.0.0+ea7f0e4",
+    "released_at": "2026-08-02T02:08:28+07:00",
+    "release_kind": "question_program_metadata",
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The question-program metadata is pinned to an exact public commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "not_applicable",
+        "reason": "This Release identifies registry metadata rather than a standalone payload archive.",
+        "evidence_count": 0
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The manifest resolves to GQ-001 and a validated registry artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "not_applicable",
+        "reason": "Question metadata is read by the Library generator and is not independently installed.",
+        "evidence_count": 0
+      },
+      "forkable": {
+        "state": "not_applicable",
+        "reason": "This record does not claim a separately forkable software payload.",
+        "evidence_count": 0
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "The metadata contains public-safe stable IDs and no machine-local or private evidence locator.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

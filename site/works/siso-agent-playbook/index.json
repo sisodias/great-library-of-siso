@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc",
+  "slug": "siso-agent-playbook",
+  "name": "SISO Agent Playbook",
+  "summary": "An installable operating package of scenario playbooks, prompts, skills, tools, telemetry, and evidence for running coordinated agent work.",
+  "work_type": "playbook",
+  "lifecycle_status": "active",
+  "section": "Agents",
+  "library_url": "/works/siso-agent-playbook/",
+  "agent_context_url": "/works/siso-agent-playbook/index.json",
+  "registry_source": "registry/works/siso-agent-playbook.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-agent-playbook",
+      "visibility": "private"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-agent-playbook#readme",
+      "visibility": "private"
+    }
+  ],
+  "relationships": [],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:siso-agent-base-decomposition:agent-playbook:2026-07-30",
+      "observed_at": "2026-07-30",
+      "summary": "The nested repository is an independent operating package rather than an internal Agent Runtime folder."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-agent-playbook:6ee572b0f2230e3f83b11408fe30f7211d1f2b77",
+      "observed_at": "2026-07-30",
+      "summary": "Five skill contracts and eight entrypoints validated; disposable install and uninstall completed; publication scan passed."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-agent-playbook",
+        "revision": "main@6ee572b0f2230e3f83b11408fe30f7211d1f2b77",
+        "visibility": "private",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-agent-playbook:6ee572b0f2230e3f83b11408fe30f7211d1f2b77",
+          "observed_at": "2026-07-30",
+          "summary": "Canonical public source preserves original history and the four warehouse working changes, includes an MIT license, and passes reversible-install and publication checks."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The SISO-owned playbook source now carries the Agent Base repository-root MIT license in its independent public home.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-agent-playbook/blob/6ee572b0f2230e3f83b11408fe30f7211d1f2b77/PROVENANCE.md",
+          "observed_at": "2026-07-30",
+          "summary": "History source, working-state preservation, publication cleanup, and license provenance are recorded."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:ff8cc25f-7162-4713-9e38-66cbf3eca958",
+    "version": "1.0.0+6ee572b",
+    "released_at": "2026-07-30T06:24:26+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The remediated public commit resolves.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A commit-scoped public archive is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The release resolves to its stable Work and artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "verified",
+        "reason": "Disposable install and uninstall pass for the operating package.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "The repository is public, licensed, documented, and tested.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "Five skill contracts, eight entrypoints, and reversible installation pass.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

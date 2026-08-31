@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+  "slug": "research",
+  "name": "Research",
+  "summary": "A curated Library section for source discovery, evidence pipelines, knowledge engines, datasets, and durable research artifacts.",
+  "work_type": "section",
+  "lifecycle_status": "active",
+  "section": "Research",
+  "library_url": "/works/research/",
+  "agent_context_url": "/works/research/index.json",
+  "registry_source": "registry/works/research.json",
+  "source_links": [],
+  "relationships": [],
+  "evidence": [
+    {
+      "kind": "documentation",
+      "reference": "decision:great-library:research-section:2026-07-30",
+      "observed_at": "2026-07-30",
+      "summary": "Foundry and research artifacts were separated from the Agents section because they form an independent research domain that may serve many systems."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "A curated section is registry metadata rather than a source payload.",
+      "evidence": []
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:24c1ed1d-4437-4641-83e2-048d55116590",
+    "version": "1.0.0",
+    "released_at": "2026-07-30T00:00:00Z",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The section is addressable by stable registry ID.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "not_applicable",
+        "reason": "This curated section has no independent payload archive.",
+        "evidence_count": 0
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The release manifest resolves inside the registry.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "not_applicable",
+        "reason": "A curated section is not software.",
+        "evidence_count": 0
+      },
+      "forkable": {
+        "state": "not_applicable",
+        "reason": "No source payload is attached to this section release.",
+        "evidence_count": 0
+      },
+      "portable": {
+        "state": "not_applicable",
+        "reason": "Portability is evaluated on the section's member releases.",
+        "evidence_count": 0
+      }
+    }
+  }
+}

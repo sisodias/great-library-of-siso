@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
+  "slug": "siso-agent-brain",
+  "name": "SISO Agent Brain",
+  "summary": "The shared state service for task lifecycle and atomic queues, versioned task artifacts, memory, timeline, fleet presence, costs, human questions, delegation, control flags, and governed units.",
+  "work_type": "agent_system",
+  "lifecycle_status": "experimental",
+  "section": "Agents",
+  "library_url": "/works/siso-agent-brain/",
+  "agent_context_url": "/works/siso-agent-brain/index.json",
+  "registry_source": "registry/works/siso-agent-brain.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-agent-brain",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-agent-brain#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "Agent Zero consumes current tasks, memory, fleet, questions, divisions, and halt state through the Brain API while retaining its own intent and coordination policy.",
+      "target_work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "target_name": "SISO Agent Zero",
+      "target_library_url": "/works/siso-agent-zero/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-agent-brain/blob/ed50bec86f5cfb86cc5c84ebfce97fad595598b4/docs/ARCHITECTURE.html",
+          "observed_at": "2026-07-30",
+          "summary": "The public architecture makes Agent Zero a consumer rather than embedded Brain source."
+        }
+      ]
+    },
+    {
+      "type": "integrates_with",
+      "context": "Agent Runtime may publish lifecycle, fleet, task, and cost state through the API; model and session execution remain outside the Brain.",
+      "target_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "target_name": "SISO Agent Runtime",
+      "target_library_url": "/works/siso-agent-base/",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-agent-brain:ed50bec86f5cfb86cc5c84ebfce97fad595598b4",
+          "observed_at": "2026-07-30",
+          "summary": "Heartbeat, timeline, task lifecycle, concurrent queue claims, artifacts, and cost API paths passed in a disposable live service."
+        }
+      ]
+    },
+    {
+      "type": "integrates_with",
+      "context": "Session Intelligence may promote learned memory through the API, while session ingestion, extraction, ranking, and privacy-sensitive source processing stay outside the Brain.",
+      "target_work_id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
+      "target_name": "SISO Session Intelligence",
+      "target_library_url": "/works/siso-session-intelligence/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-agent-brain/blob/ed50bec86f5cfb86cc5c84ebfce97fad595598b4/MIGRATION-MAP.json",
+          "observed_at": "2026-07-30",
+          "summary": "Session intent routing and extract search were explicitly reclassified to Session Intelligence."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:siso-agent-base:brain-boundary:2026-07-30",
+      "observed_at": "2026-07-30",
+      "summary": "The warehouse brain folder was classified by behavior; scheduler, Foundry, Session Intelligence, voice, provider operations, diagnostics, and deployment sources were not conflated with shared state."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-agent-brain:ed50bec86f5cfb86cc5c84ebfce97fad595598b4",
+      "observed_at": "2026-07-30",
+      "summary": "Schema, task workflow, concurrent atomic claim, artifacts, live API, auth, outbox, durable merge, two fixture-backed legacy import profiles, install, and state-preserving uninstall passed."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-agent-brain/blob/ed50bec86f5cfb86cc5c84ebfce97fad595598b4/LEGACY-TASK-STATE-ASSESSMENT.json",
+      "observed_at": "2026-07-30",
+      "summary": "The legacy family is mapped capability by capability; fixture imports are proven and real-database review remains an explicit stop condition."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-agent-brain",
+        "revision": "main@ed50bec86f5cfb86cc5c84ebfce97fad595598b4",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-agent-brain:ed50bec86f5cfb86cc5c84ebfce97fad595598b4",
+          "observed_at": "2026-07-30",
+          "summary": "Canonical public source contains the shared-state service, task workflow, atomic claims, artifacts, conservative merge, and dry-run-first import profiles for the reviewed legacy layouts."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The clean SISO-owned extraction carries an MIT license.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-agent-brain/blob/ed50bec86f5cfb86cc5c84ebfce97fad595598b4/LICENSE",
+          "observed_at": "2026-07-30",
+          "summary": "MIT license is present at the pinned public source commit."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:941effe9-a115-41a9-bfde-d681ebc45812",
+    "version": "0.3.0+ed50bec",
+    "released_at": "2026-07-30T12:26:31+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The public source is pinned to an exact commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A commit-scoped public source archive is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The release resolves to Agent Brain, the exact artifact, assessment, and importer checkpoint.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "verified",
+        "reason": "Install, migrations, client, importer help, and state-preserving uninstall pass.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "The repository is public, MIT licensed, source-complete, documented, and tested.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "experimental",
+        "reason": "Both reviewed legacy layouts pass fixture imports; an actual local database and sustained multi-host operation remain open receipts.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

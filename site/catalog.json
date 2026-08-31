@@ -6,298 +6,703 @@
       "id": "gls:work:efb00129-4ec6-4637-a2f8-dcead4f7d8dd",
       "slug": "actionmodel-connector-research",
       "name": "Action Model · Connector Research",
+      "summary": "A verified research dossier on OSS connector catalogues for the Action Model app builder: which catalogues can legally power a hosted connect-your-account section, a live spike of the leading gateway, the multi-tenancy boundary, and the resulting build order.",
       "library_url": "/works/actionmodel-connector-research/",
+      "agent_context_url": "/works/actionmodel-connector-research/index.json",
       "type": "project",
       "maturity": "active",
-      "section": "Unassigned"
+      "section": "Unassigned",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-connector-research",
+          "visibility": "private"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-connector-research#readme",
+          "visibility": "private"
+        }
+      ]
     },
     {
       "id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
       "slug": "agents",
       "name": "Agents",
+      "summary": "A curated Library section for complete agent stacks, their independently addressable components, and the evidence showing how they work together.",
       "library_url": "/works/agents/",
+      "agent_context_url": "/works/agents/index.json",
       "type": "section",
       "maturity": "active",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": []
     },
     {
       "id": "gls:work:7a3f1c5d-2b89-4e6c-9d04-3f8a5b1e7c92",
       "slug": "declassified-corpus",
       "name": "Declassified Document Corpus (CREST, NARA, Black Vault, NSArchive, DOE)",
+      "summary": "A bulk-available catalogue of public-domain declassified government documents — CIA CREST (incl. Stargate/remote-viewing), the NARA AWS Catalog and JFK release tranches, the National Security Archive (GWU free site), DOE OpenNet, and The Black Vault curated FOIA archive — with full provenance and per-unit rights posture. The Great Library holds the inventory; SISO Knowledge holds the durable corpus; Foundry owns source discovery; Evidence Engines perform source-grounded transformation.",
       "library_url": "/works/declassified-corpus/",
+      "agent_context_url": "/works/declassified-corpus/index.json",
       "type": "knowledge_system",
       "maturity": "planned",
-      "section": "Unassigned"
+      "section": "Unassigned",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/great-library-of-siso/blob/main/registry/source-inventories/declassified-corpus-2026-08-07.json",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:2ac84615-3f9d-4040-95d6-9d9f39e4dc84",
       "slug": "frontier-question-agent-workspace",
       "name": "GQ-001 · The Agent Workspace",
+      "summary": "A standing research question about the complete code, agent, memory, enforcement, and user-interface architecture of an agent-native workspace.",
       "library_url": "/works/frontier-question-agent-workspace/",
+      "agent_context_url": "/works/frontier-question-agent-workspace/index.json",
       "type": "research_question",
       "maturity": "active",
-      "section": "Research"
+      "section": "Research",
+      "source_links": []
     },
     {
       "id": "gls:work:e38b054f-b926-4410-b84d-4fd3249fd4f4",
       "slug": "frontier-question-agent-layer-efficiency",
       "name": "GQ-002 · 10× the Agent Layer",
+      "summary": "A standing research question about making a provider-neutral multi-agent operating layer materially more effective, efficient, observable, and self-improving.",
       "library_url": "/works/frontier-question-agent-layer-efficiency/",
+      "agent_context_url": "/works/frontier-question-agent-layer-efficiency/index.json",
       "type": "research_question",
       "maturity": "active",
-      "section": "Research"
+      "section": "Research",
+      "source_links": []
     },
     {
       "id": "gls:work:85964f1c-2efe-48b0-8f71-dc32bb668c0c",
       "slug": "frontier-question-best-software-primitive",
       "name": "GQ-004 · Best Software Primitive",
+      "summary": "A parametric standing question for identifying the best implementation of a reusable software primitive across the corpus with quality, rights, and composability evidence.",
       "library_url": "/works/frontier-question-best-software-primitive/",
+      "agent_context_url": "/works/frontier-question-best-software-primitive/index.json",
       "type": "research_question",
       "maturity": "experimental",
-      "section": "Research"
+      "section": "Research",
+      "source_links": []
     },
     {
       "id": "gls:work:7782f923-d44e-4a47-8ce6-134e31816673",
       "slug": "frontier-question-field-momentum",
       "name": "GQ-005 · Where the Field Is Moving",
+      "summary": "A standing research question about which technologies, categories, techniques, and projects are accelerating and what those changes predict.",
       "library_url": "/works/frontier-question-field-momentum/",
+      "agent_context_url": "/works/frontier-question-field-momentum/index.json",
       "type": "research_question",
       "maturity": "experimental",
-      "section": "Research"
+      "section": "Research",
+      "source_links": []
     },
     {
       "id": "gls:work:2144e900-4886-461e-92f1-49571f2e9f74",
       "slug": "frontier-question-information-organ",
       "name": "GQ-006 · The Information Organ",
+      "summary": "A standing research and systems question about making broad, continuously refreshed evidence reliably accessible to every authorized agent workflow.",
       "library_url": "/works/frontier-question-information-organ/",
+      "agent_context_url": "/works/frontier-question-information-organ/index.json",
       "type": "research_question",
       "maturity": "active",
-      "section": "Research"
+      "section": "Research",
+      "source_links": []
     },
     {
       "id": "gls:work:3b4c4fa6-31f2-4cfc-9542-00f32e200621",
       "slug": "frontier-question-model-routing",
       "name": "GQ-008 · Model Routing Evidence",
+      "summary": "A standing research question about which available model should own each work shape after capability, reliability, latency, quota, and cost are considered together.",
       "library_url": "/works/frontier-question-model-routing/",
+      "agent_context_url": "/works/frontier-question-model-routing/index.json",
       "type": "research_question",
       "maturity": "active",
-      "section": "Research"
+      "section": "Research",
+      "source_links": []
     },
     {
       "id": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
       "slug": "frontier-question-god-questions-infrastructure",
       "name": "GQ-009 · The God Questions Observatory",
+      "summary": "A standing meta-question about how the Great Library should make SISO's highest-value questions visible, composable, continuously revisable, and connected to evidence and approved action.",
       "library_url": "/works/frontier-question-god-questions-infrastructure/",
+      "agent_context_url": "/works/frontier-question-god-questions-infrastructure/index.json",
       "type": "research_question",
       "maturity": "active",
-      "section": "Research"
+      "section": "Research",
+      "source_links": []
     },
     {
       "id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
       "slug": "frontier-question-gq-010",
       "name": "GQ-010 — How do we increase the People Graph's value by 100×?",
+      "summary": "A standing research question that treats breadth, identity resolution, research depth, and decision value as separate measurable dimensions and rejects row-count growth as a sufficient success signal.",
       "library_url": "/works/frontier-question-gq-010/",
+      "agent_context_url": "/works/frontier-question-gq-010/index.json",
       "type": "research_question",
       "maturity": "active",
-      "section": "Research"
+      "section": "Research",
+      "source_links": [
+        {
+          "kind": "documentation",
+          "label": "Documentation",
+          "url": "https://github.com/sisodias/great-library-of-siso/tree/main/docs/people-graph-program",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
       "slug": "herdr",
       "name": "Herdr",
+      "summary": "An externally owned terminal-native multiplexer providing persistent workspaces, tabs, panes, and addressable agent sessions.",
       "library_url": "/works/herdr/",
+      "agent_context_url": "/works/herdr/index.json",
       "type": "tool",
       "maturity": "active",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/herdrdev/herdr",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/herdrdev/herdr#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
       "slug": "research",
       "name": "Research",
+      "summary": "A curated Library section for source discovery, evidence pipelines, knowledge engines, datasets, and durable research artifacts.",
       "library_url": "/works/research/",
+      "agent_context_url": "/works/research/index.json",
       "type": "section",
       "maturity": "active",
-      "section": "Research"
+      "section": "Research",
+      "source_links": []
     },
     {
       "id": "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae",
       "slug": "siso-agent-base-warehouse",
       "name": "SISO Agent Base Source Warehouse",
+      "summary": "The retired mixed-source repository from which SISO Runtime, capabilities, intelligence, integrations, and research Works are being read, preserved, and reallocated.",
       "library_url": "/works/siso-agent-base-warehouse/",
+      "agent_context_url": "/works/siso-agent-base-warehouse/index.json",
       "type": "bundle",
       "maturity": "retired",
-      "section": "Unassigned"
+      "section": "Unassigned",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-agent-base",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-agent-base#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
       "slug": "siso-agent-brain",
       "name": "SISO Agent Brain",
+      "summary": "The shared state service for task lifecycle and atomic queues, versioned task artifacts, memory, timeline, fleet presence, costs, human questions, delegation, control flags, and governed units.",
       "library_url": "/works/siso-agent-brain/",
+      "agent_context_url": "/works/siso-agent-brain/index.json",
       "type": "agent_system",
       "maturity": "experimental",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-agent-brain",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-agent-brain#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:4198f323-9855-43f6-a99a-72143086818e",
       "slug": "siso-agent-hooks",
       "name": "SISO Agent Hooks",
+      "summary": "The portable lifecycle automation boundary for Claude Code and Codex, with one manifest-driven event map, host-native generated configuration, guarded installation, privacy-reduced state, and adversarial verification.",
       "library_url": "/works/siso-agent-hooks/",
+      "agent_context_url": "/works/siso-agent-hooks/index.json",
       "type": "capability_pack",
       "maturity": "active",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-agent-hooks",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-agent-hooks#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a",
       "slug": "siso-agent-integrations",
       "name": "SISO Agent Integrations",
+      "summary": "An experimental package family for bounded agent-runtime adapters with explicit safety, evidence, promotion, and rollback contracts.",
       "library_url": "/works/siso-agent-integrations/",
+      "agent_context_url": "/works/siso-agent-integrations/index.json",
       "type": "bundle",
       "maturity": "experimental",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-agent-integrations",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-agent-integrations#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc",
       "slug": "siso-agent-playbook",
       "name": "SISO Agent Playbook",
+      "summary": "An installable operating package of scenario playbooks, prompts, skills, tools, telemetry, and evidence for running coordinated agent work.",
       "library_url": "/works/siso-agent-playbook/",
+      "agent_context_url": "/works/siso-agent-playbook/index.json",
       "type": "playbook",
       "maturity": "active",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-agent-playbook",
+          "visibility": "private"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-agent-playbook#readme",
+          "visibility": "private"
+        }
+      ]
     },
     {
       "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
       "slug": "siso-agent-base",
       "name": "SISO Agent Runtime",
+      "summary": "The provider-neutral SISO coding-agent application boundary: explicit configuration, safe host launch, profile composition, task control, checkpoints, bounded context, status, and runtime event contracts.",
       "library_url": "/works/siso-agent-base/",
+      "agent_context_url": "/works/siso-agent-base/index.json",
       "type": "application",
       "maturity": "active",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-agent-runtime",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-agent-runtime#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:b9196c61-901f-4105-93d9-899876d17016",
       "slug": "siso-agent-stack-distribution",
       "name": "SISO Agent Stack Distribution",
+      "summary": "The one-clone, version-pinned public distribution for the SISO Claude Code and Codex environment, composing independently released skills, hooks, playbooks, agent roles, operating profiles, commands, runtimes, and optional services without merging their repository identities.",
       "library_url": "/works/siso-agent-stack-distribution/",
+      "agent_context_url": "/works/siso-agent-stack-distribution/index.json",
       "type": "bundle",
       "maturity": "active",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-agent-stack",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-agent-stack#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
       "slug": "siso-agent-zero",
       "name": "SISO Agent Zero",
+      "summary": "The intent-holding coordination and boot package that joins a durable identity to current Agent Brain state, then hands work to an explicitly selected agent host.",
       "library_url": "/works/siso-agent-zero/",
+      "agent_context_url": "/works/siso-agent-zero/index.json",
       "type": "agent_system",
       "maturity": "experimental",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-agent-zero",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-agent-zero#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
       "slug": "siso-book-library",
       "name": "SISO Book Library",
+      "summary": "An independently addressable Research Work for lossless public-domain book metadata, people and role exports, subject and classification edges, text-quality gates, and content-location contracts.",
       "library_url": "/works/siso-book-library/",
+      "agent_context_url": "/works/siso-book-library/index.json",
       "type": "knowledge_system",
       "maturity": "experimental",
-      "section": "Research"
+      "section": "Research",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-book-library",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-book-library#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:1f4a6d92-5b83-4e07-a2c9-6d38b1e75403",
       "slug": "siso-declassified-records",
       "name": "SISO Declassified Records",
+      "summary": "A research department for declassified government records, separating record truth, custody and release truth, source-asserted truth, and research conclusion, with four rights-and-safety tiers.",
       "library_url": "/works/siso-declassified-records/",
+      "agent_context_url": "/works/siso-declassified-records/index.json",
       "type": "knowledge_system",
       "maturity": "active",
-      "section": "Unassigned"
+      "section": "Unassigned",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-declassified-records",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-declassified-records#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
       "slug": "siso-evidence-engines",
       "name": "SISO Evidence Engines",
+      "summary": "A Research package family for source-grounded knowledge items, credibility-ranked engineering principles, and evidence-gated improvement ideas.",
       "library_url": "/works/siso-evidence-engines/",
+      "agent_context_url": "/works/siso-evidence-engines/index.json",
       "type": "bundle",
       "maturity": "active",
-      "section": "Research"
+      "section": "Research",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-evidence-engines",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-evidence-engines#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
       "slug": "siso-foundry",
       "name": "SISO Foundry",
+      "summary": "A source-mining and reuse-knowledge platform for discovering, evaluating, preserving, and navigating valuable external and SISO source.",
       "library_url": "/works/siso-foundry/",
+      "agent_context_url": "/works/siso-foundry/index.json",
       "type": "application",
       "maturity": "active",
-      "section": "Research"
+      "section": "Research",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-foundry",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-foundry#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
       "slug": "siso-knowledge",
       "name": "SISO Knowledge",
+      "summary": "The durable knowledge-production system for acquiring, curating, storing, indexing, relating, and retrieving SISO knowledge while keeping large or rights-bearing data outside Git.",
       "library_url": "/works/siso-knowledge/",
+      "agent_context_url": "/works/siso-knowledge/index.json",
       "type": "knowledge_system",
       "maturity": "active",
-      "section": "Research"
+      "section": "Research",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-knowledge",
+          "visibility": "private"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-knowledge#readme",
+          "visibility": "private"
+        }
+      ]
     },
     {
       "id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
       "slug": "siso-people-graph",
       "name": "SISO People Graph",
+      "summary": "An independently addressable Research Work for durable person, identity, work, topic, and temporal graph contracts, with mutable databases and source snapshots kept outside the Great Library registry.",
       "library_url": "/works/siso-people-graph/",
+      "agent_context_url": "/works/siso-people-graph/index.json",
       "type": "knowledge_system",
       "maturity": "experimental",
-      "section": "Research"
+      "section": "Research",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-people-graph",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-people-graph#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
       "slug": "siso-project-os",
       "name": "SISO Project OS",
+      "summary": "A project-local operating system and contract bundle for durable agent work, evidence, knowledge, and handoff state.",
       "library_url": "/works/siso-project-os/",
+      "agent_context_url": "/works/siso-project-os/index.json",
       "type": "project",
       "maturity": "active",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-project-os",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-project-os#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
       "slug": "siso-session-intelligence",
       "name": "SISO Session Intelligence",
+      "summary": "A privacy-reduced learning pipeline that turns explicitly supplied Claude and Codex sessions into traceable goals, failures, decisions, intentions, wins, recurring patterns, and durable local recall.",
       "library_url": "/works/siso-session-intelligence/",
+      "agent_context_url": "/works/siso-session-intelligence/index.json",
       "type": "tool",
       "maturity": "active",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-session-intelligence",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-session-intelligence#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
       "slug": "siso-skills",
       "name": "SISO Skills",
+      "summary": "The registry and distribution boundary for atomic repeatable capabilities, with evidence-backed classification, bundled installation, isolated skill telemetry, and independent repository promotion only when a skill earns its own lifecycle.",
       "library_url": "/works/siso-skills/",
+      "agent_context_url": "/works/siso-skills/index.json",
       "type": "capability_pack",
       "maturity": "active",
-      "section": "Agents"
+      "section": "Agents",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-skills-hub",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-skills-hub#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:8e2b4f07-3a91-4c58-9d16-7b05e3ca2841",
       "slug": "siso-stargate-library",
       "name": "SISO Stargate Library",
+      "summary": "Remote viewing and psychoenergetics research, holding a three-track truth boundary between practice, evidence and theory, with 33 adjudicated claims and a commitment-based target manager.",
       "library_url": "/works/siso-stargate-library/",
+      "agent_context_url": "/works/siso-stargate-library/index.json",
       "type": "knowledge_system",
       "maturity": "active",
-      "section": "Unassigned"
+      "section": "Unassigned",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-stargate-library",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-stargate-library#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:5c1e8a34-6d72-4f19-8a0b-2e7c94d1f635",
       "slug": "siso-unsolveable-mathematics",
       "name": "SISO Unsolveable Mathematics",
+      "summary": "An open-problem attack programme covering the UNSOLVEABLE constitution, the ten-agent Erdos campaign master prompt, the Erdos 41 flagship dossier, and agent 09's Erdos 23 workspace.",
       "library_url": "/works/siso-unsolveable-mathematics/",
+      "agent_context_url": "/works/siso-unsolveable-mathematics/index.json",
       "type": "research_question",
       "maturity": "active",
-      "section": "Unassigned"
+      "section": "Unassigned",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-unsolveable-mathematics",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-unsolveable-mathematics#readme",
+          "visibility": "public"
+        }
+      ]
     },
     {
       "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
       "slug": "great-library-of-siso",
       "name": "The Great Library of SISO",
+      "summary": "The public human-readable and agent-readable registry for SISO source.",
       "library_url": "/works/great-library-of-siso/",
+      "agent_context_url": "/works/great-library-of-siso/index.json",
       "type": "library",
       "maturity": "active",
-      "section": "Library"
+      "section": "Library",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/great-library-of-siso",
+          "visibility": "public"
+        },
+        {
+          "kind": "homepage",
+          "label": "Homepage",
+          "url": "https://great-library-of-siso.vercel.app/",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/great-library-of-siso#readme",
+          "visibility": "public"
+        }
+      ]
     }
   ],
   "repositories": [

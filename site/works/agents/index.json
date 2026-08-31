@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
+  "slug": "agents",
+  "name": "Agents",
+  "summary": "A curated Library section for complete agent stacks, their independently addressable components, and the evidence showing how they work together.",
+  "work_type": "section",
+  "lifecycle_status": "active",
+  "section": "Agents",
+  "library_url": "/works/agents/",
+  "agent_context_url": "/works/agents/index.json",
+  "registry_source": "registry/works/agents.json",
+  "source_links": [],
+  "relationships": [],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:agents-foundation:2026-07-29",
+      "observed_at": "2026-07-29",
+      "summary": "Reviewed Project OS, Agent Base, Herdr, and Agent Zero evidence before classification."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "A curated section is registry metadata rather than a source payload.",
+      "evidence": []
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:14c1d9de-0e77-44e9-9274-57e7cfb6ab02",
+    "version": "1.0.0",
+    "released_at": "2026-07-29T00:00:00Z",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The section is addressable by stable registry ID.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "not_applicable",
+        "reason": "This curated section has no independent payload archive.",
+        "evidence_count": 0
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The release manifest resolves inside the named snapshot.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "not_applicable",
+        "reason": "A curated section is not software.",
+        "evidence_count": 0
+      },
+      "forkable": {
+        "state": "not_applicable",
+        "reason": "No source payload is attached to this section release.",
+        "evidence_count": 0
+      },
+      "portable": {
+        "state": "not_applicable",
+        "reason": "Portability is evaluated on the section's member releases.",
+        "evidence_count": 0
+      }
+    }
+  }
+}

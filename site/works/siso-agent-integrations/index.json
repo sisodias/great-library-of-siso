@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a",
+  "slug": "siso-agent-integrations",
+  "name": "SISO Agent Integrations",
+  "summary": "An experimental package family for bounded agent-runtime adapters with explicit safety, evidence, promotion, and rollback contracts.",
+  "work_type": "bundle",
+  "lifecycle_status": "experimental",
+  "section": "Agents",
+  "library_url": "/works/siso-agent-integrations/",
+  "agent_context_url": "/works/siso-agent-integrations/index.json",
+  "registry_source": "registry/works/siso-agent-integrations.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-agent-integrations",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-agent-integrations#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "Integration packages are tested against the Agent Runtime but retain experimental promotion and rollback lifecycles.",
+      "target_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "target_name": "SISO Agent Runtime",
+      "target_library_url": "/works/siso-agent-base/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:siso-agent-base-modules:context-integrations:2026-07-30",
+          "observed_at": "2026-07-30",
+          "summary": "Context Firewall and Headroom expose opt-in or shadow boundaries rather than core runtime dependencies."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:siso-agent-base-modules:context-integrations:2026-07-30",
+      "observed_at": "2026-07-30",
+      "summary": "Both adapters have explicit safety, canary, promotion, and rollback contracts and remain experimental."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-smoke:siso-agent-integrations:808eb51c079db40ae273e721527b245be09e9544",
+      "observed_at": "2026-07-30",
+      "summary": "Context Firewall shadow smoke and Headroom syntax checks passed in the extracted repository."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-agent-integrations",
+        "revision": "main@808eb51c079db40ae273e721527b245be09e9544",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-agent-integrations:808eb51c079db40ae273e721527b245be09e9544",
+          "observed_at": "2026-07-30",
+          "summary": "Canonical public source repository contains the extracted Context Core, Context Firewall, and Headroom adapter packages; its default smoke suite passed before publication."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The extracted SISO-owned source carries the Agent Base repository-root MIT license; the externally owned Headroom dependency remains pinned rather than redistributed.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-agent-integrations/blob/808eb51c079db40ae273e721527b245be09e9544/LICENSE",
+          "observed_at": "2026-07-30",
+          "summary": "MIT license and dependency ownership boundary reviewed in the public extraction."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:69c70399-9344-4752-b6a7-8976ee857006",
+    "version": "main+808eb51",
+    "released_at": "2026-07-30T06:24:26+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The remediated public commit resolves.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A commit-scoped public archive is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The release resolves to its stable Work and artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "experimental",
+        "reason": "Default smokes pass; host-wide adapter installation remains opt-in.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "Public source and MIT license are present.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "experimental",
+        "reason": "Provider canaries require operator-supplied configuration.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

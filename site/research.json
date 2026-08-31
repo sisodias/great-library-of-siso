@@ -73,6 +73,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-foundry",
               "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-foundry#readme",
+              "visibility": "public"
             }
           ]
         },
@@ -86,6 +92,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-knowledge",
               "visibility": "private"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-knowledge#readme",
+              "visibility": "private"
             }
           ]
         },
@@ -98,6 +110,12 @@
               "kind": "source_repository",
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-evidence-engines#readme",
               "visibility": "public"
             }
           ]
@@ -277,6 +295,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-foundry",
               "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-foundry#readme",
+              "visibility": "public"
             }
           ]
         },
@@ -290,6 +314,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-knowledge",
               "visibility": "private"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-knowledge#readme",
+              "visibility": "private"
             }
           ]
         },
@@ -302,6 +332,12 @@
               "kind": "source_repository",
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-evidence-engines#readme",
               "visibility": "public"
             }
           ]
@@ -477,6 +513,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-foundry",
               "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-foundry#readme",
+              "visibility": "public"
             }
           ]
         },
@@ -490,6 +532,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-knowledge",
               "visibility": "private"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-knowledge#readme",
+              "visibility": "private"
             }
           ]
         },
@@ -502,6 +550,12 @@
               "kind": "source_repository",
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-evidence-engines#readme",
               "visibility": "public"
             }
           ]
@@ -589,6 +643,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-foundry",
               "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-foundry#readme",
+              "visibility": "public"
             }
           ]
         },
@@ -602,6 +662,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-knowledge",
               "visibility": "private"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-knowledge#readme",
+              "visibility": "private"
             }
           ]
         },
@@ -614,6 +680,12 @@
               "kind": "source_repository",
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-evidence-engines#readme",
               "visibility": "public"
             }
           ]
@@ -702,6 +774,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-foundry",
               "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-foundry#readme",
+              "visibility": "public"
             }
           ]
         },
@@ -715,6 +793,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-knowledge",
               "visibility": "private"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-knowledge#readme",
+              "visibility": "private"
             }
           ]
         },
@@ -727,6 +811,12 @@
               "kind": "source_repository",
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-evidence-engines#readme",
               "visibility": "public"
             }
           ]
@@ -816,6 +906,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-foundry",
               "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-foundry#readme",
+              "visibility": "public"
             }
           ]
         },
@@ -829,6 +925,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-knowledge",
               "visibility": "private"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-knowledge#readme",
+              "visibility": "private"
             }
           ]
         },
@@ -841,6 +943,12 @@
               "kind": "source_repository",
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-evidence-engines#readme",
               "visibility": "public"
             }
           ]
@@ -941,6 +1049,12 @@
               "label": "Homepage",
               "url": "https://great-library-of-siso.vercel.app/",
               "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/great-library-of-siso#readme",
+              "visibility": "public"
             }
           ]
         },
@@ -960,6 +1074,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-foundry",
               "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-foundry#readme",
+              "visibility": "public"
             }
           ]
         },
@@ -973,6 +1093,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-knowledge",
               "visibility": "private"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-knowledge#readme",
+              "visibility": "private"
             }
           ]
         },
@@ -985,6 +1111,12 @@
               "kind": "source_repository",
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-evidence-engines#readme",
               "visibility": "public"
             }
           ]
@@ -1370,6 +1502,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-people-graph",
               "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-people-graph#readme",
+              "visibility": "public"
             }
           ]
         },
@@ -1382,6 +1520,12 @@
               "kind": "source_repository",
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-book-library",
+              "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-book-library#readme",
               "visibility": "public"
             }
           ]
@@ -1396,6 +1540,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-knowledge",
               "visibility": "private"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-knowledge#readme",
+              "visibility": "private"
             }
           ]
         },
@@ -1409,6 +1559,12 @@
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-foundry",
               "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-foundry#readme",
+              "visibility": "public"
             }
           ]
         },
@@ -1421,6 +1577,12 @@
               "kind": "source_repository",
               "label": "Source repository",
               "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            },
+            {
+              "kind": "readme",
+              "label": "Read README",
+              "url": "https://github.com/sisodias/siso-evidence-engines#readme",
               "visibility": "public"
             }
           ]

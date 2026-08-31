@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+  "slug": "great-library-of-siso",
+  "name": "The Great Library of SISO",
+  "summary": "The public human-readable and agent-readable registry for SISO source.",
+  "work_type": "library",
+  "lifecycle_status": "active",
+  "section": "Library",
+  "library_url": "/works/great-library-of-siso/",
+  "agent_context_url": "/works/great-library-of-siso/index.json",
+  "registry_source": "registry/works/library.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/great-library-of-siso",
+      "visibility": "public"
+    },
+    {
+      "kind": "homepage",
+      "label": "Homepage",
+      "url": "https://great-library-of-siso.vercel.app/",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/great-library-of-siso#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [],
+  "evidence": [
+    {
+      "kind": "registry_validation",
+      "reference": "registry:seed:v1",
+      "observed_at": "2026-07-29",
+      "summary": "Seed Work accepted by the V1 registry validator."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:great-library-of-siso:2bd415dd3024c928fc8414b891e7f21069c3fcaa",
+      "observed_at": "2026-07-30",
+      "summary": "Registry schemas, generated site, repository header, link and identity checks, and publication scan passed."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/great-library-of-siso",
+        "revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "https://github.com/sisodias/great-library-of-siso",
+          "observed_at": "2026-07-30",
+          "summary": "Canonical public repository is pinned after the generated flagship repository header was added to the verified registry source."
+        }
+      },
+      {
+        "type": "homepage",
+        "url": "https://great-library-of-siso.vercel.app/",
+        "revision": "production",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "https://great-library-of-siso.vercel.app/",
+          "observed_at": "2026-07-30",
+          "summary": "Vercel production alias and representative Library routes returned HTTP 200."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The public registry source now carries an MIT license.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/great-library-of-siso/blob/b9702f03cceb0226d0e62c984bd93930f924aae3/LICENSE",
+          "observed_at": "2026-07-30",
+          "summary": "MIT license is present at the pinned source commit."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:1f8b6c2d-72f4-4b90-9e1f-3d5a7c8b2e64",
+    "version": "1.4.0+2e9b7c8",
+    "released_at": "2026-08-03T02:03:27+07:00",
+    "release_kind": "general",
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The Source Inventory, Event, ownership schema, authored briefing, and deterministic projections are pinned to an exact public commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A public commit-scoped archive locator is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The Library validates the Source Inventory, ownership contract, Event lineage, generated promotion projection, and authored Research briefing deterministically.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "verified",
+        "reason": "A clean Node installation validates and builds the static Library.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "The public repository remains source-complete and MIT licensed.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "The release includes publication-safe metadata and receipts without private databases, client data, machine paths, raw transcripts, credentials, or copied upstream source.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

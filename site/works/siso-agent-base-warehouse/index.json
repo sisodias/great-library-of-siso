@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae",
+  "slug": "siso-agent-base-warehouse",
+  "name": "SISO Agent Base Source Warehouse",
+  "summary": "The retired mixed-source repository from which SISO Runtime, capabilities, intelligence, integrations, and research Works are being read, preserved, and reallocated.",
+  "work_type": "bundle",
+  "lifecycle_status": "retired",
+  "section": "Unassigned",
+  "library_url": "/works/siso-agent-base-warehouse/",
+  "agent_context_url": "/works/siso-agent-base-warehouse/index.json",
+  "registry_source": "registry/works/siso-agent-base-warehouse.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-agent-base",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-agent-base#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "The clean SISO Agent Runtime is one extracted successor boundary; the warehouse remains a preserved source record, not its runtime dependency.",
+      "target_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "target_name": "SISO Agent Runtime",
+      "target_library_url": "/works/siso-agent-base/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:siso-agent-base-decomposition:2026-07-30",
+          "observed_at": "2026-07-30",
+          "summary": "The application boundary and surrounding mixed warehouse were read and classified separately."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:siso-agent-base-decomposition:2026-07-30",
+      "observed_at": "2026-07-30",
+      "summary": "The repository contains one shippable application boundary plus independent products, packages, experiments, state, data, imports, archives, and nested repositories; it is therefore registered as a retired source warehouse rather than an agent framework."
+    },
+    {
+      "kind": "registry_validation",
+      "reference": "registry:source-inventory:siso-agent-base-2026-07-30",
+      "observed_at": "2026-07-30",
+      "summary": "A read-only partial inventory preserves module paths, dispositions, target Works, evidence, and unresolved comparisons without moving the dirty source checkout."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "Lordsisodia",
+        "role": "repository_owner",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-agent-base",
+        "revision": "main@2e2edfe7a820617557fcff093a348dc0bb4fb040",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-agent-base:2e2edfe7a820617557fcff093a348dc0bb4fb040",
+          "observed_at": "2026-07-29",
+          "summary": "Public source warehouse pin resolves; it is preserved as extraction provenance rather than modeled as one application."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The pinned public source warehouse reports and contains an MIT license.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/sisodias/siso-agent-base",
+          "observed_at": "2026-07-29",
+          "summary": "Public repository visibility and MIT license were verified during the source audit."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:8204e470-fa87-4268-8713-733330b537fe",
+    "version": "preservation+2e2edfe",
+    "released_at": "2026-07-18T20:13:04Z",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The preserved warehouse is pinned to an exact public commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A commit-scoped public preservation archive is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The preservation release resolves to the dedicated source-warehouse Work.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "not_applicable",
+        "reason": "A retired mixed-source warehouse is preserved for provenance and extraction, not distributed as one installable product.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "The preserved source pin is public and MIT licensed, with its mixed status and limitations documented.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "not_applicable",
+        "reason": "Portability is assessed for the extracted Works; the retired warehouse is a preservation and provenance container.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

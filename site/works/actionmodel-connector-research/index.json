@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:efb00129-4ec6-4637-a2f8-dcead4f7d8dd",
+  "slug": "actionmodel-connector-research",
+  "name": "Action Model · Connector Research",
+  "summary": "A verified research dossier on OSS connector catalogues for the Action Model app builder: which catalogues can legally power a hosted connect-your-account section, a live spike of the leading gateway, the multi-tenancy boundary, and the resulting build order.",
+  "work_type": "project",
+  "lifecycle_status": "active",
+  "section": "Unassigned",
+  "library_url": "/works/actionmodel-connector-research/",
+  "agent_context_url": "/works/actionmodel-connector-research/index.json",
+  "registry_source": "registry/works/actionmodel-connector-research.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-connector-research",
+      "visibility": "private"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-connector-research#readme",
+      "visibility": "private"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "Curated under the Research section as a client-project research dossier with public metadata and a private source repository.",
+      "target_work_id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+      "target_name": "Research",
+      "target_library_url": "/works/research/",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "gls:event:63e37f22-ad8f-450e-844a-490cd1606198",
+          "observed_at": "2026-08-27",
+          "summary": "Registered alongside the linking Event; the Research section record defines the browse surface this Work appears under."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "siso-connector-research:connectors-licensing-2026-08-27.md",
+      "observed_at": "2026-08-27",
+      "summary": "Licence bodies were read for every headline catalogue: Elastic v2 (Nango, Airbyte), Source Available (Pipedream), Sustainable Use (n8n), AGPL (Panora), a multi-tenant prohibition (Dify), and an unlicensed plugin corpus (dify-plugins) are hosting-blocked; Apache-2.0 (open-connector), MIT outside ee/ (activepieces), CC0 (jentic-public-apis, 4,140 OpenAPI vendor directories) are adoptable."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "siso-connector-research:openconnector-spike-2026-08-27.md",
+      "observed_at": "2026-08-27",
+      "summary": "oomol-lab/open-connector was run live: 1,445 providers and 15,156 actions generated from source, credentials verified against the live vendor and stored AES-GCM encrypted, one authenticated round-trip executed, and the absence of multi-tenancy demonstrated with two connections visible under one admin token."
+    },
+    {
+      "kind": "documentation",
+      "reference": "actionist-research-os:research/packs/connectors.html",
+      "observed_at": "2026-08-27",
+      "summary": "The Connector room in the client-side Actionist Research OS carries the same findings as a browsable evidence room: mechanics, licence map, spike receipts, the tenancy blocker, and the build order."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-connector-research",
+        "revision": "main@ae15a763d80f03c016a966426356ab3feec44708",
+        "visibility": "private",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-connector-research:ae15a763d80f03c016a966426356ab3feec44708",
+          "observed_at": "2026-08-27",
+          "summary": "Private repository holding both dated dossiers and the README integration guide; head commit verified via the GitHub API on 2026-08-27."
+        }
+      }
+    ],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "Client-adjacent research metadata; the dossiers describe third-party licences but the record itself is registry metadata, and the source repository is private pending a publication decision.",
+      "evidence": []
+    }
+  },
+  "selected_release": null
+}

@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:4198f323-9855-43f6-a99a-72143086818e",
+  "slug": "siso-agent-hooks",
+  "name": "SISO Agent Hooks",
+  "summary": "The portable lifecycle automation boundary for Claude Code and Codex, with one manifest-driven event map, host-native generated configuration, guarded installation, privacy-reduced state, and adversarial verification.",
+  "work_type": "capability_pack",
+  "lifecycle_status": "active",
+  "section": "Agents",
+  "library_url": "/works/siso-agent-hooks/",
+  "agent_context_url": "/works/siso-agent-hooks/index.json",
+  "registry_source": "registry/works/siso-agent-hooks.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-agent-hooks",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-agent-hooks#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "Runtime hosts load the generated lifecycle configuration while Hooks retains its own manifest, installer, release cadence, and state boundary.",
+      "target_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "target_name": "SISO Agent Runtime",
+      "target_library_url": "/works/siso-agent-base/",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "repo-check:siso-agent-hooks:9125a97",
+          "observed_at": "2026-08-01",
+          "summary": "Temporary-home installs and doctor checks passed for both Claude Code and Codex profiles."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "Playbooks define reusable operating scenarios; hooks mechanically enforce narrow lifecycle behavior around those scenarios.",
+      "target_work_id": "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc",
+      "target_name": "SISO Agent Playbook",
+      "target_library_url": "/works/siso-agent-playbook/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:siso-agent-stack:hooks-playbook-boundary:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The hook package contains lifecycle handlers rather than multi-step scenario ownership."
+        }
+      ]
+    },
+    {
+      "type": "integrates_with",
+      "context": "Privacy-reduced lifecycle state can feed operator surfaces without embedding Herdr topology or making Herdr a SISO-owned component.",
+      "target_work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
+      "target_name": "Herdr",
+      "target_library_url": "/works/herdr/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-agent-hooks/blob/9125a972b4ba03661bf17ee135790282f246c15f/PROVENANCE.md",
+          "observed_at": "2026-08-01",
+          "summary": "Private operator topology is an explicit exclusion from the portable hook source."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-agent-hooks:9125a972b4ba03661bf17ee135790282f246c15f",
+      "observed_at": "2026-08-01",
+      "summary": "Twenty-one tests, repository-wide privacy verification, exact doctor checks, Codex custom-tool-call probes, backup stability, and independent 97/100 adversarial review passed."
+    },
+    {
+      "kind": "documentation",
+      "reference": "https://github.com/sisodias/siso-agent-hooks/blob/9125a972b4ba03661bf17ee135790282f246c15f/README.md",
+      "observed_at": "2026-08-01",
+      "summary": "Installation, trust review, included hooks, commands, and public/private boundary are documented."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-agent-hooks",
+        "revision": "main@9125a972b4ba03661bf17ee135790282f246c15f",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github:sisodias/siso-agent-hooks:9125a972b4ba03661bf17ee135790282f246c15f",
+          "observed_at": "2026-08-01",
+          "summary": "Public main matches the exact reviewed commit containing seven portable hooks, two host profiles, installer, doctor, tests, provenance, and privacy verification."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The public hook package carries an MIT license at the exact release pin.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-agent-hooks/blob/9125a972b4ba03661bf17ee135790282f246c15f/LICENSE",
+          "observed_at": "2026-08-01",
+          "summary": "MIT license text is present at the immutable source revision."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:98ba8230-3cdc-478b-b855-e9d808655c46",
+    "version": "0.1.0+9125a97",
+    "released_at": "2026-08-01T20:22:00+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "Public source is pinned to an exact commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A commit-scoped public source archive is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "One manifest is the complete hook and host-profile authority.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "verified",
+        "reason": "Clean temporary-home installation, idempotence, uninstall preservation, and doctor passed.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "Public source, tests, license, provenance, and privacy boundary are complete.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "The same manifest generated and verified home-relative Claude Code and Codex configuration.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

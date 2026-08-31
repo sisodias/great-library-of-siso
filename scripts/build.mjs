@@ -116,6 +116,11 @@ function linkEntries(raw) {
       : locator.type.replaceAll('_', ' ');
     add(locator.type, label, locator);
   }
+  for (const link of [...links]) {
+    if (link.kind !== 'source_repository') continue;
+    const repository = githubRepository({ url: link.url });
+    if (repository) add('readme', 'Read README', { url: `${repository.url}#readme`, visibility: link.visibility });
+  }
   return links;
 }
 
@@ -128,6 +133,8 @@ function normalizeWork(raw) {
     type: text(item.type || item.relation || item.predicate || item.kind, 'related to'),
     target: text(item.target_work_id || item.target_id || item.target?.work_id || item.target?.id || item.target, 'Unresolved target'),
     label: text(item.target_name || item.target?.name || item.label, ''),
+    context: text(item.context || item.summary || item.reason, ''),
+    evidence: Array.isArray(item.evidence) ? item.evidence : [],
   }));
   const license = raw.provenance?.license || raw.license || raw.redistribution?.license;
   return {
@@ -140,6 +147,7 @@ function normalizeWork(raw) {
     maturity: text(raw.maturity || raw.status || raw.lifecycle_status || raw.lifecycle_state, 'Unknown'),
     section: text(raw.section || raw.category || raw.domain, 'Unassigned'),
     relationships,
+    evidence: Array.isArray(raw.evidence) ? raw.evidence : [],
     researchContract: raw.research_contract || null,
     links: linkEntries(raw),
     provenance: raw.provenance || {},
@@ -686,9 +694,15 @@ function workPage(work, releases, byId, activeRelease, asOfDate) {
   const relationshipRows = work.relationships.map((relation) => {
     const target = byId.get(relation.target);
     const targetLabel = relation.label || target?.name || relation.target;
-    return `<div><span>${esc(relation.type)}</span><p>${target ? `<a href="${href(`works/${target.slug}/`)}">${esc(targetLabel)}</a>` : esc(targetLabel)}${target ? '' : '<small> Unresolved in this build</small>'}</p></div>`;
+    return `<div><span>${esc(relation.type)}</span><p>${target ? `<a href="${href(`works/${target.slug}/`)}">${esc(targetLabel)}</a>` : esc(targetLabel)}${relation.context ? `<small>${esc(relation.context)}</small>` : ''}${target ? '' : '<small>Unresolved in this build</small>'}</p></div>`;
   });
   const linkRows = work.links.map((link) => `<a href="${esc(link.url)}" rel="noopener noreferrer"><span>${esc(`${link.kind} · ${link.visibility}`)}</span><b>${esc(link.label)}</b><i aria-hidden="true">↗</i></a>`);
+  linkRows.push(`<a href="${href(`works/${work.slug}/index.json`)}"><span>agent context · public</span><b>Open machine-readable dossier</b><i aria-hidden="true">→</i></a>`);
+  const workEvidenceRows = work.evidence.map((entry) => {
+    const reference = safeExternalUrl(entry.reference);
+    const receipt = reference ? `<a href="${esc(reference)}" rel="noopener noreferrer">Open receipt ↗</a>` : `<code>${esc(entry.reference)}</code>`;
+    return `<div><span>${esc(`${text(entry.kind, 'evidence')} · ${text(entry.observed_at, 'date pending')}`)}</span><p>${esc(entry.summary)}<small>${receipt}</small></p></div>`;
+  });
   const libraryUrl = href(`works/${work.slug}/`);
   const researchContract = work.researchContract;
   const sourceWorkRows = (researchContract?.source_work_ids || []).map((workId) => {
@@ -726,6 +740,13 @@ function workPage(work, releases, byId, activeRelease, asOfDate) {
     return `<div><span>${esc(`${connection.id} · ${connection.source_type} · ${connection.rights_state}`)}</span><p>${esc(connection.summary)}<small> Owner: ${owner ? `<a href="${href(`works/${owner.slug}/`)}">${esc(owner.name)}</a>` : esc(connection.owning_work_id)} · Supports: ${esc((connection.supports_assumption_ids || []).join(', ') || 'none')} · Challenges: ${esc((connection.challenges_assumption_ids || []).join(', ') || 'none')} · Observed: ${esc(connection.observed_at)}</small></p></div>`;
   });
   const actionRows = (researchProgram?.action_learning_links || []).map((link) => `<div><span>${esc(`${link.id} · ${link.object_type.replaceAll('_', ' ')} · ${link.authority_state.replaceAll('_', ' ')}`)}</span><p>${esc(link.summary)}<small> Owner role: ${esc(link.owner_role.replaceAll('_', ' '))} · Status: ${esc(link.status.replaceAll('_', ' '))} · Recorded: ${esc(link.recorded_at)} · Truth: ${esc(link.truth_state?.replaceAll('_', ' ') || 'not applicable')} · Predecessors: ${esc((link.predecessor_ids || []).join(', ') || 'none')} · Assumptions: ${esc((link.related_assumption_ids || []).join(', ') || 'none')}</small></p></div>`);
+  const detailSections = [
+    researchContract ? detailList('Research sources', sourceWorkRows) : '',
+    detailList('Source & upstream links', linkRows),
+    relationshipRows.length ? detailList('Relationships', relationshipRows) : '',
+    workEvidenceRows.length ? detailList('Evidence & receipts', workEvidenceRows) : '',
+    detailList('Provenance', provenance.length ? [`<dl class="provenance-list">${provenance.join('')}</dl>`] : []),
+  ].filter(Boolean).join('\n        ');
   return page({
     title: work.name,
     active: work.section === 'Research' ? 'research' : /agent/i.test(`${work.section} ${work.type}`) ? 'agents' : 'library',
@@ -735,17 +756,57 @@ function workPage(work, releases, byId, activeRelease, asOfDate) {
       <header class="work-hero shell">${eyebrow(`Work / ${work.id}`)}<div class="work-title"><h1>${esc(work.name)}</h1><p>${esc(work.summary)}</p></div><dl class="work-meta"><div><dt>Type</dt><dd>${esc(work.type)}</dd></div><div><dt>Maturity</dt><dd>${esc(work.maturity)}</dd></div><div><dt>Section</dt><dd>${esc(work.section)}</dd></div></dl></header>
       <div class="permalink-bar"><div class="shell"><span>Permanent Library detail URL</span><code>${esc(libraryUrl)}</code></div></div>${researchRows.length ? `
       <div class="shell">${detailList(`Research contract · ${researchContract.question_id}`, researchRows)}<p><a href="${href('docs/god-questions-infrastructure.html')}">Read the God Questions infrastructure constitution →</a></p>${researchProgram ? `${detailList(`Assumptions · ${assumptionRows.length}`, assumptionRows)}${detailList(`Evidence connections · ${evidenceRows.length}`, evidenceRows)}${detailList(`Action and learning lineage · ${actionRows.length}`, actionRows)}` : ''}</div>` : ''}
-      <div class="detail-layout shell"><div>${researchContract ? `
-        ${detailList('Research sources', sourceWorkRows)}` : ''}
-        ${detailList('Relationships', relationshipRows)}
-        ${detailList('Provenance', provenance.length ? [`<dl class="provenance-list">${provenance.join('')}</dl>`] : [])}
-        ${detailList('Source & upstream links', linkRows)}
+      <div class="detail-layout shell"><div>
+        ${detailSections}
       </div><aside class="release-panel"><div class="release-heading"><div>${eyebrow(researchContract ? 'Selected release' : 'Latest release')}<h2>${esc(latest?.version || 'No accepted release')}</h2></div><span>${esc(latest?.date || 'Manifest pending')}</span></div>${researchContract ? `<p class="uncertainty-note"><b>Public answer:</b> ${esc(answerState.code.replaceAll('_', ' '))}. Research state does not substitute for an accepted answer artifact.</p>` : ''}<div class="state-list">${DIST_KEYS.map(([key, label]) => {
           const state = stateFor(latest, key);
           return `<div><span class="state-dot ${state.tone}" aria-hidden="true"></span><p><b>${esc(label)}</b><small>${esc(state.note)}</small></p><strong>${esc(state.label)}</strong></div>`;
         }).join('')}</div><p class="uncertainty-note">Availability is never inferred. Positive states require an explicit release declaration and evidence.</p></aside></div>
     </article>`,
   });
+}
+
+function workProjection(work, releases, byId, activeRelease) {
+  const workReleases = releases.filter((release) => release.workId === work.id);
+  const latest = activeRelease || workReleases.at(-1) || null;
+  return {
+    schema_version: '1.0.0',
+    work_id: work.id,
+    slug: work.slug,
+    name: work.name,
+    summary: work.summary,
+    work_type: work.type,
+    lifecycle_status: work.maturity,
+    section: work.section,
+    library_url: href(`works/${work.slug}/`),
+    agent_context_url: href(`works/${work.slug}/index.json`),
+    registry_source: work.sourceFile,
+    source_links: work.links,
+    relationships: work.relationships.map((relation) => {
+      const target = byId.get(relation.target);
+      return {
+        type: relation.type,
+        context: relation.context,
+        target_work_id: relation.target,
+        target_name: target?.name || relation.label || null,
+        target_library_url: target ? href(`works/${target.slug}/`) : null,
+        evidence: relation.evidence,
+      };
+    }),
+    evidence: work.evidence,
+    provenance: work.provenance,
+    selected_release: latest ? {
+      id: latest.id,
+      version: latest.version,
+      released_at: latest.date,
+      release_kind: latest.releaseKind,
+      distribution: Object.fromEntries(Object.entries(latest.distribution).map(([key, value]) => [key, {
+        state: value?.state || null,
+        reason: value?.reason || null,
+        evidence_count: value?.evidence?.length || 0,
+      }])),
+    } : null,
+  };
 }
 
 function releaseIndex(releases, worksById) {
@@ -919,7 +980,11 @@ await emit('estate/index.html', estatePage(repositoryEstate, latestSnapshot));
 await emit('estate.json', `${JSON.stringify({ generated_at: generatedAt, snapshot_id: latestSnapshot?.id || null, snapshot_version: latestSnapshot?.version || null, repositories: repositoryEstate }, null, 2)}\n`);
 await emit('promotion.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, ...promotion }, null, 2)}\n`);
 await emit('intelligence.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, ...intelligence }, null, 2)}\n`);
-for (const work of works) await emit(`works/${work.slug}/index.html`, workPage(work, releases, worksById, activeReleasesByWork.get(work.id), sourceAsOfDate));
-await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, library_url: href(`works/${work.slug}/`), type: work.type, maturity: work.maturity, section: work.section })), repositories: repositoryEstate, assemblies: assemblies.map(({ __file, ...assembly }) => assembly), source_inventories: sourceInventories.map(({ __file, ...inventory }) => inventory), promotion, intelligence: { counts: intelligence.counts, active_initiatives: intelligence.active_initiatives } }, null, 2)}\n`);
+for (const work of works) {
+  const projection = workProjection(work, releases, worksById, activeReleasesByWork.get(work.id));
+  await emit(`works/${work.slug}/index.html`, workPage(work, releases, worksById, activeReleasesByWork.get(work.id), sourceAsOfDate));
+  await emit(`works/${work.slug}/index.json`, `${JSON.stringify(projection, null, 2)}\n`);
+}
+await emit('catalog.json', `${JSON.stringify({ generated_at: generatedAt, base_path: BASE, works: works.map((work) => ({ id: work.id, slug: work.slug, name: work.name, summary: work.summary, library_url: href(`works/${work.slug}/`), agent_context_url: href(`works/${work.slug}/index.json`), type: work.type, maturity: work.maturity, section: work.section, source_links: work.links })), repositories: repositoryEstate, assemblies: assemblies.map(({ __file, ...assembly }) => assembly), source_inventories: sourceInventories.map(({ __file, ...inventory }) => inventory), promotion, intelligence: { counts: intelligence.counts, active_initiatives: intelligence.active_initiatives } }, null, 2)}\n`);
 
 console.log(`Built ${works.length} Works, ${releases.length} Releases, ${repositoryEstate.length} Repositories, ${assemblies.length} Assemblies, ${sourceInventories.length} Source Inventories, ${snapshots.length} Snapshots, ${decisions.length} Decisions, and ${events.length} Events at ${BASE}`);

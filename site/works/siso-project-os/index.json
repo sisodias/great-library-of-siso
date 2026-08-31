@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+  "slug": "siso-project-os",
+  "name": "SISO Project OS",
+  "summary": "A project-local operating system and contract bundle for durable agent work, evidence, knowledge, and handoff state.",
+  "work_type": "project",
+  "lifecycle_status": "active",
+  "section": "Agents",
+  "library_url": "/works/siso-project-os/",
+  "agent_context_url": "/works/siso-project-os/index.json",
+  "registry_source": "registry/works/siso-project-os.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-project-os",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-project-os#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "Project OS can reference optional Agent Base capabilities but does not contain Agent Base.",
+      "target_work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+      "target_name": "SISO Agent Runtime",
+      "target_library_url": "/works/siso-agent-base/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:project-os-agent-story:2026-07-29",
+          "observed_at": "2026-07-29",
+          "summary": "Reviewed capability and provider boundaries."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:project-os-agent-story:2026-07-29",
+      "observed_at": "2026-07-29",
+      "summary": "Product boundary and adoption contract reviewed from source-backed evidence."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "Lordsisodia",
+        "role": "repository_owner",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-project-os",
+        "revision": "main@d6290c609a6922e14b3faa27019aae31628686cb",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-project-os:d6290c609a6922e14b3faa27019aae31628686cb",
+          "observed_at": "2026-07-30",
+          "summary": "Complete public history and tags were mirrored to Lordsisodia; main remains pinned to the same verified commit."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The mirrored repository preserves the verified MIT license.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/sisodias/siso-project-os",
+          "observed_at": "2026-07-30",
+          "summary": "Public mirror, exact HEAD, tags, and MIT license verified on the canonical public account."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:bae2bab9-e411-4684-b595-3bf86b2761f9",
+    "version": "0.4.0+lordsisodia.d6290c6",
+    "released_at": "2026-07-29T22:38:19+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The canonical public mirror is pinned to the exact preserved commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A public commit-scoped archive from the canonical account is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The release resolves to the stable Project OS Work and canonical mirror artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "verified",
+        "reason": "The exact clean commit passed its complete install, adoption, lifecycle, collision, verification, upgrade, and rollback test suite.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "The canonical repository is public, history-complete, tagged, and MIT licensed.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "The test suite exercises empty and existing projects, Codex and Claude routes, optional providers, bounded discovery, deterministic output, upgrade, and rollback.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

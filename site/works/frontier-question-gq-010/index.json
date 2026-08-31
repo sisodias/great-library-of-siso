@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
+  "slug": "frontier-question-gq-010",
+  "name": "GQ-010 — How do we increase the People Graph's value by 100×?",
+  "summary": "A standing research question that treats breadth, identity resolution, research depth, and decision value as separate measurable dimensions and rejects row-count growth as a sufficient success signal.",
+  "work_type": "research_question",
+  "lifecycle_status": "active",
+  "section": "Research",
+  "library_url": "/works/frontier-question-gq-010/",
+  "agent_context_url": "/works/frontier-question-gq-010/index.json",
+  "registry_source": "registry/works/frontier-question-gq-010.json",
+  "source_links": [
+    {
+      "kind": "documentation",
+      "label": "Documentation",
+      "url": "https://github.com/sisodias/great-library-of-siso/tree/main/docs/people-graph-program",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "The People Graph is the primary system whose value, quality, and decision utility the question tests.",
+      "target_work_id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+      "target_name": "SISO People Graph",
+      "target_library_url": "/works/siso-people-graph/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "docs/people-graph-program/README.md",
+          "observed_at": "2026-08-06",
+          "summary": "The program defines the People Graph as the primary Work under evaluation."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "context": "The Book Library provides one bounded source and export pilot for testing source-native observations, identities, roles, rights, and replayability.",
+      "target_work_id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+      "target_name": "SISO Book Library",
+      "target_library_url": "/works/siso-book-library/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+          "observed_at": "2026-08-06",
+          "summary": "The exact source tree exposes metadata, person, role, subject, and locator contracts suitable for a bounded pilot."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "context": "The Great Library supplies stable Work, Release, Decision, Event, and Snapshot identity plus public program lineage; it does not hold the mutable graph database.",
+      "target_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "target_name": "The Great Library of SISO",
+      "target_library_url": "/works/great-library-of-siso/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry:decision:ADR-0005",
+          "observed_at": "2026-08-06",
+          "summary": "ADR-0005 records the public control-plane and external data-plane split."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "documentation",
+      "reference": "user-intent:people-graph-100x-parallel-program:2026-08-06",
+      "observed_at": "2026-08-06",
+      "summary": "The requested program separates breadth, resolution, research depth, and decision value; requires measurable kill criteria; and launches thirteen no-wait parallel lanes."
+    },
+    {
+      "kind": "documentation",
+      "reference": "docs/people-graph-program/parallel-lanes.md",
+      "observed_at": "2026-08-06",
+      "summary": "The authored lane manifest records branches, exclusive path zones, current-main starts, and draft-PR handoffs."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "documentation",
+        "url": "https://github.com/sisodias/great-library-of-siso/tree/main/docs/people-graph-program",
+        "revision": "registry-program-spine-2026-08-06",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "documentation",
+          "reference": "docs/people-graph-program/README.md",
+          "observed_at": "2026-08-06",
+          "summary": "The authored program documents the public question, governance boundary, observation contract, lanes, and handoff requirements."
+        }
+      }
+    ],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "This Work contains publication-safe question and program metadata, not a source-code or dataset redistribution claim.",
+      "evidence": []
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787",
+    "version": "program-metadata-1.0.0+57320d3",
+    "released_at": "2026-08-06T22:24:00+07:00",
+    "release_kind": "question_program_metadata",
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The complete GQ-010 research contract is pinned to an exact public commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "not_applicable",
+        "reason": "This Release identifies registry metadata rather than an answer, database, corpus, or standalone archive.",
+        "evidence_count": 0
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The metadata manifest resolves to GQ-010 and its measurable decision, falsifier, evidence-gap, rights, privacy, and refresh contract.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "not_applicable",
+        "reason": "Question-program metadata is consumed by the Great Library generator and is not independently installed.",
+        "evidence_count": 0
+      },
+      "forkable": {
+        "state": "not_applicable",
+        "reason": "This record makes no claim about a separately forkable software or data payload.",
+        "evidence_count": 0
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "The selected artifact contains publication-safe metadata and public locators only; private authorization, restricted payloads, and operational receipts remain external.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

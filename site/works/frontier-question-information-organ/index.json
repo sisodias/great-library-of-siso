@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:2144e900-4886-461e-92f1-49571f2e9f74",
+  "slug": "frontier-question-information-organ",
+  "name": "GQ-006 · The Information Organ",
+  "summary": "A standing research and systems question about making broad, continuously refreshed evidence reliably accessible to every authorized agent workflow.",
+  "work_type": "research_question",
+  "lifecycle_status": "active",
+  "section": "Research",
+  "library_url": "/works/frontier-question-information-organ/",
+  "agent_context_url": "/works/frontier-question-information-organ/index.json",
+  "registry_source": "registry/works/frontier-question-gq-006.json",
+  "source_links": [],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "Foundry supplies source discovery, query surfaces, freshness signals, and evidence-universe selection.",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "target_name": "SISO Foundry",
+      "target_library_url": "/works/siso-foundry/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns discovery and longitudinal source signals to Foundry."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "context": "SISO Knowledge owns durable corpus, provenance, indexes, and rights-aware retrieval.",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "target_name": "SISO Knowledge",
+      "target_library_url": "/works/siso-knowledge/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "context": "Evidence Engines convert newly acquired sources and feedback into traceable learning candidates.",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "target_name": "SISO Evidence Engines",
+      "target_library_url": "/works/siso-evidence-engines/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns source-grounded transformation to Evidence Engines."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:frontier-question-intake:gq-006:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The existing answer receipts were read; machine state, private topology, and operational details remain outside the public Library."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.",
+      "evidence": []
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:8225da3f-9a19-45d8-880e-0f2539756c0f",
+    "version": "registry-seed-2026-08-01",
+    "released_at": "2026-08-01T22:34:00+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The question is addressable by stable Work ID and Library URL.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "unavailable",
+        "reason": "No publication-safe answer archive is attached to this metadata seed.",
+        "evidence_count": 0
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The metadata manifest resolves inside the registry.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "not_applicable",
+        "reason": "A research question is not software.",
+        "evidence_count": 0
+      },
+      "forkable": {
+        "state": "not_applicable",
+        "reason": "No source payload is attached to this metadata seed.",
+        "evidence_count": 0
+      },
+      "portable": {
+        "state": "not_applicable",
+        "reason": "Question identity is portable through registry metadata; answer artifacts are evaluated separately.",
+        "evidence_count": 0
+      }
+    }
+  }
+}

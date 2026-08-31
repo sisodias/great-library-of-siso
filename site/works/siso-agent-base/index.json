@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
+  "slug": "siso-agent-base",
+  "name": "SISO Agent Runtime",
+  "summary": "The provider-neutral SISO coding-agent application boundary: explicit configuration, safe host launch, profile composition, task control, checkpoints, bounded context, status, and runtime event contracts.",
+  "work_type": "application",
+  "lifecycle_status": "active",
+  "section": "Agents",
+  "library_url": "/works/siso-agent-base/",
+  "agent_context_url": "/works/siso-agent-base/index.json",
+  "registry_source": "registry/works/siso-agent-base.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-agent-runtime",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-agent-runtime#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "SISO Agent Runtime provides the coding-agent application boundary used within the stack; Herdr remains the independently owned persistent workspace substrate.",
+      "target_work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
+      "target_name": "Herdr",
+      "target_library_url": "/works/herdr/",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-agent-runtime:a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+          "observed_at": "2026-07-30",
+          "summary": "The Runtime host boundary is workspace-neutral; no private Herdr control plane or topology is embedded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "The retired Agent Base source warehouse is preserved as extraction provenance; it is not the canonical Runtime repository or a runtime dependency.",
+      "target_work_id": "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae",
+      "target_name": "SISO Agent Base Source Warehouse",
+      "target_library_url": "/works/siso-agent-base-warehouse/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:siso-agent-base-decomposition:2026-07-30",
+          "observed_at": "2026-07-30",
+          "summary": "The shippable application boundary was separated from the mixed warehouse boundary."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:siso-agent-base-decomposition:2026-07-30",
+      "observed_at": "2026-07-30",
+      "summary": "Installer, launchers, runtime extensions, application surfaces, nested repositories, package manifests, repository size, and dirty state were read directly. The shippable center is an application/distribution; the surrounding repository is not one coherent Work."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-agent-runtime:a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+      "observed_at": "2026-07-30",
+      "summary": "Clean provider-neutral Runtime foundation published with six internal module contracts, five passing behavior tests, publication checks, and explicit parity limits."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "Lordsisodia",
+        "role": "repository_owner",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-agent-runtime",
+        "revision": "main@a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-agent-runtime:a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+          "observed_at": "2026-07-30",
+          "summary": "Public main matches the pinned clean Runtime extraction; repository tests and publication gates passed."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The canonical clean Runtime extraction carries an MIT license at its pinned commit.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/LICENSE",
+          "observed_at": "2026-07-30",
+          "summary": "MIT license text reviewed at the pinned canonical Runtime release."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:36ba0940-4235-4e6c-87e2-e27266f77d33",
+    "version": "0.1.0+a4aefc0",
+    "released_at": "2026-07-30T06:47:47+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The public Runtime source is pinned to an exact commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A public commit-scoped source archive is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The release resolves to the permanent Runtime Work and one exact artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "experimental",
+        "reason": "The dependency-free CLI runs directly on Node.js 20+, but no package-registry or cross-platform installation receipt is recorded yet.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "Public MIT source includes architecture, migration reasoning, fixtures, tests, CLI, and machine-readable contracts.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "experimental",
+        "reason": "The core is provider-neutral and uses only Node.js standard libraries, but this release has one operating-system receipt and no production provider adapter receipt.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

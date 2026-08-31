@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
+  "slug": "herdr",
+  "name": "Herdr",
+  "summary": "An externally owned terminal-native multiplexer providing persistent workspaces, tabs, panes, and addressable agent sessions.",
+  "work_type": "tool",
+  "lifecycle_status": "active",
+  "section": "Agents",
+  "library_url": "/works/herdr/",
+  "agent_context_url": "/works/herdr/index.json",
+  "registry_source": "registry/works/herdr.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/herdrdev/herdr",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/herdrdev/herdr#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:siso-agent-stack:herdr:2026-07-30",
+      "observed_at": "2026-07-30",
+      "summary": "Herdr mechanics and SISO usage were read directly without assigning upstream ownership to SISO or inventing a separate control-plane category."
+    }
+  ],
+  "provenance": {
+    "origin": "external",
+    "owners": [
+      {
+        "name": "herdrdev",
+        "role": "upstream_owner",
+        "classification": "external"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/herdrdev/herdr",
+        "revision": "master@514e4465ee33d4d81682d06ee2934483982a54ed",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:herdrdev/herdr:514e4465ee33d4d81682d06ee2934483982a54ed",
+          "observed_at": "2026-08-31",
+          "summary": "The public repository now resolves under the herdrdev organization; external ownership, Apache-2.0 license, and the pinned commit remain verified."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "Apache-2.0",
+      "reason": "GitHub repository metadata reports Apache-2.0.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/herdrdev/herdr",
+          "observed_at": "2026-08-31",
+          "summary": "Public upstream license verified as Apache-2.0 at the current repository home."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05",
+    "version": "master+514e446",
+    "released_at": "2026-07-29T13:47:22Z",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The externally owned public source is pinned to an exact commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A public commit-scoped archive locator is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The registry release resolves to its Work and pinned artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "experimental",
+        "reason": "Upstream installation is documented, but this exact pin has no Library install receipt.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "The upstream repository is public and Apache-2.0 licensed.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "experimental",
+        "reason": "Herdr is independently useful, but no Library portability receipt exists for this exact commit.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

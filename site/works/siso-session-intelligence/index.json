@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
+  "slug": "siso-session-intelligence",
+  "name": "SISO Session Intelligence",
+  "summary": "A privacy-reduced learning pipeline that turns explicitly supplied Claude and Codex sessions into traceable goals, failures, decisions, intentions, wins, recurring patterns, and durable local recall.",
+  "work_type": "tool",
+  "lifecycle_status": "active",
+  "section": "Agents",
+  "library_url": "/works/siso-session-intelligence/",
+  "agent_context_url": "/works/siso-session-intelligence/index.json",
+  "registry_source": "registry/works/siso-session-intelligence.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-session-intelligence",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-session-intelligence#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "Session Intelligence may project selected privacy-reviewed insights into Agent Brain, while raw sessions and the learning database retain an independent lifecycle.",
+      "target_work_id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
+      "target_name": "SISO Agent Brain",
+      "target_library_url": "/works/siso-agent-brain/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-session-intelligence/blob/7f2ace6b9ba4b11dd95700cd4050ae5970a06171/docs/ARCHITECTURE.html",
+          "observed_at": "2026-07-30",
+          "summary": "The architecture separates session learning from shared operational state."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:siso-agent-base-modules:session-intelligence:2026-07-30",
+      "observed_at": "2026-07-30",
+      "summary": "Warehouse adapters, append-only event log, typed extraction schema, scoring, recall, runtime behavior, provider coupling, and private paths were read before classification."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-session-intelligence:7f2ace6b9ba4b11dd95700cd4050ae5970a06171",
+      "observed_at": "2026-07-30",
+      "summary": "Both provider fixtures, idempotent ingest, privacy redaction, recall, export, database-content inspection, and publication scan passed; checkpoint rated 94/100."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-session-intelligence",
+        "revision": "main@7f2ace6b9ba4b11dd95700cd4050ae5970a06171",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-session-intelligence:7f2ace6b9ba4b11dd95700cd4050ae5970a06171",
+          "observed_at": "2026-07-30",
+          "summary": "Canonical public source contains explicit Claude and Codex adapters, pre-persistence redaction, append-only event identity, typed insights, deterministic importance, recall, export, synthetic fixtures, and publication checks."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The clean SISO-owned implementation carries MIT; user-supplied transcripts remain external and retain their own privacy and rights.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-session-intelligence/blob/7f2ace6b9ba4b11dd95700cd4050ae5970a06171/PROVENANCE.md",
+          "observed_at": "2026-07-30",
+          "summary": "Source provenance, warehouse exclusions, raw-transcript boundary, and license scope are recorded at the pinned release."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:0b81c926-0433-42f6-b6a9-9993b2ce5a6b",
+    "version": "0.1.0+7f2ace6",
+    "released_at": "2026-07-30T06:24:26+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "Public source is pinned to an exact commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A commit-scoped public archive is recorded.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The release resolves to its stable Work and artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "experimental",
+        "reason": "The source CLI and package declaration work without dependencies; a built-wheel receipt is not yet recorded.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "Public MIT source includes architecture, provenance, fixtures, CLI, and tests.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "Claude and Codex fixtures passed privacy, idempotence, recall, export, and database-content checks in a temporary root.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

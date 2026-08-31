@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:e38b054f-b926-4410-b84d-4fd3249fd4f4",
+  "slug": "frontier-question-agent-layer-efficiency",
+  "name": "GQ-002 · 10× the Agent Layer",
+  "summary": "A standing research question about making a provider-neutral multi-agent operating layer materially more effective, efficient, observable, and self-improving.",
+  "work_type": "research_question",
+  "lifecycle_status": "active",
+  "section": "Research",
+  "library_url": "/works/frontier-question-agent-layer-efficiency/",
+  "agent_context_url": "/works/frontier-question-agent-layer-efficiency/index.json",
+  "registry_source": "registry/works/frontier-question-gq-002.json",
+  "source_links": [],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "Foundry supplies the outside-in harness, coordination, memory, and execution-pattern landscape.",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "target_name": "SISO Foundry",
+      "target_library_url": "/works/siso-foundry/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns discovery and evidence-universe selection to Foundry."
+        }
+      ]
+    },
+    {
+      "type": "depends_on",
+      "context": "SISO Knowledge preserves public source and privacy-safe longitudinal evidence.",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "target_name": "SISO Knowledge",
+      "target_library_url": "/works/siso-knowledge/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model keeps durable corpus and retrieval in SISO Knowledge."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "context": "Evidence Engines separate measured facts, hypotheses, counter-evidence, and improvement proposals.",
+      "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+      "target_name": "SISO Evidence Engines",
+      "target_library_url": "/works/siso-evidence-engines/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "decision:frontier-questions:evidence-loop:2026-08-01",
+          "observed_at": "2026-08-01",
+          "summary": "The accepted model assigns source-grounded transformation to Evidence Engines."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:frontier-question-intake:gq-002:2026-08-01",
+      "observed_at": "2026-08-01",
+      "summary": "The existing campaign answer and receipts were read; operational and machine-specific evidence remains outside the public Library."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "The Work record is question metadata; source and answer rights are evaluated per Release artifact.",
+      "evidence": []
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:b95eeca5-ed9d-48ac-858c-f6d62065cd29",
+    "version": "program-metadata-1.0.0+ea7f0e4",
+    "released_at": "2026-08-02T02:08:29+07:00",
+    "release_kind": "question_program_metadata",
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The question-program metadata is pinned to an exact public commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "not_applicable",
+        "reason": "This Release identifies registry metadata rather than a standalone payload archive.",
+        "evidence_count": 0
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The manifest resolves to GQ-002 and a validated registry artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "not_applicable",
+        "reason": "Question metadata is read by the Library generator and is not independently installed.",
+        "evidence_count": 0
+      },
+      "forkable": {
+        "state": "not_applicable",
+        "reason": "This record does not claim a separately forkable software payload.",
+        "evidence_count": 0
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "Owner-held research remains outside the public record; only stable IDs, rights state, and safe summary metadata are selected.",
+        "evidence_count": 1
+      }
+    }
+  }
+}
