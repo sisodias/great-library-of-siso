@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-09T03:23:42.000Z",
+  "generated_at": "2026-08-31T00:00:00.000Z",
   "base_path": "/",
   "counts": {
-    "events": 38,
+    "events": 39,
     "decisions": 5,
     "active_initiatives": 3,
     "registry_changes": 116
@@ -602,6 +602,88 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:63e37f22-ad8f-450e-844a-490cd1606198",
+      "occurred_at": "2026-08-27T11:33:41+07:00",
+      "recorded_at": "2026-08-27T11:33:41+07:00",
+      "immutable": true,
+      "entry_type": "change_published",
+      "thread": {
+        "id": "gls:thread:actionmodel-connector-research",
+        "name": "Action Model Connector Research",
+        "kind": "research"
+      },
+      "status": "completed",
+      "title": "Action Model connector research registered as a Work",
+      "summary": "A verified connector-catalogue research dossier for the Action Model app builder was registered under the Research section, with public metadata in the registry and the dossiers themselves in a private repository pending a publication decision.",
+      "intent": "Give the connector research a durable, discoverable identity in the Library so future agents and sessions find the licence map, the live spike receipts, and the multi-tenancy boundary instead of re-deriving them.",
+      "reasoning": [
+        "The research answers a standing build-vs-import question with licence-body evidence and a live spike, which is durable knowledge rather than session state, so it belongs in the registry.",
+        "The dossiers name client build strategy and licence constraints, so the source repository stays private and only rights-clean metadata enters the public registry, matching the classify-before-import rule.",
+        "The Work records the exact private repository commit as its locator so the evidenced version is pinned even though the payload is not public.",
+        "Registering one project Work under the existing Research section avoids inventing a new section for a single client research lane."
+      ],
+      "changes": [
+        {
+          "kind": "registry_record",
+          "reference": "registry/works/actionmodel-connector-research.json",
+          "summary": "Added the Work record with a verified private locator pinned to commit ae15a76 and evidence entries for the licence dossier, the live OpenConnector spike, and the client-side Connector room."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:efb00129-4ec6-4637-a2f8-dcead4f7d8dd"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/siso-connector-research"
+        ]
+      },
+      "coordination": {
+        "owner": "Claude Fable main session with one Opus adversarial verification lane and one Opus sweep lane",
+        "branch": "main",
+        "reserved_paths": [
+          "registry/works/actionmodel-connector-research.json",
+          "registry/events/2026-08-27-actionmodel-connector-research-registered.json"
+        ]
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/siso-connector-research:ae15a763d80f03c016a966426356ab3feec44708",
+          "observed_at": "2026-08-27",
+          "summary": "The private repository head commit was read via the GitHub API immediately before the Work locator was written."
+        },
+        {
+          "kind": "source_review",
+          "reference": "siso-connector-research:openconnector-spike-2026-08-27.md",
+          "observed_at": "2026-08-27",
+          "summary": "The spike dossier records every executed command and receipt: catalogue generation from source, encrypted credential storage read directly from SQLite, one authenticated round-trip, and the flat connection listing that demonstrates the missing tenancy boundary."
+        }
+      ],
+      "next_actions": [
+        "Decide whether the licence-map dossier can be published as a public Release once client-specific build strategy is separated from the reusable licence findings.",
+        "Verify provider icon licensing before any client-facing connector picker ships.",
+        "Re-run the Actionist overnight-pack manifest builder when the dossiers change so the evidence room stays current."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:efb00129-4ec6-4637-a2f8-dcead4f7d8dd"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/siso-connector-research"
+        ],
+        "works": [
+          {
+            "id": "gls:work:efb00129-4ec6-4637-a2f8-dcead4f7d8dd",
+            "name": "Action Model · Connector Research",
+            "library_url": "/works/actionmodel-connector-research/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",

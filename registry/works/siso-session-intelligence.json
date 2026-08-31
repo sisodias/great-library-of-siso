@@ -13,16 +13,16 @@
     "owners":[{"name":"SISO Open Source Foundation","role":"steward","classification":"siso"}],
     "locators":[{
       "type":"source_repository",
-      "url":"https://github.com/Lordsisodia/siso-session-intelligence",
+      "url":"https://github.com/sisodias/siso-session-intelligence",
       "revision":"main@7f2ace6b9ba4b11dd95700cd4050ae5970a06171",
       "visibility":"public",
       "verified":true,
-      "evidence":{"kind":"integration_check","reference":"github-api:Lordsisodia/siso-session-intelligence:7f2ace6b9ba4b11dd95700cd4050ae5970a06171","observed_at":"2026-07-30","summary":"Canonical public source contains explicit Claude and Codex adapters, pre-persistence redaction, append-only event identity, typed insights, deterministic importance, recall, export, synthetic fixtures, and publication checks."}
+      "evidence":{"kind":"integration_check","reference":"github-api:sisodias/siso-session-intelligence:7f2ace6b9ba4b11dd95700cd4050ae5970a06171","observed_at":"2026-07-30","summary":"Canonical public source contains explicit Claude and Codex adapters, pre-persistence redaction, append-only event identity, typed insights, deterministic importance, recall, export, synthetic fixtures, and publication checks."}
     }],
-    "license":{"status":"verified","spdx":"MIT","reason":"The clean SISO-owned implementation carries MIT; user-supplied transcripts remain external and retain their own privacy and rights.","evidence":[{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-session-intelligence/blob/7f2ace6b9ba4b11dd95700cd4050ae5970a06171/PROVENANCE.md","observed_at":"2026-07-30","summary":"Source provenance, warehouse exclusions, raw-transcript boundary, and license scope are recorded at the pinned release."}]}
+    "license":{"status":"verified","spdx":"MIT","reason":"The clean SISO-owned implementation carries MIT; user-supplied transcripts remain external and retain their own privacy and rights.","evidence":[{"kind":"source_review","reference":"https://github.com/sisodias/siso-session-intelligence/blob/7f2ace6b9ba4b11dd95700cd4050ae5970a06171/PROVENANCE.md","observed_at":"2026-07-30","summary":"Source provenance, warehouse exclusions, raw-transcript boundary, and license scope are recorded at the pinned release."}]}
   },
   "relationships":[
-    {"type":"integrates_with","target_work_id":"gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b","context":"Session Intelligence may project selected privacy-reviewed insights into Agent Brain, while raw sessions and the learning database retain an independent lifecycle.","evidence":[{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-session-intelligence/blob/7f2ace6b9ba4b11dd95700cd4050ae5970a06171/docs/ARCHITECTURE.html","observed_at":"2026-07-30","summary":"The architecture separates session learning from shared operational state."}]}
+    {"type":"integrates_with","target_work_id":"gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b","context":"Session Intelligence may project selected privacy-reviewed insights into Agent Brain, while raw sessions and the learning database retain an independent lifecycle.","evidence":[{"kind":"source_review","reference":"https://github.com/sisodias/siso-session-intelligence/blob/7f2ace6b9ba4b11dd95700cd4050ae5970a06171/docs/ARCHITECTURE.html","observed_at":"2026-07-30","summary":"The architecture separates session learning from shared operational state."}]}
   ],
   "evidence":[
     {"kind":"source_review","reference":"source-review:siso-agent-base-modules:session-intelligence:2026-07-30","observed_at":"2026-07-30","summary":"Warehouse adapters, append-only event log, typed extraction schema, scoring, recall, runtime behavior, provider coupling, and private paths were read before classification."},

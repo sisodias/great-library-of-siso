@@ -7,26 +7,26 @@
   "summary": "The intent-holding coordination and boot package that joins a durable identity to current Agent Brain state, then hands work to an explicitly selected agent host.",
   "work_type": "agent_system",
   "lifecycle_status": "experimental",
-  "updated_at": "2026-07-30",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "SISO", "role": "steward", "classification": "siso" }],
     "locators": [{
       "type": "source_repository",
-      "url": "https://github.com/Lordsisodia/siso-agent-zero",
+      "url": "https://github.com/sisodias/siso-agent-zero",
       "revision": "main@dacfc6c30b2f478c9d3382910674bd30289d3981",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-zero:dacfc6c30b2f478c9d3382910674bd30289d3981", "observed_at": "2026-07-30", "summary": "Canonical public source contains the provider-neutral boot package, identity contract, explicit Agent Brain and host boundaries, optional cmux adapter, reversible installer, migration map, and HTML architecture." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:sisodias/siso-agent-zero:dacfc6c30b2f478c9d3382910674bd30289d3981", "observed_at": "2026-07-30", "summary": "Canonical public source contains the provider-neutral boot package, identity contract, explicit Agent Brain and host boundaries, optional cmux adapter, reversible installer, migration map, and HTML architecture." }
     }],
-    "license": { "status": "verified", "spdx": "MIT", "reason": "The clean SISO-owned extraction carries an MIT license.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-zero/blob/dacfc6c30b2f478c9d3382910674bd30289d3981/LICENSE", "observed_at": "2026-07-30", "summary": "MIT license is present at the pinned public source commit." }] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The clean SISO-owned extraction carries an MIT license.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/sisodias/siso-agent-zero/blob/dacfc6c30b2f478c9d3382910674bd30289d3981/LICENSE", "observed_at": "2026-07-30", "summary": "MIT license is present at the pinned public source commit." }] }
   },
   "relationships": [
     {
       "type": "depends_on",
       "target_work_id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
       "context": "Agent Zero reads current coordination state through the Agent Brain command contract; it does not own the brain's storage, schema, or service lifecycle.",
-      "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-zero/blob/dacfc6c30b2f478c9d3382910674bd30289d3981/docs/ARCHITECTURE.html", "observed_at": "2026-07-30", "summary": "The public architecture and implementation keep Agent Brain behind an external command contract." }]
+      "evidence": [{ "kind": "source_review", "reference": "https://github.com/sisodias/siso-agent-zero/blob/dacfc6c30b2f478c9d3382910674bd30289d3981/docs/ARCHITECTURE.html", "observed_at": "2026-07-30", "summary": "The public architecture and implementation keep Agent Brain behind an external command contract." }]
     },
     {
       "type": "integrates_with",
@@ -38,7 +38,7 @@
       "type": "coordinates_via",
       "target_work_id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
       "context": "Agent Zero may use Herdr for persistent workspaces and lanes through an optional adapter; Herdr remains an independently owned substrate.",
-      "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-zero/blob/dacfc6c30b2f478c9d3382910674bd30289d3981/MIGRATION-MAP.json", "observed_at": "2026-07-30", "summary": "The extracted cmux adapter and deferred self-build coupling make workspace integration optional and replaceable." }]
+      "evidence": [{ "kind": "source_review", "reference": "https://github.com/sisodias/siso-agent-zero/blob/dacfc6c30b2f478c9d3382910674bd30289d3981/MIGRATION-MAP.json", "observed_at": "2026-07-30", "summary": "The extracted cmux adapter and deferred self-build coupling make workspace integration optional and replaceable." }]
     }
   ],
   "evidence": [

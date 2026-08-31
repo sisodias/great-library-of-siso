@@ -13,16 +13,16 @@
     "owners":[{"name":"SISO Open Source Foundation","role":"steward","classification":"siso"}],
     "locators":[{
       "type":"source_repository",
-      "url":"https://github.com/Lordsisodia/siso-evidence-engines",
+      "url":"https://github.com/sisodias/siso-evidence-engines",
       "revision":"main@71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d",
       "visibility":"public",
       "verified":true,
-      "evidence":{"kind":"integration_check","reference":"github-api:Lordsisodia/siso-evidence-engines:71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d","observed_at":"2026-07-30","summary":"Canonical public source includes the generated repository header plus the Knowledge, Principles, and Idea engine contracts, machine registry, CLI, synthetic fixtures, and corpus-exclusion checks; system tests passed."}
+      "evidence":{"kind":"integration_check","reference":"github-api:sisodias/siso-evidence-engines:71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d","observed_at":"2026-07-30","summary":"Canonical public source includes the generated repository header plus the Knowledge, Principles, and Idea engine contracts, machine registry, CLI, synthetic fixtures, and corpus-exclusion checks; system tests passed."}
     }],
-    "license":{"status":"verified","spdx":"MIT","reason":"The clean SISO-owned engine implementation carries MIT; ingested sources and external corpora retain their own rights.","evidence":[{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-evidence-engines/blob/6ffba38d77409d6317733ec5fe96386d0481d2ea/PROVENANCE.md","observed_at":"2026-07-30","summary":"Reusable code, excluded corpora, machine configuration, provider adapters, and source-rights boundaries are recorded at the pinned release."}]}
+    "license":{"status":"verified","spdx":"MIT","reason":"The clean SISO-owned engine implementation carries MIT; ingested sources and external corpora retain their own rights.","evidence":[{"kind":"source_review","reference":"https://github.com/sisodias/siso-evidence-engines/blob/6ffba38d77409d6317733ec5fe96386d0481d2ea/PROVENANCE.md","observed_at":"2026-07-30","summary":"Reusable code, excluded corpora, machine configuration, provider adapters, and source-rights boundaries are recorded at the pinned release."}]}
   },
   "relationships":[
-    {"type":"integrates_with","target_work_id":"gls:work:ec664d93-df93-48c5-be40-5d0165886c01","context":"Foundry discovers and prepares explicit sources; Evidence Engines turns those sources into grounded knowledge, principles, and ranked ideas without owning acquisition or corpora.","evidence":[{"kind":"source_review","reference":"https://github.com/Lordsisodia/siso-evidence-engines/blob/6ffba38d77409d6317733ec5fe96386d0481d2ea/docs/ARCHITECTURE.html","observed_at":"2026-07-30","summary":"The public architecture assigns acquisition, scraping, provider execution, schedulers, and corpora to Foundry or external adapters."}]}
+    {"type":"integrates_with","target_work_id":"gls:work:ec664d93-df93-48c5-be40-5d0165886c01","context":"Foundry discovers and prepares explicit sources; Evidence Engines turns those sources into grounded knowledge, principles, and ranked ideas without owning acquisition or corpora.","evidence":[{"kind":"source_review","reference":"https://github.com/sisodias/siso-evidence-engines/blob/6ffba38d77409d6317733ec5fe96386d0481d2ea/docs/ARCHITECTURE.html","observed_at":"2026-07-30","summary":"The public architecture assigns acquisition, scraping, provider execution, schedulers, and corpora to Foundry or external adapters."}]}
   ],
   "evidence":[
     {"kind":"source_review","reference":"source-review:siso-agent-base-modules:evidence-engines:2026-07-30","observed_at":"2026-07-30","summary":"Knowledge value-item schema, quote grounding, credibility tiers, principle and idea gates, jury aggregation, deterministic scores, generated corpora, provider code, and mutation loops were read before classification."},

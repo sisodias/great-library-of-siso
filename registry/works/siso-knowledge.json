@@ -7,23 +7,23 @@
   "summary": "The durable knowledge-production system for acquiring, curating, storing, indexing, relating, and retrieving SISO knowledge while keeping large or rights-bearing data outside Git.",
   "work_type": "knowledge_system",
   "lifecycle_status": "active",
-  "updated_at": "2026-07-30",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
     "locators": [{
       "type": "source_repository",
-      "url": "https://github.com/Lordsisodia/siso-knowledge",
+      "url": "https://github.com/sisodias/siso-knowledge",
       "revision": "main@333447afc7672ff622a5f92f96533662585bdb1f",
-      "visibility": "public",
+      "visibility": "private",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-knowledge:333447afc7672ff622a5f92f96533662585bdb1f", "observed_at": "2026-07-30", "summary": "The public repository resolves with its generated repository header and retains the verified domain, data, migration, and layout contracts." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:sisodias/siso-knowledge:333447afc7672ff622a5f92f96533662585bdb1f", "observed_at": "2026-07-30", "summary": "The public repository resolves with its generated repository header and retains the verified domain, data, migration, and layout contracts." }
     }],
     "license": {
       "status": "pending",
       "spdx": "NONE",
       "reason": "The public source has no accepted repository license; public visibility is not a redistribution grant, and acquired sources retain independent rights.",
-      "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-knowledge/tree/0a433ce385ae2a2be30a86343b5b494a52728d5e", "observed_at": "2026-07-30", "summary": "The pinned repository has no license file or GitHub-detected license." }]
+      "evidence": [{ "kind": "source_review", "reference": "https://github.com/sisodias/siso-knowledge/tree/0a433ce385ae2a2be30a86343b5b494a52728d5e", "observed_at": "2026-07-30", "summary": "The pinned repository has no license file or GitHub-detected license." }]
     }
   },
   "relationships": [
@@ -31,13 +31,13 @@
       "type": "integrates_with",
       "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
       "context": "Foundry is an independently released discovery and source-mining Work; SISO Knowledge may catalog or consume its outputs without owning its repository or data plane.",
-      "evidence": [{ "kind": "documentation", "reference": "https://github.com/Lordsisodia/siso-knowledge/blob/0a433ce385ae2a2be30a86343b5b494a52728d5e/DOMAIN.html", "observed_at": "2026-07-30", "summary": "The domain map classifies Foundry as an independent Research Work rather than a nested Knowledge module." }]
+      "evidence": [{ "kind": "documentation", "reference": "https://github.com/sisodias/siso-knowledge/blob/0a433ce385ae2a2be30a86343b5b494a52728d5e/DOMAIN.html", "observed_at": "2026-07-30", "summary": "The domain map classifies Foundry as an independent Research Work rather than a nested Knowledge module." }]
     },
     {
       "type": "integrates_with",
       "target_work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
       "context": "Evidence Engines transform explicit sources into grounded knowledge, principles, and ideas; SISO Knowledge supplies durable corpus and retrieval boundaries without collapsing the engines into itself.",
-      "evidence": [{ "kind": "documentation", "reference": "https://github.com/Lordsisodia/siso-knowledge/blob/0a433ce385ae2a2be30a86343b5b494a52728d5e/DOMAIN-MANIFEST.json", "observed_at": "2026-07-30", "summary": "The domain manifest records Evidence Engines as an independent Research Work with its own Git identity." }]
+      "evidence": [{ "kind": "documentation", "reference": "https://github.com/sisodias/siso-knowledge/blob/0a433ce385ae2a2be30a86343b5b494a52728d5e/DOMAIN-MANIFEST.json", "observed_at": "2026-07-30", "summary": "The domain manifest records Evidence Engines as an independent Research Work with its own Git identity." }]
     }
   ],
   "evidence": [

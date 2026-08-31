@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T03:23:42.000Z",
+  "generated_at": "2026-08-31T00:00:00.000Z",
   "base_path": "/",
   "schema_version": "1.0.0",
   "snapshot_id": "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9",
@@ -13,7 +13,7 @@
     "challenge_edges": 2,
     "action_learning_links": 8,
     "public_answers_released": 0,
-    "serialized_program_bytes": 19130
+    "serialized_program_bytes": 19115
   },
   "questions": [
     {
@@ -29,7 +29,7 @@
         "state": "current",
         "assessed_at": "2026-08-02",
         "review_due_at": "2026-09-01",
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-31"
       },
       "next_useful_work": "Run one cold reconstruction task against the typed workspace boundary and compare errors, intervention, and elapsed time with the prior evidence path.",
       "evidence_mode": "hybrid",
@@ -61,6 +61,47 @@
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
         "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_works": [
+        {
+          "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "name": "SISO Foundry",
+          "library_url": "/works/siso-foundry/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-foundry",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "name": "SISO Knowledge",
+          "library_url": "/works/siso-knowledge/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-knowledge",
+              "visibility": "private"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "name": "SISO Evidence Engines",
+          "library_url": "/works/siso-evidence-engines/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            }
+          ]
+        }
       ],
       "source_scopes": [
         "public agent-workspace repositories",
@@ -192,7 +233,7 @@
         "state": "current",
         "assessed_at": "2026-08-02",
         "review_due_at": "2026-09-01",
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-31"
       },
       "next_useful_work": "Run one paired agent task with and without the evidence-aware context and receipt path, including retrieval and repair overhead in the comparison.",
       "evidence_mode": "hybrid",
@@ -224,6 +265,47 @@
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
         "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_works": [
+        {
+          "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "name": "SISO Foundry",
+          "library_url": "/works/siso-foundry/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-foundry",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "name": "SISO Knowledge",
+          "library_url": "/works/siso-knowledge/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-knowledge",
+              "visibility": "private"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "name": "SISO Evidence Engines",
+          "library_url": "/works/siso-evidence-engines/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            }
+          ]
+        }
       ],
       "source_scopes": [
         "public agent harnesses and orchestration systems",
@@ -353,7 +435,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-31"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "corpus",
@@ -383,6 +465,47 @@
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
         "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_works": [
+        {
+          "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "name": "SISO Foundry",
+          "library_url": "/works/siso-foundry/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-foundry",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "name": "SISO Knowledge",
+          "library_url": "/works/siso-knowledge/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-knowledge",
+              "visibility": "private"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "name": "SISO Evidence Engines",
+          "library_url": "/works/siso-evidence-engines/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            }
+          ]
+        }
       ],
       "source_scopes": [
         "Foundry capability category selected by the requested primitive",
@@ -423,7 +546,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-31"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "corpus",
@@ -454,6 +577,47 @@
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
         "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_works": [
+        {
+          "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "name": "SISO Foundry",
+          "library_url": "/works/siso-foundry/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-foundry",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "name": "SISO Knowledge",
+          "library_url": "/works/siso-knowledge/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-knowledge",
+              "visibility": "private"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "name": "SISO Evidence Engines",
+          "library_url": "/works/siso-evidence-engines/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            }
+          ]
+        }
       ],
       "source_scopes": [
         "frozen Foundry momentum snapshots",
@@ -494,7 +658,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-31"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",
@@ -526,6 +690,47 @@
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
         "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_works": [
+        {
+          "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "name": "SISO Foundry",
+          "library_url": "/works/siso-foundry/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-foundry",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "name": "SISO Knowledge",
+          "library_url": "/works/siso-knowledge/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-knowledge",
+              "visibility": "private"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "name": "SISO Evidence Engines",
+          "library_url": "/works/siso-evidence-engines/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            }
+          ]
+        }
       ],
       "source_scopes": [
         "public source-acquisition and retrieval systems",
@@ -566,7 +771,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-31"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",
@@ -599,6 +804,47 @@
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
         "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_works": [
+        {
+          "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "name": "SISO Foundry",
+          "library_url": "/works/siso-foundry/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-foundry",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "name": "SISO Knowledge",
+          "library_url": "/works/siso-knowledge/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-knowledge",
+              "visibility": "private"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "name": "SISO Evidence Engines",
+          "library_url": "/works/siso-evidence-engines/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            }
+          ]
+        }
       ],
       "source_scopes": [
         "current public benchmark suites",
@@ -636,10 +882,10 @@
       "lifecycle_status": "active",
       "steward": "SISO Open Source Foundation",
       "freshness": {
-        "state": "current",
+        "state": "review_due",
         "assessed_at": "2026-08-03",
         "review_due_at": "2026-08-17",
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-31"
       },
       "next_useful_work": "Stand up the operating loop on always-on hardware: a single agent whose domain is improving the Library/Foundry/people-graph system, with a public dossier surface showing data bucket counts, question states, and what it changed and when. Evidence selection must be question-driven given the measured extraction ceiling.",
       "evidence_mode": "hybrid",
@@ -677,6 +923,72 @@
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
         "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_works": [
+        {
+          "work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "name": "The Great Library of SISO",
+          "library_url": "/works/great-library-of-siso/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/great-library-of-siso",
+              "visibility": "public"
+            },
+            {
+              "kind": "homepage",
+              "label": "Homepage",
+              "url": "https://great-library-of-siso.vercel.app/",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+          "name": "Research",
+          "library_url": "/works/research/",
+          "source_links": []
+        },
+        {
+          "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "name": "SISO Foundry",
+          "library_url": "/works/siso-foundry/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-foundry",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "name": "SISO Knowledge",
+          "library_url": "/works/siso-knowledge/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-knowledge",
+              "visibility": "private"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "name": "SISO Evidence Engines",
+          "library_url": "/works/siso-evidence-engines/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            }
+          ]
+        }
       ],
       "source_scopes": [
         "the existing Frontier Question Works, metadata seeds, answer-lineage model, and question-driven research architecture",
@@ -766,7 +1078,7 @@
             "rights_state": "public",
             "publication_state": "public_safe_metadata",
             "observed_at": "2026-08-02",
-            "provenance_receipt": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+            "provenance_receipt": "https://github.com/sisodias/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
             "revision_or_digest": "270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
             "summary": "The pushed constitution preserves question identity, organ boundaries, action authority, learning proposals, and explicit later or rejected scope.",
             "supports_assumption_ids": [
@@ -779,7 +1091,7 @@
             "id": "EC-GQ009-CHECKPOINT",
             "source_type": "repository",
             "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
-            "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
+            "reference": "https://github.com/sisodias/great-library-of-siso/commit/270c37c35a73a0a866a24d8b52b4be2ed7eacf60",
             "relevance_hypothesis": "The verified document checkpoint tests whether the existing generator can expose a canonical question-infrastructure reader without a second registry.",
             "rights_state": "public",
             "publication_state": "public_safe_metadata",
@@ -815,7 +1127,7 @@
             "id": "EC-GQ009-OPERATOR-PASS",
             "source_type": "operational_receipt",
             "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
-            "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+            "reference": "https://github.com/sisodias/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
             "relevance_hypothesis": "Independent cold-reader and contract replay test whether the canonical projection improves reconstruction and remains backward compatible.",
             "rights_state": "public_metadata_only",
             "publication_state": "public_safe_metadata",
@@ -833,7 +1145,7 @@
             "id": "EC-GQ009-PRIVACY-FAIL",
             "source_type": "operational_receipt",
             "owning_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
-            "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+            "reference": "https://github.com/sisodias/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
             "relevance_hypothesis": "The independent privacy adversary tests whether typed public metadata actually prevents owner-held text, topology, credential, timing, or truth-state leakage.",
             "rights_state": "public_metadata_only",
             "publication_state": "public_safe_metadata",
@@ -926,7 +1238,7 @@
             "object_type": "observation_receipt",
             "authority_state": "observation_only",
             "owner_role": "independent_verifier",
-            "reference": "https://github.com/Lordsisodia/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
+            "reference": "https://github.com/sisodias/great-library-of-siso/commit/68386b8d27eb269de3fdbb482ccbd5e8e7fffbc3",
             "recorded_at": "2026-08-02T01:58:30+07:00",
             "content_sha256": "7befd52df946173b9754dd20b03fc5da1dde8b6327876768481e1a14ca86c2ae",
             "predecessor_ids": [
@@ -987,7 +1299,7 @@
         "assumptions": 3,
         "evidence_connections": 6,
         "action_learning_links": 6,
-        "serialized_program_bytes": 12227
+        "serialized_program_bytes": 12212
       }
     },
     {
@@ -1003,7 +1315,7 @@
         "state": "not_declared",
         "assessed_at": null,
         "review_due_at": null,
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-31"
       },
       "next_useful_work": "Define the minimum public-safe question program before scheduling research.",
       "evidence_mode": "hybrid",
@@ -1046,6 +1358,73 @@
         "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
         "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
         "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f"
+      ],
+      "source_works": [
+        {
+          "work_id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+          "name": "SISO People Graph",
+          "library_url": "/works/siso-people-graph/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-people-graph",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
+          "name": "SISO Book Library",
+          "library_url": "/works/siso-book-library/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-book-library",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+          "name": "SISO Knowledge",
+          "library_url": "/works/siso-knowledge/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-knowledge",
+              "visibility": "private"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "name": "SISO Foundry",
+          "library_url": "/works/siso-foundry/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-foundry",
+              "visibility": "public"
+            }
+          ]
+        },
+        {
+          "work_id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
+          "name": "SISO Evidence Engines",
+          "library_url": "/works/siso-evidence-engines/",
+          "source_links": [
+            {
+              "kind": "source_repository",
+              "label": "Source repository",
+              "url": "https://github.com/sisodias/siso-evidence-engines",
+              "visibility": "public"
+            }
+          ]
+        }
       ],
       "source_scopes": [
         "SISO People Graph code and contract at de048bb3b34bf931b56fd741cb46c1334acdfb98",

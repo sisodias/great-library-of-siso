@@ -7,19 +7,19 @@
   "summary": "An installable operating package of scenario playbooks, prompts, skills, tools, telemetry, and evidence for running coordinated agent work.",
   "work_type": "playbook",
   "lifecycle_status": "active",
-  "updated_at": "2026-07-30",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "SISO", "role": "steward", "classification": "siso" }],
     "locators": [{
       "type": "source_repository",
-      "url": "https://github.com/Lordsisodia/siso-agent-playbook",
+      "url": "https://github.com/sisodias/siso-agent-playbook",
       "revision": "main@6ee572b0f2230e3f83b11408fe30f7211d1f2b77",
-      "visibility": "public",
+      "visibility": "private",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-playbook:6ee572b0f2230e3f83b11408fe30f7211d1f2b77", "observed_at": "2026-07-30", "summary": "Canonical public source preserves original history and the four warehouse working changes, includes an MIT license, and passes reversible-install and publication checks." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:sisodias/siso-agent-playbook:6ee572b0f2230e3f83b11408fe30f7211d1f2b77", "observed_at": "2026-07-30", "summary": "Canonical public source preserves original history and the four warehouse working changes, includes an MIT license, and passes reversible-install and publication checks." }
     }],
-    "license": { "status": "verified", "spdx": "MIT", "reason": "The SISO-owned playbook source now carries the Agent Base repository-root MIT license in its independent public home.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-playbook/blob/6ee572b0f2230e3f83b11408fe30f7211d1f2b77/PROVENANCE.md", "observed_at": "2026-07-30", "summary": "History source, working-state preservation, publication cleanup, and license provenance are recorded." }] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The SISO-owned playbook source now carries the Agent Base repository-root MIT license in its independent public home.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/sisodias/siso-agent-playbook/blob/6ee572b0f2230e3f83b11408fe30f7211d1f2b77/PROVENANCE.md", "observed_at": "2026-07-30", "summary": "History source, working-state preservation, publication cleanup, and license provenance are recorded." }] }
   },
   "relationships": [],
   "evidence": [

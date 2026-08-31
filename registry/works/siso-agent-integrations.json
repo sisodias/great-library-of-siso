@@ -7,19 +7,19 @@
   "summary": "An experimental package family for bounded agent-runtime adapters with explicit safety, evidence, promotion, and rollback contracts.",
   "work_type": "bundle",
   "lifecycle_status": "experimental",
-  "updated_at": "2026-07-30",
+  "updated_at": "2026-08-31",
   "provenance": {
     "origin": "siso",
     "owners": [{ "name": "SISO Open Source Foundation", "role": "steward", "classification": "siso" }],
     "locators": [{
       "type": "source_repository",
-      "url": "https://github.com/Lordsisodia/siso-agent-integrations",
+      "url": "https://github.com/sisodias/siso-agent-integrations",
       "revision": "main@808eb51c079db40ae273e721527b245be09e9544",
       "visibility": "public",
       "verified": true,
-      "evidence": { "kind": "integration_check", "reference": "github-api:Lordsisodia/siso-agent-integrations:808eb51c079db40ae273e721527b245be09e9544", "observed_at": "2026-07-30", "summary": "Canonical public source repository contains the extracted Context Core, Context Firewall, and Headroom adapter packages; its default smoke suite passed before publication." }
+      "evidence": { "kind": "integration_check", "reference": "github-api:sisodias/siso-agent-integrations:808eb51c079db40ae273e721527b245be09e9544", "observed_at": "2026-07-30", "summary": "Canonical public source repository contains the extracted Context Core, Context Firewall, and Headroom adapter packages; its default smoke suite passed before publication." }
     }],
-    "license": { "status": "verified", "spdx": "MIT", "reason": "The extracted SISO-owned source carries the Agent Base repository-root MIT license; the externally owned Headroom dependency remains pinned rather than redistributed.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/Lordsisodia/siso-agent-integrations/blob/808eb51c079db40ae273e721527b245be09e9544/LICENSE", "observed_at": "2026-07-30", "summary": "MIT license and dependency ownership boundary reviewed in the public extraction." }] }
+    "license": { "status": "verified", "spdx": "MIT", "reason": "The extracted SISO-owned source carries the Agent Base repository-root MIT license; the externally owned Headroom dependency remains pinned rather than redistributed.", "evidence": [{ "kind": "source_review", "reference": "https://github.com/sisodias/siso-agent-integrations/blob/808eb51c079db40ae273e721527b245be09e9544/LICENSE", "observed_at": "2026-07-30", "summary": "MIT license and dependency ownership boundary reviewed in the public extraction." }] }
   },
   "relationships": [{
     "type": "integrates_with",
