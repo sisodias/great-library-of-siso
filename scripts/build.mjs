@@ -1,6 +1,7 @@
 import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { rail } from 'siso-shell';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const OUT = join(ROOT, 'site');
@@ -257,6 +258,12 @@ function nav(active) {
 }
 
 function page({ title, description, active = 'library', body, rootClass = '' }) {
+  const pilot = rootClass.includes('reading-page');
+  const navigation = pilot ? rail({ title: 'The Great Library', subtitle: 'of SISO / Open knowledge', home: href(''), links: [
+    ['Library', '', 'library'], ['Agents', 'agents/', 'agents'], ['Research', 'research/', 'research'],
+    ['God Questions', 'research/', 'questions'], ['Repo estate', 'estate/', 'estate'],
+    ['Now / Intelligence', 'intelligence/', 'intelligence'], ['Releases', 'releases/', 'releases'], ['Snapshots', 'snapshots/', 'snapshots'],
+  ].map(([label, path, key]) => ({ label, href: href(path), active: active === key })) }) : nav(active);
   return `<!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -265,12 +272,12 @@ function page({ title, description, active = 'library', body, rootClass = '' }) 
   <meta name="description" content="${esc(description)}">
   <meta name="color-scheme" content="light">
   <title>${esc(title)} · The Great Library of SISO</title>
-  <link rel="stylesheet" href="${href('assets/styles.css')}">
+  <link rel="stylesheet" href="${href('assets/styles.css')}">${pilot ? `\n  <link rel="stylesheet" href="${href('assets/siso-shell/shell.css')}"><link rel="stylesheet" href="${href('assets/reading.css')}"><script defer src="${href('assets/siso-shell/shell.js')}"></script>` : ''}
   <script>document.documentElement.className='js'</script>
   <script defer src="${href('assets/app.js')}"></script>
 </head>
-<body class="${esc(rootClass)}">
-  ${nav(active)}
+<body class="${esc(rootClass)}${pilot ? ' siso-shell' : ''}">
+  ${navigation}
   <main id="content">${body}</main>
   <footer>The Great Library of SISO — Built by the SISO Open Source Foundation · Funded by SISO Agency.</footer>
 </body>
@@ -524,30 +531,47 @@ function intelligencePage(projection) {
   });
 }
 
+function frontDoor(works, sections) {
+  const loop = [
+    ['Client outcomes', 'Fund useful compute', 'docs/siso-mission.html', 60, 40],
+    ['Owners + compute', 'Build industry systems', 'agents/', 380, 40],
+    ['Packs + code', 'Publish reusable work', 'promotion/', 700, 40],
+    ['The Library', 'Make the work discoverable', '#catalog', 1020, 40],
+    ['People + repositories', 'Feed new ideas into Foundry', 'works/siso-people-graph/', 1020, 220],
+    ['Foundry', 'Evaluate what is worth using', 'works/siso-foundry/', 700, 220],
+    ['God Questions', 'Turn evidence into breakthroughs', 'research/', 380, 220],
+    ['Better systems', 'Improve packs and the agent stack', 'agents/', 60, 220],
+  ];
+  const nodes = loop.map(([title, sub, path, x, y], i) => `<a href="${href(path)}" aria-label="${esc(title)}"><rect class="${i === 3 ? 'root' : 'box'}" x="${x}" y="${y}" width="250" height="100" rx="8"/><text x="${x + 18}" y="${y + 27}" class="lbl">0${i + 1}</text><text x="${x + 18}" y="${y + 54}">${esc(title)}</text><text x="${x + 18}" y="${y + 78}" class="lbl">${esc(sub)}</text></a>`).join('');
+  return `<header class="front-header shell"><span>The Great Library of SISO</span><a href="${href('docs/onboarding.html')}">Start with the map ↗</a></header>
+  <section class="front-intro shell">${eyebrow('Research → reusable capability → real outcomes')}
+    <h1>All the knowledge.<br><em>One connected ecosystem.</em></h1>
+    <p>SISO uses artificial intelligence and the world’s accumulated knowledge to create measurable value for businesses and society. This Library is its public front door: discover the research, code and agent systems, see how they connect, and follow the evidence back to independently owned sources.</p>
+    <div class="front-actions"><a class="button" href="#catalog">Explore ${works.length} Works <span>↓</span></a><a href="${href('works/siso-foundry/')}">Inside SISO Foundry ↗</a><a href="${href('docs/siso-mission.html')}">The mission ↗</a></div>
+  </section>
+  <section class="front-sections shell" id="sections" aria-label="Library sections">
+    ${sections.map(section => `<a href="${href(`${section.slug}/`)}"><span>${esc(section.name)}</span><b>${works.filter(work => work.section === section.name && work.id !== section.id).length}</b><small>selected Works →</small></a>`).join('')}
+    <a href="${href('research/')}"><span>God Questions</span><b>${works.filter(work => work.researchContract).length}</b><small>registered questions →</small></a>
+    <a href="${href('intelligence/')}"><span>Now</span><b>↗</b><small>Events, decisions & ownership</small></a>
+  </section>
+  <section class="loop-section shell" aria-labelledby="loop-title"><div class="loop-heading"><div>${eyebrow('The compounding loop')}<h2 id="loop-title">Every part feeds the next.</h2></div><p>Intelligence · open-source code · GitHub storage · Cloudflare · people.<br>The operating thesis—not a claim that every stage is already proven.</p></div>
+    <div class="reading-map loop-map"><svg viewBox="0 0 1330 360" aria-labelledby="ecosystem-title" role="img"><title id="ecosystem-title">Clients fund compute; owners build packs; the Library attracts people; Foundry and God Questions improve systems and win better client outcomes.</title><defs><marker id="loop-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#82967e"/></marker></defs><g class="e" marker-end="url(#loop-arrow)"><path d="M310 90H375"/><path d="M630 90H695"/><path d="M950 90H1015"/><path d="M1270 90H1300V270H1275"/><path d="M1020 270H955"/><path d="M700 270H635"/><path d="M380 270H315"/><path d="M60 270H30V90H55"/></g>${nodes}</svg></div>
+  </section>
+  <section class="agent-reading shell" id="for-agents"><div>${eyebrow('For agents')}<h2>Read these five files.</h2><p>Then follow a Work’s dossier to its exact source. A Work is an identity, a Release is an evidenced version, and an Assembly describes how Works operate together.</p></div><ol>
+    <li><a href="https://github.com/sisodias/great-library-of-siso/blob/main/README.md">README.md</a><span>Identity and boundaries</span></li>
+    <li><a href="https://github.com/sisodias/great-library-of-siso/blob/main/AGENTS.md">AGENTS.md</a><span>Contribution and safety contract</span></li>
+    <li><a href="https://github.com/sisodias/great-library-of-siso/blob/main/CURRENT_STATE.md">CURRENT_STATE.md</a><span>Verified baseline and resume points</span></li>
+    <li><a href="${href('catalog.json')}">catalog.json</a><span>Works, repositories and dossier links</span></li>
+    <li><a href="${href('intelligence.json')}">intelligence.json</a><span>Events, ownership and decisions</span></li>
+  </ol></section>`;
+}
+
 function homePage(works, releases, snapshots, assemblies, sections) {
   return page({
-    title: 'A public index of SISO source',
+    title: 'The front door to the SISO ecosystem',
+    rootClass: 'reading-page library-front',
     description: 'A human- and agent-readable registry of SISO works, releases, relationships, and named snapshots.',
-    body: `<section class="hero shell">
-      <div class="hero-copy">${eyebrow('Public registry · Permanent source map')}
-        <h1>Source deserves a<br><em>permanent reading room.</em></h1>
-        <p class="lede">The Great Library gives every cataloged Work a stable public detail page—even when its source repository has no site of its own.</p>
-        <div class="hero-actions"><a class="button" href="${href('agents/')}">Enter the Agents section <span>→</span></a><a class="text-link" href="#sections">Browse sections</a></div>
-      </div>
-      <aside class="catalog-note" aria-label="Catalog model">
-        <p>Catalog model</p>
-        <ol><li><span>01</span><b>Library</b><small>The complete public registry</small></li><li><span>02</span><b>Sections</b><small>Curated views such as Agents</small></li><li><span>03</span><b>Works</b><small>Stable identities and detail URLs</small></li></ol>
-        <div><span>Releases</span><span>Snapshots</span></div>
-      </aside>
-    </section>
-    <section class="model-strip"><div class="shell"><p><b>Works stay stable.</b> Repositories and upstream docs remain optional, replaceable locators.</p><p><b>Relationships carry structure.</b> Hierarchy is a versioned view, never hidden in identity.</p></div></section>
-    <section class="section shell agents-intro"><div class="section-heading">${eyebrow('New here?')}<h2>Enter with the map.</h2><p>The onboarding page gives humans and agents one cold-start route through identity, evidence, releases, snapshots, contribution, and safety.</p><p><a class="button" href="${href('docs/onboarding.html')}">Open onboarding <span>→</span></a></p></div></section>
-    <section id="sections" class="section shell agents-intro">
-      <div class="section-heading">${eyebrow('Versioned projections')}<h2>Library sections</h2><p>Sections are browsable views over stable Works. Moving a Work between sections never changes its identity or source history.</p></div>
-      <div class="focus-list">${sections.map((section, index) => {
-        return `<a class="focus-row" href="${href(`${section.slug}/`)}"><span>${String(index + 1).padStart(2, '0')}</span><b>${esc(section.name)}</b><small>${esc(section.summary)}</small><i aria-hidden="true">→</i></a>`;
-      }).join('')}</div>
-    </section>
+    body: `${frontDoor(works, sections)}
     <section id="catalog" class="section catalog-section shell">
       <div class="section-heading compact">${eyebrow('Live index')}<h2>Browse the Works</h2><p><span data-result-count>${works.length}</span> accepted ${works.length === 1 ? 'record' : 'records'} in this build.</p></div>
       ${works.length ? catalogControls(works) : ''}
@@ -682,7 +706,18 @@ function detailList(title, items) {
   return `<section class="detail-block"><h2>${esc(title)}</h2>${items.length ? `<div class="detail-rows">${items.join('')}</div>` : '<p class="quiet">Nothing has been declared here yet.</p>'}</section>`;
 }
 
+function moduleReading(work, byId) {
+  const reading = work.raw.reading;
+  const relations = work.relationships.map(relation => ({ ...relation, work: byId.get(relation.target) })).filter(relation => relation.work);
+  const height = Math.max(140, relations.length * 86 + 20);
+  const map = `<svg viewBox="0 0 800 ${height}" role="img" aria-labelledby="module-map-title"><title id="module-map-title">${esc(work.name)} and its related Works; each connection is described below.</title><rect class="root" x="16" y="${height / 2 - 32}" width="225" height="64" rx="8"/><text x="36" y="${height / 2 + 6}">${esc(work.name)}</text>${relations.map((relation, i) => `<path class="e" d="M241 ${height / 2} H320 V${i * 86 + 52} H390"/><a href="${href(`works/${relation.work.slug}/`)}"><rect class="box" x="390" y="${i * 86 + 20}" width="380" height="64" rx="8"/><text x="410" y="${i * 86 + 47}">${esc(relation.work.name)}</text><text class="lbl" x="410" y="${i * 86 + 68}">${esc(relation.type.replaceAll('_', ' '))} →</text></a>`).join('')}</svg>`;
+  return `<section class="module-overview shell"><div><p class="eyebrow">The Library’s reading</p><h2>Why it matters</h2><p>${esc(reading.why)}</p><a class="text-link" href="${href(reading.reference)}">Read the reasoning & boundaries ↗</a></div><div><h2>How it links</h2><div class="reading-map">${map}</div></div></section>
+    <section class="module-sauce shell"><div class="loop-heading"><h2>Sauce</h2><p>The useful things to open first. Claims stay attached to dated receipts.</p></div><div class="sauce-grid">${reading.highlights.map((item, i) => `<a href="${esc(safeExternalUrl(item.url) || '#')}" rel="noopener noreferrer"><span class="eyebrow">0${i + 1} / Source highlight</span><h3>${esc(item.title)}</h3><p>${esc(item.summary)}</p><span>Open source ↗</span></a>`).join('')}</div></section>
+    <section class="module-agent shell"><h2>For agents</h2><p><b>${esc(reading.owner)}</b> · Start with the <a href="${esc(safeExternalUrl(reading.agent_entry) || '#')}">pinned README</a>, then the <a href="${href(`works/${work.slug}/index.json`)}">machine-readable dossier</a>.</p><p>In the source checkout: ${reading.agent_commands.map(command => `<code>${esc(command)}</code>`).join(' · ')}. These are source entry commands, not a claim of a fresh Foundry runtime test. Live campaigns and private data require separate authorization.</p></section>`;
+}
+
 function workPage(work, releases, byId, activeRelease, asOfDate) {
+  const reading = work.raw.reading;
   const workReleases = releases.filter((release) => release.workId === work.id);
   const latest = activeRelease || workReleases.at(-1);
   const provenance = [
@@ -742,7 +777,7 @@ function workPage(work, releases, byId, activeRelease, asOfDate) {
   const actionRows = (researchProgram?.action_learning_links || []).map((link) => `<div><span>${esc(`${link.id} · ${link.object_type.replaceAll('_', ' ')} · ${link.authority_state.replaceAll('_', ' ')}`)}</span><p>${esc(link.summary)}<small> Owner role: ${esc(link.owner_role.replaceAll('_', ' '))} · Status: ${esc(link.status.replaceAll('_', ' '))} · Recorded: ${esc(link.recorded_at)} · Truth: ${esc(link.truth_state?.replaceAll('_', ' ') || 'not applicable')} · Predecessors: ${esc((link.predecessor_ids || []).join(', ') || 'none')} · Assumptions: ${esc((link.related_assumption_ids || []).join(', ') || 'none')}</small></p></div>`);
   const detailSections = [
     researchContract ? detailList('Research sources', sourceWorkRows) : '',
-    detailList('Source & upstream links', linkRows),
+    detailList(reading ? 'Repos & source links' : 'Source & upstream links', linkRows),
     relationshipRows.length ? detailList('Relationships', relationshipRows) : '',
     workEvidenceRows.length ? detailList('Evidence & receipts', workEvidenceRows) : '',
     detailList('Provenance', provenance.length ? [`<dl class="provenance-list">${provenance.join('')}</dl>`] : []),
@@ -751,10 +786,10 @@ function workPage(work, releases, byId, activeRelease, asOfDate) {
     title: work.name,
     active: work.section === 'Research' ? 'research' : /agent/i.test(`${work.section} ${work.type}`) ? 'agents' : 'library',
     description: work.summary,
-    rootClass: 'work-page',
+    rootClass: `work-page${reading ? ' reading-page module-reading' : ''}`,
     body: `<article>
-      <header class="work-hero shell">${eyebrow(`Work / ${work.id}`)}<div class="work-title"><h1>${esc(work.name)}</h1><p>${esc(work.summary)}</p></div><dl class="work-meta"><div><dt>Type</dt><dd>${esc(work.type)}</dd></div><div><dt>Maturity</dt><dd>${esc(work.maturity)}</dd></div><div><dt>Section</dt><dd>${esc(work.section)}</dd></div></dl></header>
-      <div class="permalink-bar"><div class="shell"><span>Permanent Library detail URL</span><code>${esc(libraryUrl)}</code></div></div>${researchRows.length ? `
+      <header class="work-hero shell">${eyebrow(reading ? `${work.section} · ${work.type} · ${work.maturity}` : `Work / ${work.id}`)}<div class="work-title"><h1>${esc(work.name)}</h1><p>${esc(reading?.subtitle || work.summary)}</p></div><dl class="work-meta"><div><dt>Type</dt><dd>${esc(work.type)}</dd></div><div><dt>Maturity</dt><dd>${esc(work.maturity)}</dd></div><div><dt>Section</dt><dd>${esc(work.section)}</dd></div></dl></header>
+      ${reading ? moduleReading(work, byId) : ''}<div class="permalink-bar"><div class="shell"><span>Permanent Library detail URL</span><code>${esc(libraryUrl)}</code></div></div>${researchRows.length ? `
       <div class="shell">${detailList(`Research contract · ${researchContract.question_id}`, researchRows)}<p><a href="${href('docs/god-questions-infrastructure.html')}">Read the God Questions infrastructure constitution →</a></p>${researchProgram ? `${detailList(`Assumptions · ${assumptionRows.length}`, assumptionRows)}${detailList(`Evidence connections · ${evidenceRows.length}`, evidenceRows)}${detailList(`Action and learning lineage · ${actionRows.length}`, actionRows)}` : ''}</div>` : ''}
       <div class="detail-layout shell"><div>
         ${detailSections}
@@ -775,6 +810,7 @@ function workProjection(work, releases, byId, activeRelease) {
     slug: work.slug,
     name: work.name,
     summary: work.summary,
+    ...(work.raw.reading ? { reading: work.raw.reading } : {}),
     work_type: work.type,
     lifecycle_status: work.maturity,
     section: work.section,
@@ -942,6 +978,7 @@ const intelligence = buildIntelligenceProjection(events, decisions, releases, sn
 await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
 await cp(ASSETS, join(OUT, 'assets'), { recursive: true });
+await cp(join(dirname(fileURLToPath(import.meta.resolve('siso-shell'))), 'assets'), join(OUT, 'assets/siso-shell'), { recursive: true });
 await emit('docs/agent-stack-model.html', await readFile(join(ROOT, 'docs', 'agent-stack-model.html'), 'utf8'));
 await emit('docs/agent-base-decomposition.html', await readFile(join(ROOT, 'docs', 'agent-base-decomposition.html'), 'utf8'));
 await emit('docs/agent-base-module-map.html', await readFile(join(ROOT, 'docs', 'agent-base-module-map.html'), 'utf8'));

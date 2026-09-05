@@ -1,0 +1,19 @@
+:root{--crm-rail-width:248px;--crm-rail-collapsed-width:20px}
+.siso-shell{padding-left:var(--crm-rail-width)}
+.siso-shell.siso-rail-collapsed{padding-left:var(--crm-rail-collapsed-width)}
+.siso-rail{position:fixed;inset:0 auto 0 0;width:var(--crm-rail-width);z-index:30;background:linear-gradient(155deg,rgba(37,57,50,.98),rgba(14,27,23,.98));color:#eef4eb;border-right:1px solid #53645a;box-shadow:8px 0 40px #14231a18;backdrop-filter:blur(18px);font:16px/1.5 system-ui,sans-serif}
+.siso-rail-content{height:100%;overflow-y:auto;padding:40px 24px;display:flex;flex-direction:column}
+.siso-rail-brand{display:grid;text-decoration:none;color:inherit;gap:8px}
+.siso-monogram{border:1px solid #abbda4;color:#d7ef9d;width:44px;height:44px;display:grid;place-items:center;font:28px Georgia,serif;margin-bottom:14px}
+.siso-rail-brand b{font-size:19px}.siso-rail-brand small{font-size:14px;color:#abbdb0}
+.siso-rail-label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#abbdb0;margin:46px 0 16px}
+.siso-rail nav{display:grid;gap:6px}.siso-rail nav a{display:flex;gap:13px;padding:11px 9px;color:#d5dfd7;text-decoration:none;border:1px solid transparent;border-radius:7px;font-size:14px}
+.siso-rail nav a span{font:12px/1.8 monospace;color:#95ad9b}.siso-rail nav a:hover,.siso-rail nav a[aria-current]{background:#ffffff0b;border-color:#ffffff25;color:#e0f2ac}
+.siso-rail-foot{margin-top:auto;padding-top:42px;color:#abbdb0;font-size:13px;line-height:1.8}.siso-rail kbd{color:#e0f2ac}
+.siso-rail-toggle{position:absolute;right:-12px;top:calc(50% - 32px);width:44px;height:64px;border:0;background:transparent;color:#e0f2ac;cursor:pointer;font-size:27px;padding:0}
+.siso-rail-toggle span{display:grid;place-items:center;width:20px;height:64px;background:#24382e;border:1px solid #66755a;border-radius:6px}
+.siso-rail-collapsed .siso-rail{width:var(--crm-rail-collapsed-width)}
+.siso-rail-collapsed .siso-rail-content{display:none}
+.siso-skip{position:fixed;top:8px;left:32px;z-index:60;padding:12px;background:#d7ef9d;color:#17201d;transform:translateY(-200%)}.siso-skip:focus{transform:none}
+.siso-rail a:focus-visible,.siso-rail-toggle:focus-visible{outline:2px solid #d7ef9d;outline-offset:2px}
+@media(max-width:700px){.siso-shell:not(.siso-rail-collapsed){padding-left:20px}.siso-rail{box-shadow:12px 0 50px #0005}}

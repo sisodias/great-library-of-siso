@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-05T12:30:00.000Z",
+  "generated_at": "2026-09-05T13:45:00.000Z",
   "base_path": "/",
   "counts": {
-    "events": 41,
+    "events": 42,
     "decisions": 6,
     "active_initiatives": 3,
     "registry_changes": 120
@@ -704,6 +704,113 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:ac8bf3d3-fdb7-4ee0-a568-a0c0993f17ab",
+      "occurred_at": "2026-09-05T20:45:00+07:00",
+      "recorded_at": "2026-09-05T20:45:00+07:00",
+      "immutable": true,
+      "entry_type": "verification_completed",
+      "thread": {
+        "id": "gls:thread:library-reading-pilot",
+        "name": "Library Reading Pilot",
+        "kind": "maintenance"
+      },
+      "status": "completed",
+      "title": "Root ecosystem loop and Foundry module reading pilot verified",
+      "summary": "The root reading surface and one opted-in Work page use an exact shared static shell, with authored reasoning and typed relationships kept in the Work record. This Event records implementation verification, not a production deployment receipt.",
+      "intent": "Make the Library legible to people and agents as a connected ecosystem while preserving independent source ownership and evidence boundaries.",
+      "reasoning": [
+        "The existing static generator and registry already provide the needed data; no application framework or live development server is required.",
+        "An optional reading field keeps authored interpretation with its Work and preserves the old page and dossier contracts for unmodified consumers.",
+        "The eight-node ecosystem loop expresses the operating thesis without exposing client identities, private operations or unproved results.",
+        "V38 and every accepted immutable Release remain unchanged because this is a reading projection and current-metadata improvement, not a new claim about the selected source payload."
+      ],
+      "changes": [
+        {
+          "kind": "generator",
+          "reference": "scripts/build.mjs",
+          "summary": "Root loop, source-backed Foundry reading, relationship map and exact shell assets."
+        },
+        {
+          "kind": "schema",
+          "reference": "schemas/work.schema.json",
+          "summary": "Optional authored reading contract."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "registry/works/siso-foundry.json",
+          "summary": "Authored interpretation, three source highlights, agent entry and three evidenced relationships."
+        },
+        {
+          "kind": "document",
+          "reference": "docs/module-page-template.md",
+          "summary": "Pilot ownership and extension boundary."
+        },
+        {
+          "kind": "test",
+          "reference": "tests/reading-surface.test.mjs",
+          "summary": "Machine-verifiable source parity, loop and compatibility checks."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-shell"
+        ]
+      },
+      "coordination": {
+        "owner": "LIBRARY-ZERO",
+        "branch": "main",
+        "reserved_paths": []
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "scripts/verify.mjs",
+          "observed_at": "2026-09-05",
+          "summary": "Registry, immutable history, research, estate, site and publication checks passed with a two-billion-byte process-group cutoff; observed peak 193478656 bytes."
+        },
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-shell/commit/adea8860b50324f283637a596c5a41367ece9776",
+          "observed_at": "2026-09-05",
+          "summary": "Original static rail source with content escaping and unsafe-link rejection tests; exact source is pinned by the consumer."
+        }
+      ],
+      "next_actions": [
+        "Publish the exact verified static build and record live route and screenshot receipts.",
+        "Expand authored module pages only after the Foundry pilot is accepted; preserve private data boundaries."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/great-library-of-siso",
+          "https://github.com/sisodias/siso-shell"
+        ],
+        "works": [
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          },
+          {
+            "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+            "name": "SISO Foundry",
+            "library_url": "/works/siso-foundry/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",

@@ -24,5 +24,11 @@
     "verify": "node scripts/verify.mjs",
     "deploy:cloudflare": "npm run verify && wrangler pages deploy site --project-name great-library-of-siso --branch main --commit-dirty=true",
     "deploy:vercel": "npm run verify && vercel deploy --prod --yes --project great-library-of-siso"
+  },
+  "dependencies": {
+    "siso-shell": "https://codeload.github.com/sisodias/siso-shell/tar.gz/adea8860b50324f283637a596c5a41367ece9776"
+  },
+  "devDependencies": {
+    "wrangler": "4.129.0"
   }
 }

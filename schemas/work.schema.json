@@ -16,6 +16,22 @@
     "updated_at": { "type": "string", "format": "date" },
     "provenance": { "$ref": "common.schema.json#/$defs/provenance" },
     "relationships": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/relationship" } },
+    "reading": {
+      "type": "object", "additionalProperties": false,
+      "required": ["subtitle", "why", "highlights", "agent_entry", "agent_commands", "owner", "reference"],
+      "properties": {
+        "subtitle": { "type": "string", "minLength": 10 },
+        "why": { "type": "string", "minLength": 30 },
+        "highlights": { "type": "array", "minItems": 3, "maxItems": 7, "items": {
+          "type": "object", "additionalProperties": false, "required": ["title", "summary", "url"],
+          "properties": { "title": { "type": "string", "minLength": 1 }, "summary": { "type": "string", "minLength": 10 }, "url": { "type": "string", "format": "uri" } }
+        } },
+        "agent_entry": { "type": "string", "format": "uri" },
+        "agent_commands": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 3 } },
+        "owner": { "type": "string", "minLength": 1 },
+        "reference": { "type": "string", "minLength": 1 }
+      }
+    },
     "research_contract": {
       "type": "object",
       "additionalProperties": false,

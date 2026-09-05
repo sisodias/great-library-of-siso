@@ -11,6 +11,7 @@ const checks = [
   ["God Questions infrastructure contract tests", "tests/god-questions-infrastructure.test.mjs"],
   ["registry validation", "scripts/validate.mjs"],
   ["site build", "scripts/build.mjs"],
+  ["reading surface contract", "tests/reading-surface.test.mjs"],
   ["site links and identity", "scripts/check-site.mjs"],
   ["publication safety scan", "scripts/scan-publication.mjs"]
 ];

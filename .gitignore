@@ -13,6 +13,7 @@ coverage/
 *.log
 npm-debug.log*
 .cache/
+.playwright-cli/
 tmp/
 .tmp/
 

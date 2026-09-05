@@ -4,6 +4,34 @@
   "slug": "siso-foundry",
   "name": "SISO Foundry",
   "summary": "A source-mining and reuse-knowledge platform for discovering, evaluating, preserving, and navigating valuable external and SISO source.",
+  "reading": {
+    "subtitle": "Find what is worth reusing. Prove it before building on it.",
+    "why": "Good software already contains years of hard-won domain knowledge. Foundry makes that work discoverable and tests how it could serve a real business need, so each project does not have to start its research again. The Library preserves the resulting identities and receipts; Knowledge owns durable retrieval, and the product owner still decides what to adopt.",
+    "reference": "docs/foundry-agency-intelligence.html",
+    "highlights": [
+      {
+        "title": "9,636-repository evidence universe",
+        "summary": "The v0.4.0 receipt anchors twenty scored applications and twelve evidence-qualified God Sources. These are dated findings, not a live inventory or automatic reuse permission.",
+        "url": "https://github.com/sisodias/siso-foundry/releases/tag/v0.4.0"
+      },
+      {
+        "title": "Choose the adoption route",
+        "summary": "The value matrix compares whole applications, APIs, sidecars, extraction, reference, and building. Each route carries proof gates, not just a popularity score.",
+        "url": "https://github.com/sisodias/siso-foundry/blob/233edef7408afb95571ecd25f64189dfd92a6860/intelligence/agency/VALUE-MATRIX.md"
+      },
+      {
+        "title": "Resumable discovery campaigns",
+        "summary": "Versioned query contracts, checkpoints and source lineage make discovery repeatable. Candidate rights still require direct review before promotion.",
+        "url": "https://github.com/sisodias/siso-foundry/blob/233edef7408afb95571ecd25f64189dfd92a6860/README.md"
+      }
+    ],
+    "agent_entry": "https://github.com/sisodias/siso-foundry/blob/233edef7408afb95571ecd25f64189dfd92a6860/README.md",
+    "agent_commands": [
+      "npm test",
+      "python3 pipelines/github/run_campaign.py --dry-run"
+    ],
+    "owner": "SISO Open Source Foundation · Foundry owner"
+  },
   "work_type": "application",
   "lifecycle_status": "active",
   "section": "Research",
@@ -24,7 +52,53 @@
       "visibility": "public"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "The Library registers identities, evidence and released reuse knowledge without copying Foundry's data plane.",
+      "target_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "target_name": "The Great Library of SISO",
+      "target_library_url": "/works/great-library-of-siso/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "docs/foundry-agency-intelligence.html",
+          "observed_at": "2026-09-05",
+          "summary": "The application loop explicitly separates Foundry discovery from Library identity and release lineage."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "Foundry discovers and evaluates sources; Knowledge governs durable corpus and retrieval semantics.",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "target_name": "SISO Knowledge",
+      "target_library_url": "/works/siso-knowledge/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "docs/siso-knowledge-model.html",
+          "observed_at": "2026-09-05",
+          "summary": "The Knowledge model keeps source discovery and canonical knowledge governance independently addressable."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "The Repo Bank is the published, read-only reuse-bank export from Foundry's identity database.",
+      "target_work_id": "gls:work:538c4491-8045-4526-9bcd-0268887601d0",
+      "target_name": "SISO Repo Bank",
+      "target_library_url": "/works/siso-repo-bank/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "registry/works/siso-repo-bank.json",
+          "observed_at": "2026-09-05",
+          "summary": "The Repo Bank source record identifies the Foundry database as its export source."
+        }
+      ]
+    }
+  ],
   "evidence": [
     {
       "kind": "release_receipt",

@@ -1,6 +1,24 @@
 # Current state — The Great Library of SISO
 
-**Verified:** 2026-08-09
+**Verified:** 2026-09-05
+
+## Library reading pilot
+
+The root one-pager and `siso-foundry` Work page now use the shared static rail
+from `sisodias/siso-shell` at `adea8860b50324f283637a596c5a41367ece9776`.
+The root has section counts, the eight-node ecosystem loop and five agent entry
+files; Foundry has authored reasoning, a relationship map, source highlights and
+source entry commands, alongside the existing evidence and distribution states.
+`docs/module-page-template.md` describes the source contract. V38 is unchanged.
+The verification Event is `2026-09-05-library-reading-pilot-verified.json`.
+Production readback and screenshots are recorded separately after publication;
+this paragraph alone is not a deployment receipt. The first guarded verify passed
+at 193478656 bytes peak under a two-billion-byte process-group cutoff.
+
+The new `publish` skill is authored and installed through Skills Hub. Its source
+is frozen for coordinated Hub integration, not yet claimed as a published Hub
+commit. The existing Vercel fallback is retained. Industries, live-agent Now,
+SISO Source and Project OS template expansion are not completed by this pilot.
 
 **Public repository:** https://github.com/sisodias/great-library-of-siso
 
