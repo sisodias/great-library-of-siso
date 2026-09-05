@@ -22,6 +22,7 @@
     "scan": "node scripts/scan-publication.mjs",
     "check:site": "node scripts/check-site.mjs",
     "verify": "node scripts/verify.mjs",
+    "deploy:cloudflare": "npm run verify && wrangler pages deploy site --project-name great-library-of-siso --branch main --commit-dirty=true",
     "deploy:vercel": "npm run verify && vercel deploy --prod --yes --project great-library-of-siso"
   }
 }

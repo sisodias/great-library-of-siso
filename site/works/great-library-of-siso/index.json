@@ -20,7 +20,7 @@
     {
       "kind": "homepage",
       "label": "Homepage",
-      "url": "https://great-library-of-siso.vercel.app/",
+      "url": "https://great-library-of-siso.pages.dev/",
       "visibility": "public"
     },
     {
@@ -70,15 +70,15 @@
       },
       {
         "type": "homepage",
-        "url": "https://great-library-of-siso.vercel.app/",
+        "url": "https://great-library-of-siso.pages.dev/",
         "revision": "production",
         "visibility": "public",
         "verified": true,
         "evidence": {
           "kind": "integration_check",
-          "reference": "https://great-library-of-siso.vercel.app/",
-          "observed_at": "2026-07-30",
-          "summary": "Vercel production alias and representative Library routes returned HTTP 200."
+          "reference": "https://great-library-of-siso.pages.dev/",
+          "observed_at": "2026-09-05",
+          "summary": "Cloudflare Pages production origin and representative Library routes returned HTTP 200 after the V38 deployment; Vercel alias retained one cycle as fallback per ADR-0006."
         }
       }
     ],

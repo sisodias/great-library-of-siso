@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T11:45:00.000Z",
+  "generated_at": "2026-09-05T12:30:00.000Z",
   "base_path": "/",
   "works": [
     {
@@ -743,7 +743,7 @@
         {
           "kind": "homepage",
           "label": "Homepage",
-          "url": "https://great-library-of-siso.vercel.app/",
+          "url": "https://great-library-of-siso.pages.dev/",
           "visibility": "public"
         },
         {
@@ -5843,8 +5843,8 @@
   },
   "intelligence": {
     "counts": {
-      "events": 40,
-      "decisions": 5,
+      "events": 41,
+      "decisions": 6,
       "active_initiatives": 3,
       "registry_changes": 120
     },

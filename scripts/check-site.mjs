@@ -124,7 +124,8 @@ for (const marker of ["No product owner assigned", "Evidence owner Works"]) {
 }
 
 const intelligence = JSON.parse(await readFile(path.join(root, "intelligence.json"), "utf8"));
-if (intelligence.counts?.decisions < 5) errors.push("intelligence.json: expected the five accepted ADRs through ADR-0005");
+if (intelligence.counts?.decisions < 6) errors.push("intelligence.json: expected the six accepted ADRs through ADR-0006");
+if (!intelligence.decisions?.some((decision) => decision.id === "gls:decision:9e6dd4a4-63ab-4042-8c85-d1b38932e573" && decision.decision_key === "ADR-0006")) errors.push("intelligence.json: missing ADR-0006 Cloudflare Pages hosting decision");
 if (intelligence.counts?.events < 5) errors.push("intelligence.json: expected the seeded ecosystem events");
 if (!intelligence.decisions?.some((decision) => decision.decision_key === "ADR-0004")) errors.push("intelligence.json: missing ADR-0004");
 if (!intelligence.decisions?.some((decision) => decision.id === "gls:decision:97c0be80-9ae4-4874-84e9-5f80062f68a8" && decision.decision_key === "ADR-0005")) errors.push("intelligence.json: missing ADR-0005 People Graph ownership boundary");

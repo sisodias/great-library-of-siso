@@ -6,7 +6,7 @@
 
 A public, human-readable and agent-readable registry and learning system for SISO source.
 
-**Live Library:** [great-library-of-siso.vercel.app](https://great-library-of-siso.vercel.app/)
+**Live Library:** [great-library-of-siso.pages.dev](https://great-library-of-siso.pages.dev/)
 
 > **Current scope:** The Agents section is the first deep vertical slice. Catalog presence is not a claim that source is downloadable, installable, portable, or licensed for reuse. See [License pending](LICENSE-PENDING.md).
 
@@ -110,10 +110,10 @@ npm ci
 npm run verify
 ```
 
-Vercel is the primary static host and deploys only the generated `site/` directory. GitHub Pages remains an optional mirror. Neither host changes the registry identity or source-of-truth contracts.
+Cloudflare Pages is the primary static host (ADR-0006) and receives only the verified, generated `site/` directory as a folder upload. Vercel remains a fallback for one release cycle; GitHub Pages remains an optional mirror. No host changes the registry identity or source-of-truth contracts.
 
 ```bash
-npm run deploy:vercel
+npm run deploy:cloudflare
 ```
 
 ## Contributing and safety

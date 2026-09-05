@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:2af6155b-0f43-42e5-a4df-736c9c7ed485",
+  "occurred_at": "2026-09-05T19:30:00+07:00",
+  "recorded_at": "2026-09-05T19:30:00+07:00",
+  "immutable": true,
+  "entry_type": "decision_recorded",
+  "thread": {
+    "id": "gls:thread:cloudflare-pages-hosting",
+    "name": "Cloudflare Pages Hosting",
+    "kind": "decision"
+  },
+  "status": "completed",
+  "title": "Public reading surface moved from Vercel to Cloudflare Pages under ADR-0006",
+  "summary": "The generated site was deployed to Cloudflare Pages from the verified V38 build, the Library Work's homepage locator and every non-generated URL reference were moved to the pages.dev origin, and deploy:cloudflare became the primary deploy script with Vercel retained one cycle as fallback.",
+  "intent": "Put the public front door on a host with no bandwidth or request cap and no commercial-use restriction, using GitHub as the only source of truth, so the same method scales to many agent-maintained sites.",
+  "reasoning": [
+    "The site is pure static output; the host is a projection and should be the cheapest, least-limited one available.",
+    "The owner directed the move and already runs four SISO sites on the same Cloudflare account.",
+    "Recording the choice as an ADR keeps the alternatives and the Pages limits visible to whoever adds the next site."
+  ],
+  "changes": [
+    {
+      "kind": "registry_record",
+      "reference": "registry/decisions/adr-0006-cloudflare-pages-hosting.json",
+      "summary": "Accepted ADR-0006 with context, alternatives, consequences and limit evidence."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/works/library.json",
+      "summary": "Homepage locator moved to https://great-library-of-siso.pages.dev/ with a fresh integration check; updated_at bumped."
+    },
+    {
+      "kind": "document",
+      "reference": "package.json",
+      "summary": "Added deploy:cloudflare (wrangler pages deploy site); deploy:vercel retained as fallback."
+    },
+    {
+      "kind": "document",
+      "reference": "README.md",
+      "summary": "Live Library link and deploy instructions now name Cloudflare Pages as primary."
+    },
+    {
+      "kind": "document",
+      "reference": "CURRENT_STATE.md",
+      "summary": "Live Library URL updated and ADR-0006 recorded in the baseline."
+    },
+    {
+      "kind": "document",
+      "reference": "docs/using-the-library.md",
+      "summary": "Estate and Promotion links moved to the pages.dev origin."
+    },
+    {
+      "kind": "document",
+      "reference": "scripts/check-site.mjs",
+      "summary": "Site check now expects six accepted ADRs through ADR-0006."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+    ],
+    "decision_ids": [
+      "gls:decision:9e6dd4a4-63ab-4042-8c85-d1b38932e573"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "Claude Fable main session at the owner's direct request",
+    "branch": "main",
+    "reserved_paths": [
+      "registry/decisions/adr-0006-cloudflare-pages-hosting.json",
+      "registry/events/2026-09-05-cloudflare-pages-hosting-decided.json",
+      "registry/works/library.json",
+      "package.json",
+      "README.md",
+      "CURRENT_STATE.md",
+      "docs/using-the-library.md",
+      "scripts/check-site.mjs"
+    ]
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "integration_check",
+      "reference": "https://great-library-of-siso.pages.dev/",
+      "observed_at": "2026-09-05",
+      "summary": "wrangler pages deploy uploaded 109 files; /, /works/unfuck-the-project/, /research.json, /estate/ and /promotion/ returned HTTP 200 from the pages.dev origin."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "https://great-library-of-siso-1mppqcqt1.vercel.app",
+      "observed_at": "2026-09-05",
+      "summary": "The last Vercel production deployment of V38 remains reachable as the fallback for one release cycle."
+    }
+  ],
+  "next_actions": [
+    "Choose and attach a custom domain, then move the homepage locator again with a successor Event.",
+    "After one release cycle on Cloudflare, remove deploy:vercel and vercel.json with a closing Event.",
+    "Apply the same folder-upload pattern when the Component Bank catalog-site or any other SISO site is published."
+  ]
+}

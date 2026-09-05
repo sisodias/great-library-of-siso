@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T11:45:00.000Z",
+  "generated_at": "2026-09-05T12:30:00.000Z",
   "base_path": "/",
   "schema_version": "1.0.0",
   "snapshot_id": "gls:snapshot:adfaabc8-ee8f-442c-88ba-64c5879bc623",
@@ -1047,7 +1047,7 @@
             {
               "kind": "homepage",
               "label": "Homepage",
-              "url": "https://great-library-of-siso.vercel.app/",
+              "url": "https://great-library-of-siso.pages.dev/",
               "visibility": "public"
             },
             {

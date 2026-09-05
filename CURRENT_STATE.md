@@ -4,7 +4,7 @@
 
 **Public repository:** https://github.com/sisodias/great-library-of-siso
 
-**Live Library:** https://great-library-of-siso.vercel.app/
+**Live Library:** https://great-library-of-siso.pages.dev/ (Cloudflare Pages, ADR-0006; Vercel fallback for one cycle)
 
 **Operating status:** Whole Library V38 is the active immutable Snapshot. The
 registry is also the sole identity and lineage control plane for the first
@@ -22,7 +22,9 @@ verified laptop-estate baseline; exact machine placement remains private.
   (`siso-repo-bank` @ 2d7d35e). Event
   `2026-09-05-unfuck-source-layer-published.json` records the reasoning.
 - The registry contains 36 Work records, 82 Releases, two Assemblies, eight
-  Source Inventories, 38 Snapshots, five Decisions, and 40 Events.
+  Source Inventories, 38 Snapshots, six Decisions, and 41 Events. ADR-0006
+  (5 September 2026) moves the public reading surface to Cloudflare Pages;
+  Event `2026-09-05-cloudflare-pages-hosting-decided.json` records the move.
 - V38 selects 31 exact Releases. A Work or Source Inventory added after its
   selection may be accepted identity or intake without pretending to be a new
   whole-Library Snapshot.

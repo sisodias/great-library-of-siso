@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "decision",
+  "id": "gls:decision:9e6dd4a4-63ab-4042-8c85-d1b38932e573",
+  "decision_key": "ADR-0006",
+  "title": "Host the public reading surface on Cloudflare Pages with GitHub as the only source of truth",
+  "status": "accepted",
+  "decided_at": "2026-09-05T19:30:00+07:00",
+  "immutable": true,
+  "context": "The generated Library site is 109 static files (2.1 MB) with no server functions. It was deployed to Vercel's Hobby tier under a personal account, whose terms prohibit commercial use and cap bandwidth at 100 GB per month. The owner's stated direction is a free public resource that can scale to many sites updated by agents from GitHub, with Cloudflare as the front end and GitHub as the back end. Four other SISO deliverables already run on Cloudflare Pages under the same account.",
+  "decision": "Cloudflare Pages is the primary public host for the generated site, deployed by uploading the verified site/ directory with wrangler from the same commit that GitHub holds. GitHub remains the sole identity and lineage control plane; the host is a replaceable projection and never a source of truth. The Vercel deployment is retained only as a fallback until one full release cycle passes on Cloudflare, then retired. The Library Work's homepage locator moves to the pages.dev origin now and to a custom domain when one is chosen.",
+  "rationale": [
+    "Cloudflare Pages has no bandwidth or request cap on the free tier and permits commercial use; Vercel Hobby has both limits and the prohibition.",
+    "A static site deployed as a folder upload has no host lock-in; moving again costs one command and one locator change.",
+    "Deploying a prebuilt folder rather than a Git-connected build keeps npm run verify as the only gate and does not consume Pages build minutes, so the same method scales to many sites updated by agents.",
+    "The account already hosts four SISO Pages projects, so tooling, login and the owner's standing preference are aligned.",
+    "Pages limits of 20,000 files and 25 MiB per file bound what a single site may contain; large corpora such as the Component Bank belong on GitHub or R2 and are linked, not uploaded."
+  ],
+  "alternatives": [
+    {
+      "option": "Stay on Vercel Hobby",
+      "disposition": "rejected",
+      "reason": "Terms prohibit commercial use and bandwidth is capped; a foundation site funded by an agency should not depend on that reading."
+    },
+    {
+      "option": "Vercel Pro",
+      "disposition": "rejected",
+      "reason": "Per-seat cost for a static site that needs no Vercel feature."
+    },
+    {
+      "option": "GitHub Pages",
+      "disposition": "rejected",
+      "reason": "Soft 100 GB per month bandwidth guidance and no CDN controls; acceptable as an optional mirror, not as primary."
+    },
+    {
+      "option": "Cloudflare Workers with static assets",
+      "disposition": "deferred",
+      "reason": "Equivalent hosting with a larger asset limit; adopt if a site ever needs server logic or exceeds Pages limits."
+    }
+  ],
+  "consequences": {
+    "positive": [
+      "The public reading surface has no bandwidth or request cap and no commercial-use restriction.",
+      "Deploying a verified folder from the same commit GitHub holds keeps the registry the only source of truth and adds no build-minute dependency.",
+      "The same one-command pattern extends to any number of agent-maintained sites under one account."
+    ],
+    "negative": [
+      "Public URLs change from vercel.app to pages.dev; every non-generated reference must be updated and the generated site regenerated from them.",
+      "A single Pages site is bounded to 20,000 files and 25 MiB per file, so large corpora must be linked from GitHub or R2 rather than uploaded.",
+      "Two hosts exist for one release cycle; the fallback must be retired deliberately or it becomes a stale mirror."
+    ],
+    "follow_ups": [
+      "Choose and attach a custom domain, then move the homepage locator with a successor Event.",
+      "After one release cycle on Cloudflare, remove deploy:vercel and vercel.json with a closing Event.",
+      "Apply the folder-upload pattern to the Component Bank catalog-site and any future SISO site."
+    ]
+  },
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso"
+    ]
+  },
+  "evidence": [
+    {
+      "kind": "integration_check",
+      "reference": "https://great-library-of-siso.pages.dev/",
+      "observed_at": "2026-09-05",
+      "summary": "First Cloudflare Pages deployment of the V38 site: 109 files uploaded, root and representative routes returned HTTP 200, research.json reports snapshot 38.0.0."
+    },
+    {
+      "kind": "documentation",
+      "reference": "https://developers.cloudflare.com/pages/platform/limits/",
+      "observed_at": "2026-09-05",
+      "summary": "Pages free tier: unlimited requests and bandwidth, 500 builds per month (not consumed by direct uploads), 20,000 files and 25 MiB per file per site."
+    },
+    {
+      "kind": "documentation",
+      "reference": "https://vercel.com/docs/plans/hobby",
+      "observed_at": "2026-09-05",
+      "summary": "Hobby tier is for personal, non-commercial use with 100 GB fast data transfer per month."
+    }
+  ]
+}
