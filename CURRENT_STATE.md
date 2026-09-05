@@ -6,17 +6,24 @@
 
 **Live Library:** https://great-library-of-siso.vercel.app/
 
-**Operating status:** Whole Library V37 is the active immutable Snapshot. The
+**Operating status:** Whole Library V38 is the active immutable Snapshot. The
 registry is also the sole identity and lineage control plane for the first
 verified laptop-estate baseline; exact machine placement remains private.
 
 ## Current immutable baseline
 
-- Whole Library V37 is
-  `gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9`.
-- The registry contains 32 Work records, 79 Releases, two Assemblies, eight
-  Source Inventories, 37 Snapshots, five Decisions, and 37 Events.
-- V37 selects 28 exact Releases. A Work or Source Inventory added after its
+- Whole Library V38 is
+  `gls:snapshot:adfaabc8-ee8f-442c-88ba-64c5879bc623` (5 September 2026). It
+  preserves every V37 selection and adds three public MIT Releases under the
+  Research section: the UNFUCK whole-project ownership prompt with the God
+  Questions and skills (`unfuck-the-project` @ 830b1dc), the SISO Component
+  Bank of 8,538 21st.dev components (`siso-component-bank` @ 4aa89af), and the
+  SISO Repo Bank exported read-only from the Foundry identity database
+  (`siso-repo-bank` @ 2d7d35e). Event
+  `2026-09-05-unfuck-source-layer-published.json` records the reasoning.
+- The registry contains 36 Work records, 82 Releases, two Assemblies, eight
+  Source Inventories, 38 Snapshots, five Decisions, and 40 Events.
+- V38 selects 31 exact Releases. A Work or Source Inventory added after its
   selection may be accepted identity or intake without pretending to be a new
   whole-Library Snapshot.
 - Existing Releases, Snapshots, Decisions, Source Inventories marked immutable,
@@ -114,7 +121,7 @@ local links and identity, and publication safety.
 
 ## Resume here
 
-1. Read `AGENTS.md`, this file, ADR-0005, Whole Library V37, and
+1. Read `AGENTS.md`, this file, ADR-0005, Whole Library V38, and
    `docs/laptop-estate.html`.
 2. Read the latest public Event for the initiative you are changing.
 3. For machine placement, read the ignored overlay and its latest receipt; do

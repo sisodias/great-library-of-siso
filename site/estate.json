@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-31T00:00:00.000Z",
-  "snapshot_id": "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9",
-  "snapshot_version": "37.0.0",
+  "generated_at": "2026-09-05T11:45:00.000Z",
+  "snapshot_id": "gls:snapshot:adfaabc8-ee8f-442c-88ba-64c5879bc623",
+  "snapshot_version": "38.0.0",
   "repositories": [
     {
       "owner": "herdrdev",
@@ -311,6 +311,24 @@
     },
     {
       "owner": "sisodias",
+      "repository": "siso-component-bank",
+      "url": "https://github.com/sisodias/siso-component-bank",
+      "work_id": "gls:work:ce031834-4149-42af-8d86-d9a05398fa24",
+      "work_name": "SISO Component Bank",
+      "work_slug": "siso-component-bank",
+      "work_type": "knowledge_system",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-component-bank/",
+      "locator_type": "source_repository",
+      "locator_revision": "main@4aa89affc3298a102ef6751a96da6afd922f9cc7",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:7880b0ff-77db-4646-a29b-8061a8f7a42b",
+      "active_release_version": "1.0.0+4aa89af",
+      "artifact_revision": "4aa89affc3298a102ef6751a96da6afd922f9cc7"
+    },
+    {
+      "owner": "sisodias",
       "repository": "siso-people-graph",
       "url": "https://github.com/sisodias/siso-people-graph",
       "work_id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
@@ -326,6 +344,42 @@
       "active_release_id": "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e",
       "active_release_version": "source-contract+de048bb",
       "artifact_revision": "de048bb3b34bf931b56fd741cb46c1334acdfb98"
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-repo-bank",
+      "url": "https://github.com/sisodias/siso-repo-bank",
+      "work_id": "gls:work:538c4491-8045-4526-9bcd-0268887601d0",
+      "work_name": "SISO Repo Bank",
+      "work_slug": "siso-repo-bank",
+      "work_type": "knowledge_system",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-repo-bank/",
+      "locator_type": "source_repository",
+      "locator_revision": "main@2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:388d8ccc-b47a-4fb2-9082-db925cd1530c",
+      "active_release_version": "1.0.0+2d7d35e",
+      "artifact_revision": "2d7d35ecbf7e1158d0a3527e1489040687ac214b"
+    },
+    {
+      "owner": "sisodias",
+      "repository": "unfuck-the-project",
+      "url": "https://github.com/sisodias/unfuck-the-project",
+      "work_id": "gls:work:a5ba6f03-f314-46c5-b106-4d4587446dbb",
+      "work_name": "UNFUCK — whole-project ownership prompt",
+      "work_slug": "unfuck-the-project",
+      "work_type": "playbook",
+      "lifecycle_status": "active",
+      "library_url": "/works/unfuck-the-project/",
+      "locator_type": "source_repository",
+      "locator_revision": "main@830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:9ac0eb6b-ff42-4505-ab48-9ca04b196c89",
+      "active_release_version": "3.0.0+830b1dc",
+      "artifact_revision": "830b1dc206d0d41e18769774b37b8fe4e0d67ac5"
     },
     {
       "owner": "sisodias",

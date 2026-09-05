@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:a5ba6f03-f314-46c5-b106-4d4587446dbb",
+  "slug": "unfuck-the-project",
+  "name": "UNFUCK — whole-project ownership prompt",
+  "summary": "A reusable prompt that gives one frontier agent accountable ownership of a whole project, paired with a one-page dispatch brief, the ranked God Questions with written falsifiers, eight machine-readable research contracts, and eleven agent skills for search, verification, classification and delegation.",
+  "work_type": "playbook",
+  "lifecycle_status": "active",
+  "section": "Research",
+  "library_url": "/works/unfuck-the-project/",
+  "agent_context_url": "/works/unfuck-the-project/index.json",
+  "registry_source": "registry/works/unfuck-the-project.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/unfuck-the-project",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/unfuck-the-project#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "Curated under the Research section: the prompt is the reusable owner-of-record method and the God Questions are the ranked research agenda it draws on.",
+      "target_work_id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+      "target_name": "Research",
+      "target_library_url": "/works/research/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/unfuck-the-project/blob/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/README.md",
+          "observed_at": "2026-09-05",
+          "summary": "The README presents the prompt, the God Questions and the skills as one source layer for a project owner."
+        }
+      ]
+    },
+    {
+      "type": "integrates_with",
+      "context": "The published god-questions/ folder is a public projection of the God Questions Observatory: the ranked list, falsifiers, and the eight contracts exported from this registry.",
+      "target_work_id": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
+      "target_name": "GQ-009 · The God Questions Observatory",
+      "target_library_url": "/works/frontier-question-god-questions-infrastructure/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/unfuck-the-project/tree/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/god-questions/library-contracts",
+          "observed_at": "2026-09-05",
+          "summary": "Eight frontier-question JSON contracts are copied verbatim from registry/works with one private line scrubbed."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "Eleven skills are republished from the Skills Hub and the owner's local skills in plain SKILL.md form; the Hub remains the canonical skill lifecycle.",
+      "target_work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+      "target_name": "SISO Skills",
+      "target_library_url": "/works/siso-skills/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/unfuck-the-project/tree/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/skills",
+          "observed_at": "2026-09-05",
+          "summary": "gitsearch, unified-code-search, xsearch, multisearch, skills-catalog, classify-by-reading, prove-before-claim and subagents come from the Hub registry; code-search-campaign, ui-bank and analyzing-video from the owner's skills."
+        }
+      ]
+    },
+    {
+      "type": "coordinates_via",
+      "context": "The prompt is the whole-project ownership contract Agent Zero dispatches to project owners; the playbook holds the coordination side.",
+      "target_work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "target_name": "SISO Agent Zero",
+      "target_library_url": "/works/siso-agent-zero/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "https://github.com/sisodias/unfuck-the-project/blob/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/UNFUCK.md",
+          "observed_at": "2026-09-05",
+          "summary": "UNFUCK.md names a routing agent (Main) that routes intent and is explicitly not an approval desk."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/unfuck-the-project/blob/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/UNFUCK.md",
+      "observed_at": "2026-09-05",
+      "summary": "Version 3 of 5 September 2026: whole-project ownership, scepticism of inherited structure, source-authorship and decision-scoped supersession, verified agent entry point, distilled learning, explicit hard limits."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/unfuck-the-project/blob/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/god-questions/GOD-QUESTIONS.md",
+      "observed_at": "2026-09-05",
+      "summary": "GQ-001 to GQ-019 ranked, with a falsifier and first worker-tier probe for GQ-011 to GQ-019; GQ-003 and GQ-007 are recorded as phantom or withheld."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "publication-scan:unfuck-the-project:830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+      "observed_at": "2026-09-05",
+      "summary": "Before publication the tree was scanned for owner name, local paths, private machine and network names, client names and credentials; none remain outside the LICENSE copyright line."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/unfuck-the-project",
+        "revision": "main@830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "github-api:sisodias/unfuck-the-project:830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+          "observed_at": "2026-09-05",
+          "summary": "Public repository holds UNFUCK.md v3, templates/BRIEF.md, examples/, god-questions/ (ranked list with falsifiers, 8 Library contracts as JSON, July origins, 29 Aug binding example) and skills/ (11 SKILL.md packages); head commit read via the GitHub API immediately before this record was written."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The prompt, brief, God Questions text and skills are SISO-authored and carry MIT.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/unfuck-the-project/blob/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/LICENSE",
+          "observed_at": "2026-09-05",
+          "summary": "MIT license text is present at the exact release pin."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:9ac0eb6b-ff42-4505-ab48-9ca04b196c89",
+    "version": "3.0.0+830b1dc",
+    "released_at": "2026-09-05T18:40:00+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "The public repository is pinned to an exact commit.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "A commit-scoped public source archive is recorded and resolved.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "The release resolves to its Work, one exact artifact and the README that defines the contents.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "verified",
+        "reason": "Installation is copying UNFUCK.md and a filled BRIEF.md next to a project and pointing an agent at them; the README quick start was followed as written.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "The public repository is source-complete for everything SISO authored and documents the upstream-rights boundary.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "Plain Markdown and one POSIX shell script with curl and jq; no machine-specific paths remain.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

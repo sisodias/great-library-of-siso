@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:9ac0eb6b-ff42-4505-ab48-9ca04b196c89",
+  "work_id": "gls:work:a5ba6f03-f314-46c5-b106-4d4587446dbb",
+  "version": "3.0.0+830b1dc",
+  "title": "UNFUCK v3 with God Questions and skills",
+  "released_at": "2026-09-05T18:40:00+07:00",
+  "observed_at": "2026-09-05",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:3ac1f323-81dc-4c45-941e-064b053de8c6",
+      "kind": "source_archive",
+      "locator": "https://github.com/sisodias/unfuck-the-project/archive/830b1dc206d0d41e18769774b37b8fe4e0d67ac5.tar.gz",
+      "revision": "830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+      "availability": "public",
+      "owner": "sisodias",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The prompt, brief, God Questions text and skills are SISO-authored and carry MIT.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/sisodias/unfuck-the-project/blob/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/LICENSE",
+            "observed_at": "2026-09-05",
+            "summary": "MIT license text is present at the exact release pin."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "830b1dc206d0d41e18769774b37b8fe4e0d67ac5"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The public repository is pinned to an exact commit.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/sisodias/unfuck-the-project/commit/830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+          "observed_at": "2026-09-05",
+          "summary": "Canonical public main resolved at this release."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "A commit-scoped public source archive is recorded and resolved.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/sisodias/unfuck-the-project/archive/830b1dc206d0d41e18769774b37b8fe4e0d67ac5.tar.gz",
+          "observed_at": "2026-09-05",
+          "summary": "The archive locator returned HTTP 200 on 2026-09-05 and is immutable by commit pin."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The release resolves to its Work, one exact artifact and the README that defines the contents.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:unfuck-the-project:830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+          "observed_at": "2026-09-05",
+          "summary": "46 files: the v3 prompt, brief template and example, the ranked God Questions with falsifiers, eight contract JSONs, the July origins, the 29 Aug binding example, and eleven SKILL.md packages including the bundled sg-search.sh."
+        }
+      ]
+    },
+    "installable": {
+      "state": "verified",
+      "reason": "Installation is copying UNFUCK.md and a filled BRIEF.md next to a project and pointing an agent at them; the README quick start was followed as written.",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "https://github.com/sisodias/unfuck-the-project/blob/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/README.md",
+          "observed_at": "2026-09-05",
+          "summary": "Quick start: clone, copy the brief, dispatch with a three-line instruction."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The public repository is source-complete for everything SISO authored and documents the upstream-rights boundary.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/unfuck-the-project/blob/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/README.md",
+          "observed_at": "2026-09-05",
+          "summary": "The README states the licence boundary between SISO-authored material and upstream authors."
+        }
+      ]
+    },
+    "portable": {
+      "state": "verified",
+      "reason": "Plain Markdown and one POSIX shell script with curl and jq; no machine-specific paths remain.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "publication-scan:unfuck-the-project:830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+          "observed_at": "2026-09-05",
+          "summary": "Scan found no /Users paths, private hostnames or network names."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:unfuck-the-project:830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+      "observed_at": "2026-09-05",
+      "summary": "46 files: the v3 prompt, brief template and example, the ranked God Questions with falsifiers, eight contract JSONs, the July origins, the 29 Aug binding example, and eleven SKILL.md packages including the bundled sg-search.sh."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "github-api:sisodias/unfuck-the-project:830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+      "observed_at": "2026-09-05",
+      "summary": "Head commit and LICENSE presence were read via the GitHub API immediately before this manifest was written."
+    }
+  ]
+}

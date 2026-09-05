@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:3a47e7b6-2974-4a0b-9844-cf9dd6d6289a",
+  "occurred_at": "2026-09-05T18:45:00+07:00",
+  "recorded_at": "2026-09-05T18:45:00+07:00",
+  "immutable": true,
+  "entry_type": "change_published",
+  "thread": {
+    "id": "gls:thread:unfuck-source-layer-publication",
+    "name": "UNFUCK Source Layer Publication",
+    "kind": "release"
+  },
+  "status": "completed",
+  "title": "UNFUCK prompt, Component Bank and Repo Bank published and registered",
+  "summary": "Three public MIT repositories were created under sisodias and registered as Works with exact commit-pinned Releases, then selected in Whole Library V38 under the Research section: the UNFUCK whole-project ownership prompt with the God Questions and skills, an 8,538-component UI bank with source, and the derived GitHub reuse banks exported from the Foundry identity database.",
+  "intent": "Make the owner-of-record method and its source layer usable by anyone with an agent, as the owner directed: the God Questions, the component corpus and the repository banks are meant to be pulled by other people, not held privately.",
+  "reasoning": [
+    "The prompt without its sources was a shell; the owner corrected that and the three repositories were published together so a fresh agent gets the method, the ranked questions and the two banks in one clone sequence.",
+    "Publication was preceded by a classification pass: owner name, local paths, private machine and network names, client names, one personal question (GQ-007) and client evidence paths were removed; the raw 1.9 GB identity database and the 1 GB compiled bundles stay unpublished behind the Foundry dataset boundary and a regeneration script.",
+    "The eight God Question contracts in the public repo are verbatim copies of registry/works records, so the Library remains the source and the repo is a projection; the new Works link back through GQ-004 and GQ-009 rather than duplicating the questions as new Works.",
+    "Each repository received its own Work and Release because they have separate boundaries, sizes and rights postures, and the banks will be re-exported on their own cadence."
+  ],
+  "changes": [
+    {
+      "kind": "registry_record",
+      "reference": "registry/works/unfuck-the-project.json",
+      "summary": "Added the UNFUCK playbook Work pinned to 830b1dc with relationships to Research, GQ-009, SISO Skills and the Agent Zero coordination playbook."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/works/siso-component-bank.json",
+      "summary": "Added the Component Bank knowledge_system Work pinned to 4aa89af with relationships to Research, GQ-004 and SISO Knowledge."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/works/siso-repo-bank.json",
+      "summary": "Added the Repo Bank knowledge_system Work pinned to 2d7d35e with relationships to Research, SISO Foundry and GQ-004."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/releases/unfuck-the-project-830b1dc.json",
+      "summary": "Release 3.0.0+830b1dc with a commit-scoped public archive; all six distribution states verified."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/releases/siso-component-bank-4aa89af.json",
+      "summary": "Release 1.0.0+4aa89af; addressable, downloadable, resolvable and forkable verified, installable and portable experimental."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/releases/siso-repo-bank-2d7d35e.json",
+      "summary": "Release 1.0.0+2d7d35e; all six distribution states verified for a data-only export."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/snapshots/whole-library-v38.json",
+      "summary": "Successor Snapshot preserving all V37 selections and adding the three Releases under the Research projection."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:a5ba6f03-f314-46c5-b106-4d4587446dbb",
+      "gls:work:ce031834-4149-42af-8d86-d9a05398fa24",
+      "gls:work:538c4491-8045-4526-9bcd-0268887601d0"
+    ],
+    "release_ids": [
+      "gls:release:9ac0eb6b-ff42-4505-ab48-9ca04b196c89",
+      "gls:release:7880b0ff-77db-4646-a29b-8061a8f7a42b",
+      "gls:release:388d8ccc-b47a-4fb2-9082-db925cd1530c"
+    ],
+    "snapshot_ids": [
+      "gls:snapshot:adfaabc8-ee8f-442c-88ba-64c5879bc623"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/unfuck-the-project",
+      "https://github.com/sisodias/siso-component-bank",
+      "https://github.com/sisodias/siso-repo-bank"
+    ]
+  },
+  "coordination": {
+    "owner": "Claude Fable main session at the owner's direct request",
+    "branch": "main",
+    "reserved_paths": [
+      "registry/works/unfuck-the-project.json",
+      "registry/works/siso-component-bank.json",
+      "registry/works/siso-repo-bank.json",
+      "registry/releases/unfuck-the-project-830b1dc.json",
+      "registry/releases/siso-component-bank-4aa89af.json",
+      "registry/releases/siso-repo-bank-2d7d35e.json",
+      "registry/snapshots/whole-library-v38.json",
+      "registry/events/2026-09-05-unfuck-source-layer-published.json"
+    ]
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "integration_check",
+      "reference": "github-api:sisodias/unfuck-the-project:830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+      "observed_at": "2026-09-05",
+      "summary": "Head commit, LICENSE and archive locator verified before the Work locator was written."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "github-api:sisodias/siso-component-bank:4aa89affc3298a102ef6751a96da6afd922f9cc7",
+      "observed_at": "2026-09-05",
+      "summary": "Head commit, LICENSE and archive locator verified; raw index.jsonl, a preview and a source file fetched with HTTP 200."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "github-api:sisodias/siso-repo-bank:2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+      "observed_at": "2026-09-05",
+      "summary": "Head commit, LICENSE and archive locator verified; a jq query against the raw bank_capability_top.jsonl returned the expected rows."
+    },
+    {
+      "kind": "registry_validation",
+      "reference": "registry:snapshot:whole-library-v38",
+      "observed_at": "2026-09-05",
+      "summary": "npm run verify passed after the records were added."
+    }
+  ],
+  "next_actions": [
+    "When INTENT-DISTILLATION ships UNFUCK v4, re-scrub and republish, then add a successor Release and Snapshot rather than editing 830b1dc.",
+    "Re-export the Repo Bank when the Foundry identity database changes materially; the export is read-only and the receipt records the table counts.",
+    "Decide whether the compiled component bundles (about 1 GB) deserve a separate archive Release with per-artifact receipts, or stay regenerable via harvest.mjs."
+  ]
+}

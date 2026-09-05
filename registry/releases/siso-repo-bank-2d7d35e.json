@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:388d8ccc-b47a-4fb2-9082-db925cd1530c",
+  "work_id": "gls:work:538c4491-8045-4526-9bcd-0268887601d0",
+  "version": "1.0.0+2d7d35e",
+  "title": "Repo Bank first public export",
+  "released_at": "2026-09-05T18:40:00+07:00",
+  "observed_at": "2026-09-05",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:e6a6d6f5-9430-4853-a46a-3ec6d564aa47",
+      "kind": "source_archive",
+      "locator": "https://github.com/sisodias/siso-repo-bank/archive/2d7d35ecbf7e1158d0a3527e1489040687ac214b.tar.gz",
+      "revision": "2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+      "availability": "public",
+      "owner": "sisodias",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The taxonomy, ratings, one-liners and indexes are SISO-authored and carry MIT; the repositories described keep their own licences, recorded per row.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/sisodias/siso-repo-bank/blob/2d7d35ecbf7e1158d0a3527e1489040687ac214b/LICENSE",
+            "observed_at": "2026-09-05",
+            "summary": "MIT license text is present at the exact release pin."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "2d7d35ecbf7e1158d0a3527e1489040687ac214b"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The public repository is pinned to an exact commit.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/sisodias/siso-repo-bank/commit/2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+          "observed_at": "2026-09-05",
+          "summary": "Canonical public main resolved at this release."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "A commit-scoped public source archive is recorded and resolved.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/sisodias/siso-repo-bank/archive/2d7d35ecbf7e1158d0a3527e1489040687ac214b.tar.gz",
+          "observed_at": "2026-09-05",
+          "summary": "The archive locator returned HTTP 200 on 2026-09-05 and is immutable by commit pin."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The release resolves to its Work, one exact artifact and the README that defines the contents.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-repo-bank:2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+          "observed_at": "2026-09-05",
+          "summary": "31 files: nine bank JSONL tables plus the gzipped 226,968-row placement table, fourteen star-farm files with INDEX.md and the farm script, the scrubbed capability shelf with its summary, and the UI prior-art manifest."
+        }
+      ]
+    },
+    "installable": {
+      "state": "verified",
+      "reason": "The banks are plain JSONL queried with jq; the README examples were run against the published files.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://raw.githubusercontent.com/sisodias/siso-repo-bank/2d7d35ecbf7e1158d0a3527e1489040687ac214b/bank/bank_capability_top.jsonl",
+          "observed_at": "2026-09-05",
+          "summary": "A jq query for capability auth-identity returned the expected two top rows from the raw published file."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The public repository is source-complete for everything SISO authored and documents the upstream-rights boundary.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-repo-bank/blob/2d7d35ecbf7e1158d0a3527e1489040687ac214b/README.md",
+          "observed_at": "2026-09-05",
+          "summary": "The README states the licence boundary between SISO-authored material and upstream authors."
+        }
+      ]
+    },
+    "portable": {
+      "state": "verified",
+      "reason": "Data-only release with no runtime; the farm script needs only gh and node.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-repo-bank/blob/2d7d35ecbf7e1158d0a3527e1489040687ac214b/github-farm/farm_github_urls.mjs",
+          "observed_at": "2026-09-05",
+          "summary": "The regenerator uses gh api graphql and writes JSONL; no private endpoints."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-repo-bank:2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+      "observed_at": "2026-09-05",
+      "summary": "31 files: nine bank JSONL tables plus the gzipped 226,968-row placement table, fourteen star-farm files with INDEX.md and the farm script, the scrubbed capability shelf with its summary, and the UI prior-art manifest."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "github-api:sisodias/siso-repo-bank:2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+      "observed_at": "2026-09-05",
+      "summary": "Head commit and LICENSE presence were read via the GitHub API immediately before this manifest was written."
+    }
+  ]
+}

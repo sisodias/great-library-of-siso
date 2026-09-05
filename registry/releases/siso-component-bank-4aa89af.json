@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:7880b0ff-77db-4646-a29b-8061a8f7a42b",
+  "work_id": "gls:work:ce031834-4149-42af-8d86-d9a05398fa24",
+  "version": "1.0.0+4aa89af",
+  "title": "Component Bank first public index",
+  "released_at": "2026-09-05T18:40:00+07:00",
+  "observed_at": "2026-09-05",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:900ff48e-d31c-4541-87f6-a2ffba58c052",
+      "kind": "source_archive",
+      "locator": "https://github.com/sisodias/siso-component-bank/archive/4aa89affc3298a102ef6751a96da6afd922f9cc7.tar.gz",
+      "revision": "4aa89affc3298a102ef6751a96da6afd922f9cc7",
+      "availability": "public",
+      "owner": "sisodias",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The index, scripts, curation and metadata are SISO-authored and carry MIT; each component's code belongs to its 21st.dev author and every row carries the upstream URL.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/sisodias/siso-component-bank/blob/4aa89affc3298a102ef6751a96da6afd922f9cc7/LICENSE",
+            "observed_at": "2026-09-05",
+            "summary": "MIT license text is present at the exact release pin."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "4aa89affc3298a102ef6751a96da6afd922f9cc7"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "The public repository is pinned to an exact commit.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/sisodias/siso-component-bank/commit/4aa89affc3298a102ef6751a96da6afd922f9cc7",
+          "observed_at": "2026-09-05",
+          "summary": "Canonical public main resolved at this release."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "A commit-scoped public source archive is recorded and resolved.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/sisodias/siso-component-bank/archive/4aa89affc3298a102ef6751a96da6afd922f9cc7.tar.gz",
+          "observed_at": "2026-09-05",
+          "summary": "The archive locator returned HTTP 200 on 2026-09-05 and is immutable by commit pin."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "The release resolves to its Work, one exact artifact and the README that defines the contents.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-component-bank:4aa89affc3298a102ef6751a96da6afd922f9cc7",
+          "observed_at": "2026-09-05",
+          "summary": "46,963 files: index.jsonl (8,538 rows), 7,977 meta, 7,975 previews, 7,954 source receipts (5,210 with code.tsx), 3,509 legacy directories, the curated layer, and the harvester, finder and catalog-site scripts."
+        }
+      ]
+    },
+    "installable": {
+      "state": "experimental",
+      "reason": "Query scripts run with Node 20+ from the repo root; the catalog-site build and curated board were exercised locally before publication but no disposable-root install receipt is recorded.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-component-bank/blob/4aa89affc3298a102ef6751a96da6afd922f9cc7/README.md",
+          "observed_at": "2026-09-05",
+          "summary": "Quick start documents find.mjs, curated/query.mjs and curated/serve.mjs invocations."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The public repository is source-complete for everything SISO authored and documents the upstream-rights boundary.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-component-bank/blob/4aa89affc3298a102ef6751a96da6afd922f9cc7/README.md",
+          "observed_at": "2026-09-05",
+          "summary": "The README states the licence boundary between SISO-authored material and upstream authors."
+        }
+      ]
+    },
+    "portable": {
+      "state": "experimental",
+      "reason": "Scripts resolve paths relative to the repo (BANK_ROOT override for build.mjs); 26 receipts and 2 scripts were rewritten from absolute paths, and no other environment coupling was found.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "publication-scan:siso-component-bank:4aa89affc3298a102ef6751a96da6afd922f9cc7",
+          "observed_at": "2026-09-05",
+          "summary": "No local absolute paths remain in scripts or receipts."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-component-bank:4aa89affc3298a102ef6751a96da6afd922f9cc7",
+      "observed_at": "2026-09-05",
+      "summary": "46,963 files: index.jsonl (8,538 rows), 7,977 meta, 7,975 previews, 7,954 source receipts (5,210 with code.tsx), 3,509 legacy directories, the curated layer, and the harvester, finder and catalog-site scripts."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "github-api:sisodias/siso-component-bank:4aa89affc3298a102ef6751a96da6afd922f9cc7",
+      "observed_at": "2026-09-05",
+      "summary": "Head commit and LICENSE presence were read via the GitHub API immediately before this manifest was written."
+    }
+  ]
+}
