@@ -26,6 +26,13 @@ back here. Registry Event `2026-09-06-project-spine-and-publish-released.json`
 records source delivery and the new selection; production readback of V39 is a
 separate receipt recorded after the verified site is published.
 
+V39 deployment receipt: source `fee0f5f2b8d7a001781b923a03ba48b075561f45`,
+https://650c640b.great-library-of-siso.pages.dev/ (6 September 2026).
+The stable alias returned HTTP 200 with exact local hashes for the root,
+Research JSON, Project OS/Skills dossiers and Shell page. Full verification
+passed at 245710848 bytes peak; publication peaked at 429457408 bytes.
+P2/gls registration is the next implementation slice.
+
 ## Library reading pilot
 
 The root one-pager and `siso-foundry` Work page now use the shared static rail

@@ -4,6 +4,7 @@
   "private": true,
   "description": "The human- and agent-readable registry for The Great Library of SISO.",
   "type": "module",
+  "bin": { "gls": "bin/gls" },
   "engines": {
     "node": ">=20"
   },

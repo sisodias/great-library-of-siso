@@ -2,6 +2,7 @@ import { spawnSync } from "node:child_process";
 
 const checks = [
   ["immutable history", "scripts/check-immutable-history.mjs"],
+  ["gls registration contract", "tests/gls.test.mjs"],
   ["promotion contract tests", "tests/promotion-contract.test.mjs"],
   ["intelligence contract tests", "tests/intelligence-contract.test.mjs"],
   ["laptop estate contract tests", "tests/laptop-estate.test.mjs"],

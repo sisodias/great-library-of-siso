@@ -1,0 +1,144 @@
+#!/usr/bin/env node
+import { cp, lstat, mkdir, mkdtemp, open, readFile, realpath, rm, unlink, writeFile } from 'node:fs/promises';
+import { basename, join, resolve } from 'node:path';
+import { tmpdir } from 'node:os';
+import { spawnSync } from 'node:child_process';
+
+const usage = 'gls add work|release|inventory|question --file record.json [--file another.json] [--name filename] [--root library-checkout] --reviewed-public [--dry-run]';
+const kinds = {
+  work: { directory: 'works', recordType: 'work' },
+  release: { directory: 'releases', recordType: 'release' },
+  inventory: { directory: 'source-inventories', recordType: 'source_inventory' },
+  question: { directory: 'works', recordType: 'work' },
+};
+
+function run(root, script, args = []) {
+  const result = spawnSync(process.execPath, ['--max-old-space-size=512', join(root, script), ...args], {
+    cwd: root, encoding: 'utf8', maxBuffer: 2 * 1024 * 1024,
+    env: { ...process.env, NODE_OPTIONS: '--max-old-space-size=512' },
+  });
+  if (result.status !== 0) throw new Error(`${script} failed (${result.status ?? result.error?.code}):\n${result.stderr || result.stdout}`.trim());
+}
+
+async function regularFile(file) {
+  const entry = await lstat(file);
+  if (!entry.isFile()) throw new Error(`${basename(file)} must be a regular file; symlinks are refused`);
+  return entry;
+}
+
+async function prepare(root, kind, inputs, name) {
+  const folder = join(root, 'registry', kinds[kind].directory);
+  if (await realpath(folder) !== folder) throw new Error('Registry directory must not resolve through a symlink');
+  if (inputs.length > 50 || (name && inputs.length !== 1)) throw new Error('Use at most 50 files; --name requires exactly one file');
+  const candidates = [];
+  for (const input of inputs) {
+    const file = resolve(input);
+    const entry = await regularFile(file);
+    if (entry.size > 2 * 1024 * 1024) throw new Error('A registry record may contain at most 2 MiB of reviewed metadata');
+    const bytes = await readFile(file);
+    if (bytes.length > 2 * 1024 * 1024) throw new Error('Input grew beyond the metadata size bound');
+    let record;
+    try { record = JSON.parse(bytes.toString('utf8')); } catch { throw new Error(`${basename(file)} is not valid JSON`); }
+    if (!record || Array.isArray(record) || record.record_type !== kinds[kind].recordType) throw new Error(`Expected a ${kinds[kind].recordType} record for ${kind}`);
+    if (kind === 'question' && (record.work_type !== 'research_question' || !record.research_contract)) throw new Error('A question requires work_type research_question and a research_contract');
+    const filename = name || basename(file, '.json');
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(filename)) throw new Error('Record filename must be a lowercase slug without directories');
+    const path = `registry/${kinds[kind].directory}/${filename}.json`;
+    if (candidates.some(candidate => candidate.path === path)) throw new Error('Two inputs target the same record filename');
+    try { await lstat(join(root, path)); throw new Error(`${path} already exists; gls add never overwrites a record`); }
+    catch (error) { if (error.code !== 'ENOENT') throw error; }
+    candidates.push({ path, bytes, id: record.id });
+  }
+  return candidates;
+}
+
+async function preflight(root, candidates) {
+  const stage = await mkdtemp(join(tmpdir(), 'gls-preflight-'));
+  try {
+    await cp(join(root, 'registry'), join(stage, 'registry'), { recursive: true });
+    await cp(join(root, 'schemas'), join(stage, 'schemas'), { recursive: true });
+    await mkdir(join(stage, 'scripts'));
+    for (const file of ['validate.mjs', 'scan-publication.mjs']) await cp(join(root, 'scripts', file), join(stage, 'scripts', file));
+    for (const candidate of candidates) await writeFile(join(stage, candidate.path), candidate.bytes, { flag: 'wx' });
+    run(stage, 'scripts/scan-publication.mjs', ['registry']);
+    run(stage, 'scripts/validate.mjs');
+  } finally {
+    await rm(stage, { recursive: true, force: true });
+  }
+}
+
+async function main(args) {
+  if (args.length === 0 || args.includes('--help')) { console.log(usage); return; }
+  const [action, kind, ...flags] = args;
+  if (action !== 'add' || !kinds[kind]) throw new Error(usage);
+  const options = { root: process.cwd(), files: [], dryRun: false, reviewed: false };
+  for (let i = 0; i < flags.length; i++) {
+    const key = flags[i];
+    if (key === '--dry-run') options.dryRun = true;
+    else if (key === '--reviewed-public') options.reviewed = true;
+    else if (['--file', '--root', '--name'].includes(key) && flags[i + 1] && !flags[i + 1].startsWith('--')) {
+      const value = flags[++i];
+      if (key === '--file') options.files.push(value);
+      else options[key.slice(2)] = value;
+    } else throw new Error(`Unknown or incomplete argument: ${key}`);
+  }
+  if (!options.reviewed || options.files.length === 0) throw new Error('Provide --file and --reviewed-public after reading the source, rights and public boundary');
+  const root = await realpath(resolve(options.root));
+  const metadata = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
+  if (metadata.name !== 'great-library-of-siso') throw new Error('--root must identify the intended Great Library checkout');
+  const candidates = await prepare(root, kind, options.files, options.name);
+  if (options.dryRun) {
+    await preflight(root, candidates);
+    console.log(JSON.stringify({ status: 'preflight_passed', written: false, records: candidates.map(({ path, id }) => ({ path, id })) }));
+    return;
+  }
+
+  const local = join(root, '.local');
+  await mkdir(local, { recursive: true });
+  if (await realpath(local) !== local) throw new Error('Local lock directory must not be a symlink');
+  const lockPath = join(local, 'gls-add.lock');
+  const lock = await open(lockPath, 'wx', 0o600).catch(error => {
+    if (error.code === 'EEXIST') throw new Error('Another gls add holds .local/gls-add.lock; inspect it before retrying');
+    throw error;
+  });
+  const lockIdentity = await lock.stat();
+  const created = [];
+  try {
+    await lock.writeFile(`${JSON.stringify({ pid: process.pid, started_at: new Date().toISOString() })}\n`);
+    run(root, 'scripts/check-immutable-history.mjs');
+    await preflight(root, candidates);
+    for (const candidate of candidates) {
+      const file = await open(join(root, candidate.path), 'wx');
+      created.push(candidate);
+      try { await file.writeFile(candidate.bytes); }
+      finally { await file.close(); }
+    }
+    run(root, 'scripts/verify.mjs');
+    console.log(JSON.stringify({ status: 'added', verification: 'full Library gate passed', records: candidates.map(({ path, id }) => ({ path, id })) }));
+  } catch (error) {
+    const retained = [];
+    for (const candidate of created.reverse()) {
+      const file = join(root, candidate.path);
+      try {
+        await regularFile(file);
+        if (!(await readFile(file)).equals(candidate.bytes)) { retained.push(candidate.path); continue; }
+        await unlink(file);
+      } catch (failure) { if (failure.code !== 'ENOENT') retained.push(candidate.path); }
+    }
+    if (created.length) {
+      try { run(root, 'scripts/build.mjs'); }
+      catch { error.message += '\nRegistry additions were rejected; generated site needs a successful rebuild.'; }
+    }
+    if (retained.length) error.message += `\nConcurrent or unexpected edits preserved for review: ${retained.join(', ')}`;
+    throw error;
+  } finally {
+    await lock.close();
+    const current = await lstat(lockPath).catch(() => null);
+    if (current?.ino === lockIdentity.ino && current?.dev === lockIdentity.dev) await unlink(lockPath);
+  }
+}
+
+main(process.argv.slice(2)).catch(error => {
+  console.error(JSON.stringify({ status: 'failed', message: error.message }));
+  process.exitCode = 1;
+});
