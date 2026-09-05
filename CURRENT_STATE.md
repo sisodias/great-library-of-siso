@@ -11,9 +11,17 @@ files; Foundry has authored reasoning, a relationship map, source highlights and
 source entry commands, alongside the existing evidence and distribution states.
 `docs/module-page-template.md` describes the source contract. V38 is unchanged.
 The verification Event is `2026-09-05-library-reading-pilot-verified.json`.
-Production readback and screenshots are recorded separately after publication;
-this paragraph alone is not a deployment receipt. The first guarded verify passed
-at 193478656 bytes peak under a two-billion-byte process-group cutoff.
+Published source: `7713cd8fa97b657744af5782cdee62c5ac9e92be`.
+Deployment: https://77550887.great-library-of-siso.pages.dev/ (5 September 2026).
+The deployment and stable alias both returned HTTP 200 and exact local hashes for
+the root, Foundry HTML/dossier, reading CSS, shell JS, Research and Repo Estate.
+Root SHA-256: `3f733658cd276dc0295dde3372ed118f29f24417bec92051de71fd244a2d76f1`.
+Foundry HTML SHA-256: `bfe8ef4be772f57fdbaec944e699bd3fddab891bd5ba4301dc15351f6d5f20e0`.
+Both pages were captured at 2000×1250 after deployment. Rail click/keyboard/reload
+checks passed; the 390px mobile views have no document-level horizontal overflow.
+Existing catalog search still filters correctly. The first guarded verify peaked
+at 193478656 bytes; final full verification peaked at 185630720 bytes and publish
+at 358678528 bytes, all under a two-billion-byte process-group cutoff.
 
 The new `publish` skill is authored and installed through Skills Hub. Its source
 is frozen for coordinated Hub integration, not yet claimed as a published Hub
