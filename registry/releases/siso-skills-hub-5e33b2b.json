@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943",
+  "work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+  "version": "0.2.0+5e33b2b",
+  "title": "Skills Hub public static publish capability",
+  "released_at": "2026-09-06T01:50:00+07:00",
+  "observed_at": "2026-09-06",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:cb648161-f300-4760-b2bb-e2a037186ec6",
+      "kind": "source_archive",
+      "locator": "https://github.com/sisodias/siso-skills-hub/archive/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8.tar.gz",
+      "revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+      "availability": "public",
+      "owner": "sisodias",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The SISO-owned source retains its reviewed MIT license; external assets retain their own rights.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/sisodias/siso-skills-hub/blob/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8/LICENSE",
+            "observed_at": "2026-09-06",
+            "summary": "MIT license text read from the exact published source."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "Exact public source commit is recorded.",
+      "evidence": [
+        {
+          "kind": "integration_check",
+          "reference": "https://github.com/sisodias/siso-skills-hub/commit/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+          "observed_at": "2026-09-06",
+          "summary": "Public GitHub commit resolved at the exact source pin."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "Commit-scoped source archive returned HTTP 200.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://codeload.github.com/sisodias/siso-skills-hub/tar.gz/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+          "observed_at": "2026-09-06",
+          "summary": "The exact public source archive was fetched successfully."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "Manifest identifies its stable Work and exact source artifact.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "registry/releases/siso-skills-hub-5e33b2b.json",
+          "observed_at": "2026-09-06",
+          "summary": "References and artifact pin are checked by the Library verification gate."
+        }
+      ]
+    },
+    "installable": {
+      "state": "verified",
+      "reason": "The reviewed publish skill installs through the canonical CLI; this does not claim every optional provider is configured.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-skills-hub:5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+          "observed_at": "2026-09-06",
+          "summary": "Canonical Hub suite passes 33 skills; publish 0.1.1 passes public-input, symlink/alias destination, collision and aggregate-memory checks. Official copy installation matches all source files. The prior frozen publish revision remains in commit 7cf036a."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "The exact public SISO source retains MIT licensing.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-skills-hub/blob/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8/LICENSE",
+          "observed_at": "2026-09-06",
+          "summary": "MIT license text read from the exact published source."
+        }
+      ]
+    },
+    "portable": {
+      "state": "experimental",
+      "reason": "Publish is bounded to reviewed public static output and caller-configured Wrangler; other Hub recipes retain their own boundaries.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "repo-check:siso-skills-hub:5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+          "observed_at": "2026-09-06",
+          "summary": "Canonical Hub suite passes 33 skills; publish 0.1.1 passes public-input, symlink/alias destination, collision and aggregate-memory checks. Official copy installation matches all source files. The prior frozen publish revision remains in commit 7cf036a."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "integration_check",
+      "reference": "https://github.com/sisodias/siso-skills-hub/commit/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+      "observed_at": "2026-09-06",
+      "summary": "Public GitHub commit resolved at the exact source pin."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-skills-hub:5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+      "observed_at": "2026-09-06",
+      "summary": "Canonical Hub suite passes 33 skills; publish 0.1.1 passes public-input, symlink/alias destination, collision and aggregate-memory checks. Official copy installation matches all source files. The prior frozen publish revision remains in commit 7cf036a."
+    }
+  ]
+}

@@ -47,6 +47,12 @@
       "reference": "source-review:project-os-agent-story:2026-07-29",
       "observed_at": "2026-07-29",
       "summary": "Product boundary and adoption contract reviewed from source-backed evidence."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-project-os:bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+      "observed_at": "2026-09-06",
+      "summary": "46 tests, 42-schema self-check and greenfield/existing-project adoption smoke passed. The published v0.4.1 package includes PAGE.md, HANDOFF.md, repos.json, owners.log, page.url and intake; GitHub is_template is true. The separate v0.5.0 fleet-pack tag remains unchanged."
     }
   ],
   "provenance": {
@@ -62,14 +68,14 @@
       {
         "type": "source_repository",
         "url": "https://github.com/sisodias/siso-project-os",
-        "revision": "main@d6290c609a6922e14b3faa27019aae31628686cb",
+        "revision": "main@bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
         "visibility": "public",
         "verified": true,
         "evidence": {
           "kind": "integration_check",
-          "reference": "github-api:sisodias/siso-project-os:d6290c609a6922e14b3faa27019aae31628686cb",
-          "observed_at": "2026-07-30",
-          "summary": "Complete public history and tags were mirrored to Lordsisodia; main remains pinned to the same verified commit."
+          "reference": "https://github.com/sisodias/siso-project-os/commit/bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+          "observed_at": "2026-09-06",
+          "summary": "Public GitHub commit resolved at the exact source pin."
         }
       }
     ],
@@ -88,39 +94,39 @@
     }
   },
   "selected_release": {
-    "id": "gls:release:bae2bab9-e411-4684-b595-3bf86b2761f9",
-    "version": "0.4.0+lordsisodia.d6290c6",
-    "released_at": "2026-07-29T22:38:19+07:00",
+    "id": "gls:release:ebfffcbc-fa33-498f-9b81-c81bb96e12a8",
+    "version": "0.4.1+bfa88dc",
+    "released_at": "2026-09-06T01:50:00+07:00",
     "release_kind": null,
     "distribution": {
       "addressable": {
         "state": "verified",
-        "reason": "The canonical public mirror is pinned to the exact preserved commit.",
+        "reason": "Exact public source commit is recorded.",
         "evidence_count": 1
       },
       "archive_downloadable": {
         "state": "verified",
-        "reason": "A public commit-scoped archive from the canonical account is recorded.",
+        "reason": "Commit-scoped source archive returned HTTP 200.",
         "evidence_count": 1
       },
       "manifest_resolvable": {
         "state": "verified",
-        "reason": "The release resolves to the stable Project OS Work and canonical mirror artifact.",
+        "reason": "Manifest identifies its stable Work and exact source artifact.",
         "evidence_count": 1
       },
       "installable": {
         "state": "verified",
-        "reason": "The exact clean commit passed its complete install, adoption, lifecycle, collision, verification, upgrade, and rollback test suite.",
+        "reason": "Clean and existing project adoption passed, with collision-preserving spine installation.",
         "evidence_count": 1
       },
       "forkable": {
         "state": "verified",
-        "reason": "The canonical repository is public, history-complete, tagged, and MIT licensed.",
+        "reason": "The exact public SISO source retains MIT licensing.",
         "evidence_count": 1
       },
       "portable": {
         "state": "verified",
-        "reason": "The test suite exercises empty and existing projects, Codex and Claude routes, optional providers, bounded discovery, deterministic output, upgrade, and rollback.",
+        "reason": "Node 20+ without runtime dependencies; adoption, preservation, lifecycle, upgrade and rollback tests passed.",
         "evidence_count": 1
       }
     }

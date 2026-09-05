@@ -4,6 +4,13 @@ import path from "node:path";
 const root = path.resolve("site");
 const basePath = normalizeBase(process.env.LIBRARY_BASE_PATH || "/");
 const errors = [];
+const [releaseRecords, snapshotRecords] = await Promise.all(["releases", "snapshots"].map(async (directory) => {
+  const location = path.resolve("registry", directory);
+  const entries = await readdir(location, { withFileTypes: true });
+  return Promise.all(entries.filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+    .map(async (entry) => JSON.parse(await readFile(path.join(location, entry.name), "utf8"))));
+}));
+const selectedSnapshot = [...snapshotRecords].sort((a, b) => String(a.version).localeCompare(String(b.version), undefined, { numeric: true })).at(-1);
 
 function normalizeBase(value) {
   const clean = `/${String(value).replace(/^\/+|\/+$/g, "")}/`;
@@ -141,8 +148,11 @@ if (!intelligence.events?.some((event) => event.id === "gls:event:4d237823-29e9-
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "35.0.0" && change.id === "gls:snapshot:39ebc62f-482e-4b1e-89b2-fd278a5a6b2a")) errors.push("intelligence.json: automatic registry changelog is missing V35");
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "37.0.0" && change.id === "gls:snapshot:29c1b8ef-d173-4a18-b15b-291412d43fc9")) errors.push("intelligence.json: automatic registry changelog is missing V37");
 if (!intelligence.registry_changes?.some((change) => change.kind === "snapshot" && change.version === "38.0.0" && change.id === "gls:snapshot:adfaabc8-ee8f-442c-88ba-64c5879bc623")) errors.push("intelligence.json: automatic registry changelog is missing V38");
-if (intelligence.registry_changes?.filter((change) => change.kind === "release").length !== 82) errors.push("intelligence.json: expected 82 immutable Releases at V38 UNFUCK source-layer publication");
-if (intelligence.registry_changes?.filter((change) => change.kind === "snapshot").length !== 38) errors.push("intelligence.json: expected 38 immutable Snapshots at V38 UNFUCK source-layer publication");
+for (const [kind, records] of [["release", releaseRecords], ["snapshot", snapshotRecords]]) {
+  const expectedIds = records.map((record) => record.id).sort();
+  const actualIds = (intelligence.registry_changes || []).filter((change) => change.kind === kind).map((change) => change.id).sort();
+  if (JSON.stringify(actualIds) !== JSON.stringify(expectedIds)) errors.push(`intelligence.json: ${kind} changelog must cover the exact immutable registry records`);
+}
 if (!intelligence.events?.some((event) => event.id === "gls:event:3a47e7b6-2974-4a0b-9844-cf9dd6d6289a" && event.status === "completed" && event.scope?.snapshot_ids?.includes("gls:snapshot:adfaabc8-ee8f-442c-88ba-64c5879bc623"))) errors.push("intelligence.json: UNFUCK source-layer publication Event is missing or does not select V38");
 if (intelligence.counts?.events !== intelligence.events?.length) errors.push("intelligence.json: Event count does not match the generated Event projection");
 if (intelligence.counts?.active_initiatives !== intelligence.active_initiatives?.length) errors.push("intelligence.json: active-initiative count does not match the generated initiative projection");
@@ -178,7 +188,7 @@ if (researchIndex.includes("explicit evidence scopes, and versioned answers.")) 
 for (const [field, expected] of Object.entries({ questions: 8, programmed_questions: 3, assumptions: 7, evidence_connections: 10, challenge_edges: 2, action_learning_links: 8, public_answers_released: 0 })) {
   if (researchProjection.counts?.[field] !== expected) errors.push(`research.json: expected ${field}=${expected}, found ${researchProjection.counts?.[field]}`);
 }
-if (researchProjection.snapshot_version !== "38.0.0" || researchProjection.snapshot_id !== "gls:snapshot:adfaabc8-ee8f-442c-88ba-64c5879bc623") errors.push("research.json: must identify the selected V38 snapshot");
+if (researchProjection.snapshot_version !== selectedSnapshot?.version || researchProjection.snapshot_id !== selectedSnapshot?.id) errors.push("research.json: must identify the latest numeric registry snapshot");
 for (const [questionId, state, assumptions, evidence, links] of [
   ["GQ-001", "partial", 2, 2, 1],
   ["GQ-002", "partial", 2, 2, 1],

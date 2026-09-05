@@ -1,6 +1,30 @@
 # Current state — The Great Library of SISO
 
-**Verified:** 2026-09-05
+**Verified:** 2026-09-06
+
+## Project spine and publishing sources
+
+Whole Library V39 selects Project OS `0.4.1+bfa88dc`, Skills Hub
+`0.2.0+5e33b2b` (publish skill 0.1.1), and the shared shell `0.1.0+adea886`.
+Source commits are public and their archives resolve. Project OS is marked as a
+GitHub template; its installer materializes the spine into a project. Creating
+from GitHub copies the kit and does not automatically execute that installer.
+
+Project OS adds `.agents/PAGE.md`, `HANDOFF.md`, `repos.json`, `owners.log`,
+`page.url` and `intake/`. All 46 tests pass at `bfa88dc3060f59b1372c74699fe7f74a2ef1bb36`,
+plus schema/self-check, adoption smokes and a fresh public-tag install. Its
+separate published v0.5.0 fleet tag is preserved; v0.4.1 extends canonical main.
+
+Publish is canonical at `5e33b2b1e21dfd54e66d9223ece058e7727c2cf8`, with a
+128 MiB aggregate input bound, resolved handoff boundary, exact live HTML readback
+and receipt append. The 33-skill Hub suite and two focused boundary tests pass;
+the installed capability matches source. The earlier frozen pilot is preserved
+in commit `7cf036a`. Shell licensing remains pending as its source declares.
+
+The Library itself now uses the compact spine entry files, routing current state
+back here. Registry Event `2026-09-06-project-spine-and-publish-released.json`
+records source delivery and the new selection; production readback of V39 is a
+separate receipt recorded after the verified site is published.
 
 ## Library reading pilot
 
@@ -9,7 +33,8 @@ from `sisodias/siso-shell` at `adea8860b50324f283637a596c5a41367ece9776`.
 The root has section counts, the eight-node ecosystem loop and five agent entry
 files; Foundry has authored reasoning, a relationship map, source highlights and
 source entry commands, alongside the existing evidence and distribution states.
-`docs/module-page-template.md` describes the source contract. V38 is unchanged.
+`docs/module-page-template.md` describes the source contract. The pilot originally
+shipped on V38; V39 adds the source-release selection described above.
 The verification Event is `2026-09-05-library-reading-pilot-verified.json`.
 Published source: `7713cd8fa97b657744af5782cdee62c5ac9e92be`.
 Deployment: https://77550887.great-library-of-siso.pages.dev/ (5 September 2026).
@@ -23,22 +48,26 @@ Existing catalog search still filters correctly. The first guarded verify peaked
 at 193478656 bytes; final full verification peaked at 185630720 bytes and publish
 at 358678528 bytes, all under a two-billion-byte process-group cutoff.
 
-The new `publish` skill is authored and installed through Skills Hub. Its source
-is frozen for coordinated Hub integration, not yet claimed as a published Hub
-commit. The existing Vercel fallback is retained. Industries, live-agent Now,
-SISO Source and Project OS template expansion are not completed by this pilot.
+The new `publish` skill is authored, installed and now published through Skills
+Hub. The existing Vercel fallback is retained. Industries, live-agent Now and
+SISO Source are separate follow-up work.
 
 **Public repository:** https://github.com/sisodias/great-library-of-siso
 
 **Live Library:** https://great-library-of-siso.pages.dev/ (Cloudflare Pages, ADR-0006; Vercel fallback for one cycle)
 
-**Operating status:** Whole Library V38 is the active immutable Snapshot. The
+**Operating status:** Whole Library V39 is the active immutable Snapshot. The
 registry is also the sole identity and lineage control plane for the first
 verified laptop-estate baseline; exact machine placement remains private.
 
 ## Current immutable baseline
 
-- Whole Library V38 is
+- Whole Library V39 is `gls:snapshot:ad689b84-b650-4344-a4d9-1b77d4c0c6a2`
+  (6 September 2026). It preserves every V38 selection except the two explicitly
+  replaced Project OS and Skills releases, adds the shared-shell Work/Release,
+  and preserves the existing Assembly. This does not change the separately
+  pinned Stack Distribution installer.
+- The prior Whole Library V38 is
   `gls:snapshot:adfaabc8-ee8f-442c-88ba-64c5879bc623` (5 September 2026). It
   preserves every V37 selection and adds three public MIT Releases under the
   Research section: the UNFUCK whole-project ownership prompt with the God
@@ -47,11 +76,11 @@ verified laptop-estate baseline; exact machine placement remains private.
   SISO Repo Bank exported read-only from the Foundry identity database
   (`siso-repo-bank` @ 2d7d35e). Event
   `2026-09-05-unfuck-source-layer-published.json` records the reasoning.
-- The registry contains 36 Work records, 82 Releases, two Assemblies, eight
-  Source Inventories, 38 Snapshots, six Decisions, and 41 Events. ADR-0006
+- The registry contains 37 Work records, 85 Releases, two Assemblies, eight
+  Source Inventories, 39 Snapshots, six Decisions, and 43 Events. ADR-0006
   (5 September 2026) moves the public reading surface to Cloudflare Pages;
   Event `2026-09-05-cloudflare-pages-hosting-decided.json` records the move.
-- V38 selects 31 exact Releases. A Work or Source Inventory added after its
+- V39 selects 32 exact Releases. A Work or Source Inventory added after its
   selection may be accepted identity or intake without pretending to be a new
   whole-Library Snapshot.
 - Existing Releases, Snapshots, Decisions, Source Inventories marked immutable,
@@ -149,7 +178,7 @@ local links and identity, and publication safety.
 
 ## Resume here
 
-1. Read `AGENTS.md`, this file, ADR-0005, Whole Library V38, and
+1. Read `AGENTS.md`, this file, ADR-0005, Whole Library V39, and
    `docs/laptop-estate.html`.
 2. Read the latest public Event for the initiative you are changing.
 3. For machine placement, read the ignored overlay and its latest receipt; do

@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:dd051ce3-520e-4799-87b0-1e3f2182cc72",
+  "slug": "siso-shell",
+  "name": "SISO Shell",
+  "summary": "A shared static navigation shell for SISO reading surfaces: one pinned rail implementation with a 20px collapsed state, keyboard control and saved local preference.",
+  "work_type": "tool",
+  "lifecycle_status": "experimental",
+  "section": "Agents",
+  "library_url": "/works/siso-shell/",
+  "agent_context_url": "/works/siso-shell/index.json",
+  "registry_source": "registry/works/siso-shell.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-shell",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-shell#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "The Library renders the shared shell and copies its pinned assets as generated output; the shell retains independent source ownership.",
+      "target_work_id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "target_name": "The Great Library of SISO",
+      "target_library_url": "/works/great-library-of-siso/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "scripts/build.mjs",
+          "observed_at": "2026-09-06",
+          "summary": "The root and Foundry pilot import the published shell package at the exact commit pin."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "integration_check",
+      "reference": "https://github.com/sisodias/siso-shell/commit/adea8860b50324f283637a596c5a41367ece9776",
+      "observed_at": "2026-09-06",
+      "summary": "Public GitHub commit resolved at the exact source pin."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-shell:adea8860b50324f283637a596c5a41367ece9776",
+      "observed_at": "2026-09-06",
+      "summary": "The Library imports the exact package commit at build time. Root and Foundry pages passed desktop click/keyboard/reload checks, 20px collapsed width and mobile overflow checks; both were captured at 2000x1250. Shell escaping and unsafe-link tests passed."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-shell",
+        "revision": "adea8860b50324f283637a596c5a41367ece9776",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "integration_check",
+          "reference": "https://github.com/sisodias/siso-shell/commit/adea8860b50324f283637a596c5a41367ece9776",
+          "observed_at": "2026-09-06",
+          "summary": "Public GitHub commit resolved at the exact source pin."
+        }
+      }
+    ],
+    "license": {
+      "status": "pending",
+      "spdx": "NOASSERTION",
+      "reason": "Initial shell publication explicitly grants no general redistribution license.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-shell/blob/adea8860b50324f283637a596c5a41367ece9776/README.md",
+          "observed_at": "2026-09-06",
+          "summary": "The original static implementation and its current licensing boundary are documented."
+        }
+      ]
+    }
+  },
+  "selected_release": {
+    "id": "gls:release:50dfa58e-c253-4bd5-814c-c609d38f536c",
+    "version": "0.1.0+adea886",
+    "released_at": "2026-09-06T01:50:00+07:00",
+    "release_kind": null,
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "Exact public source commit is recorded.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "Commit-scoped source archive returned HTTP 200.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "Manifest identifies its stable Work and exact source artifact.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "verified",
+        "reason": "The Library builds from the pinned shell package.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "unavailable",
+        "reason": "General redistribution permission is not asserted; licensing remains pending.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "verified",
+        "reason": "No runtime dependencies; static CSS/JS and escaped server-rendered HTML, exercised by the Library.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

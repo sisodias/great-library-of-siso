@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:62ed895b-cee0-49ef-aa6f-c9195a53acb8",
+  "occurred_at": "2026-09-06T01:50:25+07:00",
+  "recorded_at": "2026-09-06T01:50:25+07:00",
+  "immutable": true,
+  "entry_type": "change_published",
+  "thread": {
+    "id": "gls:thread:project-spine-and-publish",
+    "name": "Project Spine and Public Publishing",
+    "kind": "initiative"
+  },
+  "status": "completed",
+  "title": "Project spine template, publish capability and shared shell sources released",
+  "summary": "Project OS 0.4.1 adds the requested repository spine through its collision-preserving installer and is marked as a GitHub template. Skills Hub publishes the tested static publish capability, and the Library registers the shared shell with explicit pending licensing.",
+  "intent": "Make each project easier to start, find, publish and resume from durable repositories and URLs.",
+  "reasoning": [
+    "The existing Project OS installer already owns template materialization, adoption and upgrades; adding the spine there preserves existing owner state and avoids a second installer.",
+    "The existing v0.5.0 fleet-pack tag is a separate published line absent from canonical main. The spine is released as v0.4.1 and the fleet tag remains untouched.",
+    "Publish source was recovered byte-for-byte from its frozen pilot, then amended in a separate commit to bound aggregate memory and validate the actual handoff destination before deploying.",
+    "The Library selects source releases independently from the immutable Agent Stack Assembly and separately pinned Stack Distribution installer.",
+    "The shell is registered with pending redistribution licensing, matching its source documentation rather than inventing a reuse grant."
+  ],
+  "changes": [
+    {
+      "kind": "commit",
+      "reference": "https://github.com/sisodias/siso-project-os/commit/bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+      "summary": "Versioned repository spine, schema checks, adoption preservation and template documentation."
+    },
+    {
+      "kind": "commit",
+      "reference": "https://github.com/sisodias/siso-skills-hub/commit/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+      "summary": "Publish 0.1.1 with exact readback, caller handoff receipt and bounded memory."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/works/siso-shell.json",
+      "summary": "Shared shell identity and rights boundary."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/snapshots/whole-library-v39.json",
+      "summary": "V39 replaces two selected releases and adds the shell, preserving the remaining view."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+      "gls:work:dd051ce3-520e-4799-87b0-1e3f2182cc72"
+    ],
+    "release_ids": [
+      "gls:release:ebfffcbc-fa33-498f-9b81-c81bb96e12a8",
+      "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943",
+      "gls:release:50dfa58e-c253-4bd5-814c-c609d38f536c"
+    ],
+    "snapshot_ids": [
+      "gls:snapshot:ad689b84-b650-4344-a4d9-1b77d4c0c6a2"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/siso-project-os",
+      "https://github.com/sisodias/siso-skills-hub",
+      "https://github.com/sisodias/siso-shell"
+    ]
+  },
+  "coordination": {
+    "owner": "LIBRARY-ZERO",
+    "branch": "main",
+    "reserved_paths": []
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-project-os:bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+      "observed_at": "2026-09-06",
+      "summary": "46 tests pass; self-check validates 42 schemas; greenfield and existing migration smokes pass. A fresh npx install from public v0.4.1 created the front door and passed project check. Full suite peak RSS 248528896 bytes under a two-billion-byte process-group guard."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "https://github.com/sisodias/siso-project-os",
+      "observed_at": "2026-09-06",
+      "summary": "Public canonical main matches the released commit and GitHub is_template is true. GitHub templating copies the kit; the documented installer materializes a configured project."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "repo-check:siso-skills-hub:5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+      "observed_at": "2026-09-06",
+      "summary": "33 canonical skills validate; publish boundary and aggregate-memory tests pass; official installation matches source. Pilot 0.1.0 is preserved at 7cf036a."
+    }
+  ],
+  "next_actions": [
+    "Add the gls register capability over the existing schemas and verification gate.",
+    "Extend the reading surfaces and public sections using authored, publication-safe source records."
+  ]
+}
