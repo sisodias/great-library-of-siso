@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:1cc4c944-9351-466e-a442-9fe16ad145d1",
+  "slug": "siso-harness-lab",
+  "name": "SISO Harness Lab · Agent Efficiency Loop",
+  "summary": "An evidence-gated, agent-driven improvement project for useful work per unit of compute and operator attention. It preserves experiments, counterexamples, rejected changes and cold-pickup state. Private source; public metadata only. Synthetic checks do not establish fleet savings or autonomous model training.",
+  "work_type": "project",
+  "lifecycle_status": "active",
+  "section": "Unassigned",
+  "library_url": "/works/siso-harness-lab/",
+  "agent_context_url": "/works/siso-harness-lab/index.json",
+  "registry_source": "registry/works/siso-harness-lab.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-harness-lab",
+      "visibility": "private"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-harness-lab#readme",
+      "visibility": "private"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "The agent-layer efficiency question supplies research direction; Harness Lab holds scoped experiments and acceptance evidence, not a claimed answer or general multiplier.",
+      "target_work_id": "gls:work:e38b054f-b926-4410-b84d-4fd3249fd4f4",
+      "target_name": "GQ-002 · 10× the Agent Layer",
+      "target_library_url": "/works/frontier-question-agent-layer-efficiency/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry/works/frontier-question-gq-002.json",
+          "observed_at": "2026-09-06",
+          "summary": "Existing research question and reviewed improvement-project scope share the accepted-work objective."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "Reusable skills retain their independent Skills Hub source and promotion workflow. Harness Lab evaluates interventions; it is not a second skill catalog.",
+      "target_work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+      "target_name": "SISO Skills",
+      "target_library_url": "/works/siso-skills/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry/works/siso-skills.json",
+          "observed_at": "2026-09-06",
+          "summary": "Contextual source-ownership relationship; no automatic installation or runtime integration claim."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "Session Intelligence remains an independent privacy-reduced ingestion and recall capability. Raw sessions are not copied into Library metadata.",
+      "target_work_id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
+      "target_name": "SISO Session Intelligence",
+      "target_library_url": "/works/siso-session-intelligence/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry/works/siso-session-intelligence.json",
+          "observed_at": "2026-09-06",
+          "summary": "Potential evidence input, not proof of a deployed automatic ingestion connection."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "github-api:sisodias/siso-harness-lab:a0ae561e1c6a05ef747b1cc304849e9d723fc80b",
+      "observed_at": "2026-09-06",
+      "summary": "Eight local tests pass for quality-first evaluation, malformed input, immutable successor receipts, cold pickup, no-op repeats and exclusive-writer refusal. No fleet savings, scheduled agent, model training or public payload Release is claimed."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO",
+        "role": "maintainer",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-harness-lab",
+        "revision": "a0ae561e1c6a05ef747b1cc304849e9d723fc80b",
+        "visibility": "private",
+        "verified": true,
+        "evidence": {
+          "kind": "source_review",
+          "reference": "github-api:sisodias/siso-harness-lab:a0ae561e1c6a05ef747b1cc304849e9d723fc80b",
+          "observed_at": "2026-09-06",
+          "summary": "Private owning repository and pushed implementation commit verified. Reviewed project spine, experiment runner, evidence gates and tests. No private source payload is distributed by this Work."
+        }
+      }
+    ],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "Public metadata only. The private source and evidence receive no redistribution grant from this registration.",
+      "evidence": []
+    }
+  },
+  "selected_release": null
+}
