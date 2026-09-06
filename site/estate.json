@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T06:50:00.000Z",
+  "generated_at": "2026-09-06T13:34:00.000Z",
   "snapshot_id": "gls:snapshot:24417846-faeb-4b41-b9ef-38839954e00f",
   "snapshot_version": "40.0.0",
   "repositories": [
@@ -448,6 +448,24 @@
       "locator_type": "source_repository",
       "locator_revision": "main@fb615f281b6c89c31a5c16b3512299f2e1064569",
       "visibility": "public",
+      "status": "staging",
+      "active_release_id": null,
+      "active_release_version": null,
+      "artifact_revision": null
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-harness-lab",
+      "url": "https://github.com/sisodias/siso-harness-lab",
+      "work_id": "gls:work:1cc4c944-9351-466e-a442-9fe16ad145d1",
+      "work_name": "SISO Harness Lab · Agent Efficiency Loop",
+      "work_slug": "siso-harness-lab",
+      "work_type": "project",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-harness-lab/",
+      "locator_type": "source_repository",
+      "locator_revision": "a0ae561e1c6a05ef747b1cc304849e9d723fc80b",
+      "visibility": "private",
       "status": "staging",
       "active_release_id": null,
       "active_release_version": null,

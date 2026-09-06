@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:1ac03e5e-3f19-4c42-917f-0f0abebfc3be",
+  "occurred_at": "2026-09-06T13:34:00Z",
+  "recorded_at": "2026-09-06T13:34:00Z",
+  "immutable": true,
+  "entry_type": "initiative_completed",
+  "thread": {"id": "gls:thread:harness-lab-efficiency-metadata", "name": "Harness Lab efficiency metadata", "kind": "initiative"},
+  "status": "completed",
+  "title": "Register the agent-driven efficiency-improvement project",
+  "summary": "Public-safe Harness Lab identity and contextual links; the dedicated project and operating evidence remain private.",
+  "intent": "Connect the user-requested durable efficiency loop to the existing Library without creating a second owning repository or exposing source payloads.",
+  "reasoning": ["Source ownership, fixture evidence and deployment claims remain separate. No Release or Snapshot change is needed for this metadata-only registration."],
+  "changes": [{"kind": "registry_record", "reference": "registry/works/siso-harness-lab.json", "summary": "Add stable project identity, private source locator and contextual research/skill/recall relationships."}],
+  "scope": {"work_ids": ["gls:work:1cc4c944-9351-466e-a442-9fe16ad145d1"], "release_ids": [], "snapshot_ids": [], "repository_urls": ["https://github.com/sisodias/great-library-of-siso"]},
+  "coordination": {"owner": "SISO Harness Lab contribution", "branch": "feat/harness-lab-library-20260906", "reserved_paths": []},
+  "visibility": "public",
+  "evidence": [{"kind": "source_review", "reference": "registry/works/siso-harness-lab.json", "observed_at": "2026-09-06", "summary": "Source reviewed and metadata-only boundary preserved. Publication/readback is a separate delivery receipt, not established by this Event."}],
+  "next_actions": ["Verify and publish the generated Work page; retain private experiment evidence and distinguish agent-session continuation from an unattended service."]
+}

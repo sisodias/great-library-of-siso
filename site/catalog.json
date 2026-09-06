@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T06:50:00.000Z",
+  "generated_at": "2026-09-06T13:34:00.000Z",
   "base_path": "/",
   "works": [
     {
@@ -659,6 +659,31 @@
           "label": "Read README",
           "url": "https://github.com/sisodias/siso-foundry#readme",
           "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "gls:work:1cc4c944-9351-466e-a442-9fe16ad145d1",
+      "slug": "siso-harness-lab",
+      "name": "SISO Harness Lab · Agent Efficiency Loop",
+      "summary": "An evidence-gated, agent-driven improvement project for useful work per unit of compute and operator attention. It preserves experiments, counterexamples, rejected changes and cold-pickup state. Private source; public metadata only. Synthetic checks do not establish fleet savings or autonomous model training.",
+      "library_url": "/works/siso-harness-lab/",
+      "agent_context_url": "/works/siso-harness-lab/index.json",
+      "type": "project",
+      "maturity": "active",
+      "section": "Unassigned",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-harness-lab",
+          "visibility": "private"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-harness-lab#readme",
+          "visibility": "private"
         }
       ]
     },
@@ -1390,6 +1415,24 @@
       "locator_type": "source_repository",
       "locator_revision": "main@fb615f281b6c89c31a5c16b3512299f2e1064569",
       "visibility": "public",
+      "status": "staging",
+      "active_release_id": null,
+      "active_release_version": null,
+      "artifact_revision": null
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-harness-lab",
+      "url": "https://github.com/sisodias/siso-harness-lab",
+      "work_id": "gls:work:1cc4c944-9351-466e-a442-9fe16ad145d1",
+      "work_name": "SISO Harness Lab · Agent Efficiency Loop",
+      "work_slug": "siso-harness-lab",
+      "work_type": "project",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-harness-lab/",
+      "locator_type": "source_repository",
+      "locator_revision": "a0ae561e1c6a05ef747b1cc304849e9d723fc80b",
+      "visibility": "private",
       "status": "staging",
       "active_release_id": null,
       "active_release_version": null,
@@ -6043,7 +6086,7 @@
   },
   "intelligence": {
     "counts": {
-      "events": 47,
+      "events": 48,
       "decisions": 6,
       "active_initiatives": 3,
       "registry_changes": 126
