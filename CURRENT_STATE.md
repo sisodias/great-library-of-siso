@@ -10,6 +10,12 @@ detail pages; the immutable V39 selection remains unchanged. No new answer
 Release or research result is claimed. The existing P1/P2/spine work is included
 in this publication. Owner instruction: record the live receipt, then idle.
 
+Published source: `12099ee15d0ae7c2b95341a2d2e425ba8240ed34`.
+Exact deployment: https://29e40f52.great-library-of-siso.pages.dev/.
+The stable front door and all 13 checked question/data routes returned HTTP 200
+with exact local hashes. Full Library verification and publication preflight
+passed. LIBRARY-ZERO is idle after this requested publication.
+
 ## Project spine and publishing sources
 
 Whole Library V39 selects Project OS `0.4.1+bfa88dc`, Skills Hub
