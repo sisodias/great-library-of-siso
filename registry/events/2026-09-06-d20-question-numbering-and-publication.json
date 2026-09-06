@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:6700b8f8-1df0-4cab-93b5-d1ce49ade9d9",
+  "occurred_at": "2026-09-06T05:47:57.298Z",
+  "recorded_at": "2026-09-06T05:47:57.298Z",
+  "immutable": true,
+  "entry_type": "change_published",
+  "thread": {
+    "id": "gls:thread:d20-question-numbering-and-publication",
+    "name": "D-20 Question Numbering and Publication",
+    "kind": "decision"
+  },
+  "status": "completed",
+  "title": "D-20 assigns compute to GQ-023 and preserves Mathematics as GQ-011",
+  "summary": "The prepared compute question receives GQ-023. Existing local GQ-012–019 records and the P1/P2/V39 front door are approved for immediate publication; the V39 release selection remains unchanged.",
+  "intent": "Publish the current Library front door and question metadata, record the delivery receipt and idle.",
+  "reasoning": [
+    "Preserve the already published Mathematics question label and stable Work identity.",
+    "Apply the explicit D-20 numbering decision to the prepared compute record without new research.",
+    "Publish current verified work while preserving the immutable V39 selection."
+  ],
+  "changes": [
+    {
+      "kind": "registry_record",
+      "reference": "registry/works/frontier-question-gq-023.json",
+      "summary": "Prepared compute and delegation question assigned GQ-023."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/works/frontier-question-gq-012.json",
+      "summary": "Existing local GQ-012–019 metadata included in the publication checkpoint."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:7342fe19-601a-4ee5-8774-6e6e5d9d7752",
+      "gls:work:bf0a8216-70cc-4695-8256-609078a67d18",
+      "gls:work:5b7ba225-a6fe-430a-93fb-e9f181cc091c",
+      "gls:work:decde283-e1cf-4c59-9e92-86e7f09e1b8e",
+      "gls:work:0cbdf4f9-6c9c-4810-bb98-8a0ca503c70c",
+      "gls:work:2815577e-418a-4530-ae4f-887976aea59d",
+      "gls:work:62d67eb4-c5a5-4d31-bfe5-34753c99cd97",
+      "gls:work:78661456-54d0-448f-a9f5-cfd459fa8f73",
+      "gls:work:2e9b9aff-65f0-4a15-8bb0-05bf6181ba9e"
+    ],
+    "snapshot_ids": [
+      "gls:snapshot:ad689b84-b650-4344-a4d9-1b77d4c0c6a2"
+    ]
+  },
+  "coordination": {
+    "owner": "LIBRARY-ZERO",
+    "branch": "main",
+    "reserved_paths": []
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "documentation",
+      "reference": "owner-decision:D-20",
+      "observed_at": "2026-09-06",
+      "summary": "Explicit instruction: compute takes GQ-023, Mathematics retains GQ-011; publish the local P1/P2/V39 and GQ work, write the URL and one owner line, then idle."
+    }
+  ],
+  "next_actions": []
+}

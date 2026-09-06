@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:2e9b9aff-65f0-4a15-8bb0-05bf6181ba9e",
+  "slug": "frontier-question-gq-019",
+  "name": "GQ-019 · Conversation to Accepted Change",
+  "summary": "How can authorized conversation and media reliably become the correct project change with source identity and ownership preserved?",
+  "work_type": "research_question",
+  "lifecycle_status": "experimental",
+  "section": "Unassigned",
+  "library_url": "/works/frontier-question-gq-019/",
+  "agent_context_url": "/works/frontier-question-gq-019/index.json",
+  "registry_source": "registry/works/frontier-question-gq-019.json",
+  "source_links": [],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "target_work_id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "target_name": "SISO Project OS",
+      "target_library_url": "/works/siso-project-os/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-019:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "target_name": "SISO Knowledge",
+      "target_library_url": "/works/siso-knowledge/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-019:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "target_work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "target_name": "SISO Agent Zero",
+      "target_library_url": "/works/siso-agent-zero/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-019:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:library-question-intake:gq-019:2026-09-06",
+      "observed_at": "2026-09-06",
+      "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "This is question metadata. Rights for source payloads and accepted answers are evaluated per Release artifact.",
+      "evidence": []
+    }
+  },
+  "selected_release": null
+}

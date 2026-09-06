@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:decde283-e1cf-4c59-9e92-86e7f09e1b8e",
+  "slug": "frontier-question-gq-014",
+  "name": "GQ-014 · Durable Upstream Bets",
+  "summary": "Which upstream teams and projects are worth adopting when maintenance, compatibility and eventual removal are considered together?",
+  "work_type": "research_question",
+  "lifecycle_status": "experimental",
+  "section": "Unassigned",
+  "library_url": "/works/frontier-question-gq-014/",
+  "agent_context_url": "/works/frontier-question-gq-014/index.json",
+  "registry_source": "registry/works/frontier-question-gq-014.json",
+  "source_links": [],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "target_name": "SISO Foundry",
+      "target_library_url": "/works/siso-foundry/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-014:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "target_work_id": "gls:work:538c4491-8045-4526-9bcd-0268887601d0",
+      "target_name": "SISO Repo Bank",
+      "target_library_url": "/works/siso-repo-bank/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-014:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "target_work_id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+      "target_name": "SISO People Graph",
+      "target_library_url": "/works/siso-people-graph/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-014:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:library-question-intake:gq-014:2026-09-06",
+      "observed_at": "2026-09-06",
+      "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "This is question metadata. Rights for source payloads and accepted answers are evaluated per Release artifact.",
+      "evidence": []
+    }
+  },
+  "selected_release": null
+}

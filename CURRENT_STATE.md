@@ -2,6 +2,14 @@
 
 **Verified:** 2026-09-06
 
+## D-20 publication checkpoint
+
+D-20 assigns the prepared compute/delegation question to GQ-023 and preserves
+Mathematics as GQ-011. GQ-012–019 and GQ-023 are current Work metadata with public
+detail pages; the immutable V39 selection remains unchanged. No new answer
+Release or research result is claimed. The existing P1/P2/spine work is included
+in this publication. Owner instruction: record the live receipt, then idle.
+
 ## Project spine and publishing sources
 
 Whole Library V39 selects Project OS `0.4.1+bfa88dc`, Skills Hub
@@ -31,7 +39,8 @@ https://650c640b.great-library-of-siso.pages.dev/ (6 September 2026).
 The stable alias returned HTTP 200 with exact local hashes for the root,
 Research JSON, Project OS/Skills dossiers and Shell page. Full verification
 passed at 245710848 bytes peak; publication peaked at 429457408 bytes.
-P2/gls registration is the next implementation slice.
+P2/gls is published at Library source `8f17a5e` and its Hub skill at `f8104e6`;
+the D-20 checkpoint publishes the locally verified question metadata.
 
 ## Library reading pilot
 
@@ -83,8 +92,8 @@ verified laptop-estate baseline; exact machine placement remains private.
   SISO Repo Bank exported read-only from the Foundry identity database
   (`siso-repo-bank` @ 2d7d35e). Event
   `2026-09-05-unfuck-source-layer-published.json` records the reasoning.
-- The registry contains 37 Work records, 85 Releases, two Assemblies, eight
-  Source Inventories, 39 Snapshots, six Decisions, and 43 Events. ADR-0006
+- The registry contains 46 Work records, 85 Releases, two Assemblies, eight
+  Source Inventories, 39 Snapshots, six Decisions, and 44 Events. ADR-0006
   (5 September 2026) moves the public reading surface to Cloudflare Pages;
   Event `2026-09-05-cloudflare-pages-hosting-decided.json` records the move.
 - V39 selects 32 exact Releases. A Work or Source Inventory added after its

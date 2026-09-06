@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:2e9b9aff-65f0-4a15-8bb0-05bf6181ba9e",
+  "slug": "frontier-question-gq-019",
+  "name": "GQ-019 · Conversation to Accepted Change",
+  "summary": "How can authorized conversation and media reliably become the correct project change with source identity and ownership preserved?",
+  "work_type": "research_question",
+  "lifecycle_status": "experimental",
+  "updated_at": "2026-09-06",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "This is question metadata. Rights for source payloads and accepted answers are evaluated per Release artifact.",
+      "evidence": []
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-019:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-019:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-019:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    }
+  ],
+  "research_contract": {
+    "question_id": "GQ-019",
+    "question": "How can authorized conversation and media reliably become the correct project change with source identity and ownership preserved?",
+    "state": "scoped",
+    "evidence_mode": "hybrid",
+    "source_work_ids": [
+      "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719"
+    ],
+    "source_scopes": [
+      "Public intake and task-ownership contracts",
+      "Owner-authorized export or synthetic replay cases with private payloads retained by their owner"
+    ],
+    "decision_to_change": "Choose intake, deduplication, source interpretation and task-routing practices before any live integration or outward response.",
+    "success_criteria": [
+      "Replay a bounded input set and reconcile proposed changes against the owner's source-read list.",
+      "Distinguish human intent, assistant proposals, delivery copies, later corrections and the correct project owner."
+    ],
+    "falsifiers": [
+      "The intake misses a later correction, duplicates a request or treats an assistant proposal as human authorization.",
+      "The resulting change is assigned to the wrong owner, loses its source or crosses an outward-action boundary."
+    ],
+    "evidence_gaps": [
+      "A parsed message or task row does not prove complete media coverage, correct authorship or an accepted change."
+    ],
+    "watch_triggers": [
+      "New owner-approved outcome or counterexample changes the decision evidence.",
+      "The relevant source, operating constraint or acceptance boundary materially changes."
+    ],
+    "answer_shape": "A replay receipt that joins source occurrences, interpretation, owner assignment and accepted/rejected changes without publishing private content.",
+    "refresh_policy": "Review when relevant owner evidence or decision conditions change; registration starts no collector, benchmark, scheduler or new execution lane.",
+    "publication_boundary": "public_metadata_only",
+    "state_note": "Library-authored proposed criteria and counterevidence, not an evaluated method or accepted answer. This metadata does not establish measured gains, commercial commitments or authorization for new execution."
+  },
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:library-question-intake:gq-019:2026-09-06",
+      "observed_at": "2026-09-06",
+      "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+    }
+  ]
+}

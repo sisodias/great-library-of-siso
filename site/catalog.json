@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T18:50:25.000Z",
+  "generated_at": "2026-09-06T05:47:57.298Z",
   "base_path": "/",
   "works": [
     {
@@ -160,6 +160,114 @@
           "visibility": "public"
         }
       ]
+    },
+    {
+      "id": "gls:work:bf0a8216-70cc-4695-8256-609078a67d18",
+      "slug": "frontier-question-gq-012",
+      "name": "GQ-012 · Context that Preserves Intent",
+      "summary": "How can project owners retain the right intent and evidence while avoiding repeated full-context reconstruction?",
+      "library_url": "/works/frontier-question-gq-012/",
+      "agent_context_url": "/works/frontier-question-gq-012/index.json",
+      "type": "research_question",
+      "maturity": "experimental",
+      "section": "Unassigned",
+      "source_links": []
+    },
+    {
+      "id": "gls:work:5b7ba225-a6fe-430a-93fb-e9f181cc091c",
+      "slug": "frontier-question-gq-013",
+      "name": "GQ-013 · A Useful Reusable Building Set",
+      "summary": "How can components, flows, modules and assets form a small building set that produces coherent, accessible and accepted applications?",
+      "library_url": "/works/frontier-question-gq-013/",
+      "agent_context_url": "/works/frontier-question-gq-013/index.json",
+      "type": "research_question",
+      "maturity": "experimental",
+      "section": "Unassigned",
+      "source_links": []
+    },
+    {
+      "id": "gls:work:decde283-e1cf-4c59-9e92-86e7f09e1b8e",
+      "slug": "frontier-question-gq-014",
+      "name": "GQ-014 · Durable Upstream Bets",
+      "summary": "Which upstream teams and projects are worth adopting when maintenance, compatibility and eventual removal are considered together?",
+      "library_url": "/works/frontier-question-gq-014/",
+      "agent_context_url": "/works/frontier-question-gq-014/index.json",
+      "type": "research_question",
+      "maturity": "experimental",
+      "section": "Unassigned",
+      "source_links": []
+    },
+    {
+      "id": "gls:work:0cbdf4f9-6c9c-4810-bb98-8a0ca503c70c",
+      "slug": "frontier-question-gq-015",
+      "name": "GQ-015 · Useful Human Decisions from Agent Work",
+      "summary": "How should agents present important work so people can understand it, make necessary decisions and remain in control?",
+      "library_url": "/works/frontier-question-gq-015/",
+      "agent_context_url": "/works/frontier-question-gq-015/index.json",
+      "type": "research_question",
+      "maturity": "experimental",
+      "section": "Unassigned",
+      "source_links": []
+    },
+    {
+      "id": "gls:work:2815577e-418a-4530-ae4f-887976aea59d",
+      "slug": "frontier-question-gq-016",
+      "name": "GQ-016 · Persistent Project Ownership",
+      "summary": "How can persistent project owners complete authorized work while preserving intent, recovery and necessary human control?",
+      "library_url": "/works/frontier-question-gq-016/",
+      "agent_context_url": "/works/frontier-question-gq-016/index.json",
+      "type": "research_question",
+      "maturity": "experimental",
+      "section": "Unassigned",
+      "source_links": []
+    },
+    {
+      "id": "gls:work:62d67eb4-c5a5-4d31-bfe5-34753c99cd97",
+      "slug": "frontier-question-gq-017",
+      "name": "GQ-017 · Compute Placement and Continuity",
+      "summary": "How should source, data and runtimes be placed across available hosts so useful work stays discoverable and recoverable within real resource limits?",
+      "library_url": "/works/frontier-question-gq-017/",
+      "agent_context_url": "/works/frontier-question-gq-017/index.json",
+      "type": "research_question",
+      "maturity": "experimental",
+      "section": "Unassigned",
+      "source_links": []
+    },
+    {
+      "id": "gls:work:78661456-54d0-448f-a9f5-cfd459fa8f73",
+      "slug": "frontier-question-gq-018",
+      "name": "GQ-018 · Pricing that Sustains Delivered Value",
+      "summary": "How can a service model reflect delivered value while sustainably funding operation, support and continued improvement?",
+      "library_url": "/works/frontier-question-gq-018/",
+      "agent_context_url": "/works/frontier-question-gq-018/index.json",
+      "type": "research_question",
+      "maturity": "experimental",
+      "section": "Unassigned",
+      "source_links": []
+    },
+    {
+      "id": "gls:work:2e9b9aff-65f0-4a15-8bb0-05bf6181ba9e",
+      "slug": "frontier-question-gq-019",
+      "name": "GQ-019 · Conversation to Accepted Change",
+      "summary": "How can authorized conversation and media reliably become the correct project change with source identity and ownership preserved?",
+      "library_url": "/works/frontier-question-gq-019/",
+      "agent_context_url": "/works/frontier-question-gq-019/index.json",
+      "type": "research_question",
+      "maturity": "experimental",
+      "section": "Unassigned",
+      "source_links": []
+    },
+    {
+      "id": "gls:work:7342fe19-601a-4ee5-8774-6e6e5d9d7752",
+      "slug": "frontier-question-gq-023",
+      "name": "GQ-023 · Accepted Work from Compute and Delegation",
+      "summary": "When should a strong project owner work directly or delegate bounded tasks to improve accepted outcomes per unit of time, attention and compute?",
+      "library_url": "/works/frontier-question-gq-023/",
+      "agent_context_url": "/works/frontier-question-gq-023/index.json",
+      "type": "research_question",
+      "maturity": "experimental",
+      "section": "Unassigned",
+      "source_links": []
     },
     {
       "id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
@@ -5886,7 +5994,7 @@
   },
   "intelligence": {
     "counts": {
-      "events": 43,
+      "events": 44,
       "decisions": 6,
       "active_initiatives": 3,
       "registry_changes": 124

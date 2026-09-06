@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:7342fe19-601a-4ee5-8774-6e6e5d9d7752",
+  "slug": "frontier-question-gq-023",
+  "name": "GQ-023 · Accepted Work from Compute and Delegation",
+  "summary": "When should a strong project owner work directly or delegate bounded tasks to improve accepted outcomes per unit of time, attention and compute?",
+  "work_type": "research_question",
+  "lifecycle_status": "experimental",
+  "updated_at": "2026-09-06",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "This is question metadata. Rights for source payloads and accepted answers are evaluated per Release artifact.",
+      "evidence": []
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-023:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-023:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-023:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    }
+  ],
+  "research_contract": {
+    "question_id": "GQ-023",
+    "question": "When should a strong project owner work directly or delegate bounded tasks to improve accepted outcomes per unit of time, attention and compute?",
+    "state": "scoped",
+    "evidence_mode": "hybrid",
+    "source_work_ids": [
+      "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+      "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943"
+    ],
+    "source_scopes": [
+      "Publication-safe task, dispatch, review and recovery receipts",
+      "Paired or naturally occurring work with explicit acceptance criteria"
+    ],
+    "decision_to_change": "Choose direct work, bounded delegation or a stronger owner for a defined task class after accounting for setup, review and repair.",
+    "success_criteria": [
+      "Compare accepted outcomes for the same task class and include preparation, verification and repair costs.",
+      "Keep route compatibility, task quality and account cost as separate observations."
+    ],
+    "falsifiers": [
+      "The apparent delegation gain disappears after verification and repair are counted.",
+      "A cheaper or faster method produces more rejected outcomes or loses the intended task."
+    ],
+    "evidence_gaps": [
+      "No public controlled result establishes a universal model, delegation or cost multiplier."
+    ],
+    "watch_triggers": [
+      "New owner-approved outcome or counterexample changes the decision evidence.",
+      "The relevant source, operating constraint or acceptance boundary materially changes."
+    ],
+    "answer_shape": "A task-class decision table with the baseline, accepted result, full effort/cost accounting, counterexamples and uncertainty.",
+    "refresh_policy": "Review when relevant owner evidence or decision conditions change; registration starts no collector, benchmark, scheduler or new execution lane.",
+    "publication_boundary": "public_metadata_only",
+    "state_note": "Library-authored proposed criteria and counterevidence, not an evaluated method or accepted answer. This metadata does not establish measured gains, commercial commitments or authorization for new execution."
+  },
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:library-question-intake:gq-023:2026-09-06",
+      "observed_at": "2026-09-06",
+      "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+    },
+    {
+      "kind": "documentation",
+      "reference": "owner-decision:D-20",
+      "observed_at": "2026-09-06",
+      "summary": "Fable's D-20 decision under Shaan's standing instruction assigns compute and delegation to GQ-023 and preserves Mathematics as GQ-011."
+    }
+  ]
+}

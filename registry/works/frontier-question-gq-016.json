@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:2815577e-418a-4530-ae4f-887976aea59d",
+  "slug": "frontier-question-gq-016",
+  "name": "GQ-016 · Persistent Project Ownership",
+  "summary": "How can persistent project owners complete authorized work while preserving intent, recovery and necessary human control?",
+  "work_type": "research_question",
+  "lifecycle_status": "experimental",
+  "updated_at": "2026-09-06",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "This is question metadata. Rights for source payloads and accepted answers are evaluated per Release artifact.",
+      "evidence": []
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-016:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-016:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-016:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    }
+  ],
+  "research_contract": {
+    "question_id": "GQ-016",
+    "question": "How can persistent project owners complete authorized work while preserving intent, recovery and necessary human control?",
+    "state": "scoped",
+    "evidence_mode": "hybrid",
+    "source_work_ids": [
+      "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd"
+    ],
+    "source_scopes": [
+      "Public project ownership and handoff contracts",
+      "Authorized owner delivery, recovery and review evidence"
+    ],
+    "decision_to_change": "Choose ownership, routing and handoff practices that reduce avoidable intervention without losing accountability.",
+    "success_criteria": [
+      "An owner reaches the real acceptance gate with current source, scope and evidence available to a successor.",
+      "Distinguish the owner's report, independent acceptance and actual release of write authority."
+    ],
+    "falsifiers": [
+      "Reduced coordination produces more scope errors, lost corrections, duplicate writers or rejected outcomes.",
+      "A successor can locate handoff files but cannot recover the actual evidence and next action."
+    ],
+    "evidence_gaps": [
+      "A handoff-file count or quiet coordinator does not establish autonomous delivery or reliable succession."
+    ],
+    "watch_triggers": [
+      "New owner-approved outcome or counterexample changes the decision evidence.",
+      "The relevant source, operating constraint or acceptance boundary materially changes."
+    ],
+    "answer_shape": "One observed ownership and recovery case with the acceptance boundary, intervention/rework accounting and reusable limits.",
+    "refresh_policy": "Review when relevant owner evidence or decision conditions change; registration starts no collector, benchmark, scheduler or new execution lane.",
+    "publication_boundary": "public_metadata_only",
+    "state_note": "Library-authored proposed criteria and counterevidence, not an evaluated method or accepted answer. This metadata does not establish measured gains, commercial commitments or authorization for new execution."
+  },
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:library-question-intake:gq-016:2026-09-06",
+      "observed_at": "2026-09-06",
+      "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+    }
+  ]
+}

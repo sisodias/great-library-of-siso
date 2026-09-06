@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:5b7ba225-a6fe-430a-93fb-e9f181cc091c",
+  "slug": "frontier-question-gq-013",
+  "name": "GQ-013 · A Useful Reusable Building Set",
+  "summary": "How can components, flows, modules and assets form a small building set that produces coherent, accessible and accepted applications?",
+  "work_type": "research_question",
+  "lifecycle_status": "experimental",
+  "updated_at": "2026-09-06",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "This is question metadata. Rights for source payloads and accepted answers are evaluated per Release artifact.",
+      "evidence": []
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:ce031834-4149-42af-8d86-d9a05398fa24",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-013:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:538c4491-8045-4526-9bcd-0268887601d0",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-013:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-013:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    }
+  ],
+  "research_contract": {
+    "question_id": "GQ-013",
+    "question": "How can components, flows, modules and assets form a small building set that produces coherent, accessible and accepted applications?",
+    "state": "scoped",
+    "evidence_mode": "hybrid",
+    "source_work_ids": [
+      "gls:work:ce031834-4149-42af-8d86-d9a05398fa24",
+      "gls:work:538c4491-8045-4526-9bcd-0268887601d0",
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+    ],
+    "source_scopes": [
+      "Public component, repository and adoption contracts",
+      "Authorized host-integration examples and acceptance evidence"
+    ],
+    "decision_to_change": "Choose which variations and whole-application patterns to curate for a real host, and what to leave project-specific.",
+    "success_criteria": [
+      "Demonstrate a needed component or flow in the actual host with its interaction and accessibility requirements.",
+      "Include rights, integration, maintenance and removal costs in the comparison."
+    ],
+    "falsifiers": [
+      "A larger catalogue increases selection or integration work without improving the accepted application.",
+      "A curated component fails the host's required behavior, accessibility, rights or user acceptance."
+    ],
+    "evidence_gaps": [
+      "Catalogue breadth and a good standalone preview do not prove coherent assembly or fit in another context."
+    ],
+    "watch_triggers": [
+      "New owner-approved outcome or counterexample changes the decision evidence.",
+      "The relevant source, operating constraint or acceptance boundary materially changes."
+    ],
+    "answer_shape": "A compact, evidence-backed building set with supported contexts, rejected alternatives, integration examples and explicit gaps.",
+    "refresh_policy": "Review when relevant owner evidence or decision conditions change; registration starts no collector, benchmark, scheduler or new execution lane.",
+    "publication_boundary": "public_metadata_only",
+    "state_note": "Library-authored proposed criteria and counterevidence, not an evaluated method or accepted answer. This metadata does not establish measured gains, commercial commitments or authorization for new execution."
+  },
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:library-question-intake:gq-013:2026-09-06",
+      "observed_at": "2026-09-06",
+      "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+    }
+  ]
+}

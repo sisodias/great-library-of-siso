@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:bf0a8216-70cc-4695-8256-609078a67d18",
+  "slug": "frontier-question-gq-012",
+  "name": "GQ-012 · Context that Preserves Intent",
+  "summary": "How can project owners retain the right intent and evidence while avoiding repeated full-context reconstruction?",
+  "work_type": "research_question",
+  "lifecycle_status": "experimental",
+  "updated_at": "2026-09-06",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "This is question metadata. Rights for source payloads and accepted answers are evaluated per Release artifact.",
+      "evidence": []
+    }
+  },
+  "relationships": [
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-012:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-012:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "target_work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-012:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    }
+  ],
+  "research_contract": {
+    "question_id": "GQ-012",
+    "question": "How can project owners retain the right intent and evidence while avoiding repeated full-context reconstruction?",
+    "state": "scoped",
+    "evidence_mode": "hybrid",
+    "source_work_ids": [
+      "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
+      "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719"
+    ],
+    "source_scopes": [
+      "Public project entry and recovery contracts",
+      "Owner-approved comparisons of targeted source windows and complete-context baselines"
+    ],
+    "decision_to_change": "Choose entry points, source retrieval, handoff content and compaction practices that preserve binding intent at a lower total reconstruction cost.",
+    "success_criteria": [
+      "Recover the correct source, current constraint, owner and next action in a cold read.",
+      "Measure lost nuance, reconstruction effort and resulting rework alongside input size."
+    ],
+    "falsifiers": [
+      "Reduced context omits a binding requirement or source correction that the comparison baseline recovers.",
+      "Retrieval and repair costs erase the reduction in repeated reading."
+    ],
+    "evidence_gaps": [
+      "A smaller context or intact content hash does not establish authorship, intent preservation or improved outcomes."
+    ],
+    "watch_triggers": [
+      "New owner-approved outcome or counterexample changes the decision evidence.",
+      "The relevant source, operating constraint or acceptance boundary materially changes."
+    ],
+    "answer_shape": "A bounded comparison of entry, retrieval and recovery approaches with missed-intent cases, recovery cost and conditions for use.",
+    "refresh_policy": "Review when relevant owner evidence or decision conditions change; registration starts no collector, benchmark, scheduler or new execution lane.",
+    "publication_boundary": "public_metadata_only",
+    "state_note": "Library-authored proposed criteria and counterevidence, not an evaluated method or accepted answer. This metadata does not establish measured gains, commercial commitments or authorization for new execution."
+  },
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:library-question-intake:gq-012:2026-09-06",
+      "observed_at": "2026-09-06",
+      "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+    }
+  ]
+}

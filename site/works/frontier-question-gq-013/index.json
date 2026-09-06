@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:5b7ba225-a6fe-430a-93fb-e9f181cc091c",
+  "slug": "frontier-question-gq-013",
+  "name": "GQ-013 · A Useful Reusable Building Set",
+  "summary": "How can components, flows, modules and assets form a small building set that produces coherent, accessible and accepted applications?",
+  "work_type": "research_question",
+  "lifecycle_status": "experimental",
+  "section": "Unassigned",
+  "library_url": "/works/frontier-question-gq-013/",
+  "agent_context_url": "/works/frontier-question-gq-013/index.json",
+  "registry_source": "registry/works/frontier-question-gq-013.json",
+  "source_links": [],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "target_work_id": "gls:work:ce031834-4149-42af-8d86-d9a05398fa24",
+      "target_name": "SISO Component Bank",
+      "target_library_url": "/works/siso-component-bank/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-013:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "target_work_id": "gls:work:538c4491-8045-4526-9bcd-0268887601d0",
+      "target_name": "SISO Repo Bank",
+      "target_library_url": "/works/siso-repo-bank/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-013:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "This independently owned Work supplies relevant source or operating contracts for the question; the question does not grant authority over it.",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "target_name": "SISO Foundry",
+      "target_library_url": "/works/siso-foundry/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:library-question-intake:gq-013:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:library-question-intake:gq-013:2026-09-06",
+      "observed_at": "2026-09-06",
+      "summary": "The Library read the current project-owner question map and authored this public metadata statement. Private source text, client details, runtime locators and execution receipts are excluded."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "This is question metadata. Rights for source payloads and accepted answers are evaluated per Release artifact.",
+      "evidence": []
+    }
+  },
+  "selected_release": null
+}
