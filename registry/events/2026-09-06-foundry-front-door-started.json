@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:3c58658d-b3ea-4401-bcd2-78f0e4b26eeb",
+  "occurred_at": "2026-09-06T06:06:48.464Z",
+  "recorded_at": "2026-09-06T06:06:48.464Z",
+  "immutable": true,
+  "entry_type": "initiative_started",
+  "thread": {
+    "id": "gls:thread:foundry-research-front-door",
+    "name": "Foundry Research Front Door",
+    "kind": "initiative"
+  },
+  "status": "active",
+  "title": "Connect published Foundry research to a canonical human and machine front door",
+  "summary": "User-requested integration of the completed industry and valuation research into the existing Library, preserving source ownership and project-scoped material.",
+  "intent": "Make reviewed Foundry outputs discoverable and reusable through stable Library links and exact source versions.",
+  "reasoning": [
+    "Foundry owns the research source; the Library already owns stable identity, release selection and generated readers.",
+    "A generated index and machine-readable dossier let projects find the same source without creating competing canonical copies.",
+    "Private project packets keep their existing access boundaries."
+  ],
+  "changes": [
+    {
+      "kind": "generator",
+      "reference": "scripts/build.mjs",
+      "summary": "Reserve generated research readers and existing home/Foundry links."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/siso-foundry",
+      "https://github.com/sisodias/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "FOUNDRY-ZERO",
+    "branch": "main",
+    "reserved_paths": [
+      "registry/works/siso-foundry.json",
+      "registry/releases/siso-foundry-research-*.json",
+      "registry/snapshots/whole-library-v40.json",
+      "registry/events/2026-09-06-foundry-front-door-*.json",
+      "research/industries/**",
+      "scripts/build-industries.mjs",
+      "scripts/build.mjs",
+      "scripts/verify.mjs",
+      "tests/industries.test.mjs",
+      "src/site/assets/industries.css",
+      "CURRENT_STATE.md"
+    ]
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "public_locator",
+      "reference": "https://github.com/sisodias/siso-foundry/commit/d5ec687d20e8cfa428b0a30b999003ca58805535",
+      "observed_at": "2026-09-06",
+      "summary": "All 17 published N1 records were read back publicly and match reviewed source hashes."
+    }
+  ],
+  "next_actions": [
+    "Publish reviewed value-model source, register the exact Foundry Release in a successor Snapshot and build human/machine readers.",
+    "Verify canonical links, source parity, display behavior and the deployed stable URLs."
+  ]
+}
