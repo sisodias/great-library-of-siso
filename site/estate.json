@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-06T05:47:57.298Z",
-  "snapshot_id": "gls:snapshot:ad689b84-b650-4344-a4d9-1b77d4c0c6a2",
-  "snapshot_version": "39.0.0",
+  "generated_at": "2026-09-06T06:15:58.301Z",
+  "snapshot_id": "gls:snapshot:24417846-faeb-4b41-b9ef-38839954e00f",
+  "snapshot_version": "40.0.0",
   "repositories": [
     {
       "owner": "herdrdev",
@@ -167,24 +167,6 @@
     },
     {
       "owner": "sisodias",
-      "repository": "siso-foundry",
-      "url": "https://github.com/sisodias/siso-foundry",
-      "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
-      "work_name": "SISO Foundry",
-      "work_slug": "siso-foundry",
-      "work_type": "application",
-      "lifecycle_status": "active",
-      "library_url": "/works/siso-foundry/",
-      "locator_type": "source_repository",
-      "locator_revision": "main@233edef7408afb95571ecd25f64189dfd92a6860",
-      "visibility": "public",
-      "status": "linked",
-      "active_release_id": "gls:release:2c6e1a70-2b53-4e8b-9fb1-66a4f4d6871b",
-      "active_release_version": "0.5.1+b28b0f7",
-      "artifact_revision": null
-    },
-    {
-      "owner": "sisodias",
       "repository": "siso-knowledge",
       "url": "https://github.com/sisodias/siso-knowledge",
       "work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
@@ -290,6 +272,24 @@
       "active_release_id": "gls:release:7880b0ff-77db-4646-a29b-8061a8f7a42b",
       "active_release_version": "1.0.0+4aa89af",
       "artifact_revision": "4aa89affc3298a102ef6751a96da6afd922f9cc7"
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-foundry",
+      "url": "https://github.com/sisodias/siso-foundry",
+      "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "work_name": "SISO Foundry",
+      "work_slug": "siso-foundry",
+      "work_type": "application",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-foundry/",
+      "locator_type": "source_repository",
+      "locator_revision": "main@11f459597ce0c67dbfa89deeeafa3202e47dc6d5",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:29a8cfea-ca5d-41b3-964f-3d81044fce11",
+      "active_release_version": "0.5.1+11f4595",
+      "artifact_revision": "11f459597ce0c67dbfa89deeeafa3202e47dc6d5"
     },
     {
       "owner": "sisodias",

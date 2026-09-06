@@ -2,6 +2,7 @@ import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rail } from 'siso-shell';
+import { buildIndustries } from './build-industries.mjs';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const OUT = join(ROOT, 'site');
@@ -272,7 +273,7 @@ function page({ title, description, active = 'library', body, rootClass = '' }) 
   <meta name="description" content="${esc(description)}">
   <meta name="color-scheme" content="light">
   <title>${esc(title)} · The Great Library of SISO</title>
-  <link rel="stylesheet" href="${href('assets/styles.css')}">${pilot ? `\n  <link rel="stylesheet" href="${href('assets/siso-shell/shell.css')}"><link rel="stylesheet" href="${href('assets/reading.css')}"><script defer src="${href('assets/siso-shell/shell.js')}"></script>` : ''}
+  <link rel="stylesheet" href="${href('assets/styles.css')}"><link rel="stylesheet" href="${href('assets/industries.css')}">${pilot ? `\n  <link rel="stylesheet" href="${href('assets/siso-shell/shell.css')}"><link rel="stylesheet" href="${href('assets/reading.css')}"><script defer src="${href('assets/siso-shell/shell.js')}"></script>` : ''}
   <script>document.documentElement.className='js'</script>
   <script defer src="${href('assets/app.js')}"></script>
 </head>
@@ -557,6 +558,7 @@ function frontDoor(works, sections) {
   <section class="loop-section shell" aria-labelledby="loop-title"><div class="loop-heading"><div>${eyebrow('The compounding loop')}<h2 id="loop-title">Every part feeds the next.</h2></div><p>Intelligence · open-source code · GitHub storage · Cloudflare · people.<br>The operating thesis—not a claim that every stage is already proven.</p></div>
     <div class="reading-map loop-map"><svg viewBox="0 0 1330 360" aria-labelledby="ecosystem-title" role="img"><title id="ecosystem-title">Clients fund compute; owners build packs; the Library attracts people; Foundry and God Questions improve systems and win better client outcomes.</title><defs><marker id="loop-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#82967e"/></marker></defs><g class="e" marker-end="url(#loop-arrow)"><path d="M310 90H375"/><path d="M630 90H695"/><path d="M950 90H1015"/><path d="M1270 90H1300V270H1275"/><path d="M1020 270H955"/><path d="M700 270H635"/><path d="M380 270H315"/><path d="M60 270H30V90H55"/></g>${nodes}</svg></div>
   </section>
+  <nav class="industry-front-links shell" aria-label="Foundry research"><a href="${href('industries/')}">Browse industry research →</a><a href="${href('valuation/')}">Explore code valuation →</a></nav>
   <section class="agent-reading shell" id="for-agents"><div>${eyebrow('For agents')}<h2>Read these five files.</h2><p>Then follow a Work’s dossier to its exact source. A Work is an identity, a Release is an evidenced version, and an Assembly describes how Works operate together.</p></div><ol>
     <li><a href="https://github.com/sisodias/great-library-of-siso/blob/main/README.md">README.md</a><span>Identity and boundaries</span></li>
     <li><a href="https://github.com/sisodias/great-library-of-siso/blob/main/AGENTS.md">AGENTS.md</a><span>Contribution and safety contract</span></li>
@@ -1002,6 +1004,8 @@ await emit('docs/laptop-estate.html', await readFile(join(ROOT, 'docs', 'laptop-
 await emit('docs/registry-model.md', await readFile(join(ROOT, 'docs', 'registry-model.md'), 'utf8'));
 await emit('docs/using-the-library.md', await readFile(join(ROOT, 'docs', 'using-the-library.md'), 'utf8'));
 await emit('index.html', homePage(works, releases, snapshots, assemblies, sections));
+await buildIndustries({ root: ROOT, page, emit, esc, href, selectedRelease: activeReleasesByWork.get('gls:work:ec664d93-df93-48c5-be40-5d0165886c01') });
+await emit('_headers', ['/industries/*', '/valuation/*', '/works/siso-foundry/index.json', '/catalog.json'].map(route => `${route}\n  Access-Control-Allow-Origin: *\n  Cache-Control: public, max-age=0, must-revalidate\n`).join('\n'));
 const agentsSection = sections.find((section) => section.slug === 'agents');
 const researchSection = sections.find((section) => section.slug === 'research');
 await emit('agents/index.html', agentsPage(works, assemblies, latestSnapshot, agentsSection));

@@ -13,6 +13,7 @@ const checks = [
   ["registry validation", "scripts/validate.mjs"],
   ["site build", "scripts/build.mjs"],
   ["reading surface contract", "tests/reading-surface.test.mjs"],
+  ["Foundry industry and value readers", "tests/industries.test.mjs"],
   ["site links and identity", "scripts/check-site.mjs"],
   ["publication safety scan", "scripts/scan-publication.mjs"]
 ];

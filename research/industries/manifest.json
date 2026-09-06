@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "foundry_research_reading_projection",
+  "canonical_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+  "release_id": "gls:release:29a8cfea-ca5d-41b3-964f-3d81044fce11",
+  "source_repository": "https://github.com/sisodias/siso-foundry",
+  "source_commit": "11f459597ce0c67dbfa89deeeafa3202e47dc6d5",
+  "source_owner": "Foundry",
+  "projection_owner": "Great Library of SISO",
+  "source_date": "2026-09-05",
+  "publication_date": "2026-09-06",
+  "canonicality": "These checked-in files are read-only mirrors of exact published Foundry bytes, used to build deterministic offline Library pages. Foundry remains the source authority; revisions require a new pin and receipt.",
+  "files": [
+    {
+      "path": "intelligence/agency/industries/accounting_firms.json",
+      "sha256": "df3bd8f45ee205cb2688a6a972496d1a9db37ff1e2b600112d9ade64e1052c6c",
+      "local_file": "source/intelligence/agency/industries/accounting_firms.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/accounting_firms.json"
+    },
+    {
+      "path": "intelligence/agency/industries/construction.json",
+      "sha256": "262d0e155a9239fe093a5a22306a9b06deea43e783f2f299926a8c8e4844d84a",
+      "local_file": "source/intelligence/agency/industries/construction.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/construction.json"
+    },
+    {
+      "path": "intelligence/agency/industries/course_creators.json",
+      "sha256": "08a37895e0f6e4c7034e9df4b31cb4f152b699a9008e54c4b8dcf18d78726344",
+      "local_file": "source/intelligence/agency/industries/course_creators.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/course_creators.json"
+    },
+    {
+      "path": "intelligence/agency/industries/ecommerce.json",
+      "sha256": "447aa0fb5b3c27dfb7448b91f7be9f983c110227419c23259e24d7c03d4e0b9d",
+      "local_file": "source/intelligence/agency/industries/ecommerce.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/ecommerce.json"
+    },
+    {
+      "path": "intelligence/agency/industries/education_training.json",
+      "sha256": "be193ee6fb30609df903ee3ef83bdd740b24f8e7b07e2fb3c98114dda497eb13",
+      "local_file": "source/intelligence/agency/industries/education_training.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/education_training.json"
+    },
+    {
+      "path": "intelligence/agency/industries/healthcare_medical_practices.json",
+      "sha256": "e29a0baf52013b58b4c04faf2b82c034cebd607d6d216dfc9ed89359724b062a",
+      "local_file": "source/intelligence/agency/industries/healthcare_medical_practices.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/healthcare_medical_practices.json"
+    },
+    {
+      "path": "intelligence/agency/industries/hospitality.json",
+      "sha256": "1c9ea6fe715e0f7e945385b4ddfc3c359a35a66d9a68e9fa2bc1899779ed19d9",
+      "local_file": "source/intelligence/agency/industries/hospitality.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/hospitality.json"
+    },
+    {
+      "path": "intelligence/agency/industries/insurance_agencies.json",
+      "sha256": "bc2fdf9b52422fff2af8cdacc661999a78045b44890a0a75957503c42239afa2",
+      "local_file": "source/intelligence/agency/industries/insurance_agencies.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/insurance_agencies.json"
+    },
+    {
+      "path": "intelligence/agency/industries/it_services_msps.json",
+      "sha256": "3ca9499f3a43d5c6f1cb65e3b0db4c10e1ae3c30478cde69acb7acd0e114057e",
+      "local_file": "source/intelligence/agency/industries/it_services_msps.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/it_services_msps.json"
+    },
+    {
+      "path": "intelligence/agency/industries/law_firms.json",
+      "sha256": "bfd07cd3ea7ecec4881c8d28820c4e3c58f0a8a2cae14f81d38ee7395b0e95f7",
+      "local_file": "source/intelligence/agency/industries/law_firms.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/law_firms.json"
+    },
+    {
+      "path": "intelligence/agency/industries/logistics_freight.json",
+      "sha256": "b775b2b3748ae606f142006a868ed98f6e10a2ac39643084dc11a3ddeef43175",
+      "local_file": "source/intelligence/agency/industries/logistics_freight.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/logistics_freight.json"
+    },
+    {
+      "path": "intelligence/agency/industries/marketing_social_media_agencies.json",
+      "sha256": "64b4a948a2e3173058e0160069b4871de842cf8500d172a8df985feee4d0a50c",
+      "local_file": "source/intelligence/agency/industries/marketing_social_media_agencies.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/marketing_social_media_agencies.json"
+    },
+    {
+      "path": "intelligence/agency/industries/mortgage_brokers.json",
+      "sha256": "fc5da29edd4dbce261ccc5bbdda28da683efb2e1f51a85bba9e6adfa346628a6",
+      "local_file": "source/intelligence/agency/industries/mortgage_brokers.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/mortgage_brokers.json"
+    },
+    {
+      "path": "intelligence/agency/industries/property_management.json",
+      "sha256": "5e320608da89d69f60e1a48739afe87946483ff5e1d830e1778bed7154f4f817",
+      "local_file": "source/intelligence/agency/industries/property_management.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/property_management.json"
+    },
+    {
+      "path": "intelligence/agency/industries/real_estate.json",
+      "sha256": "d78beb9d2bc48a3e0f15fe6cb80289f5c52a2181cccd0425b71c94280f340b28",
+      "local_file": "source/intelligence/agency/industries/real_estate.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/real_estate.json"
+    },
+    {
+      "path": "intelligence/agency/industries/recruiting_staffing.json",
+      "sha256": "9777c3e263636068f3b94abf701ad15dcc00ee40bab4d756f2835f5a4395ff59",
+      "local_file": "source/intelligence/agency/industries/recruiting_staffing.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/recruiting_staffing.json"
+    },
+    {
+      "path": "intelligence/agency/industries/saas.json",
+      "sha256": "558479200666241d84c1fe7b86cdf2a1c4de600f1c1ea10ac3d40e24564eda9b",
+      "local_file": "source/intelligence/agency/industries/saas.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/industries/saas.json"
+    },
+    {
+      "path": "intelligence/agency/economics/observed-value-model.json",
+      "sha256": "d7319e87be70575b61db8d0dc6e7a7d83b28cf0d2f3624201d5303600d3ac2cc",
+      "local_file": "source/intelligence/agency/economics/observed-value-model.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/economics/observed-value-model.json"
+    },
+    {
+      "path": "intelligence/agency/economics/repo-value-inputs.json",
+      "sha256": "7668374d74e99aa013f210e2467ebbdbdeec332d34b7d54231e1e069ed9b1c7e",
+      "local_file": "source/intelligence/agency/economics/repo-value-inputs.json",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/economics/repo-value-inputs.json"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "56efa6ab028032ca092d4ef0eb64abf34fb2e1dc620806cc47f7d223e3336aab",
+      "local_file": "source/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/LICENSE"
+    }
+  ],
+  "scope": "17 industry records and ten value examples with their formula; upstream licences and evidence limits retained. Project-scoped private packets and operational data are excluded."
+}

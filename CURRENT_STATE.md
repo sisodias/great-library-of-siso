@@ -2,6 +2,34 @@
 
 **Verified:** 2026-09-06
 
+## Foundry research front door — V40
+
+The user requested a visible URL and canonical project access to the completed
+Foundry research. V40 replaces only Foundry's selected source with
+`11f459597ce0c67dbfa89deeeafa3202e47dc6d5`, preserving all other V39 selections,
+Assemblies and projection edges. The stable Foundry Work ID is unchanged.
+
+The generated `/industries/` reader covers all 17 published records, with one
+page and exact JSON per industry. `/valuation/` exposes the observed-value model
+and ten existing-repository examples. Root and Foundry links point to both;
+the Work dossier and JSON indexes carry the canonical Work/Release/source pin.
+Imported bytes are verified against the source manifest on every build. Public
+JSON supports cross-origin reads by project tools. Foundry owns the source;
+the Library owns these deterministic reading projections.
+
+The existing ignored private overlay resolves authorized projects to Foundry's
+project resource directory for the Internal review, landscape preparation and
+private question packet. No private packet, raw corpus or machine path is part
+of this public artifact. The underlying feed remains staged and its activation
+gates are unchanged.
+
+Twenty source files (17 industry records, two value records and the source
+licence) returned public HTTP 200 with matching hashes. Reader checks cover
+source parity, 17/10 counts, canonical links and preserved V39 selections.
+Desktop and 390px checks have no horizontal overflow. Foundry's full test still
+has its pre-existing external atlas limitation; Library verification is a
+separate gate. Deployment readback follows the verified build.
+
 ## D-20 publication checkpoint
 
 D-20 assigns the prepared compute/delegation question to GQ-023 and preserves

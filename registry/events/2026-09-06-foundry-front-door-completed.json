@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:db2db0a1-ce42-46e5-b0ce-0b6021bd83ac",
+  "occurred_at": "2026-09-06T06:15:58.301Z",
+  "recorded_at": "2026-09-06T06:15:58.301Z",
+  "immutable": true,
+  "entry_type": "initiative_completed",
+  "predecessor_event_id": "gls:event:3c58658d-b3ea-4401-bcd2-78f0e4b26eeb",
+  "thread": {
+    "id": "gls:thread:foundry-research-front-door",
+    "name": "Foundry Research Front Door",
+    "kind": "initiative"
+  },
+  "status": "completed",
+  "title": "Foundry research source selected for canonical Library readers",
+  "summary": "The existing Foundry Work now selects the exact N1/N2 public source, with a deterministic human and machine reading projection. Deployment readback is recorded separately.",
+  "intent": "Make the completed research visible at stable Library URLs and traceable to one canonical source for project reuse.",
+  "reasoning": [
+    "Foundry retains source authority; Library mirrors are hash-checked views, not a second source registry.",
+    "V40 changes only the selected Foundry Release; prior Releases/Snapshots remain immutable.",
+    "Private project packets are resolved through the existing private overlay and stay outside the public artifact."
+  ],
+  "changes": [
+    {
+      "kind": "registry_record",
+      "reference": "registry/releases/siso-foundry-research-11f4595.json",
+      "summary": "Exact public source and honest distribution/evidence limits."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/snapshots/whole-library-v40.json",
+      "summary": "Replace only Foundry's selected Release."
+    },
+    {
+      "kind": "generator",
+      "reference": "scripts/build-industries.mjs",
+      "summary": "Hash-checked industry and valuation pages plus machine JSON."
+    },
+    {
+      "kind": "document",
+      "reference": "research/industries/manifest.json",
+      "summary": "Read-only source mirror pin and canonical ownership."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+    ],
+    "release_ids": [
+      "gls:release:29a8cfea-ca5d-41b3-964f-3d81044fce11"
+    ],
+    "snapshot_ids": [
+      "gls:snapshot:24417846-faeb-4b41-b9ef-38839954e00f"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/siso-foundry",
+      "https://github.com/sisodias/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "FOUNDRY-ZERO",
+    "branch": "main",
+    "reserved_paths": []
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-foundry/commit/11f459597ce0c67dbfa89deeeafa3202e47dc6d5",
+      "observed_at": "2026-09-06",
+      "summary": "17 published industry records and two reviewed value-model/input records retain source references, rights boundaries and unmeasured values. Full source npm test retains a pre-existing external atlas limitation."
+    }
+  ],
+  "next_actions": [
+    "Run the full Library gate and publish the verified generated site; verify the stable URLs and retain exact deployment readback.",
+    "Projects consume the stable Work dossier and pinned research JSON, retaining rights and missing-value boundaries."
+  ]
+}

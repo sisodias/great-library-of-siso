@@ -10,6 +10,16 @@
     "reference": "docs/foundry-agency-intelligence.html",
     "highlights": [
       {
+        "title": "17 industry research records",
+        "summary": "Processes, existing software, candidate code, source evidence and falsifiable pilots. Values are unmeasured; read or fetch the same pinned research from any project.",
+        "url": "https://great-library-of-siso.pages.dev/industries/"
+      },
+      {
+        "title": "What reusable code is worth",
+        "summary": "The observed-value formula and ten existing-repository examples. Missing inputs remain unknown; evidence completeness is not a dollar value.",
+        "url": "https://great-library-of-siso.pages.dev/valuation/"
+      },
+      {
         "title": "9,636-repository evidence universe",
         "summary": "The v0.4.0 receipt anchors twenty scored applications and twelve evidence-qualified God Sources. These are dated findings, not a live inventory or automatic reuse permission.",
         "url": "https://github.com/sisodias/siso-foundry/releases/tag/v0.4.0"
@@ -25,7 +35,7 @@
         "url": "https://github.com/sisodias/siso-foundry/blob/233edef7408afb95571ecd25f64189dfd92a6860/README.md"
       }
     ],
-    "agent_entry": "https://github.com/sisodias/siso-foundry/blob/233edef7408afb95571ecd25f64189dfd92a6860/README.md",
+    "agent_entry": "https://github.com/sisodias/siso-foundry/blob/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/RESEARCH-INDEX.md",
     "agent_commands": [
       "npm test",
       "python3 pipelines/github/run_campaign.py --dry-run"
@@ -101,6 +111,12 @@
   ],
   "evidence": [
     {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-foundry/commit/11f459597ce0c67dbfa89deeeafa3202e47dc6d5",
+      "observed_at": "2026-09-06",
+      "summary": "17 published industry records and two reviewed value-model/input records retain source references, rights boundaries and unmeasured values. Full source npm test retains a pre-existing external atlas limitation."
+    },
+    {
       "kind": "release_receipt",
       "reference": "https://github.com/sisodias/siso-foundry/releases/tag/v0.4.0",
       "observed_at": "2026-08-02",
@@ -138,14 +154,14 @@
       {
         "type": "source_repository",
         "url": "https://github.com/sisodias/siso-foundry",
-        "revision": "main@233edef7408afb95571ecd25f64189dfd92a6860",
+        "revision": "main@11f459597ce0c67dbfa89deeeafa3202e47dc6d5",
         "visibility": "public",
         "verified": true,
         "evidence": {
-          "kind": "integration_check",
-          "reference": "github-api:sisodias/siso-foundry:233edef7408afb95571ecd25f64189dfd92a6860",
-          "observed_at": "2026-08-02",
-          "summary": "Canonical public source includes the resumable source-campaign platform and the scored Agency OS value matrix while preserving the external data-plane boundary; the 30-file code check, three campaign tests, matrix arithmetic and evidence gates, intelligence invariants, and publication scan passed."
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-foundry/commit/11f459597ce0c67dbfa89deeeafa3202e47dc6d5",
+          "observed_at": "2026-09-06",
+          "summary": "17 published industry records and two reviewed value-model/input records retain source references, rights boundaries and unmeasured values. Full source npm test retains a pre-existing external atlas limitation."
         }
       }
     ],
@@ -164,39 +180,39 @@
     }
   },
   "selected_release": {
-    "id": "gls:release:2c6e1a70-2b53-4e8b-9fb1-66a4f4d6871b",
-    "version": "0.5.1+b28b0f7",
-    "released_at": "2026-08-03T02:01:04+07:00",
+    "id": "gls:release:29a8cfea-ca5d-41b3-964f-3d81044fce11",
+    "version": "0.5.1+11f4595",
+    "released_at": "2026-09-06T06:15:58.301Z",
     "release_kind": null,
     "distribution": {
       "addressable": {
         "state": "verified",
-        "reason": "The Agency coverage package and GitHub release are pinned to an exact public commit.",
+        "reason": "Stable Foundry Work, exact source commit and per-record public locators.",
         "evidence_count": 1
       },
       "archive_downloadable": {
-        "state": "verified",
-        "reason": "The public code and intelligence package have a commit-scoped source archive; operational corpus payloads remain outside Git.",
+        "state": "experimental",
+        "reason": "The public repository provides a commit archive; this integration verifies individual JSON sources rather than a full archive restore.",
         "evidence_count": 1
       },
       "manifest_resolvable": {
         "state": "verified",
-        "reason": "The coverage inventory is machine-readable and carries project-level pillars, evidence grades, reusable-analysis fields, source receipts, and proof boundaries.",
+        "reason": "The Library reading manifest pins every source record and SHA-256; generated JSON provides canonical Work and Release IDs.",
         "evidence_count": 1
       },
       "installable": {
-        "state": "verified",
-        "reason": "The repository gate validates the coverage generator, campaign contract, job-level pillar map, source receipts, deterministic outputs, and publication safety.",
+        "state": "experimental",
+        "reason": "Research JSON is readable without installation; the platform full test still fails on its pre-existing missing external atlas input.",
         "evidence_count": 1
       },
       "forkable": {
         "state": "verified",
-        "reason": "The source, coverage generator, job-level pillar map, campaign contract, decision tranche, and verifier are public and MIT licensed.",
+        "reason": "Public Foundry source is MIT licensed; external source rights remain separate.",
         "evidence_count": 1
       },
       "portable": {
         "state": "experimental",
-        "reason": "The coverage contract and publication-safe evidence are portable; the larger operational corpus remains externally stored and unreleased.",
+        "reason": "Read-only public JSON is exposed for project reuse; actual project adoption and business outcomes remain unproved.",
         "evidence_count": 1
       }
     }

@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "canonical_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+  "release_id": "gls:release:29a8cfea-ca5d-41b3-964f-3d81044fce11",
+  "source_commit": "11f459597ce0c67dbfa89deeeafa3202e47dc6d5",
+  "source_repository": "https://github.com/sisodias/siso-foundry",
+  "source_owner": "Foundry",
+  "projection_owner": "Great Library of SISO",
+  "as_of": "2026-09-05",
+  "record_type": "observed_value_research_index",
+  "count": 10,
+  "measured_values": false,
+  "model": {
+    "url": "/valuation/model.json",
+    "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/economics/observed-value-model.json",
+    "sha256": "d7319e87be70575b61db8d0dc6e7a7d83b28cf0d2f3624201d5303600d3ac2cc"
+  },
+  "inputs": {
+    "url": "/valuation/inputs.json",
+    "source_url": "https://raw.githubusercontent.com/sisodias/siso-foundry/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/economics/repo-value-inputs.json",
+    "sha256": "7668374d74e99aa013f210e2467ebbdbdeec332d34b7d54231e1e069ed9b1c7e"
+  }
+}

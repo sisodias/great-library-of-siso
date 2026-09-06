@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-06T05:47:57.298Z",
+  "generated_at": "2026-09-06T06:15:58.301Z",
   "base_path": "/",
   "counts": {
-    "events": 44,
+    "events": 46,
     "decisions": 6,
     "active_initiatives": 3,
-    "registry_changes": 124
+    "registry_changes": 126
   },
   "active_initiatives": [
     {
@@ -704,6 +704,199 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:db2db0a1-ce42-46e5-b0ce-0b6021bd83ac",
+      "occurred_at": "2026-09-06T06:15:58.301Z",
+      "recorded_at": "2026-09-06T06:15:58.301Z",
+      "immutable": true,
+      "entry_type": "initiative_completed",
+      "predecessor_event_id": "gls:event:3c58658d-b3ea-4401-bcd2-78f0e4b26eeb",
+      "thread": {
+        "id": "gls:thread:foundry-research-front-door",
+        "name": "Foundry Research Front Door",
+        "kind": "initiative"
+      },
+      "status": "completed",
+      "title": "Foundry research source selected for canonical Library readers",
+      "summary": "The existing Foundry Work now selects the exact N1/N2 public source, with a deterministic human and machine reading projection. Deployment readback is recorded separately.",
+      "intent": "Make the completed research visible at stable Library URLs and traceable to one canonical source for project reuse.",
+      "reasoning": [
+        "Foundry retains source authority; Library mirrors are hash-checked views, not a second source registry.",
+        "V40 changes only the selected Foundry Release; prior Releases/Snapshots remain immutable.",
+        "Private project packets are resolved through the existing private overlay and stay outside the public artifact."
+      ],
+      "changes": [
+        {
+          "kind": "registry_record",
+          "reference": "registry/releases/siso-foundry-research-11f4595.json",
+          "summary": "Exact public source and honest distribution/evidence limits."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "registry/snapshots/whole-library-v40.json",
+          "summary": "Replace only Foundry's selected Release."
+        },
+        {
+          "kind": "generator",
+          "reference": "scripts/build-industries.mjs",
+          "summary": "Hash-checked industry and valuation pages plus machine JSON."
+        },
+        {
+          "kind": "document",
+          "reference": "research/industries/manifest.json",
+          "summary": "Read-only source mirror pin and canonical ownership."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "release_ids": [
+          "gls:release:29a8cfea-ca5d-41b3-964f-3d81044fce11"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:24417846-faeb-4b41-b9ef-38839954e00f"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/siso-foundry",
+          "https://github.com/sisodias/great-library-of-siso"
+        ]
+      },
+      "coordination": {
+        "owner": "FOUNDRY-ZERO",
+        "branch": "main",
+        "reserved_paths": []
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-foundry/commit/11f459597ce0c67dbfa89deeeafa3202e47dc6d5",
+          "observed_at": "2026-09-06",
+          "summary": "17 published industry records and two reviewed value-model/input records retain source references, rights boundaries and unmeasured values. Full source npm test retains a pre-existing external atlas limitation."
+        }
+      ],
+      "next_actions": [
+        "Run the full Library gate and publish the verified generated site; verify the stable URLs and retain exact deployment readback.",
+        "Projects consume the stable Work dossier and pinned research JSON, retaining rights and missing-value boundaries."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01"
+        ],
+        "release_ids": [
+          "gls:release:29a8cfea-ca5d-41b3-964f-3d81044fce11"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:24417846-faeb-4b41-b9ef-38839954e00f"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/siso-foundry",
+          "https://github.com/sisodias/great-library-of-siso"
+        ],
+        "works": [
+          {
+            "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+            "name": "SISO Foundry",
+            "library_url": "/works/siso-foundry/"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:3c58658d-b3ea-4401-bcd2-78f0e4b26eeb",
+      "occurred_at": "2026-09-06T06:06:48.464Z",
+      "recorded_at": "2026-09-06T06:06:48.464Z",
+      "immutable": true,
+      "entry_type": "initiative_started",
+      "thread": {
+        "id": "gls:thread:foundry-research-front-door",
+        "name": "Foundry Research Front Door",
+        "kind": "initiative"
+      },
+      "status": "active",
+      "title": "Connect published Foundry research to a canonical human and machine front door",
+      "summary": "User-requested integration of the completed industry and valuation research into the existing Library, preserving source ownership and project-scoped material.",
+      "intent": "Make reviewed Foundry outputs discoverable and reusable through stable Library links and exact source versions.",
+      "reasoning": [
+        "Foundry owns the research source; the Library already owns stable identity, release selection and generated readers.",
+        "A generated index and machine-readable dossier let projects find the same source without creating competing canonical copies.",
+        "Private project packets keep their existing access boundaries."
+      ],
+      "changes": [
+        {
+          "kind": "generator",
+          "reference": "scripts/build.mjs",
+          "summary": "Reserve generated research readers and existing home/Foundry links."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/siso-foundry",
+          "https://github.com/sisodias/great-library-of-siso"
+        ]
+      },
+      "coordination": {
+        "owner": "FOUNDRY-ZERO",
+        "branch": "main",
+        "reserved_paths": [
+          "registry/works/siso-foundry.json",
+          "registry/releases/siso-foundry-research-*.json",
+          "registry/snapshots/whole-library-v40.json",
+          "registry/events/2026-09-06-foundry-front-door-*.json",
+          "research/industries/**",
+          "scripts/build-industries.mjs",
+          "scripts/build.mjs",
+          "scripts/verify.mjs",
+          "tests/industries.test.mjs",
+          "src/site/assets/industries.css",
+          "CURRENT_STATE.md"
+        ]
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/sisodias/siso-foundry/commit/d5ec687d20e8cfa428b0a30b999003ca58805535",
+          "observed_at": "2026-09-06",
+          "summary": "All 17 published N1 records were read back publicly and match reviewed source hashes."
+        }
+      ],
+      "next_actions": [
+        "Publish reviewed value-model source, register the exact Foundry Release in a successor Snapshot and build human/machine readers.",
+        "Verify canonical links, source parity, display behavior and the deployed stable URLs."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+          "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/siso-foundry",
+          "https://github.com/sisodias/great-library-of-siso"
+        ],
+        "works": [
+          {
+            "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+            "name": "SISO Foundry",
+            "library_url": "/works/siso-foundry/"
+          },
+          {
+            "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+            "name": "The Great Library of SISO",
+            "library_url": "/works/great-library-of-siso/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",
@@ -5959,6 +6152,24 @@
     }
   ],
   "registry_changes": [
+    {
+      "kind": "release",
+      "occurred_at": "2026-09-06T06:15:58.301Z",
+      "id": "gls:release:29a8cfea-ca5d-41b3-964f-3d81044fce11",
+      "version": "0.5.1+11f4595",
+      "title": "Foundry industry and observed-value research",
+      "work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "work_name": "SISO Foundry"
+    },
+    {
+      "kind": "snapshot",
+      "occurred_at": "2026-09-06T06:15:58.301Z",
+      "id": "gls:snapshot:24417846-faeb-4b41-b9ef-38839954e00f",
+      "version": "40.0.0",
+      "title": "Whole Library V40",
+      "work_count": 32,
+      "release_count": 32
+    },
     {
       "kind": "snapshot",
       "occurred_at": "2026-09-06T01:50:25+07:00",
