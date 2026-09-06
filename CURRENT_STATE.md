@@ -2,6 +2,33 @@
 
 **Verified:** 2026-09-06
 
+## Action Model metadata — published
+
+Live Work: https://great-library-of-siso.pages.dev/works/actionmodel-assembly-framework/
+Machine dossier: https://great-library-of-siso.pages.dev/works/actionmodel-assembly-framework/index.json
+Work ID: `gls:work:9ab07516-c02c-4798-857a-2eb8d1d2edfa`.
+
+Published Library source `0aaac7a3ff57b9d5037750fc42fb3f24b2ddaaf7` at
+https://2ac841cd.great-library-of-siso.pages.dev/ on 2026-09-06T06:41:43Z.
+Artifact SHA-256: `79abead7558e3c24229ea5f6bfdf83d9cd16b55117913215c9d40e5356d5bb68`.
+Fourteen readbacks (seven routes on the deployment and stable alias) returned
+HTTP 200 and exact local hashes: root, Action Model HTML/JSON, catalogue,
+industry index, valuation index and Foundry dossier. Existing data CORS and
+revalidation headers passed. Work HTML SHA-256:
+`0053e14105e06d43f7ed2321ff7e81916edee28bf9b83278cad9096ee9ef007c`.
+Work JSON SHA-256:
+`09f118971c4fd8cd14cea991d0452eca0c1c6d8c4da15d5e35cd09b3fef9ff98`.
+
+P1 publisher 0.1.2 at Skills Hub commit
+`2bcde0d00a73fe5c0c719f037a71bfc224572cba` supports the exact root `_headers`
+filename without exempting its contents from privacy scanning. The original
+headers were retained. Hub validation/suite and publisher boundary tests passed;
+full Library verification passed (47 Works, 86 Releases, 40 Snapshots, 47 Events,
+94 HTML pages). Verification and publication remained below the 2 GiB RSS cap.
+This closes the metadata publication blocker only: no UI changes, payload
+Release or new Snapshot. The private source stays private and contextual
+relationships do not claim runtime integration.
+
 ## Foundry research front door — V40
 
 Live: https://great-library-of-siso.pages.dev/works/siso-foundry/ .
