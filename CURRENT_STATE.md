@@ -4,6 +4,20 @@
 
 ## Foundry research front door — V40
 
+Live: https://great-library-of-siso.pages.dev/works/siso-foundry/ .
+Direct readers: https://great-library-of-siso.pages.dev/industries/ and
+https://great-library-of-siso.pages.dev/valuation/ . Exact deployment:
+https://d7150688.great-library-of-siso.pages.dev/ from Library build commit
+`a9ffd16377e626deef8fd3adf9ef8d4d37b8c461`.
+
+At 2026-09-06T06:29:23.249Z, all 45 checked stable-alias pages/data routes returned
+HTTP 200 and exact local SHA-256 matches. The JSON endpoints returned the
+cross-origin read header; browser requests from a separate local origin also
+read the 17-record index, ten-example valuation index and canonical dossier.
+The live 390px index-to-law-firm click path passed with no horizontal overflow.
+Full Library verification passed before publication. The imported upstream
+licence retains its original trailing blank line and exact hash.
+
 The user requested a visible URL and canonical project access to the completed
 Foundry research. V40 replaces only Foundry's selected source with
 `11f459597ce0c67dbfa89deeeafa3202e47dc6d5`, preserving all other V39 selections,
