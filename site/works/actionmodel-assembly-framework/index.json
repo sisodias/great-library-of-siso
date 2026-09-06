@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:9ab07516-c02c-4798-857a-2eb8d1d2edfa",
+  "slug": "actionmodel-assembly-framework",
+  "name": "Action Model · SISO Agency Assembly Framework",
+  "summary": "Reusable methods for agents to assemble software from existing capabilities, bounded adaptation and verification, with a public human/agent Blueprint and a private owning source. Public metadata only; registration does not admit source payload or prove a production integration.",
+  "work_type": "project",
+  "lifecycle_status": "active",
+  "section": "Unassigned",
+  "library_url": "/works/actionmodel-assembly-framework/",
+  "agent_context_url": "/works/actionmodel-assembly-framework/index.json",
+  "registry_source": "registry/works/actionmodel-assembly-framework.json",
+  "source_links": [
+    {
+      "kind": "homepage",
+      "label": "Homepage",
+      "url": "https://actionist-blueprint.pages.dev/",
+      "visibility": "public"
+    },
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/actionmodel-private",
+      "visibility": "private"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/actionmodel-private#readme",
+      "visibility": "private"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "Research provides contextual evidence and methods. This relationship does not assert a verified runtime integration or merge ownership.",
+      "target_work_id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
+      "target_name": "Research",
+      "target_library_url": "/works/research/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "https://actionist-blueprint.pages.dev/",
+          "observed_at": "2026-09-06",
+          "summary": "Contextual relationship recorded from the owner-requested framework scope and source review; not an integration receipt."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "Foundry supplies contextual capability discovery and reuse methods. This relationship does not assert a verified runtime integration or merge ownership.",
+      "target_work_id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
+      "target_name": "SISO Foundry",
+      "target_library_url": "/works/siso-foundry/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "https://actionist-blueprint.pages.dev/",
+          "observed_at": "2026-09-06",
+          "summary": "Contextual relationship recorded from the owner-requested framework scope and source review; not an integration receipt."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "Knowledge is a contextual learning and evidence input. This relationship does not assert a verified runtime integration or merge ownership.",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "target_name": "SISO Knowledge",
+      "target_library_url": "/works/siso-knowledge/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "https://actionist-blueprint.pages.dev/",
+          "observed_at": "2026-09-06",
+          "summary": "Contextual relationship recorded from the owner-requested framework scope and source review; not an integration receipt."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "People is a contextual input for understanding and operating the framework. This relationship does not assert a verified runtime integration or merge ownership.",
+      "target_work_id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
+      "target_name": "SISO People Graph",
+      "target_library_url": "/works/siso-people-graph/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "https://actionist-blueprint.pages.dev/",
+          "observed_at": "2026-09-06",
+          "summary": "Contextual relationship recorded from the owner-requested framework scope and source review; not an integration receipt."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "The existing connector-research Work is a distinct, narrower research effort. This relationship does not assert a verified runtime integration or merge ownership.",
+      "target_work_id": "gls:work:efb00129-4ec6-4637-a2f8-dcead4f7d8dd",
+      "target_name": "Action Model · Connector Research",
+      "target_library_url": "/works/actionmodel-connector-research/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "https://actionist-blueprint.pages.dev/",
+          "observed_at": "2026-09-06",
+          "summary": "Contextual relationship recorded from the owner-requested framework scope and source review; not an integration receipt."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "https://actionist-blueprint.pages.dev/",
+      "observed_at": "2026-09-06",
+      "summary": "Reviewed the public assembly framing and private source boundary. The overall framework is separate from connector research; no Release, Assembly admission or Snapshot promotion is requested."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Agency",
+        "role": "maintainer",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "homepage",
+        "url": "https://actionist-blueprint.pages.dev/",
+        "revision": "observed-2026-09-06",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "public_locator",
+          "reference": "https://actionist-blueprint.pages.dev/",
+          "observed_at": "2026-09-06",
+          "summary": "Public Blueprint fetched successfully and reviewed for the assembly-method framing; its quantitative marketing claims are not adopted by this record."
+        }
+      },
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/actionmodel-private",
+        "revision": "66332c80ac10684f52d42d389712238087ee5da6",
+        "visibility": "private",
+        "verified": true,
+        "evidence": {
+          "kind": "source_review",
+          "reference": "github-api:sisodias/actionmodel-private:66332c80ac10684f52d42d389712238087ee5da6",
+          "observed_at": "2026-09-06",
+          "summary": "Private source identity and observed commit verified. Later owner changes are outside this observation; no payload is distributed."
+        }
+      }
+    ],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "Public registry metadata only. The private source has no reuse or redistribution grant through this record.",
+      "evidence": []
+    }
+  },
+  "selected_release": null
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T06:15:58.301Z",
+  "generated_at": "2026-09-06T06:50:00.000Z",
   "snapshot_id": "gls:snapshot:24417846-faeb-4b41-b9ef-38839954e00f",
   "snapshot_version": "40.0.0",
   "repositories": [
@@ -398,6 +398,24 @@
       "active_release_id": "gls:release:9ac0eb6b-ff42-4505-ab48-9ca04b196c89",
       "active_release_version": "3.0.0+830b1dc",
       "artifact_revision": "830b1dc206d0d41e18769774b37b8fe4e0d67ac5"
+    },
+    {
+      "owner": "sisodias",
+      "repository": "actionmodel-private",
+      "url": "https://github.com/sisodias/actionmodel-private",
+      "work_id": "gls:work:9ab07516-c02c-4798-857a-2eb8d1d2edfa",
+      "work_name": "Action Model · SISO Agency Assembly Framework",
+      "work_slug": "actionmodel-assembly-framework",
+      "work_type": "project",
+      "lifecycle_status": "active",
+      "library_url": "/works/actionmodel-assembly-framework/",
+      "locator_type": "source_repository",
+      "locator_revision": "66332c80ac10684f52d42d389712238087ee5da6",
+      "visibility": "private",
+      "status": "staging",
+      "active_release_id": null,
+      "active_release_version": null,
+      "artifact_revision": null
     },
     {
       "owner": "sisodias",

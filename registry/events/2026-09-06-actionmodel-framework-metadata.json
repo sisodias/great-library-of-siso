@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:1057a529-e7f9-475d-b2da-218087da2c72",
+  "occurred_at": "2026-09-06T06:50:00Z",
+  "recorded_at": "2026-09-06T06:50:00Z",
+  "immutable": true,
+  "entry_type": "initiative_completed",
+  "thread": {
+    "id": "gls:thread:actionmodel-framework-metadata",
+    "name": "Action Model framework metadata",
+    "kind": "initiative"
+  },
+  "status": "completed",
+  "title": "Register overall Action Model framework as public metadata",
+  "summary": "Add a distinct framework Work with public Blueprint and explicitly private owning source; no payload Release or Snapshot change.",
+  "intent": "Make the overall assembly framework discoverable without conflating it with connector research or admitting private source.",
+  "reasoning": [
+    "Contextual relationships preserve independent project ownership and do not assert verified runtime integration."
+  ],
+  "changes": [
+    {
+      "kind": "registry_record",
+      "reference": "registry/works/actionmodel-assembly-framework.json",
+      "summary": "Public metadata identity, source visibility and contextual relationships."
+    },
+    {
+      "kind": "document",
+      "reference": "docs/library-ui-spec.md",
+      "summary": "Fable UI handoff specifies page families and actual CRM reuse; redesign not implemented."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9ab07516-c02c-4798-857a-2eb8d1d2edfa"
+    ],
+    "release_ids": [],
+    "snapshot_ids": [],
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso"
+    ]
+  },
+  "coordination": {
+    "owner": "LIBRARY-ZERO",
+    "branch": "main",
+    "reserved_paths": []
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "https://actionist-blueprint.pages.dev/",
+      "observed_at": "2026-09-06",
+      "summary": "Public framing reviewed; private payload excluded. Deployment receipt is recorded separately."
+    }
+  ],
+  "next_actions": [
+    "Fable implements the separate UI brief after accepting the handoff and coordinating source reservations."
+  ]
+}
