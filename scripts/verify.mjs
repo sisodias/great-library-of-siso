@@ -10,6 +10,7 @@ const checks = [
   ["private estate status tests", "tests/estate-status.test.mjs"],
   ["research question contract tests", "tests/research-contract.test.mjs"],
   ["God Questions infrastructure contract tests", "tests/god-questions-infrastructure.test.mjs"],
+  ["UI integration diagnostic contracts", "tests/ui-integration-audit.test.mjs"],
   ["registry validation", "scripts/validate.mjs"],
   ["site build", "scripts/build.mjs"],
   ["reading surface contract", "tests/reading-surface.test.mjs"],
