@@ -35,6 +35,15 @@ verification and repository-relative evidence only. Runtime migrations, session
 locators and machine paths belong in ignored `.local/` or the private owner
 handoff, never in that public log.
 
+## Frontier Question work
+
+For a bounded question investigation, read [FRONTIER.md](FRONTIER.md). It is the
+shared entrypoint for planning, source research, critique, synthesis and recovery
+across agents. The offline packet/receipt tooling references the existing Work and
+owner task; it neither changes question state nor grants execution or publication
+authority. Keep run payloads owner-held. GQ-011 remains linked to UNSOLVEABLE;
+GQ-023 is compute/delegation. All repository rules below still apply.
+
 ## Local checkout contract
 
 The preferred machine-neutral checkout is `$SISO_WORKSPACE/Great_Library_of_SISO`. If `.local/LOCATION.md` exists, it records the exact checkout for that machine. Never publish machine-specific paths.
