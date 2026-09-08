@@ -1,5 +1,9 @@
 # Library owner signoff — 8 September 2026
 
+> Superseded by the canonical main integration and verified Cloudflare release.
+> Start at `docs/library-delivery.md` and `node bin/gls tasks`. TASK-0007 is
+> completed; review-branch and publication-hold wording below is historical.
+
 The Library now has a connected reading and operating path on the review branch.
 It is ready for human review, not certified as a completed redesign or public
 deployment. The owner remains available pending Shaan's review.

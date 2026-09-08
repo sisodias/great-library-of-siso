@@ -1,5 +1,9 @@
 # Library reramp — cold continuation
 
+> Superseded by the canonical main integration and verified Cloudflare release.
+> Start at `docs/library-delivery.md` and `node bin/gls tasks`. TASK-0007 is
+> completed; review-branch and publication-hold wording below is historical.
+
 Purpose: make the Library a useful human/agent front door to independently owned
 research, capabilities and projects. Registry identity, immutable evidence and
 private source boundaries remain authoritative. This checkpoint is a review

@@ -5,9 +5,13 @@
 The integrated readers, read-only gls discovery/task entry and reviewed project
 pages now belong to canonical `main`. Start at `docs/library-delivery.md` or the
 normal `/use/` page. Prior review-branch/run names are historical evidence, not
-another project home. The owner is completing the authorized publication and
-exact readback; the receipt below will distinguish source integration from live
-Cloudflare delivery.
+another project home. The authorized Cloudflare publication is verified. Source commit
+`430ace3c499c90b74dc6c2dac4e29c744972819e` deployed to
+https://7027e480.great-library-of-siso.pages.dev/ . Both that deployment and the
+stable https://great-library-of-siso.pages.dev/ returned exact build bytes for
+the root, /use/, Action Model/Harness dossiers, llms.txt and catalog.json.
+Missing Work JSON routes return404 on both. The normal checkout is on main;
+TASK-0007 is completed. Receipt: `docs/evidence/library-release-20260908.json`.
 
 **Verified:** 2026-09-06
 

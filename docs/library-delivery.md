@@ -8,6 +8,10 @@ human/agent operating guide is https://great-library-of-siso.pages.dev/use/.
 The temporary review worktree was implementation isolation, not a separate
 product. Historical run receipts remain under `.agents/runs/`.
 
+Published source: `430ace3c499c90b74dc6c2dac4e29c744972819e`.
+Cloudflare deployment and stable alias passed exact readback; see
+[evidence](evidence/library-release-20260908.json).
+
 ## Delivered in this release
 
 - Shared CRM-derived navigation across 98 HTML readers, including 20 authored

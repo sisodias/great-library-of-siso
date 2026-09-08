@@ -1,0 +1,76 @@
+{
+  "source": "430ace3c499c90b74dc6c2dac4e29c744972819e",
+  "at": "2026-09-08T03:17:58.909435+00:00",
+  "results": [
+    {
+      "url": "https://7027e480.great-library-of-siso.pages.dev/",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://7027e480.great-library-of-siso.pages.dev/use/",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://7027e480.great-library-of-siso.pages.dev/works/siso-harness-lab/index.json",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://7027e480.great-library-of-siso.pages.dev/works/actionmodel-assembly-framework/index.json",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://7027e480.great-library-of-siso.pages.dev/llms.txt",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://7027e480.great-library-of-siso.pages.dev/catalog.json",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://7027e480.great-library-of-siso.pages.dev/not-a-library-work/index.json",
+      "status": "404",
+      "expected_404": true
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/use/",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/works/siso-harness-lab/index.json",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/works/actionmodel-assembly-framework/index.json",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/llms.txt",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/catalog.json",
+      "exit": 0,
+      "exact_bytes": true
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/not-a-library-work/index.json",
+      "status": "404",
+      "expected_404": true
+    }
+  ]
+}
