@@ -1,5 +1,7 @@
 # The Great Library of SISO
 
+[Owner signoff — what changed and how to review it](runs/library-reramp-20260908/OWNER-SIGNOFF.md).
+
 The public registry and reading surface for SISO research, software and agent
 systems. Works hold stable identity; Releases preserve evidenced versions;
 Snapshots select a named view; Assemblies describe how Works operate together.

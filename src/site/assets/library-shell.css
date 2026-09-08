@@ -66,6 +66,9 @@
 .library-shell .module-overview .reading-map text { font-size: 14px; }
 .library-shell .module-overview .reading-map .lbl { font-size: 11px; }
 .operate-page pre { max-width: 100%; overflow-x: auto; padding: 20px; border: 1px solid var(--crm-color-line); border-radius: var(--crm-radius-control); background: var(--crm-color-surface); font: 14px/1.7 var(--crm-font-mono); }
+.operate-page .subhero > div { display: block; }
+.operate-page .subhero h1 { max-width: 960px; font-size: clamp(38px, 5vw, 72px); }
+.operate-page .subhero p { max-width: 900px; margin-top: 24px; }
 .task-records { display: grid; gap: 12px; margin-block: 20px; }
 .task-records summary { gap: 16px; flex-wrap: wrap; }
 .task-records summary b { flex: 1; min-width: 180px; }

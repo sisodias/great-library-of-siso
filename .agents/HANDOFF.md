@@ -1,5 +1,9 @@
 # Library owner handoff
 
+[Final owner signoff and human review guide](runs/library-reramp-20260908/OWNER-SIGNOFF.md)
+records delivered behavior, tests, remaining visual checks and the public-main
+automatic-deployment gate. Owner is waiting for Shaan's review, not shut down.
+
 The active review-branch checkpoint is
 [Library reramp continuation](runs/library-reramp-20260908/CONTINUE.md).
 Start with `node bin/gls task TASK-0007` on `library/reramp-20260908`.
