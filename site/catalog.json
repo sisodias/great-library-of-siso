@@ -237,7 +237,7 @@
     },
     {
       "path": "registry/events/2026-09-08-library-reading-integration-started.json",
-      "sha256": "6d0b006fdeda8d978172b322f6f6ef76c20b1022b43484a74300ee7a0f2f98f3"
+      "sha256": "9cb617ad1d47bc08cf3221db0c9d6c288e3a97829ccfdcd2823c24332749efce"
     },
     {
       "path": "registry/releases/agent-zero-seed.json",
@@ -989,7 +989,7 @@
     },
     {
       "path": "scripts/build.mjs",
-      "sha256": "8774cea120a3875a8a424f4102af37bd01c31d95904e38ae156ebc615a739bc5"
+      "sha256": "443ceb094376656111c72ac1a733bf39306a432d01606e13f369f2b004e5d71d"
     }
   ],
   "works": [

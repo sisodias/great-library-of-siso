@@ -1038,7 +1038,7 @@ function navigationFrame(path, contents) {
   }
   const page = /^(releases|snapshots)\/index\.html$/.test(path) ? [] : anchors;
   const navigation = `<a class="skip-link" href="#library-content">Skip to content</a>${rail({ title: 'Great Library', mark: 'S', home: href(''), groups, current, page }).replace('data-verify-collapsed-width="52"', 'data-donor-collapsed-width="52" data-verify-collapsed-width="20"')}`;
-  return contents.replace('<!--library-navigation-->', navigation);
+  return contents.replace('<!--library-navigation-->', navigation.replace(/[ \t]+$/gm, ''));
 }
 
 async function emit(path, contents) {

@@ -717,8 +717,8 @@
         "name": "Library reading integration",
         "kind": "maintenance"
       },
-      "status": "informational",
-      "title": "Library reading integration checkpoint awaits remaining visual acceptance",
+      "status": "completed",
+      "title": "Library source and representative reader verification checkpoint",
       "summary": "A single-owner review branch connects the current Library readers to the exact shared shell source. The successor selection is a proposal until accepted on canonical main; this Event does not assert a production deployment.",
       "intent": "Make research, Works, source links and authored documents usable through one consistent human and agent reading flow.",
       "reasoning": [
