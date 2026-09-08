@@ -8,6 +8,10 @@ A public, human-readable and agent-readable registry and learning system for SIS
 
 **Live Library:** [great-library-of-siso.pages.dev](https://great-library-of-siso.pages.dev/)
 
+**Use the Library:** [human and agent operating guide](https://great-library-of-siso.pages.dev/use/) · [delivery and remaining work](docs/library-delivery.md).
+
+From this checkout: `node bin/gls search "agent runtime"`, `node bin/gls inspect siso-agent-base`, or `node bin/gls tasks`.
+
 > **Current scope:** The Agents section is the first deep vertical slice. Catalog presence is not a claim that source is downloadable, installable, portable, or licensed for reuse. See [License pending](LICENSE-PENDING.md).
 
 ## What the Library is

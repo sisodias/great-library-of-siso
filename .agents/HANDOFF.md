@@ -1,18 +1,13 @@
 # Library owner handoff
 
-[Final owner signoff and human review guide](runs/library-reramp-20260908/OWNER-SIGNOFF.md)
-records delivered behavior, tests, remaining visual checks and the public-main
-automatic-deployment gate. Owner is waiting for Shaan's review, not shut down.
+Start with [current delivery and remaining work](../docs/library-delivery.md),
+[CURRENT_STATE.md](../CURRENT_STATE.md), and the [operating guide](https://great-library-of-siso.pages.dev/use/).
+The canonical source is `sisodias/great-library-of-siso`, branch `main`.
 
-The active review-branch checkpoint is
-[Library reramp continuation](runs/library-reramp-20260908/CONTINUE.md).
-Start with `node bin/gls task TASK-0007` on `library/reramp-20260908`.
-Implementation evidence and remaining visual/publication gates are in that run;
-the published baseline below is not a claim that the review branch is live.
+Run `node bin/gls tasks` for open work, then `node bin/gls task TASK-NNNN`
+with the exact returned ID. Do not repeat completed tasks. Read
+`site/intelligence.json` before changing a reserved scope. Source, selection,
+verification and deployment are separate claims.
 
-Read [CURRENT_STATE.md](../CURRENT_STATE.md) for the current verified state,
-published source revisions, release selection and next work. It is the owning
-record; this file is a route, not another status copy.
-
-Read generated [intelligence.json](../site/intelligence.json) for active Event
-threads and reservations, then open the source records linked from that view.
+The prior recovery/run evidence remains in `runs/library-reramp-20260908/` as
+history. It is not a separate project or the active source home.

@@ -1,26 +1,18 @@
 # The Great Library of SISO
 
-[Owner signoff — what changed and how to review it](runs/library-reramp-20260908/OWNER-SIGNOFF.md).
+The public registry and reading surface for independent SISO research, software,
+projects and agent capabilities. Stable Works identify things; Releases preserve
+exact evidence; Snapshots select versions; Assemblies describe composition.
 
-The public registry and reading surface for SISO research, software and agent
-systems. Works hold stable identity; Releases preserve evidenced versions;
-Snapshots select a named view; Assemblies describe how Works operate together.
+Human entry: https://great-library-of-siso.pages.dev/use/
+Machine entry: https://great-library-of-siso.pages.dev/llms.txt
+Source home: `sisodias/great-library-of-siso`, branch `main`.
 
-Current review work: [reramp continuation](runs/library-reramp-20260908/CONTINUE.md).
-Use `node bin/gls tasks` and `node bin/gls task TASK-0007` for canonical scope.
-The shared frame and read CLI are implemented on the review branch; public
-publication and remaining visual acceptance are separate gates.
+Read [delivery and remaining work](../docs/library-delivery.md), then
+`node bin/gls tasks`. Inspect one task with `node bin/gls task TASK-NNNN`.
+Find source with `node bin/gls search "agent runtime"` and inspect its exact Work.
+The owning project retains its private source, execution and acceptance authority.
 
-Current verified published work and exact source/publication receipts
-are in [CURRENT_STATE.md](../CURRENT_STATE.md). Start with [AGENTS.md](../AGENTS.md)
-and the [onboarding map](../docs/onboarding.html).
-
-Run `npm ci` and `npm run verify`. Build with `npm run build`. Publish only the
-verified `site/` directory using the installed publish skill or the documented
-Cloudflare deploy command. On constrained machines use a process-group memory
-guard and keep builds below 2 GB; no dev server is needed.
-
-Repository and Library identity are in [repos.json](repos.json), the public URL
-is in [page.url](page.url), and [HANDOFF.md](HANDOFF.md) routes to owner state.
-Raw conversations, credentials, client intake and machine placement remain
-outside this public repository.
+Verify with Node20: `npm ci` then `npm run verify`. Publication uploads only the
+verified `site/` artifact and requires the user's release authority. No registry
+entry grants private access, installation or production admission.

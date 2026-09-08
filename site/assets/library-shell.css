@@ -54,6 +54,7 @@
 .library-shell .work-card, .library-shell .empty-state { background: var(--crm-color-surface); }
 .library-shell .work-card h3 { font-weight: 560; }
 .library-shell .work-card { min-width: 0; overflow-wrap: anywhere; }
+.library-shell .promotion-unit { min-width: 0; overflow-wrap: anywhere; background: var(--crm-color-surface); }
 .library-shell .card-foot { min-width: 0; }
 .library-shell .card-foot code { min-width: 0; }
 .library-shell .catalog-controls input, .library-shell .catalog-controls select { border-radius: var(--crm-radius-control); }
