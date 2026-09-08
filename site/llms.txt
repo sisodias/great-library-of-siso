@@ -1,0 +1,21 @@
+# The Great Library of SISO
+
+Public registry and reading surface; independent source repositories retain their ownership and execution boundaries.
+
+Start: /use/
+Machine catalog: /catalog.json
+Source-selected Snapshot in this build: gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a (41.0.0)
+
+From a checkout with Node 20:
+- node bin/gls search "agent runtime"
+- node bin/gls inspect siso-agent-base
+- node bin/gls tasks
+- node bin/gls task TASK-0007
+
+Each catalog match gives its stable identity, selection state, source visibility, owner entry and dossier URL. Read one relevant dossier, then the owning source instructions. Missing reviewed commands remain missing; do not infer a runnable or public payload. Read commands verify local projection freshness and do not mutate or publish.
+
+Contribution contract: /docs/gls.md
+Owner/coordination observations: /intelligence.json
+Registry model: /docs/registry-model.md
+
+Works identify things. Releases preserve exact evidence. Snapshots select versions. Assemblies describe contextual composition. Source Inventories hold candidates. Registration, selection, installation, admission and live deployment are separate states. Runtime presence is not inferred from an Event.

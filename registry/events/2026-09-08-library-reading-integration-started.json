@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "event",
+  "id": "gls:event:44abd91d-8c4e-4dc9-b06d-0054e7eea7c8",
+  "occurred_at": "2026-09-08T05:29:49+07:00",
+  "recorded_at": "2026-09-08T05:29:49+07:00",
+  "immutable": true,
+  "entry_type": "verification_completed",
+  "thread": {
+    "id": "gls:thread:library-reading-integration",
+    "name": "Library reading integration",
+    "kind": "maintenance"
+  },
+  "status": "informational",
+  "title": "Library reading integration checkpoint awaits remaining visual acceptance",
+  "summary": "A single-owner review branch connects the current Library readers to the exact shared shell source. The successor selection is a proposal until accepted on canonical main; this Event does not assert a production deployment.",
+  "intent": "Make research, Works, source links and authored documents usable through one consistent human and agent reading flow.",
+  "reasoning": [
+    "The shared frame must not depend on an authored reading object; navigation coverage and content depth are different concerns.",
+    "Keep the source-owned CRM assets pinned and copy them only during the Library build. Preserve authored document content and isolate its CSS.",
+    "V41 changes only the shell selection from V40, preserves the other 31 release selections and the Assembly, and does not admit the private Action Model or Harness source.",
+    "Retain the pending whole-bank rights boundary and the bundled ISC notice rather than asserting that no third-party licence applies."
+  ],
+  "changes": [
+    {
+      "kind": "generator",
+      "reference": "scripts/build.mjs",
+      "summary": "Shared navigation across generated routes and authored readers, with preserved source substance."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/releases/siso-shell-10895ac-library.json",
+      "summary": "Conservative successor metadata for the exact public shell source."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/snapshots/whole-library-v41.json",
+      "summary": "Replace only the selected shell release and preserve the rest of V40."
+    },
+    {
+      "kind": "registry_record",
+      "reference": "registry/works/siso-harness-lab.json",
+      "summary": "Include the existing reviewed Harness metadata proposal without importing private payloads or claiming a deployment."
+    }
+  ],
+  "scope": {
+    "work_ids": [
+      "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
+      "gls:work:dd051ce3-520e-4799-87b0-1e3f2182cc72",
+      "gls:work:9ab07516-c02c-4798-857a-2eb8d1d2edfa",
+      "gls:work:1cc4c944-9351-466e-a442-9fe16ad145d1"
+    ],
+    "release_ids": [
+      "gls:release:7dbde38f-3909-4c53-84b7-86ce5196ce0b"
+    ],
+    "snapshot_ids": [
+      "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a"
+    ],
+    "repository_urls": [
+      "https://github.com/sisodias/great-library-of-siso",
+      "https://github.com/sisodias/siso-shell"
+    ]
+  },
+  "coordination": {
+    "owner": "Library reramp owner",
+    "branch": "library/reramp-20260908",
+    "reserved_paths": []
+  },
+  "visibility": "public",
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-shell/commit/10895acfbd79bfa21698c2ba4cd160e2410ac141",
+      "observed_at": "2026-09-08",
+      "summary": "Exact public source reviewed; CRM token bytes match the recorded donor, and the source preserves bundled icon attribution."
+    },
+    {
+      "kind": "integration_check",
+      "reference": "package-lock.json",
+      "observed_at": "2026-09-08",
+      "summary": "Node 20 npm ci installed the exact source archive and the Library generator built with its grouped rail API. This is installation/build evidence, not a production deployment receipt."
+    },
+    {
+      "kind": "documentation",
+      "reference": "docs/library-ui-spec.md",
+      "observed_at": "2026-09-08",
+      "summary": "The source brief requires shared navigation, preserved data semantics and real rendered acceptance; the original user corrections favor integration of the existing bank."
+    }
+  ],
+  "next_actions": [
+    "Resume TASK-0007 from .agents/runs/library-reramp-20260908/CONTINUE.md to complete the uncovered visual acceptance matrix.",
+    "Public merge and deployment require separate authority; the local review implementation is not a production receipt."
+  ]
+}

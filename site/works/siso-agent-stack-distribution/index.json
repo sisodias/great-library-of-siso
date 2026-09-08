@@ -144,11 +144,61 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-agent-stack/tree/9d1786575cce55df61ce3cf8564969536c47d186",
+    "visibility": "public",
+    "source_revision": "9d1786575cce55df61ce3cf8564969536c47d186",
+    "source_revision_basis": "selected_artifact",
+    "entry_revision": "9d1786575cce55df61ce3cf8564969536c47d186",
+    "commands": [],
+    "reference": "registry/works/siso-agent-stack-distribution.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:a085911a-30f7-4075-b8e1-680a65a2a0cd",
+      "version": "0.1.0+f4a9626",
+      "registry_source": "registry/releases/siso-agent-stack-f4a9626.json"
+    },
+    {
+      "id": "gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34",
+      "version": "0.2.0+9d17865",
+      "registry_source": "registry/releases/siso-agent-stack-9d17865.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34",
     "version": "0.2.0+9d17865",
     "released_at": "2026-08-02T00:09:48+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-agent-stack-9d17865.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/sisodias/siso-agent-stack/archive/9d1786575cce55df61ce3cf8564969536c47d186.tar.gz",
+        "revision": "9d1786575cce55df61ce3cf8564969536c47d186",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The distribution source is MIT licensed; pinned components retain their own licenses.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/sisodias/siso-agent-stack/blob/9d1786575cce55df61ce3cf8564969536c47d186/LICENSE",
+              "observed_at": "2026-08-02",
+              "summary": "The MIT license resolves at the exact release commit."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

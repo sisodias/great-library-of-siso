@@ -4,6 +4,34 @@
   "slug": "siso-agent-base",
   "name": "SISO Agent Runtime",
   "summary": "The provider-neutral SISO coding-agent application boundary: explicit configuration, safe host launch, profile composition, task control, checkpoints, bounded context, status, and runtime event contracts.",
+  "reading": {
+    "subtitle": "A small provider-neutral host boundary with explicit configuration, bounded context, checkpoints and status contracts.",
+    "why": "Runtime gives a coding-agent host a deliberate application boundary: configure the executable and profile files explicitly, validate the setup, launch argv without a shell, and exchange durable checkpoint and status data. Its six internal modules describe a focused experimental contract rather than the broader Agent Base warehouse, so adoption still depends on the selected source revision and the host's own capabilities.",
+    "highlights": [
+      {
+        "title": "Read the public boundary",
+        "summary": "The README defines the clean extraction, its six internal module responsibilities, the excluded domains, and the experimental 0.1.0 adoption limit.",
+        "url": "https://github.com/sisodias/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/README.md"
+      },
+      {
+        "title": "Inspect the machine contract",
+        "summary": "The manifest records provider neutrality, the Node CLI entrypoint, explicit JSON configuration, argv-only host launch, and each module responsibility.",
+        "url": "https://github.com/sisodias/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/runtime.manifest.json"
+      },
+      {
+        "title": "Trace the command surface",
+        "summary": "The CLI source defines manifest, doctor, where, run with optional dry-run, checkpoint, compact and status, including their required input options.",
+        "url": "https://github.com/sisodias/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/src/cli.mjs"
+      }
+    ],
+    "agent_entry": "https://github.com/sisodias/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/README.md",
+    "agent_commands": [
+      "node bin/siso-agent-runtime manifest",
+      "node bin/siso-agent-runtime --help"
+    ],
+    "owner": "SISO Agent Runtime maintainer",
+    "reference": "https://github.com/sisodias/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/README.md"
+  },
   "work_type": "application",
   "lifecycle_status": "active",
   "section": "Agents",
@@ -68,6 +96,12 @@
       "reference": "repo-check:siso-agent-runtime:a4aefc0345f979d67b5b3fac2829364a1a9100b9",
       "observed_at": "2026-07-30",
       "summary": "Clean provider-neutral Runtime foundation published with six internal module contracts, five passing behavior tests, publication checks, and explicit parity limits."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-agent-runtime/commit/a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+      "observed_at": "2026-09-08",
+      "summary": "Pinned public README, runtime manifest, and CLI command definitions reviewed. The documented surface is an experimental Node.js 20+ provider-neutral launcher with explicit JSON configuration, checkpoints, deterministic context compaction, and machine-readable status; no feature parity or installation readiness beyond the selected release claims is inferred."
     }
   ],
   "provenance": {
@@ -108,11 +142,64 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:36ba0940-4235-4e6c-87e2-e27266f77d33"
+  },
+  "owner_entry": {
+    "state": "authored",
+    "owner": "SISO Agent Runtime maintainer",
+    "entry_url": "https://github.com/sisodias/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/README.md",
+    "visibility": "public",
+    "source_revision": "main@a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": "a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+    "commands": [
+      "node bin/siso-agent-runtime manifest",
+      "node bin/siso-agent-runtime --help"
+    ],
+    "reference": "https://github.com/sisodias/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/README.md"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:61f81c21-b467-4628-96e8-a20493cd0a04",
+      "version": "main+2e2edfe",
+      "registry_source": "registry/releases/siso-agent-base-2e2edfe.json"
+    },
+    {
+      "id": "gls:release:36ba0940-4235-4e6c-87e2-e27266f77d33",
+      "version": "0.1.0+a4aefc0",
+      "registry_source": "registry/releases/siso-agent-runtime-a4aefc0.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:36ba0940-4235-4e6c-87e2-e27266f77d33",
     "version": "0.1.0+a4aefc0",
     "released_at": "2026-07-30T06:47:47+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-agent-runtime-a4aefc0.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/Lordsisodia/siso-agent-runtime/archive/a4aefc0345f979d67b5b3fac2829364a1a9100b9.tar.gz",
+        "revision": "a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The clean SISO-owned Runtime extraction carries an MIT license at the pinned commit.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/Lordsisodia/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/LICENSE",
+              "observed_at": "2026-07-30",
+              "summary": "The pinned release contains the MIT license text."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

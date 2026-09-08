@@ -1,0 +1,15 @@
+{
+  "id": "TASK-0006",
+  "title": "Register the three split repositories as Works",
+  "status": "completed",
+  "priority": "medium",
+  "source_file": ".agents/tasks/completed/TASK-0006/task.json",
+  "description": "The Work records for siso-unsolveable-mathematics, siso-stargate-library and siso-declassified-records are written and pushed but not merged.",
+  "acceptance_criteria": [
+    "The branch is merged and validate still passes"
+  ],
+  "latest_observation": {
+    "timestamp": "2026-09-08T06:32:26+07:00",
+    "action": "Reconciled completed work against canonical main"
+  }
+}

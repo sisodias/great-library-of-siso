@@ -173,11 +173,56 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+    "visibility": "public",
+    "source_revision": "de048bb3b34bf931b56fd741cb46c1334acdfb98",
+    "source_revision_basis": "selected_artifact",
+    "entry_revision": "de048bb3b34bf931b56fd741cb46c1334acdfb98",
+    "commands": [],
+    "reference": "registry/works/siso-people-graph.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e",
+      "version": "source-contract+de048bb",
+      "registry_source": "registry/releases/siso-people-graph-de048bb.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e",
     "version": "source-contract+de048bb",
     "released_at": "2026-08-06T22:24:00+07:00",
     "release_kind": "general",
+    "registry_source": "registry/releases/siso-people-graph-de048bb.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/sisodias/siso-people-graph/archive/de048bb3b34bf931b56fd741cb46c1334acdfb98.tar.gz",
+        "revision": "de048bb3b34bf931b56fd741cb46c1334acdfb98",
+        "availability": "public",
+        "license": {
+          "status": "pending",
+          "spdx": "NONE",
+          "reason": "No accepted repository license was present at the reviewed revision; the artifact is addressable but no general reuse right is claimed.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+              "observed_at": "2026-08-06",
+              "summary": "The exact tracked source tree contains no accepted license file."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

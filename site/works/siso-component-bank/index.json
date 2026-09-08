@@ -129,11 +129,56 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:7880b0ff-77db-4646-a29b-8061a8f7a42b"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-component-bank/tree/4aa89affc3298a102ef6751a96da6afd922f9cc7",
+    "visibility": "public",
+    "source_revision": "4aa89affc3298a102ef6751a96da6afd922f9cc7",
+    "source_revision_basis": "selected_artifact",
+    "entry_revision": "4aa89affc3298a102ef6751a96da6afd922f9cc7",
+    "commands": [],
+    "reference": "registry/works/siso-component-bank.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:7880b0ff-77db-4646-a29b-8061a8f7a42b",
+      "version": "1.0.0+4aa89af",
+      "registry_source": "registry/releases/siso-component-bank-4aa89af.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:7880b0ff-77db-4646-a29b-8061a8f7a42b",
     "version": "1.0.0+4aa89af",
     "released_at": "2026-09-05T18:40:00+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-component-bank-4aa89af.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/sisodias/siso-component-bank/archive/4aa89affc3298a102ef6751a96da6afd922f9cc7.tar.gz",
+        "revision": "4aa89affc3298a102ef6751a96da6afd922f9cc7",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The index, scripts, curation and metadata are SISO-authored and carry MIT; each component's code belongs to its 21st.dev author and every row carries the upstream URL.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/sisodias/siso-component-bank/blob/4aa89affc3298a102ef6751a96da6afd922f9cc7/LICENSE",
+              "observed_at": "2026-09-05",
+              "summary": "MIT license text is present at the exact release pin."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

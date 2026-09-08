@@ -4,10 +4,10 @@
   "id": "gls:work:dd051ce3-520e-4799-87b0-1e3f2182cc72",
   "slug": "siso-shell",
   "name": "SISO Shell",
-  "summary": "A shared static navigation shell for SISO reading surfaces: one pinned rail implementation with a 20px collapsed state, keyboard control and saved local preference.",
+  "summary": "The shared CRM-derived navigation, reusable page parts and static template bank for SISO reading surfaces. Consumers pin an exact source revision and supply reviewed project data; a template example is not a current project observation.",
   "work_type": "tool",
   "lifecycle_status": "experimental",
-  "updated_at": "2026-09-06",
+  "updated_at": "2026-09-08",
   "provenance": {
     "origin": "siso",
     "owners": [
@@ -21,15 +21,28 @@
       {
         "type": "source_repository",
         "url": "https://github.com/sisodias/siso-shell",
-        "revision": "adea8860b50324f283637a596c5a41367ece9776",
+        "revision": "10895acfbd79bfa21698c2ba4cd160e2410ac141",
         "visibility": "public",
         "verified": true,
         "evidence": {
-          "kind": "integration_check",
-          "reference": "https://github.com/sisodias/siso-shell/commit/adea8860b50324f283637a596c5a41367ece9776",
-          "observed_at": "2026-09-06",
-          "summary": "Public GitHub commit resolved at the exact source pin."
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-shell/commit/10895acfbd79bfa21698c2ba4cd160e2410ac141",
+          "observed_at": "2026-09-08",
+          "summary": "Current public grouped-rail source reviewed and installed in the Library consumer. CRM token bytes and bundled attribution are retained."
         }
+      },
+      {
+        "type": "homepage",
+        "url": "https://siso-shell.pages.dev/",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "public_locator",
+          "reference": "https://siso-shell.pages.dev/",
+          "observed_at": "2026-09-08",
+          "summary": "The public bank and U4 example were opened. Example data is dated demonstration content, not live owner or deployment truth."
+        },
+        "revision": "observed-2026-09-08"
       }
     ],
     "license": {
@@ -73,6 +86,39 @@
       "reference": "repo-check:siso-shell:adea8860b50324f283637a596c5a41367ece9776",
       "observed_at": "2026-09-06",
       "summary": "The Library imports the exact package commit at build time. Root and Foundry pages passed desktop click/keyboard/reload checks, 20px collapsed width and mobile overflow checks; both were captured at 2000x1250. Shell escaping and unsafe-link tests passed."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-shell/commit/10895acfbd79bfa21698c2ba4cd160e2410ac141",
+      "observed_at": "2026-09-08",
+      "summary": "Current public grouped-rail source reviewed and installed in the Library consumer. CRM token bytes and bundled attribution are retained."
     }
-  ]
+  ],
+  "reading": {
+    "subtitle": "One shared design source, composed into the reading page each project actually needs.",
+    "why": "The bank separates navigation, reusable parts and page-family compositions. A consumer selects a reviewed source revision and supplies its own public-safe data. Updates become deliberate upgrades: review the source, register its evidence, select it in a Snapshot, re-pin the consumer, and verify the rendered result. Template presence and an old example do not establish deployment, project ownership or acceptance.",
+    "highlights": [
+      {
+        "title": "Reuse the shared shell",
+        "summary": "Read the grouped navigation API and exact build-time reuse contract before wiring a consumer. Keep the shell in its owning repository.",
+        "url": "https://github.com/sisodias/siso-shell/blob/10895acfbd79bfa21698c2ba4cd160e2410ac141/README.md"
+      },
+      {
+        "title": "Choose a page family",
+        "summary": "Browse the existing template catalogue to choose a composition, then replace demonstration data with reviewed source-owned inputs.",
+        "url": "https://siso-shell.pages.dev/"
+      },
+      {
+        "title": "Trace the component provenance",
+        "summary": "Distinguish installed design-hub sources from preview-derived patterns, and retain notices when reusing the package.",
+        "url": "https://github.com/sisodias/siso-shell/blob/10895acfbd79bfa21698c2ba4cd160e2410ac141/parts/SOURCES.md"
+      }
+    ],
+    "agent_entry": "https://github.com/sisodias/siso-shell/blob/10895acfbd79bfa21698c2ba4cd160e2410ac141/README.md",
+    "agent_commands": [
+      "node --test shell.test.mjs"
+    ],
+    "owner": "SISO Open Source Foundation · shared-shell maintainer",
+    "reference": "docs/library-ui-integration.md"
+  }
 }

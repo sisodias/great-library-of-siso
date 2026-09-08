@@ -93,11 +93,61 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:0b81c926-0433-42f6-b6a9-9993b2ce5a6b"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-session-intelligence#readme",
+    "visibility": "public",
+    "source_revision": "main@7f2ace6b9ba4b11dd95700cd4050ae5970a06171",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/siso-session-intelligence.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:8078af85-d692-4275-b0b1-a3432f225acc",
+      "version": "registry-seed-2026-07-30",
+      "registry_source": "registry/releases/siso-session-intelligence-seed.json"
+    },
+    {
+      "id": "gls:release:0b81c926-0433-42f6-b6a9-9993b2ce5a6b",
+      "version": "0.1.0+7f2ace6",
+      "registry_source": "registry/releases/siso-session-intelligence-7f2ace6.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:0b81c926-0433-42f6-b6a9-9993b2ce5a6b",
     "version": "0.1.0+7f2ace6",
     "released_at": "2026-07-30T06:24:26+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-session-intelligence-7f2ace6.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/Lordsisodia/siso-session-intelligence/archive/7f2ace6b9ba4b11dd95700cd4050ae5970a06171.tar.gz",
+        "revision": "7f2ace6b9ba4b11dd95700cd4050ae5970a06171",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The clean SISO-owned extraction carries an MIT license.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/Lordsisodia/siso-session-intelligence/blob/7f2ace6b9ba4b11dd95700cd4050ae5970a06171/LICENSE",
+              "observed_at": "2026-07-30",
+              "summary": "MIT license is present at the pinned release."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

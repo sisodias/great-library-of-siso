@@ -31,11 +31,11 @@ Cite the stable Work ID. Add the Release identifier when a statement depends on 
 
 Correct authored source records, then regenerate the site. Do not patch generated Work pages. Follow [CONTRIBUTING.md](../CONTRIBUTING.md) for clean-room classification, provenance, and verification requirements.
 
-## Planned programmatic access
+## Programmatic access
 
-The near roadmap adds CLI and MCP readers for the same Work, Section, Release, and Snapshot contracts. The first programmatic surfaces are intentionally read-oriented: discovery, inspection, traversal, and retrieval. Registry mutation continues through reviewable source changes and the shared validation gate.
+`gls search` and `gls inspect` read the generated catalog and dossiers with local source-freshness checks. `gls tasks` and `gls task` read the existing project task records without creating a new task store. See [the CLI contract](gls.md) and the generated `/use/` reader. The output distinguishes source selection from deployment and authored entry instructions from unreviewed source locators.
 
-No command name or remote mutation API is promised until it is implemented and documented from the accepted contracts.
+MCP access and remote mutation are not implemented by these commands. Registry mutation continues through reviewed source changes and the existing guarded `gls add` path.
 
 ---
 

@@ -83,11 +83,36 @@
       "evidence": []
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:1ee81aa0-42cc-4bcd-a87b-4f34baf9cc13"
+  },
+  "owner_entry": {
+    "state": "not_recorded",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": null,
+    "visibility": "unknown",
+    "source_revision": null,
+    "source_revision_basis": "not_recorded",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/frontier-question-gq-005.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:1ee81aa0-42cc-4bcd-a87b-4f34baf9cc13",
+      "version": "registry-seed-2026-08-01",
+      "registry_source": "registry/releases/frontier-question-gq-005-seed.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:1ee81aa0-42cc-4bcd-a87b-4f34baf9cc13",
     "version": "registry-seed-2026-08-01",
     "released_at": "2026-08-01T22:33:00+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/frontier-question-gq-005-seed.json",
+    "artifacts": [],
     "distribution": {
       "addressable": {
         "state": "verified",

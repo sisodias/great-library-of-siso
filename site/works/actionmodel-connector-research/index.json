@@ -92,5 +92,22 @@
       "evidence": []
     }
   },
+  "selection": {
+    "state": "registered_not_selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": null
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-connector-research#readme",
+    "visibility": "private",
+    "source_revision": "main@ae15a763d80f03c016a966426356ab3feec44708",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/actionmodel-connector-research.json"
+  },
+  "registered_releases": [],
   "selected_release": null
 }

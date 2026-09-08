@@ -93,11 +93,66 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:69c70399-9344-4752-b6a7-8976ee857006"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-agent-integrations#readme",
+    "visibility": "public",
+    "source_revision": "main@808eb51c079db40ae273e721527b245be09e9544",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/siso-agent-integrations.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:21de8cc5-bb0c-4e97-a682-f10a4124a47b",
+      "version": "registry-seed-2026-07-30",
+      "registry_source": "registry/releases/siso-agent-integrations-seed.json"
+    },
+    {
+      "id": "gls:release:d26a1823-6270-41d2-9e73-417daac4c5fe",
+      "version": "main+6a248c8",
+      "registry_source": "registry/releases/siso-agent-integrations-6a248c8.json"
+    },
+    {
+      "id": "gls:release:69c70399-9344-4752-b6a7-8976ee857006",
+      "version": "main+808eb51",
+      "registry_source": "registry/releases/siso-agent-integrations-808eb51.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:69c70399-9344-4752-b6a7-8976ee857006",
     "version": "main+808eb51",
     "released_at": "2026-07-30T06:24:26+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-agent-integrations-808eb51.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/Lordsisodia/siso-agent-integrations/archive/808eb51c079db40ae273e721527b245be09e9544.tar.gz",
+        "revision": "808eb51c079db40ae273e721527b245be09e9544",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The source carries MIT and preserves external dependency ownership.",
+          "evidence": [
+            {
+              "kind": "release_receipt",
+              "reference": "identity-remediation:siso-agent-integrations:808eb51c079db40ae273e721527b245be09e9544",
+              "observed_at": "2026-07-30",
+              "summary": "Pinned remediated source and default integration smokes passed."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

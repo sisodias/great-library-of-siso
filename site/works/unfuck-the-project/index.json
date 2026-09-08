@@ -144,11 +144,56 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:9ac0eb6b-ff42-4505-ab48-9ca04b196c89"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/unfuck-the-project/tree/830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+    "visibility": "public",
+    "source_revision": "830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+    "source_revision_basis": "selected_artifact",
+    "entry_revision": "830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+    "commands": [],
+    "reference": "registry/works/unfuck-the-project.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:9ac0eb6b-ff42-4505-ab48-9ca04b196c89",
+      "version": "3.0.0+830b1dc",
+      "registry_source": "registry/releases/unfuck-the-project-830b1dc.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:9ac0eb6b-ff42-4505-ab48-9ca04b196c89",
     "version": "3.0.0+830b1dc",
     "released_at": "2026-09-05T18:40:00+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/unfuck-the-project-830b1dc.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/sisodias/unfuck-the-project/archive/830b1dc206d0d41e18769774b37b8fe4e0d67ac5.tar.gz",
+        "revision": "830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The prompt, brief, God Questions text and skills are SISO-authored and carry MIT.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/sisodias/unfuck-the-project/blob/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/LICENSE",
+              "observed_at": "2026-09-05",
+              "summary": "MIT license text is present at the exact release pin."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

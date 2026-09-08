@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:1cc4c944-9351-466e-a442-9fe16ad145d1",
+  "slug": "siso-harness-lab",
+  "name": "SISO Harness Lab · Agent Effectiveness",
+  "summary": "An evidence-gated improvement project for better accepted outcomes at comparable compute, or preserved quality at lower cost. It keeps experiments, counterexamples, rejected changes and continuation state. Private source; no established equal-spend quality gain, automatic instruction promotion or general cost multiplier.",
+  "reading": {
+    "subtitle": "Turn observed agent failures into tested improvements, while keeping rejected and unproven results visible.",
+    "why": "The improvement loop needs to preserve evidence before drawing conclusions. The source owner reports an accepted repair that prevents racing writers from replacing a winning result and rejects malformed output without creating an artifact. That is a bounded engineering improvement. Equal-spend quality gains remain unestablished, and overlapping pilot attempts do not justify instruction promotion or a general efficiency multiplier.",
+    "highlights": [
+      {
+        "title": "Open the private project entry",
+        "summary": "Authorized source entry for current backlog, evidence and operating instructions. The project front end is owner-held; this public metadata grants no private access.",
+        "url": "https://github.com/sisodias/siso-harness-lab/blob/feat/efficiency-loop-20260906/.agents/PAGE.md"
+      },
+      {
+        "title": "Keep skills in their owning system",
+        "summary": "The Skills Hub remains the source and promotion route for reusable skills. An experiment does not automatically install or promote an instruction.",
+        "url": "https://great-library-of-siso.pages.dev/works/siso-skills/"
+      },
+      {
+        "title": "Read the effectiveness question",
+        "summary": "Follow the research direction and evidence boundaries for improving useful agent work. An improvement target is not an achieved multiplier.",
+        "url": "https://great-library-of-siso.pages.dev/works/frontier-question-gq-002/"
+      }
+    ],
+    "agent_entry": "https://github.com/sisodias/siso-harness-lab/blob/feat/efficiency-loop-20260906/.agents/PAGE.md",
+    "agent_commands": [
+      "npm run project:status"
+    ],
+    "owner": "SISO Harness Lab source owner",
+    "reference": "https://github.com/sisodias/siso-harness-lab/blob/feat/efficiency-loop-20260906/.agents/PAGE.md"
+  },
+  "work_type": "project",
+  "lifecycle_status": "active",
+  "section": "Unassigned",
+  "library_url": "/works/siso-harness-lab/",
+  "agent_context_url": "/works/siso-harness-lab/index.json",
+  "registry_source": "registry/works/siso-harness-lab.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-harness-lab",
+      "visibility": "private"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-harness-lab#readme",
+      "visibility": "private"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "The agent-layer efficiency question supplies research direction; Harness Lab holds scoped experiments and acceptance evidence, not a claimed answer or general multiplier.",
+      "target_work_id": "gls:work:e38b054f-b926-4410-b84d-4fd3249fd4f4",
+      "target_name": "GQ-002 · 10× the Agent Layer",
+      "target_library_url": "/works/frontier-question-agent-layer-efficiency/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry/works/frontier-question-gq-002.json",
+          "observed_at": "2026-09-06",
+          "summary": "Existing research question and reviewed improvement-project scope share the accepted-work objective."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "Reusable skills retain their independent Skills Hub source and promotion workflow. Harness Lab evaluates interventions; it is not a second skill catalog.",
+      "target_work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+      "target_name": "SISO Skills",
+      "target_library_url": "/works/siso-skills/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry/works/siso-skills.json",
+          "observed_at": "2026-09-06",
+          "summary": "Contextual source-ownership relationship; no automatic installation or runtime integration claim."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "Session Intelligence remains an independent privacy-reduced ingestion and recall capability. Raw sessions are not copied into Library metadata.",
+      "target_work_id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
+      "target_name": "SISO Session Intelligence",
+      "target_library_url": "/works/siso-session-intelligence/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "registry/works/siso-session-intelligence.json",
+          "observed_at": "2026-09-06",
+          "summary": "Potential evidence input, not proof of a deployed automatic ingestion connection."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "github-api:sisodias/siso-harness-lab:a0ae561e1c6a05ef747b1cc304849e9d723fc80b",
+      "observed_at": "2026-09-06",
+      "summary": "Eight local tests pass for quality-first evaluation, malformed input, immutable successor receipts, cold pickup, no-op repeats and exclusive-writer refusal. No fleet savings, scheduled agent, model training or public payload Release is claimed."
+    },
+    {
+      "kind": "documentation",
+      "reference": "owner-report:siso-harness-lab:2026-09-08",
+      "observed_at": "2026-09-08",
+      "summary": "Owner-provided public-safe entry reports a local human/status surface, immutable diagnostics, an outcome grader and exclusive result publication. The accepted racing-writer repair is owner-reported, not independently replayed by the Library. Equal-spend quality gain is NOT_ESTABLISHED; the overlapping pilot does not support instruction promotion. The new detailed report is not yet available at the supplied GitHub branch path."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-harness-lab/blob/feat/efficiency-loop-20260906/.agents/PAGE.md",
+      "observed_at": "2026-09-08",
+      "summary": "Private repository entry path resolves through authenticated metadata lookup; blob 129059eda192941069e8b53cb5c533e93b96e7d2. No private source bytes or local runtime address are distributed by this Work."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO",
+        "role": "maintainer",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-harness-lab",
+        "revision": "a0ae561e1c6a05ef747b1cc304849e9d723fc80b",
+        "visibility": "private",
+        "verified": true,
+        "evidence": {
+          "kind": "source_review",
+          "reference": "github-api:sisodias/siso-harness-lab:a0ae561e1c6a05ef747b1cc304849e9d723fc80b",
+          "observed_at": "2026-09-06",
+          "summary": "Private owning repository and pushed implementation commit verified. Reviewed project spine, experiment runner, evidence gates and tests. No private source payload is distributed by this Work."
+        }
+      }
+    ],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "Public metadata only. The private source and evidence receive no redistribution grant from this registration.",
+      "evidence": []
+    }
+  },
+  "selection": {
+    "state": "registered_not_selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": null
+  },
+  "owner_entry": {
+    "state": "authored",
+    "owner": "SISO Harness Lab source owner",
+    "entry_url": "https://github.com/sisodias/siso-harness-lab/blob/feat/efficiency-loop-20260906/.agents/PAGE.md",
+    "visibility": "private",
+    "source_revision": "a0ae561e1c6a05ef747b1cc304849e9d723fc80b",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [
+      "npm run project:status"
+    ],
+    "reference": "https://github.com/sisodias/siso-harness-lab/blob/feat/efficiency-loop-20260906/.agents/PAGE.md"
+  },
+  "registered_releases": [],
+  "selected_release": null
+}

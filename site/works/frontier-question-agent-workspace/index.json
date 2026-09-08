@@ -83,11 +83,54 @@
       "evidence": []
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:0212a6f4-1860-453b-bb27-2e9ed70a09c4"
+  },
+  "owner_entry": {
+    "state": "not_recorded",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": null,
+    "visibility": "unknown",
+    "source_revision": null,
+    "source_revision_basis": "not_recorded",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/frontier-question-gq-001.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:bb6f759b-4c22-4dda-ac29-a4a9becefed9",
+      "version": "registry-seed-2026-08-01",
+      "registry_source": "registry/releases/frontier-question-gq-001-seed.json"
+    },
+    {
+      "id": "gls:release:0212a6f4-1860-453b-bb27-2e9ed70a09c4",
+      "version": "program-metadata-1.0.0+ea7f0e4",
+      "registry_source": "registry/releases/frontier-question-gq-001-program-v1.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:0212a6f4-1860-453b-bb27-2e9ed70a09c4",
     "version": "program-metadata-1.0.0+ea7f0e4",
     "released_at": "2026-08-02T02:08:28+07:00",
     "release_kind": "question_program_metadata",
+    "registry_source": "registry/releases/frontier-question-gq-001-program-v1.json",
+    "artifacts": [
+      {
+        "kind": "registry_metadata",
+        "locator": "https://github.com/Lordsisodia/great-library-of-siso/blob/ea7f0e4/registry/works/frontier-question-gq-001.json",
+        "revision": "ea7f0e4609517453c0ae72a07fcd1b256e0e3aed",
+        "availability": "public",
+        "license": {
+          "status": "not_applicable",
+          "spdx": "NONE",
+          "reason": "The artifact is publication-safe question-program metadata, not a distributable answer or corpus payload.",
+          "evidence": []
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

@@ -110,11 +110,54 @@
       "evidence": []
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/great-library-of-siso/tree/main/docs/people-graph-program",
+    "visibility": "public",
+    "source_revision": null,
+    "source_revision_basis": "not_recorded",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/frontier-question-gq-010.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787",
+      "version": "program-metadata-1.0.0+57320d3",
+      "registry_source": "registry/releases/frontier-question-gq-010-program-v1.json"
+    },
+    {
+      "id": "gls:release:3de55ee0-ec67-433a-b061-5bebabf0cb4e",
+      "version": "registry-seed-2026-08-06",
+      "registry_source": "registry/releases/frontier-question-gq-010-seed.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787",
     "version": "program-metadata-1.0.0+57320d3",
     "released_at": "2026-08-06T22:24:00+07:00",
     "release_kind": "question_program_metadata",
+    "registry_source": "registry/releases/frontier-question-gq-010-program-v1.json",
+    "artifacts": [
+      {
+        "kind": "registry_metadata",
+        "locator": "https://github.com/sisodias/great-library-of-siso/blob/57320d35c631732fa3f414be733f404ba6e15366/registry/works/frontier-question-gq-010.json",
+        "revision": "57320d35c631732fa3f414be733f404ba6e15366",
+        "availability": "public",
+        "license": {
+          "status": "not_applicable",
+          "spdx": "NONE",
+          "reason": "This artifact is publication-safe question and program metadata; source payloads, private receipts, and operational databases are not attached.",
+          "evidence": []
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

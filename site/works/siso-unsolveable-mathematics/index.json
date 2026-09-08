@@ -93,5 +93,22 @@
       ]
     }
   },
+  "selection": {
+    "state": "registered_not_selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": null
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-unsolveable-mathematics#readme",
+    "visibility": "public",
+    "source_revision": "main@2c772ab122858aec67d7958bf860b7d223210187",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/siso-unsolveable-mathematics.json"
+  },
+  "registered_releases": [],
   "selected_release": null
 }

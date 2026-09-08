@@ -96,11 +96,141 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:1f8b6c2d-72f4-4b90-9e1f-3d5a7c8b2e64"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://great-library-of-siso.pages.dev/",
+    "visibility": "public",
+    "source_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/library.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:4ed5e119-3ee7-4dca-bdd2-9c344c608a01",
+      "version": "1.0.0",
+      "registry_source": "registry/releases/library-v1.json"
+    },
+    {
+      "id": "gls:release:08b0e778-e4d5-4870-8ea0-13755ada51b2",
+      "version": "0.1.0+b9702f0",
+      "registry_source": "registry/releases/great-library-b9702f0.json"
+    },
+    {
+      "id": "gls:release:682f4370-0798-40ea-8202-b2de98cdfdc7",
+      "version": "0.2.0+468fb41",
+      "registry_source": "registry/releases/great-library-468fb41.json"
+    },
+    {
+      "id": "gls:release:283f0d30-ec5d-41a1-bbbe-df548371cab2",
+      "version": "0.2.1+fd348bc",
+      "registry_source": "registry/releases/great-library-fd348bc.json"
+    },
+    {
+      "id": "gls:release:5b98d150-b81e-477a-848a-b22564b1e177",
+      "version": "0.3.0+2772212",
+      "registry_source": "registry/releases/great-library-2772212.json"
+    },
+    {
+      "id": "gls:release:3da753a0-ffd2-467c-a2ca-5dfd712ba86f",
+      "version": "0.3.1+2bd415d",
+      "registry_source": "registry/releases/great-library-2bd415d.json"
+    },
+    {
+      "id": "gls:release:6cbb7080-344c-44e9-a6d3-8e924496ec1f",
+      "version": "0.4.0+2c09268",
+      "registry_source": "registry/releases/great-library-2c09268.json"
+    },
+    {
+      "id": "gls:release:6b858048-2b40-4802-a33c-0c38289ac07a",
+      "version": "0.5.0+b30f3a9",
+      "registry_source": "registry/releases/great-library-b30f3a9.json"
+    },
+    {
+      "id": "gls:release:7e775112-82ee-44d7-9d41-2a22bb471508",
+      "version": "0.6.0+100f07c",
+      "registry_source": "registry/releases/great-library-100f07c.json"
+    },
+    {
+      "id": "gls:release:be7fc18d-7f58-490d-ba1b-86a9c90a3466",
+      "version": "0.7.0+1e7453e",
+      "registry_source": "registry/releases/great-library-1e7453e.json"
+    },
+    {
+      "id": "gls:release:de6d0191-2b51-4af6-8369-11f8893ff036",
+      "version": "0.7.1+f44b4cf",
+      "registry_source": "registry/releases/great-library-f44b4cf.json"
+    },
+    {
+      "id": "gls:release:07f984fa-af0a-422a-9103-6e34a2ac6dbd",
+      "version": "0.8.0+d16ac75",
+      "registry_source": "registry/releases/great-library-d16ac75.json"
+    },
+    {
+      "id": "gls:release:bfa87ed9-ddd3-4a7b-b563-1e4cd132b9a6",
+      "version": "0.9.0+dfe9733",
+      "registry_source": "registry/releases/great-library-public-agent-ecosystem-dfe9733.json"
+    },
+    {
+      "id": "gls:release:c89fe623-8b4b-49d1-9fa0-e0b6cb91c291",
+      "version": "1.0.0+ea7f0e4",
+      "registry_source": "registry/releases/great-library-god-questions-infrastructure-ea7f0e4.json"
+    },
+    {
+      "id": "gls:release:21bac572-08ee-45e3-9cd0-697a828dedd4",
+      "version": "1.1.0+0066cfa",
+      "registry_source": "registry/releases/great-library-estate-reconciliation-0066cfa.json"
+    },
+    {
+      "id": "gls:release:9bee9fb7-eb0c-4658-86b8-cfeed2fdfe17",
+      "version": "1.2.0+33c2ce1",
+      "registry_source": "registry/releases/great-library-foundry-agency-intelligence-33c2ce1.json"
+    },
+    {
+      "id": "gls:release:902daf04-b080-4543-a5b9-6186c8643751",
+      "version": "1.3.0+7c732ec",
+      "registry_source": "registry/releases/great-library-foundry-value-matrix-7c732ec.json"
+    },
+    {
+      "id": "gls:release:1f8b6c2d-72f4-4b90-9e1f-3d5a7c8b2e64",
+      "version": "1.4.0+2e9b7c8",
+      "registry_source": "registry/releases/great-library-foundry-agency-coverage-2e9b7c8.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:1f8b6c2d-72f4-4b90-9e1f-3d5a7c8b2e64",
     "version": "1.4.0+2e9b7c8",
     "released_at": "2026-08-03T02:03:27+07:00",
     "release_kind": "general",
+    "registry_source": "registry/releases/great-library-foundry-agency-coverage-2e9b7c8.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/Lordsisodia/great-library-of-siso/archive/2e9b7c80ad93b56e974f4d42e39a9981701986b5.tar.gz",
+        "revision": "2e9b7c80ad93b56e974f4d42e39a9981701986b5",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The pinned public registry source carries the repository MIT license.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/Lordsisodia/great-library-of-siso/blob/2e9b7c80ad93b56e974f4d42e39a9981701986b5/LICENSE",
+              "observed_at": "2026-08-03",
+              "summary": "The MIT license is present at the exact public implementation checkpoint."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

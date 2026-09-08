@@ -108,11 +108,61 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:082afdff-c770-49de-a67c-a1ef9a6bb40d"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-knowledge#readme",
+    "visibility": "private",
+    "source_revision": "main@333447afc7672ff622a5f92f96533662585bdb1f",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/siso-knowledge.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:6be306e8-db62-4b11-ac60-e01aaa0b1f3a",
+      "version": "public-architecture+0a433ce",
+      "registry_source": "registry/releases/siso-knowledge-0a433ce.json"
+    },
+    {
+      "id": "gls:release:082afdff-c770-49de-a67c-a1ef9a6bb40d",
+      "version": "public-architecture+333447a",
+      "registry_source": "registry/releases/siso-knowledge-333447a.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:082afdff-c770-49de-a67c-a1ef9a6bb40d",
     "version": "public-architecture+333447a",
     "released_at": "2026-07-30T21:08:59+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-knowledge-333447a.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/Lordsisodia/siso-knowledge/archive/333447afc7672ff622a5f92f96533662585bdb1f.tar.gz",
+        "revision": "333447afc7672ff622a5f92f96533662585bdb1f",
+        "availability": "public",
+        "license": {
+          "status": "pending",
+          "spdx": "NONE",
+          "reason": "No repository license has been accepted; this artifact is publicly addressable but carries no general reuse claim.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/Lordsisodia/siso-knowledge/tree/333447afc7672ff622a5f92f96533662585bdb1f",
+              "observed_at": "2026-07-30",
+              "summary": "The pinned source tree has no accepted license file."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

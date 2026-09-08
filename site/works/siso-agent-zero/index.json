@@ -123,11 +123,66 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:c7cfb739-67d3-4c63-9146-5f47430f7970"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO",
+    "entry_url": "https://github.com/sisodias/siso-agent-zero#readme",
+    "visibility": "public",
+    "source_revision": "main@dacfc6c30b2f478c9d3382910674bd30289d3981",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/agent-zero-coordination-playbook.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:8c02a5a4-5386-4c63-a72f-c02665799106",
+      "version": "registry-seed-2026-07-29",
+      "registry_source": "registry/releases/agent-zero-seed.json"
+    },
+    {
+      "id": "gls:release:1712f299-6324-418c-8346-f1d05df2982c",
+      "version": "0.1.0+6fe462b",
+      "registry_source": "registry/releases/siso-agent-zero-6fe462b.json"
+    },
+    {
+      "id": "gls:release:c7cfb739-67d3-4c63-9146-5f47430f7970",
+      "version": "0.1.0+dacfc6c",
+      "registry_source": "registry/releases/siso-agent-zero-dacfc6c.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:c7cfb739-67d3-4c63-9146-5f47430f7970",
     "version": "0.1.0+dacfc6c",
     "released_at": "2026-07-30T06:24:26+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-agent-zero-dacfc6c.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/Lordsisodia/siso-agent-zero/archive/dacfc6c30b2f478c9d3382910674bd30289d3981.tar.gz",
+        "revision": "dacfc6c30b2f478c9d3382910674bd30289d3981",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The SISO-owned coordination package carries MIT.",
+          "evidence": [
+            {
+              "kind": "release_receipt",
+              "reference": "identity-remediation:siso-agent-zero:dacfc6c30b2f478c9d3382910674bd30289d3981",
+              "observed_at": "2026-07-30",
+              "summary": "Pinned remediated source and the full Agent Zero verifier passed."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

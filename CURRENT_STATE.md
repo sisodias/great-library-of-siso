@@ -1,5 +1,16 @@
 # Current state — The Great Library of SISO
 
+## 8 September review-branch checkpoint
+
+Branch `library/reramp-20260908` contains the integrated reading frame, source-state
+projections, read-only gls discovery/task commands, and reviewed project entries.
+It is not deployed. Full Node20 verification passed; representative desktop/mobile
+and no-JS/storage-denied checks passed after a mobile overflow correction.
+The remaining TASK-0007 visual matrix and public publication remain open.
+Cold continuation: `.agents/runs/library-reramp-20260908/CONTINUE.md`; start with
+`node bin/gls task TASK-0007`. The published receipts below remain historical
+production evidence, not evidence for this branch.
+
 **Verified:** 2026-09-06
 
 ## Action Model metadata — published

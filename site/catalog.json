@@ -1,6 +1,997 @@
 {
-  "generated_at": "2026-09-06T06:50:00.000Z",
+  "generated_at": "2026-09-07T22:29:49.000Z",
   "base_path": "/",
+  "snapshot": {
+    "id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "version": "41.0.0",
+    "registry_source": "registry/snapshots/whole-library-v41.json"
+  },
+  "source_inputs": [
+    {
+      "path": "package-lock.json",
+      "sha256": "9b76534b17fad204aa5f24b37603613d20c6a943d2d4ff528e1210a5c81c0490"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1b7aac415702213a0ead362008e8717a1b1de6f050eabb24ad22d365c034db4b"
+    },
+    {
+      "path": "registry/assemblies/siso-agent-stack-v1.json",
+      "sha256": "f2ce4d8802ce40e95f00d31b1afafd9c93adca7827c8ddf20113c50c5fa87379"
+    },
+    {
+      "path": "registry/assemblies/siso-agent-stack-v2.json",
+      "sha256": "1c4ef690afdef5296519ab57bd48665e8a69905270ffd4c6e46b300b250b52d9"
+    },
+    {
+      "path": "registry/decisions/adr-0001-registry-is-public-truth.json",
+      "sha256": "0e92929e55744c09a1ec8202e7eb2a28df79fca0a3eb543759fdc30f65f86ad8"
+    },
+    {
+      "path": "registry/decisions/adr-0002-capabilities-promote-through-owners.json",
+      "sha256": "741cce312369bc123306232b89189070aa18112b858829787c1419ebb5912c44"
+    },
+    {
+      "path": "registry/decisions/adr-0003-frontier-questions-are-works.json",
+      "sha256": "bd9da2c0ab7b18954b050034d220835a847dc09e936e0fd321a2180c31fea53b"
+    },
+    {
+      "path": "registry/decisions/adr-0004-append-only-ecosystem-intelligence.json",
+      "sha256": "4e7367758ce3a4ee5be2bd5304aed1337e0b6965ac450002e673001d852c6cf8"
+    },
+    {
+      "path": "registry/decisions/adr-0005-people-graph-ownership-and-data-plane.json",
+      "sha256": "c8bfffd6df2293f47f81bcd37e36e140c0d3e6a8ee41689fd37fbada211137e9"
+    },
+    {
+      "path": "registry/decisions/adr-0006-cloudflare-pages-hosting.json",
+      "sha256": "7d66d787ffa18c081123207e7adb7544604e4049eefdd1655e06a4d30ee22d02"
+    },
+    {
+      "path": "registry/events/2026-07-30-library-foundation.json",
+      "sha256": "a901a8eddc45577346b4dbc493dea9ef787e23e57b31286f8c323cd002f2671f"
+    },
+    {
+      "path": "registry/events/2026-08-01-agent-capability-promotion.json",
+      "sha256": "ca6ad4d20dcc3cea4f5b46b00d56ef5ba1a70be89fcd0c7efd87dbe57c2a5cee"
+    },
+    {
+      "path": "registry/events/2026-08-01-ecosystem-intelligence-completed.json",
+      "sha256": "c2957534cc4d425240337c873b15f18f7d14b42b26ac92d52f4f9102d747e2bf"
+    },
+    {
+      "path": "registry/events/2026-08-01-ecosystem-intelligence-published.json",
+      "sha256": "bf14462b0ecee1c93f0dd0bc9afdc85fa88ec9d258dffbfb4156bfed84b50629"
+    },
+    {
+      "path": "registry/events/2026-08-01-ecosystem-intelligence-started.json",
+      "sha256": "20ef6bc1c1d998be0d8d41d87efb5190f3a9b905e52266abee43aa1c4bbf8349"
+    },
+    {
+      "path": "registry/events/2026-08-01-frontier-questions.json",
+      "sha256": "d83d7a09d4b79d07f6b935bcfe2c510ae74eed8f046a06c41463524802dff233"
+    },
+    {
+      "path": "registry/events/2026-08-01-hundred-million-token-operating-plan-completed.json",
+      "sha256": "16e212dec8a5d3893f70c207e1d1ec22410b7ab273a7952f8ed599fd3cadb2f0"
+    },
+    {
+      "path": "registry/events/2026-08-01-hundred-million-token-operating-plan-started.json",
+      "sha256": "e609960b12e4e14d5cc2f86a897273dd9cb3e5081613b62b76d411c1dd977c8b"
+    },
+    {
+      "path": "registry/events/2026-08-01-hundred-million-token-program-completed.json",
+      "sha256": "e072db78f4c1a81f1c8b470b5aab7b3df95c939774e94237167b0374272ed51f"
+    },
+    {
+      "path": "registry/events/2026-08-01-hundred-million-token-program-started.json",
+      "sha256": "d8ff4b8be4c8bcc6db7e7d6ff59602497787ed7ae256de2b0655d2b6157b9874"
+    },
+    {
+      "path": "registry/events/2026-08-01-mission-question-answer-maturity-corrected.json",
+      "sha256": "bfd66e9d12772e9806d66ac6597a1ed5b28fbb64cd3e0818d5f56ccbb2d42d3a"
+    },
+    {
+      "path": "registry/events/2026-08-01-mission-question-architecture-completed.json",
+      "sha256": "082b06804b1744113b7c38d66150eb377e4ca2fd77adb213e482187c3d605f4d"
+    },
+    {
+      "path": "registry/events/2026-08-01-mission-question-architecture-started.json",
+      "sha256": "34dc8a576bbe64e17a2fa95fb78f3a4f8a5050c501acaf98d066be435fcaade5"
+    },
+    {
+      "path": "registry/events/2026-08-01-portable-agent-stack-v2.json",
+      "sha256": "c19e3174464d0c723ddc54196e4f00c2db8d74472e4e4ecf50508f58a10945c9"
+    },
+    {
+      "path": "registry/events/2026-08-02-estate-reconciliation-completed.json",
+      "sha256": "be26d1dd998d4c6c0821c5df6ab434a7572ccf0023c3a997a8a2454ede2fc715"
+    },
+    {
+      "path": "registry/events/2026-08-02-estate-reconciliation-started.json",
+      "sha256": "52df6e573897e1b4b17c47f7516627168dbf7c12988dc382c760324092430614"
+    },
+    {
+      "path": "registry/events/2026-08-02-foundry-agency-intelligence-completed.json",
+      "sha256": "f38dc2d2cd92539b6a38e0f7883282b341a16e67582d519117fb75a38c9f4e1a"
+    },
+    {
+      "path": "registry/events/2026-08-02-foundry-agency-intelligence-started.json",
+      "sha256": "0a81cdcb91b65f782bbc8141a22672fefabce31e2d6ccd8387ea83f648d0d3f1"
+    },
+    {
+      "path": "registry/events/2026-08-02-foundry-agency-value-matrix-completed.json",
+      "sha256": "13fea81a528fd6ffeaa1117985110b01a75d823ae794b6ea044be192e799b547"
+    },
+    {
+      "path": "registry/events/2026-08-02-god-questions-infrastructure-completed.json",
+      "sha256": "891872edb052c124857661602a3d22adf0d7156d9cc82fb8e67ed2417c305aea"
+    },
+    {
+      "path": "registry/events/2026-08-02-god-questions-infrastructure-drafted.json",
+      "sha256": "06ff33cf9a2d7e55915ec23f9120c146c350e1354107acf7e6f3bf77c856cba8"
+    },
+    {
+      "path": "registry/events/2026-08-02-god-questions-infrastructure-program-completed.json",
+      "sha256": "126ea33d981f489731a412947941d4a205225b1b0f598485f764f7313079e893"
+    },
+    {
+      "path": "registry/events/2026-08-02-god-questions-infrastructure-program-started.json",
+      "sha256": "34738c05deeede5a265a541db4ffe4610c835709e796a8d213c964a5c7cdf05f"
+    },
+    {
+      "path": "registry/events/2026-08-02-god-questions-infrastructure-started.json",
+      "sha256": "f8fae6bf1944a55cce2c048c5602346c3ba2f00d1b30d28a85f3af926e5abd98"
+    },
+    {
+      "path": "registry/events/2026-08-02-public-agent-ecosystem-expansion-completed.json",
+      "sha256": "86ef9abc4fef36b6dd675d1d1c4010cf10351ff42428fa9f453dc7838c4e6f44"
+    },
+    {
+      "path": "registry/events/2026-08-02-public-agent-ecosystem-expansion-started.json",
+      "sha256": "67445e89ade368c63c74b43325c51ef812c2079330f2ac3056215111cb86cda3"
+    },
+    {
+      "path": "registry/events/2026-08-03-foundry-agency-coverage-completed.json",
+      "sha256": "ec525fe9f446928d2ce0cb1cef92319c6fa23c2518cf5e268c98d455df9c7fae"
+    },
+    {
+      "path": "registry/events/2026-08-03-foundry-agency-coverage-started.json",
+      "sha256": "115c8042e15bc31f18e2c0f2beab8309cf1dec69d9d331460500888c3da3721f"
+    },
+    {
+      "path": "registry/events/2026-08-06-people-graph-parallel-program-started.json",
+      "sha256": "5e5baf5b8596cb4a827563b3f91fe0ab0edb79e4dc9ddf796ee510472b61d7e4"
+    },
+    {
+      "path": "registry/events/2026-08-06-unsolveable-mathematics-program-started.json",
+      "sha256": "8c211bdd52efddec8636fe98d79b2348f0f73831591aed19d64351e030fff8b4"
+    },
+    {
+      "path": "registry/events/2026-08-07-declassified-government-records-started.json",
+      "sha256": "85f4569b125ca1a080e0458429591a252069a4aa30fbe6e20cd15bef98c19f56"
+    },
+    {
+      "path": "registry/events/2026-08-07-remote-viewing-research-started.json",
+      "sha256": "92bac334d9db78f8503dedf39f12c96af4be4d9e9afb8f23fa2ba20042396da8"
+    },
+    {
+      "path": "registry/events/2026-08-08-people-graph-parallel-program-integrated.json",
+      "sha256": "69548ca224c70d7fa17a016eaa6265c8855585cad6cdd1c2eec97cbb6c528e41"
+    },
+    {
+      "path": "registry/events/2026-08-09-laptop-beautification-converged.json",
+      "sha256": "254c492e9622b47480c115c940b8dbd5585f4566f6640a37bc6fdb9024472651"
+    },
+    {
+      "path": "registry/events/2026-08-09-laptop-estate-canonicalization-completed.json",
+      "sha256": "799a07437338f4eb30b9222847b7920bc226b8158c671aa82394d06db4d545cb"
+    },
+    {
+      "path": "registry/events/2026-08-09-laptop-estate-canonicalization-started.json",
+      "sha256": "16428895810f78cb8c4af5d90a5d7ea771be576754c13c0db16a87ceb21da199"
+    },
+    {
+      "path": "registry/events/2026-08-09-laptop-estate-private-overlay-expanded.json",
+      "sha256": "f5c0a454232a6d8ce9f8dc42b93fb956660273ced10fb7a772dc3d88a5e8da34"
+    },
+    {
+      "path": "registry/events/2026-08-09-laptop-estate-status-control-published.json",
+      "sha256": "da58aff8105acb05312bb4009c1b929a7e953449b5186b33488d3b80162ecd9a"
+    },
+    {
+      "path": "registry/events/2026-08-27-actionmodel-connector-research-registered.json",
+      "sha256": "948f8150b7766723c14ad3d85a812cd5e11681aeb2a429e0e59a62a2c88f94e1"
+    },
+    {
+      "path": "registry/events/2026-09-05-cloudflare-pages-hosting-decided.json",
+      "sha256": "2a8d6d002782e864c68e18540b0fc7ea06768270b6b90a229462016660eaedec"
+    },
+    {
+      "path": "registry/events/2026-09-05-library-reading-pilot-verified.json",
+      "sha256": "4e75a49d4602e023689587cd6cd1c99475ffe5c5f48b983174f14cca61f70eb0"
+    },
+    {
+      "path": "registry/events/2026-09-05-unfuck-source-layer-published.json",
+      "sha256": "278ce9637988e550337be3fef54eca7b4369f32c0c38bca0bf01dee24399e77f"
+    },
+    {
+      "path": "registry/events/2026-09-06-actionmodel-framework-metadata.json",
+      "sha256": "c1a4e1cbc2611296959db94feda84712cbd9727f83fa2ec55b1477cddb5e0dee"
+    },
+    {
+      "path": "registry/events/2026-09-06-d20-question-numbering-and-publication.json",
+      "sha256": "217f71edb99438c4bc074c91fb62951912d0a08f31cbd17e20efa5e9fcff4073"
+    },
+    {
+      "path": "registry/events/2026-09-06-foundry-front-door-completed.json",
+      "sha256": "5cc8ec75d9c26e8cc213275dc45f76a52adfac188eec7aa6697f72a4a47377be"
+    },
+    {
+      "path": "registry/events/2026-09-06-foundry-front-door-started.json",
+      "sha256": "cc159170d28ba5c571f4726adda744cd4df8270b3991bd1b2701fbcb06e3eedc"
+    },
+    {
+      "path": "registry/events/2026-09-06-project-spine-and-publish-released.json",
+      "sha256": "1861fe62b4b32a5348bd62a104588e43a81edf7a31ae1a53a538324b2fe7c919"
+    },
+    {
+      "path": "registry/events/2026-09-08-library-reading-integration-started.json",
+      "sha256": "6d0b006fdeda8d978172b322f6f6ef76c20b1022b43484a74300ee7a0f2f98f3"
+    },
+    {
+      "path": "registry/releases/agent-zero-seed.json",
+      "sha256": "4cf72788f59441947d7d5e6056f3cc618efbf1b93263f067be5b4f023cacd86b"
+    },
+    {
+      "path": "registry/releases/agents-v1.json",
+      "sha256": "96200b7e955e3d0ec21b954a1d329a7ec2428ad1aef86e2bfce6336c044564d2"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-001-program-v1.json",
+      "sha256": "34ad7a08b4bedee822d5aa0b092f0dbafa482f9a4a126b1562ed783f9fd56444"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-001-seed.json",
+      "sha256": "71ac37f58c5632456fe8e874b7648b2adf970868d1b37734757a21bc0782fa6e"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-002-program-v1.json",
+      "sha256": "10799afd280f366fe6358e7aaaf1b6507ca12f80e21a2d89d238ebb0f78225b6"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-002-seed.json",
+      "sha256": "dd485c01d518757e80ced5f7e661af52ee9559e33e132f65cd56212f30ed2f84"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-004-seed.json",
+      "sha256": "c5610c7e5840ac9c534eb31a36db7dede53d0d1f04cfdad416941a8ef42cb65f"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-005-seed.json",
+      "sha256": "0978db05a9e781061b7a06c6f05101d94dd36003ea16070fc6cc35f06b476595"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-006-seed.json",
+      "sha256": "6d2578d111b12d8526d9398f862e9144a00aa14ca50d94e9e222683046f46b7f"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-008-seed.json",
+      "sha256": "9e4229cc7330e377bba8c5b3f70e28db1212ccc305b93b752b396e6221d85e61"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-009-estate-reconciliation-v1.json",
+      "sha256": "4bc00e9e12504d6463a321d9d0d6eca64089c01c49e649e714a84ccd1fe63852"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-009-program-v1.json",
+      "sha256": "78d8cac4136c358ac2d4b460d756f7032fbcb0d92b2be39a8dec0b9f9e6d39ba"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-009-seed.json",
+      "sha256": "7e808fdecaf653f4cbdcf694556914066d248b48113b532d2c3c39dfed82f59b"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-010-program-v1.json",
+      "sha256": "5bfd6e627478e63cefe603111ca18b2959ddc14783f4a316342d17d1032697ca"
+    },
+    {
+      "path": "registry/releases/frontier-question-gq-010-seed.json",
+      "sha256": "98c368223ddd4e798972813194fe39ddfdb3458380170101c3441ae6cfa5a475"
+    },
+    {
+      "path": "registry/releases/great-library-100f07c.json",
+      "sha256": "7ee0d2b3c5f6c35873e02d126e8482ff3a405f7f5ef6f0cccef0ea2a1a952a31"
+    },
+    {
+      "path": "registry/releases/great-library-1e7453e.json",
+      "sha256": "80ae322b053652e251f13710554c013ca886135dbd5be1df6a8485dde559551f"
+    },
+    {
+      "path": "registry/releases/great-library-2772212.json",
+      "sha256": "79b0e61a2345406026d9d51d597733947064bb27b2df101271f22b8a497518e5"
+    },
+    {
+      "path": "registry/releases/great-library-2bd415d.json",
+      "sha256": "6c92ebac0658434e6a8386e6dbddbb907e775e0d92e961eea986002eaf5db802"
+    },
+    {
+      "path": "registry/releases/great-library-2c09268.json",
+      "sha256": "b2d3f7bed0e6a62ee82e57e78e7725e2e177fe9ecaa23c3a762d97485171d01c"
+    },
+    {
+      "path": "registry/releases/great-library-468fb41.json",
+      "sha256": "37738a75ee5397ed44a8bf5c9557c5fae8191cc6544aad674ecbdfb68104d260"
+    },
+    {
+      "path": "registry/releases/great-library-b30f3a9.json",
+      "sha256": "c07eb31b0d8d95fc11775a72d705672b23c6c6b5bf4bf738087a129715e002fc"
+    },
+    {
+      "path": "registry/releases/great-library-b9702f0.json",
+      "sha256": "063f93b6b57b862706a4ff66b4388dcdd0b7abe3335fa8dfcb4e1e89c9f6e315"
+    },
+    {
+      "path": "registry/releases/great-library-d16ac75.json",
+      "sha256": "e4cb51a5f7502621e8eff128873d7f5992e58a00ef4d7d10633bc8e9a57bcf6f"
+    },
+    {
+      "path": "registry/releases/great-library-estate-reconciliation-0066cfa.json",
+      "sha256": "55af1de8a5944fc988bf0ab3e042ef9aa58a8d38a0f89116fa92f21429428ce8"
+    },
+    {
+      "path": "registry/releases/great-library-f44b4cf.json",
+      "sha256": "457ceab1d79baaee9105a41bef901f68f45f57923123b08ec91636091119e220"
+    },
+    {
+      "path": "registry/releases/great-library-fd348bc.json",
+      "sha256": "5acca983aabb9b5e71a64d68b4e0fe0173066eb1359f1618f46d5ef93b8d4719"
+    },
+    {
+      "path": "registry/releases/great-library-foundry-agency-coverage-2e9b7c8.json",
+      "sha256": "d6498d65d4114d7a088f0081fc72490e872006307875d4c28c9c08efe0341cfc"
+    },
+    {
+      "path": "registry/releases/great-library-foundry-agency-intelligence-33c2ce1.json",
+      "sha256": "7022fa1e7f6a32401e89478fba0d3ef62f20a9cfc5e07e4b0ba1572034836668"
+    },
+    {
+      "path": "registry/releases/great-library-foundry-value-matrix-7c732ec.json",
+      "sha256": "c331543d399fb17df46c02239557fe27493ec315e28e2a4df9ace7f9ce058d89"
+    },
+    {
+      "path": "registry/releases/great-library-god-questions-infrastructure-ea7f0e4.json",
+      "sha256": "9d864d45fe3cc326198824b266e7d0069d764c0c669084f04960ba1b20f09178"
+    },
+    {
+      "path": "registry/releases/great-library-public-agent-ecosystem-dfe9733.json",
+      "sha256": "135fd585adef8deb8cd4a8e1f816dccdd4a06800ba334b593fcbbcb9bf2590cb"
+    },
+    {
+      "path": "registry/releases/herdr-514e446.json",
+      "sha256": "559a4cb66b2b887d967066487279a3480c8d20fcb04e00875bdb7f3e6d4e18f9"
+    },
+    {
+      "path": "registry/releases/library-v1.json",
+      "sha256": "ef6550ca061b5e7e6cad0c0eabfc91b2ba5ecb243d9baa8b05f79fb6658686aa"
+    },
+    {
+      "path": "registry/releases/research-v1.json",
+      "sha256": "1641d889f66bf10ce4de0dd3e126aa87c38cab3787fe20694b4f0c851751d40d"
+    },
+    {
+      "path": "registry/releases/siso-agent-base-2e2edfe.json",
+      "sha256": "9f6a8e8ca90723d7775158ab20ffe638c8316dfba3a75583d3cc6f2097b1df2e"
+    },
+    {
+      "path": "registry/releases/siso-agent-base-warehouse-2e2edfe.json",
+      "sha256": "ea5c3aa1fdcedeb46797cdd40a8ea5a8d5d5b139a84b9bed769c73e1d5094a0f"
+    },
+    {
+      "path": "registry/releases/siso-agent-brain-4f720fa.json",
+      "sha256": "f0cca3c34ae9010d1ffe5184acd9739c26603ccecde2c9848a7c849ec135ab7b"
+    },
+    {
+      "path": "registry/releases/siso-agent-brain-ae3d1c7.json",
+      "sha256": "fd254edd0f1d3e3430d68d1e7b4a074017a362dedc2828a446915307b774299d"
+    },
+    {
+      "path": "registry/releases/siso-agent-brain-d7fc475.json",
+      "sha256": "9abf71af9e370e99314c65b9376bc6402cc3a2d5fc9422032bc012f44f7363f4"
+    },
+    {
+      "path": "registry/releases/siso-agent-brain-ed50bec.json",
+      "sha256": "eb696d40d8b71a36812e5ad8282027a0b248b5d2903be041ca53d0da0ce60931"
+    },
+    {
+      "path": "registry/releases/siso-agent-brain-seed.json",
+      "sha256": "821ae6fa2711ab5c2935bb357346a82467703c2e94471607c649558a6dcc21da"
+    },
+    {
+      "path": "registry/releases/siso-agent-hooks-9125a97.json",
+      "sha256": "8edbdfde63a4ae22aa63c7d4f6825db5ba21fd7634199f063a65363f3e7ea638"
+    },
+    {
+      "path": "registry/releases/siso-agent-integrations-6a248c8.json",
+      "sha256": "ba7c35b16e0e208440933aefe7bed0e688e270689152bd54242367145542229e"
+    },
+    {
+      "path": "registry/releases/siso-agent-integrations-808eb51.json",
+      "sha256": "4e5a09b9a1ba2c3dfbbbca77f5aa48f1a32116c2590c8aba09fb96b180030ae1"
+    },
+    {
+      "path": "registry/releases/siso-agent-integrations-seed.json",
+      "sha256": "cf5d13247db9d3913e090fce93f856c9613b2188219ebd7fa39eb49bb4013b44"
+    },
+    {
+      "path": "registry/releases/siso-agent-playbook-409e84d.json",
+      "sha256": "4ed472542cf28d3ca5db3c8fb41cf8b54c0c015bc7b09182a1125229035c5526"
+    },
+    {
+      "path": "registry/releases/siso-agent-playbook-6ee572b.json",
+      "sha256": "673c11368ccd7b53288e3600b044ccbc401a2b3cbab054558f4428e295330976"
+    },
+    {
+      "path": "registry/releases/siso-agent-playbook-seed.json",
+      "sha256": "83f93d237861a75e361b2e72ff69c2ffef0fd96a8da7bc7d2356323fdf0e758f"
+    },
+    {
+      "path": "registry/releases/siso-agent-runtime-a4aefc0.json",
+      "sha256": "2fbab847443ad7e2a7fc87f9d66e1c443d4b2127a4e34a36f086c6ee1be6deb8"
+    },
+    {
+      "path": "registry/releases/siso-agent-stack-9d17865.json",
+      "sha256": "a3ae3a3e0735d438f1b75e373a6c8b17a695c6c1bd5ae87ed83fec6d83b5711b"
+    },
+    {
+      "path": "registry/releases/siso-agent-stack-f4a9626.json",
+      "sha256": "643c7c27617a6f7088cc84fd978a98543bed367c0186b44ac5ecbf2f6b8adc79"
+    },
+    {
+      "path": "registry/releases/siso-agent-zero-6fe462b.json",
+      "sha256": "f39251d626159f75abf98bdc29ac6c5a4750e52623f20a6f65692530fd7d2856"
+    },
+    {
+      "path": "registry/releases/siso-agent-zero-dacfc6c.json",
+      "sha256": "093174600216152d0dad9c66853a32f4f206b466eef45d470353aefce8959466"
+    },
+    {
+      "path": "registry/releases/siso-book-library-be9ab08.json",
+      "sha256": "a78c1aa127716c37cbe56a7a33a15f2079a5b5dd5e0c8b0412feb095568670c7"
+    },
+    {
+      "path": "registry/releases/siso-component-bank-4aa89af.json",
+      "sha256": "4f7d1dec665c3cef1813dd02b37b5ffd6009833cee13331f3e11961f6821aee7"
+    },
+    {
+      "path": "registry/releases/siso-evidence-engines-6ffba38.json",
+      "sha256": "03432525239933675a17f6a16b7b50e5d75bf096828f1698862f63bee7d2276d"
+    },
+    {
+      "path": "registry/releases/siso-evidence-engines-71022ce.json",
+      "sha256": "df159211d2ab8df95ea759696bc2b6330fef6855dffa2d77b5f4f09a638bf43b"
+    },
+    {
+      "path": "registry/releases/siso-evidence-engines-seed.json",
+      "sha256": "899ab7d2657d4910d9650180ed921c35afbe1f384dca628495ea1bcba84d66ca"
+    },
+    {
+      "path": "registry/releases/siso-foundry-1ec5890.json",
+      "sha256": "108a1e91fdd156a384f264a3510b1b54bb9c6741abdd5e1503387d45f0135701"
+    },
+    {
+      "path": "registry/releases/siso-foundry-233edef.json",
+      "sha256": "e8b90e2bc02eadc896e94ac3a94a4c7201774078c027e35b32b9c8667bdd7d20"
+    },
+    {
+      "path": "registry/releases/siso-foundry-8c6eb30.json",
+      "sha256": "6752f247bf4aaf897d30507ef7810159535199479c67d8d2a507220d34e0240f"
+    },
+    {
+      "path": "registry/releases/siso-foundry-b28b0f7.json",
+      "sha256": "b288d94d1f7fdbaa1d00649400af3cd2fc8f98d9fe8dd3b002547e65c16d8bec"
+    },
+    {
+      "path": "registry/releases/siso-foundry-d29480a.json",
+      "sha256": "d8a42e2d5d689ebbca3fb39a376f5beb98dcbedbdd9fd89d056607e94a93a226"
+    },
+    {
+      "path": "registry/releases/siso-foundry-f6afca0.json",
+      "sha256": "cd666e8a2a0773527ad6a8c480dc27e0b7ad70ff7ca1b1d710cd5b20563b3190"
+    },
+    {
+      "path": "registry/releases/siso-foundry-fd7d270.json",
+      "sha256": "9f41ee74551728639989fb6c72d6b1419ef7e1ca5e732c486a2ffb4e2d3a0e0c"
+    },
+    {
+      "path": "registry/releases/siso-foundry-research-11f4595.json",
+      "sha256": "373ed99ca10db060a487bfb4063d1afccde376edeb2aee88d8bca8b7b2c97568"
+    },
+    {
+      "path": "registry/releases/siso-foundry-seed.json",
+      "sha256": "20dde57f188b12751c9fca3969d76273878d5a0b1b215f14d7ed0983f4df0ee3"
+    },
+    {
+      "path": "registry/releases/siso-knowledge-0a433ce.json",
+      "sha256": "2243f8ccf250cb3cfea2380fc550c0d3438faad2c161e2148516434a8560da57"
+    },
+    {
+      "path": "registry/releases/siso-knowledge-333447a.json",
+      "sha256": "a0ab1f60c61667c51c20b86e6303090ef21ccb8b0dac7ec95fd1740195cfcf44"
+    },
+    {
+      "path": "registry/releases/siso-people-graph-de048bb.json",
+      "sha256": "64073dd87614eab436b0db6a61da340bba0f01f303b95bef3a05d842ef73dd36"
+    },
+    {
+      "path": "registry/releases/siso-project-os-bfa88dc.json",
+      "sha256": "32711660e73a2926ba13a3252bedd977d401bd14f502f62728a500efd34a3b0d"
+    },
+    {
+      "path": "registry/releases/siso-project-os-d6290c6.json",
+      "sha256": "695e0ffef7bc9ef5370a97b34f9db86658758e35d14ef72f3568b2580bb7e53e"
+    },
+    {
+      "path": "registry/releases/siso-project-os-lordsisodia-d6290c6.json",
+      "sha256": "acd404815c593f438b48d3be737d4366e2c6285a7595782f3a73b5e0ddfff7a7"
+    },
+    {
+      "path": "registry/releases/siso-repo-bank-2d7d35e.json",
+      "sha256": "4b6f21adb28a76622982d6d0a4d9052e22765c68b5731e919ee4e9686a5b8e2c"
+    },
+    {
+      "path": "registry/releases/siso-session-intelligence-7f2ace6.json",
+      "sha256": "ff8708e23dcb241b77fcc245c3f26cd0395b9f841d28326d51789a5573b69c6d"
+    },
+    {
+      "path": "registry/releases/siso-session-intelligence-seed.json",
+      "sha256": "57a33b386ccdf37cb528d1eb8ba01f82580e92293b34bd5ed9e7176460617e38"
+    },
+    {
+      "path": "registry/releases/siso-shell-10895ac-library.json",
+      "sha256": "6ed35f668df7d12f7cd5d838e4769597b7da8494407c7dc5a4691ddc22433ddd"
+    },
+    {
+      "path": "registry/releases/siso-shell-9694a54.json",
+      "sha256": "43044b8a8ff34daf27fb4a31b83061848e84489358a8196a61839b3bc8cc5364"
+    },
+    {
+      "path": "registry/releases/siso-shell-adea886.json",
+      "sha256": "315c37f1fb6293337ff48995d7b8b0b0cd446342fffa105e1bd6a9b4371769a0"
+    },
+    {
+      "path": "registry/releases/siso-skills-e295047.json",
+      "sha256": "147d2967f7e7e82bad08c1a166a473b2919a1353584ec54ea9359ef28312bd16"
+    },
+    {
+      "path": "registry/releases/siso-skills-hub-05d978b.json",
+      "sha256": "a6b01012471508b92765865600105ffb213212457214ceef4aa686e95dca6e73"
+    },
+    {
+      "path": "registry/releases/siso-skills-hub-1693abb.json",
+      "sha256": "99681996581675c7633fb21083461739040a0ad7d3dd80d5eaf53ed8b530dd75"
+    },
+    {
+      "path": "registry/releases/siso-skills-hub-2195cbb.json",
+      "sha256": "eaff0d594d216bff46227aa1e6770d3903e0cb3df8e786b91a918298be4b9637"
+    },
+    {
+      "path": "registry/releases/siso-skills-hub-5e33b2b.json",
+      "sha256": "79e009e94fd1d3f688d71343a2b79da498547c0e76b254359badb7264bbbd33c"
+    },
+    {
+      "path": "registry/releases/siso-skills-hub-d82cd44.json",
+      "sha256": "5e11645d89485ceac24f3295e4a50c35bf8a3e59534367d9ff001c3abdc9678f"
+    },
+    {
+      "path": "registry/releases/siso-skills-seed.json",
+      "sha256": "f4e38fd5b73b1bb1c44aed191637c0a4fea46b6c83bddc9a148aa085347c252e"
+    },
+    {
+      "path": "registry/releases/unfuck-the-project-830b1dc.json",
+      "sha256": "2041bf80924a4e02bc594b816593cdb7ef8ff78f546b52223c1ce6aa5cb8cb14"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v1.json",
+      "sha256": "440b1d85e2d8415249c85b97796453187901aef172885e0c7cf907af291c5430"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v10.json",
+      "sha256": "1e53e12e7c7a1fc5e9b88c60479ddaa57b174114746a562e35507961cec74e6d"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v11.json",
+      "sha256": "05eb00e6abfff49a8294f10c12fbc624399b97518761537b63d6b805b8f31a7c"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v12.json",
+      "sha256": "f2a0dc31dbbb66f869bf214e83b9ce515a970a552b8b32ac01d04d9d699201a6"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v13.json",
+      "sha256": "672e78b6a4373993adc8e30b27c481477d69600101e89c911e53038a9c160698"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v14.json",
+      "sha256": "979299b831ad1932aa18ec2c3fc20195356c190978f33f55207bb9cd140a2239"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v15.json",
+      "sha256": "d3133d1010115cde5df40f7d1ac6925b38457a2553cf16c90ac3d617ea2f3a38"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v16.json",
+      "sha256": "dacfc3a1246a2e25c26878119d4ce681076e3a0f494a2e04fedf4cc1a7f65275"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v17.json",
+      "sha256": "6e0867653f632e32ce65182821e0589f3600f3463cf325deaeeee202b7c17d44"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v18.json",
+      "sha256": "645eea77e213f84c4917f4d588fd32c6e0797d0229c75c121c288b7fb280edfc"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v19.json",
+      "sha256": "c3c0a6ff7612fdaae9c172b30a87742eb1f3810323652a6f0b4d357fbf5c7dff"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v2.json",
+      "sha256": "a850a8e92b21573f20682d1bf6c2cd3d3e36e48b270c52d3c2f52335ff1d6529"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v20.json",
+      "sha256": "6cb092c1c21461e012d8099b25f0d72dab4eb7586a00e8d80c089058285421ab"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v21.json",
+      "sha256": "0b1feeca3b3ddf2813cdf0604a5e8b4195762d3e11b4abbd2578082866124c31"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v22.json",
+      "sha256": "62f125502ecf85e190cba91147a7bc9bed780ad12edf73d5b128c2b5b28aadfd"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v23.json",
+      "sha256": "2055073465c02d6c73096c2cf925cce342a63040c6952c105de9797aac7406d0"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v24.json",
+      "sha256": "ccbf748ead554eeed2bd0ba94290d64d37691088c793a3ceac4c347b14051c5e"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v25.json",
+      "sha256": "55384d6cf1e2e459353b538ca178208549849f3e631db7caab44672311646d29"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v26.json",
+      "sha256": "326c413a90db57c436e441371ec44da6aa98cf0f40200164ed087193dd2cafc8"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v27.json",
+      "sha256": "9d2f5570e64ab6baa89fd68ca6c0728bf8fb26e29042844cdbf3888e2e5275e5"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v28.json",
+      "sha256": "1ede803e4c762239e555cf4d118601b8523fcbd3e31772bb5efc0820924ea44b"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v29.json",
+      "sha256": "a60d5cd332c71b0cfd57f3212fb2aa353ad15edf759799ecc0e19afc79982518"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v3.json",
+      "sha256": "04ec8ef717e4e24e348b1e305ca0e7de140e3350ea6000a370b81172b0f02d01"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v30.json",
+      "sha256": "d7bde3feae5bcc4535b3f1281257513e4aed3fa2e7ee8b50cfdc654393f7d21a"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v31.json",
+      "sha256": "a6103ed72252ab0781f2a5371585632038bb110a9a5b0e06c946a1d32e66c77e"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v32.json",
+      "sha256": "ae402433b42e334ce15fc81f5c9e7d65ea6b8222cbefe37a6befa9e4463025c3"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v33.json",
+      "sha256": "55c50f371ee112d6ea71ffbb5cd273532c59a8b413fb266257118b9d192fb9ee"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v34.json",
+      "sha256": "057f30ea9bbdb9858a8ba480242597830a729609c52659be1e48937d8513a136"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v35.json",
+      "sha256": "ff12a33c22cda6e1a5b628a994a13bb19f0e7f1d21f37ec6aa8cd9eebd7c1971"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v36.json",
+      "sha256": "fabba20191895dc1cb41c8969c0b80e70bc9e54f572ce148df8955a07582959e"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v37.json",
+      "sha256": "c49167703c8436b1bce706a5e53ad2b402261028aace92ca392aa4ace91d5aee"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v38.json",
+      "sha256": "acb78cbaccff76f8c3d27d7018873ac7b0da717a28f7f271c67fbe46b4c3b669"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v39.json",
+      "sha256": "77d6306cd38072660ea04e165f7230c26c03de1a7e7410559f02ebcc9ade9565"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v4.json",
+      "sha256": "c66ef3a20ac4d7ce899f06df45c83f9c0a6ba174d13a6045b3aca3b1c8242f63"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v40.json",
+      "sha256": "9253abd9af64c55afe3aa2af0cacfa726a0dc3a7d130cb9ead0593cff3f344a0"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v41.json",
+      "sha256": "90a489aefaf8cdf57256d304671b68650d4ba15305948e9479fe85422fdfa1df"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v5.json",
+      "sha256": "b32c2f250ba4d9399668b9ce0b242dcb5dd0f7f055a16e05799c06f8b4937d9d"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v6.json",
+      "sha256": "e9ef062c50be623e14217b1b2056b7ef64874a89ef64026bf50cec6a8c50a287"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v7.json",
+      "sha256": "e12a96866f062db8d7d0c6036e58ff92bb3451e13ed6c44de591af1e7338f1ce"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v8.json",
+      "sha256": "b332e6f74c55481e69516fbc96994ac55a9147c7fed6fe0a9a0da45d252bbc60"
+    },
+    {
+      "path": "registry/snapshots/whole-library-v9.json",
+      "sha256": "c83b2e1452451672c65a4e98a1c3479394b747a7457e2fe10a4bab6f2270e71c"
+    },
+    {
+      "path": "registry/source-inventories/agent-capability-promotion-2026-08-01.json",
+      "sha256": "915453d69b3d1051a3cbd3929a10c2d5a8daa672e7d5c1b245c68ad9d4d8b6f8"
+    },
+    {
+      "path": "registry/source-inventories/declassified-corpus-2026-08-07.json",
+      "sha256": "984c0be4babce207684ae1146cb2ebaa23923df40bea5d49cea107148a7cdb90"
+    },
+    {
+      "path": "registry/source-inventories/foundry-agency-intelligence-2026-08-02.json",
+      "sha256": "0887bce49127f1315c14df50658df41abf1f41659de99d8107ca877f5dcc27f7"
+    },
+    {
+      "path": "registry/source-inventories/foundry-agency-intelligence-2026-08-03.json",
+      "sha256": "b5d978e186d67188022fa2e62317f4e5dee6e75aee73d79ea0e3790c4b755b9a"
+    },
+    {
+      "path": "registry/source-inventories/gutenberg-corpus-2026-08-03.json",
+      "sha256": "877a9d1e0f41107a661bc92252ff7f7aff56b221d42efd00760aafb878c9bb0f"
+    },
+    {
+      "path": "registry/source-inventories/laptop-estate-2026-08-09.json",
+      "sha256": "f6ee6189de106e006c79ff8719e9ed633c66ebdc92933b01740b0b19e4eb185c"
+    },
+    {
+      "path": "registry/source-inventories/siso-agent-base-2026-07-30.json",
+      "sha256": "20535485c076ff7d4de7a0e08e4588d2ec01f1891d58336f8d6367cf71dd7e23"
+    },
+    {
+      "path": "registry/source-inventories/siso-knowledge-2026-07-30.json",
+      "sha256": "318ac22d376266a6e5c0d866c9dd224ca7c465ad519efcb55cfd870e781f561b"
+    },
+    {
+      "path": "registry/works/actionmodel-assembly-framework.json",
+      "sha256": "3f4ccc365faebfdd5b13a16a6ed6b89b2ef5b789a6f7172e355461be5b17cc13"
+    },
+    {
+      "path": "registry/works/actionmodel-connector-research.json",
+      "sha256": "f2f70437aa88eaeb8fb3bfddc8fc01c88e2119cfa1b6f271d24f8f6a0c26d1de"
+    },
+    {
+      "path": "registry/works/agent-zero-coordination-playbook.json",
+      "sha256": "54c0462a7396ecf317fb06d9876a759234ab46e073bf56df8f6d3a5d5fa30a84"
+    },
+    {
+      "path": "registry/works/agents.json",
+      "sha256": "d1f966dada0a0a28bc21f49ed037602fc1001835048977e77a2f4c560ee39803"
+    },
+    {
+      "path": "registry/works/declassified-corpus.json",
+      "sha256": "8ab6239027146220e7e64c0d647424c5911d5b48f4ee4fa9ea233fbfc9323c50"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-001.json",
+      "sha256": "1124bf9e0603f2039c2e1894467e0fde4407caba929673f982122dfe928e004d"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-002.json",
+      "sha256": "62366f2de7991ff12d3812ff2eeb611cd7943a483aa3a71574ff1fb29f116a71"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-004.json",
+      "sha256": "cd22cbf73cef69800f2831657e908a064c7773bd381922c66e6e1e2f7c9bc9e0"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-005.json",
+      "sha256": "90dcfec66d60b482942585a656fa2f0803c9e429b25fc3eb30dfe65b37eec977"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-006.json",
+      "sha256": "495bd8d77b6085ff674cb08bca8ea907c4a83852904aad4926847ec804c99ac5"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-008.json",
+      "sha256": "921fe4127c7da5184a084710a39c80e6528dd1d4e874559dd1e7b8c522d56165"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-009.json",
+      "sha256": "88300c0e677cb492faf815f4ab96d770070d2c41d906c023e5c9913af00aa488"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-010.json",
+      "sha256": "c53c171db392a363c5ed5f45eea5f7ef65c97b4b12bc1144ba31021d6c4692eb"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-012.json",
+      "sha256": "0eb9bdf46eb00e3a84cbc457d2b623d281f4df29ad110cebff7a68d1d6b9c681"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-013.json",
+      "sha256": "9358ccb1a32ed9fa72c432e198c9f60a2219f3bbdb5ca52e7d1e85e56c948da5"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-014.json",
+      "sha256": "bcb4f6850d1967325f5875fd7f30f2c6ebb7018b5e616008d2c25887777a2c5b"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-015.json",
+      "sha256": "469d96fa157f7c994caf0c00e44837f8d67b7c0a0a7b1048ccccf04bd0614f13"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-016.json",
+      "sha256": "821cf92cc828f1d4f3f6ef1a2b0f91764ae612a64dba5edb3e74408469d9bacc"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-017.json",
+      "sha256": "39abf4b7e19aba885e96081c8f773001080c8a26fef8e51887c49547081306ea"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-018.json",
+      "sha256": "947d45d5459a04f287a98da3afb9e83243cd0deb169578d796560dfd59497a8f"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-019.json",
+      "sha256": "f488dd00ac2fc9c4842fc760e7b81d191e91d3346d0cf93c2da7201d43be33c3"
+    },
+    {
+      "path": "registry/works/frontier-question-gq-023.json",
+      "sha256": "d24058fcbb7e24cda37607c2863e6eac74b5b404e24c11a2b82905d34d5f6ea6"
+    },
+    {
+      "path": "registry/works/herdr.json",
+      "sha256": "b89d907a8454bb666921fd3354e7b5604d12266ef59898a6d241516aac2f3eca"
+    },
+    {
+      "path": "registry/works/library.json",
+      "sha256": "29afe634210ef3594ac7d0b465288f5cea1a1b9cb36cee6c482373aa0c8df6d1"
+    },
+    {
+      "path": "registry/works/research.json",
+      "sha256": "bf7695ba58f67a280cab568b3f08220aa8de35cadc6faaf25c3eea974e5043ba"
+    },
+    {
+      "path": "registry/works/siso-agent-base-warehouse.json",
+      "sha256": "5449533a218a08900ea764d1b6d6b1d823ddf38c5c3dbcb56080dee64f2272c4"
+    },
+    {
+      "path": "registry/works/siso-agent-base.json",
+      "sha256": "7dd4fa6da50f3050a0de80309c8865a890e6547d65fc7105802cb29586051bc3"
+    },
+    {
+      "path": "registry/works/siso-agent-brain.json",
+      "sha256": "16e57adc5f2282668756517984476ff8727d0d56b25ed3ea744bcc5bca61aca4"
+    },
+    {
+      "path": "registry/works/siso-agent-hooks.json",
+      "sha256": "d262bfb4b3f03ffe7984c2112c3c8d929478d9039e39e2063c76f7b05ebbfbdf"
+    },
+    {
+      "path": "registry/works/siso-agent-integrations.json",
+      "sha256": "381029744bc5db6966bb4d25a5496ab1e7a4fc2025fdd66b672da07fdafffacb"
+    },
+    {
+      "path": "registry/works/siso-agent-playbook.json",
+      "sha256": "2ea3a29cc0177eb01404944791ec1c17b37fe04bc9c781147aaf5aa89c5d616b"
+    },
+    {
+      "path": "registry/works/siso-agent-stack-distribution.json",
+      "sha256": "53d07c58f726d3ce173f044cddb3d2b636f9f0918bec7edf1dff67b73b356080"
+    },
+    {
+      "path": "registry/works/siso-book-library.json",
+      "sha256": "162770081f569db48182f68c655cd5bcde9f7c65399c378ea67a366ccd8ca88a"
+    },
+    {
+      "path": "registry/works/siso-component-bank.json",
+      "sha256": "01c8d002dd7b4e93bfe4f9c78c04cc6fdcd4a9d819799a6f367a40b52a4d9713"
+    },
+    {
+      "path": "registry/works/siso-declassified-records.json",
+      "sha256": "20aad86da78ffbeef5b57bce0b5c4cf6e7db8d5dc0ba9fdbc59eaa5c551fe4d7"
+    },
+    {
+      "path": "registry/works/siso-evidence-engines.json",
+      "sha256": "da294e5af8f684370bdc78e8253370a826632ef3f37ba619959810d363a33e4f"
+    },
+    {
+      "path": "registry/works/siso-foundry.json",
+      "sha256": "fab3d947ddf294cae3e07b6d7277dd68e36967ff3c50b4dd075d6a2bcc01f536"
+    },
+    {
+      "path": "registry/works/siso-harness-lab.json",
+      "sha256": "8cc3639a24e0dcaa1149e951cf807c52d6691603f2adf8ef74581065bbf71b36"
+    },
+    {
+      "path": "registry/works/siso-knowledge.json",
+      "sha256": "08f2012ecc79ff04e832a246998d758e0077966c3bf82259f61a2bb50ebe0ab5"
+    },
+    {
+      "path": "registry/works/siso-people-graph.json",
+      "sha256": "9e74394416cfc399ce78d51e25011d2ae947d5e269c739cf12544cfdcfb387c7"
+    },
+    {
+      "path": "registry/works/siso-project-os.json",
+      "sha256": "58bc1a13fc4e0f1c77bc84990a7d0ec9027fe93446c672bc29ffdcd690f80501"
+    },
+    {
+      "path": "registry/works/siso-repo-bank.json",
+      "sha256": "92972354e012abed2f0fd5a16996ab999922e814db64d073187a949fdeca78c7"
+    },
+    {
+      "path": "registry/works/siso-session-intelligence.json",
+      "sha256": "eb55c00580e9392b2e2b955ab67f777584dbd6e94345e74e885bba9661ac9b91"
+    },
+    {
+      "path": "registry/works/siso-shell.json",
+      "sha256": "74084eaab3780c7e046b78f36ef75dca286e669ad6dfad284ce72edaf86900fb"
+    },
+    {
+      "path": "registry/works/siso-skills.json",
+      "sha256": "3ab87773d88dcf292294c9bfabdb00915c77991fb3b9a4bcf4fda7ef7614b32a"
+    },
+    {
+      "path": "registry/works/siso-source.json",
+      "sha256": "413d554e7ee01bd8dae90457d7b70f62bb37eff63613b3912a60cf68a72eb19c"
+    },
+    {
+      "path": "registry/works/siso-stargate-library.json",
+      "sha256": "dc4c887fba206aaa7a1b49eb757d25defcd277468e02af88f3c14a2b78283e48"
+    },
+    {
+      "path": "registry/works/siso-unsolveable-mathematics.json",
+      "sha256": "1cfa5c2965f37976ffd77a526b18a52c02c9ae737cd4d5501f98845a9c8d95ea"
+    },
+    {
+      "path": "registry/works/unfuck-the-project.json",
+      "sha256": "88ffc9b70068de717229a8d12f3a34d2576a7c6f984336286d083205153382e8"
+    },
+    {
+      "path": "scripts/build-industries.mjs",
+      "sha256": "a5d6f74fdab4ca22b6418154a7d9d99f9778122227f54ab6449d4e5ccb79ee6d"
+    },
+    {
+      "path": "scripts/build.mjs",
+      "sha256": "8774cea120a3875a8a424f4102af37bd01c31d95904e38ae156ebc615a739bc5"
+    }
+  ],
   "works": [
     {
       "id": "gls:work:efb00129-4ec6-4637-a2f8-dcead4f7d8dd",
@@ -25,7 +1016,24 @@
           "url": "https://github.com/sisodias/siso-connector-research#readme",
           "visibility": "private"
         }
-      ]
+      ],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-connector-research#readme",
+        "visibility": "private",
+        "source_revision": "main@ae15a763d80f03c016a966426356ab3feec44708",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/actionmodel-connector-research.json"
+      }
     },
     {
       "id": "gls:work:9ab07516-c02c-4798-857a-2eb8d1d2edfa",
@@ -56,7 +1064,27 @@
           "url": "https://github.com/sisodias/actionmodel-private#readme",
           "visibility": "private"
         }
-      ]
+      ],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "authored",
+        "owner": "SISO Agency · Action Model source owner",
+        "entry_url": "https://actionist-blueprint.pages.dev/llms.txt",
+        "visibility": "public",
+        "source_revision": "66332c80ac10684f52d42d389712238087ee5da6",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [
+          "curl -fsSL https://actionist-blueprint.pages.dev/llms.txt",
+          "curl -fsSL https://actionist-blueprint.pages.dev/project.json"
+        ],
+        "reference": "https://actionist-blueprint.pages.dev/project.md"
+      }
     },
     {
       "id": "gls:work:41b4544a-2d5b-4f63-92a2-3f25f64e29d0",
@@ -68,7 +1096,63 @@
       "type": "section",
       "maturity": "active",
       "section": "Agents",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:14c1d9de-0e77-44e9-9274-57e7cfb6ab02"
+      },
+      "selected_release": {
+        "id": "gls:release:14c1d9de-0e77-44e9-9274-57e7cfb6ab02",
+        "version": "1.0.0",
+        "released_at": "2026-07-29T00:00:00Z",
+        "release_kind": null,
+        "registry_source": "registry/releases/agents-v1.json",
+        "artifacts": [],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The section is addressable by stable registry ID.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "not_applicable",
+            "reason": "This curated section has no independent payload archive.",
+            "evidence_count": 0
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release manifest resolves inside the named snapshot.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "not_applicable",
+            "reason": "A curated section is not software.",
+            "evidence_count": 0
+          },
+          "forkable": {
+            "state": "not_applicable",
+            "reason": "No source payload is attached to this section release.",
+            "evidence_count": 0
+          },
+          "portable": {
+            "state": "not_applicable",
+            "reason": "Portability is evaluated on the section's member releases.",
+            "evidence_count": 0
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/agents.json"
+      }
     },
     {
       "id": "gls:work:7a3f1c5d-2b89-4e6c-9d04-3f8a5b1e7c92",
@@ -87,7 +1171,24 @@
           "url": "https://github.com/sisodias/great-library-of-siso/blob/main/registry/source-inventories/declassified-corpus-2026-08-07.json",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": "main",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/declassified-corpus.json"
+      }
     },
     {
       "id": "gls:work:2ac84615-3f9d-4040-95d6-9d9f39e4dc84",
@@ -99,7 +1200,76 @@
       "type": "research_question",
       "maturity": "active",
       "section": "Research",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:0212a6f4-1860-453b-bb27-2e9ed70a09c4"
+      },
+      "selected_release": {
+        "id": "gls:release:0212a6f4-1860-453b-bb27-2e9ed70a09c4",
+        "version": "program-metadata-1.0.0+ea7f0e4",
+        "released_at": "2026-08-02T02:08:28+07:00",
+        "release_kind": "question_program_metadata",
+        "registry_source": "registry/releases/frontier-question-gq-001-program-v1.json",
+        "artifacts": [
+          {
+            "kind": "registry_metadata",
+            "locator": "https://github.com/Lordsisodia/great-library-of-siso/blob/ea7f0e4/registry/works/frontier-question-gq-001.json",
+            "revision": "ea7f0e4609517453c0ae72a07fcd1b256e0e3aed",
+            "availability": "public",
+            "license": {
+              "status": "not_applicable",
+              "spdx": "NONE",
+              "reason": "The artifact is publication-safe question-program metadata, not a distributable answer or corpus payload.",
+              "evidence": []
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The question-program metadata is pinned to an exact public commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "not_applicable",
+            "reason": "This Release identifies registry metadata rather than a standalone payload archive.",
+            "evidence_count": 0
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The manifest resolves to GQ-001 and a validated registry artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "not_applicable",
+            "reason": "Question metadata is read by the Library generator and is not independently installed.",
+            "evidence_count": 0
+          },
+          "forkable": {
+            "state": "not_applicable",
+            "reason": "This record does not claim a separately forkable software payload.",
+            "evidence_count": 0
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "The metadata contains public-safe stable IDs and no machine-local or private evidence locator.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-001.json"
+      }
     },
     {
       "id": "gls:work:e38b054f-b926-4410-b84d-4fd3249fd4f4",
@@ -111,7 +1281,76 @@
       "type": "research_question",
       "maturity": "active",
       "section": "Research",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:b95eeca5-ed9d-48ac-858c-f6d62065cd29"
+      },
+      "selected_release": {
+        "id": "gls:release:b95eeca5-ed9d-48ac-858c-f6d62065cd29",
+        "version": "program-metadata-1.0.0+ea7f0e4",
+        "released_at": "2026-08-02T02:08:29+07:00",
+        "release_kind": "question_program_metadata",
+        "registry_source": "registry/releases/frontier-question-gq-002-program-v1.json",
+        "artifacts": [
+          {
+            "kind": "registry_metadata",
+            "locator": "https://github.com/Lordsisodia/great-library-of-siso/blob/ea7f0e4/registry/works/frontier-question-gq-002.json",
+            "revision": "ea7f0e4609517453c0ae72a07fcd1b256e0e3aed",
+            "availability": "public",
+            "license": {
+              "status": "not_applicable",
+              "spdx": "NONE",
+              "reason": "The artifact is publication-safe question-program metadata, not a distributable answer or private operational payload.",
+              "evidence": []
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The question-program metadata is pinned to an exact public commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "not_applicable",
+            "reason": "This Release identifies registry metadata rather than a standalone payload archive.",
+            "evidence_count": 0
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The manifest resolves to GQ-002 and a validated registry artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "not_applicable",
+            "reason": "Question metadata is read by the Library generator and is not independently installed.",
+            "evidence_count": 0
+          },
+          "forkable": {
+            "state": "not_applicable",
+            "reason": "This record does not claim a separately forkable software payload.",
+            "evidence_count": 0
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "Owner-held research remains outside the public record; only stable IDs, rights state, and safe summary metadata are selected.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-002.json"
+      }
     },
     {
       "id": "gls:work:85964f1c-2efe-48b0-8f71-dc32bb668c0c",
@@ -123,7 +1362,63 @@
       "type": "research_question",
       "maturity": "experimental",
       "section": "Research",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:037ad734-0cc3-4afb-9dc0-c2b55f1dcee7"
+      },
+      "selected_release": {
+        "id": "gls:release:037ad734-0cc3-4afb-9dc0-c2b55f1dcee7",
+        "version": "registry-seed-2026-08-01",
+        "released_at": "2026-08-01T22:32:00+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/frontier-question-gq-004-seed.json",
+        "artifacts": [],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The question is addressable by stable Work ID and Library URL.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "unavailable",
+            "reason": "No answer archive has been accepted for this scoped question.",
+            "evidence_count": 0
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The metadata manifest resolves inside the registry.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "not_applicable",
+            "reason": "A research question is not software.",
+            "evidence_count": 0
+          },
+          "forkable": {
+            "state": "not_applicable",
+            "reason": "No source payload is attached to this metadata seed.",
+            "evidence_count": 0
+          },
+          "portable": {
+            "state": "not_applicable",
+            "reason": "Question identity is portable through registry metadata; answer artifacts are evaluated separately.",
+            "evidence_count": 0
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-004.json"
+      }
     },
     {
       "id": "gls:work:7782f923-d44e-4a47-8ce6-134e31816673",
@@ -135,7 +1430,63 @@
       "type": "research_question",
       "maturity": "experimental",
       "section": "Research",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:1ee81aa0-42cc-4bcd-a87b-4f34baf9cc13"
+      },
+      "selected_release": {
+        "id": "gls:release:1ee81aa0-42cc-4bcd-a87b-4f34baf9cc13",
+        "version": "registry-seed-2026-08-01",
+        "released_at": "2026-08-01T22:33:00+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/frontier-question-gq-005-seed.json",
+        "artifacts": [],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The question is addressable by stable Work ID and Library URL.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "unavailable",
+            "reason": "No answer archive has been accepted for this scoped question.",
+            "evidence_count": 0
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The metadata manifest resolves inside the registry.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "not_applicable",
+            "reason": "A research question is not software.",
+            "evidence_count": 0
+          },
+          "forkable": {
+            "state": "not_applicable",
+            "reason": "No source payload is attached to this metadata seed.",
+            "evidence_count": 0
+          },
+          "portable": {
+            "state": "not_applicable",
+            "reason": "Question identity is portable through registry metadata; answer artifacts are evaluated separately.",
+            "evidence_count": 0
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-005.json"
+      }
     },
     {
       "id": "gls:work:2144e900-4886-461e-92f1-49571f2e9f74",
@@ -147,7 +1498,63 @@
       "type": "research_question",
       "maturity": "active",
       "section": "Research",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:8225da3f-9a19-45d8-880e-0f2539756c0f"
+      },
+      "selected_release": {
+        "id": "gls:release:8225da3f-9a19-45d8-880e-0f2539756c0f",
+        "version": "registry-seed-2026-08-01",
+        "released_at": "2026-08-01T22:34:00+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/frontier-question-gq-006-seed.json",
+        "artifacts": [],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The question is addressable by stable Work ID and Library URL.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "unavailable",
+            "reason": "No publication-safe answer archive is attached to this metadata seed.",
+            "evidence_count": 0
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The metadata manifest resolves inside the registry.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "not_applicable",
+            "reason": "A research question is not software.",
+            "evidence_count": 0
+          },
+          "forkable": {
+            "state": "not_applicable",
+            "reason": "No source payload is attached to this metadata seed.",
+            "evidence_count": 0
+          },
+          "portable": {
+            "state": "not_applicable",
+            "reason": "Question identity is portable through registry metadata; answer artifacts are evaluated separately.",
+            "evidence_count": 0
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-006.json"
+      }
     },
     {
       "id": "gls:work:3b4c4fa6-31f2-4cfc-9542-00f32e200621",
@@ -159,7 +1566,63 @@
       "type": "research_question",
       "maturity": "active",
       "section": "Research",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:a5e56fcf-e19d-4ead-8c7d-9660d41ed47e"
+      },
+      "selected_release": {
+        "id": "gls:release:a5e56fcf-e19d-4ead-8c7d-9660d41ed47e",
+        "version": "registry-seed-2026-08-01",
+        "released_at": "2026-08-01T22:35:00+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/frontier-question-gq-008-seed.json",
+        "artifacts": [],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The question is addressable by stable Work ID and Library URL.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "unavailable",
+            "reason": "No publication-safe answer archive is attached to this metadata seed.",
+            "evidence_count": 0
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The metadata manifest resolves inside the registry.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "not_applicable",
+            "reason": "A research question is not software.",
+            "evidence_count": 0
+          },
+          "forkable": {
+            "state": "not_applicable",
+            "reason": "No source payload is attached to this metadata seed.",
+            "evidence_count": 0
+          },
+          "portable": {
+            "state": "not_applicable",
+            "reason": "Question identity is portable through registry metadata; answer artifacts are evaluated separately.",
+            "evidence_count": 0
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-008.json"
+      }
     },
     {
       "id": "gls:work:3e220d53-cd95-4e28-922e-5018e808ee92",
@@ -171,7 +1634,76 @@
       "type": "research_question",
       "maturity": "active",
       "section": "Research",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:df8a236d-b092-4d51-9e17-d1016671db64"
+      },
+      "selected_release": {
+        "id": "gls:release:df8a236d-b092-4d51-9e17-d1016671db64",
+        "version": "program-metadata-1.1.0+0066cfa",
+        "released_at": "2026-08-02T05:13:21+07:00",
+        "release_kind": "question_program_metadata",
+        "registry_source": "registry/releases/frontier-question-gq-009-estate-reconciliation-v1.json",
+        "artifacts": [
+          {
+            "kind": "registry_metadata",
+            "locator": "https://github.com/Lordsisodia/great-library-of-siso/blob/0066cfa3b30f8cefedffee09e1c86ae928f6b0cc/registry/works/frontier-question-gq-009.json",
+            "revision": "0066cfa3b30f8cefedffee09e1c86ae928f6b0cc",
+            "availability": "public",
+            "license": {
+              "status": "not_applicable",
+              "spdx": "NONE",
+              "reason": "The artifact is publication-safe question-program metadata; source-review receipts and owner-held evidence remain outside the Library.",
+              "evidence": []
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The GQ-009 estate reconciliation metadata is pinned to an exact public implementation commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "not_applicable",
+            "reason": "This Release identifies registry metadata rather than a standalone answer or corpus archive.",
+            "evidence_count": 0
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The manifest resolves to GQ-009 and its deterministic public human and agent projections.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "not_applicable",
+            "reason": "Question-program metadata is consumed by the Library generator and is not independently installed.",
+            "evidence_count": 0
+          },
+          "forkable": {
+            "state": "not_applicable",
+            "reason": "This record does not claim a separately forkable software or answer payload.",
+            "evidence_count": 0
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "Only stable IDs, public commits, safe hashes, rights states, dispositions, and bounded summaries are published.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-009.json"
+      }
     },
     {
       "id": "gls:work:38dfc806-5a03-45ae-84fc-266f3cacd7be",
@@ -190,7 +1722,76 @@
           "url": "https://github.com/sisodias/great-library-of-siso/tree/main/docs/people-graph-program",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787"
+      },
+      "selected_release": {
+        "id": "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787",
+        "version": "program-metadata-1.0.0+57320d3",
+        "released_at": "2026-08-06T22:24:00+07:00",
+        "release_kind": "question_program_metadata",
+        "registry_source": "registry/releases/frontier-question-gq-010-program-v1.json",
+        "artifacts": [
+          {
+            "kind": "registry_metadata",
+            "locator": "https://github.com/sisodias/great-library-of-siso/blob/57320d35c631732fa3f414be733f404ba6e15366/registry/works/frontier-question-gq-010.json",
+            "revision": "57320d35c631732fa3f414be733f404ba6e15366",
+            "availability": "public",
+            "license": {
+              "status": "not_applicable",
+              "spdx": "NONE",
+              "reason": "This artifact is publication-safe question and program metadata; source payloads, private receipts, and operational databases are not attached.",
+              "evidence": []
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The complete GQ-010 research contract is pinned to an exact public commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "not_applicable",
+            "reason": "This Release identifies registry metadata rather than an answer, database, corpus, or standalone archive.",
+            "evidence_count": 0
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The metadata manifest resolves to GQ-010 and its measurable decision, falsifier, evidence-gap, rights, privacy, and refresh contract.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "not_applicable",
+            "reason": "Question-program metadata is consumed by the Great Library generator and is not independently installed.",
+            "evidence_count": 0
+          },
+          "forkable": {
+            "state": "not_applicable",
+            "reason": "This record makes no claim about a separately forkable software or data payload.",
+            "evidence_count": 0
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "The selected artifact contains publication-safe metadata and public locators only; private authorization, restricted payloads, and operational receipts remain external.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/great-library-of-siso/tree/main/docs/people-graph-program",
+        "visibility": "public",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-010.json"
+      }
     },
     {
       "id": "gls:work:bf0a8216-70cc-4695-8256-609078a67d18",
@@ -202,7 +1803,24 @@
       "type": "research_question",
       "maturity": "experimental",
       "section": "Unassigned",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-012.json"
+      }
     },
     {
       "id": "gls:work:5b7ba225-a6fe-430a-93fb-e9f181cc091c",
@@ -214,7 +1832,24 @@
       "type": "research_question",
       "maturity": "experimental",
       "section": "Unassigned",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-013.json"
+      }
     },
     {
       "id": "gls:work:decde283-e1cf-4c59-9e92-86e7f09e1b8e",
@@ -226,7 +1861,24 @@
       "type": "research_question",
       "maturity": "experimental",
       "section": "Unassigned",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-014.json"
+      }
     },
     {
       "id": "gls:work:0cbdf4f9-6c9c-4810-bb98-8a0ca503c70c",
@@ -238,7 +1890,24 @@
       "type": "research_question",
       "maturity": "experimental",
       "section": "Unassigned",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-015.json"
+      }
     },
     {
       "id": "gls:work:2815577e-418a-4530-ae4f-887976aea59d",
@@ -250,7 +1919,24 @@
       "type": "research_question",
       "maturity": "experimental",
       "section": "Unassigned",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-016.json"
+      }
     },
     {
       "id": "gls:work:62d67eb4-c5a5-4d31-bfe5-34753c99cd97",
@@ -262,7 +1948,24 @@
       "type": "research_question",
       "maturity": "experimental",
       "section": "Unassigned",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-017.json"
+      }
     },
     {
       "id": "gls:work:78661456-54d0-448f-a9f5-cfd459fa8f73",
@@ -274,7 +1977,24 @@
       "type": "research_question",
       "maturity": "experimental",
       "section": "Unassigned",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-018.json"
+      }
     },
     {
       "id": "gls:work:2e9b9aff-65f0-4a15-8bb0-05bf6181ba9e",
@@ -286,7 +2006,24 @@
       "type": "research_question",
       "maturity": "experimental",
       "section": "Unassigned",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-019.json"
+      }
     },
     {
       "id": "gls:work:7342fe19-601a-4ee5-8774-6e6e5d9d7752",
@@ -298,7 +2035,24 @@
       "type": "research_question",
       "maturity": "experimental",
       "section": "Unassigned",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/frontier-question-gq-023.json"
+      }
     },
     {
       "id": "gls:work:831c3bc6-36a0-4f88-93a8-55d3240849cc",
@@ -323,7 +2077,83 @@
           "url": "https://github.com/herdrdev/herdr#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05"
+      },
+      "selected_release": {
+        "id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05",
+        "version": "master+514e446",
+        "released_at": "2026-07-29T13:47:22Z",
+        "release_kind": null,
+        "registry_source": "registry/releases/herdr-514e446.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/ogulcancelik/herdr/archive/514e4465ee33d4d81682d06ee2934483982a54ed.tar.gz",
+            "revision": "514e4465ee33d4d81682d06ee2934483982a54ed",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "Apache-2.0",
+              "reason": "Public upstream repository metadata reports Apache-2.0.",
+              "evidence": [
+                {
+                  "kind": "integration_check",
+                  "reference": "https://github.com/ogulcancelik/herdr",
+                  "observed_at": "2026-07-29",
+                  "summary": "External ownership, public visibility, and license verified."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The externally owned public source is pinned to an exact commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A public commit-scoped archive locator is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The registry release resolves to its Work and pinned artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "experimental",
+            "reason": "Upstream installation is documented, but this exact pin has no Library install receipt.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The upstream repository is public and Apache-2.0 licensed.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "Herdr is independently useful, but no Library portability receipt exists for this exact commit.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "herdrdev",
+        "entry_url": "https://github.com/herdrdev/herdr#readme",
+        "visibility": "public",
+        "source_revision": "master@514e4465ee33d4d81682d06ee2934483982a54ed",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/herdr.json"
+      }
     },
     {
       "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
@@ -335,7 +2165,63 @@
       "type": "section",
       "maturity": "active",
       "section": "Research",
-      "source_links": []
+      "source_links": [],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:24c1ed1d-4437-4641-83e2-048d55116590"
+      },
+      "selected_release": {
+        "id": "gls:release:24c1ed1d-4437-4641-83e2-048d55116590",
+        "version": "1.0.0",
+        "released_at": "2026-07-30T00:00:00Z",
+        "release_kind": null,
+        "registry_source": "registry/releases/research-v1.json",
+        "artifacts": [],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The section is addressable by stable registry ID.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "not_applicable",
+            "reason": "This curated section has no independent payload archive.",
+            "evidence_count": 0
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release manifest resolves inside the registry.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "not_applicable",
+            "reason": "A curated section is not software.",
+            "evidence_count": 0
+          },
+          "forkable": {
+            "state": "not_applicable",
+            "reason": "No source payload is attached to this section release.",
+            "evidence_count": 0
+          },
+          "portable": {
+            "state": "not_applicable",
+            "reason": "Portability is evaluated on the section's member releases.",
+            "evidence_count": 0
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "not_recorded",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": null,
+        "visibility": "unknown",
+        "source_revision": null,
+        "source_revision_basis": "not_recorded",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/research.json"
+      }
     },
     {
       "id": "gls:work:ee26c795-ac31-4f31-bb8f-e54dbc515bae",
@@ -360,7 +2246,83 @@
           "url": "https://github.com/sisodias/siso-agent-base#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:8204e470-fa87-4268-8713-733330b537fe"
+      },
+      "selected_release": {
+        "id": "gls:release:8204e470-fa87-4268-8713-733330b537fe",
+        "version": "preservation+2e2edfe",
+        "released_at": "2026-07-18T20:13:04Z",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-agent-base-warehouse-2e2edfe.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/Lordsisodia/siso-agent-base/archive/2e2edfe7a820617557fcff093a348dc0bb4fb040.tar.gz",
+            "revision": "2e2edfe7a820617557fcff093a348dc0bb4fb040",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The pinned public source warehouse carries an MIT license.",
+              "evidence": [
+                {
+                  "kind": "integration_check",
+                  "reference": "https://github.com/Lordsisodia/siso-agent-base",
+                  "observed_at": "2026-07-29",
+                  "summary": "Public visibility and MIT license were verified during the source audit."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The preserved warehouse is pinned to an exact public commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public preservation archive is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The preservation release resolves to the dedicated source-warehouse Work.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "not_applicable",
+            "reason": "A retired mixed-source warehouse is preserved for provenance and extraction, not distributed as one installable product.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The preserved source pin is public and MIT licensed, with its mixed status and limitations documented.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "not_applicable",
+            "reason": "Portability is assessed for the extracted Works; the retired warehouse is a preservation and provenance container.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "Lordsisodia",
+        "entry_url": "https://github.com/sisodias/siso-agent-base#readme",
+        "visibility": "public",
+        "source_revision": "main@2e2edfe7a820617557fcff093a348dc0bb4fb040",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/siso-agent-base-warehouse.json"
+      }
     },
     {
       "id": "gls:work:5af5cab4-13d9-48c4-b15c-8c31ba3db10b",
@@ -385,7 +2347,83 @@
           "url": "https://github.com/sisodias/siso-agent-brain#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:941effe9-a115-41a9-bfde-d681ebc45812"
+      },
+      "selected_release": {
+        "id": "gls:release:941effe9-a115-41a9-bfde-d681ebc45812",
+        "version": "0.3.0+ed50bec",
+        "released_at": "2026-07-30T12:26:31+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-agent-brain-ed50bec.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/Lordsisodia/siso-agent-brain/archive/ed50bec86f5cfb86cc5c84ebfce97fad595598b4.tar.gz",
+            "revision": "ed50bec86f5cfb86cc5c84ebfce97fad595598b4",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The SISO-owned Agent Brain source carries MIT.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/Lordsisodia/siso-agent-brain/blob/ed50bec86f5cfb86cc5c84ebfce97fad595598b4/LICENSE",
+                  "observed_at": "2026-07-30",
+                  "summary": "MIT license text is present at the exact release pin."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The public source is pinned to an exact commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public source archive is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release resolves to Agent Brain, the exact artifact, assessment, and importer checkpoint.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "Install, migrations, client, importer help, and state-preserving uninstall pass.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The repository is public, MIT licensed, source-complete, documented, and tested.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "Both reviewed legacy layouts pass fixture imports; an actual local database and sustained multi-host operation remain open receipts.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-agent-brain#readme",
+        "visibility": "public",
+        "source_revision": "main@ed50bec86f5cfb86cc5c84ebfce97fad595598b4",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/siso-agent-brain.json"
+      }
     },
     {
       "id": "gls:work:4198f323-9855-43f6-a99a-72143086818e",
@@ -410,7 +2448,83 @@
           "url": "https://github.com/sisodias/siso-agent-hooks#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:98ba8230-3cdc-478b-b855-e9d808655c46"
+      },
+      "selected_release": {
+        "id": "gls:release:98ba8230-3cdc-478b-b855-e9d808655c46",
+        "version": "0.1.0+9125a97",
+        "released_at": "2026-08-01T20:22:00+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-agent-hooks-9125a97.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/sisodias/siso-agent-hooks/archive/9125a972b4ba03661bf17ee135790282f246c15f.tar.gz",
+            "revision": "9125a972b4ba03661bf17ee135790282f246c15f",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "MIT license is present at the exact release pin.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/siso-agent-hooks/blob/9125a972b4ba03661bf17ee135790282f246c15f/LICENSE",
+                  "observed_at": "2026-08-01",
+                  "summary": "MIT license text is included in the release source."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "Public source is pinned to an exact commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public source archive is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "One manifest is the complete hook and host-profile authority.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "Clean temporary-home installation, idempotence, uninstall preservation, and doctor passed.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "Public source, tests, license, provenance, and privacy boundary are complete.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "The same manifest generated and verified home-relative Claude Code and Codex configuration.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-agent-hooks/tree/9125a972b4ba03661bf17ee135790282f246c15f",
+        "visibility": "public",
+        "source_revision": "9125a972b4ba03661bf17ee135790282f246c15f",
+        "source_revision_basis": "selected_artifact",
+        "entry_revision": "9125a972b4ba03661bf17ee135790282f246c15f",
+        "commands": [],
+        "reference": "registry/works/siso-agent-hooks.json"
+      }
     },
     {
       "id": "gls:work:e88d82a7-3a24-4aaf-8758-ea7372c3797a",
@@ -435,7 +2549,83 @@
           "url": "https://github.com/sisodias/siso-agent-integrations#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:69c70399-9344-4752-b6a7-8976ee857006"
+      },
+      "selected_release": {
+        "id": "gls:release:69c70399-9344-4752-b6a7-8976ee857006",
+        "version": "main+808eb51",
+        "released_at": "2026-07-30T06:24:26+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-agent-integrations-808eb51.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/Lordsisodia/siso-agent-integrations/archive/808eb51c079db40ae273e721527b245be09e9544.tar.gz",
+            "revision": "808eb51c079db40ae273e721527b245be09e9544",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The source carries MIT and preserves external dependency ownership.",
+              "evidence": [
+                {
+                  "kind": "release_receipt",
+                  "reference": "identity-remediation:siso-agent-integrations:808eb51c079db40ae273e721527b245be09e9544",
+                  "observed_at": "2026-07-30",
+                  "summary": "Pinned remediated source and default integration smokes passed."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The remediated public commit resolves.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public archive is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release resolves to its stable Work and artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "experimental",
+            "reason": "Default smokes pass; host-wide adapter installation remains opt-in.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "Public source and MIT license are present.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "Provider canaries require operator-supplied configuration.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-agent-integrations#readme",
+        "visibility": "public",
+        "source_revision": "main@808eb51c079db40ae273e721527b245be09e9544",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/siso-agent-integrations.json"
+      }
     },
     {
       "id": "gls:work:083503ab-c78e-4e07-ac40-ab9466dcedcc",
@@ -460,7 +2650,83 @@
           "url": "https://github.com/sisodias/siso-agent-playbook#readme",
           "visibility": "private"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:ff8cc25f-7162-4713-9e38-66cbf3eca958"
+      },
+      "selected_release": {
+        "id": "gls:release:ff8cc25f-7162-4713-9e38-66cbf3eca958",
+        "version": "1.0.0+6ee572b",
+        "released_at": "2026-07-30T06:24:26+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-agent-playbook-6ee572b.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/Lordsisodia/siso-agent-playbook/archive/6ee572b0f2230e3f83b11408fe30f7211d1f2b77.tar.gz",
+            "revision": "6ee572b0f2230e3f83b11408fe30f7211d1f2b77",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The SISO-owned operating package carries MIT.",
+              "evidence": [
+                {
+                  "kind": "release_receipt",
+                  "reference": "identity-remediation:siso-agent-playbook:6ee572b0f2230e3f83b11408fe30f7211d1f2b77",
+                  "observed_at": "2026-07-30",
+                  "summary": "Pinned remediated source and the full playbook verifier passed."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The remediated public commit resolves.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public archive is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release resolves to its stable Work and artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "Disposable install and uninstall pass for the operating package.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The repository is public, licensed, documented, and tested.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "Five skill contracts, eight entrypoints, and reversible installation pass.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO",
+        "entry_url": "https://github.com/sisodias/siso-agent-playbook#readme",
+        "visibility": "private",
+        "source_revision": "main@6ee572b0f2230e3f83b11408fe30f7211d1f2b77",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/siso-agent-playbook.json"
+      }
     },
     {
       "id": "gls:work:b584bbf7-acde-46a2-b33e-e430ee1df224",
@@ -485,7 +2751,86 @@
           "url": "https://github.com/sisodias/siso-agent-runtime#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:36ba0940-4235-4e6c-87e2-e27266f77d33"
+      },
+      "selected_release": {
+        "id": "gls:release:36ba0940-4235-4e6c-87e2-e27266f77d33",
+        "version": "0.1.0+a4aefc0",
+        "released_at": "2026-07-30T06:47:47+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-agent-runtime-a4aefc0.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/Lordsisodia/siso-agent-runtime/archive/a4aefc0345f979d67b5b3fac2829364a1a9100b9.tar.gz",
+            "revision": "a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The clean SISO-owned Runtime extraction carries an MIT license at the pinned commit.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/Lordsisodia/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/LICENSE",
+                  "observed_at": "2026-07-30",
+                  "summary": "The pinned release contains the MIT license text."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The public Runtime source is pinned to an exact commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A public commit-scoped source archive is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release resolves to the permanent Runtime Work and one exact artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "experimental",
+            "reason": "The dependency-free CLI runs directly on Node.js 20+, but no package-registry or cross-platform installation receipt is recorded yet.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "Public MIT source includes architecture, migration reasoning, fixtures, tests, CLI, and machine-readable contracts.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "The core is provider-neutral and uses only Node.js standard libraries, but this release has one operating-system receipt and no production provider adapter receipt.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "authored",
+        "owner": "SISO Agent Runtime maintainer",
+        "entry_url": "https://github.com/sisodias/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/README.md",
+        "visibility": "public",
+        "source_revision": "main@a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": "a4aefc0345f979d67b5b3fac2829364a1a9100b9",
+        "commands": [
+          "node bin/siso-agent-runtime manifest",
+          "node bin/siso-agent-runtime --help"
+        ],
+        "reference": "https://github.com/sisodias/siso-agent-runtime/blob/a4aefc0345f979d67b5b3fac2829364a1a9100b9/README.md"
+      }
     },
     {
       "id": "gls:work:b9196c61-901f-4105-93d9-899876d17016",
@@ -510,7 +2855,83 @@
           "url": "https://github.com/sisodias/siso-agent-stack#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34"
+      },
+      "selected_release": {
+        "id": "gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34",
+        "version": "0.2.0+9d17865",
+        "released_at": "2026-08-02T00:09:48+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-agent-stack-9d17865.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/sisodias/siso-agent-stack/archive/9d1786575cce55df61ce3cf8564969536c47d186.tar.gz",
+            "revision": "9d1786575cce55df61ce3cf8564969536c47d186",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The distribution source is MIT licensed; pinned components retain their own licenses.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/siso-agent-stack/blob/9d1786575cce55df61ce3cf8564969536c47d186/LICENSE",
+                  "observed_at": "2026-08-02",
+                  "summary": "The MIT license resolves at the exact release commit."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The public GitHub release and source are pinned to an exact commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped source archive is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The manifest pins ten components and the release exposes its own plan and doctor command.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "The isolated clean-install suite passed twice idempotently and doctor verifies the installed distribution command.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The public MIT source includes explicit contribution and component-ownership routes.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "The Claude Code and Codex isolated-home path is verified on macOS; independent Linux, Windows, optional Python, and Herdr provisioning evidence remains incomplete.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-agent-stack/tree/9d1786575cce55df61ce3cf8564969536c47d186",
+        "visibility": "public",
+        "source_revision": "9d1786575cce55df61ce3cf8564969536c47d186",
+        "source_revision_basis": "selected_artifact",
+        "entry_revision": "9d1786575cce55df61ce3cf8564969536c47d186",
+        "commands": [],
+        "reference": "registry/works/siso-agent-stack-distribution.json"
+      }
     },
     {
       "id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
@@ -535,7 +2956,83 @@
           "url": "https://github.com/sisodias/siso-agent-zero#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:c7cfb739-67d3-4c63-9146-5f47430f7970"
+      },
+      "selected_release": {
+        "id": "gls:release:c7cfb739-67d3-4c63-9146-5f47430f7970",
+        "version": "0.1.0+dacfc6c",
+        "released_at": "2026-07-30T06:24:26+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-agent-zero-dacfc6c.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/Lordsisodia/siso-agent-zero/archive/dacfc6c30b2f478c9d3382910674bd30289d3981.tar.gz",
+            "revision": "dacfc6c30b2f478c9d3382910674bd30289d3981",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The SISO-owned coordination package carries MIT.",
+              "evidence": [
+                {
+                  "kind": "release_receipt",
+                  "reference": "identity-remediation:siso-agent-zero:dacfc6c30b2f478c9d3382910674bd30289d3981",
+                  "observed_at": "2026-07-30",
+                  "summary": "Pinned remediated source and the full Agent Zero verifier passed."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The remediated public commit resolves.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public archive is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release resolves to its stable Work and artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "Install and uninstall checks pass.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The repository is public, licensed, documented, and tested.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "Provider-neutral boot and host handoff pass; production host adapters retain their own receipts.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO",
+        "entry_url": "https://github.com/sisodias/siso-agent-zero#readme",
+        "visibility": "public",
+        "source_revision": "main@dacfc6c30b2f478c9d3382910674bd30289d3981",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/agent-zero-coordination-playbook.json"
+      }
     },
     {
       "id": "gls:work:35d3f881-43f3-4da5-87b0-abf694f387ef",
@@ -560,7 +3057,83 @@
           "url": "https://github.com/sisodias/siso-book-library#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec"
+      },
+      "selected_release": {
+        "id": "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec",
+        "version": "source-contract+be9ab08",
+        "released_at": "2026-08-06T22:24:00+07:00",
+        "release_kind": "general",
+        "registry_source": "registry/releases/siso-book-library-be9ab08.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/sisodias/siso-book-library/archive/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b.tar.gz",
+            "revision": "be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+            "availability": "public",
+            "license": {
+              "status": "pending",
+              "spdx": "NONE",
+              "reason": "No accepted repository license was present at the reviewed revision; upstream public-domain status and repository visibility do not create a blanket source-code or payload grant.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+                  "observed_at": "2026-08-06",
+                  "summary": "The exact tracked source tree contains no accepted license file."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The source contract is pinned to an exact public commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "experimental",
+            "reason": "A standard commit-scoped archive locator is recorded, but this registry lane did not download or hash the archive bytes or any separately described payload assets.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The Release resolves to the stable Book Library Work and exact source artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "unavailable",
+            "reason": "This is a source and data-contract baseline, not an independently verified installation, rebuilt SQLite index, or content-payload release.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "unavailable",
+            "reason": "GitHub exposes the source, but no accepted repository license grants general copying, modification, or redistribution rights.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "The metadata schema, source-native identifiers, rights field, and locator model are portable concepts, but payload archives, indexes, local routes, and source inputs were not independently verified.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+        "visibility": "public",
+        "source_revision": "be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+        "source_revision_basis": "selected_artifact",
+        "entry_revision": "be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+        "commands": [],
+        "reference": "registry/works/siso-book-library.json"
+      }
     },
     {
       "id": "gls:work:ce031834-4149-42af-8d86-d9a05398fa24",
@@ -585,7 +3158,83 @@
           "url": "https://github.com/sisodias/siso-component-bank#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:7880b0ff-77db-4646-a29b-8061a8f7a42b"
+      },
+      "selected_release": {
+        "id": "gls:release:7880b0ff-77db-4646-a29b-8061a8f7a42b",
+        "version": "1.0.0+4aa89af",
+        "released_at": "2026-09-05T18:40:00+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-component-bank-4aa89af.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/sisodias/siso-component-bank/archive/4aa89affc3298a102ef6751a96da6afd922f9cc7.tar.gz",
+            "revision": "4aa89affc3298a102ef6751a96da6afd922f9cc7",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The index, scripts, curation and metadata are SISO-authored and carry MIT; each component's code belongs to its 21st.dev author and every row carries the upstream URL.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/siso-component-bank/blob/4aa89affc3298a102ef6751a96da6afd922f9cc7/LICENSE",
+                  "observed_at": "2026-09-05",
+                  "summary": "MIT license text is present at the exact release pin."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The public repository is pinned to an exact commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public source archive is recorded and resolved.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release resolves to its Work, one exact artifact and the README that defines the contents.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "experimental",
+            "reason": "Query scripts run with Node 20+ from the repo root; the catalog-site build and curated board were exercised locally before publication but no disposable-root install receipt is recorded.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The public repository is source-complete for everything SISO authored and documents the upstream-rights boundary.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "Scripts resolve paths relative to the repo (BANK_ROOT override for build.mjs); 26 receipts and 2 scripts were rewritten from absolute paths, and no other environment coupling was found.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-component-bank/tree/4aa89affc3298a102ef6751a96da6afd922f9cc7",
+        "visibility": "public",
+        "source_revision": "4aa89affc3298a102ef6751a96da6afd922f9cc7",
+        "source_revision_basis": "selected_artifact",
+        "entry_revision": "4aa89affc3298a102ef6751a96da6afd922f9cc7",
+        "commands": [],
+        "reference": "registry/works/siso-component-bank.json"
+      }
     },
     {
       "id": "gls:work:1f4a6d92-5b83-4e07-a2c9-6d38b1e75403",
@@ -610,7 +3259,24 @@
           "url": "https://github.com/sisodias/siso-declassified-records#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-declassified-records#readme",
+        "visibility": "public",
+        "source_revision": "main@fb615f281b6c89c31a5c16b3512299f2e1064569",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/siso-declassified-records.json"
+      }
     },
     {
       "id": "gls:work:231aab36-e763-4374-bc94-3a09fd3bf49f",
@@ -635,7 +3301,83 @@
           "url": "https://github.com/sisodias/siso-evidence-engines#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:f49dfb65-9cba-45d8-855a-9338f1cda30b"
+      },
+      "selected_release": {
+        "id": "gls:release:f49dfb65-9cba-45d8-855a-9338f1cda30b",
+        "version": "0.1.1+71022ce",
+        "released_at": "2026-07-30T21:08:59+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-evidence-engines-71022ce.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/Lordsisodia/siso-evidence-engines/archive/71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d.tar.gz",
+            "revision": "71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The clean SISO-owned engine family carries an MIT license.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/Lordsisodia/siso-evidence-engines/blob/71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d/LICENSE",
+                  "observed_at": "2026-07-30",
+                  "summary": "MIT license is present at the pinned release; ingested sources retain their rights."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "Public source is pinned to an exact commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public archive is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release resolves to its stable Work, engine registry, and artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "experimental",
+            "reason": "The dependency-free source CLI works; a built-wheel receipt is not yet recorded.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "Public MIT source includes three engine contracts, shared core, fixtures, architecture, provenance, CLI, and tests.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "The full CLI flow passed in a temporary database without corpora, provider keys, or network access.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-evidence-engines#readme",
+        "visibility": "public",
+        "source_revision": "main@71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/siso-evidence-engines.json"
+      }
     },
     {
       "id": "gls:work:ec664d93-df93-48c5-be40-5d0165886c01",
@@ -660,7 +3402,130 @@
           "url": "https://github.com/sisodias/siso-foundry#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:29a8cfea-ca5d-41b3-964f-3d81044fce11"
+      },
+      "selected_release": {
+        "id": "gls:release:29a8cfea-ca5d-41b3-964f-3d81044fce11",
+        "version": "0.5.1+11f4595",
+        "released_at": "2026-09-06T06:15:58.301Z",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-foundry-research-11f4595.json",
+        "artifacts": [
+          {
+            "kind": "source_repository",
+            "locator": "https://github.com/sisodias/siso-foundry",
+            "revision": "11f459597ce0c67dbfa89deeeafa3202e47dc6d5",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The included Foundry-authored source retains its MIT licence; referenced third-party code and data retain their own rights.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/siso-foundry/blob/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/LICENSE",
+                  "observed_at": "2026-09-06",
+                  "summary": "The exact source licence is preserved with the read-only Library mirror."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "Stable Foundry Work, exact source commit and per-record public locators.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "experimental",
+            "reason": "The public repository provides a commit archive; this integration verifies individual JSON sources rather than a full archive restore.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The Library reading manifest pins every source record and SHA-256; generated JSON provides canonical Work and Release IDs.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "experimental",
+            "reason": "Research JSON is readable without installation; the platform full test still fails on its pre-existing missing external atlas input.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "Public Foundry source is MIT licensed; external source rights remain separate.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "Read-only public JSON is exposed for project reuse; actual project adoption and business outcomes remain unproved.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "authored",
+        "owner": "SISO Open Source Foundation · Foundry owner",
+        "entry_url": "https://github.com/sisodias/siso-foundry/blob/11f459597ce0c67dbfa89deeeafa3202e47dc6d5/intelligence/agency/RESEARCH-INDEX.md",
+        "visibility": "public",
+        "source_revision": "main@11f459597ce0c67dbfa89deeeafa3202e47dc6d5",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": "11f459597ce0c67dbfa89deeeafa3202e47dc6d5",
+        "commands": [
+          "npm test",
+          "python3 pipelines/github/run_campaign.py --dry-run"
+        ],
+        "reference": "docs/foundry-agency-intelligence.html"
+      }
+    },
+    {
+      "id": "gls:work:1cc4c944-9351-466e-a442-9fe16ad145d1",
+      "slug": "siso-harness-lab",
+      "name": "SISO Harness Lab · Agent Effectiveness",
+      "summary": "An evidence-gated improvement project for better accepted outcomes at comparable compute, or preserved quality at lower cost. It keeps experiments, counterexamples, rejected changes and continuation state. Private source; no established equal-spend quality gain, automatic instruction promotion or general cost multiplier.",
+      "library_url": "/works/siso-harness-lab/",
+      "agent_context_url": "/works/siso-harness-lab/index.json",
+      "type": "project",
+      "maturity": "active",
+      "section": "Unassigned",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-harness-lab",
+          "visibility": "private"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-harness-lab#readme",
+          "visibility": "private"
+        }
+      ],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "authored",
+        "owner": "SISO Harness Lab source owner",
+        "entry_url": "https://github.com/sisodias/siso-harness-lab/blob/feat/efficiency-loop-20260906/.agents/PAGE.md",
+        "visibility": "private",
+        "source_revision": "a0ae561e1c6a05ef747b1cc304849e9d723fc80b",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [
+          "npm run project:status"
+        ],
+        "reference": "https://github.com/sisodias/siso-harness-lab/blob/feat/efficiency-loop-20260906/.agents/PAGE.md"
+      }
     },
     {
       "id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
@@ -685,7 +3550,83 @@
           "url": "https://github.com/sisodias/siso-knowledge#readme",
           "visibility": "private"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:082afdff-c770-49de-a67c-a1ef9a6bb40d"
+      },
+      "selected_release": {
+        "id": "gls:release:082afdff-c770-49de-a67c-a1ef9a6bb40d",
+        "version": "public-architecture+333447a",
+        "released_at": "2026-07-30T21:08:59+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-knowledge-333447a.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/Lordsisodia/siso-knowledge/archive/333447afc7672ff622a5f92f96533662585bdb1f.tar.gz",
+            "revision": "333447afc7672ff622a5f92f96533662585bdb1f",
+            "availability": "public",
+            "license": {
+              "status": "pending",
+              "spdx": "NONE",
+              "reason": "No repository license has been accepted; this artifact is publicly addressable but carries no general reuse claim.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/Lordsisodia/siso-knowledge/tree/333447afc7672ff622a5f92f96533662585bdb1f",
+                  "observed_at": "2026-07-30",
+                  "summary": "The pinned source tree has no accepted license file."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The public architecture baseline is pinned to an exact commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public source archive resolves; local corpus payloads and runtime state are not part of this claim.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release resolves to the stable SISO Knowledge Work and exact source artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "unavailable",
+            "reason": "This is an architecture and source baseline, not a packaged application release; several live pipelines still contain legacy machine assumptions.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "unavailable",
+            "reason": "GitHub exposes the source, but no accepted license currently grants general copying, modification, or redistribution rights.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "The domain and data contracts are machine-neutral, but legacy pipeline paths and operator state remain measured migration debt.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-knowledge#readme",
+        "visibility": "private",
+        "source_revision": "main@333447afc7672ff622a5f92f96533662585bdb1f",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/siso-knowledge.json"
+      }
     },
     {
       "id": "gls:work:2b03baa8-6dab-4e91-ab4c-9b8db4543236",
@@ -710,7 +3651,83 @@
           "url": "https://github.com/sisodias/siso-people-graph#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e"
+      },
+      "selected_release": {
+        "id": "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e",
+        "version": "source-contract+de048bb",
+        "released_at": "2026-08-06T22:24:00+07:00",
+        "release_kind": "general",
+        "registry_source": "registry/releases/siso-people-graph-de048bb.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/sisodias/siso-people-graph/archive/de048bb3b34bf931b56fd741cb46c1334acdfb98.tar.gz",
+            "revision": "de048bb3b34bf931b56fd741cb46c1334acdfb98",
+            "availability": "public",
+            "license": {
+              "status": "pending",
+              "spdx": "NONE",
+              "reason": "No accepted repository license was present at the reviewed revision; the artifact is addressable but no general reuse right is claimed.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+                  "observed_at": "2026-08-06",
+                  "summary": "The exact tracked source tree contains no accepted license file."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The source contract is pinned to an exact public commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "experimental",
+            "reason": "A standard commit-scoped archive locator is recorded, but this registry lane did not download or hash the archive bytes.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The Release resolves to the stable People Graph Work and exact source artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "unavailable",
+            "reason": "This is a source and data-contract baseline, not an independently verified installation or production database release.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "unavailable",
+            "reason": "GitHub exposes the source, but no accepted license grants general copying, modification, or redistribution rights.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "The schema and observation concepts are machine-neutral, but the reviewed loaders depend on external databases, environment-specific source locations, and an unverified build path.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-people-graph/tree/de048bb3b34bf931b56fd741cb46c1334acdfb98",
+        "visibility": "public",
+        "source_revision": "de048bb3b34bf931b56fd741cb46c1334acdfb98",
+        "source_revision_basis": "selected_artifact",
+        "entry_revision": "de048bb3b34bf931b56fd741cb46c1334acdfb98",
+        "commands": [],
+        "reference": "registry/works/siso-people-graph.json"
+      }
     },
     {
       "id": "gls:work:54a52e52-dfbd-4922-8c04-ec02f7fae943",
@@ -735,7 +3752,83 @@
           "url": "https://github.com/sisodias/siso-project-os#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:ebfffcbc-fa33-498f-9b81-c81bb96e12a8"
+      },
+      "selected_release": {
+        "id": "gls:release:ebfffcbc-fa33-498f-9b81-c81bb96e12a8",
+        "version": "0.4.1+bfa88dc",
+        "released_at": "2026-09-06T01:50:00+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-project-os-bfa88dc.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/sisodias/siso-project-os/archive/bfa88dc3060f59b1372c74699fe7f74a2ef1bb36.tar.gz",
+            "revision": "bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The SISO-owned source retains its reviewed MIT license; external assets retain their own rights.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/siso-project-os/blob/bfa88dc3060f59b1372c74699fe7f74a2ef1bb36/LICENSE",
+                  "observed_at": "2026-09-06",
+                  "summary": "MIT license text read from the exact published source."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "Exact public source commit is recorded.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "Commit-scoped source archive returned HTTP 200.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "Manifest identifies its stable Work and exact source artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "Clean and existing project adoption passed, with collision-preserving spine installation.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The exact public SISO source retains MIT licensing.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "Node 20+ without runtime dependencies; adoption, preservation, lifecycle, upgrade and rollback tests passed.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "Lordsisodia",
+        "entry_url": "https://github.com/sisodias/siso-project-os/tree/bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+        "visibility": "public",
+        "source_revision": "bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+        "source_revision_basis": "selected_artifact",
+        "entry_revision": "bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+        "commands": [],
+        "reference": "registry/works/siso-project-os.json"
+      }
     },
     {
       "id": "gls:work:538c4491-8045-4526-9bcd-0268887601d0",
@@ -760,7 +3853,83 @@
           "url": "https://github.com/sisodias/siso-repo-bank#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:388d8ccc-b47a-4fb2-9082-db925cd1530c"
+      },
+      "selected_release": {
+        "id": "gls:release:388d8ccc-b47a-4fb2-9082-db925cd1530c",
+        "version": "1.0.0+2d7d35e",
+        "released_at": "2026-09-05T18:40:00+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-repo-bank-2d7d35e.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/sisodias/siso-repo-bank/archive/2d7d35ecbf7e1158d0a3527e1489040687ac214b.tar.gz",
+            "revision": "2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The taxonomy, ratings, one-liners and indexes are SISO-authored and carry MIT; the repositories described keep their own licences, recorded per row.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/siso-repo-bank/blob/2d7d35ecbf7e1158d0a3527e1489040687ac214b/LICENSE",
+                  "observed_at": "2026-09-05",
+                  "summary": "MIT license text is present at the exact release pin."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The public repository is pinned to an exact commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public source archive is recorded and resolved.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release resolves to its Work, one exact artifact and the README that defines the contents.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "The banks are plain JSONL queried with jq; the README examples were run against the published files.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The public repository is source-complete for everything SISO authored and documents the upstream-rights boundary.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "Data-only release with no runtime; the farm script needs only gh and node.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-repo-bank/tree/2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+        "visibility": "public",
+        "source_revision": "2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+        "source_revision_basis": "selected_artifact",
+        "entry_revision": "2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+        "commands": [],
+        "reference": "registry/works/siso-repo-bank.json"
+      }
     },
     {
       "id": "gls:work:3a7863ae-9a72-44bf-86ce-e730bcff3b84",
@@ -785,13 +3954,89 @@
           "url": "https://github.com/sisodias/siso-session-intelligence#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:0b81c926-0433-42f6-b6a9-9993b2ce5a6b"
+      },
+      "selected_release": {
+        "id": "gls:release:0b81c926-0433-42f6-b6a9-9993b2ce5a6b",
+        "version": "0.1.0+7f2ace6",
+        "released_at": "2026-07-30T06:24:26+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-session-intelligence-7f2ace6.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/Lordsisodia/siso-session-intelligence/archive/7f2ace6b9ba4b11dd95700cd4050ae5970a06171.tar.gz",
+            "revision": "7f2ace6b9ba4b11dd95700cd4050ae5970a06171",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The clean SISO-owned extraction carries an MIT license.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/Lordsisodia/siso-session-intelligence/blob/7f2ace6b9ba4b11dd95700cd4050ae5970a06171/LICENSE",
+                  "observed_at": "2026-07-30",
+                  "summary": "MIT license is present at the pinned release."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "Public source is pinned to an exact commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public archive is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release resolves to its stable Work and artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "experimental",
+            "reason": "The source CLI and package declaration work without dependencies; a built-wheel receipt is not yet recorded.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "Public MIT source includes architecture, provenance, fixtures, CLI, and tests.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "Claude and Codex fixtures passed privacy, idempotence, recall, export, and database-content checks in a temporary root.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-session-intelligence#readme",
+        "visibility": "public",
+        "source_revision": "main@7f2ace6b9ba4b11dd95700cd4050ae5970a06171",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/siso-session-intelligence.json"
+      }
     },
     {
       "id": "gls:work:dd051ce3-520e-4799-87b0-1e3f2182cc72",
       "slug": "siso-shell",
       "name": "SISO Shell",
-      "summary": "A shared static navigation shell for SISO reading surfaces: one pinned rail implementation with a 20px collapsed state, keyboard control and saved local preference.",
+      "summary": "The shared CRM-derived navigation, reusable page parts and static template bank for SISO reading surfaces. Consumers pin an exact source revision and supply reviewed project data; a template example is not a current project observation.",
       "library_url": "/works/siso-shell/",
       "agent_context_url": "/works/siso-shell/index.json",
       "type": "tool",
@@ -805,12 +4050,96 @@
           "visibility": "public"
         },
         {
+          "kind": "homepage",
+          "label": "Homepage",
+          "url": "https://siso-shell.pages.dev/",
+          "visibility": "public"
+        },
+        {
           "kind": "readme",
           "label": "Read README",
           "url": "https://github.com/sisodias/siso-shell#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:7dbde38f-3909-4c53-84b7-86ce5196ce0b"
+      },
+      "selected_release": {
+        "id": "gls:release:7dbde38f-3909-4c53-84b7-86ce5196ce0b",
+        "version": "0.3.2+10895ac",
+        "released_at": "2026-09-08T05:29:49+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-shell-10895ac-library.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/sisodias/siso-shell/archive/10895acfbd79bfa21698c2ba4cd160e2410ac141.tar.gz",
+            "revision": "10895acfbd79bfa21698c2ba4cd160e2410ac141",
+            "availability": "public",
+            "license": {
+              "status": "pending",
+              "spdx": "NOASSERTION",
+              "reason": "The SISO-owned shell and template bank has no general redistribution grant. Bundled Lucide icons retain ISC attribution; third-party provenance is not erased by inclusion in a SISO repository. No blanket ownership or licensing claim is made for every referenced component design.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/siso-shell/blob/10895acfbd79bfa21698c2ba4cd160e2410ac141/shell/icons.mjs",
+                  "observed_at": "2026-09-08",
+                  "summary": "The bundled Lucide SVG paths retain an ISC notice. The repository README grants no general redistribution licence for the whole bank."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The exact public source commit is identified.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "The exact archive installed successfully through the consumer lockfile.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The manifest identifies the existing shell Work and exact source artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "The grouped shell API and copied assets build in the Library consumer on Node 20.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "unavailable",
+            "reason": "The whole bank has no general redistribution licence. Bundled notices remain applicable.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "Static assets and build-time rendering avoid a browser application runtime; wider consumer and browser acceptance is not implied by one Library build.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "authored",
+        "owner": "SISO Open Source Foundation · shared-shell maintainer",
+        "entry_url": "https://github.com/sisodias/siso-shell/blob/10895acfbd79bfa21698c2ba4cd160e2410ac141/README.md",
+        "visibility": "public",
+        "source_revision": "10895acfbd79bfa21698c2ba4cd160e2410ac141",
+        "source_revision_basis": "selected_artifact",
+        "entry_revision": "10895acfbd79bfa21698c2ba4cd160e2410ac141",
+        "commands": [
+          "node --test shell.test.mjs"
+        ],
+        "reference": "docs/library-ui-integration.md"
+      }
     },
     {
       "id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
@@ -835,7 +4164,127 @@
           "url": "https://github.com/sisodias/siso-skills-hub#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943"
+      },
+      "selected_release": {
+        "id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943",
+        "version": "0.2.0+5e33b2b",
+        "released_at": "2026-09-06T01:50:00+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/siso-skills-hub-5e33b2b.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/sisodias/siso-skills-hub/archive/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8.tar.gz",
+            "revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The SISO-owned source retains its reviewed MIT license; external assets retain their own rights.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/siso-skills-hub/blob/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8/LICENSE",
+                  "observed_at": "2026-09-06",
+                  "summary": "MIT license text read from the exact published source."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "Exact public source commit is recorded.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "Commit-scoped source archive returned HTTP 200.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "Manifest identifies its stable Work and exact source artifact.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "The reviewed publish skill installs through the canonical CLI; this does not claim every optional provider is configured.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The exact public SISO source retains MIT licensing.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "Publish is bounded to reviewed public static output and caller-configured Wrangler; other Hub recipes retain their own boundaries.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-skills-hub/tree/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+        "visibility": "public",
+        "source_revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+        "source_revision_basis": "selected_artifact",
+        "entry_revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+        "commands": [],
+        "reference": "registry/works/siso-skills.json"
+      }
+    },
+    {
+      "id": "gls:work:c45be32a-c8ee-4612-98b6-7f3b37b1d61e",
+      "slug": "siso-source",
+      "name": "SISO Source",
+      "summary": "Private custody and provenance-aware recall of conversation source, with screened projections and explicit authorship and coverage limits. The Library publishes this description, not the conversation payloads.",
+      "library_url": "/works/siso-source/",
+      "agent_context_url": "/works/siso-source/index.json",
+      "type": "knowledge_system",
+      "maturity": "active",
+      "section": "Unassigned",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-source",
+          "visibility": "private"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-source#readme",
+          "visibility": "private"
+        }
+      ],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "authored",
+        "owner": "SISO Open Source Foundation · authorized private-source owner",
+        "entry_url": "https://github.com/sisodias/siso-source/blob/6ed830a4177d6bd9d2f4c1755a77c245b082d53e/README.md",
+        "visibility": "private",
+        "source_revision": "6ed830a4177d6bd9d2f4c1755a77c245b082d53e",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": "6ed830a4177d6bd9d2f4c1755a77c245b082d53e",
+        "commands": [
+          "python3 -B -m unittest discover -s tests -p 'test_*.py'"
+        ],
+        "reference": "https://github.com/sisodias/siso-source/blob/6ed830a4177d6bd9d2f4c1755a77c245b082d53e/README.md"
+      }
     },
     {
       "id": "gls:work:8e2b4f07-3a91-4c58-9d16-7b05e3ca2841",
@@ -860,7 +4309,24 @@
           "url": "https://github.com/sisodias/siso-stargate-library#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-stargate-library#readme",
+        "visibility": "public",
+        "source_revision": "main@7f89393c7aff6c1977d29f124d1b194c9dbc40f3",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/siso-stargate-library.json"
+      }
     },
     {
       "id": "gls:work:5c1e8a34-6d72-4f19-8a0b-2e7c94d1f635",
@@ -885,7 +4351,24 @@
           "url": "https://github.com/sisodias/siso-unsolveable-mathematics#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/siso-unsolveable-mathematics#readme",
+        "visibility": "public",
+        "source_revision": "main@2c772ab122858aec67d7958bf860b7d223210187",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/siso-unsolveable-mathematics.json"
+      }
     },
     {
       "id": "gls:work:9b18cc64-7d5e-4f30-b63d-a0ec30c1f7e1",
@@ -916,7 +4399,83 @@
           "url": "https://github.com/sisodias/great-library-of-siso#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:1f8b6c2d-72f4-4b90-9e1f-3d5a7c8b2e64"
+      },
+      "selected_release": {
+        "id": "gls:release:1f8b6c2d-72f4-4b90-9e1f-3d5a7c8b2e64",
+        "version": "1.4.0+2e9b7c8",
+        "released_at": "2026-08-03T02:03:27+07:00",
+        "release_kind": "general",
+        "registry_source": "registry/releases/great-library-foundry-agency-coverage-2e9b7c8.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/Lordsisodia/great-library-of-siso/archive/2e9b7c80ad93b56e974f4d42e39a9981701986b5.tar.gz",
+            "revision": "2e9b7c80ad93b56e974f4d42e39a9981701986b5",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The pinned public registry source carries the repository MIT license.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/Lordsisodia/great-library-of-siso/blob/2e9b7c80ad93b56e974f4d42e39a9981701986b5/LICENSE",
+                  "observed_at": "2026-08-03",
+                  "summary": "The MIT license is present at the exact public implementation checkpoint."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The Source Inventory, Event, ownership schema, authored briefing, and deterministic projections are pinned to an exact public commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A public commit-scoped archive locator is recorded.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The Library validates the Source Inventory, ownership contract, Event lineage, generated promotion projection, and authored Research briefing deterministically.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "A clean Node installation validates and builds the static Library.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The public repository remains source-complete and MIT licensed.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "The release includes publication-safe metadata and receipts without private databases, client data, machine paths, raw transcripts, credentials, or copied upstream source.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://great-library-of-siso.pages.dev/",
+        "visibility": "public",
+        "source_revision": "main@2bd415dd3024c928fc8414b891e7f21069c3fcaa",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": null,
+        "commands": [],
+        "reference": "registry/works/library.json"
+      }
     },
     {
       "id": "gls:work:a5ba6f03-f314-46c5-b106-4d4587446dbb",
@@ -941,7 +4500,83 @@
           "url": "https://github.com/sisodias/unfuck-the-project#readme",
           "visibility": "public"
         }
-      ]
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": "gls:release:9ac0eb6b-ff42-4505-ab48-9ca04b196c89"
+      },
+      "selected_release": {
+        "id": "gls:release:9ac0eb6b-ff42-4505-ab48-9ca04b196c89",
+        "version": "3.0.0+830b1dc",
+        "released_at": "2026-09-05T18:40:00+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/unfuck-the-project-830b1dc.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/sisodias/unfuck-the-project/archive/830b1dc206d0d41e18769774b37b8fe4e0d67ac5.tar.gz",
+            "revision": "830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The prompt, brief, God Questions text and skills are SISO-authored and carry MIT.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/unfuck-the-project/blob/830b1dc206d0d41e18769774b37b8fe4e0d67ac5/LICENSE",
+                  "observed_at": "2026-09-05",
+                  "summary": "MIT license text is present at the exact release pin."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "The public repository is pinned to an exact commit.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "A commit-scoped public source archive is recorded and resolved.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "The release resolves to its Work, one exact artifact and the README that defines the contents.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "Installation is copying UNFUCK.md and a filled BRIEF.md next to a project and pointing an agent at them; the README quick start was followed as written.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "The public repository is source-complete for everything SISO authored and documents the upstream-rights boundary.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "verified",
+            "reason": "Plain Markdown and one POSIX shell script with curl and jq; no machine-specific paths remain.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO Open Source Foundation",
+        "entry_url": "https://github.com/sisodias/unfuck-the-project/tree/830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+        "visibility": "public",
+        "source_revision": "830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+        "source_revision_basis": "selected_artifact",
+        "entry_revision": "830b1dc206d0d41e18769774b37b8fe4e0d67ac5",
+        "commands": [],
+        "reference": "registry/works/unfuck-the-project.json"
+      }
     }
   ],
   "repositories": [
@@ -1298,12 +4933,12 @@
       "lifecycle_status": "experimental",
       "library_url": "/works/siso-shell/",
       "locator_type": "source_repository",
-      "locator_revision": "adea8860b50324f283637a596c5a41367ece9776",
+      "locator_revision": "10895acfbd79bfa21698c2ba4cd160e2410ac141",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:50dfa58e-c253-4bd5-814c-c609d38f536c",
-      "active_release_version": "0.1.0+adea886",
-      "artifact_revision": "adea8860b50324f283637a596c5a41367ece9776"
+      "active_release_id": "gls:release:7dbde38f-3909-4c53-84b7-86ce5196ce0b",
+      "active_release_version": "0.3.2+10895ac",
+      "artifact_revision": "10895acfbd79bfa21698c2ba4cd160e2410ac141"
     },
     {
       "owner": "sisodias",
@@ -1390,6 +5025,42 @@
       "locator_type": "source_repository",
       "locator_revision": "main@fb615f281b6c89c31a5c16b3512299f2e1064569",
       "visibility": "public",
+      "status": "staging",
+      "active_release_id": null,
+      "active_release_version": null,
+      "artifact_revision": null
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-harness-lab",
+      "url": "https://github.com/sisodias/siso-harness-lab",
+      "work_id": "gls:work:1cc4c944-9351-466e-a442-9fe16ad145d1",
+      "work_name": "SISO Harness Lab · Agent Effectiveness",
+      "work_slug": "siso-harness-lab",
+      "work_type": "project",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-harness-lab/",
+      "locator_type": "source_repository",
+      "locator_revision": "a0ae561e1c6a05ef747b1cc304849e9d723fc80b",
+      "visibility": "private",
+      "status": "staging",
+      "active_release_id": null,
+      "active_release_version": null,
+      "artifact_revision": null
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-source",
+      "url": "https://github.com/sisodias/siso-source",
+      "work_id": "gls:work:c45be32a-c8ee-4612-98b6-7f3b37b1d61e",
+      "work_name": "SISO Source",
+      "work_slug": "siso-source",
+      "work_type": "knowledge_system",
+      "lifecycle_status": "active",
+      "library_url": "/works/siso-source/",
+      "locator_type": "source_repository",
+      "locator_revision": "6ed830a4177d6bd9d2f4c1755a77c245b082d53e",
+      "visibility": "private",
       "status": "staging",
       "active_release_id": null,
       "active_release_version": null,
@@ -6043,10 +9714,10 @@
   },
   "intelligence": {
     "counts": {
-      "events": 47,
+      "events": 48,
       "decisions": 6,
       "active_initiatives": 3,
-      "registry_changes": 126
+      "registry_changes": 129
     },
     "active_initiatives": [
       {

@@ -71,11 +71,56 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "herdrdev",
+    "entry_url": "https://github.com/herdrdev/herdr#readme",
+    "visibility": "public",
+    "source_revision": "master@514e4465ee33d4d81682d06ee2934483982a54ed",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/herdr.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05",
+      "version": "master+514e446",
+      "registry_source": "registry/releases/herdr-514e446.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05",
     "version": "master+514e446",
     "released_at": "2026-07-29T13:47:22Z",
     "release_kind": null,
+    "registry_source": "registry/releases/herdr-514e446.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/ogulcancelik/herdr/archive/514e4465ee33d4d81682d06ee2934483982a54ed.tar.gz",
+        "revision": "514e4465ee33d4d81682d06ee2934483982a54ed",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "Apache-2.0",
+          "reason": "Public upstream repository metadata reports Apache-2.0.",
+          "evidence": [
+            {
+              "kind": "integration_check",
+              "reference": "https://github.com/ogulcancelik/herdr",
+              "observed_at": "2026-07-29",
+              "summary": "External ownership, public visibility, and license verified."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

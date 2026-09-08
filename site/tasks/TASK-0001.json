@@ -1,0 +1,17 @@
+{
+  "id": "TASK-0001",
+  "title": "Merge the People Graph control-plane spine",
+  "status": "completed",
+  "priority": "high",
+  "source_file": ".agents/tasks/completed/TASK-0001/task.json",
+  "description": "The spine carries ADR-0005, the Works and Releases records, V37, GQ-010 and the pg-observation-0.1 interchange format. It is the control plane the rest of the program hangs off.",
+  "acceptance_criteria": [
+    "npm run check:immutable passes",
+    "npm run verify passes",
+    "No immutable record is modified"
+  ],
+  "latest_observation": {
+    "timestamp": "2026-09-08T06:32:26+07:00",
+    "action": "Reconciled completed work against canonical main"
+  }
+}

@@ -93,11 +93,66 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:ebfffcbc-fa33-498f-9b81-c81bb96e12a8"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "Lordsisodia",
+    "entry_url": "https://github.com/sisodias/siso-project-os/tree/bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+    "visibility": "public",
+    "source_revision": "bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+    "source_revision_basis": "selected_artifact",
+    "entry_revision": "bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+    "commands": [],
+    "reference": "registry/works/siso-project-os.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:3a99d120-a2dd-4e79-9a10-74b47aeefc03",
+      "version": "0.4.0+d6290c6",
+      "registry_source": "registry/releases/siso-project-os-d6290c6.json"
+    },
+    {
+      "id": "gls:release:bae2bab9-e411-4684-b595-3bf86b2761f9",
+      "version": "0.4.0+lordsisodia.d6290c6",
+      "registry_source": "registry/releases/siso-project-os-lordsisodia-d6290c6.json"
+    },
+    {
+      "id": "gls:release:ebfffcbc-fa33-498f-9b81-c81bb96e12a8",
+      "version": "0.4.1+bfa88dc",
+      "registry_source": "registry/releases/siso-project-os-bfa88dc.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:ebfffcbc-fa33-498f-9b81-c81bb96e12a8",
     "version": "0.4.1+bfa88dc",
     "released_at": "2026-09-06T01:50:00+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-project-os-bfa88dc.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/sisodias/siso-project-os/archive/bfa88dc3060f59b1372c74699fe7f74a2ef1bb36.tar.gz",
+        "revision": "bfa88dc3060f59b1372c74699fe7f74a2ef1bb36",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The SISO-owned source retains its reviewed MIT license; external assets retain their own rights.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/sisodias/siso-project-os/blob/bfa88dc3060f59b1372c74699fe7f74a2ef1bb36/LICENSE",
+              "observed_at": "2026-09-06",
+              "summary": "MIT license text read from the exact published source."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

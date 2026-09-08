@@ -1,0 +1,94 @@
+/* Library composition over the pinned CRM shell. Donor tokens/rail stay intact.
+ * The 20px handle is the explicit Library adaptation; the bank keeps its 52px
+ * compact icon rail. Authored readers are scoped in the generator. */
+.library-shell {
+  --crm-rail-collapsed-width: 20px;
+  margin: 0;
+  color: var(--crm-color-text);
+  background: var(--crm-gradient-canvas), var(--crm-color-canvas);
+  font-family: var(--crm-font-sans);
+  line-height: 1.55;
+  color-scheme: dark;
+}
+.library-shell *, .library-shell *::before, .library-shell *::after { box-sizing: border-box; }
+.library-shell [hidden] { display: none !important; }
+.library-shell .siso-shell-page { min-width: 0; }
+.library-shell .skip-link {
+  position: fixed; z-index: 30; top: 8px; left: 8px; padding: 10px 14px;
+  color: var(--crm-color-on-brand); background: var(--crm-color-brand);
+  transform: translateY(-160%);
+}
+.library-shell .skip-link:focus { transform: none; }
+.library-shell :focus-visible { outline: 2px solid var(--crm-color-brand); outline-offset: 4px; }
+.library-shell #library-content:focus { outline: none; }
+.library-shell .siso-sidebar.is-collapsed { padding: 0; }
+.library-shell .siso-sidebar.is-collapsed .siso-sidebar__brand,
+.library-shell .siso-sidebar.is-collapsed .siso-sidebar__search,
+.library-shell .siso-sidebar.is-collapsed .siso-sidebar__body { display: none; }
+.library-shell .siso-sidebar.is-collapsed .siso-sidebar__toggle {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: var(--crm-control-touch); height: var(--crm-control-touch);
+  background: var(--crm-color-chrome);
+}
+.library-shell .siso-sidebar__nav-link > span { min-width: 0; }
+.library-shell .siso-sidebar__page-group .siso-sidebar__nav-link { height: auto; min-height: var(--crm-control-touch); }
+.library-shell .siso-sidebar__page-group .siso-sidebar__nav-link > span { white-space: normal; }
+
+/* A document retains its authored typography, tables, diagrams and anchors. */
+.library-document { min-width: 0; min-height: 100vh; overflow-wrap: anywhere; }
+.library-document main { min-width: 0; }
+.library-document table { display: block; max-width: 100%; overflow-x: auto; }
+.library-document pre { max-width: 100%; overflow-x: auto; }
+.library-document img, .library-document svg { max-width: 100%; }
+.library-shell h2[id], .library-document [id] { scroll-margin-top: 24px; }
+
+/* Existing Library compositions use the shared palette and type without
+ * replacing their source data or converting each page to the same card stack. */
+.library-shell:not(.document-page) { --serif: var(--crm-font-sans); --sans: var(--crm-font-sans); }
+.library-shell .front-intro h1, .library-shell .work-title h1, .library-shell .subhero h1 { font-weight: 620; }
+.library-shell .front-intro h1 em { font-style: normal; color: var(--accent-reflect); }
+.library-shell.module-reading .work-title h1 { font-size: clamp(38px, 4.5vw, 72px); }
+.library-shell .button { color: var(--crm-color-on-brand); border-radius: var(--crm-radius-control); }
+.library-shell .button span { color: inherit; }
+.library-shell .catalog-note, .library-shell .ledger, .library-shell .permalink-bar { background: var(--crm-color-surface); }
+.library-shell .work-card, .library-shell .empty-state { background: var(--crm-color-surface); }
+.library-shell .work-card h3 { font-weight: 560; }
+.library-shell .work-card { min-width: 0; overflow-wrap: anywhere; }
+.library-shell .card-foot { min-width: 0; }
+.library-shell .card-foot code { min-width: 0; }
+.library-shell .catalog-controls input, .library-shell .catalog-controls select { border-radius: var(--crm-radius-control); }
+.library-shell .catalog-controls { grid-template-columns: minmax(180px, 1fr) repeat(3, minmax(120px, 180px)); }
+.library-shell .selection-note { margin-top: 18px; color: var(--crm-color-brand); font: 12px/1.5 var(--crm-font-sans); }
+.library-shell .detail-layout { grid-template-columns: minmax(0, 1fr) minmax(260px, 380px); gap: 48px; }
+.library-shell .detail-layout > *, .library-shell .work-title > *, .library-shell .detail-rows > * { min-width: 0; }
+.library-shell .detail-rows p, .library-shell .detail-rows b, .library-shell .provenance-list dd { overflow-wrap: anywhere; }
+.library-shell .work-hero .eyebrow { color: var(--crm-color-brand); }
+.library-shell .module-overview .reading-map text { font-size: 14px; }
+.library-shell .module-overview .reading-map .lbl { font-size: 11px; }
+.operate-page pre { max-width: 100%; overflow-x: auto; padding: 20px; border: 1px solid var(--crm-color-line); border-radius: var(--crm-radius-control); background: var(--crm-color-surface); font: 14px/1.7 var(--crm-font-mono); }
+.task-records { display: grid; gap: 12px; margin-block: 20px; }
+.task-records summary { gap: 16px; flex-wrap: wrap; }
+.task-records summary b { flex: 1; min-width: 180px; }
+.task-status { color: var(--crm-color-brand); font-size: 12px; white-space: nowrap; }
+.completed-work > summary { color: var(--crm-color-text-muted); }
+
+@media (max-width: 980px) {
+  .library-shell .catalog-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .library-shell .detail-layout { grid-template-columns: 1fr; }
+  .library-shell .siso-sidebar.is-expanded { max-width: calc(100vw - 32px); }
+  .library-shell.rail-expanded .siso-shell-page { opacity: .3; }
+}
+@media (max-width: 600px) {
+  .library-shell .catalog-controls { grid-template-columns: 1fr; }
+  .library-shell .work-title { display: block; }
+  .library-shell .work-title h1 { font-size: 38px; overflow-wrap: anywhere; }
+  .library-shell .detail-rows > div, .library-shell .detail-rows > a { grid-template-columns: 1fr; gap: 8px; }
+  .library-shell .permalink-bar .shell { flex-wrap: wrap; }
+}
+.no-js .library-shell .siso-sidebar { position: relative; inset: auto; width: auto; margin: 16px; max-height: none; }
+.no-js .library-shell .siso-shell-page { margin-left: 0; }
+.no-js .library-shell .siso-sidebar__search { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .library-shell *, .library-shell *::before, .library-shell *::after { transition: none !important; animation: none !important; }
+}

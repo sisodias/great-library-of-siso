@@ -37,11 +37,36 @@
       "evidence": []
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:24c1ed1d-4437-4641-83e2-048d55116590"
+  },
+  "owner_entry": {
+    "state": "not_recorded",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": null,
+    "visibility": "unknown",
+    "source_revision": null,
+    "source_revision_basis": "not_recorded",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/research.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:24c1ed1d-4437-4641-83e2-048d55116590",
+      "version": "1.0.0",
+      "registry_source": "registry/releases/research-v1.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:24c1ed1d-4437-4641-83e2-048d55116590",
     "version": "1.0.0",
     "released_at": "2026-07-30T00:00:00Z",
     "release_kind": null,
+    "registry_source": "registry/releases/research-v1.json",
+    "artifacts": [],
     "distribution": {
       "addressable": {
         "state": "verified",

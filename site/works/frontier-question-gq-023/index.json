@@ -89,5 +89,22 @@
       "evidence": []
     }
   },
+  "selection": {
+    "state": "registered_not_selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": null
+  },
+  "owner_entry": {
+    "state": "not_recorded",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": null,
+    "visibility": "unknown",
+    "source_revision": null,
+    "source_revision_basis": "not_recorded",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/frontier-question-gq-023.json"
+  },
+  "registered_releases": [],
   "selected_release": null
 }

@@ -123,11 +123,56 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:98ba8230-3cdc-478b-b855-e9d808655c46"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-agent-hooks/tree/9125a972b4ba03661bf17ee135790282f246c15f",
+    "visibility": "public",
+    "source_revision": "9125a972b4ba03661bf17ee135790282f246c15f",
+    "source_revision_basis": "selected_artifact",
+    "entry_revision": "9125a972b4ba03661bf17ee135790282f246c15f",
+    "commands": [],
+    "reference": "registry/works/siso-agent-hooks.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:98ba8230-3cdc-478b-b855-e9d808655c46",
+      "version": "0.1.0+9125a97",
+      "registry_source": "registry/releases/siso-agent-hooks-9125a97.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:98ba8230-3cdc-478b-b855-e9d808655c46",
     "version": "0.1.0+9125a97",
     "released_at": "2026-08-01T20:22:00+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-agent-hooks-9125a97.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/sisodias/siso-agent-hooks/archive/9125a972b4ba03661bf17ee135790282f246c15f.tar.gz",
+        "revision": "9125a972b4ba03661bf17ee135790282f246c15f",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "MIT license is present at the exact release pin.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/sisodias/siso-agent-hooks/blob/9125a972b4ba03661bf17ee135790282f246c15f/LICENSE",
+              "observed_at": "2026-08-01",
+              "summary": "MIT license text is included in the release source."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

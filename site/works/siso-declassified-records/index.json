@@ -99,5 +99,22 @@
       ]
     }
   },
+  "selection": {
+    "state": "registered_not_selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": null
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-declassified-records#readme",
+    "visibility": "public",
+    "source_revision": "main@fb615f281b6c89c31a5c16b3512299f2e1064569",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/siso-declassified-records.json"
+  },
+  "registered_releases": [],
   "selected_release": null
 }

@@ -129,11 +129,76 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:941effe9-a115-41a9-bfde-d681ebc45812"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-agent-brain#readme",
+    "visibility": "public",
+    "source_revision": "main@ed50bec86f5cfb86cc5c84ebfce97fad595598b4",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/siso-agent-brain.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:b81851e9-e4e1-468e-b3d3-1cd303bd7877",
+      "version": "registry-seed-2026-07-30",
+      "registry_source": "registry/releases/siso-agent-brain-seed.json"
+    },
+    {
+      "id": "gls:release:97b15915-ac25-4866-93bb-d010724919bc",
+      "version": "0.1.0+4f720fa",
+      "registry_source": "registry/releases/siso-agent-brain-4f720fa.json"
+    },
+    {
+      "id": "gls:release:36960afb-ef79-4dd7-a642-95a20150c319",
+      "version": "0.1.0+ae3d1c7",
+      "registry_source": "registry/releases/siso-agent-brain-ae3d1c7.json"
+    },
+    {
+      "id": "gls:release:fcf9ab64-7e2e-4827-8408-c80ea81e7771",
+      "version": "0.2.0+d7fc475",
+      "registry_source": "registry/releases/siso-agent-brain-d7fc475.json"
+    },
+    {
+      "id": "gls:release:941effe9-a115-41a9-bfde-d681ebc45812",
+      "version": "0.3.0+ed50bec",
+      "registry_source": "registry/releases/siso-agent-brain-ed50bec.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:941effe9-a115-41a9-bfde-d681ebc45812",
     "version": "0.3.0+ed50bec",
     "released_at": "2026-07-30T12:26:31+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-agent-brain-ed50bec.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/Lordsisodia/siso-agent-brain/archive/ed50bec86f5cfb86cc5c84ebfce97fad595598b4.tar.gz",
+        "revision": "ed50bec86f5cfb86cc5c84ebfce97fad595598b4",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The SISO-owned Agent Brain source carries MIT.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/Lordsisodia/siso-agent-brain/blob/ed50bec86f5cfb86cc5c84ebfce97fad595598b4/LICENSE",
+              "observed_at": "2026-07-30",
+              "summary": "MIT license text is present at the exact release pin."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

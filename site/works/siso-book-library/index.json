@@ -161,11 +161,56 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+    "visibility": "public",
+    "source_revision": "be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+    "source_revision_basis": "selected_artifact",
+    "entry_revision": "be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+    "commands": [],
+    "reference": "registry/works/siso-book-library.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec",
+      "version": "source-contract+be9ab08",
+      "registry_source": "registry/releases/siso-book-library-be9ab08.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec",
     "version": "source-contract+be9ab08",
     "released_at": "2026-08-06T22:24:00+07:00",
     "release_kind": "general",
+    "registry_source": "registry/releases/siso-book-library-be9ab08.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/sisodias/siso-book-library/archive/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b.tar.gz",
+        "revision": "be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+        "availability": "public",
+        "license": {
+          "status": "pending",
+          "spdx": "NONE",
+          "reason": "No accepted repository license was present at the reviewed revision; upstream public-domain status and repository visibility do not create a blanket source-code or payload grant.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/sisodias/siso-book-library/tree/be9ab0831b9ea8802d6898f3a3dfa8a61c63e80b",
+              "observed_at": "2026-08-06",
+              "summary": "The exact tracked source tree contains no accepted license file."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

@@ -68,6 +68,10 @@ async function preflight(root, candidates) {
 }
 
 async function main(args) {
+  if (['search', 'inspect', 'tasks', 'task'].includes(args[0])) {
+    const { runRead } = await import('../scripts/read-library.mjs');
+    return runRead(args);
+  }
   if (args.length === 0 || args.includes('--help')) { console.log(usage); return; }
   const [action, kind, ...flags] = args;
   if (action !== 'add' || !kinds[kind]) throw new Error(usage);

@@ -1,0 +1,17 @@
+{
+  "id": "TASK-0005",
+  "title": "Pre-register a GQ-010 baseline BEFORE merges change the graph",
+  "status": "blocked",
+  "priority": "critical",
+  "source_file": ".agents/tasks/blocked/TASK-0005/task.json",
+  "description": "GQ-010 has no baseline, so nothing downstream of it is measurable. This is TIME-CRITICAL in a way the other tasks are not: once the merges land, today's graph is gone and the before-picture cannot be reconstructed.",
+  "acceptance_criteria": [
+    "5 decisions pre-registered with their measurement protocol frozen before the first timing",
+    "Timings recorded against the pre-merge graph",
+    "The registration is timestamped outside the analyst's own control"
+  ],
+  "latest_observation": {
+    "timestamp": "2026-09-08T06:32:26+07:00",
+    "action": "Reviewed remaining acceptance and repeat-work boundary"
+  }
+}

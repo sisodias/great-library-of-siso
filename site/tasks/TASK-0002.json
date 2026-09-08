@@ -1,0 +1,16 @@
+{
+  "id": "TASK-0002",
+  "title": "Merge the three docs-only branches",
+  "status": "completed",
+  "priority": "medium",
+  "source_file": ".agents/tasks/completed/TASK-0002/task.json",
+  "description": "Three documentation branches with no conflict risk. The audit record holds findings PG-AUDIT-001 to 013, each pinning exact blob revisions, plus a 509-line complete-decision-record. Source research holds the 39-source matrix, rights and deletion matrix, 10 value theses and the pilot portfolio. First-principles holds R1-R10 and the value function.",
+  "acceptance_criteria": [
+    "All three merged",
+    "The prompt packs are reachable from main"
+  ],
+  "latest_observation": {
+    "timestamp": "2026-09-08T06:32:26+07:00",
+    "action": "Reconciled completed work against canonical main"
+  }
+}

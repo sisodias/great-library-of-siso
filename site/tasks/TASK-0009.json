@@ -1,0 +1,19 @@
+{
+  "id": "TASK-0009",
+  "title": "Author a source-backed Runtime entry through the Library operating path",
+  "status": "completed",
+  "priority": "high",
+  "source_file": ".agents/tasks/completed/TASK-0009/task.json",
+  "description": "Use gls discovery and exact Work inspection to identify the selected SISO Agent Runtime source, read its public owning instructions, and add useful authored reading content without changing identity or source claims.",
+  "acceptance_criteria": [
+    "Resolve Runtime through gls search and exact inspect; preserve its existing stable ID and legacy slug.",
+    "Read the exact selected public source README and relevant command definitions before authoring.",
+    "Change only reading, updated_at and appended source-review evidence in registry/works/siso-agent-base.json.",
+    "Three useful real source links and actual documented commands; no invented runtime, rights, private-access or cost claims.",
+    "Registry validation passes and the Library owner independently reviews source/record parity before acceptance."
+  ],
+  "latest_observation": {
+    "timestamp": "2026-09-08T09:47:34+07:00",
+    "action": "Owner accepted bounded implementation"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "projection": "Read-only build projection of canonical .agents/tasks records; not live runtime state.",
+  "tasks": [
+    {
+      "id": "TASK-0003",
+      "title": "Publish a successor Event recording the honest 8-of-13 delivery",
+      "status": "backlog",
+      "priority": "high",
+      "source_file": ".agents/tasks/backlog/TASK-0003/task.json",
+      "description": "The immutable launch Event records the program as launched. No record states what actually landed. Write a SUCCESSOR Event naming lanes 5, 6, 9 and 12 explicitly.",
+      "acceptance_criteria": [
+        "A successor Event exists naming lanes 5, 6, 9 and 12",
+        "The immutable launch Event is unmodified and check:immutable still passes"
+      ],
+      "latest_observation": {
+        "timestamp": "2026-09-08T06:32:26+07:00",
+        "action": "Reviewed remaining acceptance and repeat-work boundary"
+      }
+    },
+    {
+      "id": "TASK-0004",
+      "title": "Own the missing convergence step: the adversarial release gate",
+      "status": "backlog",
+      "priority": "high",
+      "source_file": ".agents/tasks/backlog/TASK-0004/task.json",
+      "description": "Prompt 13 evaluates COMPATIBILITY; v0 Prompt 12 would have PROVEN the P0s fixed and published the closing Event. The spec survives and is reusable. Nobody currently owns final convergence.",
+      "acceptance_criteria": [
+        "An owner is named for the release gate",
+        "Prompt 1's original failure fixtures are run and the selected P0s proven resolved",
+        "No red gate is papered over"
+      ],
+      "latest_observation": {
+        "timestamp": "2026-09-08T06:32:26+07:00",
+        "action": "Reviewed remaining acceptance and repeat-work boundary"
+      }
+    },
+    {
+      "id": "TASK-0007",
+      "title": "Integrate the shared Library reading frame for review",
+      "status": "in_progress",
+      "priority": "high",
+      "source_file": ".agents/tasks/in_progress/TASK-0007/task.json",
+      "description": "A locally verified shared reading flow with exact source pins, preserving public identity and original reader content. Public publication is a separate gate.",
+      "acceptance_criteria": [
+        "Node 20 full Library gate and strict integration diagnostic pass.",
+        "Every generated HTML route has one shared navigation and main landmark, working local anchors and source parity.",
+        "Representative desktop/mobile, keyboard, storage-denied and no-JS browser checks pass.",
+        "Public hosts and peer checkouts remain unchanged."
+      ],
+      "latest_observation": {
+        "timestamp": "2026-09-08T09:47:34+07:00",
+        "action": "Checkpoint current stretch; broader acceptance remains"
+      }
+    },
+    {
+      "id": "TASK-0005",
+      "title": "Pre-register a GQ-010 baseline BEFORE merges change the graph",
+      "status": "blocked",
+      "priority": "critical",
+      "source_file": ".agents/tasks/blocked/TASK-0005/task.json",
+      "description": "GQ-010 has no baseline, so nothing downstream of it is measurable. This is TIME-CRITICAL in a way the other tasks are not: once the merges land, today's graph is gone and the before-picture cannot be reconstructed.",
+      "acceptance_criteria": [
+        "5 decisions pre-registered with their measurement protocol frozen before the first timing",
+        "Timings recorded against the pre-merge graph",
+        "The registration is timestamped outside the analyst's own control"
+      ],
+      "latest_observation": {
+        "timestamp": "2026-09-08T06:32:26+07:00",
+        "action": "Reviewed remaining acceptance and repeat-work boundary"
+      }
+    },
+    {
+      "id": "TASK-0001",
+      "title": "Merge the People Graph control-plane spine",
+      "status": "completed",
+      "priority": "high",
+      "source_file": ".agents/tasks/completed/TASK-0001/task.json",
+      "description": "The spine carries ADR-0005, the Works and Releases records, V37, GQ-010 and the pg-observation-0.1 interchange format. It is the control plane the rest of the program hangs off.",
+      "acceptance_criteria": [
+        "npm run check:immutable passes",
+        "npm run verify passes",
+        "No immutable record is modified"
+      ],
+      "latest_observation": {
+        "timestamp": "2026-09-08T06:32:26+07:00",
+        "action": "Reconciled completed work against canonical main"
+      }
+    },
+    {
+      "id": "TASK-0002",
+      "title": "Merge the three docs-only branches",
+      "status": "completed",
+      "priority": "medium",
+      "source_file": ".agents/tasks/completed/TASK-0002/task.json",
+      "description": "Three documentation branches with no conflict risk. The audit record holds findings PG-AUDIT-001 to 013, each pinning exact blob revisions, plus a 509-line complete-decision-record. Source research holds the 39-source matrix, rights and deletion matrix, 10 value theses and the pilot portfolio. First-principles holds R1-R10 and the value function.",
+      "acceptance_criteria": [
+        "All three merged",
+        "The prompt packs are reachable from main"
+      ],
+      "latest_observation": {
+        "timestamp": "2026-09-08T06:32:26+07:00",
+        "action": "Reconciled completed work against canonical main"
+      }
+    },
+    {
+      "id": "TASK-0006",
+      "title": "Register the three split repositories as Works",
+      "status": "completed",
+      "priority": "medium",
+      "source_file": ".agents/tasks/completed/TASK-0006/task.json",
+      "description": "The Work records for siso-unsolveable-mathematics, siso-stargate-library and siso-declassified-records are written and pushed but not merged.",
+      "acceptance_criteria": [
+        "The branch is merged and validate still passes"
+      ],
+      "latest_observation": {
+        "timestamp": "2026-09-08T06:32:26+07:00",
+        "action": "Reconciled completed work against canonical main"
+      }
+    },
+    {
+      "id": "TASK-0008",
+      "title": "Provide safe read-only discovery, inspection and task entry through gls",
+      "status": "completed",
+      "priority": "high",
+      "source_file": ".agents/tasks/completed/TASK-0008/task.json",
+      "description": "Make a cold agent able to resolve source state and owning entry through the existing Library CLI and read canonical task scope without assembling several projections by hand.",
+      "acceptance_criteria": [
+        "Focused Node 20 read/add contract suites pass.",
+        "Real current-registry search/inspection returns the selected Runtime source and correct private/unselected Harness boundary.",
+        "A cold lower-capability reader can use the commands and return a checkable source receipt.",
+        "No input mutation or public deployment is performed."
+      ],
+      "latest_observation": {
+        "timestamp": "2026-09-08T09:47:34+07:00",
+        "action": "Owner accepted bounded implementation"
+      }
+    },
+    {
+      "id": "TASK-0009",
+      "title": "Author a source-backed Runtime entry through the Library operating path",
+      "status": "completed",
+      "priority": "high",
+      "source_file": ".agents/tasks/completed/TASK-0009/task.json",
+      "description": "Use gls discovery and exact Work inspection to identify the selected SISO Agent Runtime source, read its public owning instructions, and add useful authored reading content without changing identity or source claims.",
+      "acceptance_criteria": [
+        "Resolve Runtime through gls search and exact inspect; preserve its existing stable ID and legacy slug.",
+        "Read the exact selected public source README and relevant command definitions before authoring.",
+        "Change only reading, updated_at and appended source-review evidence in registry/works/siso-agent-base.json.",
+        "Three useful real source links and actual documented commands; no invented runtime, rights, private-access or cost claims.",
+        "Registry validation passes and the Library owner independently reviews source/record parity before acceptance."
+      ],
+      "latest_observation": {
+        "timestamp": "2026-09-08T09:47:34+07:00",
+        "action": "Owner accepted bounded implementation"
+      }
+    }
+  ]
+}

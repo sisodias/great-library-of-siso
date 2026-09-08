@@ -7,7 +7,7 @@
   "summary": "Reusable methods for agents to assemble software from existing capabilities, bounded adaptation and verification, with a public human/agent Blueprint and a private owning source. Public metadata only; registration does not admit source payload or prove a production integration.",
   "work_type": "project",
   "lifecycle_status": "active",
-  "updated_at": "2026-09-06",
+  "updated_at": "2026-09-08",
   "provenance": {
     "origin": "siso",
     "owners": [
@@ -125,6 +125,46 @@
       "reference": "https://actionist-blueprint.pages.dev/",
       "observed_at": "2026-09-06",
       "summary": "Reviewed the public assembly framing and private source boundary. The overall framework is separate from connector research; no Release, Assembly admission or Snapshot promotion is requested."
+    },
+    {
+      "kind": "public_locator",
+      "reference": "https://actionist-blueprint.pages.dev/project.md",
+      "observed_at": "2026-09-08",
+      "summary": "Public project explanation, llms.txt and project.json read for the authored Library entry. Local technical proof, framework maturity, private source and production admission remain separate; no new integration or numeric outcome claim is adopted."
+    },
+    {
+      "kind": "public_locator",
+      "reference": "https://actionist-blueprint.pages.dev/frameworks/FW-EVIDENCE-QUALIFICATION.json",
+      "observed_at": "2026-09-08",
+      "summary": "Published method metadata confirms the read-only qualification entry and its authority limits. Project.md matches the owner-provided SHA-256 610a57f8f813aab186375058f525f2e8f37f12a8fb8f8d8f15b94e508e7a04c1."
     }
-  ]
+  ],
+  "reading": {
+    "subtitle": "Turn a business outcome into a source-backed specification, a host-bound capability and a verified workflow.",
+    "why": "Action Model develops reusable assembly methods through concrete proving cases. A responsible owner resolves the business goal and hard choices; a bounded worker receives the chosen method, inputs, source locations and checks. The method catalogue separates specifications, machine-readable contracts and executable methods. This makes prior engineering useful to the next agent without pretending that one working case proves a complete automatic assembly pipeline.",
+    "highlights": [
+      {
+        "title": "Understand the operating method",
+        "summary": "Follow the path from business demand through source selection, host binding, workflow verification and lessons returned to the framework.",
+        "url": "https://actionist-blueprint.pages.dev/project.md"
+      },
+      {
+        "title": "Inspect a bounded qualification method",
+        "summary": "The published framework exposes qualify-affine-package-readonly. In an authorized source checkout it checks declared package evidence; it does not grant rights, admission or production qualification.",
+        "url": "https://actionist-blueprint.pages.dev/frameworks/FW-EVIDENCE-QUALIFICATION.json"
+      },
+      {
+        "title": "Resolve source and project boundaries",
+        "summary": "Use the project map for repository roles, read order, the current proving case and next work. Private source still requires authorized access.",
+        "url": "https://actionist-blueprint.pages.dev/project.json"
+      }
+    ],
+    "agent_entry": "https://actionist-blueprint.pages.dev/llms.txt",
+    "agent_commands": [
+      "curl -fsSL https://actionist-blueprint.pages.dev/llms.txt",
+      "curl -fsSL https://actionist-blueprint.pages.dev/project.json"
+    ],
+    "owner": "SISO Agency · Action Model source owner",
+    "reference": "https://actionist-blueprint.pages.dev/project.md"
+  }
 }

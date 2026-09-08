@@ -122,11 +122,59 @@
       "evidence": []
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:df8a236d-b092-4d51-9e17-d1016671db64"
+  },
+  "owner_entry": {
+    "state": "not_recorded",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": null,
+    "visibility": "unknown",
+    "source_revision": null,
+    "source_revision_basis": "not_recorded",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/frontier-question-gq-009.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:3aff8b95-f2b6-4ca6-b162-3543ba4eda39",
+      "version": "registry-seed-2026-08-02",
+      "registry_source": "registry/releases/frontier-question-gq-009-seed.json"
+    },
+    {
+      "id": "gls:release:0fea28b2-f6b3-4031-859c-27e89943f68c",
+      "version": "program-metadata-1.0.0+ea7f0e4",
+      "registry_source": "registry/releases/frontier-question-gq-009-program-v1.json"
+    },
+    {
+      "id": "gls:release:df8a236d-b092-4d51-9e17-d1016671db64",
+      "version": "program-metadata-1.1.0+0066cfa",
+      "registry_source": "registry/releases/frontier-question-gq-009-estate-reconciliation-v1.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:df8a236d-b092-4d51-9e17-d1016671db64",
     "version": "program-metadata-1.1.0+0066cfa",
     "released_at": "2026-08-02T05:13:21+07:00",
     "release_kind": "question_program_metadata",
+    "registry_source": "registry/releases/frontier-question-gq-009-estate-reconciliation-v1.json",
+    "artifacts": [
+      {
+        "kind": "registry_metadata",
+        "locator": "https://github.com/Lordsisodia/great-library-of-siso/blob/0066cfa3b30f8cefedffee09e1c86ae928f6b0cc/registry/works/frontier-question-gq-009.json",
+        "revision": "0066cfa3b30f8cefedffee09e1c86ae928f6b0cc",
+        "availability": "public",
+        "license": {
+          "status": "not_applicable",
+          "spdx": "NONE",
+          "reason": "The artifact is publication-safe question-program metadata; source-review receipts and owner-held evidence remain outside the Library.",
+          "evidence": []
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

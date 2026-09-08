@@ -99,5 +99,22 @@
       ]
     }
   },
+  "selection": {
+    "state": "registered_not_selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": null
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-stargate-library#readme",
+    "visibility": "public",
+    "source_revision": "main@7f89393c7aff6c1977d29f124d1b194c9dbc40f3",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/siso-stargate-library.json"
+  },
+  "registered_releases": [],
   "selected_release": null
 }

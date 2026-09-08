@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:c45be32a-c8ee-4612-98b6-7f3b37b1d61e",
+  "slug": "siso-source",
+  "name": "SISO Source",
+  "summary": "Private custody and provenance-aware recall of conversation source, with screened projections and explicit authorship and coverage limits. The Library publishes this description, not the conversation payloads.",
+  "reading": {
+    "subtitle": "Private source. Qualified recall. A public description of the boundary.",
+    "why": "An agent's summary is not a substitute for the original wording behind a project decision. SISO Source preserves conversation records and supports bounded recall while keeping source identity, authorship uncertainty and missing coverage visible. Full conversations remain private because they can include personal or client context; only reviewed metadata belongs in this Library.",
+    "reference": "https://github.com/sisodias/siso-source/blob/6ed830a4177d6bd9d2f4c1755a77c245b082d53e/README.md",
+    "highlights": [
+      {
+        "title": "Authorized source and recall",
+        "summary": "The private repository explains bounded recall and source identity. Access and any source retrieval require the owning private-source context.",
+        "url": "https://github.com/sisodias/siso-source/blob/6ed830a4177d6bd9d2f4c1755a77c245b082d53e/README.md"
+      },
+      {
+        "title": "How custody relates to knowledge",
+        "summary": "Read the Library model for durable corpus and retrieval ownership without moving private conversations into a public catalog.",
+        "url": "https://great-library-of-siso.pages.dev/docs/siso-knowledge-model.html"
+      },
+      {
+        "title": "Evidence is not automatic authority",
+        "summary": "Events and decisions carry public operational evidence; captured wording alone does not authorize an action or establish authorship.",
+        "url": "https://great-library-of-siso.pages.dev/docs/ecosystem-intelligence.html"
+      }
+    ],
+    "agent_entry": "https://github.com/sisodias/siso-source/blob/6ed830a4177d6bd9d2f4c1755a77c245b082d53e/README.md",
+    "agent_commands": [
+      "python3 -B -m unittest discover -s tests -p 'test_*.py'"
+    ],
+    "owner": "SISO Open Source Foundation · authorized private-source owner"
+  },
+  "work_type": "knowledge_system",
+  "lifecycle_status": "active",
+  "section": "Unassigned",
+  "library_url": "/works/siso-source/",
+  "agent_context_url": "/works/siso-source/index.json",
+  "registry_source": "registry/works/siso-source.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-source",
+      "visibility": "private"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-source#readme",
+      "visibility": "private"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "Source custody and qualified recall support durable knowledge while preserving the original source and its access boundary.",
+      "target_work_id": "gls:work:44d2c4da-9998-4d60-b6d1-93465ac25302",
+      "target_name": "SISO Knowledge",
+      "target_library_url": "/works/siso-knowledge/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:siso-source-public-description:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "The source README distinguishes conversation records and recall from policy, owner authority and indiscriminate memory."
+        }
+      ]
+    },
+    {
+      "type": "related_to",
+      "context": "Project owners can recover the source behind an intent without treating captured text as automatic authorization.",
+      "target_work_id": "gls:work:ea2f0de7-95ee-4e62-acde-85375b048719",
+      "target_name": "SISO Agent Zero",
+      "target_library_url": "/works/siso-agent-zero/",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "source-review:siso-source-public-description:2026-09-06",
+          "observed_at": "2026-09-06",
+          "summary": "Captured records retain source identity and authorship uncertainty; they do not replace project owners."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "source_review",
+      "reference": "source-review:siso-source-public-description:2026-09-06",
+      "observed_at": "2026-09-06",
+      "summary": "Read the source README and verified private repository metadata. This record describes custody and recall without copying conversation records, client identifiers, source-session locators or private execution receipts."
+    },
+    {
+      "kind": "source_review",
+      "reference": "github-api:sisodias/siso-source:6ed830a4177d6bd9d2f4c1755a77c245b082d53e",
+      "observed_at": "2026-09-08",
+      "summary": "Authenticated repository metadata confirms private visibility and the current source commit. The README was read for custody, qualified recall and access boundaries; no corpus or captured conversation records were opened or imported."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO Open Source Foundation",
+        "role": "steward",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-source",
+        "revision": "6ed830a4177d6bd9d2f4c1755a77c245b082d53e",
+        "visibility": "private",
+        "verified": true,
+        "evidence": {
+          "kind": "source_review",
+          "reference": "github-api:sisodias/siso-source:6ed830a4177d6bd9d2f4c1755a77c245b082d53e",
+          "observed_at": "2026-09-08",
+          "summary": "Authenticated repository metadata confirms private visibility and the current source commit. The README was read for custody, qualified recall and access boundaries; no corpus or captured conversation records were opened or imported."
+        }
+      }
+    ],
+    "license": {
+      "status": "pending",
+      "spdx": "NOASSERTION",
+      "reason": "No public payload or general redistribution grant is asserted for the private conversation source.",
+      "evidence": []
+    }
+  },
+  "selection": {
+    "state": "registered_not_selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": null
+  },
+  "owner_entry": {
+    "state": "authored",
+    "owner": "SISO Open Source Foundation · authorized private-source owner",
+    "entry_url": "https://github.com/sisodias/siso-source/blob/6ed830a4177d6bd9d2f4c1755a77c245b082d53e/README.md",
+    "visibility": "private",
+    "source_revision": "6ed830a4177d6bd9d2f4c1755a77c245b082d53e",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": "6ed830a4177d6bd9d2f4c1755a77c245b082d53e",
+    "commands": [
+      "python3 -B -m unittest discover -s tests -p 'test_*.py'"
+    ],
+    "reference": "https://github.com/sisodias/siso-source/blob/6ed830a4177d6bd9d2f4c1755a77c245b082d53e/README.md"
+  },
+  "registered_releases": [],
+  "selected_release": null
+}

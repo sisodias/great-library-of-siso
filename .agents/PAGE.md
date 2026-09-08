@@ -4,7 +4,12 @@ The public registry and reading surface for SISO research, software and agent
 systems. Works hold stable identity; Releases preserve evidenced versions;
 Snapshots select a named view; Assemblies describe how Works operate together.
 
-Owner: LIBRARY-ZERO. Current verified work and exact source/publication receipts
+Current review work: [reramp continuation](runs/library-reramp-20260908/CONTINUE.md).
+Use `node bin/gls tasks` and `node bin/gls task TASK-0007` for canonical scope.
+The shared frame and read CLI are implemented on the review branch; public
+publication and remaining visual acceptance are separate gates.
+
+Current verified published work and exact source/publication receipts
 are in [CURRENT_STATE.md](../CURRENT_STATE.md). Start with [AGENTS.md](../AGENTS.md)
 and the [onboarding map](../docs/onboarding.html).
 

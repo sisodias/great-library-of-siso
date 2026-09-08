@@ -129,11 +129,56 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:388d8ccc-b47a-4fb2-9082-db925cd1530c"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-repo-bank/tree/2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+    "visibility": "public",
+    "source_revision": "2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+    "source_revision_basis": "selected_artifact",
+    "entry_revision": "2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+    "commands": [],
+    "reference": "registry/works/siso-repo-bank.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:388d8ccc-b47a-4fb2-9082-db925cd1530c",
+      "version": "1.0.0+2d7d35e",
+      "registry_source": "registry/releases/siso-repo-bank-2d7d35e.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:388d8ccc-b47a-4fb2-9082-db925cd1530c",
     "version": "1.0.0+2d7d35e",
     "released_at": "2026-09-05T18:40:00+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-repo-bank-2d7d35e.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/sisodias/siso-repo-bank/archive/2d7d35ecbf7e1158d0a3527e1489040687ac214b.tar.gz",
+        "revision": "2d7d35ecbf7e1158d0a3527e1489040687ac214b",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The taxonomy, ratings, one-liners and indexes are SISO-authored and carry MIT; the repositories described keep their own licences, recorded per row.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/sisodias/siso-repo-bank/blob/2d7d35ecbf7e1158d0a3527e1489040687ac214b/LICENSE",
+              "observed_at": "2026-09-05",
+              "summary": "MIT license text is present at the exact release pin."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

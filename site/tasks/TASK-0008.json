@@ -1,0 +1,18 @@
+{
+  "id": "TASK-0008",
+  "title": "Provide safe read-only discovery, inspection and task entry through gls",
+  "status": "completed",
+  "priority": "high",
+  "source_file": ".agents/tasks/completed/TASK-0008/task.json",
+  "description": "Make a cold agent able to resolve source state and owning entry through the existing Library CLI and read canonical task scope without assembling several projections by hand.",
+  "acceptance_criteria": [
+    "Focused Node 20 read/add contract suites pass.",
+    "Real current-registry search/inspection returns the selected Runtime source and correct private/unselected Harness boundary.",
+    "A cold lower-capability reader can use the commands and return a checkable source receipt.",
+    "No input mutation or public deployment is performed."
+  ],
+  "latest_observation": {
+    "timestamp": "2026-09-08T09:47:34+07:00",
+    "action": "Owner accepted bounded implementation"
+  }
+}

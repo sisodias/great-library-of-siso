@@ -1,17 +1,9 @@
-const toggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('#site-nav');
-
-toggle?.addEventListener('click', () => {
-  const open = toggle.getAttribute('aria-expanded') === 'true';
-  toggle.setAttribute('aria-expanded', String(!open));
-  nav?.toggleAttribute('data-open', !open);
-});
-
 const controls = document.querySelector('[data-catalog-controls]');
 if (controls) {
   const search = controls.querySelector('[data-catalog-search]');
   const type = controls.querySelector('[data-catalog-type]');
   const maturity = controls.querySelector('[data-catalog-maturity]');
+  const selection = controls.querySelector('[data-catalog-selection]');
   const cards = [...document.querySelectorAll('[data-catalog] .work-card')];
   const count = document.querySelector('[data-result-count]');
   const empty = document.querySelector('[data-no-results]');
@@ -22,7 +14,8 @@ if (controls) {
     for (const card of cards) {
       const show = (!query || card.dataset.search.includes(query))
         && (!type.value || card.dataset.type === type.value)
-        && (!maturity.value || card.dataset.maturity === maturity.value);
+        && (!maturity.value || card.dataset.maturity === maturity.value)
+        && (!selection?.value || card.dataset.selection === selection.value);
       card.hidden = !show;
       visible += Number(show);
     }

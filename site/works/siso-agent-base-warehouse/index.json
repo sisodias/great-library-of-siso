@@ -93,11 +93,56 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:8204e470-fa87-4268-8713-733330b537fe"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "Lordsisodia",
+    "entry_url": "https://github.com/sisodias/siso-agent-base#readme",
+    "visibility": "public",
+    "source_revision": "main@2e2edfe7a820617557fcff093a348dc0bb4fb040",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/siso-agent-base-warehouse.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:8204e470-fa87-4268-8713-733330b537fe",
+      "version": "preservation+2e2edfe",
+      "registry_source": "registry/releases/siso-agent-base-warehouse-2e2edfe.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:8204e470-fa87-4268-8713-733330b537fe",
     "version": "preservation+2e2edfe",
     "released_at": "2026-07-18T20:13:04Z",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-agent-base-warehouse-2e2edfe.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/Lordsisodia/siso-agent-base/archive/2e2edfe7a820617557fcff093a348dc0bb4fb040.tar.gz",
+        "revision": "2e2edfe7a820617557fcff093a348dc0bb4fb040",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The pinned public source warehouse carries an MIT license.",
+          "evidence": [
+            {
+              "kind": "integration_check",
+              "reference": "https://github.com/Lordsisodia/siso-agent-base",
+              "observed_at": "2026-07-29",
+              "summary": "Public visibility and MIT license were verified during the source audit."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

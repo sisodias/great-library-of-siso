@@ -3,7 +3,34 @@
   "work_id": "gls:work:dd051ce3-520e-4799-87b0-1e3f2182cc72",
   "slug": "siso-shell",
   "name": "SISO Shell",
-  "summary": "A shared static navigation shell for SISO reading surfaces: one pinned rail implementation with a 20px collapsed state, keyboard control and saved local preference.",
+  "summary": "The shared CRM-derived navigation, reusable page parts and static template bank for SISO reading surfaces. Consumers pin an exact source revision and supply reviewed project data; a template example is not a current project observation.",
+  "reading": {
+    "subtitle": "One shared design source, composed into the reading page each project actually needs.",
+    "why": "The bank separates navigation, reusable parts and page-family compositions. A consumer selects a reviewed source revision and supplies its own public-safe data. Updates become deliberate upgrades: review the source, register its evidence, select it in a Snapshot, re-pin the consumer, and verify the rendered result. Template presence and an old example do not establish deployment, project ownership or acceptance.",
+    "highlights": [
+      {
+        "title": "Reuse the shared shell",
+        "summary": "Read the grouped navigation API and exact build-time reuse contract before wiring a consumer. Keep the shell in its owning repository.",
+        "url": "https://github.com/sisodias/siso-shell/blob/10895acfbd79bfa21698c2ba4cd160e2410ac141/README.md"
+      },
+      {
+        "title": "Choose a page family",
+        "summary": "Browse the existing template catalogue to choose a composition, then replace demonstration data with reviewed source-owned inputs.",
+        "url": "https://siso-shell.pages.dev/"
+      },
+      {
+        "title": "Trace the component provenance",
+        "summary": "Distinguish installed design-hub sources from preview-derived patterns, and retain notices when reusing the package.",
+        "url": "https://github.com/sisodias/siso-shell/blob/10895acfbd79bfa21698c2ba4cd160e2410ac141/parts/SOURCES.md"
+      }
+    ],
+    "agent_entry": "https://github.com/sisodias/siso-shell/blob/10895acfbd79bfa21698c2ba4cd160e2410ac141/README.md",
+    "agent_commands": [
+      "node --test shell.test.mjs"
+    ],
+    "owner": "SISO Open Source Foundation · shared-shell maintainer",
+    "reference": "docs/library-ui-integration.md"
+  },
   "work_type": "tool",
   "lifecycle_status": "experimental",
   "section": "Agents",
@@ -15,6 +42,12 @@
       "kind": "source_repository",
       "label": "Source repository",
       "url": "https://github.com/sisodias/siso-shell",
+      "visibility": "public"
+    },
+    {
+      "kind": "homepage",
+      "label": "Homepage",
+      "url": "https://siso-shell.pages.dev/",
       "visibility": "public"
     },
     {
@@ -53,6 +86,12 @@
       "reference": "repo-check:siso-shell:adea8860b50324f283637a596c5a41367ece9776",
       "observed_at": "2026-09-06",
       "summary": "The Library imports the exact package commit at build time. Root and Foundry pages passed desktop click/keyboard/reload checks, 20px collapsed width and mobile overflow checks; both were captured at 2000x1250. Shell escaping and unsafe-link tests passed."
+    },
+    {
+      "kind": "source_review",
+      "reference": "https://github.com/sisodias/siso-shell/commit/10895acfbd79bfa21698c2ba4cd160e2410ac141",
+      "observed_at": "2026-09-08",
+      "summary": "Current public grouped-rail source reviewed and installed in the Library consumer. CRM token bytes and bundled attribution are retained."
     }
   ],
   "provenance": {
@@ -68,15 +107,28 @@
       {
         "type": "source_repository",
         "url": "https://github.com/sisodias/siso-shell",
-        "revision": "adea8860b50324f283637a596c5a41367ece9776",
+        "revision": "10895acfbd79bfa21698c2ba4cd160e2410ac141",
         "visibility": "public",
         "verified": true,
         "evidence": {
-          "kind": "integration_check",
-          "reference": "https://github.com/sisodias/siso-shell/commit/adea8860b50324f283637a596c5a41367ece9776",
-          "observed_at": "2026-09-06",
-          "summary": "Public GitHub commit resolved at the exact source pin."
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/siso-shell/commit/10895acfbd79bfa21698c2ba4cd160e2410ac141",
+          "observed_at": "2026-09-08",
+          "summary": "Current public grouped-rail source reviewed and installed in the Library consumer. CRM token bytes and bundled attribution are retained."
         }
+      },
+      {
+        "type": "homepage",
+        "url": "https://siso-shell.pages.dev/",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "public_locator",
+          "reference": "https://siso-shell.pages.dev/",
+          "observed_at": "2026-09-08",
+          "summary": "The public bank and U4 example were opened. Example data is dated demonstration content, not live owner or deployment truth."
+        },
+        "revision": "observed-2026-09-08"
       }
     ],
     "license": {
@@ -93,40 +145,97 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:7dbde38f-3909-4c53-84b7-86ce5196ce0b"
+  },
+  "owner_entry": {
+    "state": "authored",
+    "owner": "SISO Open Source Foundation · shared-shell maintainer",
+    "entry_url": "https://github.com/sisodias/siso-shell/blob/10895acfbd79bfa21698c2ba4cd160e2410ac141/README.md",
+    "visibility": "public",
+    "source_revision": "10895acfbd79bfa21698c2ba4cd160e2410ac141",
+    "source_revision_basis": "selected_artifact",
+    "entry_revision": "10895acfbd79bfa21698c2ba4cd160e2410ac141",
+    "commands": [
+      "node --test shell.test.mjs"
+    ],
+    "reference": "docs/library-ui-integration.md"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:50dfa58e-c253-4bd5-814c-c609d38f536c",
+      "version": "0.1.0+adea886",
+      "registry_source": "registry/releases/siso-shell-adea886.json"
+    },
+    {
+      "id": "gls:release:8e098f47-20b1-4cfd-b19b-8c08812d3d68",
+      "version": "0.2.0+9694a54",
+      "registry_source": "registry/releases/siso-shell-9694a54.json"
+    },
+    {
+      "id": "gls:release:7dbde38f-3909-4c53-84b7-86ce5196ce0b",
+      "version": "0.3.2+10895ac",
+      "registry_source": "registry/releases/siso-shell-10895ac-library.json"
+    }
+  ],
   "selected_release": {
-    "id": "gls:release:50dfa58e-c253-4bd5-814c-c609d38f536c",
-    "version": "0.1.0+adea886",
-    "released_at": "2026-09-06T01:50:00+07:00",
+    "id": "gls:release:7dbde38f-3909-4c53-84b7-86ce5196ce0b",
+    "version": "0.3.2+10895ac",
+    "released_at": "2026-09-08T05:29:49+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-shell-10895ac-library.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/sisodias/siso-shell/archive/10895acfbd79bfa21698c2ba4cd160e2410ac141.tar.gz",
+        "revision": "10895acfbd79bfa21698c2ba4cd160e2410ac141",
+        "availability": "public",
+        "license": {
+          "status": "pending",
+          "spdx": "NOASSERTION",
+          "reason": "The SISO-owned shell and template bank has no general redistribution grant. Bundled Lucide icons retain ISC attribution; third-party provenance is not erased by inclusion in a SISO repository. No blanket ownership or licensing claim is made for every referenced component design.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/sisodias/siso-shell/blob/10895acfbd79bfa21698c2ba4cd160e2410ac141/shell/icons.mjs",
+              "observed_at": "2026-09-08",
+              "summary": "The bundled Lucide SVG paths retain an ISC notice. The repository README grants no general redistribution licence for the whole bank."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",
-        "reason": "Exact public source commit is recorded.",
+        "reason": "The exact public source commit is identified.",
         "evidence_count": 1
       },
       "archive_downloadable": {
         "state": "verified",
-        "reason": "Commit-scoped source archive returned HTTP 200.",
+        "reason": "The exact archive installed successfully through the consumer lockfile.",
         "evidence_count": 1
       },
       "manifest_resolvable": {
         "state": "verified",
-        "reason": "Manifest identifies its stable Work and exact source artifact.",
+        "reason": "The manifest identifies the existing shell Work and exact source artifact.",
         "evidence_count": 1
       },
       "installable": {
         "state": "verified",
-        "reason": "The Library builds from the pinned shell package.",
+        "reason": "The grouped shell API and copied assets build in the Library consumer on Node 20.",
         "evidence_count": 1
       },
       "forkable": {
         "state": "unavailable",
-        "reason": "General redistribution permission is not asserted; licensing remains pending.",
+        "reason": "The whole bank has no general redistribution licence. Bundled notices remain applicable.",
         "evidence_count": 1
       },
       "portable": {
-        "state": "verified",
-        "reason": "No runtime dependencies; static CSS/JS and escaped server-rendered HTML, exercised by the Library.",
+        "state": "experimental",
+        "reason": "Static assets and build-time rendering avoid a browser application runtime; wider consumer and browser acceptance is not implied by one Library build.",
         "evidence_count": 1
       }
     }

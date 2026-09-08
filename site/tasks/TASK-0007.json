@@ -1,0 +1,18 @@
+{
+  "id": "TASK-0007",
+  "title": "Integrate the shared Library reading frame for review",
+  "status": "in_progress",
+  "priority": "high",
+  "source_file": ".agents/tasks/in_progress/TASK-0007/task.json",
+  "description": "A locally verified shared reading flow with exact source pins, preserving public identity and original reader content. Public publication is a separate gate.",
+  "acceptance_criteria": [
+    "Node 20 full Library gate and strict integration diagnostic pass.",
+    "Every generated HTML route has one shared navigation and main landmark, working local anchors and source parity.",
+    "Representative desktop/mobile, keyboard, storage-denied and no-JS browser checks pass.",
+    "Public hosts and peer checkouts remain unchanged."
+  ],
+  "latest_observation": {
+    "timestamp": "2026-09-08T09:47:34+07:00",
+    "action": "Checkpoint current stretch; broader acceptance remains"
+  }
+}

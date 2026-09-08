@@ -77,11 +77,66 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:ff8cc25f-7162-4713-9e38-66cbf3eca958"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO",
+    "entry_url": "https://github.com/sisodias/siso-agent-playbook#readme",
+    "visibility": "private",
+    "source_revision": "main@6ee572b0f2230e3f83b11408fe30f7211d1f2b77",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/siso-agent-playbook.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:603bd64a-b7f4-43e2-a9f8-1eeb53f94d33",
+      "version": "registry-seed-2026-07-30",
+      "registry_source": "registry/releases/siso-agent-playbook-seed.json"
+    },
+    {
+      "id": "gls:release:e5895556-a3ed-4dd6-b339-e225a8ee88ec",
+      "version": "1.0.0+409e84d",
+      "registry_source": "registry/releases/siso-agent-playbook-409e84d.json"
+    },
+    {
+      "id": "gls:release:ff8cc25f-7162-4713-9e38-66cbf3eca958",
+      "version": "1.0.0+6ee572b",
+      "registry_source": "registry/releases/siso-agent-playbook-6ee572b.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:ff8cc25f-7162-4713-9e38-66cbf3eca958",
     "version": "1.0.0+6ee572b",
     "released_at": "2026-07-30T06:24:26+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-agent-playbook-6ee572b.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/Lordsisodia/siso-agent-playbook/archive/6ee572b0f2230e3f83b11408fe30f7211d1f2b77.tar.gz",
+        "revision": "6ee572b0f2230e3f83b11408fe30f7211d1f2b77",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The SISO-owned operating package carries MIT.",
+          "evidence": [
+            {
+              "kind": "release_receipt",
+              "reference": "identity-remediation:siso-agent-playbook:6ee572b0f2230e3f83b11408fe30f7211d1f2b77",
+              "observed_at": "2026-07-30",
+              "summary": "Pinned remediated source and the full playbook verifier passed."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

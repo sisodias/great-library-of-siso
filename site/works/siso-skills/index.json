@@ -135,11 +135,86 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-skills-hub/tree/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+    "visibility": "public",
+    "source_revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+    "source_revision_basis": "selected_artifact",
+    "entry_revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+    "commands": [],
+    "reference": "registry/works/siso-skills.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:2b923630-ea3c-40ca-8048-caacfc81d570",
+      "version": "registry-seed-2026-07-30",
+      "registry_source": "registry/releases/siso-skills-seed.json"
+    },
+    {
+      "id": "gls:release:85c8b4f1-e923-4d54-bb37-31483898a145",
+      "version": "main+e295047",
+      "registry_source": "registry/releases/siso-skills-e295047.json"
+    },
+    {
+      "id": "gls:release:da95107a-2089-4d6b-9171-7d0de7790d11",
+      "version": "main+05d978b",
+      "registry_source": "registry/releases/siso-skills-hub-05d978b.json"
+    },
+    {
+      "id": "gls:release:28d02fdb-439a-4d2a-a972-c02292642344",
+      "version": "0.1.0+2195cbb",
+      "registry_source": "registry/releases/siso-skills-hub-2195cbb.json"
+    },
+    {
+      "id": "gls:release:df2c77c5-1761-4ac2-bd19-40723f611080",
+      "version": "main+1693abb",
+      "registry_source": "registry/releases/siso-skills-hub-1693abb.json"
+    },
+    {
+      "id": "gls:release:011d220b-0621-4ffb-bc18-fa6db3284678",
+      "version": "0.2.0+d82cd44",
+      "registry_source": "registry/releases/siso-skills-hub-d82cd44.json"
+    },
+    {
+      "id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943",
+      "version": "0.2.0+5e33b2b",
+      "registry_source": "registry/releases/siso-skills-hub-5e33b2b.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943",
     "version": "0.2.0+5e33b2b",
     "released_at": "2026-09-06T01:50:00+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-skills-hub-5e33b2b.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/sisodias/siso-skills-hub/archive/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8.tar.gz",
+        "revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The SISO-owned source retains its reviewed MIT license; external assets retain their own rights.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/sisodias/siso-skills-hub/blob/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8/LICENSE",
+              "observed_at": "2026-09-06",
+              "summary": "MIT license text read from the exact published source."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",

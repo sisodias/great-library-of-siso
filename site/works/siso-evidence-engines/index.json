@@ -93,11 +93,66 @@
       ]
     }
   },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": "gls:release:f49dfb65-9cba-45d8-855a-9338f1cda30b"
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO Open Source Foundation",
+    "entry_url": "https://github.com/sisodias/siso-evidence-engines#readme",
+    "visibility": "public",
+    "source_revision": "main@71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": null,
+    "commands": [],
+    "reference": "registry/works/siso-evidence-engines.json"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:993e1242-04c8-4d0b-870a-67d91fa89cbf",
+      "version": "registry-seed-2026-07-30",
+      "registry_source": "registry/releases/siso-evidence-engines-seed.json"
+    },
+    {
+      "id": "gls:release:789e157f-4eaf-45a5-b487-9b8f02ff407a",
+      "version": "0.1.0+6ffba38",
+      "registry_source": "registry/releases/siso-evidence-engines-6ffba38.json"
+    },
+    {
+      "id": "gls:release:f49dfb65-9cba-45d8-855a-9338f1cda30b",
+      "version": "0.1.1+71022ce",
+      "registry_source": "registry/releases/siso-evidence-engines-71022ce.json"
+    }
+  ],
   "selected_release": {
     "id": "gls:release:f49dfb65-9cba-45d8-855a-9338f1cda30b",
     "version": "0.1.1+71022ce",
     "released_at": "2026-07-30T21:08:59+07:00",
     "release_kind": null,
+    "registry_source": "registry/releases/siso-evidence-engines-71022ce.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/Lordsisodia/siso-evidence-engines/archive/71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d.tar.gz",
+        "revision": "71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The clean SISO-owned engine family carries an MIT license.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/Lordsisodia/siso-evidence-engines/blob/71022ce4b1e00ea3ad9d6ab9bb75060d34730b0d/LICENSE",
+              "observed_at": "2026-07-30",
+              "summary": "MIT license is present at the pinned release; ingested sources retain their rights."
+            }
+          ]
+        }
+      }
+    ],
     "distribution": {
       "addressable": {
         "state": "verified",
