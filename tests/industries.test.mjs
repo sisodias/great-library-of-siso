@@ -33,7 +33,8 @@ for (const route of ['/industries/*', '/valuation/*', '/works/siso-foundry/index
 assert.equal(dossier.work_id, manifest.canonical_work_id);
 assert.equal(dossier.selected_release.id, manifest.release_id);
 for (const route of ['/industries/', '/valuation/']) {
-  assert((await fs.readFile('site/index.html', 'utf8')).includes(`href="${route}"`));
+  const base = `/${String(process.env.SITE_BASE_PATH || '').replace(/^\/+|\/+$/g, '')}/`.replace(/^\/\/$/, '/');
+  assert((await fs.readFile('site/index.html', 'utf8')).includes(`href="${base}${route.slice(1)}"`));
   assert(dossier.reading.highlights.some(h => new URL(h.url).pathname === route));
 }
 const old = await read('registry/snapshots/whole-library-v39.json');
