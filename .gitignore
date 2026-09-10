@@ -45,3 +45,4 @@ tmp/
 !.agents/owners.log
 
 # `site/` is intentionally not ignored: it is the generated publication artifact.
+.serena/

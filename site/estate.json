@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T22:29:49.000Z",
+  "generated_at": "2026-09-10T00:00:00.000Z",
   "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
   "snapshot_version": "41.0.0",
   "repositories": [
@@ -411,6 +411,24 @@
       "library_url": "/works/actionmodel-assembly-framework/",
       "locator_type": "source_repository",
       "locator_revision": "66332c80ac10684f52d42d389712238087ee5da6",
+      "visibility": "private",
+      "status": "staging",
+      "active_release_id": null,
+      "active_release_version": null,
+      "artifact_revision": null
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-compute-pool",
+      "url": "https://github.com/sisodias/siso-compute-pool",
+      "work_id": "gls:work:766cc7a3-79ed-4bfe-9602-8cea1f6f7f51",
+      "work_name": "SISO Compute Pool · Free Qwen Worker Tier",
+      "work_slug": "siso-compute-pool",
+      "work_type": "project",
+      "lifecycle_status": "experimental",
+      "library_url": "/works/siso-compute-pool/",
+      "locator_type": "source_repository",
+      "locator_revision": "cdf654a67898706b87ea053ae875f298af123e06",
       "visibility": "private",
       "status": "staging",
       "active_release_id": null,

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:766cc7a3-79ed-4bfe-9602-8cea1f6f7f51",
+  "slug": "siso-compute-pool",
+  "name": "SISO Compute Pool · Free Qwen Worker Tier",
+  "summary": "A controller that serves Qwen3.8-27B on free Kaggle TPU sessions behind a private Bifrost gateway, so agents gain a zero-cost worker tier. Transport is a Cloudflare Worker relay the notebook dials out to, because the account holds no zone. The delivery path is verified end-to-end against a mock origin; no TPU allocation, model throughput or output quality has been measured, and continuous service is not established.",
+  "work_type": "project",
+  "lifecycle_status": "experimental",
+  "section": "Unassigned",
+  "library_url": "/works/siso-compute-pool/",
+  "agent_context_url": "/works/siso-compute-pool/index.json",
+  "registry_source": "registry/works/work-siso-compute-pool.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/siso-compute-pool",
+      "visibility": "private"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/siso-compute-pool#readme",
+      "visibility": "private"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "related_to",
+      "context": "Shares the agent-effectiveness programme's evidence discipline; this project supplies a candidate zero-cost worker tier to it.",
+      "target_work_id": "gls:work:1cc4c944-9351-466e-a442-9fe16ad145d1",
+      "target_name": "SISO Harness Lab · Agent Effectiveness",
+      "target_library_url": "/works/siso-harness-lab/",
+      "evidence": [
+        {
+          "kind": "documentation",
+          "reference": "siso-compute-pool:docs/PROGRESS-20260910.md",
+          "observed_at": "2026-09-10",
+          "summary": "The progress record states the intended consumer of the worker tier and the limits that bound it."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "integration_check",
+      "reference": "siso-compute-pool:docs/PROGRESS-20260910.md",
+      "observed_at": "2026-09-10",
+      "summary": "From the OVH VPS against a mock origin: probe returned ready true, register returned registered true with gateway_verified true, and one chat completion traversed Bifrost and the Cloudflare relay in 373 ms with a Cf-Ray header. Relay auth rejects an absent key with 401 and an absent worker with 503; streaming relays frame by frame and reconnects after client loss. This is transport evidence only."
+    },
+    {
+      "kind": "documentation",
+      "reference": "siso-compute-pool:docs/FINDINGS.md",
+      "observed_at": "2026-09-10",
+      "summary": "Kaggle permits one concurrent TPU session per account, refused at push time rather than queued, with a roughly nine hour session cap and a twenty hour weekly quota. Observed cold start is 25 to 50 minutes and one probe queued 44 minutes. Queued kernels consume no quota, so a successor can be pre-queued, but overlap requires a second account. Unattended use is therefore a bounded batch, not continuous service."
+    },
+    {
+      "kind": "documentation",
+      "reference": "siso-compute-pool:docs/PROGRESS-20260910.md",
+      "observed_at": "2026-09-10",
+      "summary": "Qwen has never served a token under this controller. TPU allocation, model startup, sustained throughput and output quality remain unmeasured. Readiness gate one exists because Kaggle has previously returned CPU silently in place of a requested accelerator."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO",
+        "role": "maintainer",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/siso-compute-pool",
+        "revision": "cdf654a67898706b87ea053ae875f298af123e06",
+        "visibility": "private",
+        "verified": true,
+        "evidence": {
+          "kind": "source_review",
+          "reference": "github-api:sisodias/siso-compute-pool:cdf654a67898706b87ea053ae875f298af123e06",
+          "observed_at": "2026-09-10",
+          "summary": "Private owning repository and pushed documentation commit verified on branch codex/vps-single-pilot-handoff. Reviewed the controller, readiness gates, relay worker and client, and the dated progress record. No private source payload, credential or account identity is distributed by this Work."
+        }
+      }
+    ],
+    "license": {
+      "status": "not_applicable",
+      "spdx": "NONE",
+      "reason": "Public metadata only. The private source, credentials and account identities receive no redistribution grant from this registration.",
+      "evidence": []
+    }
+  },
+  "selection": {
+    "state": "registered_not_selected",
+    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+    "release_id": null
+  },
+  "owner_entry": {
+    "state": "locator_only",
+    "owner": "SISO",
+    "entry_url": "https://github.com/sisodias/siso-compute-pool/tree/cdf654a67898706b87ea053ae875f298af123e06",
+    "visibility": "private",
+    "source_revision": "cdf654a67898706b87ea053ae875f298af123e06",
+    "source_revision_basis": "observed_repository",
+    "entry_revision": "cdf654a67898706b87ea053ae875f298af123e06",
+    "commands": [],
+    "reference": "registry/works/work-siso-compute-pool.json"
+  },
+  "registered_releases": [],
+  "selected_release": null
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T22:29:49.000Z",
+  "generated_at": "2026-09-10T00:00:00.000Z",
   "base_path": "/",
   "snapshot": {
     "id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
@@ -982,6 +982,10 @@
     {
       "path": "registry/works/unfuck-the-project.json",
       "sha256": "88ffc9b70068de717229a8d12f3a34d2576a7c6f984336286d083205153382e8"
+    },
+    {
+      "path": "registry/works/work-siso-compute-pool.json",
+      "sha256": "d57bf6394c3e6bc7397c74670e7acac88515d55be1291092592e9e30b4ffb696"
     },
     {
       "path": "scripts/build-industries.mjs",
@@ -3237,6 +3241,48 @@
       }
     },
     {
+      "id": "gls:work:766cc7a3-79ed-4bfe-9602-8cea1f6f7f51",
+      "slug": "siso-compute-pool",
+      "name": "SISO Compute Pool · Free Qwen Worker Tier",
+      "summary": "A controller that serves Qwen3.8-27B on free Kaggle TPU sessions behind a private Bifrost gateway, so agents gain a zero-cost worker tier. Transport is a Cloudflare Worker relay the notebook dials out to, because the account holds no zone. The delivery path is verified end-to-end against a mock origin; no TPU allocation, model throughput or output quality has been measured, and continuous service is not established.",
+      "library_url": "/works/siso-compute-pool/",
+      "agent_context_url": "/works/siso-compute-pool/index.json",
+      "type": "project",
+      "maturity": "experimental",
+      "section": "Unassigned",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/siso-compute-pool",
+          "visibility": "private"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/siso-compute-pool#readme",
+          "visibility": "private"
+        }
+      ],
+      "selection": {
+        "state": "registered_not_selected",
+        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "release_id": null
+      },
+      "selected_release": null,
+      "owner_entry": {
+        "state": "locator_only",
+        "owner": "SISO",
+        "entry_url": "https://github.com/sisodias/siso-compute-pool/tree/cdf654a67898706b87ea053ae875f298af123e06",
+        "visibility": "private",
+        "source_revision": "cdf654a67898706b87ea053ae875f298af123e06",
+        "source_revision_basis": "observed_repository",
+        "entry_revision": "cdf654a67898706b87ea053ae875f298af123e06",
+        "commands": [],
+        "reference": "registry/works/work-siso-compute-pool.json"
+      }
+    },
+    {
       "id": "gls:work:1f4a6d92-5b83-4e07-a2c9-6d38b1e75403",
       "slug": "siso-declassified-records",
       "name": "SISO Declassified Records",
@@ -4988,6 +5034,24 @@
       "library_url": "/works/actionmodel-assembly-framework/",
       "locator_type": "source_repository",
       "locator_revision": "66332c80ac10684f52d42d389712238087ee5da6",
+      "visibility": "private",
+      "status": "staging",
+      "active_release_id": null,
+      "active_release_version": null,
+      "artifact_revision": null
+    },
+    {
+      "owner": "sisodias",
+      "repository": "siso-compute-pool",
+      "url": "https://github.com/sisodias/siso-compute-pool",
+      "work_id": "gls:work:766cc7a3-79ed-4bfe-9602-8cea1f6f7f51",
+      "work_name": "SISO Compute Pool · Free Qwen Worker Tier",
+      "work_slug": "siso-compute-pool",
+      "work_type": "project",
+      "lifecycle_status": "experimental",
+      "library_url": "/works/siso-compute-pool/",
+      "locator_type": "source_repository",
+      "locator_revision": "cdf654a67898706b87ea053ae875f298af123e06",
       "visibility": "private",
       "status": "staging",
       "active_release_id": null,
