@@ -2,18 +2,26 @@
 
 This repository is the public registry, learning record, and generated reading surface for The Great Library of SISO. GitHub records public truth; a laptop checkout is replaceable infrastructure.
 
-## Cold start
+## Find the owning source, then do the work
 
-Read these in order:
+The Library is a discovery route, not a required review phase for every SISO task.
+If the request already names an owning repository, enter it and follow its instructions.
+Otherwise use `node bin/gls search "<capability>"` or the catalog, open the relevant Work's
+dossier, and follow its source link. Read `README.md` or `docs/onboarding.html` when the
+identity or ownership is unclear. Browsing does not require installing dependencies,
+running the Library suite, or reading every snapshot and event.
 
-1. `README.md` — the identity and registry model.
-2. `CURRENT_STATE.md` — the latest verified operating state and resume points.
-3. The highest-numbered `registry/snapshots/whole-library-v*.json` — the active named view.
-4. `site/intelligence.json` — active initiatives, recent events, ADRs, reservations, and automatic Release/Snapshot history.
-5. `docs/onboarding.html` — the human and agent operating map.
-6. `CONTRIBUTING.md` and `SECURITY.md` before changing or importing source.
+For work **on this Library**, read `CURRENT_STATE.md` and the relevant reservations in
+`site/intelligence.json`; read `CONTRIBUTING.md` and `SECURITY.md` before changing or importing
+source. Consult the selected Snapshot for release/selection changes, and the relevant schema
+for registry changes. Once the owner, requested outcome and constraints are clear, implement.
+An action request is not complete at an audit, recommendation, or review-ready first pass.
 
-Then run `npm ci && npm run verify`. A cold agent is oriented when it can name the latest Snapshot, explain Work versus Release versus Assembly, and locate the source record behind a generated page.
+Verify the changed behavior and repair failures caused by the change. Run `npm run verify`
+for registry, generator or publication changes; install dependencies with `npm ci` when needed.
+For instruction-only edits, check the changed instructions and their paths. Reuse passing
+evidence while its inputs and relevant state are unchanged. Another review needs a concrete
+unresolved risk or an explicit task requirement; do not add a reviewer for an ordinary edit.
 
 ## Sources of truth
 
@@ -41,7 +49,11 @@ The preferred machine-neutral checkout is `$SISO_WORKSPACE/Great_Library_of_SISO
 
 Related source repositories may be checked out anywhere. Their identity comes from stable Work IDs and exact public Release locators, not local directory nesting.
 
-## Change sequence
+## Release and publication sequence
+
+Use this sequence when changing a selected source release, Snapshot or published site.
+An ordinary source edit does not require a new Release/Snapshot or a separate approval phase.
+Keep immutable records, source ownership and publication checks intact.
 
 1. Read `site/intelligence.json`. Before parallel work, publish an `initiative_started` Event with branch and reserved paths.
 2. Read and classify source; stop on private, client, credential-bearing, or unclear material.
