@@ -7,7 +7,7 @@
   "summary": "The registry and distribution boundary for atomic repeatable capabilities, with evidence-backed classification, bundled installation, isolated skill telemetry, and independent repository promotion only when a skill earns its own lifecycle.",
   "work_type": "capability_pack",
   "lifecycle_status": "active",
-  "updated_at": "2026-09-06",
+  "updated_at": "2026-09-22",
   "provenance": {
     "origin": "siso",
     "owners": [
@@ -21,14 +21,14 @@
       {
         "type": "source_repository",
         "url": "https://github.com/sisodias/siso-skills-hub",
-        "revision": "main@5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+        "revision": "4c889b990055f667628486b033a83b77a199027a",
         "visibility": "public",
         "verified": true,
         "evidence": {
           "kind": "integration_check",
-          "reference": "https://github.com/sisodias/siso-skills-hub/commit/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
-          "observed_at": "2026-09-06",
-          "summary": "Public GitHub commit resolved at the exact source pin."
+          "reference": "https://github.com/sisodias/siso-skills-hub/commit/4c889b990055f667628486b033a83b77a199027a",
+          "observed_at": "2026-09-22",
+          "summary": "Public canonical source includes the pinned independent Jev entry and reviewed snapshot."
         }
       }
     ],
@@ -111,6 +111,12 @@
       "reference": "repo-check:siso-skills-hub:5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
       "observed_at": "2026-09-06",
       "summary": "Canonical Hub suite passes 33 skills; publish 0.1.1 passes public-input, symlink/alias destination, collision and aggregate-memory checks. Official copy installation matches all source files. The prior frozen publish revision remains in commit 7cf036a."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/sisodias/siso-skills-hub/pull/1",
+      "observed_at": "2026-09-22",
+      "summary": "Jev promotion merged into the public catalog. Full Hub check passed for 35 skills, including 51 Jev tests; a disposable installation matched all 21 public source files."
     }
   ]
 }

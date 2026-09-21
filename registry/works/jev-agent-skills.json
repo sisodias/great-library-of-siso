@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work",
+  "id": "gls:work:8032acab-bf10-489a-9077-7b7b55efd0ee",
+  "slug": "jev-agent-skills",
+  "name": "Jev Agent Skills",
+  "summary": "Portable typed decision helpers for agent intent, completion evidence, progress and eligible candidate selection, with bounded Camofox browsing and shadow context relevance.",
+  "work_type": "capability_pack",
+  "lifecycle_status": "active",
+  "updated_at": "2026-09-22",
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO",
+        "role": "maintainer",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/jev-agent-skills",
+        "revision": "0b7c1962acddb396021a69f94b89a11470f064cd",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "public_locator",
+          "reference": "https://github.com/sisodias/jev-agent-skills/commit/0b7c1962acddb396021a69f94b89a11470f064cd",
+          "observed_at": "2026-09-22",
+          "summary": "Public source commit and anonymous raw README, SKILL.md, licence and browser-loop reads resolved and matched the reviewed bytes."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The published SISO-owned source includes its MIT copyright notice and licence.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/LICENSE",
+          "observed_at": "2026-09-22",
+          "summary": "MIT licence inspected in the reviewed source."
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "target_work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+      "context": "Skills Hub discovers and installs the pinned jev-judgment snapshot; the standalone repository owns this pack and its releases.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "https://github.com/sisodias/siso-skills-hub/pull/1",
+          "observed_at": "2026-09-22",
+          "summary": "Merged catalog integration pins the Jev source and includes its snapshot, examples and tests. Full Hub validation passed with 35 skills and all 51 Jev tests; a disposable Hub installation passed."
+        }
+      ]
+    }
+  ],
+  "reading": {
+    "subtitle": "Small Jev decisions for agent checks and bounded browser flows.",
+    "why": "Agents can use a small structured judgment when a plan, evidence match or next browser action is ambiguous, while keeping execution and authority in their existing harness.",
+    "highlights": [
+      {
+        "title": "Install the skill",
+        "summary": "One reviewed copy for Codex, Claude or a shared skills directory, using your own OpenRouter key.",
+        "url": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/README.md"
+      },
+      {
+        "title": "Agent checks and context",
+        "summary": "Request and evidence packets for advisory checks; shadow relevance preserves all original context.",
+        "url": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/references/packets.md"
+      },
+      {
+        "title": "Camofox browser loops",
+        "summary": "Caller-permitted controls, observed targets, step limits and URL/text readback; requires an existing Camofox service.",
+        "url": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/references/browser.md"
+      }
+    ],
+    "agent_entry": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/SKILL.md",
+    "agent_commands": [
+      "git clone --branch v1.3.0 --depth 1 https://github.com/sisodias/jev-agent-skills.git jev-judgment",
+      "python3 jev-judgment/harness.py intent jev-judgment/examples/intent.json --dry-run"
+    ],
+    "owner": "SISO",
+    "reference": "https://github.com/sisodias/jev-agent-skills/releases/tag/v1.3.0"
+  },
+  "evidence": [
+    {
+      "kind": "public_locator",
+      "reference": "https://github.com/sisodias/jev-agent-skills/commit/0b7c1962acddb396021a69f94b89a11470f064cd",
+      "observed_at": "2026-09-22",
+      "summary": "Public source commit and anonymous raw README, SKILL.md, licence and browser-loop reads resolved and matched the reviewed bytes."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/sisodias/jev-agent-skills/actions/runs/35628988156",
+      "observed_at": "2026-09-22",
+      "summary": "All 51 offline tests passed on GitHub. A fresh public-tag clone passed the same suite and the supplied examples validated without provider or browser calls. Production savings are unmeasured."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/sisodias/siso-skills-hub/pull/1",
+      "observed_at": "2026-09-22",
+      "summary": "Merged catalog integration pins the Jev source and includes its snapshot, examples and tests. Full Hub validation passed with 35 skills and all 51 Jev tests; a disposable Hub installation passed."
+    }
+  ]
+}
