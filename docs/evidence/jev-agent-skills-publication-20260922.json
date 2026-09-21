@@ -1,0 +1,126 @@
+{
+  "verified_at": "2026-09-21T17:20:44.934016+00:00",
+  "source_commit": "b0bcfc905a7a073dd5c0fc94340cebf387402cea",
+  "deployment": "https://f196e367.great-library-of-siso.pages.dev/",
+  "stable_alias": "https://great-library-of-siso.pages.dev/",
+  "artifact_sha256": "3cc61704431d952ded69a578963e70b4fdae911a5a726beec4435eb876749163",
+  "file_count": 204,
+  "verification": "HTTP 200 and exact local SHA-256 on both deployment and stable alias",
+  "readbacks": [
+    {
+      "url": "https://f196e367.great-library-of-siso.pages.dev/",
+      "status": 200,
+      "sha256": "13d0e593bb735edd32d9c904b312942e1186fa4a0da35ba5ce6b08e32d5c0452",
+      "expected_sha256": "13d0e593bb735edd32d9c904b312942e1186fa4a0da35ba5ce6b08e32d5c0452",
+      "exact_match": true,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://f196e367.great-library-of-siso.pages.dev/works/jev-agent-skills/",
+      "status": 200,
+      "sha256": "7162e5a8689c8cb51abd99827641837211311f58e3ccb2d2f280ed8bafdb7ef0",
+      "expected_sha256": "7162e5a8689c8cb51abd99827641837211311f58e3ccb2d2f280ed8bafdb7ef0",
+      "exact_match": true,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://f196e367.great-library-of-siso.pages.dev/works/jev-agent-skills/index.json",
+      "status": 200,
+      "sha256": "e32f7882c430f67d7ea6e05d0e926d15dde33df61494f02dd627f1e455e05311",
+      "expected_sha256": "e32f7882c430f67d7ea6e05d0e926d15dde33df61494f02dd627f1e455e05311",
+      "exact_match": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "https://f196e367.great-library-of-siso.pages.dev/works/siso-skills/",
+      "status": 200,
+      "sha256": "3b5ce8934b59a216544a7f03e436bbe0d476f1b9a5582ad2c8485e2a96c614c1",
+      "expected_sha256": "3b5ce8934b59a216544a7f03e436bbe0d476f1b9a5582ad2c8485e2a96c614c1",
+      "exact_match": true,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://f196e367.great-library-of-siso.pages.dev/works/siso-skills/index.json",
+      "status": 200,
+      "sha256": "4d52e1c21763919ba16172779042d287d6c28f2a5b30b8488745259effdd3c8a",
+      "expected_sha256": "4d52e1c21763919ba16172779042d287d6c28f2a5b30b8488745259effdd3c8a",
+      "exact_match": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "https://f196e367.great-library-of-siso.pages.dev/catalog.json",
+      "status": 200,
+      "sha256": "10d9196ac35212ebed0e21aff3201cf8767a97940f620094678741ff45d7249f",
+      "expected_sha256": "10d9196ac35212ebed0e21aff3201cf8767a97940f620094678741ff45d7249f",
+      "exact_match": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "https://f196e367.great-library-of-siso.pages.dev/assets/siso-shell/icons.mjs",
+      "status": 200,
+      "sha256": "64dd053091c69ac09b1fbe1494ee464f7a9923456de84b857317a09a8d615aeb",
+      "expected_sha256": "64dd053091c69ac09b1fbe1494ee464f7a9923456de84b857317a09a8d615aeb",
+      "exact_match": true,
+      "content_type": "application/javascript"
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/",
+      "status": 200,
+      "sha256": "13d0e593bb735edd32d9c904b312942e1186fa4a0da35ba5ce6b08e32d5c0452",
+      "expected_sha256": "13d0e593bb735edd32d9c904b312942e1186fa4a0da35ba5ce6b08e32d5c0452",
+      "exact_match": true,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/works/jev-agent-skills/",
+      "status": 200,
+      "sha256": "7162e5a8689c8cb51abd99827641837211311f58e3ccb2d2f280ed8bafdb7ef0",
+      "expected_sha256": "7162e5a8689c8cb51abd99827641837211311f58e3ccb2d2f280ed8bafdb7ef0",
+      "exact_match": true,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/works/jev-agent-skills/index.json",
+      "status": 200,
+      "sha256": "e32f7882c430f67d7ea6e05d0e926d15dde33df61494f02dd627f1e455e05311",
+      "expected_sha256": "e32f7882c430f67d7ea6e05d0e926d15dde33df61494f02dd627f1e455e05311",
+      "exact_match": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/works/siso-skills/",
+      "status": 200,
+      "sha256": "3b5ce8934b59a216544a7f03e436bbe0d476f1b9a5582ad2c8485e2a96c614c1",
+      "expected_sha256": "3b5ce8934b59a216544a7f03e436bbe0d476f1b9a5582ad2c8485e2a96c614c1",
+      "exact_match": true,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/works/siso-skills/index.json",
+      "status": 200,
+      "sha256": "4d52e1c21763919ba16172779042d287d6c28f2a5b30b8488745259effdd3c8a",
+      "expected_sha256": "4d52e1c21763919ba16172779042d287d6c28f2a5b30b8488745259effdd3c8a",
+      "exact_match": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/catalog.json",
+      "status": 200,
+      "sha256": "10d9196ac35212ebed0e21aff3201cf8767a97940f620094678741ff45d7249f",
+      "expected_sha256": "10d9196ac35212ebed0e21aff3201cf8767a97940f620094678741ff45d7249f",
+      "exact_match": true,
+      "content_type": "application/json"
+    },
+    {
+      "url": "https://great-library-of-siso.pages.dev/assets/siso-shell/icons.mjs",
+      "status": 200,
+      "sha256": "64dd053091c69ac09b1fbe1494ee464f7a9923456de84b857317a09a8d615aeb",
+      "expected_sha256": "64dd053091c69ac09b1fbe1494ee464f7a9923456de84b857317a09a8d615aeb",
+      "exact_match": true,
+      "content_type": "application/javascript"
+    }
+  ],
+  "publication_workflow": "npm run deploy:cloudflare (pinned Wrangler 4.129.0)",
+  "validation": "Full npm run verify passed: registry, immutable history, contracts, 100 HTML pages and publication scan.",
+  "artifact_digest_format": "SHA-256 of compact JSON list sorted by relative file name; each entry contains name and sha256."
+}

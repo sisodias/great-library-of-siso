@@ -13,7 +13,14 @@ preserving all other V41 release pins, Assemblies and projection edges. The Work
 page is `/works/jev-agent-skills/`. Context evaluation remains shadow-only;
 production savings and automatic agent adoption are not claimed. Source and
 registration evidence are in `registry/events/2026-09-22-jev-agent-skills-released.json`.
-Live publication is recorded after exact page readback.
+Library source `b0bcfc905a7a073dd5c0fc94340cebf387402cea` is published at
+https://f196e367.great-library-of-siso.pages.dev/ . Both that deployment and the
+stable https://great-library-of-siso.pages.dev/ returned HTTP 200 and exact build
+bytes for the root, Jev and Skills Hub HTML/JSON, catalog and pinned icon module
+(14 readbacks). The live Jev page is
+https://great-library-of-siso.pages.dev/works/jev-agent-skills/ .
+Full Library verification and publication scanning passed before deployment.
+Receipt: `docs/evidence/jev-agent-skills-publication-20260922.json`.
 
 ## 8 September canonical Library integration
 
