@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0.0",
+  "work_id": "gls:work:8032acab-bf10-489a-9077-7b7b55efd0ee",
+  "slug": "jev-agent-skills",
+  "name": "Jev Agent Skills",
+  "summary": "Portable typed decision helpers for agent intent, completion evidence, progress and eligible candidate selection, with bounded Camofox browsing and shadow context relevance.",
+  "reading": {
+    "subtitle": "Small Jev decisions for agent checks and bounded browser flows.",
+    "why": "Agents can use a small structured judgment when a plan, evidence match or next browser action is ambiguous, while keeping execution and authority in their existing harness.",
+    "highlights": [
+      {
+        "title": "Install the skill",
+        "summary": "One reviewed copy for Codex, Claude or a shared skills directory, using your own OpenRouter key.",
+        "url": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/README.md"
+      },
+      {
+        "title": "Agent checks and context",
+        "summary": "Request and evidence packets for advisory checks; shadow relevance preserves all original context.",
+        "url": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/references/packets.md"
+      },
+      {
+        "title": "Camofox browser loops",
+        "summary": "Caller-permitted controls, observed targets, step limits and URL/text readback; requires an existing Camofox service.",
+        "url": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/references/browser.md"
+      }
+    ],
+    "agent_entry": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/SKILL.md",
+    "agent_commands": [
+      "git clone --branch v1.3.0 --depth 1 https://github.com/sisodias/jev-agent-skills.git jev-judgment",
+      "python3 jev-judgment/harness.py intent jev-judgment/examples/intent.json --dry-run"
+    ],
+    "owner": "SISO",
+    "reference": "https://github.com/sisodias/jev-agent-skills/releases/tag/v1.3.0"
+  },
+  "work_type": "capability_pack",
+  "lifecycle_status": "active",
+  "section": "Unassigned",
+  "library_url": "/works/jev-agent-skills/",
+  "agent_context_url": "/works/jev-agent-skills/index.json",
+  "registry_source": "registry/works/jev-agent-skills.json",
+  "source_links": [
+    {
+      "kind": "source_repository",
+      "label": "Source repository",
+      "url": "https://github.com/sisodias/jev-agent-skills",
+      "visibility": "public"
+    },
+    {
+      "kind": "readme",
+      "label": "Read README",
+      "url": "https://github.com/sisodias/jev-agent-skills#readme",
+      "visibility": "public"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "integrates_with",
+      "context": "Skills Hub discovers and installs the pinned jev-judgment snapshot; the standalone repository owns this pack and its releases.",
+      "target_work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+      "target_name": "SISO Skills",
+      "target_library_url": "/works/siso-skills/",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "https://github.com/sisodias/siso-skills-hub/pull/1",
+          "observed_at": "2026-09-22",
+          "summary": "Merged catalog integration pins the Jev source and includes its snapshot, examples and tests. Full Hub validation passed with 35 skills and all 51 Jev tests; a disposable Hub installation passed."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "public_locator",
+      "reference": "https://github.com/sisodias/jev-agent-skills/commit/0b7c1962acddb396021a69f94b89a11470f064cd",
+      "observed_at": "2026-09-22",
+      "summary": "Public source commit and anonymous raw README, SKILL.md, licence and browser-loop reads resolved and matched the reviewed bytes."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/sisodias/jev-agent-skills/actions/runs/35628988156",
+      "observed_at": "2026-09-22",
+      "summary": "All 51 offline tests passed on GitHub. A fresh public-tag clone passed the same suite and the supplied examples validated without provider or browser calls. Production savings are unmeasured."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/sisodias/siso-skills-hub/pull/1",
+      "observed_at": "2026-09-22",
+      "summary": "Merged catalog integration pins the Jev source and includes its snapshot, examples and tests. Full Hub validation passed with 35 skills and all 51 Jev tests; a disposable Hub installation passed."
+    }
+  ],
+  "provenance": {
+    "origin": "siso",
+    "owners": [
+      {
+        "name": "SISO",
+        "role": "maintainer",
+        "classification": "siso"
+      }
+    ],
+    "locators": [
+      {
+        "type": "source_repository",
+        "url": "https://github.com/sisodias/jev-agent-skills",
+        "revision": "0b7c1962acddb396021a69f94b89a11470f064cd",
+        "visibility": "public",
+        "verified": true,
+        "evidence": {
+          "kind": "public_locator",
+          "reference": "https://github.com/sisodias/jev-agent-skills/commit/0b7c1962acddb396021a69f94b89a11470f064cd",
+          "observed_at": "2026-09-22",
+          "summary": "Public source commit and anonymous raw README, SKILL.md, licence and browser-loop reads resolved and matched the reviewed bytes."
+        }
+      }
+    ],
+    "license": {
+      "status": "verified",
+      "spdx": "MIT",
+      "reason": "The published SISO-owned source includes its MIT copyright notice and licence.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/LICENSE",
+          "observed_at": "2026-09-22",
+          "summary": "MIT licence inspected in the reviewed source."
+        }
+      ]
+    }
+  },
+  "selection": {
+    "state": "selected",
+    "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
+    "release_id": "gls:release:b391e796-9a8c-4d0b-9b3e-37990f781c09"
+  },
+  "owner_entry": {
+    "state": "authored",
+    "owner": "SISO",
+    "entry_url": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/SKILL.md",
+    "visibility": "public",
+    "source_revision": "0b7c1962acddb396021a69f94b89a11470f064cd",
+    "source_revision_basis": "selected_artifact",
+    "entry_revision": "0b7c1962acddb396021a69f94b89a11470f064cd",
+    "commands": [
+      "git clone --branch v1.3.0 --depth 1 https://github.com/sisodias/jev-agent-skills.git jev-judgment",
+      "python3 jev-judgment/harness.py intent jev-judgment/examples/intent.json --dry-run"
+    ],
+    "reference": "https://github.com/sisodias/jev-agent-skills/releases/tag/v1.3.0"
+  },
+  "registered_releases": [
+    {
+      "id": "gls:release:b391e796-9a8c-4d0b-9b3e-37990f781c09",
+      "version": "1.3.0",
+      "registry_source": "registry/releases/jev-agent-skills-v1-3-0.json"
+    }
+  ],
+  "selected_release": {
+    "id": "gls:release:b391e796-9a8c-4d0b-9b3e-37990f781c09",
+    "version": "1.3.0",
+    "released_at": "2026-09-22T00:05:17+07:00",
+    "release_kind": null,
+    "registry_source": "registry/releases/jev-agent-skills-v1-3-0.json",
+    "artifacts": [
+      {
+        "kind": "source_archive",
+        "locator": "https://github.com/sisodias/jev-agent-skills/archive/0b7c1962acddb396021a69f94b89a11470f064cd.tar.gz",
+        "revision": "0b7c1962acddb396021a69f94b89a11470f064cd",
+        "availability": "public",
+        "license": {
+          "status": "verified",
+          "spdx": "MIT",
+          "reason": "The published SISO-owned source includes its MIT copyright notice and licence.",
+          "evidence": [
+            {
+              "kind": "source_review",
+              "reference": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/LICENSE",
+              "observed_at": "2026-09-22",
+              "summary": "MIT licence inspected in the reviewed source."
+            }
+          ]
+        }
+      }
+    ],
+    "distribution": {
+      "addressable": {
+        "state": "verified",
+        "reason": "Exact public source commit is recorded.",
+        "evidence_count": 1
+      },
+      "archive_downloadable": {
+        "state": "verified",
+        "reason": "Commit-scoped source archive returned HTTP 200.",
+        "evidence_count": 1
+      },
+      "manifest_resolvable": {
+        "state": "verified",
+        "reason": "Work and exact artifact pin are explicit.",
+        "evidence_count": 1
+      },
+      "installable": {
+        "state": "verified",
+        "reason": "Documented installation and offline checks passed; live providers still require adopter credentials and prerequisites.",
+        "evidence_count": 1
+      },
+      "forkable": {
+        "state": "verified",
+        "reason": "Public SISO source includes MIT licensing.",
+        "evidence_count": 1
+      },
+      "portable": {
+        "state": "experimental",
+        "reason": "Python 3.10+ standard-library pack tested locally and in Linux CI. OpenRouter inference needs the adopter key; browser use needs Camofox and a caller-owned tab. No production efficiency guarantee.",
+        "evidence_count": 1
+      }
+    }
+  }
+}

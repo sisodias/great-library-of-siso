@@ -4,7 +4,7 @@ Public registry and reading surface; independent source repositories retain thei
 
 Start: /use/
 Machine catalog: /catalog.json
-Source-selected Snapshot in this build: gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a (41.0.0)
+Source-selected Snapshot in this build: gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844 (42.0.0)
 
 From a checkout with Node 20:
 - node bin/gls search "agent runtime"

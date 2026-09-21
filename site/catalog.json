@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-10T00:00:00.000Z",
+  "generated_at": "2026-09-21T17:11:20.000Z",
   "base_path": "/",
   "snapshot": {
-    "id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
-    "version": "41.0.0",
-    "registry_source": "registry/snapshots/whole-library-v41.json"
+    "id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
+    "version": "42.0.0",
+    "registry_source": "registry/snapshots/whole-library-v42.json"
   },
   "source_inputs": [
     {
@@ -240,6 +240,10 @@
       "sha256": "9cb617ad1d47bc08cf3221db0c9d6c288e3a97829ccfdcd2823c24332749efce"
     },
     {
+      "path": "registry/events/2026-09-22-jev-agent-skills-released.json",
+      "sha256": "10b15d93d985722e5c22192905b76a7a08298ee9ff015110c6362a82208d545f"
+    },
+    {
       "path": "registry/releases/agent-zero-seed.json",
       "sha256": "4cf72788f59441947d7d5e6056f3cc618efbf1b93263f067be5b4f023cacd86b"
     },
@@ -370,6 +374,10 @@
     {
       "path": "registry/releases/herdr-514e446.json",
       "sha256": "559a4cb66b2b887d967066487279a3480c8d20fcb04e00875bdb7f3e6d4e18f9"
+    },
+    {
+      "path": "registry/releases/jev-agent-skills-v1-3-0.json",
+      "sha256": "8aca29f72d63a7c7cf53f02456da9502abd04abb329e53555e9ea3b76a8e7913"
     },
     {
       "path": "registry/releases/library-v1.json",
@@ -576,6 +584,10 @@
       "sha256": "eaff0d594d216bff46227aa1e6770d3903e0cb3df8e786b91a918298be4b9637"
     },
     {
+      "path": "registry/releases/siso-skills-hub-4c889b9.json",
+      "sha256": "344eb01ee0a5e2bb997ed83947ccbcaeeb9e90b156013548a286fec947e693d9"
+    },
+    {
       "path": "registry/releases/siso-skills-hub-5e33b2b.json",
       "sha256": "79e009e94fd1d3f688d71343a2b79da498547c0e76b254359badb7264bbbd33c"
     },
@@ -736,6 +748,10 @@
       "sha256": "90a489aefaf8cdf57256d304671b68650d4ba15305948e9479fe85422fdfa1df"
     },
     {
+      "path": "registry/snapshots/whole-library-v42.json",
+      "sha256": "9c634acd6f7f8b07ce7ac1c5b7414e6871211dee299110c84dcc484dfeb6dbd3"
+    },
+    {
       "path": "registry/snapshots/whole-library-v5.json",
       "sha256": "b32c2f250ba4d9399668b9ce0b242dcb5dd0f7f055a16e05799c06f8b4937d9d"
     },
@@ -880,6 +896,10 @@
       "sha256": "b89d907a8454bb666921fd3354e7b5604d12266ef59898a6d241516aac2f3eca"
     },
     {
+      "path": "registry/works/jev-agent-skills.json",
+      "sha256": "3b013a70e6fe8a815eaa56560f142de3f57902264c5d48df1d02f9e59204ca4c"
+    },
+    {
       "path": "registry/works/library.json",
       "sha256": "29afe634210ef3594ac7d0b465288f5cea1a1b9cb36cee6c482373aa0c8df6d1"
     },
@@ -965,7 +985,7 @@
     },
     {
       "path": "registry/works/siso-skills.json",
-      "sha256": "3ab87773d88dcf292294c9bfabdb00915c77991fb3b9a4bcf4fda7ef7614b32a"
+      "sha256": "60bab2809c19a6322ae28cb5e14bc83654ead550443c7d043505791b94dedf3b"
     },
     {
       "path": "registry/works/siso-source.json",
@@ -1023,7 +1043,7 @@
       ],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -1071,7 +1091,7 @@
       ],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -1103,7 +1123,7 @@
       "source_links": [],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:14c1d9de-0e77-44e9-9274-57e7cfb6ab02"
       },
       "selected_release": {
@@ -1178,7 +1198,7 @@
       ],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -1207,7 +1227,7 @@
       "source_links": [],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:0212a6f4-1860-453b-bb27-2e9ed70a09c4"
       },
       "selected_release": {
@@ -1288,7 +1308,7 @@
       "source_links": [],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:b95eeca5-ed9d-48ac-858c-f6d62065cd29"
       },
       "selected_release": {
@@ -1369,7 +1389,7 @@
       "source_links": [],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:037ad734-0cc3-4afb-9dc0-c2b55f1dcee7"
       },
       "selected_release": {
@@ -1437,7 +1457,7 @@
       "source_links": [],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:1ee81aa0-42cc-4bcd-a87b-4f34baf9cc13"
       },
       "selected_release": {
@@ -1505,7 +1525,7 @@
       "source_links": [],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:8225da3f-9a19-45d8-880e-0f2539756c0f"
       },
       "selected_release": {
@@ -1573,7 +1593,7 @@
       "source_links": [],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:a5e56fcf-e19d-4ead-8c7d-9660d41ed47e"
       },
       "selected_release": {
@@ -1641,7 +1661,7 @@
       "source_links": [],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:df8a236d-b092-4d51-9e17-d1016671db64"
       },
       "selected_release": {
@@ -1729,7 +1749,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:f8ddbc97-e795-474a-b9c1-e508bd9e1787"
       },
       "selected_release": {
@@ -1810,7 +1830,7 @@
       "source_links": [],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -1839,7 +1859,7 @@
       "source_links": [],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -1868,7 +1888,7 @@
       "source_links": [],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -1897,7 +1917,7 @@
       "source_links": [],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -1926,7 +1946,7 @@
       "source_links": [],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -1955,7 +1975,7 @@
       "source_links": [],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -1984,7 +2004,7 @@
       "source_links": [],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -2013,7 +2033,7 @@
       "source_links": [],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -2042,7 +2062,7 @@
       "source_links": [],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -2084,7 +2104,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:79d7c186-7425-4815-8108-b03cbffdad05"
       },
       "selected_release": {
@@ -2160,6 +2180,110 @@
       }
     },
     {
+      "id": "gls:work:8032acab-bf10-489a-9077-7b7b55efd0ee",
+      "slug": "jev-agent-skills",
+      "name": "Jev Agent Skills",
+      "summary": "Portable typed decision helpers for agent intent, completion evidence, progress and eligible candidate selection, with bounded Camofox browsing and shadow context relevance.",
+      "library_url": "/works/jev-agent-skills/",
+      "agent_context_url": "/works/jev-agent-skills/index.json",
+      "type": "capability_pack",
+      "maturity": "active",
+      "section": "Unassigned",
+      "source_links": [
+        {
+          "kind": "source_repository",
+          "label": "Source repository",
+          "url": "https://github.com/sisodias/jev-agent-skills",
+          "visibility": "public"
+        },
+        {
+          "kind": "readme",
+          "label": "Read README",
+          "url": "https://github.com/sisodias/jev-agent-skills#readme",
+          "visibility": "public"
+        }
+      ],
+      "selection": {
+        "state": "selected",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
+        "release_id": "gls:release:b391e796-9a8c-4d0b-9b3e-37990f781c09"
+      },
+      "selected_release": {
+        "id": "gls:release:b391e796-9a8c-4d0b-9b3e-37990f781c09",
+        "version": "1.3.0",
+        "released_at": "2026-09-22T00:05:17+07:00",
+        "release_kind": null,
+        "registry_source": "registry/releases/jev-agent-skills-v1-3-0.json",
+        "artifacts": [
+          {
+            "kind": "source_archive",
+            "locator": "https://github.com/sisodias/jev-agent-skills/archive/0b7c1962acddb396021a69f94b89a11470f064cd.tar.gz",
+            "revision": "0b7c1962acddb396021a69f94b89a11470f064cd",
+            "availability": "public",
+            "license": {
+              "status": "verified",
+              "spdx": "MIT",
+              "reason": "The published SISO-owned source includes its MIT copyright notice and licence.",
+              "evidence": [
+                {
+                  "kind": "source_review",
+                  "reference": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/LICENSE",
+                  "observed_at": "2026-09-22",
+                  "summary": "MIT licence inspected in the reviewed source."
+                }
+              ]
+            }
+          }
+        ],
+        "distribution": {
+          "addressable": {
+            "state": "verified",
+            "reason": "Exact public source commit is recorded.",
+            "evidence_count": 1
+          },
+          "archive_downloadable": {
+            "state": "verified",
+            "reason": "Commit-scoped source archive returned HTTP 200.",
+            "evidence_count": 1
+          },
+          "manifest_resolvable": {
+            "state": "verified",
+            "reason": "Work and exact artifact pin are explicit.",
+            "evidence_count": 1
+          },
+          "installable": {
+            "state": "verified",
+            "reason": "Documented installation and offline checks passed; live providers still require adopter credentials and prerequisites.",
+            "evidence_count": 1
+          },
+          "forkable": {
+            "state": "verified",
+            "reason": "Public SISO source includes MIT licensing.",
+            "evidence_count": 1
+          },
+          "portable": {
+            "state": "experimental",
+            "reason": "Python 3.10+ standard-library pack tested locally and in Linux CI. OpenRouter inference needs the adopter key; browser use needs Camofox and a caller-owned tab. No production efficiency guarantee.",
+            "evidence_count": 1
+          }
+        }
+      },
+      "owner_entry": {
+        "state": "authored",
+        "owner": "SISO",
+        "entry_url": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/SKILL.md",
+        "visibility": "public",
+        "source_revision": "0b7c1962acddb396021a69f94b89a11470f064cd",
+        "source_revision_basis": "selected_artifact",
+        "entry_revision": "0b7c1962acddb396021a69f94b89a11470f064cd",
+        "commands": [
+          "git clone --branch v1.3.0 --depth 1 https://github.com/sisodias/jev-agent-skills.git jev-judgment",
+          "python3 jev-judgment/harness.py intent jev-judgment/examples/intent.json --dry-run"
+        ],
+        "reference": "https://github.com/sisodias/jev-agent-skills/releases/tag/v1.3.0"
+      }
+    },
+    {
       "id": "gls:work:2fa08dac-937a-44d3-a547-f16ac28c4e25",
       "slug": "research",
       "name": "Research",
@@ -2172,7 +2296,7 @@
       "source_links": [],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:24c1ed1d-4437-4641-83e2-048d55116590"
       },
       "selected_release": {
@@ -2253,7 +2377,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:8204e470-fa87-4268-8713-733330b537fe"
       },
       "selected_release": {
@@ -2354,7 +2478,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:941effe9-a115-41a9-bfde-d681ebc45812"
       },
       "selected_release": {
@@ -2455,7 +2579,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:98ba8230-3cdc-478b-b855-e9d808655c46"
       },
       "selected_release": {
@@ -2556,7 +2680,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:69c70399-9344-4752-b6a7-8976ee857006"
       },
       "selected_release": {
@@ -2657,7 +2781,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:ff8cc25f-7162-4713-9e38-66cbf3eca958"
       },
       "selected_release": {
@@ -2758,7 +2882,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:36ba0940-4235-4e6c-87e2-e27266f77d33"
       },
       "selected_release": {
@@ -2862,7 +2986,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:2a2b9859-e050-4635-9e42-dfdadb947b34"
       },
       "selected_release": {
@@ -2963,7 +3087,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:c7cfb739-67d3-4c63-9146-5f47430f7970"
       },
       "selected_release": {
@@ -3064,7 +3188,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:bc95af72-cc82-4836-9e7d-2914d05a5fec"
       },
       "selected_release": {
@@ -3165,7 +3289,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:7880b0ff-77db-4646-a29b-8061a8f7a42b"
       },
       "selected_release": {
@@ -3266,7 +3390,7 @@
       ],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -3308,7 +3432,7 @@
       ],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -3350,7 +3474,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:f49dfb65-9cba-45d8-855a-9338f1cda30b"
       },
       "selected_release": {
@@ -3451,7 +3575,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:29a8cfea-ca5d-41b3-964f-3d81044fce11"
       },
       "selected_release": {
@@ -3555,7 +3679,7 @@
       ],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -3599,7 +3723,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:082afdff-c770-49de-a67c-a1ef9a6bb40d"
       },
       "selected_release": {
@@ -3700,7 +3824,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:23a94255-5c40-417b-88bc-d1ab6176d81e"
       },
       "selected_release": {
@@ -3801,7 +3925,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:ebfffcbc-fa33-498f-9b81-c81bb96e12a8"
       },
       "selected_release": {
@@ -3902,7 +4026,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:388d8ccc-b47a-4fb2-9082-db925cd1530c"
       },
       "selected_release": {
@@ -4003,7 +4127,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:0b81c926-0433-42f6-b6a9-9993b2ce5a6b"
       },
       "selected_release": {
@@ -4110,7 +4234,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:7dbde38f-3909-4c53-84b7-86ce5196ce0b"
       },
       "selected_release": {
@@ -4213,31 +4337,31 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
-        "release_id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943"
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
+        "release_id": "gls:release:1eca0054-0cb7-4063-a31a-8d4da8b90b64"
       },
       "selected_release": {
-        "id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943",
-        "version": "0.2.0+5e33b2b",
-        "released_at": "2026-09-06T01:50:00+07:00",
+        "id": "gls:release:1eca0054-0cb7-4063-a31a-8d4da8b90b64",
+        "version": "0.2.0+4c889b9",
+        "released_at": "2026-09-22T00:05:17+07:00",
         "release_kind": null,
-        "registry_source": "registry/releases/siso-skills-hub-5e33b2b.json",
+        "registry_source": "registry/releases/siso-skills-hub-4c889b9.json",
         "artifacts": [
           {
             "kind": "source_archive",
-            "locator": "https://github.com/sisodias/siso-skills-hub/archive/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8.tar.gz",
-            "revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+            "locator": "https://github.com/sisodias/siso-skills-hub/archive/4c889b990055f667628486b033a83b77a199027a.tar.gz",
+            "revision": "4c889b990055f667628486b033a83b77a199027a",
             "availability": "public",
             "license": {
               "status": "verified",
               "spdx": "MIT",
-              "reason": "The SISO-owned source retains its reviewed MIT license; external assets retain their own rights.",
+              "reason": "The published SISO-owned source includes its MIT copyright notice and licence.",
               "evidence": [
                 {
                   "kind": "source_review",
-                  "reference": "https://github.com/sisodias/siso-skills-hub/blob/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8/LICENSE",
-                  "observed_at": "2026-09-06",
-                  "summary": "MIT license text read from the exact published source."
+                  "reference": "https://github.com/sisodias/siso-skills-hub/blob/4c889b990055f667628486b033a83b77a199027a/LICENSE",
+                  "observed_at": "2026-09-22",
+                  "summary": "MIT licence inspected in the reviewed source."
                 }
               ]
             }
@@ -4256,22 +4380,22 @@
           },
           "manifest_resolvable": {
             "state": "verified",
-            "reason": "Manifest identifies its stable Work and exact source artifact.",
+            "reason": "Work and exact artifact pin are explicit.",
             "evidence_count": 1
           },
           "installable": {
             "state": "verified",
-            "reason": "The reviewed publish skill installs through the canonical CLI; this does not claim every optional provider is configured.",
+            "reason": "Documented installation and offline checks passed; live providers still require adopter credentials and prerequisites.",
             "evidence_count": 1
           },
           "forkable": {
             "state": "verified",
-            "reason": "The exact public SISO source retains MIT licensing.",
+            "reason": "Public SISO source includes MIT licensing.",
             "evidence_count": 1
           },
           "portable": {
             "state": "experimental",
-            "reason": "Publish is bounded to reviewed public static output and caller-configured Wrangler; other Hub recipes retain their own boundaries.",
+            "reason": "The Jev pack installs through the catalog and standalone repository; optional provider and browser setup stays with the adopting agent. Other Hub entries retain their own portability boundaries.",
             "evidence_count": 1
           }
         }
@@ -4279,11 +4403,11 @@
       "owner_entry": {
         "state": "locator_only",
         "owner": "SISO Open Source Foundation",
-        "entry_url": "https://github.com/sisodias/siso-skills-hub/tree/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+        "entry_url": "https://github.com/sisodias/siso-skills-hub/tree/4c889b990055f667628486b033a83b77a199027a",
         "visibility": "public",
-        "source_revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+        "source_revision": "4c889b990055f667628486b033a83b77a199027a",
         "source_revision_basis": "selected_artifact",
-        "entry_revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+        "entry_revision": "4c889b990055f667628486b033a83b77a199027a",
         "commands": [],
         "reference": "registry/works/siso-skills.json"
       }
@@ -4314,7 +4438,7 @@
       ],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -4358,7 +4482,7 @@
       ],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -4400,7 +4524,7 @@
       ],
       "selection": {
         "state": "registered_not_selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": null
       },
       "selected_release": null,
@@ -4448,7 +4572,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:1f8b6c2d-72f4-4b90-9e1f-3d5a7c8b2e64"
       },
       "selected_release": {
@@ -4549,7 +4673,7 @@
       ],
       "selection": {
         "state": "selected",
-        "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
+        "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
         "release_id": "gls:release:9ac0eb6b-ff42-4505-ab48-9ca04b196c89"
       },
       "selected_release": {
@@ -4826,6 +4950,24 @@
     },
     {
       "owner": "sisodias",
+      "repository": "jev-agent-skills",
+      "url": "https://github.com/sisodias/jev-agent-skills",
+      "work_id": "gls:work:8032acab-bf10-489a-9077-7b7b55efd0ee",
+      "work_name": "Jev Agent Skills",
+      "work_slug": "jev-agent-skills",
+      "work_type": "capability_pack",
+      "lifecycle_status": "active",
+      "library_url": "/works/jev-agent-skills/",
+      "locator_type": "source_repository",
+      "locator_revision": "0b7c1962acddb396021a69f94b89a11470f064cd",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:b391e796-9a8c-4d0b-9b3e-37990f781c09",
+      "active_release_version": "1.3.0",
+      "artifact_revision": "0b7c1962acddb396021a69f94b89a11470f064cd"
+    },
+    {
+      "owner": "sisodias",
       "repository": "siso-agent-hooks",
       "url": "https://github.com/sisodias/siso-agent-hooks",
       "work_id": "gls:work:4198f323-9855-43f6-a99a-72143086818e",
@@ -4997,12 +5139,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-skills/",
       "locator_type": "source_repository",
-      "locator_revision": "main@5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+      "locator_revision": "4c889b990055f667628486b033a83b77a199027a",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943",
-      "active_release_version": "0.2.0+5e33b2b",
-      "artifact_revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8"
+      "active_release_id": "gls:release:1eca0054-0cb7-4063-a31a-8d4da8b90b64",
+      "active_release_version": "0.2.0+4c889b9",
+      "artifact_revision": "4c889b990055f667628486b033a83b77a199027a"
     },
     {
       "owner": "sisodias",
@@ -9778,10 +9920,10 @@
   },
   "intelligence": {
     "counts": {
-      "events": 48,
+      "events": 49,
       "decisions": 6,
       "active_initiatives": 3,
-      "registry_changes": 129
+      "registry_changes": 132
     },
     "active_initiatives": [
       {

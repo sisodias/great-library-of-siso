@@ -95,6 +95,12 @@
       "reference": "repo-check:siso-skills-hub:5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
       "observed_at": "2026-09-06",
       "summary": "Canonical Hub suite passes 33 skills; publish 0.1.1 passes public-input, symlink/alias destination, collision and aggregate-memory checks. Official copy installation matches all source files. The prior frozen publish revision remains in commit 7cf036a."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/sisodias/siso-skills-hub/pull/1",
+      "observed_at": "2026-09-22",
+      "summary": "Jev promotion merged into the public catalog. Full Hub check passed for 35 skills, including 51 Jev tests; a disposable installation matched all 21 public source files."
     }
   ],
   "provenance": {
@@ -110,14 +116,14 @@
       {
         "type": "source_repository",
         "url": "https://github.com/sisodias/siso-skills-hub",
-        "revision": "main@5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+        "revision": "4c889b990055f667628486b033a83b77a199027a",
         "visibility": "public",
         "verified": true,
         "evidence": {
           "kind": "integration_check",
-          "reference": "https://github.com/sisodias/siso-skills-hub/commit/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
-          "observed_at": "2026-09-06",
-          "summary": "Public GitHub commit resolved at the exact source pin."
+          "reference": "https://github.com/sisodias/siso-skills-hub/commit/4c889b990055f667628486b033a83b77a199027a",
+          "observed_at": "2026-09-22",
+          "summary": "Public canonical source includes the pinned independent Jev entry and reviewed snapshot."
         }
       }
     ],
@@ -137,17 +143,17 @@
   },
   "selection": {
     "state": "selected",
-    "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
-    "release_id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943"
+    "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
+    "release_id": "gls:release:1eca0054-0cb7-4063-a31a-8d4da8b90b64"
   },
   "owner_entry": {
     "state": "locator_only",
     "owner": "SISO Open Source Foundation",
-    "entry_url": "https://github.com/sisodias/siso-skills-hub/tree/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+    "entry_url": "https://github.com/sisodias/siso-skills-hub/tree/4c889b990055f667628486b033a83b77a199027a",
     "visibility": "public",
-    "source_revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+    "source_revision": "4c889b990055f667628486b033a83b77a199027a",
     "source_revision_basis": "selected_artifact",
-    "entry_revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+    "entry_revision": "4c889b990055f667628486b033a83b77a199027a",
     "commands": [],
     "reference": "registry/works/siso-skills.json"
   },
@@ -186,30 +192,35 @@
       "id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943",
       "version": "0.2.0+5e33b2b",
       "registry_source": "registry/releases/siso-skills-hub-5e33b2b.json"
+    },
+    {
+      "id": "gls:release:1eca0054-0cb7-4063-a31a-8d4da8b90b64",
+      "version": "0.2.0+4c889b9",
+      "registry_source": "registry/releases/siso-skills-hub-4c889b9.json"
     }
   ],
   "selected_release": {
-    "id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943",
-    "version": "0.2.0+5e33b2b",
-    "released_at": "2026-09-06T01:50:00+07:00",
+    "id": "gls:release:1eca0054-0cb7-4063-a31a-8d4da8b90b64",
+    "version": "0.2.0+4c889b9",
+    "released_at": "2026-09-22T00:05:17+07:00",
     "release_kind": null,
-    "registry_source": "registry/releases/siso-skills-hub-5e33b2b.json",
+    "registry_source": "registry/releases/siso-skills-hub-4c889b9.json",
     "artifacts": [
       {
         "kind": "source_archive",
-        "locator": "https://github.com/sisodias/siso-skills-hub/archive/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8.tar.gz",
-        "revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+        "locator": "https://github.com/sisodias/siso-skills-hub/archive/4c889b990055f667628486b033a83b77a199027a.tar.gz",
+        "revision": "4c889b990055f667628486b033a83b77a199027a",
         "availability": "public",
         "license": {
           "status": "verified",
           "spdx": "MIT",
-          "reason": "The SISO-owned source retains its reviewed MIT license; external assets retain their own rights.",
+          "reason": "The published SISO-owned source includes its MIT copyright notice and licence.",
           "evidence": [
             {
               "kind": "source_review",
-              "reference": "https://github.com/sisodias/siso-skills-hub/blob/5e33b2b1e21dfd54e66d9223ece058e7727c2cf8/LICENSE",
-              "observed_at": "2026-09-06",
-              "summary": "MIT license text read from the exact published source."
+              "reference": "https://github.com/sisodias/siso-skills-hub/blob/4c889b990055f667628486b033a83b77a199027a/LICENSE",
+              "observed_at": "2026-09-22",
+              "summary": "MIT licence inspected in the reviewed source."
             }
           ]
         }
@@ -228,22 +239,22 @@
       },
       "manifest_resolvable": {
         "state": "verified",
-        "reason": "Manifest identifies its stable Work and exact source artifact.",
+        "reason": "Work and exact artifact pin are explicit.",
         "evidence_count": 1
       },
       "installable": {
         "state": "verified",
-        "reason": "The reviewed publish skill installs through the canonical CLI; this does not claim every optional provider is configured.",
+        "reason": "Documented installation and offline checks passed; live providers still require adopter credentials and prerequisites.",
         "evidence_count": 1
       },
       "forkable": {
         "state": "verified",
-        "reason": "The exact public SISO source retains MIT licensing.",
+        "reason": "Public SISO source includes MIT licensing.",
         "evidence_count": 1
       },
       "portable": {
         "state": "experimental",
-        "reason": "Publish is bounded to reviewed public static output and caller-configured Wrangler; other Hub recipes retain their own boundaries.",
+        "reason": "The Jev pack installs through the catalog and standalone repository; optional provider and browser setup stays with the adopting agent. Other Hub entries retain their own portability boundaries.",
         "evidence_count": 1
       }
     }

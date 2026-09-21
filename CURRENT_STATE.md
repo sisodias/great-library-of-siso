@@ -1,5 +1,27 @@
 # Current state — The Great Library of SISO
 
+## Jev Agent Skills public release — V42
+
+[Jev Agent Skills v1.3.0](https://github.com/sisodias/jev-agent-skills/releases/tag/v1.3.0) is published at
+`0b7c1962acddb396021a69f94b89a11470f064cd` under MIT. It includes portable Python helpers, install
+examples and 51 passing offline tests. The public Skills Hub entry is merged at
+`4c889b990055f667628486b033a83b77a199027a` and pins that exact Jev source. A fresh public-tag clone
+and disposable Hub installation passed their checks; no adopter key is bundled.
+
+V42 adds the independent Jev Work and updates only the selected Skills Hub release,
+preserving all other V41 release pins, Assemblies and projection edges. The Work
+page is `/works/jev-agent-skills/`. Context evaluation remains shadow-only;
+production savings and automatic agent adoption are not claimed. Source and
+registration evidence are in `registry/events/2026-09-22-jev-agent-skills-released.json`.
+Library source `b0bcfc905a7a073dd5c0fc94340cebf387402cea` is published at
+https://f196e367.great-library-of-siso.pages.dev/ . Both that deployment and the
+stable https://great-library-of-siso.pages.dev/ returned HTTP 200 and exact build
+bytes for the root, Jev and Skills Hub HTML/JSON, catalog and pinned icon module
+(14 readbacks). The live Jev page is
+https://great-library-of-siso.pages.dev/works/jev-agent-skills/ .
+Full Library verification and publication scanning passed before deployment.
+Receipt: `docs/evidence/jev-agent-skills-publication-20260922.json`.
+
 ## 8 September canonical Library integration
 
 The integrated readers, read-only gls discovery/task entry and reviewed project

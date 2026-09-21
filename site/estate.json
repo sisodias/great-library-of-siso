@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-10T00:00:00.000Z",
-  "snapshot_id": "gls:snapshot:8679c90d-d2b1-469d-8d18-8413aa97bb5a",
-  "snapshot_version": "41.0.0",
+  "generated_at": "2026-09-21T17:11:20.000Z",
+  "snapshot_id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
+  "snapshot_version": "42.0.0",
   "repositories": [
     {
       "owner": "herdrdev",
@@ -203,6 +203,24 @@
     },
     {
       "owner": "sisodias",
+      "repository": "jev-agent-skills",
+      "url": "https://github.com/sisodias/jev-agent-skills",
+      "work_id": "gls:work:8032acab-bf10-489a-9077-7b7b55efd0ee",
+      "work_name": "Jev Agent Skills",
+      "work_slug": "jev-agent-skills",
+      "work_type": "capability_pack",
+      "lifecycle_status": "active",
+      "library_url": "/works/jev-agent-skills/",
+      "locator_type": "source_repository",
+      "locator_revision": "0b7c1962acddb396021a69f94b89a11470f064cd",
+      "visibility": "public",
+      "status": "released",
+      "active_release_id": "gls:release:b391e796-9a8c-4d0b-9b3e-37990f781c09",
+      "active_release_version": "1.3.0",
+      "artifact_revision": "0b7c1962acddb396021a69f94b89a11470f064cd"
+    },
+    {
+      "owner": "sisodias",
       "repository": "siso-agent-hooks",
       "url": "https://github.com/sisodias/siso-agent-hooks",
       "work_id": "gls:work:4198f323-9855-43f6-a99a-72143086818e",
@@ -374,12 +392,12 @@
       "lifecycle_status": "active",
       "library_url": "/works/siso-skills/",
       "locator_type": "source_repository",
-      "locator_revision": "main@5e33b2b1e21dfd54e66d9223ece058e7727c2cf8",
+      "locator_revision": "4c889b990055f667628486b033a83b77a199027a",
       "visibility": "public",
       "status": "released",
-      "active_release_id": "gls:release:4ea2b119-7217-4cec-8afc-b410c4beb943",
-      "active_release_version": "0.2.0+5e33b2b",
-      "artifact_revision": "5e33b2b1e21dfd54e66d9223ece058e7727c2cf8"
+      "active_release_id": "gls:release:1eca0054-0cb7-4063-a31a-8d4da8b90b64",
+      "active_release_version": "0.2.0+4c889b9",
+      "artifact_revision": "4c889b990055f667628486b033a83b77a199027a"
     },
     {
       "owner": "sisodias",

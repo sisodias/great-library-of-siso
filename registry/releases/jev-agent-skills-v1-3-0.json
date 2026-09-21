@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "release",
+  "id": "gls:release:b391e796-9a8c-4d0b-9b3e-37990f781c09",
+  "work_id": "gls:work:8032acab-bf10-489a-9077-7b7b55efd0ee",
+  "version": "1.3.0",
+  "title": "Jev Agent Skills first standalone public release",
+  "released_at": "2026-09-22T00:05:17+07:00",
+  "observed_at": "2026-09-22",
+  "immutable": true,
+  "artifacts": [
+    {
+      "id": "gls:artifact:2a52d373-3e09-4cac-a028-15052da5ecdc",
+      "kind": "source_archive",
+      "locator": "https://github.com/sisodias/jev-agent-skills/archive/0b7c1962acddb396021a69f94b89a11470f064cd.tar.gz",
+      "revision": "0b7c1962acddb396021a69f94b89a11470f064cd",
+      "availability": "public",
+      "owner": "sisodias",
+      "ownership": "siso",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "reason": "The published SISO-owned source includes its MIT copyright notice and licence.",
+        "evidence": [
+          {
+            "kind": "source_review",
+            "reference": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/LICENSE",
+            "observed_at": "2026-09-22",
+            "summary": "MIT licence inspected in the reviewed source."
+          }
+        ]
+      },
+      "integrity": {
+        "state": "verified",
+        "algorithm": "git_commit_sha1",
+        "digest": "0b7c1962acddb396021a69f94b89a11470f064cd"
+      }
+    }
+  ],
+  "distribution": {
+    "addressable": {
+      "state": "verified",
+      "reason": "Exact public source commit is recorded.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://github.com/sisodias/jev-agent-skills/commit/0b7c1962acddb396021a69f94b89a11470f064cd",
+          "observed_at": "2026-09-22",
+          "summary": "The exact published GitHub commit is recorded and resolves publicly."
+        }
+      ]
+    },
+    "archive_downloadable": {
+      "state": "verified",
+      "reason": "Commit-scoped source archive returned HTTP 200.",
+      "evidence": [
+        {
+          "kind": "public_locator",
+          "reference": "https://codeload.github.com/sisodias/jev-agent-skills/tar.gz/0b7c1962acddb396021a69f94b89a11470f064cd",
+          "observed_at": "2026-09-22",
+          "summary": "The exact public source archive returned HTTP 200."
+        }
+      ]
+    },
+    "manifest_resolvable": {
+      "state": "verified",
+      "reason": "Work and exact artifact pin are explicit.",
+      "evidence": [
+        {
+          "kind": "registry_validation",
+          "reference": "registry/releases/jev-agent-skills-v1-3-0.json",
+          "observed_at": "2026-09-22",
+          "summary": "The manifest identifies a stable Work and pins its source artifact; the Library verification gate checks its references."
+        }
+      ]
+    },
+    "installable": {
+      "state": "verified",
+      "reason": "Documented installation and offline checks passed; live providers still require adopter credentials and prerequisites.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "https://github.com/sisodias/jev-agent-skills/actions/runs/35628988156",
+          "observed_at": "2026-09-22",
+          "summary": "All 51 offline tests passed on GitHub. A fresh public-tag clone passed the same suite and the supplied examples validated without provider or browser calls. Production savings are unmeasured."
+        }
+      ]
+    },
+    "forkable": {
+      "state": "verified",
+      "reason": "Public SISO source includes MIT licensing.",
+      "evidence": [
+        {
+          "kind": "source_review",
+          "reference": "https://github.com/sisodias/jev-agent-skills/blob/0b7c1962acddb396021a69f94b89a11470f064cd/LICENSE",
+          "observed_at": "2026-09-22",
+          "summary": "MIT licence inspected in the reviewed source."
+        }
+      ]
+    },
+    "portable": {
+      "state": "experimental",
+      "reason": "Python 3.10+ standard-library pack tested locally and in Linux CI. OpenRouter inference needs the adopter key; browser use needs Camofox and a caller-owned tab. No production efficiency guarantee.",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "https://github.com/sisodias/jev-agent-skills/actions/runs/35628988156",
+          "observed_at": "2026-09-22",
+          "summary": "All 51 offline tests passed on GitHub. A fresh public-tag clone passed the same suite and the supplied examples validated without provider or browser calls. Production savings are unmeasured."
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "kind": "public_locator",
+      "reference": "https://github.com/sisodias/jev-agent-skills/commit/0b7c1962acddb396021a69f94b89a11470f064cd",
+      "observed_at": "2026-09-22",
+      "summary": "The exact published GitHub commit is recorded and resolves publicly."
+    },
+    {
+      "kind": "public_locator",
+      "reference": "https://codeload.github.com/sisodias/jev-agent-skills/tar.gz/0b7c1962acddb396021a69f94b89a11470f064cd",
+      "observed_at": "2026-09-22",
+      "summary": "The exact public source archive returned HTTP 200."
+    },
+    {
+      "kind": "release_receipt",
+      "reference": "https://github.com/sisodias/jev-agent-skills/actions/runs/35628988156",
+      "observed_at": "2026-09-22",
+      "summary": "All 51 offline tests passed on GitHub. A fresh public-tag clone passed the same suite and the supplied examples validated without provider or browser calls. Production savings are unmeasured."
+    }
+  ]
+}

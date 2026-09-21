@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-10T00:00:00.000Z",
+  "generated_at": "2026-09-21T17:11:20.000Z",
   "base_path": "/",
   "counts": {
-    "events": 48,
+    "events": 49,
     "decisions": 6,
     "active_initiatives": 3,
-    "registry_changes": 129
+    "registry_changes": 132
   },
   "active_initiatives": [
     {
@@ -704,6 +704,126 @@
     }
   ],
   "events": [
+    {
+      "schema_version": "1.0.0",
+      "record_type": "event",
+      "id": "gls:event:e9dfae0d-4c7f-416b-8eee-41a766705867",
+      "occurred_at": "2026-09-22T00:11:20+07:00",
+      "recorded_at": "2026-09-22T00:11:20+07:00",
+      "immutable": true,
+      "entry_type": "change_published",
+      "thread": {
+        "id": "gls:thread:jev-agent-skills-public-release",
+        "name": "Jev Agent Skills Public Release",
+        "kind": "release"
+      },
+      "status": "completed",
+      "title": "Jev agent skill pack published for independent adoption",
+      "summary": "Jev Agent Skills v1.3.0 is public under MIT with examples and offline tests; Skills Hub pins its source and the Library selects both exact releases in V42.",
+      "intent": "Let other agent users install and fork the Jev pack from a shareable public repository and discover it through SISO Skills Hub and the Great Library.",
+      "reasoning": [
+        "Independent adoption is an explicit promotion trigger; the public repository owns this coherent skill pack and its release lifecycle.",
+        "Only reviewed Jev source, examples and tests were published; local keys, receipts and unrelated unpublished Hub work remain outside the public release.",
+        "The pack keeps model judgments advisory, browser execution bounded and context evaluation in shadow mode. Publication does not claim production savings or configure other agents."
+      ],
+      "changes": [
+        {
+          "kind": "commit",
+          "reference": "https://github.com/sisodias/jev-agent-skills/commit/0b7c1962acddb396021a69f94b89a11470f064cd",
+          "summary": "First standalone MIT release with 51 offline tests and install examples."
+        },
+        {
+          "kind": "commit",
+          "reference": "https://github.com/sisodias/siso-skills-hub/commit/4c889b990055f667628486b033a83b77a199027a",
+          "summary": "Pinned Jev entry, source snapshot and explicit promoted-repository catalog state."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "registry/works/jev-agent-skills.json",
+          "summary": "Independent Work identity and reading page with source and usage links."
+        },
+        {
+          "kind": "registry_record",
+          "reference": "registry/snapshots/whole-library-v42.json",
+          "summary": "Adds the Jev release and updates only the selected Skills Hub release."
+        }
+      ],
+      "scope": {
+        "work_ids": [
+          "gls:work:8032acab-bf10-489a-9077-7b7b55efd0ee",
+          "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd"
+        ],
+        "release_ids": [
+          "gls:release:b391e796-9a8c-4d0b-9b3e-37990f781c09",
+          "gls:release:1eca0054-0cb7-4063-a31a-8d4da8b90b64"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/jev-agent-skills",
+          "https://github.com/sisodias/siso-skills-hub"
+        ]
+      },
+      "coordination": {
+        "owner": "SISO",
+        "branch": "feat/publish-jev-agent-skills",
+        "reserved_paths": []
+      },
+      "visibility": "public",
+      "evidence": [
+        {
+          "kind": "release_receipt",
+          "reference": "https://github.com/sisodias/jev-agent-skills/actions/runs/35628988156",
+          "observed_at": "2026-09-22",
+          "summary": "51 offline tests passed in public GitHub CI. A fresh clone of v1.3.0 passed the same suite and dry-run examples without API calls."
+        },
+        {
+          "kind": "release_receipt",
+          "reference": "https://github.com/sisodias/siso-skills-hub/pull/1",
+          "observed_at": "2026-09-22",
+          "summary": "The merged catalog entry pins the reviewed full commit. Source snapshot and disposable installation matched all 21 public tracked files."
+        },
+        {
+          "kind": "registry_validation",
+          "reference": "registry/releases/jev-agent-skills-v1-3-0.json",
+          "observed_at": "2026-09-22",
+          "summary": "Work and release inputs passed the existing gls registration workflow and full Library gate."
+        }
+      ],
+      "next_actions": [
+        "Measure real task quality, fallbacks and total cost before claiming production efficiency gains."
+      ],
+      "resolved_scope": {
+        "work_ids": [
+          "gls:work:8032acab-bf10-489a-9077-7b7b55efd0ee",
+          "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd"
+        ],
+        "release_ids": [
+          "gls:release:b391e796-9a8c-4d0b-9b3e-37990f781c09",
+          "gls:release:1eca0054-0cb7-4063-a31a-8d4da8b90b64"
+        ],
+        "snapshot_ids": [
+          "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844"
+        ],
+        "repository_urls": [
+          "https://github.com/sisodias/jev-agent-skills",
+          "https://github.com/sisodias/siso-skills-hub"
+        ],
+        "works": [
+          {
+            "id": "gls:work:8032acab-bf10-489a-9077-7b7b55efd0ee",
+            "name": "Jev Agent Skills",
+            "library_url": "/works/jev-agent-skills/"
+          },
+          {
+            "id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+            "name": "SISO Skills",
+            "library_url": "/works/siso-skills/"
+          }
+        ]
+      }
+    },
     {
       "schema_version": "1.0.0",
       "record_type": "event",
@@ -6363,6 +6483,33 @@
     }
   ],
   "registry_changes": [
+    {
+      "kind": "snapshot",
+      "occurred_at": "2026-09-22T00:11:20+07:00",
+      "id": "gls:snapshot:bed1abf0-f7b0-4b07-8c6c-a31de7141844",
+      "version": "42.0.0",
+      "title": "Whole Library V42 — Jev Agent Skills public release",
+      "work_count": 33,
+      "release_count": 33
+    },
+    {
+      "kind": "release",
+      "occurred_at": "2026-09-22T00:05:17+07:00",
+      "id": "gls:release:1eca0054-0cb7-4063-a31a-8d4da8b90b64",
+      "version": "0.2.0+4c889b9",
+      "title": "Skills Hub adds the independently released Jev pack",
+      "work_id": "gls:work:8acb11e9-026f-47e3-b620-bb1b969bcbcd",
+      "work_name": "SISO Skills"
+    },
+    {
+      "kind": "release",
+      "occurred_at": "2026-09-22T00:05:17+07:00",
+      "id": "gls:release:b391e796-9a8c-4d0b-9b3e-37990f781c09",
+      "version": "1.3.0",
+      "title": "Jev Agent Skills first standalone public release",
+      "work_id": "gls:work:8032acab-bf10-489a-9077-7b7b55efd0ee",
+      "work_name": "Jev Agent Skills"
+    },
     {
       "kind": "release",
       "occurred_at": "2026-09-08T05:29:49+07:00",
