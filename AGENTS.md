@@ -1,5 +1,7 @@
 # Agent guide — The Great Library of SISO
 
+**In one line:** Public registry and reading surface cataloguing SISO Works, their Releases, Assemblies and Source Inventories, with a command-line search and inspect tool. District: `Great_Library_of_SISO` (`~/SISO_Workspace/Great_Library_of_SISO`).
+
 This repository is the public registry, learning record, and generated reading surface for The Great Library of SISO. GitHub records public truth; a laptop checkout is replaceable infrastructure.
 
 ## The building (on a SISO machine)
