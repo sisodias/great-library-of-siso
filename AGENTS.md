@@ -2,6 +2,21 @@
 
 This repository is the public registry, learning record, and generated reading surface for The Great Library of SISO. GitHub records public truth; a laptop checkout is replaceable infrastructure.
 
+## The building (on a SISO machine)
+
+On Shaan's machines this folder is the whole Library, not just this catalog repository. The
+collections sit beside the catalog as their own repositories (this repo ignores them):
+
+| Folder | What it is |
+| --- | --- |
+| `knowledge/` | SISO Knowledge: books, graph, research pipelines, queries (repo `siso-knowledge`) |
+| `people-graph/` | the People Graph (repo `siso-people-graph`) |
+| `foundry/` | the Foundry research engine (repo `siso-foundry`) |
+| `banks/` | reusable banks: `siso-component-bank`, `siso-repo-bank`, `siso-ui-base`, `siso-shell` (HTML page templates) |
+| `works/` | individual Works: `siso-stargate-library`, `erdos`, `siso-evidence-engines`, `unfuck-the-project`, ... |
+
+The catalog (`registry/`, `site/`, `bin/gls`) describes Works; the folders above hold them.
+
 ## Find the owning source, then do the work
 
 The Library is a discovery route, not a required review phase for every SISO task.
