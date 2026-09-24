@@ -46,3 +46,11 @@ tmp/
 
 # `site/` is intentionally not ignored: it is the generated publication artifact.
 .serena/
+
+# The Library building on a SISO machine also shelves its collections here. Each is its own
+# repository (see the estate map in ~/SISO_Workspace/AGENTS.md); this catalog repo never tracks them.
+/knowledge/
+/people-graph/
+/foundry/
+/banks/
+/works/
